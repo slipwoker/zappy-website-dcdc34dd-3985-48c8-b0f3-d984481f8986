@@ -1,0 +1,685 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שירותי ייעוץ משכנתאות מקיפים — אריאל אחון ייעוץ משכנתאות ופיננסיים</title>
+  <meta name="description" content="גלו את מגוון שירותי ייעוץ המשכנתאות שלנו - מדירה ראשונה ועד מיחזור משכנתא. התחילו עוד היום!">
+  <meta name="keywords" content="ייעוץ משכנתאות, מיחזור משכנתא ושיפור תנאים, ייעוץ משכנתא למשפרי דיור, ייעוץ פיננסי">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+      direction: ltr !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: 'dcdc34dd-3985-48c8-b0f3-d984481f8986',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+
+    <style id="zappy-mobile-submenu-styles">
+      /* Mobile submenu accordion styles */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu {
+          position: static !important;
+          transform: none !important;
+          box-shadow: none !important;
+          background: transparent !important;
+          margin-top: 0 !important;
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          visibility: hidden;
+          transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
+          padding: 0 !important;
+          border-radius: 0 !important;
+        }
+        .sub-menu.mobile-expanded {
+          max-height: 500px !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          padding: 8px 0 8px 16px !important;
+        }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded, html[lang="ar"] .sub-menu.mobile-expanded {
+          padding: 8px 16px 8px 0 !important;
+        }
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu {
+          opacity: 0; visibility: hidden; pointer-events: none;
+        }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded {
+          opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
+        }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) {
+          display: flex !important; flex-wrap: wrap !important; align-items: center !important;
+        }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a {
+          flex: 1 !important;
+        }
+        .mobile-submenu-toggle {
+          display: flex !important; align-items: center !important; justify-content: center !important;
+          width: 44px !important; height: 44px !important; background: transparent !important;
+          border: none !important; cursor: pointer !important; padding: 0 !important; margin: 0 !important;
+          flex-shrink: 0 !important; -webkit-tap-highlight-color: transparent;
+        }
+        .mobile-submenu-toggle::after {
+          content: '' !important; display: block !important; width: 0 !important; height: 0 !important;
+          border-left: 6px solid transparent !important; border-right: 6px solid transparent !important;
+          border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important;
+        }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu {
+          flex-basis: 100% !important; width: 100% !important;
+        }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; font-size: 14px !important; }
+        .sub-menu a:hover { background-color: transparent !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <a href="/" class="logo-link">
+          <img src="/assets/logo.webp" alt="אריאל אחון ייעוץ משכנתאות ופיננסיים" class="logo">
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      
+      <button class="phone-header-btn" aria-label="התקשר אלינו">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/services">שירותים</a></li>
+        <li><a href="/about">אודות</a></li>
+      </ul>
+      
+      <div class="nav-cta-container">
+        <li class="nav-cta-item">
+          <a href="/contact" class="nav-cta-btn">צור קשר</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>שירותי ייעוץ משכנתאות מקיפים המותאמים לצרכיכם</h1>
+      <h3>מדירה ראשונה ועד מיחזור משכנתא - אנו כאן בשבילכם בכל שלב</h3>
+    </div>
+  </section>
+
+  <section class="section service-section" id="ייעוץ-משכנתא-לדירה-ראשונה" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detailed">
+      
+        <div class="service-image">
+          <img data-placeholder="service-1" data-context="Israeli mortgage consultant reviewing loan documents with first-time home buyers in bright office" src="/assets/service-service-1.webp" alt="ייעוץ משכנתא לדירה ראשונה">
+        </div>
+        <div class="service-text">
+          <h2>ייעוץ משכנתא לדירה ראשונה</h2>
+          <p>רכישת דירה ראשונה היא אחד הצעדים המשמעותיים והמרגשים ביותר בחיים. אנו מבינים שהתהליך יכול להיראות מורכב ומפחיד, ולכן אנו מציעים ייעוץ משכנתא לדירה ראשונה מקיף שמלווה אתכם מההתחלה ועד הסוף.</p>
+          <p>השירות שלנו כולל הסבר מפורט על כל סוגי המשכנתאות הזמינות, בדיקת הזכאות שלכם למשכנתא ולהטבות ממשלתיות, וניהול מכרז ריביות בין הבנקים השונים. אנו נעזור לכם להבין את כל המסמכים הנדרשים ונלווה אתכם בכל פגישה עם הבנק.</p>
+          <p>כחלק מהייעוץ משכנתאות שלנו, נבנה עבורכם תוכנית פיננסית מפורטת שתראה לכם בדיוק כמה תוכלו להרשות לעצמכם, מהי ההחזר החודשי הצפוי ואיך המשכנתא תשפיע על המצב הכלכלי שלכם לאורך השנים. המטרה שלנו היא לוודא שתתחילו את החיים בבית החדש שלכם בראש שקט ובביטחון פיננסי.</p>
+          <div class="service-benefits">
+            <h3>היתרונות שלנו:</h3>
+            <ul>
+              <li>הסבר מקיף על כל סוגי המשכנתאות</li>
+              <li>בדיקת זכאות להטבות ממשלתיות</li>
+              <li>ניהול מכרז ריביות בין כל הבנקים</li>
+              <li>ליווי אישי בכל שלב של התהליך</li>
+              <li>תוכנית פיננסית מפורטת ומותאמת אישית</li>
+            </ul>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="מיחזור-משכנתא-ושיפור-תנאים" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detailed reverse">
+      
+        <div class="service-image">
+          <img data-placeholder="service-2" data-context="Financial advisor analyzing mortgage refinancing options on computer screen with charts and graphs" src="/assets/service-service-2.webp" alt="מיחזור משכנתא ושיפור תנאים">
+        </div>
+        <div class="service-text">
+          <h2>מיחזור משכנתא ושיפור תנאים</h2>
+          <p>אם יש לכם כבר משכנתא, ייתכן שאתם משלמים יותר מדי! שוק המשכנתאות משתנה כל הזמן, וריביות שהיו תחרותיות לפני כמה שנים עשויות להיות גבוהות מדי היום. מיחזור משכנתא ושיפור תנאים יכולים לחסוך לכם אלפי שקלים בשנה.</p>
+          <p>אנו מתמחים בבדיקה מקיפה של המשכנתא הקיימת שלכם ובזיהוי הזדמנויות לחיסכון. נבחן את הריבית שאתם משלמים כיום, את תנאי המשכנתא ואת האפשרויות השונות לשיפור. לאחר מכן, נפנה לכל הבנקים והגופים הפיננסיים הרלוונטיים ונמצא עבורכם את ההצעה הטובה ביותר.</p>
+          <p>התהליך של מיחזור משכנתא כולל גם בדיקת עמלות מוקדמות, חישוב החיסכון הצפוי לאורך זמן ווידוא שהמעבר באמת משתלם. אנו נדאג לכל הפרטים הקטנים ונוודא שהתהליך יעבור בצורה חלקה ללא הפתעות לא נעימות. הייעוץ משכנתאות שלנו מבטיח שתקבלו את התנאים הטובים ביותר האפשריים.</p>
+          <div class="service-benefits">
+            <h3>מה כולל השירות:</h3>
+            <ul>
+              <li>בדיקה מקיפה של המשכנתא הקיימת</li>
+              <li>זיהוי הזדמנויות לחיסכון משמעותי</li>
+              <li>ניהול מו"מ עם הבנקים לשיפור תנאים</li>
+              <li>חישוב מדויק של החיסכון הצפוי</li>
+              <li>טיפול בכל הבירוקרטיה והמסמכים</li>
+            </ul>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="ייעוץ-משכנתא-למשפרי-דיור" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detailed">
+      
+        <div class="service-image">
+          <img data-placeholder="service-3" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" src="/assets/service-service-3.webp" alt="ייעוץ משכנתא למשפרי דיור">
+        </div>
+        <div class="service-text">
+          <h2>ייעוץ משכנתא למשפרי דיור</h2>
+          <p>המשפחה גדלה והגיע הזמן לעבור לבית גדול יותר? שיפור דיור הוא צעד משמעותי שדורש תכנון פיננסי קפדני. אנו מספקים ייעוץ משכנתא למשפרי דיור המתחשב במשכנתא הקיימת שלכם ומוצא את הפתרון האופטימלי למעבר.</p>
+          <p>כחלק מהייעוץ משכנתאות, נבחן את המשכנתא הנוכחית שלכם, נעריך את שווי הנכס הקיים ונבדוק את האפשרויות השונות למימון הדירה החדשה. האם כדאי למכור את הדירה הנוכחית תחילה? האם עדיף לשמור עליה ולהשכיר אותה? נעזור לכם לקבל את ההחלטה הנכונה בהתאם למצבכם הפיננסי ולמטרות שלכם.</p>
+          <p>נדאג גם לתיאום בין מכירת הנכס הישן לרכישת החדש, נבדוק אפשרויות למשכנתא גישור במידת הצורך ונוודא שהמעבר יתבצע בצורה חלקה ללא לחץ פיננסי מיותר. המטרה שלנו היא לעזור לכם לשדרג את הדיור תוך שמירה על יציבות כלכלית ומינימום סיכונים.</p>
+          <div class="service-benefits">
+            <h3>איך אנחנו עוזרים:</h3>
+            <ul>
+              <li>בחינת המשכנתא הקיימת והאפשרויות למימון</li>
+              <li>הערכת שווי הנכס והיכולת הפיננסית</li>
+              <li>ייעוץ לגבי מכירה מול השכרה של הנכס הקיים</li>
+              <li>תיאום בין מכירה לרכישה</li>
+              <li>בדיקת אפשרויות למשכנתא גישור</li>
+            </ul>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="התאמת-משכנתא-מדויקת-ואישית" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detailed reverse">
+      
+        <div class="service-image">
+          <img data-placeholder="service-4" data-context="Israeli mortgage consultant presenting strategy to executive team in boardroom with financial charts" src="/assets/service-service-4.webp" alt="התאמת משכנתא מדויקת ואישית">
+        </div>
+        <div class="service-text">
+          <h2>התאמת משכנתא מדויקת ואישית</h2>
+          <p>כל אדם הוא ייחודי, וכך גם צרכיו הפיננסיים. אנו מאמינים שאין פתרון אחד שמתאים לכולם, ולכן אנו מציעים שירות של התאמת משכנתא מדויקת ואישית. נבנה עבורכם משכנתא שמתאימה בדיוק לצרכים שלכם, למצבכם הפיננסי ולתוכניות העתיד שלכם.</p>
+          <p>התהליך מתחיל בפגישת היכרות מעמיקה שבה אנו לומדים על המצב הכלכלי שלכם, ההכנסות וההוצאות, התוכניות לעתיד והיעדים הפיננסיים שלכם. על בסיס המידע הזה, אנו בונים תוכנית משכנתא מותאמת אישית שלוקחת בחשבון את כל הפרמטרים הרלוונטיים.</p>
+          <p>אנו בוחנים סוגים שונים של משכנתאות - משכנתא בריבית קבועה, משתנה או משולבת, משכנתא צמודת מדד או לא צמודה, ועוד. נסביר לכם את היתרונות והחסרונות של כל אפשרות ונמליץ על השילוב האופטימלי עבורכם. הייעוץ משכנתאות שלנו מבטיח שתקבלו פתרון שמתאים לכם בדיוק.</p>
+          <div class="service-benefits">
+            <h3>מה כולל השירות:</h3>
+            <ul>
+              <li>פגישת היכרות מעמיקה ואישית</li>
+              <li>ניתוח מקיף של המצב הפיננסי</li>
+              <li>בניית תוכנית משכנתא מותאמת אישית</li>
+              <li>בחירת המסלולים האופטימליים</li>
+              <li>המלצות מקצועיות מבוססות ניסיון</li>
+            </ul>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="ייעוץ-לכלכלת-המשפחה" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detailed">
+      
+        <div class="service-image">
+          <img data-placeholder="service-5" data-context="Financial advisor reviewing family budget and financial planning documents with Israeli family" src="/assets/service-service-5.webp" alt="ייעוץ לכלכלת המשפחה">
+        </div>
+        <div class="service-text">
+          <h2>ייעוץ לכלכלת המשפחה</h2>
+          <p>ניהול נכון של כלכלת המשפחה הוא המפתח ליציבות פיננסית ולהשגת יעדים כלכליים לטווח ארוך. אנו מציעים ייעוץ פיננסי מקיף שעוזר לכם לנהל את התקציב המשפחתי בצורה חכמה ויעילה.</p>
+          <p>נתחיל בבניית תמונה מלאה של המצב הכלכלי שלכם - הכנסות, הוצאות קבועות ומשתנות, חובות והתחייבויות פיננסיות. נזהה הזדמנויות לחיסכון ונבנה תוכנית תקציבית מותאמת שתעזור לכם להשיג את היעדים הפיננסיים שלכם.</p>
+          <p>השירות כולל גם ייעוץ בנושאים כמו חיסכון לטווח ארוך, בניית קרן חירום, תכנון פנסיוני ועוד. נעזור לכם להבין לאן הכסף הולך ואיך אפשר לנהל אותו טוב יותר. המטרה היא לתת לכם שליטה מלאה על הכספים שלכם ולהבטיח עתיד פיננסי בטוח למשפחה.</p>
+          <div class="service-benefits">
+            <h3>מה נעשה ביחד:</h3>
+            <ul>
+              <li>ניתוח מקיף של ההכנסות וההוצאות</li>
+              <li>בניית תוכנית תקציבית מותאמת</li>
+              <li>זיהוי הזדמנויות לחיסכון</li>
+              <li>תכנון פיננסי לטווח ארוך</li>
+              <li>ייעוץ בנושאי חיסכון ופנסיה</li>
+            </ul>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="בחינת-תיק-פנסיוני" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detailed reverse">
+      
+        <div class="service-image">
+          <img data-placeholder="service-6" data-context="Pension consultant analyzing retirement portfolio and investment plans on computer screen" src="/assets/service-service-6.webp" alt="בחינת תיק פנסיוני">
+        </div>
+        <div class="service-text">
+          <h2>בחינת תיק פנסיוני</h2>
+          <p>התיק הפנסיוני שלכם הוא אחד הנכסים החשובים ביותר שיש לכם, והוא ישפיע באופן משמעותי על איכות החיים שלכם בפנסיה. למרות זאת, רבים מאיתנו לא יודעים מה יש בתיק הפנסיוני שלהם ואם הוא מנוהל בצורה אופטימלית.</p>
+          <p>אנו מציעים שירות של בחינה מקיפה של התיק הפנסיוני שלכם. נבדוק את הקרנות והמסלולים שבהם אתם משקיעים, נבחן את הביצועים שלהם לאורך זמן ונשווה אותם לאלטרנטיבות בשוק. נבדוק גם את העמלות שאתם משלמים ונוודא שהן סבירות.</p>
+          <p>על בסיס הבדיקה, נספק לכם המלצות מקצועיות לשיפור התיק הפנסיוני. זה יכול לכלול העברה לקרנות בעלות ביצועים טובים יותר, שינוי מסלולי השקעה, הפחתת עמלות ועוד. המטרה היא למקסם את התשואה על החיסכון הפנסיוני שלכם ולהבטיח לכם פנסיה נוחה ומכובדת.</p>
+          <div class="service-benefits">
+            <h3>מה כולל השירות:</h3>
+            <ul>
+              <li>בדיקה מקיפה של התיק הפנסיוני הקיים</li>
+              <li>ניתוח ביצועים והשוואה לשוק</li>
+              <li>בחינת העמלות והוצאות</li>
+              <li>המלצות לשיפור התיק</li>
+              <li>ליווי בתהליך ההעברה והשינויים</li>
+            </ul>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>מעוניינים באחד מהשירותים שלנו?</h2>
+        <p>צרו קשר עוד היום לייעוץ ראשוני ללא עלות. נשמח לענות על כל שאלה ולעזור לכם למצוא את הפתרון הפיננסי המושלם עבורכם.</p>
+        <a href="/contact" class="btn-primary">צור קשר עכשיו</a>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="all-rights-reserved">
+            <p>© 2026 אריאל אחון ייעוץ משכנתאות ופיננסיים. כל הזכויות שמורות.</p>
+          </div>
+          <div class="footer-social"><a href="https://facebook.com/[facebook_handle]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/[instagram_handle]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+          <div class="footer-legal">
+            <a href="/privacy" aria-label="מדיניות פרטיות">
+              מדיניות פרטיות
+            </a>
+            <span class="separator">|</span>
+            <a href="/accessibility" aria-label="נגישות">
+              נגישות
+            </a>
+            <span class="separator">|</span>
+            <a href="/terms" aria-label="תנאי שימוש">
+              תנאי שימוש
+            </a>
+          </div>
+        </div>
+        <div class="zappy-attribution">
+          <p>נוצר באמצעות&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Zappy</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = 'dcdc34dd-3985-48c8-b0f3-d984481f8986';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('https://api.zappy5.com/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          // Use dynamic announcement content if available
+          if (data.announcement && data.announcement.html) {
+            header.innerHTML = data.announcement.html;
+          }
+          // Apply fixed positioning styles inline (works for existing sites too)
+          header.style.cssText = 'position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important;';
+          // Fix child elements that might have position: fixed from old CSS
+          var children = header.querySelectorAll('*');
+          for (var i = 0; i < children.length; i++) {
+            children[i].style.position = 'static';
+          }
+          // Get header height
+          var headerHeight = header.offsetHeight;
+          // Find and fix navbar to be fixed as well (prevents gap at top of page)
+          var navSelectors = ['nav', '.navbar', '.nav'];
+          var navbar = null;
+          for (var j = 0; j < navSelectors.length; j++) {
+            navbar = document.querySelector(navSelectors[j]);
+            if (navbar && navbar.id !== 'zappy-attribution-header') break;
+            navbar = null;
+          }
+          if (navbar) {
+            var navbarHeight = navbar.offsetHeight;
+            navbar.style.cssText += '; position: fixed !important; top: ' + headerHeight + 'px !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99998 !important;';
+            document.body.style.paddingTop = (headerHeight + navbarHeight) + 'px';
+          } else {
+            document.body.style.paddingTop = headerHeight + 'px';
+          }
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+    })();
+    </script>
+    <script src="/script.js"></script>
+</body></html>
