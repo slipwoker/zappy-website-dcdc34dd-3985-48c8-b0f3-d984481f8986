@@ -1,47 +1,72 @@
-# Business — Generative Engine Optimization Map
+# אריאל אחון ייעוץ משכנתאות ופיננסיים — Generative Engine Optimization Map
+
+> אנו מעניקים שירותי ייעוץ משכנתאות וייעוץ פיננסי ללקוחות פרטיים ועסקיים ומתמחים בהתאמת משכנתא לצרכי הלקוח. על מנת שתקבלו את ההלוואה בתנאים הטובים ביותר שניתן, נערוך מכרז ריביות בין הבנקים והגופים השונים אשר יאפשר לכם לחסוך כסף ולהנות מראש שקט לכל אורך הדרך
 
 ---
 
 ## Pages
 
 ### דף הבית
-https://example.com
+https://ariel-achon-mortgage-and-finan.zappy5.app
 קבלו ייעוץ משכנתאות מקצועי המותאם במיוחד עבורכם. צרו קשר היום לייעוץ ראשוני ללא עלות!
 
 ### שירותים
-https://example.com/services
+https://ariel-achon-mortgage-and-finan.zappy5.app/services
 גלו את מגוון שירותי ייעוץ המשכנתאות שלנו - מדירה ראשונה ועד מיחזור משכנתא. התחילו עוד היום!
 
 ### אודות
-https://example.com/about
+https://ariel-achon-mortgage-and-finan.zappy5.app/about
 הכירו את הצוות המקצועי שלנו ואת הגישה שלנו לייעוץ משכנתאות. ניסיון רב ושירות אישי!
 
 ### צור קשר
-https://example.com/contact
+https://ariel-achon-mortgage-and-finan.zappy5.app/contact
 צרו קשר עוד היום לייעוץ משכנתאות מקצועי ללא עלות. נשמח לענות על כל שאלה ולעזור לכם!
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://ariel-achon-mortgage-and-finan.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://ariel-achon-mortgage-and-finan.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://ariel-achon-mortgage-and-finan.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About אריאל אחון ייעוץ משכנתאות ופיננסיים
+אנו מעניקים שירותי ייעוץ משכנתאות וייעוץ פיננסי ללקוחות פרטיים ועסקיים ומתמחים בהתאמת משכנתא לצרכי הלקוח. על מנת שתקבלו את ההלוואה בתנאים הטובים ביותר שניתן, נערוך מכרז ריביות בין הבנקים והגופים השונים אשר יאפשר לכם לחסוך כסף ולהנות מראש שקט לכל אורך הדרך
+
+## Services/Products
+- ייעוץ משכנתאות
+- התאמת משכנתא מדויקת ואישית
+- בדיקת המשכנתא הקיימת ושיפור התנאים
+- מיחזור משכנתא
+- ייעוץ פיננסי
+- ייעוץ לכלכלת המשפחה
+- בחינת תיק פנסיוני
+- הלוואה לכל מטרה
+- ייעוץ ללקוחות פרטיים ועסקיים
+
+## Target Audience
+- רוכשי דירות ראשונות
+- משקיעי נדל"ן
+- משפרי דיור
+- משפחות במתח כלכלי
+- חוזרים לארץ
+
+## Industry
+שירותים פיננסיים
+
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://example.com/sitemap.xml
-- **Robots.txt**: https://example.com/robots.txt
+- **Sitemap**: https://ariel-achon-mortgage-and-finan.zappy5.app/sitemap.xml
+- **Robots.txt**: https://ariel-achon-mortgage-and-finan.zappy5.app/robots.txt
