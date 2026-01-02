@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ariel-achon-mortgage-and-finan.zappy5.app/sitemap.xml
+Sitemap: https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com/sitemap.xml
