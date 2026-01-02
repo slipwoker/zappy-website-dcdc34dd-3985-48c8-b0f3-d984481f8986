@@ -1603,3 +1603,51 @@ body.accessibility-widget-visible ._access-menu {
     display: none !important;
   }
 }
+
+/* === AI CUSTOMIZATION ADDITIONS === */
+/* Brand tagline styling in navigation */
+.brand-tagline {
+  display: inline-block !important;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-right: 8px;
+  margin-left: 0;
+  opacity: 0.9;
+}
+
+/* Pajama mortgage section styling */
+.pajama-mortgage-section {
+  background: var(--bg-light);
+  padding: 40px 0;
+}
+
+.pajama-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pajama-content h2 {
+  margin-bottom: 1.5rem;
+}
+
+.pajama-content p {
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+}
+
+/* Mobile adjustments for tagline */
+@media (max-width: 768px) {
+  .brand-tagline {
+    display: none !important;
+  }
+  
+  .pajama-mortgage-section {
+    padding: 30px 0;
+  }
+  
+  .pajama-content p {
+    font-size: 16px !important;
+  }
+}
