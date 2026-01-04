@@ -16625,3 +16625,70 @@ html[lang="ar"] .whatsapp-float-btn::after {
     display: none;
   }
 }
+/* Override inline grid styles on mobile */
+@media (max-width: 768px) {
+  .services-grid.zappy-preserve-css-grid,
+  .services-grid[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid.zappy-preserve-css-grid,
+  .services-grid[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* === COMPREHENSIVE MOBILE GRID FIX === */
+/* Force ALL grids to single column on mobile to ensure proper responsive behavior */
+
+@media (max-width: 768px) {
+  /* Override ALL grid layouts with inline styles */
+  .services-grid,
+  .services-grid.zappy-preserve-css-grid,
+  .services-grid[style*="grid-template-columns"],
+  .benefits-grid,
+  .benefits-grid[style*="grid-template-columns"],
+  .values-grid,
+  .mission-grid,
+  .reasons-grid,
+  .faq-grid,
+  .expertise-list,
+  .portfolio-grid,
+  .team-grid,
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens - definitely single column */
+  .services-grid,
+  .services-grid.zappy-preserve-css-grid,
+  .services-grid[style*="grid-template-columns"],
+  .benefits-grid,
+  .benefits-grid[style*="grid-template-columns"],
+  .values-grid,
+  .mission-grid,
+  .reasons-grid,
+  .faq-grid,
+  .expertise-list,
+  .portfolio-grid,
+  .team-grid,
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+/* Tablet: Allow 2 columns for some grids */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-grid,
+  .benefits-grid,
+  .values-grid,
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
