@@ -16692,3 +16692,410 @@ html[lang="ar"] .whatsapp-float-btn::after {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+/* === COMPREHENSIVE LOGO FIX - Override i18n inline styles === */
+
+/* Force logo-link to display properly without inline style overrides */
+a.logo-link,
+.nav-brand a.logo-link,
+.logo-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  /* Remove any positioning that might hide content */
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Ensure logo image is always visible */
+.logo-link img.logo,
+.logo-link .logo,
+a.logo-link img,
+.nav-brand img.logo {
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  max-width: 120px !important;
+  max-height: 50px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  /* Prevent any transforms or filters that might hide it */
+  transform: none !important;
+  filter: none !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Ensure brand tagline doesn't hide logo */
+.brand-tagline {
+  display: inline-block !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--primary-color) !important;
+  opacity: 0.9 !important;
+  /* Don't overlap with logo */
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+  .logo-link,
+  a.logo-link {
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  
+  .logo-link img.logo,
+  .logo-link .logo {
+    max-width: 100px !important;
+    max-height: 40px !important;
+    display: inline-block !important;
+  }
+  
+  .nav-brand {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Hide tagline on mobile if needed */
+  .brand-tagline {
+    display: none !important;
+  }
+}
+
+/* Prevent lazy loading from causing flash */
+img.logo[loading="lazy"] {
+  loading: eager !important;
+}
+
+/* RTL support */
+html[dir="rtl"] .logo-link,
+html[lang="he"] .logo-link,
+html[lang="ar"] .logo-link {
+  gap: 8px !important;
+}
+
+/* === SUPER AGGRESSIVE LOGO FIX - Override ALL inline styles === */
+
+/* Force logo-link to ALWAYS display as flex with logo visible */
+a.logo-link[style],
+a.logo-link,
+.logo-link[style],
+.logo-link,
+.nav-brand a[style],
+.nav-brand a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  /* Override ANY positioning */
+  position: relative !important;
+  overflow: visible !important;
+  /* Override ANY sizing */
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  /* Override ANY display changes */
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* NUCLEAR OPTION: Force logo image to ALWAYS be visible */
+.logo-link img[style],
+.logo-link img.logo[style],
+.logo-link img,
+.logo-link .logo,
+img.logo[style],
+img.logo,
+.nav-brand img[alt*="logo" i],
+.nav-brand img[src*="logo" i],
+.nav-brand img {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  /* Size constraints */
+  max-width: 120px !important;
+  max-height: 50px !important;
+  min-width: 80px !important;
+  min-height: 30px !important;
+  width: auto !important;
+  height: auto !important;
+  /* Positioning */
+  position: relative !important;
+  z-index: 10 !important;
+  /* Object fit */
+  object-fit: contain !important;
+  /* Remove any transforms/filters */
+  transform: none !important;
+  filter: none !important;
+  /* Remove any margins that might hide it */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Force nav-brand container to show content */
+.nav-brand,
+.nav-brand[style] {
+  display: flex !important;
+  align-items: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Mobile specific overrides */
+@media (max-width: 768px) {
+  .logo-link,
+  .logo-link[style],
+  a.logo-link[style] {
+    display: inline-flex !important;
+  }
+  
+  .logo-link img,
+  .logo-link .logo,
+  img.logo {
+    max-width: 100px !important;
+    max-height: 40px !important;
+    min-width: 60px !important;
+    min-height: 25px !important;
+  }
+  
+  .brand-tagline {
+    display: none !important;
+  }
+}
+
+/* Override zappy-editable inline styles */
+[data-zappy-edit-mode] .logo-link,
+.logo-link.zappy-editable,
+.zappy-editable.logo-link[style] {
+  display: inline-flex !important;
+}
+
+[data-zappy-edit-mode] img.logo,
+img.logo.zappy-editable,
+.zappy-editable-image.logo {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* === SUPER AGGRESSIVE LOGO FIX - Override ALL inline styles === */
+
+/* Force logo-link to ALWAYS display as flex with logo visible */
+a.logo-link[style],
+a.logo-link,
+.logo-link[style],
+.logo-link,
+.nav-brand a[style],
+.nav-brand a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  /* Override ANY positioning */
+  position: relative !important;
+  overflow: visible !important;
+  /* Override ANY sizing */
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  /* Override ANY display changes */
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* NUCLEAR OPTION: Force logo image to ALWAYS be visible */
+.logo-link img[style],
+.logo-link img.logo[style],
+.logo-link img,
+.logo-link .logo,
+img.logo[style],
+img.logo,
+.nav-brand img[alt*="logo" i],
+.nav-brand img[src*="logo" i],
+.nav-brand img {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  /* Size constraints */
+  max-width: 120px !important;
+  max-height: 50px !important;
+  min-width: 80px !important;
+  min-height: 30px !important;
+  width: auto !important;
+  height: auto !important;
+  /* Positioning */
+  position: relative !important;
+  z-index: 10 !important;
+  /* Object fit */
+  object-fit: contain !important;
+  /* Remove any transforms/filters */
+  transform: none !important;
+  filter: none !important;
+  /* Remove any margins that might hide it */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Force nav-brand container to show content */
+.nav-brand,
+.nav-brand[style] {
+  display: flex !important;
+  align-items: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Mobile specific overrides */
+@media (max-width: 768px) {
+  .logo-link,
+  .logo-link[style],
+  a.logo-link[style] {
+    display: inline-flex !important;
+  }
+  
+  .logo-link img,
+  .logo-link .logo,
+  img.logo {
+    max-width: 100px !important;
+    max-height: 40px !important;
+    min-width: 60px !important;
+    min-height: 25px !important;
+  }
+  
+  .brand-tagline {
+    display: none !important;
+  }
+}
+
+/* Override zappy-editable inline styles */
+[data-zappy-edit-mode] .logo-link,
+.logo-link.zappy-editable,
+.zappy-editable.logo-link[style] {
+  display: inline-flex !important;
+}
+
+[data-zappy-edit-mode] img.logo,
+img.logo.zappy-editable,
+.zappy-editable-image.logo {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* ===================================================================
+   FINAL ULTIMATE LOGO FIX - Show logo in header navigation
+   =================================================================== */
+
+/* Target header and nav elements */
+header,
+.header,
+nav,
+.nav-container,
+.nav-brand {
+  position: relative !important;
+}
+
+/* CRITICAL: Force logo and logo-link to display */
+.nav-brand a,
+.nav-brand a.logo-link,
+.nav-brand .logo-link,
+a.logo-link,
+.logo-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* CRITICAL: Force logo image to be visible */
+.nav-brand img,
+.nav-brand img.logo,
+.logo-link img,
+.logo-link img.logo,
+img.logo,
+img[src*="logo"],
+img[alt*="logo" i],
+.nav-brand a img {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 150px !important;
+  max-height: 60px !important;
+  min-width: 80px !important;
+  min-height: 30px !important;
+  object-fit: contain !important;
+  position: relative !important;
+  z-index: 100 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  filter: none !important;
+  clip-path: none !important;
+  mask: none !important;
+}
+
+/* Ensure tagline doesn't hide logo */
+.brand-tagline {
+  display: inline-block !important;
+  margin-right: 8px !important;
+  margin-left: 8px !important;
+  font-size: 12px !important;
+  opacity: 0.9 !important;
+}
+
+/* RTL support */
+html[dir="rtl"] .nav-brand img,
+html[lang="he"] .nav-brand img,
+html[lang="ar"] .nav-brand img {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .nav-brand img,
+  .logo-link img,
+  img.logo {
+    max-width: 120px !important;
+    max-height: 50px !important;
+    min-width: 70px !important;
+  }
+  
+  .brand-tagline {
+    display: none !important;
+  }
+  
+  .nav-brand {
+    margin: 0 auto !important;
+    justify-content: center !important;
+  }
+}
+
+/* Prevent any wrapper from hiding logo */
+.nav-brand > *,
+.logo-link > * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Override any lazy loading that might hide logo initially */
+img.logo[loading] {
+  loading: eager;
+}
+
+/* ===================================================================
+   END FINAL ULTIMATE LOGO FIX
+   =================================================================== */

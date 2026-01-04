@@ -412,3 +412,85 @@ window.onload = function() {
         initContactFormIntegration();
     }
 })();
+
+// === AGGRESSIVE LOGO FIX - Remove inline styles that hide logo ===
+(function() {
+  function fixLogoDisplay() {
+    // Find all logo-link elements
+    const logoLinks = document.querySelectorAll('.logo-link, a.logo-link, .nav-brand a');
+    logoLinks.forEach(link => {
+      // Remove problematic inline styles
+      if (link.hasAttribute('style')) {
+        const currentStyle = link.getAttribute('style');
+        // Only remove if it's hiding the element or changing display
+        if (currentStyle.includes('display:') || currentStyle.includes('visibility:') || 
+            currentStyle.includes('opacity:') || currentStyle.includes('position: absolute')) {
+          console.log('Removing problematic inline style from logo-link');
+          link.removeAttribute('style');
+        }
+      }
+    });
+    
+    // Find all logo images
+    const logoImages = document.querySelectorAll('img.logo, .logo-link img, .nav-brand img');
+    logoImages.forEach(img => {
+      // Ensure logo is visible
+      img.style.cssText = '';
+      img.style.display = 'inline-block';
+      img.style.visibility = 'visible';
+      img.style.opacity = '1';
+    });
+  }
+  
+  // Run on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixLogoDisplay);
+  } else {
+    fixLogoDisplay();
+  }
+  
+  // Run again after a short delay to catch dynamic changes
+  setTimeout(fixLogoDisplay, 100);
+  setTimeout(fixLogoDisplay, 500);
+})();
+
+// === AGGRESSIVE LOGO FIX - Remove inline styles that hide logo ===
+(function() {
+  function fixLogoDisplay() {
+    // Find all logo-link elements
+    const logoLinks = document.querySelectorAll('.logo-link, a.logo-link, .nav-brand a');
+    logoLinks.forEach(link => {
+      // Remove problematic inline styles
+      if (link.hasAttribute('style')) {
+        const currentStyle = link.getAttribute('style');
+        // Only remove if it's hiding the element or changing display
+        if (currentStyle.includes('display:') || currentStyle.includes('visibility:') || 
+            currentStyle.includes('opacity:') || currentStyle.includes('position: absolute')) {
+          console.log('Removing problematic inline style from logo-link');
+          link.removeAttribute('style');
+        }
+      }
+    });
+    
+    // Find all logo images
+    const logoImages = document.querySelectorAll('img.logo, .logo-link img, .nav-brand img');
+    logoImages.forEach(img => {
+      // Ensure logo is visible
+      img.style.cssText = '';
+      img.style.display = 'inline-block';
+      img.style.visibility = 'visible';
+      img.style.opacity = '1';
+    });
+  }
+  
+  // Run on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixLogoDisplay);
+  } else {
+    fixLogoDisplay();
+  }
+  
+  // Run again after a short delay to catch dynamic changes
+  setTimeout(fixLogoDisplay, 100);
+  setTimeout(fixLogoDisplay, 500);
+})();
