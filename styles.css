@@ -17099,3 +17099,47 @@ img.logo[loading] {
 /* ===================================================================
    END FINAL ULTIMATE LOGO FIX
    =================================================================== */
+
+/* ===================================================================
+   FIX: Logo visibility on pages with .page-header (services, about)
+   =================================================================== */
+
+/* On pages with .page-header, ensure navbar logo is visible */
+.page-header ~ * .logo,
+.page-header ~ * .logo-link,
+body:has(.page-header) .navbar .logo,
+body:has(.page-header) .navbar .logo-link,
+body:has(.page-header) .nav-brand img,
+body:has(.page-header) .nav-brand .logo {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-width: 150px !important;
+  max-height: 60px !important;
+  min-width: 80px !important;
+}
+
+/* Ensure navbar itself is visible on .page-header pages */
+body:has(.page-header) .navbar,
+body:has(.page-header) .nav-brand,
+body:has(.page-header) .nav-brand a {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Alternative selector for browsers that don't support :has() */
+.navbar .nav-brand img.logo,
+.navbar .nav-brand .logo,
+.navbar .logo-link img {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  body:has(.page-header) .nav-brand img,
+  body:has(.page-header) .logo {
+    max-width: 120px !important;
+    max-height: 50px !important;
+  }
+}
