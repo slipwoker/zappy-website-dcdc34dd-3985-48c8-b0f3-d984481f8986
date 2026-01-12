@@ -1,72 +1,47 @@
-# אריאל אחון ייעוץ משכנתאות ופיננסיים - משכנתא בפיג'מה — Generative Engine Optimization Map
-
-> אנו מעניקים שירותי ייעוץ משכנתאות וייעוץ פיננסי ללקוחות פרטיים ועסקיים ומתמחים בהתאמת משכנתא לצרכי הלקוח. על מנת שתקבלו את ההלוואה בתנאים הטובים ביותר שניתן, נערוך מכרז ריביות בין הבנקים והגופים השונים אשר יאפשר לכם לחסוך כסף ולהנות מראש שקט לכל אורך הדרך
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
-### דף הבית
-https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com
+### ייעוץ משכנתאות מקצועי ואישי — אריאל אחון ייעוץ משכנתאות ופיננסיים
+https://mashkanta-bepijama.co.il
 קבלו ייעוץ משכנתאות מקצועי המותאם במיוחד עבורכם. צרו קשר היום לייעוץ ראשוני ללא עלות!
 
-### שירותים
-https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com/services
+### שירותי ייעוץ משכנתאות מקיפים — אריאל אחון ייעוץ משכנתאות ופיננסיים
+https://mashkanta-bepijama.co.il/services
 גלו את מגוון שירותי ייעוץ המשכנתאות שלנו - מדירה ראשונה ועד מיחזור משכנתא. התחילו עוד היום!
 
-### אודות
-https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com/about
+### אודותינו - מומחי ייעוץ משכנתאות — אריאל אחון ייעוץ משכנתאות ופיננסיים
+https://mashkanta-bepijama.co.il/about
 הכירו את הצוות המקצועי שלנו ואת הגישה שלנו לייעוץ משכנתאות. ניסיון רב ושירות אישי!
 
-### צור קשר
-https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com/contact
+### צור קשר - קבלו ייעוץ משכנתאות — אריאל אחון ייעוץ משכנתאות ופיננסיים
+https://mashkanta-bepijama.co.il/contact
 צרו קשר עוד היום לייעוץ משכנתאות מקצועי ללא עלות. נשמח לענות על כל שאלה ולעזור לכם!
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com/privacy
+https://mashkanta-bepijama.co.il/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com/terms
+https://mashkanta-bepijama.co.il/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com/accessibility
+https://mashkanta-bepijama.co.il/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About אריאל אחון ייעוץ משכנתאות ופיננסיים - משכנתא בפיג'מה
-אנו מעניקים שירותי ייעוץ משכנתאות וייעוץ פיננסי ללקוחות פרטיים ועסקיים ומתמחים בהתאמת משכנתא לצרכי הלקוח. על מנת שתקבלו את ההלוואה בתנאים הטובים ביותר שניתן, נערוך מכרז ריביות בין הבנקים והגופים השונים אשר יאפשר לכם לחסוך כסף ולהנות מראש שקט לכל אורך הדרך
-
-## Services/Products
-- ייעוץ משכנתאות
-- התאמת משכנתא מדויקת ואישית
-- בדיקת המשכנתא הקיימת ושיפור התנאים
-- מיחזור משכנתא
-- ייעוץ פיננסי
-- ייעוץ לכלכלת המשפחה
-- בחינת תיק פנסיוני
-- הלוואה לכל מטרה
-- ייעוץ ללקוחות פרטיים ועסקיים
-
-## Target Audience
-- רוכשי דירות ראשונות
-- משקיעי נדל"ן
-- משפרי דיור
-- משפחות במתח כלכלי
-- חוזרים לארץ
-
-## Industry
-שירותים פיננסיים
-
+## About Business
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com/sitemap.xml
-- **Robots.txt**: https://zappy-site-dcdc34dd-3985-48c8-b0f3.onrender.com/robots.txt
+- **Sitemap**: https://mashkanta-bepijama.co.il/sitemap.xml
+- **Robots.txt**: https://mashkanta-bepijama.co.il/robots.txt

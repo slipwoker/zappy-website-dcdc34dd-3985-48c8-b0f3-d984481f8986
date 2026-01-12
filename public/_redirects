@@ -3,35 +3,35 @@
 
 /services  /services.html  200
 /about  /about.html  200
-/contact  /contact.html  200
 /privacy  /privacy.html  200
 /accessibility  /accessibility.html  200
 /terms  /terms.html  200
+/contact  /contact.html  200
 
 # Language slug rewrites for SEO
 /en  /en/index.html  200
 /en/services  /en/services.html  200
 /en/about  /en/about.html  200
-/en/contact  /en/contact.html  200
 /en/privacy  /en/privacy.html  200
 /en/accessibility  /en/accessibility.html  200
 /en/terms  /en/terms.html  200
+/en/contact  /en/contact.html  200
 /en  /en/index.html  200
 /es  /es/index.html  200
 /es/services  /es/services.html  200
 /es/about  /es/about.html  200
-/es/contact  /es/contact.html  200
 /es/privacy  /es/privacy.html  200
 /es/accessibility  /es/accessibility.html  200
 /es/terms  /es/terms.html  200
+/es/contact  /es/contact.html  200
 /es  /es/index.html  200
 /ru  /ru/index.html  200
 /ru/services  /ru/services.html  200
 /ru/about  /ru/about.html  200
-/ru/contact  /ru/contact.html  200
 /ru/privacy  /ru/privacy.html  200
 /ru/accessibility  /ru/accessibility.html  200
 /ru/terms  /ru/terms.html  200
+/ru/contact  /ru/contact.html  200
 /ru  /ru/index.html  200
 
 # Legal pages - redirect old .html URLs to friendly URLs
