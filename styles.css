@@ -397,13 +397,9 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}
-
-.service-detailed.reverse {
+}html[dir="ltr"] .service-detailed.reverse{
   direction: ltr;
-}
-
-.service-detailed.reverse .service-text {
+}html[dir="rtl"] .service-detailed.reverse .service-text{
   direction: rtl;
 }
 
@@ -980,9 +976,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .service-detailed.reverse {
+  }html[dir="rtl"] .service-detailed.reverse{
     direction: rtl;
   }
   
@@ -2315,13 +2309,9 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}
-
-.service-detailed.reverse {
+}html[dir="ltr"] .service-detailed.reverse{
   direction: ltr;
-}
-
-.service-detailed.reverse .service-text {
+}html[dir="rtl"] .service-detailed.reverse .service-text{
   direction: rtl;
 }
 
@@ -2898,9 +2888,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .service-detailed.reverse {
+  }html[dir="rtl"] .service-detailed.reverse{
     direction: rtl;
   }
   
@@ -3831,13 +3819,9 @@ html[dir="rtl"] .zappy-lang-switcher-container {
     padding: 10px 14px;
     font-size: 13px;
   }
-}
-
-
-
-/* === AI CUSTOMIZATION ADDITIONS === */
+}html[dir="ltr"] /* === AI CUSTOMIZATION ADDITIONS === */
 /* Zappy Attribution Header Styles */
-.zappy-header {
+.zappy-header{
   position: fixed;
   top: 0;
   left: 0;
@@ -3857,9 +3841,7 @@ html[dir="rtl"] .zappy-lang-switcher-container {
   min-height: 21px;
   direction: ltr !important;
   unicode-bidi: isolate;
-}
-
-    .zappy-header p {
+}html[dir="ltr"] .zappy-header p{
       margin: 0;
       padding: 0;
       font-weight: 400;
@@ -4283,13 +4265,9 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}
-
-.service-detailed.reverse {
+}html[dir="ltr"] .service-detailed.reverse{
   direction: ltr;
-}
-
-.service-detailed.reverse .service-text {
+}html[dir="rtl"] .service-detailed.reverse .service-text{
   direction: rtl;
 }
 
@@ -4866,9 +4844,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .service-detailed.reverse {
+  }html[dir="rtl"] .service-detailed.reverse{
     direction: rtl;
   }
   
@@ -6300,13 +6276,9 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}
-
-.service-detailed.reverse {
+}html[dir="ltr"] .service-detailed.reverse{
   direction: ltr;
-}
-
-.service-detailed.reverse .service-text {
+}html[dir="rtl"] .service-detailed.reverse .service-text{
   direction: rtl;
 }
 
@@ -6883,9 +6855,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .service-detailed.reverse {
+  }html[dir="rtl"] .service-detailed.reverse{
     direction: rtl;
   }
   
@@ -8296,13 +8266,9 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}
-
-.service-detailed.reverse {
+}html[dir="ltr"] .service-detailed.reverse{
   direction: ltr;
-}
-
-.service-detailed.reverse .service-text {
+}html[dir="rtl"] .service-detailed.reverse .service-text{
   direction: rtl;
 }
 
@@ -8879,9 +8845,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .service-detailed.reverse {
+  }html[dir="rtl"] .service-detailed.reverse{
     direction: rtl;
   }
   
@@ -10298,13 +10262,9 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}
-
-.service-detailed.reverse {
+}html[dir="ltr"] .service-detailed.reverse{
   direction: ltr;
-}
-
-.service-detailed.reverse .service-text {
+}html[dir="rtl"] .service-detailed.reverse .service-text{
   direction: rtl;
 }
 
@@ -10881,9 +10841,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .service-detailed.reverse {
+  }html[dir="rtl"] .service-detailed.reverse{
     direction: rtl;
   }
   
@@ -12274,13 +12232,9 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}
-
-.service-detailed.reverse {
+}html[dir="ltr"] .service-detailed.reverse{
   direction: ltr;
-}
-
-.service-detailed.reverse .service-text {
+}html[dir="rtl"] .service-detailed.reverse .service-text{
   direction: rtl;
 }
 
@@ -12857,9 +12811,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .service-detailed.reverse {
+  }html[dir="rtl"] .service-detailed.reverse{
     direction: rtl;
   }
   
@@ -14282,13 +14234,9 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}
-
-.service-detailed.reverse {
+}html[dir="ltr"] .service-detailed.reverse{
   direction: ltr;
-}
-
-.service-detailed.reverse .service-text {
+}html[dir="rtl"] .service-detailed.reverse .service-text{
   direction: rtl;
 }
 
@@ -14865,9 +14813,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .service-detailed.reverse {
+  }html[dir="rtl"] .service-detailed.reverse{
     direction: rtl;
   }
   
