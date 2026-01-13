@@ -8,8 +8,6 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il" />
   </url>
   <url>
@@ -19,30 +17,6 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/es</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/ru</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il" />
   </url>
   <url>
@@ -52,8 +26,6 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/services" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/services" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/services" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/services" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/services" />
   </url>
   <url>
@@ -63,30 +35,6 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/services" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/services" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/services" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/services" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/services" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/es/services</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/services" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/services" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/services" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/services" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/services" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/ru/services</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/services" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/services" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/services" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/services" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/services" />
   </url>
   <url>
@@ -96,8 +44,6 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/about" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/about" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/about" />
   </url>
   <url>
@@ -107,75 +53,25 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/about" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/about" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/about" />
   </url>
   <url>
-    <loc>https://mashkanta-bepijama.co.il/es/about</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/about" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/about" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/about" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/ru/about</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/about" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/about" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/about" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/contact</loc>
+    <loc>https://mashkanta-bepijama.co.il/contact-us</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/contact" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/contact" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/contact" />
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/contact-us" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/contact-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/contact-us" />
   </url>
   <url>
-    <loc>https://mashkanta-bepijama.co.il/en/contact</loc>
+    <loc>https://mashkanta-bepijama.co.il/en/contact-us</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/contact" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/contact" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/contact" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/es/contact</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/contact" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/contact" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/contact" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/ru/contact</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/contact" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/contact" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/contact" />
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/contact-us" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/contact-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/contact-us" />
   </url>
   <url>
     <loc>https://mashkanta-bepijama.co.il/privacy</loc>
@@ -184,8 +80,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/privacy" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/privacy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/privacy" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/privacy" />
   </url>
   <url>
@@ -195,30 +89,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/privacy" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/privacy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/privacy" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/privacy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/privacy" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/es/privacy</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/privacy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/privacy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/privacy" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/privacy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/privacy" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/ru/privacy</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/privacy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/privacy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/privacy" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/privacy" />
   </url>
   <url>
@@ -228,8 +98,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/terms" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/terms" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/terms" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/terms" />
   </url>
   <url>
@@ -239,30 +107,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/terms" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/terms" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/terms" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/terms" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/terms" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/es/terms</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/terms" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/terms" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/terms" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/terms" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/terms" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/ru/terms</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/terms" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/terms" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/terms" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/terms" />
   </url>
   <url>
@@ -272,8 +116,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/accessibility" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/accessibility" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/accessibility" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/accessibility" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/accessibility" />
   </url>
   <url>
@@ -283,30 +125,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/accessibility" />
     <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/accessibility" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/accessibility" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/accessibility" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/accessibility" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/es/accessibility</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/accessibility" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/accessibility" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/accessibility" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/accessibility" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/accessibility" />
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/ru/accessibility</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/accessibility" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/accessibility" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mashkanta-bepijama.co.il/es/accessibility" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mashkanta-bepijama.co.il/ru/accessibility" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/accessibility" />
   </url>
 </urlset>

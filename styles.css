@@ -17045,6 +17045,388 @@ html[dir="rtl"] .zappy-lang-switcher-container {
   left: 12px;
 }
 
+
+  
+  html[dir="rtl"] .zappy-lang-switcher-container {
+    right: auto;
+    left: 8px;
+  }
+  
+  .lang-switcher-current {
+    padding: 6px;
+  }
+  
+  .lang-option {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  
+  /* FIX: Prevent lang-switcher-dropdown from extending past viewport in RTL mobile */
+  /* The dropdown was causing horizontal overflow with left: 0 in RTL */
+  html[dir="rtl"] .lang-switcher-dropdown {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+
+/* ===========================================
+   RTL MOBILE HORIZONTAL OVERFLOW FIX
+   Prevents left whitespace gap in RTL mobile
+   caused by elements extending past viewport
+   =========================================== */
+
+/* Prevent horizontal scroll on RTL pages */
+html[dir="rtl"],
+html[dir="rtl"] body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* Ensure carousel containers clip overflow to prevent horizontal scroll */
+.zappy-carousel-container,
+.zappy-carousel-wrapper,
+.benefits-section,
+.testimonials-section,
+[class*="carousel"] {
+  overflow-x: hidden !important;
+}
+
+/* Ensure lang-switcher parent clips its positioned children */
+.lang-switcher {
+  overflow: visible; /* Keep visible for dropdown to show */
+}
+
+/* ===========================================
+   MOBILE NAV BUTTON POSITIONING
+   Default (LTR): hamburger LEFT, phone RIGHT
+   RTL: hamburger RIGHT, phone LEFT (mirrored)
+   =========================================== */
+@media (max-width: 768px) {
+  /* DEFAULT positioning for mobile nav buttons */
+  /* This ensures hamburger LEFT, phone RIGHT for LTR pages */
+  .mobile-toggle {
+    position: absolute !important;
+    left: 15px !important;
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  
+  .phone-header-btn {
+    position: absolute !important;
+    right: 15px !important;
+    left: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  
+  /* Default mobile menu slides from LEFT */
+  .nav-menu {
+    left: 0 !important;
+    right: auto !important;
+  }
+  
+  /* RTL lang-switcher dropdown constraint */
+  html[dir="rtl"] .lang-switcher {
+    position: relative;
+  }
+  
+  html[dir="rtl"] .lang-switcher-dropdown {
+    left: auto !important;
+    right: 0 !important;
+    max-width: calc(100vw - 20px);
+  }
+  
+  /* ===========================================
+     RTL MOBILE NAV BUTTON POSITIONING
+     In RTL: hamburger RIGHT, phone LEFT (mirror of LTR)
+     =========================================== */
+  html[dir="rtl"] .mobile-toggle,
+  html[lang="he"] .mobile-toggle,
+  html[lang="ar"] .mobile-toggle {
+    left: auto !important;
+    right: 15px !important;
+  }
+  
+  html[dir="rtl"] .phone-header-btn,
+  html[lang="he"] .phone-header-btn,
+  html[lang="ar"] .phone-header-btn {
+    left: 15px !important;
+    right: auto !important;
+  }
+  
+  /* RTL mobile menu slides from RIGHT */
+  html[dir="rtl"] .nav-menu,
+  html[lang="he"] .nav-menu,
+  html[lang="ar"] .nav-menu {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+
+
+
+/* ============================================
+   DIRECTION OVERRIDE STYLES
+   Only set direction property, NOT text-align
+   This preserves centered elements
+   ============================================ */
+
+/* Base direction for LTR */
+html[dir="ltr"], html[dir="ltr"] body {
+  direction: ltr !important;
+}
+
+html[dir="ltr"] main,
+html[dir="ltr"] article,
+html[dir="ltr"] section,
+html[dir="ltr"] .content,
+html[dir="ltr"] .container,
+html[dir="ltr"] .wrapper {
+  direction: ltr !important;
+}
+
+/* ONLY apply text-align to legal page content that needs LTR alignment */
+html[dir="ltr"] .legal-content,
+html[dir="ltr"] .terms-content,
+html[dir="ltr"] .privacy-content,
+html[dir="ltr"] .legal-content p,
+html[dir="ltr"] .terms-content p,
+html[dir="ltr"] .privacy-content p,
+html[dir="ltr"] .legal-content li,
+html[dir="ltr"] .terms-content li,
+html[dir="ltr"] .privacy-content li {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Base direction for RTL */
+html[dir="rtl"], html[dir="rtl"] body {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] main,
+html[dir="rtl"] article,
+html[dir="rtl"] section,
+html[dir="rtl"] .content,
+html[dir="rtl"] .container,
+html[dir="rtl"] .wrapper {
+  direction: rtl !important;
+}
+
+/* ONLY apply text-align to legal page content that needs RTL alignment */
+html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* ============================================
+   NAVIGATION/HEADER DIRECTION FIXES
+   Ensures menu items stay near logo in both directions
+   Key: Use justify-content: flex-start to group items,
+   then only CTA gets auto margin to push to the end
+   ============================================ */
+
+/* LTR Navigation - Logo left, menu items next to logo, CTA on far right */
+html[dir="ltr"] header,
+html[dir="ltr"] nav,
+html[dir="ltr"] .navbar,
+html[dir="ltr"] .nav-container,
+html[dir="ltr"] .header-container {
+  direction: ltr !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important; /* Group items to the left, CTA's margin-left:auto will push it right */
+}
+
+html[dir="ltr"] header > *,
+html[dir="ltr"] nav > *,
+html[dir="ltr"] .navbar > *,
+html[dir="ltr"] .nav-container > *,
+html[dir="ltr"] .header-container > * {
+  direction: ltr !important;
+}
+
+/* Force nav/menu items to stay near logo in LTR - DESKTOP ONLY */
+/* Don't override mobile menu which should be vertical */
+@media (min-width: 768px) {
+  html[dir="ltr"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="ltr"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="ltr"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="ltr"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="ltr"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="ltr"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="ltr"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="ltr"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
+    direction: ltr !important;
+    flex-direction: row !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* MOBILE MENU - Force vertical layout on small screens */
+/* This overrides any inline styles that may have been persisted */
+@media (max-width: 767px) {
+  .nav-menu,
+  .nav-menu.active,
+  #navMenu,
+  #navMenu.active,
+  nav ul,
+  header ul {
+    flex-direction: column !important;
+  }
+}
+
+/* Individual nav links in LTR - ensure no auto margins */
+html[dir="ltr"] .nav-menu > a,
+html[dir="ltr"] .nav-menu > li,
+html[dir="ltr"] .nav-links > a,
+html[dir="ltr"] .nav-links > li,
+html[dir="ltr"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
+html[dir="ltr"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
+html[dir="ltr"] nav ul > li,
+html[dir="ltr"] header ul > li {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* In LTR: Logo should have no auto margins */
+html[dir="ltr"] .logo,
+html[dir="ltr"] .site-logo,
+html[dir="ltr"] .brand,
+html[dir="ltr"] .navbar-brand,
+html[dir="ltr"] .nav-brand,
+html[dir="ltr"] header a:first-child:has(img),
+html[dir="ltr"] nav a:first-child:has(img),
+html[dir="ltr"] header > a:first-child,
+html[dir="ltr"] nav > a:first-child {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
+/* This acts as fallback when lang-switcher is not present */
+html[dir="ltr"] header .btn:not(.lang-switcher ~ .btn),
+html[dir="ltr"] header .button:not(.lang-switcher ~ .button),
+html[dir="ltr"] header .cta:not(.lang-switcher ~ .cta),
+html[dir="ltr"] nav .btn:not(.lang-switcher ~ .btn),
+html[dir="ltr"] nav .button:not(.lang-switcher ~ .button),
+html[dir="ltr"] .navbar .btn:not(.lang-switcher ~ .btn) {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* CTA after lang-switcher should have no auto margin */
+html[dir="ltr"] .lang-switcher ~ .btn,
+html[dir="ltr"] .lang-switcher ~ .button,
+html[dir="ltr"] .lang-switcher ~ .cta,
+html[dir="ltr"] .lang-switcher ~ [class*="btn-"],
+html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
+html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container {
+  direction: rtl !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
+}
+
+/* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
+/* Don't override mobile menu which should be vertical */
+@media (min-width: 768px) {
+  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
+    direction: rtl !important;
+    flex-direction: row !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Individual nav links in RTL - ensure no auto margins */
+html[dir="rtl"] .nav-menu > a,
+html[dir="rtl"] .nav-menu > li,
+html[dir="rtl"] .nav-links > a,
+html[dir="rtl"] .nav-links > li,
+html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
+html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
+html[dir="rtl"] nav ul > li,
+html[dir="rtl"] header ul > li {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* In RTL: Logo should have no auto margins */
+html[dir="rtl"] .logo,
+html[dir="rtl"] .site-logo,
+html[dir="rtl"] .brand,
+html[dir="rtl"] .navbar-brand,
+html[dir="rtl"] .nav-brand,
+html[dir="rtl"] header a:first-child:has(img),
+html[dir="rtl"] nav a:first-child:has(img),
+html[dir="rtl"] header > a:first-child,
+html[dir="rtl"] nav > a:first-child {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
+/* This acts as fallback when lang-switcher is not present */
+html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
+html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
+html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
+html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+/* CTA after lang-switcher should have no auto margin */
+html[dir="rtl"] .lang-switcher ~ .btn,
+html[dir="rtl"] .lang-switcher ~ .button,
+html[dir="rtl"] .lang-switcher ~ .cta,
+html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Language Switcher Container - Fixed Position */
+.zappy-lang-switcher-container {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* RTL: Move to left side */
+html[dir="rtl"] .zappy-lang-switcher-container {
+  right: auto;
+  left: 12px;
+}
+
 /* Language Switcher Styles */
 .lang-switcher {
   position: relative;
