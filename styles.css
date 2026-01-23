@@ -214,8 +214,7 @@ section {
   gap: 2rem;
   list-style: none;
   margin-right: 0;
-  margin-left: auto;
-}
+  }
 
 .nav-menu a {
   color: var(--nav-color);
@@ -231,6 +230,8 @@ section {
 .nav-cta-container {
   display: flex;
   align-items: center;
+
+  margin-left: auto;
 }
 
 .nav-cta-item {
