@@ -1,613 +1,14 @@
-<!DOCTYPE html><html lang="he" dir="rtl"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="accessibility_page_title">הצהרת נגישות</title>
+    <meta name="robots" content="index, follow">
+    <title>הצהרת נגישות</title>
     <meta name="description" content="הצהרת הנגישות שלנו - מחויבותנו לנגישות דיגיטלית">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-/* Zappy Attribution Header Styles */
-.zappy-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
-  padding: 16px 10px;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
-  font-size: 16px;
-  color: #4a4a4a;
-  line-height: 21px;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 21px;
-  direction: ltr !important;
-  unicode-bidi: isolate;
-}
-
-    .zappy-header p {
-      margin: 0;
-      padding: 0;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 21px;
-      white-space: nowrap;
-      display: inline-block;
-      vertical-align: baseline;
-      margin-bottom: 0 !important;
-      direction: ltr !important;
-    }
-
-.zappy-header .zappy-link {
-  font-weight: 700;
-  color: #4a4a4a;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.zappy-header .zappy-link:hover {
-  opacity: 0.7;
-}</style>
-    <style id="zappy-legal-page-styles">
-    /* Legal Page Original Styles */
+    <meta name="keywords" content="">
     
-        .legal-page-wrapper {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-            direction: rtl;
-        }
-        .legal-page-wrapper .legal-container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .legal-page-wrapper h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #27ae60;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        .legal-page-wrapper h2 {
-            color: #34495e;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        .legal-page-wrapper .last-updated {
-            background: #ecf0f1;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        .legal-page-wrapper .contact-info {
-            background: #e8f6f0;
-            border: 1px solid #27ae60;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .compliance-level {
-            background: #d5e8d4;
-            border: 2px solid #27ae60;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        .legal-page-wrapper ul {
-            padding-right: 20px;
-        }
-        .legal-page-wrapper li {
-            margin-bottom: 8px;
-        }
-        .legal-page-wrapper .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #27ae60;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .legal-page-wrapper .back-link:hover {
-            text-decoration: underline;
-        }
-        .wcag-info {
-            background: #f8f9fa;
-            border-right: 4px solid #27ae60;
-            padding: 15px;
-            margin: 20px 0;
-        }
-    
-    </style>
-    <!-- Cookie Consent -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
-    <!-- Mickidum Accessibility Toolbar -->
-    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
-
-    <!-- Iconify for cross-platform flag icons -->
-    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
-          <style id="zappy-cta-mobile-style">
-            /* Hide CTA list item on desktop (tablets and up) */
-            @media (min-width: 769px) {
-              .nav-cta-item-mobile {
-                display: none !important;
-              }
-            }
-            /* Show CTA list item on mobile */
-            @media (max-width: 768px) {
-              .nav-cta-item-mobile {
-                display: list-item !important;
-              }
-            }
-          </style>
-        
-          <style id="zappy-nested-menu-style">
-            /* Desktop only: vertically center nav items */
-            @media (min-width: 769px) {
-              .nav-menu,
-              #navMenu {
-                align-items: center !important;
-              }
-            }
-            
-            /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
-            .nav-menu > li > .menu-group-title,
-            #navMenu > li > .menu-group-title {
-              display: inline-block !important;
-              padding: 0.5rem 1rem !important;
-              color: var(--nav-color) !important;
-              font-weight: 500 !important;
-              line-height: 1.7 !important;
-              cursor: default !important;
-              user-select: none !important;
-              vertical-align: middle !important;
-              text-decoration: none !important;
-              margin: 0 !important;
-              transition: color 0.3s ease !important;
-            }
-            
-            .nav-menu > li > .menu-group-title:hover,
-            #navMenu > li > .menu-group-title:hover {
-              color: var(--nav-hover-color) !important;
-            }
-            
-            /* Desktop: show submenu on Menu Group hover */
-            li:has(.menu-group-title):hover > .sub-menu {
-              opacity: 1 !important;
-              visibility: visible !important;
-              transform: translateY(0) !important;
-              pointer-events: auto !important; /* Enable interaction when hovering */
-            }
-            
-            /* Hide menu items marked as hidden (overrides hover states) */
-            .zappy-hidden-menu-item,
-            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
-              display: none !important;
-              opacity: 0 !important;
-              visibility: hidden !important;
-              pointer-events: none !important;
-            }
-            
-            /* Keep submenu visible when hovering over the submenu itself */
-            .sub-menu:hover {
-              opacity: 1 !important;
-              visibility: visible !important;
-              pointer-events: auto !important;
-            }
-            
-            /* Nested dropdown menu styles - using more specific selectors */
-            .nav-menu .sub-menu,
-            nav .sub-menu,
-            .navbar .sub-menu {
-              display: block !important; /* Ensure submenu is in the DOM */
-              position: absolute !important;
-              top: 100%;
-              left: 0;
-              right: auto;
-              min-width: 200px;
-              background: white;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-              border-radius: 8px;
-              padding: 8px 0;
-              margin-top: 0px; /* Remove gap to prevent hover loss */
-              opacity: 0 !important;
-              visibility: hidden !important;
-              transform: translateY(-10px);
-              transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-              z-index: 1000;
-              list-style: none;
-              pointer-events: none; /* Prevent interaction when hidden */
-            }
-            
-            /* RTL (Hebrew/Arabic) submenu positioning - align to right instead of left */
-            [dir="rtl"] .nav-menu .sub-menu,
-            [dir="rtl"] nav .sub-menu,
-            [dir="rtl"] .navbar .sub-menu,
-            html[lang="he"] .nav-menu .sub-menu,
-            html[lang="he"] nav .sub-menu,
-            html[lang="he"] .navbar .sub-menu,
-            html[lang="ar"] .nav-menu .sub-menu,
-            html[lang="ar"] nav .sub-menu,
-            html[lang="ar"] .navbar .sub-menu {
-              left: auto;
-              right: 0;
-            }
-            
-            /* Show submenu on parent hover - more specific selectors */
-            .nav-menu li:hover > .sub-menu,
-            nav li:hover > .sub-menu,
-            .navbar li:hover > .sub-menu {
-              opacity: 1 !important;
-              visibility: visible !important;
-              transform: translateY(0) !important;
-              pointer-events: auto !important; /* Enable interaction when visible */
-            }
-            
-            /* Parent item must be relatively positioned */
-            .nav-menu li:has(.sub-menu),
-            nav li:has(.sub-menu),
-            .navbar li:has(.sub-menu) {
-              position: relative;
-            }
-            
-            /* Style for submenu items */
-            .sub-menu li {
-              list-style: none;
-              margin: 0;
-              padding: 0;
-            }
-            
-            .sub-menu a,
-            .sub-menu .menu-group-title {
-              display: block !important;
-              padding: 10px 12px !important;
-              color: #333 !important;
-              font-weight: 600 !important;
-              text-decoration: none;
-              transition: background-color 0.2s;
-              white-space: nowrap;
-              cursor: default;
-            }
-            
-            .sub-menu a:hover {
-              background-color: #f5f5f5;
-            }
-            
-            /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
-            .nav-menu > li > .menu-group-title,
-            #navMenu > li > .menu-group-title {
-              display: inline-block !important;
-              padding: 0.5rem 1rem !important;
-              color: var(--nav-color) !important;
-              font-weight: 500 !important;
-              line-height: 1.7 !important;
-              cursor: default !important;
-              user-select: none !important;
-              vertical-align: middle !important;
-              text-decoration: none !important;
-              margin: 0 !important;
-              transition: color 0.3s ease !important;
-            }
-            
-            .nav-menu > li > .menu-group-title:hover,
-            #navMenu > li > .menu-group-title:hover {
-              color: var(--nav-hover-color) !important;
-              background-color: transparent !important;
-            }
-            
-            /* On mobile, show nested menus as expandable accordion */
-            @media (max-width: 768px) {
-              /* Mobile submenu styling */
-              .nav-menu .sub-menu,
-              nav .sub-menu,
-              .navbar .sub-menu {
-                position: static !important;
-                transform: none !important;
-                box-shadow: none !important;
-                background: transparent !important;
-                margin-top: 0 !important;
-                max-height: 0;
-                overflow: hidden;
-                opacity: 0;
-                visibility: hidden;
-                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
-                padding: 0 !important;
-                border-radius: 0 !important;
-              }
-              
-              /* Expanded state */
-              .sub-menu.mobile-expanded {
-                max-height: 500px !important;
-                opacity: 1 !important;
-                visibility: visible !important;
-                padding: 8px 0 8px 16px !important;
-              }
-              
-              /* RTL padding adjustment */
-              [dir="rtl"] .sub-menu.mobile-expanded,
-              html[lang="he"] .sub-menu.mobile-expanded,
-              html[lang="ar"] .sub-menu.mobile-expanded {
-                padding: 8px 16px 8px 0 !important;
-              }
-              
-              /* Disable hover behavior on mobile */
-              .nav-menu li:hover > .sub-menu,
-              nav li:hover > .sub-menu,
-              .navbar li:hover > .sub-menu {
-                opacity: 0;
-                visibility: hidden;
-                pointer-events: none;
-              }
-              
-              /* Enable visibility for expanded submenus */
-              .nav-menu li > .sub-menu.mobile-expanded,
-              nav li > .sub-menu.mobile-expanded,
-              .navbar li > .sub-menu.mobile-expanded {
-                opacity: 1 !important;
-                visibility: visible !important;
-                pointer-events: auto !important;
-              }
-              
-              .sub-menu a {
-                padding: 10px 0 !important;
-                display: block !important;
-                font-size: 14px !important;
-              }
-              
-              .sub-menu a:hover {
-                background-color: transparent !important;
-              }
-              
-              /* Parent item wrapper - flex layout for link + toggle */
-              .nav-menu li:has(.sub-menu),
-              nav li:has(.sub-menu),
-              .navbar li:has(.sub-menu) {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                align-items: center !important;
-              }
-              
-              /* Parent link - takes most space, allows navigation */
-              .nav-menu li:has(.sub-menu) > a,
-              nav li:has(.sub-menu) > a,
-              .navbar li:has(.sub-menu) > a,
-              .nav-menu > li > .menu-group-title,
-              #navMenu > li > .menu-group-title {
-                flex: 1 !important;
-              }
-              
-              /* Toggle arrow button - separate clickable area */
-              .mobile-submenu-toggle {
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                width: 44px !important;
-                height: 44px !important;
-                background: transparent !important;
-                border: none !important;
-                cursor: pointer !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                flex-shrink: 0 !important;
-                -webkit-tap-highlight-color: transparent;
-              }
-              
-              .mobile-submenu-toggle::after {
-                content: '' !important;
-                display: block !important;
-                width: 0 !important;
-                height: 0 !important;
-                border-left: 6px solid transparent !important;
-                border-right: 6px solid transparent !important;
-                border-top: 7px solid currentColor !important;
-                transition: transform 0.3s ease !important;
-              }
-              
-              /* Rotate arrow when expanded */
-              .mobile-submenu-toggle.expanded::after {
-                transform: rotate(180deg) !important;
-              }
-              
-              /* Submenu takes full width below parent */
-              .nav-menu li:has(.sub-menu) > .sub-menu,
-              nav li:has(.sub-menu) > .sub-menu,
-              .navbar li:has(.sub-menu) > .sub-menu {
-                flex-basis: 100% !important;
-                width: 100% !important;
-              }
-            }
-            
-            /* Hide toggle button on desktop */
-            @media (min-width: 769px) {
-              .mobile-submenu-toggle {
-                display: none !important;
-              }
-            }
-          </style>
-          
-          <script id="zappy-mobile-menu-script">
-            // Mobile menu toggle for nested submenus (including Menu Groups)
-            // Uses separate toggle button - link navigates, arrow toggles submenu
-            (function() {
-              function initMobileMenuToggles() {
-                // Only run on mobile
-                if (window.innerWidth > 768) {
-                  // Remove any toggle buttons on desktop
-                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
-                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
-                    menu.classList.remove('mobile-expanded');
-                  });
-                  console.log('[MOBILE MENU] Desktop mode - cleanup done');
-                  return;
-                }
-                
-                console.log('[MOBILE MENU] Initializing mobile menu toggles...');
-                
-                // Find all parent menu items (items with .sub-menu)
-                const menuItemsWithSubmenus = document.querySelectorAll(
-                  '.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)'
-                );
-                
-                console.log('[MOBILE MENU] Found', menuItemsWithSubmenus.length, 'items with submenus');
-                
-                menuItemsWithSubmenus.forEach(function(li) {
-                  // Skip if already has toggle button
-                  if (li.querySelector('.mobile-submenu-toggle')) {
-                    return;
-                  }
-                  
-                  const submenu = li.querySelector('.sub-menu');
-                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
-                  
-                  if (!submenu || !parentLink) return;
-                  
-                  // Create toggle button
-                  const toggleBtn = document.createElement('button');
-                  toggleBtn.className = 'mobile-submenu-toggle';
-                  toggleBtn.setAttribute('aria-label', 'Toggle submenu');
-                  toggleBtn.setAttribute('type', 'button');
-                  
-                  // Insert toggle button after the link
-                  parentLink.insertAdjacentElement('afterend', toggleBtn);
-                  
-                  console.log('[MOBILE MENU] Created toggle button for:', parentLink.textContent?.trim());
-                  
-                  // Handle toggle button click - only toggles submenu
-                  toggleBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    const isExpanded = submenu.classList.contains('mobile-expanded');
-                    
-                    // Close all other submenus first
-                    document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
-                      if (menu !== submenu) {
-                        menu.classList.remove('mobile-expanded');
-                        const otherToggle = menu.parentElement.querySelector('.mobile-submenu-toggle');
-                        if (otherToggle) otherToggle.classList.remove('expanded');
-                      }
-                    });
-                    
-                    // Toggle this submenu
-                    submenu.classList.toggle('mobile-expanded');
-                    toggleBtn.classList.toggle('expanded');
-                    
-                    console.log('[MOBILE MENU] Toggled submenu:', !isExpanded ? 'expanded' : 'collapsed');
-                  });
-                  
-                  // Parent link navigates normally - no preventDefault
-                });
-              }
-              
-              // Initialize on DOM load
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initMobileMenuToggles);
-              } else {
-                initMobileMenuToggles();
-              }
-              
-              // Re-initialize on window resize (but use debounce to avoid too many calls)
-              let resizeTimer;
-              window.addEventListener('resize', function() {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(initMobileMenuToggles, 250);
-              });
-              
-              // Also initialize when mobile menu becomes visible
-              // This handles cases where the mobile menu is hidden initially
-              const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                    const target = mutation.target;
-                    if (target.classList.contains('active') || target.style.display !== 'none') {
-                      console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
-                      setTimeout(initMobileMenuToggles, 100);
-                    }
-                  }
-                });
-              });
-              
-              // Observe mobile menu containers
-              const mobileMenus = document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu');
-              mobileMenus.forEach(function(menu) {
-                observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
-              });
-            })();
-          </script>
-        <style>
-      /* Dropdown sub-menu styles (AI-generated page) */
-      .nav-menu li:has(.sub-menu),
-      nav li:has(.sub-menu),
-      .navbar li:has(.sub-menu) {
-        position: relative;
-      }
-      .nav-menu .sub-menu,
-      nav .sub-menu,
-      .navbar .sub-menu {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 220px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        padding: 8px 0;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
-        list-style: none;
-        pointer-events: none;
-      }
-      .nav-menu li:hover > .sub-menu,
-      nav li:hover > .sub-menu,
-      .navbar li:hover > .sub-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
-      .sub-menu li {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .sub-menu a {
-        display: block;
-        padding: 10px 16px;
-        color: #333;
-        font-weight: 500;
-        text-decoration: none;
-        white-space: nowrap;
-        transition: background-color 0.2s;
-      }
-      .sub-menu a:hover {
-        background-color: #f5f5f5;
-      }
-      /* RTL dropdown positioning */
-      [dir="rtl"] .sub-menu,
-      html[lang="he"] .sub-menu,
-      html[lang="ar"] .sub-menu {
-        left: auto;
-        right: 0;
-      }
-    </style><!-- Zappy Analytics -->
+    <!-- Zappy Analytics -->
 <script>
 (function() {
   'use strict';
@@ -809,13 +210,667 @@
 })();
 </script>
 <!-- End Zappy Analytics -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles.css">
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: #333 !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: 44px !important; background: transparent !important; border: none !important; cursor: pointer !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
 </head>
+<body>
+<!DOCTYPE ><html lang="he" dir="rtl"><head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <title data-i18n="accessibility_page_title">הצהרת נגישות</title>
+    <meta name="description" content="הצהרת הנגישות שלנו - מחויבותנו לנגישות דיגיטלית" data-i18n-content="accessibility_meta_description"></meta>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
+    <link rel="stylesheet" href="/styles.css"></link>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
+    <style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+      direction: ltr !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <style id="zappy-legal-page-styles">
+    /* Legal Page Original Styles */
+    
+        .legal-page-wrapper {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            direction: rtl;
+        }
+        .legal-page-wrapper .legal-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .legal-page-wrapper h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .legal-page-wrapper h2 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .legal-page-wrapper .last-updated {
+            background: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .legal-page-wrapper .contact-info {
+            background: #e8f6f0;
+            border: 1px solid #27ae60;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .compliance-level {
+            background: #d5e8d4;
+            border: 2px solid #27ae60;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .legal-page-wrapper ul {
+            padding-right: 20px;
+        }
+        .legal-page-wrapper li {
+            margin-bottom: 8px;
+        }
+        .legal-page-wrapper .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #27ae60;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .legal-page-wrapper .back-link:hover {
+            text-decoration: underline;
+        }
+        .wcag-info {
+            background: #f8f9fa;
+            border-right: 4px solid #27ae60;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    
+    </style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css"></link>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+    <!-- Iconify for cross-platform flag icons -->
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+          <style id="zappy-cta-mobile-style">
+            /* Hide CTA list item on desktop (tablets and up) */
+            @media (min-width: 769px) {
+              .nav-cta-item-mobile {
+                display: none !important;
+              }
+            }
+            /* Show CTA list item on mobile */
+            @media (max-width: 768px) {
+              .nav-cta-item-mobile {
+                display: list-item !important;
+              }
+            }
+          </style>
+        
+          <style id="zappy-nested-menu-style">
+            /* Desktop only: vertically center nav items */
+            @media (min-width: 769px) {
+              .nav-menu,
+              #navMenu {
+                align-items: center !important;
+              }
+            }
+            
+            /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
+            .nav-menu &gt; li &gt; .menu-group-title,
+            #navMenu &gt; li &gt; .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu &gt; li &gt; .menu-group-title:hover,
+            #navMenu &gt; li &gt; .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+            }
+            
+            /* Desktop: show submenu on Menu Group hover */
+            li:has(.menu-group-title):hover &gt; .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when hovering */
+            }
+            
+            /* Hide menu items marked as hidden (overrides hover states) */
+            .zappy-hidden-menu-item,
+            li:has(.menu-group-title):hover &gt; .sub-menu .zappy-hidden-menu-item {
+              display: none !important;
+              opacity: 0 !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+            
+            /* Keep submenu visible when hovering over the submenu itself */
+            .sub-menu:hover {
+              opacity: 1 !important;
+              visibility: visible !important;
+              pointer-events: auto !important;
+            }
+            
+            /* Nested dropdown menu styles - using more specific selectors */
+            .nav-menu .sub-menu,
+            nav .sub-menu,
+            .navbar .sub-menu {
+              display: block !important; /* Ensure submenu is in the DOM */
+              position: absolute !important;
+              top: 100%;
+              left: 0;
+              right: auto;
+              min-width: 200px;
+              background: white;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+              border-radius: 8px;
+              padding: 8px 0;
+              margin-top: 0px; /* Remove gap to prevent hover loss */
+              opacity: 0 !important;
+              visibility: hidden !important;
+              transform: translateY(-10px);
+              transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+              z-index: 1000;
+              list-style: none;
+              pointer-events: none; /* Prevent interaction when hidden */
+            }
+            
+            /* RTL (Hebrew/Arabic) submenu positioning - align to right instead of left */
+            [dir="rtl"] .nav-menu .sub-menu,
+            [dir="rtl"] nav .sub-menu,
+            [dir="rtl"] .navbar .sub-menu,
+            html[lang="he"] .nav-menu .sub-menu,
+            html[lang="he"] nav .sub-menu,
+            html[lang="he"] .navbar .sub-menu,
+            html[lang="ar"] .nav-menu .sub-menu,
+            html[lang="ar"] nav .sub-menu,
+            html[lang="ar"] .navbar .sub-menu {
+              left: auto;
+              right: 0;
+            }
+            
+            /* Show submenu on parent hover - more specific selectors */
+            .nav-menu li:hover &gt; .sub-menu,
+            nav li:hover &gt; .sub-menu,
+            .navbar li:hover &gt; .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when visible */
+            }
+            
+            /* Parent item must be relatively positioned */
+            .nav-menu li:has(.sub-menu),
+            nav li:has(.sub-menu),
+            .navbar li:has(.sub-menu) {
+              position: relative;
+            }
+            
+            /* Style for submenu items */
+            .sub-menu li {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+            }
+            
+            .sub-menu a,
+            .sub-menu .menu-group-title {
+              display: block !important;
+              padding: 10px 12px !important;
+              color: #333 !important;
+              font-weight: 600 !important;
+              text-decoration: none;
+              transition: background-color 0.2s;
+              white-space: nowrap;
+              cursor: default;
+            }
+            
+            .sub-menu a:hover {
+              background-color: #f5f5f5;
+            }
+            
+            /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
+            .nav-menu &gt; li &gt; .menu-group-title,
+            #navMenu &gt; li &gt; .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu &gt; li &gt; .menu-group-title:hover,
+            #navMenu &gt; li &gt; .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+              background-color: transparent !important;
+            }
+            
+            /* On mobile, show nested menus as expandable accordion */
+            @media (max-width: 768px) {
+              /* Mobile submenu styling */
+              .nav-menu .sub-menu,
+              nav .sub-menu,
+              .navbar .sub-menu {
+                position: static !important;
+                transform: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                margin-top: 0 !important;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
+                padding: 0 !important;
+                border-radius: 0 !important;
+              }
+              
+              /* Expanded state */
+              .sub-menu.mobile-expanded {
+                max-height: 500px !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                padding: 8px 0 8px 16px !important;
+              }
+              
+              /* RTL padding adjustment */
+              [dir="rtl"] .sub-menu.mobile-expanded,
+              html[lang="he"] .sub-menu.mobile-expanded,
+              html[lang="ar"] .sub-menu.mobile-expanded {
+                padding: 8px 16px 8px 0 !important;
+              }
+              
+              /* Disable hover behavior on mobile */
+              .nav-menu li:hover &gt; .sub-menu,
+              nav li:hover &gt; .sub-menu,
+              .navbar li:hover &gt; .sub-menu {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+              }
+              
+              /* Enable visibility for expanded submenus */
+              .nav-menu li &gt; .sub-menu.mobile-expanded,
+              nav li &gt; .sub-menu.mobile-expanded,
+              .navbar li &gt; .sub-menu.mobile-expanded {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+              }
+              
+              .sub-menu a {
+                padding: 10px 0 !important;
+                display: block !important;
+                font-size: 14px !important;
+              }
+              
+              .sub-menu a:hover {
+                background-color: transparent !important;
+              }
+              
+              /* Parent item wrapper - flex layout for link + toggle */
+              .nav-menu li:has(.sub-menu),
+              nav li:has(.sub-menu),
+              .navbar li:has(.sub-menu) {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+              }
+              
+              /* Parent link - takes most space, allows navigation */
+              .nav-menu li:has(.sub-menu) &gt; a,
+              nav li:has(.sub-menu) &gt; a,
+              .navbar li:has(.sub-menu) &gt; a,
+              .nav-menu &gt; li &gt; .menu-group-title,
+              #navMenu &gt; li &gt; .menu-group-title {
+                flex: 1 !important;
+              }
+              
+              /* Toggle arrow button - separate clickable area */
+              .mobile-submenu-toggle {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: transparent !important;
+                border: none !important;
+                cursor: pointer !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                flex-shrink: 0 !important;
+                -webkit-tap-highlight-color: transparent;
+              }
+              
+              .mobile-submenu-toggle::after {
+                content: '' !important;
+                display: block !important;
+                width: 0 !important;
+                height: 0 !important;
+                border-left: 6px solid transparent !important;
+                border-right: 6px solid transparent !important;
+                border-top: 7px solid currentColor !important;
+                transition: transform 0.3s ease !important;
+              }
+              
+              /* Rotate arrow when expanded */
+              .mobile-submenu-toggle.expanded::after {
+                transform: rotate(180deg) !important;
+              }
+              
+              /* Submenu takes full width below parent */
+              .nav-menu li:has(.sub-menu) &gt; .sub-menu,
+              nav li:has(.sub-menu) &gt; .sub-menu,
+              .navbar li:has(.sub-menu) &gt; .sub-menu {
+                flex-basis: 100% !important;
+                width: 100% !important;
+              }
+            }
+            
+            /* Hide toggle button on desktop */
+            @media (min-width: 769px) {
+              .mobile-submenu-toggle {
+                display: none !important;
+              }
+            }
+          </style>
+          
+          <script id="zappy-mobile-menu-script">
+            // Mobile menu toggle for nested submenus (including Menu Groups)
+            // Uses separate toggle button - link navigates, arrow toggles submenu
+            (function() {
+              function initMobileMenuToggles() {
+                // Only run on mobile
+                if (window.innerWidth &gt; 768) {
+                  // Remove any toggle buttons on desktop
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn =&gt; btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu =&gt; {
+                    menu.classList.remove('mobile-expanded');
+                  });
+                  console.log('[MOBILE MENU] Desktop mode - cleanup done');
+                  return;
+                }
+                
+                console.log('[MOBILE MENU] Initializing mobile menu toggles...');
+                
+                // Find all parent menu items (items with .sub-menu)
+                const menuItemsWithSubmenus = document.querySelectorAll(
+                  '.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)'
+                );
+                
+                console.log('[MOBILE MENU] Found', menuItemsWithSubmenus.length, 'items with submenus');
+                
+                menuItemsWithSubmenus.forEach(function(li) {
+                  // Skip if already has toggle button
+                  if (li.querySelector('.mobile-submenu-toggle')) {
+                    return;
+                  }
+                  
+                  const submenu = li.querySelector('.sub-menu');
+                  const parentLink = li.querySelector(':scope &gt; a') || li.querySelector(':scope &gt; .menu-group-title');
+                  
+                  if (!submenu || !parentLink) return;
+                  
+                  // Create toggle button
+                  const toggleBtn = document.createElement('button');
+                  toggleBtn.className = 'mobile-submenu-toggle';
+                  toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+                  toggleBtn.setAttribute('type', 'button');
+                  
+                  // Insert toggle button after the link
+                  parentLink.insertAdjacentElement('afterend', toggleBtn);
+                  
+                  console.log('[MOBILE MENU] Created toggle button for:', parentLink.textContent?.trim());
+                  
+                  // Handle toggle button click - only toggles submenu
+                  toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isExpanded = submenu.classList.contains('mobile-expanded');
+                    
+                    // Close all other submenus first
+                    document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+                      if (menu !== submenu) {
+                        menu.classList.remove('mobile-expanded');
+                        const otherToggle = menu.parentElement.querySelector('.mobile-submenu-toggle');
+                        if (otherToggle) otherToggle.classList.remove('expanded');
+                      }
+                    });
+                    
+                    // Toggle this submenu
+                    submenu.classList.toggle('mobile-expanded');
+                    toggleBtn.classList.toggle('expanded');
+                    
+                    console.log('[MOBILE MENU] Toggled submenu:', !isExpanded ? 'expanded' : 'collapsed');
+                  });
+                  
+                  // Parent link navigates normally - no preventDefault
+                });
+              }
+              
+              // Initialize on DOM load
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileMenuToggles);
+              } else {
+                initMobileMenuToggles();
+              }
+              
+              // Re-initialize on window resize (but use debounce to avoid too many calls)
+              let resizeTimer;
+              window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(initMobileMenuToggles, 250);
+              });
+              
+              // Also initialize when mobile menu becomes visible
+              // This handles cases where the mobile menu is hidden initially
+              const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                  if (mutation.type === 'attributes' &amp;&amp; mutation.attributeName === 'class') {
+                    const target = mutation.target;
+                    if (target.classList.contains('active') || target.style.display !== 'none') {
+                      console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
+                      setTimeout(initMobileMenuToggles, 100);
+                    }
+                  }
+                });
+              });
+              
+              // Observe mobile menu containers
+              const mobileMenus = document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu');
+              mobileMenus.forEach(function(menu) {
+                observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+              });
+            })();
+          </script>
+        <style>
+      /* Dropdown sub-menu styles (AI-generated page) */
+      .nav-menu li:has(.sub-menu),
+      nav li:has(.sub-menu),
+      .navbar li:has(.sub-menu) {
+        position: relative;
+      }
+      .nav-menu .sub-menu,
+      nav .sub-menu,
+      .navbar .sub-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        padding: 8px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        list-style: none;
+        pointer-events: none;
+      }
+      .nav-menu li:hover &gt; .sub-menu,
+      nav li:hover &gt; .sub-menu,
+      .navbar li:hover &gt; .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .sub-menu li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .sub-menu a {
+        display: block;
+        padding: 10px 16px;
+        color: #333;
+        font-weight: 500;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background-color 0.2s;
+      }
+      .sub-menu a:hover {
+        background-color: #f5f5f5;
+      }
+      /* RTL dropdown positioning */
+      [dir="rtl"] .sub-menu,
+      html[lang="he"] .sub-menu,
+      html[lang="ar"] .sub-menu {
+        left: auto;
+        right: 0;
+      }
+    </style></head>
 <body>
     <nav class="navbar" id="navbar">
     <div class="container nav-container">
       <div class="nav-brand">
         <a href="/" class="logo-link">
-          <img src="/assets/logo.webp" alt="אריאל אחון ייעוץ משכנתאות ופיננסיים - משכנתא בפיג'מה" class="logo" data-i18n-alt="accessibility_alt_54">
+          <img src="/assets/logo.webp" alt="אריאל אחון ייעוץ משכנתאות ופיננסיים - משכנתא בפיג'מה" class="logo" data-i18n-alt="accessibility_alt_54"></img>
           <span class="brand-tagline" data-i18n="new_span_97">משכנתא בפיג'מה</span>
         </a>
       </div>
@@ -835,7 +890,7 @@
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/services" data-i18n="accessibility_nav_50">שירותים</a></li><li><a href="/about" data-i18n="accessibility_nav_51">אודות</a></li><li class="nav-cta-item-mobile"><a href="/contact-us" data-original-href="/contact" style="background-color: #f59e0b !important; border-color: #f59e0b !important; color: #ffffff !important" data-i18n="accessibility_nav_52">צור קשר</a></li><li><a href="/mashkanta-bepijama-podcast" class="nav-link" data-i18n="new_a_99">פודקאסט</a></li><li><a href="/articles" class="nav-link" data-i18n="new_a_169">מאמרים</a><ul class="sub-menu"><li><a href="/articles/mortgage-process" class="nav-link" data-i18n="new_a_171">תהליך המשכנתא</a></li><li><a href="/articles/refinancing" class="nav-link" data-i18n="new_a_173">מיחזור משכנתא</a></li><li><a href="/articles/loan-consolidation" class="nav-link" data-i18n="new_a_175">איחוד הלוואות</a></li><li><a href="/articles/mechir-lamishtaken" class="nav-link" data-i18n="new_a_177">מחיר למשתכן</a></li><li><a href="/articles/common-mortgage-mistakes" class="nav-link" data-i18n="new_a_340">טעויות במשכנתא</a></li><li><a href="/articles/mortgage-tracks" class="nav-link" data-i18n="new_a_395">מסלולי משכנתא</a></li><li><a href="/articles/housing-improvers" class="nav-link" data-i18n="new_a_461">משכנתא למשפרי דיור</a></li><li><a href="/articles/investment-mortgage" class="nav-link" data-i18n="new_a_530">משכנתא להשקעה</a></li><li><a href="/articles/first-apartment-mortgage" class="nav-link" data-i18n="new_a_593">משכנתא לדירה ראשונה</a></li><li><a href="/articles/mortgage-insurance" class="nav-link" data-i18n="new_h3_630">ביטוח משכנתא</a></li><li><a href="/articles/self-construction-mortgage" class="nav-link" data-i18n="new_a_681">משכנתא לבנייה עצמית</a></li><li><a href="/articles/mortgage-ancillary-costs" class="nav-link" data-i18n="new_a_732">הוצאות נלוות</a></li><li><a href="/articles/reverse-mortgage" class="nav-link" data-i18n="new_a_779">משכנתא הפוכה</a></li><li><a href="/articles/self-employed-mortgage" class="nav-link" data-i18n="new_a_829">משכנתא לעצמאיים</a></li><li><a href="/articles/mortgage-porting" class="nav-link" data-i18n="new_a_878">גרירת משכנתא</a></li><li><a href="/articles/private-consulting-benefits" class="nav-link" data-i18n="new_a_939">ייעוץ משכנתא פרטי</a></li><li><a href="/articles/mortgage-pre-approval" class="nav-link" data-i18n="new_h3_927">אישור עקרוני</a></li><li><a href="/articles/construction-input-index" class="nav-link" data-i18n="new_h3_766">מדד תשומות הבנייה</a></li><li><a href="/articles/mortgage-equity" class="nav-link" data-i18n="new_a_1240">הון עצמי</a></li><li><a href="/articles/smart-mortgage-mix" class="nav-link" data-i18n="new_h3_628">בניית תמהיל משכנתא</a></li><li><a href="/articles/amortization-schedules" class="nav-link" data-i18n="new_a_1323">לוחות סילוקין</a></li></ul></li><li><a href="/blog" class="nav-link" data-i18n="new_a_1016">בלוג</a><ul class="sub-menu"><li><a href="/blog/beginners-guide" class="nav-link" data-i18n="new_a_1017">למתחילים</a></li><li><a href="/blog/first-apartment" class="nav-link" data-i18n="new_a_1018">דירה ראשונה</a></li><li><a href="/blog/recycling" class="nav-link" data-i18n="new_a_1019">מיחזור</a></li></ul></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">בית</a></li><li><a href="/services" data-i18n="accessibility_nav_50">שירותים</a></li><li><a href="/about" data-i18n="accessibility_nav_51">אודות</a></li><li class="nav-cta-item-mobile"><a href="/contact-us" data-original-href="/contact" style="background-color: #f59e0b !important; border-color: #f59e0b !important; color: #ffffff !important" data-i18n="accessibility_nav_52">צור קשר</a></li><li><a href="/mashkanta-bepijama-podcast" class="nav-link" data-i18n="new_a_99">פודקאסט</a></li><li><a href="/articles" class="nav-link" data-i18n="new_a_169">מאמרים</a><ul class="sub-menu"><li><a href="/articles/mortgage-process" class="nav-link" data-i18n="new_a_171">תהליך המשכנתא</a></li><li><a href="/articles/refinancing" class="nav-link" data-i18n="new_a_173">מיחזור משכנתא</a></li><li><a href="/articles/loan-consolidation" class="nav-link" data-i18n="new_a_175">איחוד הלוואות</a></li><li><a href="/articles/mechir-lamishtaken" class="nav-link" data-i18n="new_a_177">מחיר למשתכן</a></li><li><a href="/articles/common-mortgage-mistakes" class="nav-link" data-i18n="new_a_340">טעויות במשכנתא</a></li><li><a href="/articles/mortgage-tracks" class="nav-link" data-i18n="new_a_395">מסלולי משכנתא</a></li><li><a href="/articles/housing-improvers" class="nav-link" data-i18n="new_a_461">משכנתא למשפרי דיור</a></li><li><a href="/articles/investment-mortgage" class="nav-link" data-i18n="new_a_530">משכנתא להשקעה</a></li><li><a href="/articles/first-apartment-mortgage" class="nav-link" data-i18n="new_a_593">משכנתא לדירה ראשונה</a></li><li><a href="/articles/mortgage-insurance" class="nav-link" data-i18n="new_h3_630">ביטוח משכנתא</a></li><li><a href="/articles/self-construction-mortgage" class="nav-link" data-i18n="new_a_681">משכנתא לבנייה עצמית</a></li><li><a href="/articles/mortgage-ancillary-costs" class="nav-link" data-i18n="new_a_732">הוצאות נלוות</a></li><li><a href="/articles/reverse-mortgage" class="nav-link" data-i18n="new_a_779">משכנתא הפוכה</a></li><li><a href="/articles/self-employed-mortgage" class="nav-link" data-i18n="new_a_829">משכנתא לעצמאיים</a></li><li><a href="/articles/mortgage-porting" class="nav-link" data-i18n="new_a_878">גרירת משכנתא</a></li><li><a href="/articles/private-consulting-benefits" class="nav-link" data-i18n="new_a_939">ייעוץ משכנתא פרטי</a></li><li><a href="/articles/mortgage-pre-approval" class="nav-link" data-i18n="new_h3_927">אישור עקרוני</a></li><li><a href="/articles/construction-input-index" class="nav-link" data-i18n="new_h3_766">מדד תשומות הבנייה</a></li><li><a href="/articles/mortgage-equity" class="nav-link" data-i18n="new_a_1240">הון עצמי</a></li><li><a href="/articles/smart-mortgage-mix" class="nav-link" data-i18n="new_h3_628">בניית תמהיל משכנתא</a></li><li><a href="/articles/amortization-schedules" class="nav-link" data-i18n="new_a_1323">לוחות סילוקין</a></li><li><a href="/articles/boi-regulations" class="nav-link" data-i18n="new_a_1391">הגבלות בנק ישראל</a></li><li><a href="/articles/repayment-ratio" class="nav-link" data-i18n="new_a_1459">יחס החזר</a></li></ul></li><li><a href="/blog" class="nav-link" data-i18n="new_a_1016">בלוג</a><ul class="sub-menu"><li><a href="/blog/beginners-guide" class="nav-link" data-i18n="new_a_1017">למתחילים</a></li><li><a href="/blog/first-apartment" class="nav-link" data-i18n="new_a_1018">דירה ראשונה</a></li><li><a href="/blog/recycling" class="nav-link" data-i18n="new_a_1019">מיחזור</a></li></ul></li></ul>
       
       
 
@@ -975,11 +1030,17 @@
           </div>
         </div>
         <div class="zappy-attribution">
-          <p data-i18n="accessibility_p_18">נוצר באמצעות&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" data-i18n="accessibility_link_23">Zappy</a></p>
+          <p data-i18n="accessibility_p_18">נוצר באמצעות&amp;nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" data-i18n="accessibility_link_23">Zappy</a></p>
         </div>
       </div>
     </footer>
     <div data-integration="accessibility:toolbar"></div>
+
+
+
+
+
+
 
 
 
@@ -1124,6 +1185,7 @@
   const resources = {
   "he": {
     "translation": {
+      "nav-home": "בית",
       "new_a_87": "פודקאסט",
       "new_a_90": "פודקאסט",
       "new_a_93": "פודקאסט",
@@ -1927,6 +1989,80 @@
       "new_a_1352": "לוחות סילוקין",
       "new_a_1355": "תיאום שיחת ייעוץ",
       "new_a_1386": "קראו על מסלולי משכנתא",
+      "new_a_1387": "הגבלות בנק ישראל",
+      "new_a_1388": "הגבלות בנק ישראל",
+      "new_a_1389": "הגבלות בנק ישראל",
+      "new_a_1390": "הגבלות בנק ישראל",
+      "new_a_1391": "הגבלות בנק ישראל",
+      "new_a_1392": "הגבלות בנק ישראל",
+      "new_a_1393": "הגבלות בנק ישראל",
+      "new_a_1394": "הגבלות בנק ישראל",
+      "new_a_1395": "הגבלות בנק ישראל",
+      "new_a_1396": "הגבלות בנק ישראל",
+      "new_a_1397": "הגבלות בנק ישראל",
+      "new_a_1398": "הגבלות בנק ישראל",
+      "new_a_1399": "הגבלות בנק ישראל",
+      "new_a_1400": "הגבלות בנק ישראל",
+      "new_a_1401": "הגבלות בנק ישראל",
+      "new_a_1402": "הגבלות בנק ישראל",
+      "new_a_1403": "הגבלות בנק ישראל",
+      "new_a_1404": "הגבלות בנק ישראל",
+      "new_a_1405": "הגבלות בנק ישראל",
+      "new_a_1406": "הגבלות בנק ישראל",
+      "new_a_1407": "הגבלות בנק ישראל",
+      "new_a_1408": "הגבלות בנק ישראל",
+      "new_a_1409": "הגבלות בנק ישראל",
+      "new_a_1410": "הגבלות בנק ישראל",
+      "new_a_1411": "הגבלות בנק ישראל",
+      "new_a_1412": "הגבלות בנק ישראל",
+      "new_a_1413": "הגבלות בנק ישראל",
+      "new_a_1414": "הגבלות בנק ישראל",
+      "new_a_1415": "הגבלות בנק ישראל",
+      "new_a_1416": "הגבלות בנק ישראל",
+      "new_a_1417": "הגבלות בנק ישראל",
+      "new_a_1418": "הגבלות בנק ישראל",
+      "new_a_1419": "הגבלות בנק ישראל",
+      "new_a_1420": "הגבלות בנק ישראל",
+      "new_a_1421": "הגבלות בנק ישראל",
+      "new_a_1454": "צור קשר לשיחת ייעוץ",
+      "new_a_1455": "יחס החזר",
+      "new_a_1456": "יחס החזר",
+      "new_a_1457": "יחס החזר",
+      "new_a_1458": "יחס החזר",
+      "new_a_1459": "יחס החזר",
+      "new_a_1460": "יחס החזר",
+      "new_a_1461": "יחס החזר",
+      "new_a_1462": "יחס החזר",
+      "new_a_1463": "יחס החזר",
+      "new_a_1464": "יחס החזר",
+      "new_a_1465": "יחס החזר",
+      "new_a_1466": "יחס החזר",
+      "new_a_1467": "יחס החזר",
+      "new_a_1468": "יחס החזר",
+      "new_a_1469": "יחס החזר",
+      "new_a_1470": "יחס החזר",
+      "new_a_1471": "יחס החזר",
+      "new_a_1472": "יחס החזר",
+      "new_a_1473": "יחס החזר",
+      "new_a_1474": "יחס החזר",
+      "new_a_1475": "יחס החזר",
+      "new_a_1476": "יחס החזר",
+      "new_a_1477": "יחס החזר",
+      "new_a_1478": "יחס החזר",
+      "new_a_1479": "יחס החזר",
+      "new_a_1480": "יחס החזר",
+      "new_a_1481": "יחס החזר",
+      "new_a_1482": "יחס החזר",
+      "new_a_1483": "יחס החזר",
+      "new_a_1484": "יחס החזר",
+      "new_a_1485": "יחס החזר",
+      "new_a_1486": "יחס החזר",
+      "new_a_1487": "יחס החזר",
+      "new_a_1488": "יחס החזר",
+      "new_a_1489": "יחס החזר",
+      "new_a_1490": "יחס החזר",
+      "new_a_1493": "בדיקת זכאות חינם",
+      "new_a_1517": "למחשבון משכנתא",
       "new_h1_109": "פודקאסט משכנתא בפיג'מה – פיננסים בגובה העיניים",
       "new_h1_214": "מרכז הידע: כל מה שצריך לדעת על משכנתאות",
       "new_h1_239": "המדריך המלא: תהליך לקיחת משכנתא צעד אחר צעד",
@@ -2381,6 +2517,35 @@
       "new_p_1381": "בתהליך של מיחזור משכנתא ושיפור תנאים, אנו בוחנים לא רק את הריביות אלא גם את הרכב ההצמדה ואת לוח הסילוקין. לעיתים, מעבר מלוח שפיצר לקרן שווה (אם התזרים מאפשר) יכול להוות הגנה טובה יותר מפני אינפלציה, שכן הקרן נשחקת מהר יותר.",
       "new_p_1383": "אל תסתכלו רק על ההחזר הראשון! בקשו מהיועץ או מהבנק סימולציה המראה את התפתחות ההחזר החודשי תחת הנחות אינפלציה ריאליות. מה שנראה זול היום, עלול להתברר כיקר מאוד בעוד 5 שנים.",
       "new_p_1385": "בניית תמהיל משכנתא נכון דורשת ראייה רחבה והבנה מעמיקה של המספרים. אנחנו כאן כדי לעזור לכם לחסוך עשרות אלפי שקלים ולהתאים את המשכנתא בדיוק לצרכים שלכם.",
+      "new_p_1423": "לפני שניגשים לבנק, חובה להכיר את כללי המשחק. הרגולציה של בנק ישראל משפיעה באופן ישיר על גובה המשכנתא שתוכלו לקבל, על ההחזר החודשי ועל הרכב המסלולים.",
+      "new_p_1425": "רבים מהלווים מופתעים לגלות שהבנק לא יכול לאשר כל בקשה, גם אם יש להם יכולת החזר מצוינת. הסיבה לכך נעוצה בהוראות הרגולטוריות של בנק ישראל, אשר מטרתן לשמור על יציבות המערכת הבנקאית ועל משקי הבית בישראל.",
+      "new_p_1426": "במסגרת תהליך ייעוץ משכנתאות מקצועי, השלב הראשון הוא בדיקת היתכנות אל מול ההגבלות הללו. ההגבלות מתחלקות לשלושה תחומים עיקריים: שיעור המימון (כמה כסף ניתן לקבל ביחס לשווי הנכס), יחס ההחזר (גובה ההחזר החודשי ביחס להכנסה), ומגבלות על תמהיל המשכנתא (סוגי הריביות).",
+      "new_p_1428": "אחוז המשכנתא המקסימלי שניתן לקבל משווי הנכס הנרכש משתנה בהתאם לסוג העסקה.",
+      "new_p_1429": "עבור רוכשי דירה ראשונה (חסרי דיור), ניתן לקבל מימון של עד 75% מערך הנכס. המשמעות היא שעליכם להביא הון עצמי של לפחות 25% מהבית.",
+      "new_p_1430": "מי שבבעלותו דירה והוא מוכר אותה כדי לקנות אחרת במקומה, מוגדר כמשפר דיור. במקרה זה, המימון המקסימלי הוא 70%, וההון העצמי הנדרש הוא 30%.",
+      "new_p_1431": "עבור דירה שנייה ומעלה (דירה להשקעה), בנק ישראל מגביל את המימון ל-50% בלבד. כלומר, יש להביא מהבית מחצית משווי הנכס.",
+      "new_p_1433": "אחת הטעויות הנפוצות היא המחשבה שאם יש הון עצמי, הבנק יאשר כל סכום. בפועל, הבנק בודק את יכולת ההחזר החודשית שלכם בקפדנות.",
+      "new_p_1435": "ההחזר החודשי של המשכנתא (בתוספת הלוואות קיימות אחרות אם ישנן לתקופה העולה על 18 חודשים) לא יעלה על 50% מההכנסה הפנויה נטו. עם זאת, בפועל, רוב הבנקים מחמירים ומגבילים את יחס ההחזר ל-40% בלבד, ובמקרים מסוימים אף פחות מכך.",
+      "new_p_1436": "לדוגמה: אם ההכנסה המשותפת נטו היא 20,000 ש\"ח, ההחזר החודשי המקסימלי האפשרי יהיה סביב 8,000 ש\"ח (40%). יועץ משכנתאות מנוסה ידע כיצד להציג את ההכנסות בצורה המיטבית כדי למקסם את אישור הבנק.",
+      "new_p_1439": "בנק ישראל מחייב שלפחות שליש (33%) מסכום המשכנתא יילקח במסלול ריבית קבועה (צמודה או לא צמודה). מטרת הוראה זו היא להגן על הלווה מפני תנודות חדות בריבית בעתיד, שכן החלק הזה של ההלוואה נשאר יציב יחסית.",
+      "new_p_1441": "בעבר הייתה הגבלה שאפשרה לקחת עד שליש במסלול פריים. כיום, ההגבלה הוסרה וניתן לקחת עד שני שליש (66%) בריבית משתנה (כולל פריים), אך עדיין קיימת החובה לשמור על שליש בריבית קבועה. שינוי זה מאפשר גמישות רבה יותר, אך דורש תכנון זהיר של הסיכונים.",
+      "new_p_1443": "תקופת המשכנתא המקסימלית היא 30 שנה. הבנקים לרוב לא יאשרו משכנתא לתקופה ארוכה מזו. כמו כן, ישנה מגבלת גיל – בדרך כלל יש לסיים את תשלומי המשכנתא עד גיל 80 (ובחלק מהבנקים עד גיל 85, כתלות בביטוח חיים).",
+      "new_p_1445": "ההגבלות של בנק ישראל הן קשיחות, אך בתוכן קיים מרחב תמרון משמעותי. ייעוץ משכנתא לדירה ראשונה או למשפרי דיור חייב לקחת בחשבון את המגבלות הללו כבר בשלב התכנון הראשוני.",
+      "new_p_1446": "יועץ משכנתאות מנוסה יודע:",
+      "new_p_1451": "הבנת הרגולציה היא הכוח שלכם. אל תיגשו לבנק ללא הכנה מוקדמת וללא הבנה של המגבלות החלות עליכם.",
+      "new_p_1453": "אל תתנו לבירוקרטיה ולרגולציה לעצור אתכם. אנחנו כאן כדי לבנות עבורכם את התמהיל המדויק ביותר, בהתאם להנחיות בנק ישראל ולצרכים האישיים שלכם.",
+      "new_p_1492": "רבים חושבים שגובה ההכנסה הוא הגורם היחיד בקבלת המשכנתא, אך הבנקים בודקים נתון חשוב הרבה יותר: יחס ההחזר. הבנת המושג הזה היא קריטית בדרך לדירה, והיא חלק בלתי נפרד מתהליך של ייעוץ משכנתאות מקצועי.",
+      "new_p_1495": "כאשר אתם מגישים בקשה למשכנתא, הבנק לא מסתכל רק על כמה כסף אתם מרוויחים בחודש, אלא בעיקר על כמה כסף פנוי נשאר לכם לאחר קיזוז ההתחייבויות הקיימות. יחס ההחזר הוא למעשה האחוז מסך ההכנסה הפנויה שלכם שמוקצה לטובת החזר המשכנתא החודשי.",
+      "new_p_1496": "לדוגמה, אם ההכנסה המשותפת של בני הזוג היא 20,000 ש\"ח נטו, והחזר המשכנתא הצפוי הוא 5,000 ש\"ח, יחס ההחזר הוא 25%. זהו נתון קריטי מכיוון שהבנקים כפופים להוראות בנק ישראל, המגבילות את גובה הסיכון שהם רשאים לקחת.",
+      "new_p_1498": "על פי הרגולציה, הבנקים לא יכולים לאשר משכנתא בה ההחזר החודשי עולה על 50% מההכנסה הפנויה. בפועל, מדיניות הבנקים מחמירה יותר, ורובם יעדיפו לא לעבור יחס החזר של 35%-40% כדי להשאיר מרווח ביטחון למשק הבית.",
+      "new_p_1501": "אצל שכירים, הבנק מחשב ממוצע של שלושת תלושי השכר האחרונים (נטו). אצל עצמאיים, הבדיקה מורכבת יותר ומתבססת על שומות מס שנתיות ואישורי רואה חשבון. ייעוץ משכנתא למשפרי דיור או לעצמאיים חייב לקחת בחשבון תנודתיות בהכנסות כדי להציג תמונה יציבה לבנק.",
+      "new_p_1503": "מההכנסה נטו, הבנק מפחית התחייבויות קבועות: הלוואות קיימות (שנותרו להן מעל 18 חודשים לסיום), מזונות, והתחייבויות ארוכות טווח אחרות. שימו לב: מסגרת אשראי או תשלומים בכרטיס אשראי בדרך כלל לא מקוזזים, אלא אם כן מדובר ב\"עסקת תשלומים\" גדולה וקבועה.",
+      "new_p_1505": "ניתן להוסיף להכנסה הקובעת גם הכנסות משכר דירה (אם יש חוזה תקף והוכחת הפקדות), קצבאות מסוימות מביטוח לאומי (כמו קצבת נכות קבועה), ולעיתים גם בונוסים שנתיים אם הם מופיעים בעקביות בתלושי השכר או בטופס 106.",
+      "new_p_1507": "במקרים רבים, זוגות נדחים על ידי הבנק לא בגלל שאין להם הון עצמי, אלא בגלל יחס החזר גבולי. במסגרת ייעוץ משכנתאות, אנו בוחנים מספר אסטרטגיות לפתרון הבעיה:",
+      "new_p_1511": "חשוב לזכור: יחס החזר תקין הוא לא רק דרישה של הבנק, אלא מנגנון הגנה עבורכם. משפחה שמתחייבת להחזר גבוה מדי מסתכנת בקושי כלכלי בעתיד, במיוחד כאשר הריביות במשק משתנות או כאשר המשפחה מתרחבת.",
+      "new_p_1513": "כאשר אנו מבצעים ייעוץ משכנתא לדירה ראשונה, אנו תמיד ממליצים לא להסתכל רק על המצב הנוכחי. זוג צעיר ללא ילדים יכול אולי לעמוד ביחס החזר של 35%, אך עם הצטרפות ילדים למשפחה ההוצאות גדלות משמעותית (גנים, מטפלות, מזון). לכן, תכנון נכון לוקח בחשבון שינויים עתידיים בהכנסות ובהוצאות.",
+      "new_p_1514": "גם בתהליך של מיחזור משכנתא, בדיקת יחס ההחזר היא הזדמנות מצוינת לאזן מחדש את התקציב המשפחתי ולהתאים את ההחזרים ליכולת הכלכלית העדכנית שלכם.",
+      "new_p_1516": "אל תתנו לחישובים מורכבים לעצור אתכם בדרך לדירה. הצוות שלנו ב\"משכנתא בפיג'מה\" כאן כדי לעשות סדר במספרים ולבנות עבורכם את התמהיל המדויק ביותר.",
       "terms_h1_1": "תנאי שימוש",
       "terms_h2_2": "1. הגדרות",
       "terms_h2_3": "2. תיאור השירותים",
@@ -2444,6 +2609,8 @@
       "new_h1_1268": "הון עצמי למשכנתא – הבסיס לבית שלכם",
       "new_h1_1293": "בניית תמהיל משכנתא מנצח: הסוד לחיסכון אמיתי",
       "new_h1_1353": "לוחות סילוקין במשכנתא – המדריך המלא",
+      "new_h1_1422": "הגבלות בנק ישראל במשכנתאות – המדריך המלא",
+      "new_h1_1491": "יחס החזר במשכנתא – המספר שקובע הכל",
       "new_h2_1121": "רוצים להתייעץ איתנו?",
       "new_h2_1130": "מהו בעצם ייעוץ משכנתאות?",
       "new_h2_1133": "מושגי יסוד שחשוב להכיר",
@@ -2481,6 +2648,17 @@
       "new_h2_1369": "השוואה מהירה: מה מתאים לכם?",
       "new_h2_1379": "השפעת המדד על לוחות הסילוקין",
       "new_h2_1384": "מתלבטים באיזה לוח סילוקין לבחור?",
+      "new_h2_1424": "למה קיימות הגבלות על המשכנתא?",
+      "new_h2_1427": "1. מגבלת שיעור המימון (LTV)",
+      "new_h2_1432": "2. יחס החזר מהכנסה (PTI)",
+      "new_h2_1437": "3. מגבלות על תמהיל המשכנתא",
+      "new_h2_1444": "חשיבות הייעוץ המקצועי מול הרגולציה",
+      "new_h2_1452": "רוצים לבדוק את זכאותכם למשכנתא?",
+      "new_h2_1494": "מהו יחס החזר ולמה הוא חשוב?",
+      "new_h2_1499": "איך מחשבים את ההכנסה הקובעת?",
+      "new_h2_1506": "איך לשפר את יחס ההחזר?",
+      "new_h2_1512": "חשיבות התכנון העתידי",
+      "new_h2_1515": "רוצים לדעת מה יחס ההחזר שלכם?",
       "new_h3_1107": "מדריך למתחילים",
       "new_h3_1111": "דירה ראשונה",
       "new_h3_1118": "טיפים לחיסכון",
@@ -2502,6 +2680,14 @@
       "new_h3_1370": "למי מתאים שפיצר?",
       "new_h3_1373": "למי מתאים קרן שווה?",
       "new_h3_1376": "מה לגבי הלוואת בלון (גרייס)?",
+      "new_h3_1434": "כלל ה-40%",
+      "new_h3_1438": "חובת מסלול ריבית קבועה",
+      "new_h3_1440": "הגבלת מסלולי הפריים",
+      "new_h3_1442": "תקופת ההלוואה",
+      "new_h3_1497": "הכלל של בנק ישראל",
+      "new_h3_1500": "שכירים ועצמאיים",
+      "new_h3_1502": "הלוואות והתחייבויות",
+      "new_h3_1504": "הכנסות נוספות",
       "new_h4_1199": "זקוקים לעזרה בהוצאת האישור?",
       "new_h4_1382": "טיפ של מומחים:",
       "new_li_1135": "ריבית פריים: ריבית המשתנה בהתאם להחלטות בנק ישראל, ואינה צמודה למדד המחירים לצרכן.",
@@ -2526,6 +2712,13 @@
       "new_li_1363": "חיסרון: קצב סילוק החוב איטי בשנים הראשונות (\"אוכלים את הריבית\").",
       "new_li_1367": "יתרון: תשלום ריבית כולל נמוך יותר וקצב סילוק חוב מהיר.",
       "new_li_1368": "חיסרון: דורש יכולת החזר חודשי גבוהה מאוד בתחילת הדרך.",
+      "new_li_1447": "כיצד להגדיר הכנסות בצורה נכונה כדי לשפר את יחס ההחזר (למשל, הכרה בהכנסות משכירות עתידית או בונוסים קבועים).",
+      "new_li_1448": "כיצד לבנות תמהיל שמנצל את המקסימום המותר במסלולים הזולים (כמו הפריים) תוך עמידה בדרישת הריבית הקבועה.",
+      "new_li_1449": "כיצד להתמודד עם שמאויות נמוכות שעלולות לפגוע באחוז המימון המאושר.",
+      "new_li_1450": "פתרונות יצירתיים במקרים של חריגה קלה מהנהלים, באמצעות ועדות חריגים בבנקים.",
+      "new_li_1508": "איחוד הלוואות: סגירת הלוואות קצרות טווח עם החזר חודשי גבוה ופריסתן מחדש כחלק מהמשכנתא (או כהלוואה ארוכה) כדי להקטין את ההחזר החודשי הכולל.",
+      "new_li_1509": "צירוף ערבים: במקרים מסוימים, צירוף הורים כלווים נוספים (ערבים משלמים) יכול להגדיל את ההכנסה המשותפת המחושבת ולשפר את היחס.",
+      "new_li_1510": "הארכת תקופת המשכנתא: פריסת המשכנתא לתקופה ארוכה יותר (למשל 30 שנה במקום 20) מקטינה את ההחזר החודשי, אם כי היא מייקרת את סך הריביות לאורך חיי ההלוואה.",
       "new_span_85": "משכנתא בפיג'מה",
       "new_span_88": "משכנתא בפיג'מה",
       "new_span_91": "משכנתא בפיג'מה",
@@ -2903,6 +3096,7 @@
   },
   "en": {
     "translation": {
+      "nav-home": "Home",
       "new_a_87": "Podcast",
       "new_a_90": "Podcast",
       "new_a_93": "Podcast",
@@ -3706,6 +3900,80 @@
       "new_a_1352": "Amortization Schedules",
       "new_a_1355": "Schedule a Consultation Call",
       "new_a_1386": "Read about mortgage tracks",
+      "new_a_1387": "Bank of Israel Restrictions",
+      "new_a_1388": "Bank of Israel Restrictions",
+      "new_a_1389": "Bank of Israel Restrictions",
+      "new_a_1390": "Bank of Israel Restrictions",
+      "new_a_1391": "Bank of Israel Restrictions",
+      "new_a_1392": "Bank of Israel Restrictions",
+      "new_a_1393": "Bank of Israel Restrictions",
+      "new_a_1394": "Bank of Israel Restrictions",
+      "new_a_1395": "Bank of Israel Restrictions",
+      "new_a_1396": "Bank of Israel Restrictions",
+      "new_a_1397": "Bank of Israel Restrictions",
+      "new_a_1398": "Bank of Israel Restrictions",
+      "new_a_1399": "Bank of Israel Restrictions",
+      "new_a_1400": "Bank of Israel Restrictions",
+      "new_a_1401": "Bank of Israel Restrictions",
+      "new_a_1402": "Bank of Israel Restrictions",
+      "new_a_1403": "Bank of Israel Restrictions",
+      "new_a_1404": "Bank of Israel Restrictions",
+      "new_a_1405": "Bank of Israel Restrictions",
+      "new_a_1406": "Bank of Israel Restrictions",
+      "new_a_1407": "Bank of Israel Restrictions",
+      "new_a_1408": "Bank of Israel Restrictions",
+      "new_a_1409": "Bank of Israel Restrictions",
+      "new_a_1410": "Bank of Israel Restrictions",
+      "new_a_1411": "Bank of Israel Restrictions",
+      "new_a_1412": "Bank of Israel Restrictions",
+      "new_a_1413": "Bank of Israel Restrictions",
+      "new_a_1414": "Bank of Israel Restrictions",
+      "new_a_1415": "Bank of Israel Restrictions",
+      "new_a_1416": "Bank of Israel Restrictions",
+      "new_a_1417": "Bank of Israel Restrictions",
+      "new_a_1418": "Bank of Israel Restrictions",
+      "new_a_1419": "Bank of Israel Restrictions",
+      "new_a_1420": "Bank of Israel Restrictions",
+      "new_a_1421": "Bank of Israel Restrictions",
+      "new_a_1454": "Contact Us for a Consultation Call",
+      "new_a_1455": "Return Ratio",
+      "new_a_1456": "Return Ratio",
+      "new_a_1457": "Return Ratio",
+      "new_a_1458": "Return Ratio",
+      "new_a_1459": "Return Ratio",
+      "new_a_1460": "Return Ratio",
+      "new_a_1461": "Return Ratio",
+      "new_a_1462": "Return Ratio",
+      "new_a_1463": "Return Ratio",
+      "new_a_1464": "Return Ratio",
+      "new_a_1465": "Return Ratio",
+      "new_a_1466": "Return Ratio",
+      "new_a_1467": "Return Ratio",
+      "new_a_1468": "Return Ratio",
+      "new_a_1469": "Return Ratio",
+      "new_a_1470": "Return Ratio",
+      "new_a_1471": "Return Ratio",
+      "new_a_1472": "Return Ratio",
+      "new_a_1473": "Return Ratio",
+      "new_a_1474": "Return Ratio",
+      "new_a_1475": "Return Ratio",
+      "new_a_1476": "Return Ratio",
+      "new_a_1477": "Return Ratio",
+      "new_a_1478": "Return Ratio",
+      "new_a_1479": "Return Ratio",
+      "new_a_1480": "Return Ratio",
+      "new_a_1481": "Return Ratio",
+      "new_a_1482": "Return Ratio",
+      "new_a_1483": "Return Ratio",
+      "new_a_1484": "Return Ratio",
+      "new_a_1485": "Return Ratio",
+      "new_a_1486": "Return Ratio",
+      "new_a_1487": "Return Ratio",
+      "new_a_1488": "Return Ratio",
+      "new_a_1489": "Return Ratio",
+      "new_a_1490": "Return Ratio",
+      "new_a_1493": "Free Eligibility Check",
+      "new_a_1517": "To mortgage calculator",
       "new_h1_109": "Mortgage in Pajamas Podcast – Finance at Eye Level",
       "new_h1_214": "Knowledge Center: Everything You Need to Know About Mortgages",
       "new_h1_239": "The Complete Guide: Step-by-Step Mortgage Process",
@@ -4160,6 +4428,35 @@
       "new_p_1381": "In the process of mortgage refinancing and improving terms, we examine not only the interest rates but also the linkage composition and the amortization schedule. Sometimes, switching from a Spitzer schedule to Equal Principal (if cash flow allows) can provide better protection against inflation, as the principal erodes faster.",
       "new_p_1383": "Don't just look at the first payment! Ask the advisor or bank for a simulation showing the development of the monthly payment under realistic inflation assumptions. What seems cheap today could prove very expensive in 5 years.",
       "new_p_1385": "Building the right mortgage mix requires broad vision and deep understanding of the numbers. We're here to help you save tens of thousands of shekels and tailor the mortgage exactly to your needs.",
+      "new_p_1423": "Before approaching the bank, it's essential to understand the rules of the game. Bank of Israel regulations directly affect the mortgage amount you can receive, your monthly repayment, and the composition of loan tracks.",
+      "new_p_1425": "Many borrowers are surprised to discover that banks cannot approve every application, even if they have excellent repayment capacity. This is due to Bank of Israel regulatory directives, which aim to maintain the stability of the banking system and Israeli households.",
+      "new_p_1426": "As part of professional mortgage consultation, the first step is conducting a feasibility check against these restrictions. The restrictions are divided into three main areas: financing ratio (how much money can be obtained relative to property value), repayment ratio (monthly repayment amount relative to income), and mortgage mix limitations (interest rate types).",
+      "new_p_1428": "The maximum mortgage percentage obtainable from the property value varies according to the type of transaction.",
+      "new_p_1429": "For first-time homebuyers (those without housing), financing of up to 75% of the property value is available. This means you must bring equity of at least 25% of the home's value.",
+      "new_p_1430": "Someone who owns a property and is selling it to purchase another in its place is defined as upgrading housing. In this case, maximum financing is 70%, and the required equity is 30%.",
+      "new_p_1431": "For a second home and beyond (investment property), Bank of Israel limits financing to only 50%. This means you must bring half the property's value from your own funds.",
+      "new_p_1433": "One common mistake is thinking that having equity means the bank will approve any amount. In practice, banks carefully examine your monthly repayment capacity.",
+      "new_p_1435": "The monthly mortgage repayment (plus other existing loans if any for periods exceeding 18 months) will not exceed 50% of net disposable income. However, in practice, most banks are stricter and limit the repayment ratio to only 40%, and in some cases even less.",
+      "new_p_1436": "For example: If joint net income is 20,000 NIS, the maximum possible monthly repayment would be around 8,000 NIS (40%). An experienced mortgage advisor will know how to present income optimally to maximize bank approval.",
+      "new_p_1439": "The Bank of Israel requires that at least one-third (33%) of the mortgage amount be taken on a fixed interest rate track (indexed or non-indexed). The purpose of this directive is to protect the borrower from sharp interest rate fluctuations in the future, as this portion of the loan remains relatively stable.",
+      "new_p_1441": "Previously, there was a limitation that allowed taking up to one-third on a prime rate track. Today, this limitation has been removed and you can take up to two-thirds (66%) at variable interest rates (including prime), but the obligation to maintain one-third at fixed interest rates still exists. This change allows for much greater flexibility, but requires careful risk planning.",
+      "new_p_1443": "The maximum mortgage period is 30 years. Banks usually will not approve a mortgage for a longer period than this. Additionally, there is an age limitation – typically mortgage payments must be completed by age 80 (and in some banks by age 85, depending on life insurance).",
+      "new_p_1445": "The Bank of Israel's restrictions are rigid, but within them there is significant room for maneuvering. Mortgage consultation for first-time buyers or those upgrading their housing must take these limitations into account already in the initial planning stage.",
+      "new_p_1446": "An experienced mortgage advisor knows:",
+      "new_p_1451": "Understanding the regulation is your power. Don't approach the bank without prior preparation and without understanding the limitations that apply to you.",
+      "new_p_1453": "Don't let bureaucracy and regulation stop you. We're here to build the most precise mix for you, according to Bank of Israel guidelines and your personal needs.",
+      "new_p_1492": "Many people think that income level is the only factor in getting a mortgage, but banks examine a much more important metric: the return ratio. Understanding this concept is critical on the path to homeownership, and it's an integral part of professional mortgage consulting.",
+      "new_p_1495": "When you apply for a mortgage, the bank doesn't just look at how much money you earn per month, but mainly at how much free money you have left after deducting existing obligations. The return ratio is essentially the percentage of your total available income that is allocated for the monthly mortgage payment.",
+      "new_p_1496": "For example, if a couple's combined income is 20,000 NIS net, and the expected mortgage payment is 5,000 NIS, the return ratio is 25%. This is a critical figure because banks are subject to Bank of Israel regulations that limit the level of risk they are allowed to take.",
+      "new_p_1498": "According to regulations, banks cannot approve a mortgage where the monthly payment exceeds 50% of available income. In practice, bank policies are more stringent, and most prefer not to exceed a return ratio of 35%-40% to leave a safety margin for the household.",
+      "new_p_1501": "For employees, the bank calculates an average of the last three pay stubs (net). For self-employed individuals, the examination is more complex and is based on annual tax assessments and accountant confirmations. Mortgage consulting for home upgraders or self-employed individuals must take income volatility into account to present a stable picture to the bank.",
+      "new_p_1503": "From net income, the bank deducts fixed obligations: existing loans (with more than 18 months remaining), alimony, and other long-term commitments. Note: credit lines or credit card payments are generally not deducted, unless it's a large and fixed \"installment deal.\"",
+      "new_p_1505": "You can also add to the qualifying income rental income (if there is a valid contract and proof of deposits), certain allowances from National Insurance (such as permanent disability pension), and sometimes annual bonuses if they appear consistently in pay slips or Form 106.",
+      "new_p_1507": "In many cases, couples are rejected by the bank not because they don't have equity, but because of a borderline repayment ratio. As part of mortgage consulting, we examine several strategies to solve the problem:",
+      "new_p_1511": "Important to remember: A proper repayment ratio is not just a bank requirement, but a protection mechanism for you. A family that commits to repayments that are too high risks financial difficulty in the future, especially when interest rates in the economy change or when the family expands.",
+      "new_p_1513": "When we provide mortgage consulting for a first home, we always recommend not to look only at the current situation. A young couple without children might be able to handle a 35% repayment ratio, but with children joining the family, expenses increase significantly (kindergartens, babysitters, food). Therefore, proper planning takes into account future changes in income and expenses.",
+      "new_p_1514": "Even in the process of mortgage refinancing, checking the repayment ratio is an excellent opportunity to rebalance the family budget and adjust the repayments to your current financial capability.",
+      "new_p_1516": "Don't let complex calculations stop you on your way to a home. Our team at \"Mortgage in Pajamas\" is here to sort out the numbers and build the most accurate mix for you.",
       "terms_h1_1": "Terms of Use",
       "terms_h2_2": "1. Definitions",
       "terms_h2_3": "2. Service Description",
@@ -4223,6 +4520,8 @@
       "new_h1_1268": "Down Payment for Mortgage – The Foundation for Your Home",
       "new_h1_1293": "Building a Winning Mortgage Portfolio: The Secret to Real Savings",
       "new_h1_1353": "Mortgage Amortization Schedules – The Complete Guide",
+      "new_h1_1422": "Bank of Israel Mortgage Restrictions – The Complete Guide",
+      "new_h1_1491": "Mortgage Return Ratio – The Number That Determines Everything",
       "new_h2_1121": "Want to consult with us?",
       "new_h2_1130": "What exactly is mortgage consulting?",
       "new_h2_1133": "Basic concepts you should know",
@@ -4260,6 +4559,17 @@
       "new_h2_1369": "Quick Comparison: What's Right for You?",
       "new_h2_1379": "The Impact of the Index on Amortization Schedules",
       "new_h2_1384": "Undecided about which amortization schedule to choose?",
+      "new_h2_1424": "Why do mortgage restrictions exist?",
+      "new_h2_1427": "1. Loan-to-Value Ratio (LTV) Restriction",
+      "new_h2_1432": "2. Payment-to-Income Ratio (PTI)",
+      "new_h2_1437": "3. Mortgage Mix Limitations",
+      "new_h2_1444": "The Importance of Professional Consultation vs. Regulation",
+      "new_h2_1452": "Want to Check Your Mortgage Eligibility?",
+      "new_h2_1494": "What is the Return Ratio and Why is it Important?",
+      "new_h2_1499": "How is the Determining Income Calculated?",
+      "new_h2_1506": "How to improve the repayment ratio?",
+      "new_h2_1512": "The importance of future planning",
+      "new_h2_1515": "Want to know what your repayment ratio is?",
       "new_h3_1107": "Beginner's Guide",
       "new_h3_1111": "First Home",
       "new_h3_1118": "Money-Saving Tips",
@@ -4281,6 +4591,14 @@
       "new_h3_1370": "Who is Spitzer suitable for?",
       "new_h3_1373": "Who is Equal Principal suitable for?",
       "new_h3_1376": "What about a Balloon (Grace) loan?",
+      "new_h3_1434": "The 40% Rule",
+      "new_h3_1438": "Fixed Interest Rate Track Requirement",
+      "new_h3_1440": "Prime Rate Track Limitations",
+      "new_h3_1442": "Loan Period",
+      "new_h3_1497": "The Bank of Israel Rule",
+      "new_h3_1500": "Employees and Self-Employed",
+      "new_h3_1502": "Loans and Obligations",
+      "new_h3_1504": "Additional Income",
       "new_h4_1199": "Need help obtaining approval?",
       "new_h4_1382": "Expert tip:",
       "new_li_1135": "Prime interest rate: A variable interest rate that changes according to Bank of Israel decisions and is not linked to the Consumer Price Index.",
@@ -4305,6 +4623,13 @@
       "new_li_1363": "Disadvantage: Slow debt repayment rate in the early years (\"eating the interest\").",
       "new_li_1367": "Advantage: Lower total interest payment and faster debt repayment rate.",
       "new_li_1368": "Disadvantage: Requires very high monthly repayment capacity at the beginning.",
+      "new_li_1447": "How to define income correctly to improve the repayment ratio (for example, recognizing future rental income or regular bonuses).",
+      "new_li_1448": "How to build a mix that maximizes the allowed amount in cheaper tracks (like prime) while meeting the fixed interest rate requirement.",
+      "new_li_1449": "How to deal with low appraisals that could harm the approved financing percentage.",
+      "new_li_1450": "Creative solutions in cases of slight deviation from procedures, through exception committees at banks.",
+      "new_li_1508": "Loan consolidation: Closing short-term loans with high monthly repayments and redistributing them as part of the mortgage (or as a long-term loan) to reduce the total monthly repayment.",
+      "new_li_1509": "Adding guarantors: In certain cases, adding parents as additional borrowers (paying guarantors) can increase the calculated joint income and improve the ratio.",
+      "new_li_1510": "Extending the mortgage period: Spreading the mortgage over a longer period (for example 30 years instead of 20) reduces the monthly repayment, although it increases the total interest over the life of the loan.",
       "new_span_85": "Mortgage in Pajamas",
       "new_span_88": "Mortgage in Pajamas",
       "new_span_91": "Mortgage in Pajamas",
@@ -4682,6 +5007,7 @@
   },
   "es": {
     "translation": {
+      "nav-home": "Inicio",
       "new_a_87": "Podcast",
       "new_a_90": "Podcast",
       "new_a_93": "Podcast",
@@ -5485,6 +5811,80 @@
       "new_a_1352": "Tablas de amortización",
       "new_a_1355": "Coordinar consulta de asesoramiento",
       "new_a_1386": "Lean sobre rutas hipotecarias",
+      "new_a_1387": "Restricciones del Banco de Israel",
+      "new_a_1388": "Restricciones del Banco de Israel",
+      "new_a_1389": "Restricciones del Banco de Israel",
+      "new_a_1390": "Restricciones del Banco de Israel",
+      "new_a_1391": "Restricciones del Banco de Israel",
+      "new_a_1392": "Restricciones del Banco de Israel",
+      "new_a_1393": "Restricciones del Banco de Israel",
+      "new_a_1394": "Restricciones del Banco de Israel",
+      "new_a_1395": "Restricciones del Banco de Israel",
+      "new_a_1396": "Restricciones del Banco de Israel",
+      "new_a_1397": "Restricciones del Banco de Israel",
+      "new_a_1398": "Restricciones del Banco de Israel",
+      "new_a_1399": "Restricciones del Banco de Israel",
+      "new_a_1400": "Restricciones del Banco de Israel",
+      "new_a_1401": "Restricciones del Banco de Israel",
+      "new_a_1402": "Restricciones del Banco de Israel",
+      "new_a_1403": "Restricciones del Banco de Israel",
+      "new_a_1404": "Restricciones del Banco de Israel",
+      "new_a_1405": "Restricciones del Banco de Israel",
+      "new_a_1406": "Restricciones del Banco de Israel",
+      "new_a_1407": "Restricciones del Banco de Israel",
+      "new_a_1408": "Restricciones del Banco de Israel",
+      "new_a_1409": "Restricciones del Banco de Israel",
+      "new_a_1410": "Restricciones del Banco de Israel",
+      "new_a_1411": "Restricciones del Banco de Israel",
+      "new_a_1412": "Restricciones del Banco de Israel",
+      "new_a_1413": "Restricciones del Banco de Israel",
+      "new_a_1414": "Restricciones del Banco de Israel",
+      "new_a_1415": "Restricciones del Banco de Israel",
+      "new_a_1416": "Restricciones del Banco de Israel",
+      "new_a_1417": "Restricciones del Banco de Israel",
+      "new_a_1418": "Restricciones del Banco de Israel",
+      "new_a_1419": "Restricciones del Banco de Israel",
+      "new_a_1420": "Restricciones del Banco de Israel",
+      "new_a_1421": "Restricciones del Banco de Israel",
+      "new_a_1454": "Contactar para consulta de asesoramiento",
+      "new_a_1455": "Relación de retorno",
+      "new_a_1456": "Relación de retorno",
+      "new_a_1457": "Relación de retorno",
+      "new_a_1458": "Relación de retorno",
+      "new_a_1459": "Relación de retorno",
+      "new_a_1460": "Relación de retorno",
+      "new_a_1461": "Relación de retorno",
+      "new_a_1462": "Relación de retorno",
+      "new_a_1463": "Relación de retorno",
+      "new_a_1464": "Relación de retorno",
+      "new_a_1465": "Relación de retorno",
+      "new_a_1466": "Relación de retorno",
+      "new_a_1467": "Relación de retorno",
+      "new_a_1468": "Relación de retorno",
+      "new_a_1469": "Relación de retorno",
+      "new_a_1470": "Relación de retorno",
+      "new_a_1471": "Relación de retorno",
+      "new_a_1472": "Relación de retorno",
+      "new_a_1473": "Relación de retorno",
+      "new_a_1474": "Relación de retorno",
+      "new_a_1475": "Relación de retorno",
+      "new_a_1476": "Relación de retorno",
+      "new_a_1477": "Relación de retorno",
+      "new_a_1478": "Relación de retorno",
+      "new_a_1479": "Relación de retorno",
+      "new_a_1480": "Relación de retorno",
+      "new_a_1481": "Relación de retorno",
+      "new_a_1482": "Relación de retorno",
+      "new_a_1483": "Relación de retorno",
+      "new_a_1484": "Relación de retorno",
+      "new_a_1485": "Relación de retorno",
+      "new_a_1486": "Relación de retorno",
+      "new_a_1487": "Relación de retorno",
+      "new_a_1488": "Relación de retorno",
+      "new_a_1489": "Relación de retorno",
+      "new_a_1490": "Relación de retorno",
+      "new_a_1493": "Verificación de elegibilidad gratuita",
+      "new_a_1517": "A la calculadora hipotecaria",
       "new_h1_109": "Podcast Hipoteca en Pijama – Finanzas a la altura de los ojos",
       "new_h1_214": "Centro de Conocimiento: Todo lo que necesita saber sobre hipotecas",
       "new_h1_239": "La Guía Completa: Proceso de obtención de hipoteca paso a paso",
@@ -5939,6 +6339,35 @@
       "new_p_1381": "En el proceso de refinanciamiento hipotecario y mejora de condiciones, examinamos no solo las tasas de interés sino también la composición de indexación y la tabla de amortización. A veces, cambiar de tabla Spitzer a capital igual (si el flujo de caja lo permite) puede constituir una mejor protección contra la inflación, ya que el capital se erosiona más rápidamente.",
       "new_p_1383": "¡No se fijen solo en el primer pago! Pidan al asesor o al banco una simulación que muestre la evolución del pago mensual bajo supuestos de inflación realistas. Lo que parece barato hoy, puede resultar muy caro en 5 años.",
       "new_p_1385": "Construir una combinación hipotecaria correcta requiere una visión amplia y comprensión profunda de los números. Estamos aquí para ayudarles a ahorrar decenas de miles de shekels y adaptar la hipoteca exactamente a sus necesidades.",
+      "new_p_1423": "Antes de acudir al banco, es imprescindible conocer las reglas del juego. La regulación del Banco de Israel influye directamente en el monto de la hipoteca que podrán obtener, en el pago mensual y en la composición de los planes.",
+      "new_p_1425": "Muchos prestatarios se sorprenden al descubrir que el banco no puede aprobar cualquier solicitud, incluso si tienen una excelente capacidad de pago. La razón de esto radica en las directivas regulatorias del Banco de Israel, cuyo objetivo es mantener la estabilidad del sistema bancario y de los hogares en Israel.",
+      "new_p_1426": "En el marco de un proceso de asesoramiento hipotecario profesional, el primer paso es verificar la viabilidad frente a estas restricciones. Las restricciones se dividen en tres áreas principales: ratio de financiación (cuánto dinero se puede obtener en relación al valor de la propiedad), ratio de pago (monto del pago mensual en relación a los ingresos), y limitaciones en la composición de la hipoteca (tipos de intereses).",
+      "new_p_1428": "El porcentaje máximo de hipoteca que se puede obtener del valor de la propiedad adquirida varía según el tipo de transacción.",
+      "new_p_1429": "Para compradores de primera vivienda (sin vivienda), se puede obtener financiación de hasta el 75% del valor de la propiedad. Esto significa que deben aportar capital propio de al menos el 25% de la vivienda.",
+      "new_p_1430": "Quien posee una vivienda y la vende para comprar otra en su lugar, se define como mejorador de vivienda. En este caso, la financiación máxima es del 70%, y el capital propio requerido es del 30%.",
+      "new_p_1431": "Para una segunda vivienda y más (vivienda de inversión), el Banco de Israel limita la financiación al 50% únicamente. Es decir, hay que aportar de casa la mitad del valor de la propiedad.",
+      "new_p_1433": "Uno de los errores más comunes es pensar que si hay capital propio, el banco aprobará cualquier cantidad. En la práctica, el banco examina rigurosamente su capacidad de pago mensual.",
+      "new_p_1435": "El pago mensual de la hipoteca (más otros préstamos existentes si los hay por un período superior a 18 meses) no excederá el 50% de los ingresos netos disponibles. Sin embargo, en la práctica, la mayoría de los bancos son más estrictos y limitan el ratio de pago al 40% únicamente, y en algunos casos incluso menos.",
+      "new_p_1436": "Por ejemplo: si los ingresos conjuntos netos son 20,000 shekels, el pago mensual máximo posible será alrededor de 8,000 shekels (40%). Un asesor hipotecario experimentado sabrá cómo presentar los ingresos de la mejor manera para maximizar la aprobación del banco.",
+      "new_p_1439": "El Banco de Israel exige que al menos un tercio (33%) del monto de la hipoteca se tome en modalidad de interés fijo (indexado o no indexado). El propósito de esta disposición es proteger al prestatario contra fluctuaciones bruscas en las tasas de interés en el futuro, ya que esta parte del préstamo permanece relativamente estable.",
+      "new_p_1441": "En el pasado existía una limitación que permitía tomar hasta un tercio en modalidad prime. Actualmente, la limitación se ha eliminado y es posible tomar hasta dos tercios (66%) a interés variable (incluyendo prime), pero aún existe la obligación de mantener un tercio a interés fijo. Este cambio permite mayor flexibilidad, pero requiere una planificación cuidadosa de los riesgos.",
+      "new_p_1443": "El período máximo de la hipoteca es de 30 años. Los bancos generalmente no aprobarán una hipoteca por un período más largo. Además, existe una limitación de edad: generalmente se deben completar los pagos de la hipoteca hasta los 80 años (y en algunos bancos hasta los 85 años, dependiendo del seguro de vida).",
+      "new_p_1445": "Las limitaciones del Banco de Israel son rígidas, pero dentro de ellas existe un margen de maniobra significativo. El asesoramiento hipotecario para primera vivienda o para mejoradores de vivienda debe tener en cuenta estas limitaciones desde la etapa de planificación inicial.",
+      "new_p_1446": "Un asesor hipotecario experimentado sabe:",
+      "new_p_1451": "Entender la regulación es vuestro poder. No os acerquéis al banco sin preparación previa y sin entender las limitaciones que se os aplican.",
+      "new_p_1453": "No dejéis que la burocracia y la regulación os detengan. Estamos aquí para construir para vosotros la composición más precisa, de acuerdo con las directrices del Banco de Israel y vuestras necesidades personales.",
+      "new_p_1492": "Muchos piensan que el nivel de ingresos es el único factor para obtener una hipoteca, pero los bancos verifican un dato mucho más importante: la relación de retorno. Entender este concepto es crítico en el camino hacia la vivienda, y es parte integral del proceso de asesoramiento hipotecario profesional.",
+      "new_p_1495": "Cuando presentan una solicitud de hipoteca, el banco no solo mira cuánto dinero ganan al mes, sino principalmente cuánto dinero disponible les queda después de descontar las obligaciones existentes. La relación de retorno es en realidad el porcentaje del total de sus ingresos disponibles que se destina al pago mensual de la hipoteca.",
+      "new_p_1496": "Por ejemplo, si los ingresos conjuntos de la pareja son 20,000 shekels netos, y el pago hipotecario esperado es 5,000 shekels, la relación de retorno es del 25%. Este es un dato crítico ya que los bancos están sujetos a las directrices del Banco de Israel, que limitan el nivel de riesgo que pueden asumir.",
+      "new_p_1498": "Según la regulación, los bancos no pueden aprobar una hipoteca donde el pago mensual supere el 50% de los ingresos disponibles. En la práctica, la política de los bancos es más estricta, y la mayoría preferirá no superar una relación de retorno del 35%-40% para mantener un margen de seguridad para el hogar.",
+      "new_p_1501": "Para empleados, el banco calcula el promedio de los últimos tres recibos de sueldo (netos). Para autónomos, la verificación es más compleja y se basa en declaraciones de impuestos anuales y certificaciones de contador público. El asesoramiento hipotecario para mejoradores de vivienda o autónomos debe considerar la volatilidad de los ingresos para presentar una imagen estable al banco.",
+      "new_p_1503": "De los ingresos netos, el banco deduce obligaciones fijas: préstamos existentes (que tengan más de 18 meses restantes para finalizar), pensión alimenticia y otras obligaciones a largo plazo. Nota: el marco de crédito o pagos con tarjeta de crédito generalmente no se deducen, a menos que se trate de una \"transacción de pagos\" grande y fija.",
+      "new_p_1505": "Se pueden agregar a los ingresos determinantes también ingresos por alquiler de vivienda (si hay contrato válido y comprobante de depósitos), ciertas pensiones del seguro nacional (como pensión por discapacidad permanente), y a veces también bonificaciones anuales si aparecen consistentemente en los recibos de sueldo o en el formulario 106.",
+      "new_p_1507": "En muchos casos, las parejas son rechazadas por el banco no porque no tengan capital propio, sino debido a una relación de devolución límite. En el marco de asesoría hipotecaria, examinamos varias estrategias para resolver el problema:",
+      "new_p_1511": "Es importante recordar: una relación de devolución adecuada no es solo un requisito del banco, sino un mecanismo de protección para ustedes. Una familia que se compromete a una devolución demasiado alta se arriesga a dificultades económicas en el futuro, especialmente cuando las tasas de interés en la economía cambian o cuando la familia se expande.",
+      "new_p_1513": "Cuando realizamos asesoría hipotecaria para primera vivienda, siempre recomendamos no mirar solo la situación actual. Una pareja joven sin hijos puede quizás soportar una relación de devolución del 35%, pero con la incorporación de hijos a la familia los gastos aumentan significativamente (guarderías, cuidadoras, alimentación). Por eso, una planificación correcta toma en cuenta cambios futuros en ingresos y gastos.",
+      "new_p_1514": "También en el proceso de refinanciamiento hipotecario, la verificación de la relación de devolución es una excelente oportunidad para rebalancear el presupuesto familiar y ajustar las devoluciones a su capacidad económica actual.",
+      "new_p_1516": "No dejen que los cálculos complejos los detengan en el camino hacia la vivienda. Nuestro equipo en \"Hipoteca en Pijama\" está aquí para poner orden en los números y construir para ustedes la combinación más precisa.",
       "terms_h1_1": "Términos de Uso",
       "terms_h2_2": "1. Definiciones",
       "terms_h2_3": "2. Descripción de los Servicios",
@@ -6002,6 +6431,8 @@
       "new_h1_1268": "Capital propio para hipoteca – La base para su hogar",
       "new_h1_1293": "Construyendo una combinación hipotecaria ganadora: el secreto del ahorro real",
       "new_h1_1353": "Tablas de amortización hipotecaria – La guía completa",
+      "new_h1_1422": "Restricciones del Banco de Israel en hipotecas – La guía completa",
+      "new_h1_1491": "Relación de retorno en hipoteca – El número que lo determina todo",
       "new_h2_1121": "¿Quieren consultarnos?",
       "new_h2_1130": "¿Qué es realmente el asesoramiento hipotecario?",
       "new_h2_1133": "Conceptos básicos importantes que debe conocer",
@@ -6039,6 +6470,17 @@
       "new_h2_1369": "Comparación rápida: ¿qué les conviene?",
       "new_h2_1379": "El efecto del índice en las tablas de amortización",
       "new_h2_1384": "¿Dudan sobre qué tabla de amortización elegir?",
+      "new_h2_1424": "¿Por qué existen restricciones en las hipotecas?",
+      "new_h2_1427": "1. Limitación del ratio de financiación (LTV)",
+      "new_h2_1432": "2. Ratio de pago sobre ingresos (PTI)",
+      "new_h2_1437": "3. Limitaciones en la composición de la hipoteca",
+      "new_h2_1444": "Importancia del asesoramiento profesional frente a la regulación",
+      "new_h2_1452": "¿Queréis verificar vuestra elegibilidad para hipoteca?",
+      "new_h2_1494": "¿Qué es la relación de retorno y por qué es importante?",
+      "new_h2_1499": "¿Cómo se calculan los ingresos determinantes?",
+      "new_h2_1506": "¿Cómo mejorar la relación de devolución?",
+      "new_h2_1512": "Importancia de la planificación futura",
+      "new_h2_1515": "¿Quieren saber cuál es su relación de devolución?",
       "new_h3_1107": "Guía para principiantes",
       "new_h3_1111": "Primera vivienda",
       "new_h3_1118": "Consejos para ahorrar",
@@ -6060,6 +6502,14 @@
       "new_h3_1370": "¿Para quién es adecuado el sistema Spitzer?",
       "new_h3_1373": "¿Para quién es adecuado el capital igual?",
       "new_h3_1376": "¿Qué pasa con el préstamo globo (grace)?",
+      "new_h3_1434": "La regla del 40%",
+      "new_h3_1438": "Obligación de modalidad de interés fijo",
+      "new_h3_1440": "Limitación de modalidades prime",
+      "new_h3_1442": "Período del préstamo",
+      "new_h3_1497": "La regla del Banco de Israel",
+      "new_h3_1500": "Empleados y autónomos",
+      "new_h3_1502": "Préstamos y obligaciones",
+      "new_h3_1504": "Ingresos adicionales",
       "new_h4_1199": "¿Necesitan ayuda para obtener la aprobación?",
       "new_h4_1382": "Consejo de expertos:",
       "new_li_1135": "Tasa prime: Tasa que varía según las decisiones del Banco de Israel, y no está indexada al índice de precios al consumidor.",
@@ -6084,6 +6534,13 @@
       "new_li_1363": "Desventaja: Ritmo lento de liquidación de la deuda en los primeros años (\"comiendo los intereses\").",
       "new_li_1367": "Ventaja: Pago total de intereses más bajo y ritmo rápido de liquidación de deuda.",
       "new_li_1368": "Desventaja: Requiere capacidad de pago mensual muy alta al principio.",
+      "new_li_1447": "Cómo definir los ingresos de manera correcta para mejorar la relación de devolución (por ejemplo, reconocimiento de ingresos futuros por alquiler o bonos fijos).",
+      "new_li_1448": "Cómo construir una composición que aproveche el máximo permitido en las modalidades más baratas (como el prime) mientras cumple con el requisito de interés fijo.",
+      "new_li_1449": "Cómo lidiar con tasaciones bajas que pueden afectar el porcentaje de financiamiento aprobado.",
+      "new_li_1450": "Soluciones creativas en casos de desviación leve de los procedimientos, mediante comités de excepciones en los bancos.",
+      "new_li_1508": "Consolidación de préstamos: cierre de préstamos a corto plazo con devolución mensual alta y redistribución como parte de la hipoteca (o como préstamo largo) para reducir la devolución mensual total.",
+      "new_li_1509": "Incorporación de garantes: en ciertos casos, la incorporación de padres como prestatarios adicionales (garantes pagadores) puede aumentar los ingresos conjuntos calculados y mejorar la relación.",
+      "new_li_1510": "Extensión del período hipotecario: distribuir la hipoteca por un período más largo (por ejemplo 30 años en lugar de 20) reduce la devolución mensual, aunque encarece el total de intereses durante la vida del préstamo.",
       "new_span_85": "Hipoteca en Pijama",
       "new_span_88": "Hipoteca en Pijama",
       "new_span_91": "Hipoteca en Pijama",
@@ -6461,6 +6918,7 @@
   },
   "ru": {
     "translation": {
+      "nav-home": "Главная",
       "new_a_87": "Подкаст",
       "new_a_90": "Подкаст",
       "new_a_93": "Подкаст",
@@ -7264,6 +7722,80 @@
       "new_a_1352": "Таблицы погашения",
       "new_a_1355": "Записаться на консультацию",
       "new_a_1386": "Читайте о маршрутах ипотеки",
+      "new_a_1387": "Ограничения Банка Израиля",
+      "new_a_1388": "Ограничения Банка Израиля",
+      "new_a_1389": "Ограничения Банка Израиля",
+      "new_a_1390": "Ограничения Банка Израиля",
+      "new_a_1391": "Ограничения Банка Израиля",
+      "new_a_1392": "Ограничения Банка Израиля",
+      "new_a_1393": "Ограничения Банка Израиля",
+      "new_a_1394": "Ограничения Банка Израиля",
+      "new_a_1395": "Ограничения Банка Израиля",
+      "new_a_1396": "Ограничения Банка Израиля",
+      "new_a_1397": "Ограничения Банка Израиля",
+      "new_a_1398": "Ограничения Банка Израиля",
+      "new_a_1399": "Ограничения Банка Израиля",
+      "new_a_1400": "Ограничения Банка Израиля",
+      "new_a_1401": "Ограничения Банка Израиля",
+      "new_a_1402": "Ограничения Банка Израиля",
+      "new_a_1403": "Ограничения Банка Израиля",
+      "new_a_1404": "Ограничения Банка Израиля",
+      "new_a_1405": "Ограничения Банка Израиля",
+      "new_a_1406": "Ограничения Банка Израиля",
+      "new_a_1407": "Ограничения Банка Израиля",
+      "new_a_1408": "Ограничения Банка Израиля",
+      "new_a_1409": "Ограничения Банка Израиля",
+      "new_a_1410": "Ограничения Банка Израиля",
+      "new_a_1411": "Ограничения Банка Израиля",
+      "new_a_1412": "Ограничения Банка Израиля",
+      "new_a_1413": "Ограничения Банка Израиля",
+      "new_a_1414": "Ограничения Банка Израиля",
+      "new_a_1415": "Ограничения Банка Израиля",
+      "new_a_1416": "Ограничения Банка Израиля",
+      "new_a_1417": "Ограничения Банка Израиля",
+      "new_a_1418": "Ограничения Банка Израиля",
+      "new_a_1419": "Ограничения Банка Израиля",
+      "new_a_1420": "Ограничения Банка Израиля",
+      "new_a_1421": "Ограничения Банка Израиля",
+      "new_a_1454": "Связаться для консультации",
+      "new_a_1455": "Коэффициент возврата",
+      "new_a_1456": "Коэффициент возврата",
+      "new_a_1457": "Коэффициент возврата",
+      "new_a_1458": "Коэффициент возврата",
+      "new_a_1459": "Коэффициент возврата",
+      "new_a_1460": "Коэффициент возврата",
+      "new_a_1461": "Коэффициент возврата",
+      "new_a_1462": "Коэффициент возврата",
+      "new_a_1463": "Коэффициент возврата",
+      "new_a_1464": "Коэффициент возврата",
+      "new_a_1465": "Коэффициент возврата",
+      "new_a_1466": "Коэффициент возврата",
+      "new_a_1467": "Коэффициент возврата",
+      "new_a_1468": "Коэффициент возврата",
+      "new_a_1469": "Коэффициент возврата",
+      "new_a_1470": "Коэффициент возврата",
+      "new_a_1471": "Коэффициент возврата",
+      "new_a_1472": "Коэффициент возврата",
+      "new_a_1473": "Коэффициент возврата",
+      "new_a_1474": "Коэффициент возврата",
+      "new_a_1475": "Коэффициент возврата",
+      "new_a_1476": "Коэффициент возврата",
+      "new_a_1477": "Коэффициент возврата",
+      "new_a_1478": "Коэффициент возврата",
+      "new_a_1479": "Коэффициент возврата",
+      "new_a_1480": "Коэффициент возврата",
+      "new_a_1481": "Коэффициент возврата",
+      "new_a_1482": "Коэффициент возврата",
+      "new_a_1483": "Коэффициент возврата",
+      "new_a_1484": "Коэффициент возврата",
+      "new_a_1485": "Коэффициент возврата",
+      "new_a_1486": "Коэффициент возврата",
+      "new_a_1487": "Коэффициент возврата",
+      "new_a_1488": "Коэффициент возврата",
+      "new_a_1489": "Коэффициент возврата",
+      "new_a_1490": "Коэффициент возврата",
+      "new_a_1493": "Бесплатная проверка права на получение",
+      "new_a_1517": "К калькулятору ипотеки",
       "new_h1_109": "Подкаст «Ипотека в пижаме» – финансы на уровне глаз",
       "new_h1_214": "Центр знаний: всё, что нужно знать об ипотеке",
       "new_h1_239": "Полное руководство: процесс получения ипотеки шаг за шагом",
@@ -7718,6 +8250,35 @@
       "new_p_1381": "В процессе рефинансирования ипотеки и улучшения условий мы рассматриваем не только процентные ставки, но также состав индексации и график погашения. Иногда переход с графика Шпицер на равную основную сумму (если денежный поток позволяет) может обеспечить лучшую защиту от инфляции, поскольку основная сумма сокращается быстрее.",
       "new_p_1383": "Не смотрите только на первый платеж! Попросите у консультанта или банка симуляцию, показывающую развитие ежемесячного платежа при реалистичных предположениях об инфляции. То, что кажется дешевым сегодня, может оказаться очень дорогим через 5 лет.",
       "new_p_1385": "Построение правильного ипотечного портфеля требует широкого видения и глубокого понимания цифр. Мы здесь, чтобы помочь вам сэкономить десятки тысяч шекелей и подобрать ипотеку точно под ваши потребности.",
+      "new_p_1423": "Прежде чем обращаться в банк, необходимо знать правила игры. Регулирование Банка Израиля напрямую влияет на размер ипотеки, которую вы сможете получить, на ежемесячный платеж и на структуру программ.",
+      "new_p_1425": "Многие заемщики удивляются, узнав, что банк не может одобрить любую заявку, даже если у них отличная платежеспособность. Причина этого кроется в регулятивных указаниях Банка Израиля, цель которых – сохранить стабильность банковской системы и домашних хозяйств в Израиле.",
+      "new_p_1426": "В рамках процесса профессиональной консультации по ипотеке первый этап – проверка осуществимости в соответствии с этими ограничениями. Ограничения делятся на три основные области: коэффициент финансирования (сколько денег можно получить относительно стоимости недвижимости), коэффициент платежа (размер ежемесячного платежа относительно дохода) и ограничения на структуру ипотеки (типы процентных ставок).",
+      "new_p_1428": "Максимальный процент ипотеки, который можно получить от стоимости приобретаемой недвижимости, варьируется в зависимости от типа сделки.",
+      "new_p_1429": "Для покупателей первого жилья (не имеющих жилья) можно получить финансирование до 75% от стоимости недвижимости. Это означает, что вы должны внести собственный капитал не менее 25% от стоимости дома.",
+      "new_p_1430": "Тот, кто владеет квартирой и продает ее, чтобы купить другую взамен, определяется как улучшающий жилищные условия. В этом случае максимальное финансирование составляет 70%, а требуемый собственный капитал – 30%.",
+      "new_p_1431": "Для второй квартиры и выше (инвестиционная квартира) Банк Израиля ограничивает финансирование только 50%. То есть необходимо внести из дома половину стоимости недвижимости.",
+      "new_p_1433": "Одна из распространенных ошибок – мысль о том, что если есть собственный капитал, банк одобрит любую сумму. На практике банк тщательно проверяет вашу ежемесячную платежеспособность.",
+      "new_p_1435": "Ежемесячный платеж по ипотеке (плюс другие существующие кредиты, если они есть на срок более 18 месяцев) не превысит 50% от чистого располагаемого дохода. Однако на практике большинство банков ужесточают требования и ограничивают коэффициент платежа только 40%, а в некоторых случаях даже меньше.",
+      "new_p_1436": "Например: если совместный чистый доход составляет 20,000 шекелей, максимально возможный ежемесячный платеж будет около 8,000 шекелей (40%). Опытный консультант по ипотеке знает, как оптимально представить доходы, чтобы максимизировать одобрение банка.",
+      "new_p_1439": "Банк Израиля требует, чтобы как минимум треть (33%) от суммы ипотеки была взята по кредиту с фиксированной процентной ставкой (индексированной или неиндексированной). Цель этого требования - защитить заемщика от резких колебаний процентных ставок в будущем, поскольку эта часть кредита остается относительно стабильной.",
+      "new_p_1441": "Ранее существовало ограничение, позволявшее брать до трети по ставке прайм. Сегодня ограничение снято, и можно взять до двух третей (66%) под переменную процентную ставку (включая прайм), но по-прежнему существует обязательство сохранять треть под фиксированную ставку. Это изменение обеспечивает большую гибкость, но требует тщательного планирования рисков.",
+      "new_p_1443": "Максимальный срок ипотеки составляет 30 лет. Банки обычно не одобряют ипотеку на более длительный срок. Также существует возрастное ограничение - как правило, необходимо завершить выплаты по ипотеке до 80 лет (в некоторых банках до 85 лет, в зависимости от страхования жизни).",
+      "new_p_1445": "Ограничения Банка Израиля жесткие, но в их рамках существует значительное пространство для маневра. Консультация по ипотеке для первой квартиры или для улучшающих жилищные условия должна учитывать эти ограничения уже на этапе первоначального планирования.",
+      "new_p_1446": "Опытный консультант по ипотеке знает:",
+      "new_p_1451": "Понимание регулирования - это ваша сила. Не обращайтесь в банк без предварительной подготовки и без понимания ограничений, которые на вас распространяются.",
+      "new_p_1453": "Не позволяйте бюрократии и регулированию остановить вас. Мы здесь, чтобы построить для вас наиболее точную структуру в соответствии с указаниями Банка Израиля и вашими личными потребностями.",
+      "new_p_1492": "Многие думают, что размер дохода является единственным фактором при получении ипотеки, но банки проверяют гораздо более важный показатель: коэффициент возврата. Понимание этого понятия критично на пути к квартире, и оно является неотъемлемой частью процесса профессионального ипотечного консультирования.",
+      "new_p_1495": "Когда вы подаете заявку на ипотеку, банк смотрит не только на то, сколько денег вы зарабатываете в месяц, а главным образом на то, сколько свободных денег у вас остается после вычета существующих обязательств. Коэффициент возврата – это фактически процент от общего свободного дохода, который выделяется на ежемесячный возврат ипотеки.",
+      "new_p_1496": "Например, если совместный доход супругов составляет 20,000 шекелей нетто, а ожидаемый возврат ипотеки составляет 5,000 шекелей, коэффициент возврата равен 25%. Это критический показатель, поскольку банки подчиняются инструкциям Банка Израиля, которые ограничивают уровень риска, который они могут принять.",
+      "new_p_1498": "Согласно регулированию, банки не могут одобрить ипотеку, при которой ежемесячный возврат превышает 50% от свободного дохода. На практике политика банков более строгая, и большинство из них предпочтут не превышать коэффициент возврата в 35%-40%, чтобы оставить запас безопасности для домашнего хозяйства.",
+      "new_p_1501": "У наемных работников банк рассчитывает среднее значение трех последних справок о зарплате (нетто). У самозанятых проверка более сложная и основывается на годовых налоговых оценках и справках бухгалтера. Ипотечное консультирование для улучшающих жилищные условия или самозанятых должно учитывать колебания доходов, чтобы представить банку стабильную картину.",
+      "new_p_1503": "Из чистого дохода банк вычитает постоянные обязательства: существующие кредиты (у которых осталось более 18 месяцев до завершения), алименты и другие долгосрочные обязательства. Обратите внимание: кредитная линия или платежи по кредитной карте обычно не засчитываются, если только речь не идет о большой и постоянной \"сделке в рассрочку\".",
+      "new_p_1505": "К определяющему доходу можно также добавить доходы от аренды жилья (при наличии действующего договора и подтверждения поступлений), определенные пособия от социального страхования (например, постоянная пенсия по инвалидности), а иногда и годовые бонусы, если они стабильно отражаются в справках о зарплате или в форме 106.",
+      "new_p_1507": "Во многих случаях пары получают отказ от банка не из-за отсутствия собственного капитала, а из-за пограничного коэффициента возврата. В рамках консультации по ипотеке мы рассматриваем несколько стратегий для решения проблемы:",
+      "new_p_1511": "Важно помнить: правильный коэффициент возврата - это не только требование банка, но и защитный механизм для вас. Семья, которая берет на себя слишком высокий возврат, рискует столкнуться с финансовыми трудностями в будущем, особенно когда процентные ставки в экономике меняются или когда семья расширяется.",
+      "new_p_1513": "Когда мы проводим консультацию по ипотеке для первой квартиры, мы всегда рекомендуем смотреть не только на текущую ситуацию. Молодая пара без детей может, возможно, справиться с коэффициентом возврата 35%, но с появлением детей в семье расходы значительно возрастают (детские сады, няни, питание). Поэтому правильное планирование учитывает будущие изменения в доходах и расходах.",
+      "new_p_1514": "Также в процессе рефинансирования ипотеки проверка коэффициента возврата является отличной возможностью заново сбалансировать семейный бюджет и адаптировать возвраты к вашим текущим финансовым возможностям.",
+      "new_p_1516": "Не позволяйте сложным расчетам остановить вас на пути к квартире. Наша команда в \"Ипотека в пижаме\" здесь, чтобы навести порядок в цифрах и построить для вас наиболее точную комбинацию.",
       "terms_h1_1": "Условия использования",
       "terms_h2_2": "1. Определения",
       "terms_h2_3": "2. Описание услуг",
@@ -7781,6 +8342,8 @@
       "new_h1_1268": "Собственный капитал для ипотеки – основа вашего дома",
       "new_h1_1293": "Создание выигрышного ипотечного портфеля: секрет реальной экономии",
       "new_h1_1353": "Таблицы погашения ипотеки – полное руководство",
+      "new_h1_1422": "Ограничения Банка Израиля по ипотеке – полное руководство",
+      "new_h1_1491": "Коэффициент возврата по ипотеке – цифра, которая определяет всё",
       "new_h2_1121": "Хотите проконсультироваться с нами?",
       "new_h2_1130": "Что такое ипотечные консультации?",
       "new_h2_1133": "Основные понятия, которые важно знать",
@@ -7818,6 +8381,17 @@
       "new_h2_1369": "Быстрое сравнение: что вам подходит?",
       "new_h2_1379": "Влияние индекса на графики погашения",
       "new_h2_1384": "Сомневаетесь, какой график погашения выбрать?",
+      "new_h2_1424": "Зачем существуют ограничения на ипотеку?",
+      "new_h2_1427": "1. Ограничение коэффициента финансирования (LTV)",
+      "new_h2_1432": "2. Соотношение платежа к доходу (PTI)",
+      "new_h2_1437": "3. Ограничения на структуру ипотеки",
+      "new_h2_1444": "Важность профессиональной консультации в условиях регулирования",
+      "new_h2_1452": "Хотите проверить свое право на ипотеку?",
+      "new_h2_1494": "Что такое коэффициент возврата и почему он важен?",
+      "new_h2_1499": "Как рассчитывается определяющий доход?",
+      "new_h2_1506": "Как улучшить коэффициент возврата?",
+      "new_h2_1512": "Важность планирования на будущее",
+      "new_h2_1515": "Хотите узнать ваш коэффициент возврата?",
       "new_h3_1107": "Руководство для начинающих",
       "new_h3_1111": "Первая квартира",
       "new_h3_1118": "Советы по экономии",
@@ -7839,6 +8413,14 @@
       "new_h3_1370": "Кому подходит Шпицер?",
       "new_h3_1373": "Кому подходит равная основная сумма?",
       "new_h3_1376": "А как насчет кредита-баллона (Грейс)?",
+      "new_h3_1434": "Правило 40%",
+      "new_h3_1438": "Обязательство по кредиту с фиксированной процентной ставкой",
+      "new_h3_1440": "Ограничение кредитов по ставке прайм",
+      "new_h3_1442": "Срок кредита",
+      "new_h3_1497": "Правило Банка Израиля",
+      "new_h3_1500": "Наемные работники и самозанятые",
+      "new_h3_1502": "Кредиты и обязательства",
+      "new_h3_1504": "Дополнительные доходы",
       "new_h4_1199": "Нужна помощь в получении одобрения?",
       "new_h4_1382": "Совет экспертов:",
       "new_li_1135": "Прайм-ставка: процентная ставка, которая изменяется в соответствии с решениями Банка Израиля и не привязана к индексу потребительских цен.",
@@ -7863,6 +8445,13 @@
       "new_li_1363": "Недостаток: медленный темп погашения долга в первые годы («поедание процентов»).",
       "new_li_1367": "Преимущество: более низкая общая выплата процентов и быстрый темп погашения долга.",
       "new_li_1368": "Недостаток: требует очень высокой ежемесячной способности возврата в начале пути.",
+      "new_li_1447": "Как правильно определить доходы для улучшения коэффициента возврата (например, признание будущих доходов от аренды или постоянных бонусов).",
+      "new_li_1448": "Как построить структуру, максимально использующую разрешенный лимит по дешевым кредитам (таким как прайм), соблюдая при этом требование по фиксированной ставке.",
+      "new_li_1449": "Как справляться с низкими оценками, которые могут повредить одобренному проценту финансирования.",
+      "new_li_1450": "Творческие решения в случаях незначительного превышения процедур через комитеты по исключениям в банках.",
+      "new_li_1508": "Объединение кредитов: закрытие краткосрочных кредитов с высоким ежемесячным возвратом и их перераспределение как части ипотеки (или как долгосрочного кредита) для уменьшения общего ежемесячного возврата.",
+      "new_li_1509": "Привлечение поручителей: в некоторых случаях привлечение родителей как дополнительных заемщиков (платежеспособных поручителей) может увеличить рассчитываемый совместный доход и улучшить коэффициент.",
+      "new_li_1510": "Продление срока ипотеки: распределение ипотеки на более длительный период (например, 30 лет вместо 20) уменьшает ежемесячный возврат, хотя это удорожает общую сумму процентов за весь срок кредита.",
       "new_span_85": "Ипотека в пижаме",
       "new_span_88": "Ипотека в пижаме",
       "new_span_91": "Ипотека в пижаме",
@@ -8784,56 +9373,29 @@
   }
 })();
 </script>
-
+</body></html>
+    <script src="/script.js"></script>
     <script id="zappy-mobile-submenu-script">
     (function() {
       function initMobileSubmenuToggles() {
-        if (window.innerWidth > 768) {
-          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
-          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
-          return;
-        }
-        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
-        items.forEach(function(li) {
+        if (window.innerWidth > 768) { document.querySelectorAll('.mobile-submenu-toggle').forEach(function(b){b.remove();}); document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(m){m.classList.remove('mobile-expanded');}); return; }
+        document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)').forEach(function(li) {
           if (li.querySelector('.mobile-submenu-toggle')) return;
-          var submenu = li.querySelector('.sub-menu');
-          var parentLink = li.querySelector(':scope > a');
-          if (!submenu || !parentLink) return;
-          var toggleBtn = document.createElement('button');
-          toggleBtn.className = 'mobile-submenu-toggle';
-          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
-          toggleBtn.setAttribute('type', 'button');
-          parentLink.insertAdjacentElement('afterend', toggleBtn);
-          toggleBtn.addEventListener('click', function(e) {
-            e.preventDefault(); e.stopPropagation();
-            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
-              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
-            });
-            submenu.classList.toggle('mobile-expanded');
-            toggleBtn.classList.toggle('expanded');
+          var sm = li.querySelector('.sub-menu'), pl = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
+          if (!sm || !pl) return;
+          var tb = document.createElement('button'); tb.className = 'mobile-submenu-toggle'; tb.setAttribute('aria-label', 'Toggle submenu'); tb.setAttribute('type', 'button');
+          pl.insertAdjacentElement('afterend', tb);
+          tb.addEventListener('click', function(e) { e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(m) { if (m !== sm) { m.classList.remove('mobile-expanded'); var t = m.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }});
+            sm.classList.toggle('mobile-expanded'); tb.classList.toggle('expanded');
           });
         });
       }
-      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
-      else { initMobileSubmenuToggles(); }
-      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
-      // Re-initialize when mobile menu becomes visible (MutationObserver)
-      var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          if (mutation.type === 'attributes') {
-            var target = mutation.target;
-            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
-              setTimeout(initMobileSubmenuToggles, 100);
-            }
-          }
-        });
-      });
-      setTimeout(function() {
-        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
-          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
-        });
-      }, 500);
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); } else { initMobileSubmenuToggles(); }
+      window.addEventListener('resize', function() { clearTimeout(window._mrt); window._mrt = setTimeout(initMobileSubmenuToggles, 250); });
+      var observer = new MutationObserver(function(mutations) { mutations.forEach(function(mutation) { if (mutation.type === 'attributes') { var target = mutation.target; if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) { setTimeout(initMobileSubmenuToggles, 100); } } }); });
+      setTimeout(function() { document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) { observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] }); }); }, 500);
     })();
     </script>
-    <script src="/script.js"></script>
-</body></html>
+</body>
+</html>
