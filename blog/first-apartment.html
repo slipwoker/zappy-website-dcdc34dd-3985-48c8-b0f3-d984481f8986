@@ -1,14 +1,638 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <title>ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים</title>
-    <meta name="description" content="מתכננים לקנות דירה ראשונה? קראו את המדריך המלא על ייעוץ משכנתא לדירה ראשונה, גיוס הון עצמי ובניית תקציב נכון.">
-    <meta name="keywords" content="">
-    
-    <!-- Zappy Analytics -->
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="home_page_title">ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים</title>
+  <meta name="description" content="מתכננים לקנות דירה ראשונה? קראו את המדריך המלא על ייעוץ משכנתא לדירה ראשונה, גיוס הון עצמי ובניית תקציב נכון.">
+  <meta name="keywords" content="ייעוץ משכנתאות, ייעוץ משכנתא לדירה ראשונה, מיחזור משכנתא, ייעוץ פיננסי">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+      direction: ltr !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+    <!-- Iconify for cross-platform flag icons -->
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+          <style id="zappy-cta-mobile-style">
+            /* Hide CTA list item on desktop (tablets and up) */
+            @media (min-width: 769px) {
+              .nav-cta-item-mobile {
+                display: none !important;
+              }
+            }
+            /* Show CTA list item on mobile */
+            @media (max-width: 768px) {
+              .nav-cta-item-mobile {
+                display: list-item !important;
+              }
+            }
+          </style>
+        
+          <style id="zappy-nested-menu-style">
+            /* Desktop only: vertically center nav items */
+            @media (min-width: 769px) {
+              .nav-menu,
+              #navMenu {
+                align-items: center !important;
+              }
+            }
+            
+            /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+            }
+            
+            /* Desktop: show submenu on Menu Group hover */
+            li:has(.menu-group-title):hover > .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when hovering */
+            }
+            
+            /* Hide menu items marked as hidden (overrides hover states) */
+            .zappy-hidden-menu-item,
+            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
+              display: none !important;
+              opacity: 0 !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+            
+            /* Keep submenu visible when hovering over the submenu itself */
+            .sub-menu:hover {
+              opacity: 1 !important;
+              visibility: visible !important;
+              pointer-events: auto !important;
+            }
+            
+            /* Nested dropdown menu styles - using more specific selectors */
+            .nav-menu .sub-menu,
+            nav .sub-menu,
+            .navbar .sub-menu {
+              display: block !important; /* Ensure submenu is in the DOM */
+              position: absolute !important;
+              top: 100%;
+              left: 0;
+              right: auto;
+              min-width: 200px;
+              background: white;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+              border-radius: 8px;
+              padding: 8px 0;
+              margin-top: 0px; /* Remove gap to prevent hover loss */
+              opacity: 0 !important;
+              visibility: hidden !important;
+              transform: translateY(-10px);
+              transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+              z-index: 1000;
+              list-style: none;
+              pointer-events: none; /* Prevent interaction when hidden */
+            }
+            
+            /* RTL (Hebrew/Arabic) submenu positioning - align to right instead of left */
+            [dir="rtl"] .nav-menu .sub-menu,
+            [dir="rtl"] nav .sub-menu,
+            [dir="rtl"] .navbar .sub-menu,
+            html[lang="he"] .nav-menu .sub-menu,
+            html[lang="he"] nav .sub-menu,
+            html[lang="he"] .navbar .sub-menu,
+            html[lang="ar"] .nav-menu .sub-menu,
+            html[lang="ar"] nav .sub-menu,
+            html[lang="ar"] .navbar .sub-menu {
+              left: auto;
+              right: 0;
+            }
+            
+            /* Show submenu on parent hover - more specific selectors */
+            .nav-menu li:hover > .sub-menu,
+            nav li:hover > .sub-menu,
+            .navbar li:hover > .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when visible */
+            }
+            
+            /* Parent item must be relatively positioned */
+            .nav-menu li:has(.sub-menu),
+            nav li:has(.sub-menu),
+            .navbar li:has(.sub-menu) {
+              position: relative;
+            }
+            
+            /* Style for submenu items */
+            .sub-menu li {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+            }
+            
+            .sub-menu a,
+            .sub-menu .menu-group-title {
+              display: block !important;
+              padding: 10px 12px !important;
+              color: #333 !important;
+              font-weight: 600 !important;
+              text-decoration: none;
+              transition: background-color 0.2s;
+              white-space: nowrap;
+              cursor: default;
+            }
+            
+            .sub-menu a:hover {
+              background-color: #f5f5f5;
+            }
+            
+            /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+              background-color: transparent !important;
+            }
+            
+            /* On mobile, show nested menus as expandable accordion */
+            @media (max-width: 768px) {
+              /* Mobile submenu styling */
+              .nav-menu .sub-menu,
+              nav .sub-menu,
+              .navbar .sub-menu {
+                position: static !important;
+                transform: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                margin-top: 0 !important;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
+                padding: 0 !important;
+                border-radius: 0 !important;
+              }
+              
+              /* Expanded state */
+              .sub-menu.mobile-expanded {
+                max-height: 500px !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                padding: 8px 0 8px 16px !important;
+              }
+              
+              /* RTL padding adjustment */
+              [dir="rtl"] .sub-menu.mobile-expanded,
+              html[lang="he"] .sub-menu.mobile-expanded,
+              html[lang="ar"] .sub-menu.mobile-expanded {
+                padding: 8px 16px 8px 0 !important;
+              }
+              
+              /* Disable hover behavior on mobile */
+              .nav-menu li:hover > .sub-menu,
+              nav li:hover > .sub-menu,
+              .navbar li:hover > .sub-menu {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+              }
+              
+              /* Enable visibility for expanded submenus */
+              .nav-menu li > .sub-menu.mobile-expanded,
+              nav li > .sub-menu.mobile-expanded,
+              .navbar li > .sub-menu.mobile-expanded {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+              }
+              
+              .sub-menu a {
+                padding: 10px 0 !important;
+                display: block !important;
+                font-size: 14px !important;
+              }
+              
+              .sub-menu a:hover {
+                background-color: transparent !important;
+              }
+              
+              /* Parent item wrapper - flex layout for link + toggle */
+              .nav-menu li:has(.sub-menu),
+              nav li:has(.sub-menu),
+              .navbar li:has(.sub-menu) {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+              }
+              
+              /* Parent link - takes most space, allows navigation */
+              .nav-menu li:has(.sub-menu) > a,
+              nav li:has(.sub-menu) > a,
+              .navbar li:has(.sub-menu) > a,
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
+                flex: 1 !important;
+              }
+              
+              /* Toggle arrow button - separate clickable area */
+              .mobile-submenu-toggle {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: transparent !important;
+                border: none !important;
+                cursor: pointer !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                flex-shrink: 0 !important;
+                -webkit-tap-highlight-color: transparent;
+              }
+              
+              .mobile-submenu-toggle::after {
+                content: '' !important;
+                display: block !important;
+                width: 0 !important;
+                height: 0 !important;
+                border-left: 6px solid transparent !important;
+                border-right: 6px solid transparent !important;
+                border-top: 7px solid currentColor !important;
+                transition: transform 0.3s ease !important;
+              }
+              
+              /* Rotate arrow when expanded */
+              .mobile-submenu-toggle.expanded::after {
+                transform: rotate(180deg) !important;
+              }
+              
+              /* Submenu takes full width below parent */
+              .nav-menu li:has(.sub-menu) > .sub-menu,
+              nav li:has(.sub-menu) > .sub-menu,
+              .navbar li:has(.sub-menu) > .sub-menu {
+                flex-basis: 100% !important;
+                width: 100% !important;
+              }
+            }
+            
+            /* Hide toggle button on desktop */
+            @media (min-width: 769px) {
+              .mobile-submenu-toggle {
+                display: none !important;
+              }
+            }
+          </style>
+          
+          <script id="zappy-mobile-menu-script">
+            // Mobile menu toggle for nested submenus (including Menu Groups)
+            // Uses separate toggle button - link navigates, arrow toggles submenu
+            (function() {
+              function initMobileMenuToggles() {
+                // Only run on mobile
+                if (window.innerWidth > 768) {
+                  // Remove any toggle buttons on desktop
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
+                    menu.classList.remove('mobile-expanded');
+                  });
+                  console.log('[MOBILE MENU] Desktop mode - cleanup done');
+                  return;
+                }
+                
+                console.log('[MOBILE MENU] Initializing mobile menu toggles...');
+                
+                // Find all parent menu items (items with .sub-menu)
+                const menuItemsWithSubmenus = document.querySelectorAll(
+                  '.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)'
+                );
+                
+                console.log('[MOBILE MENU] Found', menuItemsWithSubmenus.length, 'items with submenus');
+                
+                menuItemsWithSubmenus.forEach(function(li) {
+                  // Skip if already has toggle button
+                  if (li.querySelector('.mobile-submenu-toggle')) {
+                    return;
+                  }
+                  
+                  const submenu = li.querySelector('.sub-menu');
+                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
+                  
+                  if (!submenu || !parentLink) return;
+                  
+                  // Create toggle button
+                  const toggleBtn = document.createElement('button');
+                  toggleBtn.className = 'mobile-submenu-toggle';
+                  toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+                  toggleBtn.setAttribute('type', 'button');
+                  
+                  // Insert toggle button after the link
+                  parentLink.insertAdjacentElement('afterend', toggleBtn);
+                  
+                  console.log('[MOBILE MENU] Created toggle button for:', parentLink.textContent?.trim());
+                  
+                  // Handle toggle button click - only toggles submenu
+                  toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isExpanded = submenu.classList.contains('mobile-expanded');
+                    
+                    // Close all other submenus first
+                    document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+                      if (menu !== submenu) {
+                        menu.classList.remove('mobile-expanded');
+                        const otherToggle = menu.parentElement.querySelector('.mobile-submenu-toggle');
+                        if (otherToggle) otherToggle.classList.remove('expanded');
+                      }
+                    });
+                    
+                    // Toggle this submenu
+                    submenu.classList.toggle('mobile-expanded');
+                    toggleBtn.classList.toggle('expanded');
+                    
+                    console.log('[MOBILE MENU] Toggled submenu:', !isExpanded ? 'expanded' : 'collapsed');
+                  });
+                  
+                  // Parent link navigates normally - no preventDefault
+                });
+              }
+              
+              // Initialize on DOM load
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileMenuToggles);
+              } else {
+                initMobileMenuToggles();
+              }
+              
+              // Re-initialize on window resize (but use debounce to avoid too many calls)
+              let resizeTimer;
+              window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(initMobileMenuToggles, 250);
+              });
+              
+              // Also initialize when mobile menu becomes visible
+              // This handles cases where the mobile menu is hidden initially
+              const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    const target = mutation.target;
+                    if (target.classList.contains('active') || target.style.display !== 'none') {
+                      console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
+                      setTimeout(initMobileMenuToggles, 100);
+                    }
+                  }
+                });
+              });
+              
+              // Observe mobile menu containers
+              const mobileMenus = document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu');
+              mobileMenus.forEach(function(menu) {
+                observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+              });
+            })();
+          </script>
+        <style>
+      /* Dropdown sub-menu styles (AI-generated page) */
+      .nav-menu li:has(.sub-menu),
+      nav li:has(.sub-menu),
+      .navbar li:has(.sub-menu) {
+        position: relative;
+      }
+      .nav-menu .sub-menu,
+      nav .sub-menu,
+      .navbar .sub-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        padding: 8px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        list-style: none;
+        pointer-events: none;
+      }
+      .nav-menu li:hover > .sub-menu,
+      nav li:hover > .sub-menu,
+      .navbar li:hover > .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .sub-menu li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .sub-menu a {
+        display: block;
+        padding: 10px 16px;
+        color: #333;
+        font-weight: 500;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background-color 0.2s;
+      }
+      .sub-menu a:hover {
+        background-color: #f5f5f5;
+      }
+      /* RTL dropdown positioning */
+      [dir="rtl"] .sub-menu,
+      html[lang="he"] .sub-menu,
+      html[lang="ar"] .sub-menu {
+        left: auto;
+        right: 0;
+      }
+    </style>
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים">
+    <meta property="og:description" content="מתכננים לקנות דירה ראשונה? קראו את המדריך המלא על ייעוץ משכנתא לדירה ראשונה, גיוס הון עצמי ובניית תקציב נכון.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1769179925113-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים">
+    <meta property="og:locale" content="he_IL">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים">
+    <meta name="twitter:description" content="מתכננים לקנות דירה ראשונה? קראו את המדריך המלא על ייעוץ משכנתא לדירה ראשונה, גיוס הון עצמי ובניית תקציב נכון.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1769179925113-og.jpg">
+    <meta name="twitter:image:alt" content="ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים"><style id="zappy-ai-page-styles">
+
+
+/* Zappy Base Styles for Edit Mode Compatibility */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; box-sizing: border-box; }
+.section { padding: 4rem 0; position: relative; display: block !important; }
+/* Reset section grid - sections should contain grids, not BE grids */
+section[data-zappy-section] { display: block !important; grid-template-columns: unset !important; }
+/* Grid layouts - consistent styling across all grid types */
+/* Services/Gallery/Portfolio grids - adaptive with lower min-width for more columns */
+/* Note: :not(.zappy-preserve-css-grid) excludes grids that have custom inline styles that should be preserved */
+.services-grid:not(.zappy-preserve-css-grid), .gallery-grid:not(.zappy-preserve-css-grid), .portfolio-grid:not(.zappy-preserve-css-grid), .blog-grid:not(.zappy-preserve-css-grid), .testimonials-grid:not(.zappy-preserve-css-grid) {
+  display: grid !important;
+  gap: 2rem !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)) !important;
+}
+/* Generic grid - slightly larger min-width */
+.grid:not(.zappy-preserve-css-grid) { display: grid !important; gap: 2rem !important; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)) !important; }
+.grid.grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
+.grid.grid-3 { grid-template-columns: repeat(3, 1fr) !important; }
+.grid.grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
+/* Card styling */
+.card, .service-card, .blog-card, .testimonial-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover, .service-card:hover, .blog-card:hover, .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+.card img, .service-card img, .blog-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer; border: none; }
+.btn-primary { background-color: #80a0c0; color: white; }
+.btn-primary:hover { filter: brightness(1.1); }
+/* Pricing grid specific */
+.pricing-grid { display: grid !important; gap: 2rem !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; }
+.pricing-card { background: #fff !important; border-radius: 16px !important; padding: 2rem !important; box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important; transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; }
+.pricing-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(0,0,0,0.12) !important; }
+.pricing-card.featured, .pricing-card.popular { border: 2px solid #80a0c0 !important; position: relative; }
+.pricing-card .card-header { padding-bottom: 1.5rem; border-bottom: 1px solid #eee; margin-bottom: 1.5rem; }
+.pricing-card .card-header h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #1f2937; }
+.pricing-card .price { font-size: 2.5rem; font-weight: 700; color: #1f2937; }
+.pricing-card .price .period { font-size: 1rem; font-weight: 400; color: #6b7280; }
+.pricing-card .plan-desc, .pricing-card .description { color: #6b7280; font-size: 0.95rem; margin-top: 0.5rem; }
+.pricing-card .card-body, .pricing-card .card-footer { text-align: center; }
+.pricing-card .features-list { list-style: none !important; padding: 0 !important; margin: 0 0 1.5rem 0 !important; text-align: right; }
+.pricing-card .features-list li { padding: 0.5rem 0; }
+.pricing-card .features-list li.disabled { color: #9ca3af; }
+.pricing-card .popular-badge { background: #80a0c0; color: white; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 600; text-align: center; }
+.pricing-card .btn { display: block; width: 100%; text-align: center; margin-top: 1rem; }
+.btn-outline { background: transparent !important; border: 2px solid #80a0c0 !important; color: #80a0c0 !important; }
+.btn-outline:hover { background: #80a0c0 !important; color: white !important; }
+.card { background: #fff !important; border-radius: 12px !important; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; }
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+  .section { padding: 2.5rem 0; }
+  .grid:not(.zappy-preserve-css-grid), .services-grid:not(.zappy-preserve-css-grid), .gallery-grid:not(.zappy-preserve-css-grid), .portfolio-grid:not(.zappy-preserve-css-grid), .blog-grid:not(.zappy-preserve-css-grid), .testimonials-grid:not(.zappy-preserve-css-grid) { 
+    gap: 1.5rem; 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important; 
+  }
+  .grid.grid-2:not(.zappy-preserve-css-grid), .grid.grid-3:not(.zappy-preserve-css-grid), .grid.grid-4:not(.zappy-preserve-css-grid) { grid-template-columns: 1fr; }
+  .pricing-grid:not(.zappy-preserve-css-grid) { grid-template-columns: 1fr; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid.grid-3:not(.zappy-preserve-css-grid), .grid.grid-4:not(.zappy-preserve-css-grid) { grid-template-columns: repeat(2, 1fr); }
+  .services-grid:not(.zappy-preserve-css-grid), .gallery-grid:not(.zappy-preserve-css-grid), .portfolio-grid:not(.zappy-preserve-css-grid), .blog-grid:not(.zappy-preserve-css-grid) { 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
+  }
+}
+/* Hero container fixes - contain absolute images */
+[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+[class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
+.hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
+/* Prevent hero positioning on non-hero page images */
+img[data-no-hero-position] { position: static !important; }
+/* Reset hero text colors for AI-generated pages - remove !important color overrides */
+.ai-generated-page .hero-content h1,
+.ai-generated-page .hero-content h2,
+.ai-generated-page .hero-content h3,
+.ai-generated-page .hero-content p,
+.ai-generated-page [class*="hero"] h1,
+.ai-generated-page [class*="hero"] h2,
+.ai-generated-page [class*="hero"] h3,
+.ai-generated-page [class*="hero"] p { color: unset !important; }
+/* End Zappy Base Styles */
+
+</style><!-- Zappy Analytics -->
 <script>
 (function() {
   'use strict';
@@ -210,697 +834,19 @@
 })();
 </script>
 <!-- End Zappy Analytics -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/styles.css">
-    <style id="zappy-dropdown-submenu-styles">
-      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
-      /* Base styles for dropdown submenus - parent must be positioned */
-      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
-      /* Submenu base - hidden by default */
-      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
-      /* CRITICAL: Desktop hover styles to show dropdown */
-      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Submenu item styling */
-      .sub-menu li { list-style: none; margin: 0; padding: 0; }
-      .sub-menu a { display: block !important; padding: 10px 16px !important; color: #333 !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
-      .sub-menu a:hover { background-color: #f5f5f5; }
-      /* RTL (Hebrew/Arabic) dropdown positioning */
-      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
-      /* Desktop: show submenu on Menu Group hover */
-      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Menu Group title styling */
-      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
-      
-      /* ========== MOBILE SUBMENU STYLES ========== */
-      @media (max-width: 768px) {
-        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
-        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
-        /* Disable hover behavior on mobile */
-        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
-        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
-        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; }
-        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; }
-        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
-        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: 44px !important; background: transparent !important; border: none !important; cursor: pointer !important; }
-        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
-        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
-        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
-        .sub-menu a { padding: 10px 0 !important; display: block !important; }
-        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; }
-      }
-      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
-    </style>
 </head>
-<body>
-<!DOCTYPE ><html lang="he" dir="rtl"><head>
-  <meta charset="UTF-8"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-  <title data-i18n="home_page_title">ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים</title>
-  <meta name="description" content="מתכננים לקנות דירה ראשונה? קראו את המדריך המלא על ייעוץ משכנתא לדירה ראשונה, גיוס הון עצמי ובניית תקציב נכון." data-i18n-content="home_meta_description"></meta>
-  <meta name="keywords" content="ייעוץ משכנתאות, ייעוץ משכנתא לדירה ראשונה, מיחזור משכנתא, ייעוץ פיננסי"></meta>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico"></link>
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"></link>
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"></link>
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png"></link>
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png"></link>
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png"></link>
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"></link>
-<style>
-/* Zappy Attribution Header Styles */
-.zappy-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
-  padding: 16px 10px;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
-  font-size: 16px;
-  color: #4a4a4a;
-  line-height: 21px;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 21px;
-  direction: ltr !important;
-  unicode-bidi: isolate;
-}
-
-    .zappy-header p {
-      margin: 0;
-      padding: 0;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 21px;
-      white-space: nowrap;
-      display: inline-block;
-      vertical-align: baseline;
-      margin-bottom: 0 !important;
-      direction: ltr !important;
-    }
-
-.zappy-header .zappy-link {
-  font-weight: 700;
-  color: #4a4a4a;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.zappy-header .zappy-link:hover {
-  opacity: 0.7;
-}</style>
-    <!-- Cookie Consent -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css"></link>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
-    <!-- Mickidum Accessibility Toolbar -->
-    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
-
-    <!-- Iconify for cross-platform flag icons -->
-    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
-          <style id="zappy-cta-mobile-style">
-            /* Hide CTA list item on desktop (tablets and up) */
-            @media (min-width: 769px) {
-              .nav-cta-item-mobile {
-                display: none !important;
-              }
-            }
-            /* Show CTA list item on mobile */
-            @media (max-width: 768px) {
-              .nav-cta-item-mobile {
-                display: list-item !important;
-              }
-            }
-          </style>
-        
-          <style id="zappy-nested-menu-style">
-            /* Desktop only: vertically center nav items */
-            @media (min-width: 769px) {
-              .nav-menu,
-              #navMenu {
-                align-items: center !important;
-              }
-            }
-            
-            /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
-              display: inline-block !important;
-              padding: 0.5rem 1rem !important;
-              color: var(--nav-color) !important;
-              font-weight: 500 !important;
-              line-height: 1.7 !important;
-              cursor: default !important;
-              user-select: none !important;
-              vertical-align: middle !important;
-              text-decoration: none !important;
-              margin: 0 !important;
-              transition: color 0.3s ease !important;
-            }
-            
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
-              color: var(--nav-hover-color) !important;
-            }
-            
-            /* Desktop: show submenu on Menu Group hover */
-            li:has(.menu-group-title):hover &gt; .sub-menu {
-              opacity: 1 !important;
-              visibility: visible !important;
-              transform: translateY(0) !important;
-              pointer-events: auto !important; /* Enable interaction when hovering */
-            }
-            
-            /* Hide menu items marked as hidden (overrides hover states) */
-            .zappy-hidden-menu-item,
-            li:has(.menu-group-title):hover &gt; .sub-menu .zappy-hidden-menu-item {
-              display: none !important;
-              opacity: 0 !important;
-              visibility: hidden !important;
-              pointer-events: none !important;
-            }
-            
-            /* Keep submenu visible when hovering over the submenu itself */
-            .sub-menu:hover {
-              opacity: 1 !important;
-              visibility: visible !important;
-              pointer-events: auto !important;
-            }
-            
-            /* Nested dropdown menu styles - using more specific selectors */
-            .nav-menu .sub-menu,
-            nav .sub-menu,
-            .navbar .sub-menu {
-              display: block !important; /* Ensure submenu is in the DOM */
-              position: absolute !important;
-              top: 100%;
-              left: 0;
-              right: auto;
-              min-width: 200px;
-              background: white;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-              border-radius: 8px;
-              padding: 8px 0;
-              margin-top: 0px; /* Remove gap to prevent hover loss */
-              opacity: 0 !important;
-              visibility: hidden !important;
-              transform: translateY(-10px);
-              transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-              z-index: 1000;
-              list-style: none;
-              pointer-events: none; /* Prevent interaction when hidden */
-            }
-            
-            /* RTL (Hebrew/Arabic) submenu positioning - align to right instead of left */
-            [dir="rtl"] .nav-menu .sub-menu,
-            [dir="rtl"] nav .sub-menu,
-            [dir="rtl"] .navbar .sub-menu,
-            html[lang="he"] .nav-menu .sub-menu,
-            html[lang="he"] nav .sub-menu,
-            html[lang="he"] .navbar .sub-menu,
-            html[lang="ar"] .nav-menu .sub-menu,
-            html[lang="ar"] nav .sub-menu,
-            html[lang="ar"] .navbar .sub-menu {
-              left: auto;
-              right: 0;
-            }
-            
-            /* Show submenu on parent hover - more specific selectors */
-            .nav-menu li:hover &gt; .sub-menu,
-            nav li:hover &gt; .sub-menu,
-            .navbar li:hover &gt; .sub-menu {
-              opacity: 1 !important;
-              visibility: visible !important;
-              transform: translateY(0) !important;
-              pointer-events: auto !important; /* Enable interaction when visible */
-            }
-            
-            /* Parent item must be relatively positioned */
-            .nav-menu li:has(.sub-menu),
-            nav li:has(.sub-menu),
-            .navbar li:has(.sub-menu) {
-              position: relative;
-            }
-            
-            /* Style for submenu items */
-            .sub-menu li {
-              list-style: none;
-              margin: 0;
-              padding: 0;
-            }
-            
-            .sub-menu a,
-            .sub-menu .menu-group-title {
-              display: block !important;
-              padding: 10px 12px !important;
-              color: #333 !important;
-              font-weight: 600 !important;
-              text-decoration: none;
-              transition: background-color 0.2s;
-              white-space: nowrap;
-              cursor: default;
-            }
-            
-            .sub-menu a:hover {
-              background-color: #f5f5f5;
-            }
-            
-            /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
-              display: inline-block !important;
-              padding: 0.5rem 1rem !important;
-              color: var(--nav-color) !important;
-              font-weight: 500 !important;
-              line-height: 1.7 !important;
-              cursor: default !important;
-              user-select: none !important;
-              vertical-align: middle !important;
-              text-decoration: none !important;
-              margin: 0 !important;
-              transition: color 0.3s ease !important;
-            }
-            
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
-              color: var(--nav-hover-color) !important;
-              background-color: transparent !important;
-            }
-            
-            /* On mobile, show nested menus as expandable accordion */
-            @media (max-width: 768px) {
-              /* Mobile submenu styling */
-              .nav-menu .sub-menu,
-              nav .sub-menu,
-              .navbar .sub-menu {
-                position: static !important;
-                transform: none !important;
-                box-shadow: none !important;
-                background: transparent !important;
-                margin-top: 0 !important;
-                max-height: 0;
-                overflow: hidden;
-                opacity: 0;
-                visibility: hidden;
-                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
-                padding: 0 !important;
-                border-radius: 0 !important;
-              }
-              
-              /* Expanded state */
-              .sub-menu.mobile-expanded {
-                max-height: 500px !important;
-                opacity: 1 !important;
-                visibility: visible !important;
-                padding: 8px 0 8px 16px !important;
-              }
-              
-              /* RTL padding adjustment */
-              [dir="rtl"] .sub-menu.mobile-expanded,
-              html[lang="he"] .sub-menu.mobile-expanded,
-              html[lang="ar"] .sub-menu.mobile-expanded {
-                padding: 8px 16px 8px 0 !important;
-              }
-              
-              /* Disable hover behavior on mobile */
-              .nav-menu li:hover &gt; .sub-menu,
-              nav li:hover &gt; .sub-menu,
-              .navbar li:hover &gt; .sub-menu {
-                opacity: 0;
-                visibility: hidden;
-                pointer-events: none;
-              }
-              
-              /* Enable visibility for expanded submenus */
-              .nav-menu li &gt; .sub-menu.mobile-expanded,
-              nav li &gt; .sub-menu.mobile-expanded,
-              .navbar li &gt; .sub-menu.mobile-expanded {
-                opacity: 1 !important;
-                visibility: visible !important;
-                pointer-events: auto !important;
-              }
-              
-              .sub-menu a {
-                padding: 10px 0 !important;
-                display: block !important;
-                font-size: 14px !important;
-              }
-              
-              .sub-menu a:hover {
-                background-color: transparent !important;
-              }
-              
-              /* Parent item wrapper - flex layout for link + toggle */
-              .nav-menu li:has(.sub-menu),
-              nav li:has(.sub-menu),
-              .navbar li:has(.sub-menu) {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                align-items: center !important;
-              }
-              
-              /* Parent link - takes most space, allows navigation */
-              .nav-menu li:has(.sub-menu) &gt; a,
-              nav li:has(.sub-menu) &gt; a,
-              .navbar li:has(.sub-menu) &gt; a,
-              .nav-menu &gt; li &gt; .menu-group-title,
-              #navMenu &gt; li &gt; .menu-group-title {
-                flex: 1 !important;
-              }
-              
-              /* Toggle arrow button - separate clickable area */
-              .mobile-submenu-toggle {
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                width: 44px !important;
-                height: 44px !important;
-                background: transparent !important;
-                border: none !important;
-                cursor: pointer !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                flex-shrink: 0 !important;
-                -webkit-tap-highlight-color: transparent;
-              }
-              
-              .mobile-submenu-toggle::after {
-                content: '' !important;
-                display: block !important;
-                width: 0 !important;
-                height: 0 !important;
-                border-left: 6px solid transparent !important;
-                border-right: 6px solid transparent !important;
-                border-top: 7px solid currentColor !important;
-                transition: transform 0.3s ease !important;
-              }
-              
-              /* Rotate arrow when expanded */
-              .mobile-submenu-toggle.expanded::after {
-                transform: rotate(180deg) !important;
-              }
-              
-              /* Submenu takes full width below parent */
-              .nav-menu li:has(.sub-menu) &gt; .sub-menu,
-              nav li:has(.sub-menu) &gt; .sub-menu,
-              .navbar li:has(.sub-menu) &gt; .sub-menu {
-                flex-basis: 100% !important;
-                width: 100% !important;
-              }
-            }
-            
-            /* Hide toggle button on desktop */
-            @media (min-width: 769px) {
-              .mobile-submenu-toggle {
-                display: none !important;
-              }
-            }
-          </style>
-          
-          <script id="zappy-mobile-menu-script">
-            // Mobile menu toggle for nested submenus (including Menu Groups)
-            // Uses separate toggle button - link navigates, arrow toggles submenu
-            (function() {
-              function initMobileMenuToggles() {
-                // Only run on mobile
-                if (window.innerWidth &gt; 768) {
-                  // Remove any toggle buttons on desktop
-                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn =&gt; btn.remove());
-                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu =&gt; {
-                    menu.classList.remove('mobile-expanded');
-                  });
-                  console.log('[MOBILE MENU] Desktop mode - cleanup done');
-                  return;
-                }
-                
-                console.log('[MOBILE MENU] Initializing mobile menu toggles...');
-                
-                // Find all parent menu items (items with .sub-menu)
-                const menuItemsWithSubmenus = document.querySelectorAll(
-                  '.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)'
-                );
-                
-                console.log('[MOBILE MENU] Found', menuItemsWithSubmenus.length, 'items with submenus');
-                
-                menuItemsWithSubmenus.forEach(function(li) {
-                  // Skip if already has toggle button
-                  if (li.querySelector('.mobile-submenu-toggle')) {
-                    return;
-                  }
-                  
-                  const submenu = li.querySelector('.sub-menu');
-                  const parentLink = li.querySelector(':scope &gt; a') || li.querySelector(':scope &gt; .menu-group-title');
-                  
-                  if (!submenu || !parentLink) return;
-                  
-                  // Create toggle button
-                  const toggleBtn = document.createElement('button');
-                  toggleBtn.className = 'mobile-submenu-toggle';
-                  toggleBtn.setAttribute('aria-label', 'Toggle submenu');
-                  toggleBtn.setAttribute('type', 'button');
-                  
-                  // Insert toggle button after the link
-                  parentLink.insertAdjacentElement('afterend', toggleBtn);
-                  
-                  console.log('[MOBILE MENU] Created toggle button for:', parentLink.textContent?.trim());
-                  
-                  // Handle toggle button click - only toggles submenu
-                  toggleBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    const isExpanded = submenu.classList.contains('mobile-expanded');
-                    
-                    // Close all other submenus first
-                    document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
-                      if (menu !== submenu) {
-                        menu.classList.remove('mobile-expanded');
-                        const otherToggle = menu.parentElement.querySelector('.mobile-submenu-toggle');
-                        if (otherToggle) otherToggle.classList.remove('expanded');
-                      }
-                    });
-                    
-                    // Toggle this submenu
-                    submenu.classList.toggle('mobile-expanded');
-                    toggleBtn.classList.toggle('expanded');
-                    
-                    console.log('[MOBILE MENU] Toggled submenu:', !isExpanded ? 'expanded' : 'collapsed');
-                  });
-                  
-                  // Parent link navigates normally - no preventDefault
-                });
-              }
-              
-              // Initialize on DOM load
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initMobileMenuToggles);
-              } else {
-                initMobileMenuToggles();
-              }
-              
-              // Re-initialize on window resize (but use debounce to avoid too many calls)
-              let resizeTimer;
-              window.addEventListener('resize', function() {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(initMobileMenuToggles, 250);
-              });
-              
-              // Also initialize when mobile menu becomes visible
-              // This handles cases where the mobile menu is hidden initially
-              const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                  if (mutation.type === 'attributes' &amp;&amp; mutation.attributeName === 'class') {
-                    const target = mutation.target;
-                    if (target.classList.contains('active') || target.style.display !== 'none') {
-                      console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
-                      setTimeout(initMobileMenuToggles, 100);
-                    }
-                  }
-                });
-              });
-              
-              // Observe mobile menu containers
-              const mobileMenus = document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu');
-              mobileMenus.forEach(function(menu) {
-                observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
-              });
-            })();
-          </script>
-        <style>
-      /* Dropdown sub-menu styles (AI-generated page) */
-      .nav-menu li:has(.sub-menu),
-      nav li:has(.sub-menu),
-      .navbar li:has(.sub-menu) {
-        position: relative;
-      }
-      .nav-menu .sub-menu,
-      nav .sub-menu,
-      .navbar .sub-menu {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 220px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        padding: 8px 0;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
-        list-style: none;
-        pointer-events: none;
-      }
-      .nav-menu li:hover &gt; .sub-menu,
-      nav li:hover &gt; .sub-menu,
-      .navbar li:hover &gt; .sub-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
-      .sub-menu li {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .sub-menu a {
-        display: block;
-        padding: 10px 16px;
-        color: #333;
-        font-weight: 500;
-        text-decoration: none;
-        white-space: nowrap;
-        transition: background-color 0.2s;
-      }
-      .sub-menu a:hover {
-        background-color: #f5f5f5;
-      }
-      /* RTL dropdown positioning */
-      [dir="rtl"] .sub-menu,
-      html[lang="he"] .sub-menu,
-      html[lang="ar"] .sub-menu {
-        left: auto;
-        right: 0;
-      }
-    </style>
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:type" content="article"></meta>
-    <meta property="og:title" content="ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים"></meta>
-    <meta property="og:description" content="מתכננים לקנות דירה ראשונה? קראו את המדריך המלא על ייעוץ משכנתא לדירה ראשונה, גיוס הון עצמי ובניית תקציב נכון."></meta>
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1769179925113-og.jpg"></meta>
-    <meta property="og:image:width" content="1200"></meta>
-    <meta property="og:image:height" content="630"></meta>
-    <meta property="og:image:type" content="image/jpeg"></meta>
-    <meta property="og:image:alt" content="ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים"></meta>
-    <meta property="og:locale" content="he_IL"></meta>
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image"></meta>
-    <meta name="twitter:title" content="ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים"></meta>
-    <meta name="twitter:description" content="מתכננים לקנות דירה ראשונה? קראו את המדריך המלא על ייעוץ משכנתא לדירה ראשונה, גיוס הון עצמי ובניית תקציב נכון."></meta>
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1769179925113-og.jpg"></meta>
-    <meta name="twitter:image:alt" content="ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים"></meta><style id="zappy-ai-page-styles">
-
-
-/* Zappy Base Styles for Edit Mode Compatibility */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; box-sizing: border-box; }
-.section { padding: 4rem 0; position: relative; display: block !important; }
-/* Reset section grid - sections should contain grids, not BE grids */
-section[data-zappy-section] { display: block !important; grid-template-columns: unset !important; }
-/* Grid layouts - consistent styling across all grid types */
-/* Services/Gallery/Portfolio grids - adaptive with lower min-width for more columns */
-/* Note: :not(.zappy-preserve-css-grid) excludes grids that have custom inline styles that should be preserved */
-.services-grid:not(.zappy-preserve-css-grid), .gallery-grid:not(.zappy-preserve-css-grid), .portfolio-grid:not(.zappy-preserve-css-grid), .blog-grid:not(.zappy-preserve-css-grid), .testimonials-grid:not(.zappy-preserve-css-grid) {
-  display: grid !important;
-  gap: 2rem !important;
-  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)) !important;
-}
-/* Generic grid - slightly larger min-width */
-.grid:not(.zappy-preserve-css-grid) { display: grid !important; gap: 2rem !important; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)) !important; }
-.grid.grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
-.grid.grid-3 { grid-template-columns: repeat(3, 1fr) !important; }
-.grid.grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
-/* Card styling */
-.card, .service-card, .blog-card, .testimonial-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.card:hover, .service-card:hover, .blog-card:hover, .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-.card img, .service-card img, .blog-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
-.btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer; border: none; }
-.btn-primary { background-color: #80a0c0; color: white; }
-.btn-primary:hover { filter: brightness(1.1); }
-/* Pricing grid specific */
-.pricing-grid { display: grid !important; gap: 2rem !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; }
-.pricing-card { background: #fff !important; border-radius: 16px !important; padding: 2rem !important; box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important; transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; }
-.pricing-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(0,0,0,0.12) !important; }
-.pricing-card.featured, .pricing-card.popular { border: 2px solid #80a0c0 !important; position: relative; }
-.pricing-card .card-header { padding-bottom: 1.5rem; border-bottom: 1px solid #eee; margin-bottom: 1.5rem; }
-.pricing-card .card-header h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #1f2937; }
-.pricing-card .price { font-size: 2.5rem; font-weight: 700; color: #1f2937; }
-.pricing-card .price .period { font-size: 1rem; font-weight: 400; color: #6b7280; }
-.pricing-card .plan-desc, .pricing-card .description { color: #6b7280; font-size: 0.95rem; margin-top: 0.5rem; }
-.pricing-card .card-body, .pricing-card .card-footer { text-align: center; }
-.pricing-card .features-list { list-style: none !important; padding: 0 !important; margin: 0 0 1.5rem 0 !important; text-align: right; }
-.pricing-card .features-list li { padding: 0.5rem 0; }
-.pricing-card .features-list li.disabled { color: #9ca3af; }
-.pricing-card .popular-badge { background: #80a0c0; color: white; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 600; text-align: center; }
-.pricing-card .btn { display: block; width: 100%; text-align: center; margin-top: 1rem; }
-.btn-outline { background: transparent !important; border: 2px solid #80a0c0 !important; color: #80a0c0 !important; }
-.btn-outline:hover { background: #80a0c0 !important; color: white !important; }
-.card { background: #fff !important; border-radius: 12px !important; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; }
-@media (max-width: 768px) {
-  .container { padding: 0 1rem; }
-  .section { padding: 2.5rem 0; }
-  .grid:not(.zappy-preserve-css-grid), .services-grid:not(.zappy-preserve-css-grid), .gallery-grid:not(.zappy-preserve-css-grid), .portfolio-grid:not(.zappy-preserve-css-grid), .blog-grid:not(.zappy-preserve-css-grid), .testimonials-grid:not(.zappy-preserve-css-grid) { 
-    gap: 1.5rem; 
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important; 
-  }
-  .grid.grid-2:not(.zappy-preserve-css-grid), .grid.grid-3:not(.zappy-preserve-css-grid), .grid.grid-4:not(.zappy-preserve-css-grid) { grid-template-columns: 1fr; }
-  .pricing-grid:not(.zappy-preserve-css-grid) { grid-template-columns: 1fr; }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .grid.grid-3:not(.zappy-preserve-css-grid), .grid.grid-4:not(.zappy-preserve-css-grid) { grid-template-columns: repeat(2, 1fr); }
-  .services-grid:not(.zappy-preserve-css-grid), .gallery-grid:not(.zappy-preserve-css-grid), .portfolio-grid:not(.zappy-preserve-css-grid), .blog-grid:not(.zappy-preserve-css-grid) { 
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
-  }
-}
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
-[class*="hero"] &gt; .container, [id*="hero"] &gt; .container { position: relative; z-index: 2; }
-.hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
-/* Prevent hero positioning on non-hero page images */
-img[data-no-hero-position] { position: static !important; }
-/* Reset hero text colors for AI-generated pages - remove !important color overrides */
-.ai-generated-page .hero-content h1,
-.ai-generated-page .hero-content h2,
-.ai-generated-page .hero-content h3,
-.ai-generated-page .hero-content p,
-.ai-generated-page [class*="hero"] h1,
-.ai-generated-page [class*="hero"] h2,
-.ai-generated-page [class*="hero"] h3,
-.ai-generated-page [class*="hero"] p { color: unset !important; }
-/* End Zappy Base Styles */
-
-</style></head>
 <body>
 
 <!-- Zappy Attribution Header -->
 <div id="zappy-attribution-header" class="zappy-header" style="display: none;">
-  <p data-i18n="home_p_28">Happily created by&amp;nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link" data-i18n="home_link_53">Zappy</a></p>
+  <p data-i18n="home_p_28">Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link" data-i18n="home_link_53">Zappy</a></p>
 </div>
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
       <div class="nav-brand">
         <a href="/" class="logo-link">
-          <img src="/assets/logo.webp" alt="אריאל אחון ייעוץ משכנתאות ופיננסיים - משכנתא בפיג'מה" class="logo" data-i18n-alt="home_alt_64"></img>
+          <img src="/assets/logo.webp" alt="אריאל אחון ייעוץ משכנתאות ופיננסיים - משכנתא בפיג'מה" class="logo" data-i18n-alt="home_alt_64">
           <span class="brand-tagline" data-i18n="new_span_85">משכנתא בפיג'מה</span>
         </a>
       </div>
@@ -920,7 +866,7 @@ img[data-no-hero-position] { position: static !important; }
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">בית</a></li><li><a href="/services" data-i18n="home_nav_60">שירותים</a></li><li><a href="/about" data-i18n="home_nav_61">אודות</a></li><li class="nav-cta-item-mobile"><a href="/contact-us" data-original-href="/contact" style="background-color: #f59e0b !important; border-color: #f59e0b !important; color: #ffffff !important" data-i18n="home_nav_62">צור קשר</a></li><li><a href="/mashkanta-bepijama-podcast" class="nav-link" data-i18n="new_a_87">פודקאסט</a></li><li><a href="/articles" class="nav-link" data-i18n="new_a_133">מאמרים</a><ul class="sub-menu"><li><a href="/articles/mortgage-process" class="nav-link" data-i18n="new_a_135">תהליך המשכנתא</a></li><li><a href="/articles/refinancing" class="nav-link" data-i18n="new_a_137">מיחזור משכנתא</a></li><li><a href="/articles/loan-consolidation" class="nav-link" data-i18n="new_a_139">איחוד הלוואות</a></li><li><a href="/articles/mechir-lamishtaken" class="nav-link" data-i18n="new_a_141">מחיר למשתכן</a></li><li><a href="/articles/common-mortgage-mistakes" class="nav-link" data-i18n="new_a_332">טעויות במשכנתא</a></li><li><a href="/articles/mortgage-tracks" class="nav-link" data-i18n="new_a_387">מסלולי משכנתא</a></li><li><a href="/articles/housing-improvers" class="nav-link" data-i18n="new_a_453">משכנתא למשפרי דיור</a></li><li><a href="/articles/investment-mortgage" class="nav-link" data-i18n="new_a_522">משכנתא להשקעה</a></li><li><a href="/articles/first-apartment-mortgage" class="nav-link" data-i18n="new_a_585">משכנתא לדירה ראשונה</a></li><li><a href="/articles/mortgage-insurance" class="nav-link" data-i18n="new_h3_630">ביטוח משכנתא</a></li><li><a href="/articles/self-construction-mortgage" class="nav-link" data-i18n="new_a_677">משכנתא לבנייה עצמית</a></li><li><a href="/articles/mortgage-ancillary-costs" class="nav-link" data-i18n="new_a_728">הוצאות נלוות</a></li><li><a href="/articles/reverse-mortgage" class="nav-link" data-i18n="new_a_775">משכנתא הפוכה</a></li><li><a href="/articles/self-employed-mortgage" class="nav-link" data-i18n="new_a_825">משכנתא לעצמאיים</a></li><li><a href="/articles/mortgage-porting" class="nav-link" data-i18n="new_a_874">גרירת משכנתא</a></li><li><a href="/articles/private-consulting-benefits" class="nav-link" data-i18n="new_a_935">ייעוץ משכנתא פרטי</a></li><li><a href="/articles/mortgage-pre-approval" class="nav-link" data-i18n="new_h3_927">אישור עקרוני</a></li><li><a href="/articles/construction-input-index" class="nav-link" data-i18n="new_h3_766">מדד תשומות הבנייה</a></li><li><a href="/articles/mortgage-equity" class="nav-link" data-i18n="new_a_1263">הון עצמי</a></li><li><a href="/articles/smart-mortgage-mix" class="nav-link" data-i18n="new_h3_628">בניית תמהיל משכנתא</a></li><li><a href="/articles/amortization-schedules" class="nav-link" data-i18n="new_a_1346">לוחות סילוקין</a></li><li><a href="/articles/boi-regulations" class="nav-link" data-i18n="new_a_1414">הגבלות בנק ישראל</a></li><li><a href="/articles/repayment-ratio" class="nav-link" data-i18n="new_a_1482">יחס החזר</a></li></ul></li><li><a href="/blog" class="nav-link" data-i18n="new_a_1143">בלוג</a><ul class="sub-menu"><li><a href="/blog/beginners-guide" class="nav-link" data-i18n="new_a_1144">למתחילים</a></li><li><a href="/blog/first-apartment" class="nav-link" data-i18n="new_a_1145">דירה ראשונה</a></li><li><a href="/blog/recycling" class="nav-link" data-i18n="new_a_1146">מיחזור</a></li></ul></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">בית</a></li><li><a href="/services" data-i18n="home_nav_60">שירותים</a></li><li><a href="/about" data-i18n="home_nav_61">אודות</a></li><li class="nav-cta-item-mobile"><a href="/contact-us" data-original-href="/contact" style="background-color: #f59e0b !important; border-color: #f59e0b !important; color: #ffffff !important" data-i18n="home_nav_62">צור קשר</a></li><li><a href="/mashkanta-bepijama-podcast" class="nav-link" data-i18n="new_a_87">פודקאסט</a></li><li><a href="/articles" class="nav-link" data-i18n="new_a_133">מאמרים</a><ul class="sub-menu"><li><a href="/articles/mortgage-process" class="nav-link" data-i18n="new_a_135">תהליך המשכנתא</a></li><li><a href="/articles/refinancing" class="nav-link" data-i18n="new_a_137">מיחזור משכנתא</a></li><li><a href="/articles/loan-consolidation" class="nav-link" data-i18n="new_a_139">איחוד הלוואות</a></li><li><a href="/articles/mechir-lamishtaken" class="nav-link" data-i18n="new_a_141">מחיר למשתכן</a></li><li><a href="/articles/common-mortgage-mistakes" class="nav-link" data-i18n="new_a_332">טעויות במשכנתא</a></li><li><a href="/articles/mortgage-tracks" class="nav-link" data-i18n="new_a_387">מסלולי משכנתא</a></li><li><a href="/articles/housing-improvers" class="nav-link" data-i18n="new_a_453">משכנתא למשפרי דיור</a></li><li><a href="/articles/investment-mortgage" class="nav-link" data-i18n="new_a_522">משכנתא להשקעה</a></li><li><a href="/articles/first-apartment-mortgage" class="nav-link" data-i18n="new_a_585">משכנתא לדירה ראשונה</a></li><li><a href="/articles/mortgage-insurance" class="nav-link" data-i18n="new_h3_630">ביטוח משכנתא</a></li><li><a href="/articles/self-construction-mortgage" class="nav-link" data-i18n="new_a_677">משכנתא לבנייה עצמית</a></li><li><a href="/articles/mortgage-ancillary-costs" class="nav-link" data-i18n="new_a_728">הוצאות נלוות</a></li><li><a href="/articles/reverse-mortgage" class="nav-link" data-i18n="new_a_775">משכנתא הפוכה</a></li><li><a href="/articles/self-employed-mortgage" class="nav-link" data-i18n="new_a_825">משכנתא לעצמאיים</a></li><li><a href="/articles/mortgage-porting" class="nav-link" data-i18n="new_a_874">גרירת משכנתא</a></li><li><a href="/articles/private-consulting-benefits" class="nav-link" data-i18n="new_a_935">ייעוץ משכנתא פרטי</a></li><li><a href="/articles/mortgage-pre-approval" class="nav-link" data-i18n="new_h3_927">אישור עקרוני</a></li><li><a href="/articles/construction-input-index" class="nav-link" data-i18n="new_h3_766">מדד תשומות הבנייה</a></li><li><a href="/articles/mortgage-equity" class="nav-link" data-i18n="new_a_1263">הון עצמי</a></li><li><a href="/articles/smart-mortgage-mix" class="nav-link" data-i18n="new_h3_628">בניית תמהיל משכנתא</a></li><li><a href="/articles/amortization-schedules" class="nav-link" data-i18n="new_a_1346">לוחות סילוקין</a></li><li><a href="/articles/boi-regulations" class="nav-link" data-i18n="new_a_1414">הגבלות בנק ישראל</a></li><li><a href="/articles/repayment-ratio" class="nav-link" data-i18n="new_a_1482">יחס החזר</a></li></ul></li><li><a href="/blog" class="nav-link" data-i18n="new_a_1143">בלוג</a><ul class="sub-menu"><li><a href="/blog/beginners-guide" class="nav-link" data-i18n="new_a_1144">למתחילים</a></li><li><a href="/blog/first-apartment" class="nav-link" data-i18n="new_a_1145">דירה ראשונה</a></li><li><a href="/blog/recycling" class="nav-link" data-i18n="new_a_1146">מיחזור</a></li></ul></li><li><a href="/testimonials" class="nav-link" data-i18n="new_a_1545">לקוחות ממליצים</a></li></ul>
       
       
 
@@ -961,7 +907,7 @@ img[data-no-hero-position] { position: static !important; }
 
     <!-- Article Hero Image -->
     <div class="article-hero-image" style="width: 100%; aspect-ratio: 21/9; overflow: hidden; margin-bottom: 30px; border-radius: 12px;; position: relative; overflow: hidden;">
-      <img data-placeholder="blog-article-hero" data-context="Happy couple signing documents for their first apartment mortgage" data-zappy-editable-image="true" src="/assets/page-blog-article-hero-1769179925113.webp" alt="ייעוץ משכנתא לדירה ראשונה" style="width: 100%; height: 100%; object-fit: cover;" class="generated-image" data-og-image="/assets/page-blog-article-hero-1769179925113-og.jpg"></img>
+      <img data-placeholder="blog-article-hero" data-context="Happy couple signing documents for their first apartment mortgage" data-zappy-editable-image="true" src="/assets/page-blog-article-hero-1769179925113.webp" alt="ייעוץ משכנתא לדירה ראשונה" style="width: 100%; height: 100%; object-fit: cover;" class="generated-image" data-og-image="/assets/page-blog-article-hero-1769179925113-og.jpg">
     </div>
 
     <!-- Article Content -->
@@ -1054,7 +1000,7 @@ img[data-no-hero-position] { position: static !important; }
           </div>
         </div>
         <div class="zappy-attribution">
-          <p data-i18n="home_p_52">נוצר באמצעות&amp;nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" data-i18n="home_link_59">Zappy</a></p>
+          <p data-i18n="home_p_52">נוצר באמצעות&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" data-i18n="home_link_59">Zappy</a></p>
         </div>
       </div>
     </footer>
@@ -1083,14 +1029,14 @@ img[data-no-hero-position] { position: static !important; }
         var header = document.getElementById('zappy-attribution-header');
         if (header) {
           // Use dynamic announcement content if available
-          if (data.announcement &amp;&amp; data.announcement.html) {
+          if (data.announcement && data.announcement.html) {
             header.innerHTML = data.announcement.html;
           }
           // Apply fixed positioning styles inline (works for existing sites too)
           header.style.cssText = 'position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important;';
           // Fix child elements that might have position: fixed from old CSS
           var children = header.querySelectorAll('*');
-          for (var i = 0; i &lt; children.length; i++) {
+          for (var i = 0; i < children.length; i++) {
             children[i].style.position = 'static';
           }
           // Get header height
@@ -1098,9 +1044,9 @@ img[data-no-hero-position] { position: static !important; }
           // Find and fix navbar to be fixed as well (prevents gap at top of page)
           var navSelectors = ['nav', '.navbar', '.nav'];
           var navbar = null;
-          for (var j = 0; j &lt; navSelectors.length; j++) {
+          for (var j = 0; j < navSelectors.length; j++) {
             navbar = document.querySelector(navSelectors[j]);
-            if (navbar &amp;&amp; navbar.id !== 'zappy-attribution-header') break;
+            if (navbar && navbar.id !== 'zappy-attribution-header') break;
             navbar = null;
           }
           if (navbar) {
@@ -1245,7 +1191,7 @@ img[data-no-hero-position] { position: static !important; }
   function getShareUrl() {
     // Priority 1: Check for deployed site URL meta tag (set by Zappy when site is published)
     var siteUrl = document.querySelector('meta[name="zappy-site-url"]');
-    if (siteUrl &amp;&amp; siteUrl.content) {
+    if (siteUrl && siteUrl.content) {
       var basePath = window.location.pathname;
       var pageParam = new URLSearchParams(window.location.search).get('page');
       var pagePath = pageParam || basePath;
@@ -1253,9 +1199,9 @@ img[data-no-hero-position] { position: static !important; }
       return siteUrl.content.replace(/\/$/, '') + pagePath;
     }
     var c = document.querySelector('link[rel="canonical"]');
-    if (c &amp;&amp; c.href &amp;&amp; !c.href.includes('localhost') &amp;&amp; !c.href.includes('preview')) return c.href;
+    if (c && c.href && !c.href.includes('localhost') && !c.href.includes('preview')) return c.href;
     var m = document.querySelector('meta[property="og:url"]');
-    if (m &amp;&amp; m.content &amp;&amp; !m.content.includes('localhost') &amp;&amp; !m.content.includes('preview')) return m.content;
+    if (m && m.content && !m.content.includes('localhost') && !m.content.includes('preview')) return m.content;
     var isPreview = window.location.href.includes('preview') || window.location.href.includes('localhost') || window.location.href.includes('auth_token');
     if (isPreview) return null;
     return window.location.origin + window.location.pathname;
@@ -1281,15 +1227,15 @@ img[data-no-hero-position] { position: static !important; }
     // Define all required share icons with their SVG
     var shareIcons = {
       copy: { selectors: ['.share-copy', 'button[title="Copy link"]', 'a[title="Copy link"]'], 
-        html: '&lt;a href="#" class="share-copy" title="Copy link" style="color:#666;display:flex;align-items:center;cursor:pointer;"&gt;&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"&gt;&lt;path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/&gt;&lt;/svg&gt;&lt;/a&gt;' },
+        html: '<a href="#" class="share-copy" title="Copy link" style="color:#666;display:flex;align-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>' },
       linkedin: { selectors: ['.share-linkedin', 'a[title="LinkedIn"]'], 
-        html: '&lt;a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color:#0a66c2!important;display:flex;align-items:center;"&gt;&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"&gt;&lt;path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/&gt;&lt;/svg&gt;&lt;/a&gt;' },
+        html: '<a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color:#0a66c2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>' },
       twitter: { selectors: ['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
-        html: '&lt;a href="#" class="share-twitter" target="_blank" title="X" style="color:#000!important;display:flex;align-items:center;"&gt;&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"&gt;&lt;path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/&gt;&lt;/svg&gt;&lt;/a&gt;' },
+        html: '<a href="#" class="share-twitter" target="_blank" title="X" style="color:#000!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' },
       facebook: { selectors: ['.share-facebook', 'a[title="Facebook"]'], 
-        html: '&lt;a href="#" class="share-facebook" target="_blank" title="Facebook" style="color:#1877f2!important;display:flex;align-items:center;"&gt;&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"&gt;&lt;path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/&gt;&lt;/svg&gt;&lt;/a&gt;' },
+        html: '<a href="#" class="share-facebook" target="_blank" title="Facebook" style="color:#1877f2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' },
       whatsapp: { selectors: ['.share-whatsapp', 'a[title="WhatsApp"]'], 
-        html: '&lt;a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color:#25d366!important;display:flex;align-items:center;"&gt;&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"&gt;&lt;path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/&gt;&lt;/svg&gt;&lt;/a&gt;' }
+        html: '<a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color:#25d366!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' }
     };
     // Order of icons (right to left for RTL, so we add in this order)
     var iconOrder = ['copy', 'linkedin', 'twitter', 'facebook', 'whatsapp'];
@@ -1324,10 +1270,10 @@ img[data-no-hero-position] { position: static !important; }
       url ? 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) : '#', isDisabled);
     // Twitter/X
     setShareHref(['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
-      url ? 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&amp;text=' + encodeURIComponent(title) : '#', isDisabled);
+      url ? 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title) : '#', isDisabled);
     // LinkedIn
     setShareHref(['.share-linkedin', 'a[title="LinkedIn"]', 'a[title="linkedin"]'], 
-      url ? 'https://www.linkedin.com/shareArticle?mini=true&amp;url=' + encodeURIComponent(url) + '&amp;title=' + encodeURIComponent(title) : '#', isDisabled);
+      url ? 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) : '#', isDisabled);
     // Copy link button
     ['.share-copy', 'button[title="Copy link"]', 'button[title="copy"]', 'a[title="Copy link"]'].forEach(function(sel) {
       document.querySelectorAll(sel).forEach(function(el) {
@@ -1351,6 +1297,8 @@ img[data-no-hero-position] { position: static !important; }
   });
 })();
 </script>
+
+
 
 
 
@@ -1396,13 +1344,13 @@ img[data-no-hero-position] { position: static !important; }
       "home_p_28": "Happily created by&nbsp;Zappy",
       "home_p_29": "בעולם הפיננסי המורכב של היום, קבלת ייעוץ משכנתאות מקצועי היא לא רק יתרון - היא הכרח. אנו באריאל אחון ייעוץ משכנתאות ופיננסיים - משכנתא בפיג'מה מבינים שרכישת נכס או מיחזור משכנתא הם מהצעדים הפיננסיים המשמעותיים ביותר בחייכם. לכן אנו מציעים ייעוץ משכנתאות מקיף המותאם אישית לצרכיכם הספציפיים.",
       "home_p_30": "עם ניסיון רב בתחום הפיננסי והיכרות מעמיקה עם השוק הישראלי, אנו מספקים שירות מקצועי ואמין שחוסך לכם זמן וכסף רב. המטרה שלנו היא לוודא שתקבלו את התנאים הטובים ביותר האפשריים למשכנתא שלכם.",
-      "home_p_31": "המוטו שלנו \"משכנתא בפיג'מה\" מסמל את הגישה הייחודית שלנו לשירות. אנחנו מבינים שהחיים שלכם עמוסים - עבודה, משפחה, התחייבויות. לכן אנחנו מגיעים אליכם או באמצעות שיחות ווידאו - בזמן שנוח לכם, במקום שנוח לכם. רוצים לקבל ייעוץ בערב אחרי שהילדים הלכו לישון? אין בעיה. מעדיפים פגישה בסוף השבוע? בשמחה. אתם לא צריכים לצאת מהבית.\nאפילו אם אתם בפיג'מה - זה בסדר גמור! השירות שלנו בנוי על נוחות מקסימלית, זמינות גבוהה ותחושה ביתית שגורמת לכם להרגיש רגועים ובטוחים לאורך כל התהליך.",
+      "home_p_31": "המוטו שלנו \"משכנתא בפיג'מה\" מסמל את הגישה הייחודית שלנו לשירות. אנחנו מבינים שהחיים שלכם עמוסים - עבודה, משפחה, התחייבויות. לכן אנחנו מגיעים אליכם או באמצעות שיחות ווידאו - בזמן שנוח לכם, במקום שנוח לכם. רוצים לקבל ייעוץ בערב אחרי שהילדים הלכו לישון? אין בעיה. מעדיפים פגישה בסוף השבוע? בשמחה. אתם לא צריכים לצאת מהבית.\n\nאפילו אם אתם בפיג'מה - זה בסדר גמור! השירות שלנו בנוי על נוחות מקסימלית, זמינות גבוהה ותחושה ביתית שגורמת לכם להרגיש רגועים ובטוחים לאורך כל התהליך.",
       "home_p_32": "מתחילים את המסע לקראת הבית הראשון? אנו מספקים ייעוץ משכנתא לדירה ראשונה מקיף שמלווה אתכם בכל שלב. נסביר לכם את כל האפשרויות, נעזור לכם להבין את הזכויות שלכם ונמצא עבורכם את המשכנתא המתאימה ביותר לתקציב ולצרכים שלכם",
-      "home_p_33": "זכיתם בהגרלה במסגרת הפרויקט? מזל טוב!\nנעזור לכם לצלוח את המסע המרגש, על מנת שתוכלו לבחור את הדירה המתאימה ביותר עבורכם, ונלווה אתכם עד לקבלת המשכנתא הנכונה, המתאימה והזולה ביותר",
+      "home_p_33": "זכיתם בהגרלה במסגרת הפרויקט? מזל טוב!\n\nנעזור לכם לצלוח את המסע המרגש, על מנת שתוכלו לבחור את הדירה המתאימה ביותר עבורכם, ונלווה אתכם עד לקבלת המשכנתא הנכונה, המתאימה והזולה ביותר",
       "home_p_34": "כבר יש לכם משכנתא? ייתכן שתוכלו לחסוך אלפי שקלים בשנה! אנו מתמחים במיחזור משכנתא ושיפור תנאים, בוחנים את המשכנתא הקיימת שלכם ומנהלים מו\"מ עם הבנקים לשיפור התנאים. השירות שלנו כולל בדיקה מקיפה של כל ההזדמנויות לחיסכון",
       "home_p_35": "מתכננים לעבור לדירה גדולה יותר? אנו מספקים ייעוץ משכנתא למשפרי דיור המתחשב במשכנתא הקיימת שלכם ומוצא את הפתרון האופטימלי למעבר. נעזור לכם להבין את האפשרויות השונות ונמצא את המסלול הכי משתלם עבורכם",
-      "home_p_36": "נקלעתם למצב שבו ההלוואות וההתחייבויות שנלקחו מקשים עליכם? הכסף נגמר כבר בתחילת החודש? יש לכם חובות שמדירים שינה מעיניכם?\nנעזור לכם לקבל משכנתא לטובת ביצוע הלוואות ויציאה מחובות",
-      "home_p_37": "הידעתם שניתן לקבל הלוואה גדולה, גם בגילאים מתקדמים יותר?&nbsp;\nמדובר בפתרון שיכול לעזור לכם למנף את הנכס שלכם, לכל מטרה שאליה תזדקקו,\nוזאת מבלי להיות מחויבים בביטוח חיים, ואף מבלי שתידרשו להוכיח יכולת החזר, כמו במשכנתא רגילה&nbsp;",
+      "home_p_36": "נקלעתם למצב שבו ההלוואות וההתחייבויות שנלקחו מקשים עליכם? הכסף נגמר כבר בתחילת החודש? יש לכם חובות שמדירים שינה מעיניכם?\n\nנעזור לכם לקבל משכנתא לטובת ביצוע הלוואות ויציאה מחובות",
+      "home_p_37": "הידעתם שניתן לקבל הלוואה גדולה, גם בגילאים מתקדמים יותר?&nbsp;\n\nמדובר בפתרון שיכול לעזור לכם למנף את הנכס שלכם, לכל מטרה שאליה תזדקקו,\n\nוזאת מבלי להיות מחויבים בביטוח חיים, ואף מבלי שתידרשו להוכיח יכולת החזר, כמו במשכנתא רגילה&nbsp;",
       "home_p_38": "אנו מנהלים מכרז ריביות בין כל הבנקים והגופים הפיננסיים בישראל, מה שמבטיח לכם את התנאים הטובים ביותר האפשריים. החיסכון שתקבלו יכול להגיע לעשרות אלפי שקלים לאורך תקופת המשכנתא.",
       "home_p_39": "כל לקוח מקבל ייעוץ משכנתאות מותאם אישית המתחשב במצבו הפיננסי הייחודי, בתוכניות העתיד ובצרכים המיוחדים שלו. אנו מאמינים שאין פתרון אחד שמתאים לכולם.",
       "home_p_40": "מהפגישה הראשונה ועד לחתימה על המשכנתא ואף מעבר לכך - אנו כאן בשבילכם. נלווה אתכם בכל שלב, נענה על כל שאלה ונוודא שאתם מרגישים בטוחים ומעודכנים לאורך כל התהליך.",
@@ -1760,7 +1708,7 @@ img[data-no-hero-position] { position: static !important; }
       "new_p_251": "זכרו: משכנתא היא מוצר פיננסי מורכב. אל תתמודדו איתו לבד. ייעוץ משכנתאות מקצועי הוא השקעה שמחזירה את עצמה פי כמה וכמה בחיסכון לטווח הארוך ובשקט נפשי לאורך כל התהליך.",
       "new_p_268": "רבים נוטים לחשוב שמשכנתא היא \"חתונה קתולית\" ל-25 או 30 שנה, ושברגע שחתמנו – זהו זה. אבל האמת היא שמשכנתא היא מוצר דינמי. השוק משתנה, הריביות במשק עולות ויורדות, וגם המצב האישי שלכם משתנה (קידום בעבודה, ירושה, או חלילה ירידה בהכנסות). מיחזור משכנתא ושיפור תנאים הוא כלי פיננסי עוצמתי שמאפשר לכם לפתוח את המשכנתא הקיימת ולבנות אותה מחדש בתנאים טובים יותר.",
       "new_p_270": "מיחזור משכנתא הוא תהליך שבו אנו לוקחים משכנתא חדשה כדי לסלק את המשכנתא הישנה. המטרה היא כמעט תמיד אחת משתיים: או להקטין את ההחזר החודשי כדי להקל על העומס הכלכלי השוטף, או לקצר את תקופת המשכנתא כדי לחסוך בתשלומי הריבית המצטברים ולסיים עם החוב מהר יותר. לעיתים קרובות, באמצעות ייעוץ משכנתאות נכון, ניתן להשיג את שתי המטרות גם יחד.",
-      "new_p_272": "ישנם מספר צמתים שבהם חובה לבדוק את המשכנתא שלכם:\n      \n1. שינוי בריביות במשק: אם לקחתם משכנתא בתקופה של ריביות גבוהות וכעת הריביות ירדו, יש פוטנציאל לחיסכון אדיר.\n      \n2. שינוי בסטטוס הפיננסי: אם ההכנסות שלכם גדלו, כדאי לשקול להגדיל את ההחזר החודשי ולקצר את השנים. זה יחסוך לכם המון כסף.\n      \n3. קבלת סכום כסף חד פעמי: קרן השתלמות שהשתחררה או ירושה יכולות לשמש לסילוק חלק מהמשכנתא במסגרת המיחזור.\n      \n4. קושי בהחזר החודשי: אם נקלעתם לקושי תזרימי, מיחזור יכול לפרוס את ההלוואה מחדש ולהקטין את התשלום החודשי.",
+      "new_p_272": "ישנם מספר צמתים שבהם חובה לבדוק את המשכנתא שלכם:\n      \n\n1. שינוי בריביות במשק: אם לקחתם משכנתא בתקופה של ריביות גבוהות וכעת הריביות ירדו, יש פוטנציאל לחיסכון אדיר.\n      \n\n2. שינוי בסטטוס הפיננסי: אם ההכנסות שלכם גדלו, כדאי לשקול להגדיל את ההחזר החודשי ולקצר את השנים. זה יחסוך לכם המון כסף.\n      \n\n3. קבלת סכום כסף חד פעמי: קרן השתלמות שהשתחררה או ירושה יכולות לשמש לסילוק חלק מהמשכנתא במסגרת המיחזור.\n      \n\n4. קושי בהחזר החודשי: אם נקלעתם לקושי תזרימי, מיחזור יכול לפרוס את ההלוואה מחדש ולהקטין את התשלום החודשי.",
       "new_p_274": "אחד הדברים החשובים בבדיקת כדאיות מיחזור הוא עמלת הפירעון המוקדם (קנס יציאה). לעיתים החיסכון בריבית הוא גדול, אך הקנס הופך את המהלך ללא כדאי. יועץ משכנתאות למשפרי דיור וממחזרים יבצע עבורכם חישוב מדויק הכולל את כל העמלות הנלוות, כדי לוודא שאתם אכן חוסכים כסף נטו ולא רק \"על הנייר\".",
       "new_p_275": "המלצה חמה: אל תניחו למשכנתא שלכם \"לישון\" שנים ארוכות ללא בדיקה. בדיקת כדאיות למיחזור אחת לשנה-שנתיים יכולה להיות שווה לכם הרבה מאוד כסף. פנו אלינו לבדיקה מקצועית ללא התחייבות.",
       "new_p_292": "משפחות רבות בישראל מוצאות את עצמן במלכוד פיננסי: יש להן משכנתא, ועליה נוספו עם השנים הלוואה לרכב, הלוואה לשיפוץ, הלוואה לכיסוי המינוס ועוד התחייבויות בכרטיסי אשראי. התוצאה היא החזר חודשי שחונק את המשפחה ומונע ממנה להתנהל בצורה תקינה. הפתרון של איחוד הלוואות באמצעות משכנתא (הלוואה לכל מטרה) הוא אחד הכלים היעילים ביותר ליציאה מהבוץ הכלכלי.",
@@ -2256,6 +2204,45 @@ img[data-no-hero-position] { position: static !important; }
       "new_a_1490": "יחס החזר",
       "new_a_1493": "בדיקת זכאות חינם",
       "new_a_1517": "למחשבון משכנתא",
+      "new_a_1518": "לקוחות ממליצים",
+      "new_a_1519": "לקוחות ממליצים",
+      "new_a_1520": "לקוחות ממליצים",
+      "new_a_1521": "לקוחות ממליצים",
+      "new_a_1522": "לקוחות ממליצים",
+      "new_a_1523": "לקוחות ממליצים",
+      "new_a_1524": "לקוחות ממליצים",
+      "new_a_1525": "לקוחות ממליצים",
+      "new_a_1526": "לקוחות ממליצים",
+      "new_a_1527": "לקוחות ממליצים",
+      "new_a_1528": "לקוחות ממליצים",
+      "new_a_1529": "לקוחות ממליצים",
+      "new_a_1530": "לקוחות ממליצים",
+      "new_a_1531": "לקוחות ממליצים",
+      "new_a_1532": "לקוחות ממליצים",
+      "new_a_1533": "לקוחות ממליצים",
+      "new_a_1534": "לקוחות ממליצים",
+      "new_a_1535": "לקוחות ממליצים",
+      "new_a_1536": "לקוחות ממליצים",
+      "new_a_1537": "לקוחות ממליצים",
+      "new_a_1538": "לקוחות ממליצים",
+      "new_a_1539": "לקוחות ממליצים",
+      "new_a_1540": "לקוחות ממליצים",
+      "new_a_1541": "לקוחות ממליצים",
+      "new_a_1542": "לקוחות ממליצים",
+      "new_a_1543": "לקוחות ממליצים",
+      "new_a_1544": "לקוחות ממליצים",
+      "new_a_1545": "לקוחות ממליצים",
+      "new_a_1546": "לקוחות ממליצים",
+      "new_a_1547": "לקוחות ממליצים",
+      "new_a_1548": "לקוחות ממליצים",
+      "new_a_1549": "לקוחות ממליצים",
+      "new_a_1550": "לקוחות ממליצים",
+      "new_a_1551": "לקוחות ממליצים",
+      "new_a_1552": "לקוחות ממליצים",
+      "new_a_1553": "לקוחות ממליצים",
+      "new_a_1554": "לקוחות ממליצים",
+      "new_a_1560": "קראו את הביקורות",
+      "new_a_1586": "חייגו אלינו",
       "new_h1_109": "פודקאסט משכנתא בפיג'מה – פיננסים בגובה העיניים",
       "new_h1_214": "מרכז הידע: כל מה שצריך לדעת על משכנתאות",
       "new_h1_239": "המדריך המלא: תהליך לקיחת משכנתא צעד אחר צעד",
@@ -2739,6 +2726,22 @@ img[data-no-hero-position] { position: static !important; }
       "new_p_1513": "כאשר אנו מבצעים ייעוץ משכנתא לדירה ראשונה, אנו תמיד ממליצים לא להסתכל רק על המצב הנוכחי. זוג צעיר ללא ילדים יכול אולי לעמוד ביחס החזר של 35%, אך עם הצטרפות ילדים למשפחה ההוצאות גדלות משמעותית (גנים, מטפלות, מזון). לכן, תכנון נכון לוקח בחשבון שינויים עתידיים בהכנסות ובהוצאות.",
       "new_p_1514": "גם בתהליך של מיחזור משכנתא, בדיקת יחס ההחזר היא הזדמנות מצוינת לאזן מחדש את התקציב המשפחתי ולהתאים את ההחזרים ליכולת הכלכלית העדכנית שלכם.",
       "new_p_1516": "אל תתנו לחישובים מורכבים לעצור אתכם בדרך לדירה. הצוות שלנו ב\"משכנתא בפיג'מה\" כאן כדי לעשות סדר במספרים ולבנות עבורכם את התמהיל המדויק ביותר.",
+      "new_p_1556": "הסיפורים האמיתיים מאחורי החיסכון הגדול. הצטרפו למאות משפחות שבחרו בשירותי ייעוץ משכנתאות מקצועי והצליחו להגשים את חלום הדירה בראש שקט ובביטחון כלכלי.",
+      "new_p_1562": "לקיחת משכנתא היא ככל הנראה העסקה הפיננסית הגדולה והמשמעותית ביותר שרובנו נעשה בחיינו. כאשר אתם מחפשים ייעוץ משכנתאות, אתם לא רק מחפשים מישהו שימלא טפסים עבורכם, אלא שותף לדרך שידאג לאינטרסים הכלכליים שלכם מול הבנקים. הלקוחות שלנו מעידים שוב ושוב כי הליווי המקצועי של \"משכנתא בפיג'מה\" העניק להם לא רק חיסכון כספי אדיר, אלא גם שקט נפשי בתהליך מורכב ומלחיץ.",
+      "new_p_1563": "בין אם מדובר על ייעוץ משכנתא לדירה ראשונה לזוגות צעירים שזוהי דריסת הרגל הראשונה שלהם בעולם הנדל\"ן, ובין אם מדובר על משפחות ותיקות המעוניינות בביצוע מיחזור משכנתא ושיפור תנאים כדי להקטין את ההחזר החודשי – הביקורות מדברות בעד עצמן. המקצועיות, הזמינות והיכולת לפשט מושגים פיננסיים מורכבים הם אלו שהופכים את השירות שלנו לייחודי.",
+      "new_p_1564": "אנו גאים להציג בפניכם מגוון המלצות מלקוחות אמיתיים, אשר חוו את התהליך איתנו ונהנים היום מתנאי משכנתא אופטימליים המותאמים בדיוק לצרכים שלהם. כל ביקורת כאן מייצגת משפחה שעזרנו לה להגשים חלום.",
+      "new_p_1566": "\"הגענו לאריאל אחרי שהיינו בבנק וקיבלנו הצעה שנראתה לנו סבירה. אריאל עבר על הנתונים, הסביר לנו איפה אנחנו יכולים לשפר, ובסופו של דבר בנה לנו תמהיל שחסך לנו מעל 150,000 ש\"ח לאורך חיי המשכנתא! השירות היה מקצועי, סבלני וזמין לכל שאלה. מומלץ בחום לכל מי שמחפש ייעוץ משכנתאות ברמה אחרת.\"",
+      "new_p_1567": "\"בתור זוג שקונה דירה ראשונה, היינו בלחץ נוראי מהתהליך. לא הבנו את המושגים ולא ידענו מאיפה להתחיל. השירות של 'משכנתא בפיג'מה' פשוט עשה לנו סדר בראש. קיבלנו ליווי צמוד, הסברים בגובה העיניים ובעיקר תחושת ביטחון. תודה רבה על הכל!\"",
+      "new_p_1568": "\"פניתי לצורך מיחזור משכנתא ושיפור תנאים. לא האמנתי שאפשר לחסוך כל כך הרבה בהחזר החודשי. אריאל נלחם בשבילי מול הבנקים והשיג ריביות שלא הייתי מקבל בחיים לבד. המקצועיות שלו שווה כל שקל.\"",
+      "new_p_1569": "\"אריאל הוא קוסם! הגענו אליו עם תיק מורכב וסירובים משני בנקים. הוא לא ויתר, מצא פתרונות יצירתיים ובסוף קיבלנו את המימון שהיינו צריכים לבית החלומות שלנו. אין מילים לתאר את ההערכה שלנו.\"",
+      "new_p_1570": "\"חיפשנו ייעוץ משכנתא למשפרי דיור כי מכרנו וקנינו במקביל. התהליך היה מורכב מאוד עם גרירת משכנתא ותוספת מימון. אריאל ניהל את הכל ביד רמה, תיאומים מול הבנקים ושמירה על האינטרסים שלנו. ממליץ בחום!\"",
+      "new_p_1571": "\"הזמינות של אריאל היא משהו שלא נתקלים בו היום. ענה לכל הודעה, הסביר בסבלנות אין קץ, וגרם לנו להרגיש שאנחנו הלקוחות היחידים שלו. מעבר לחיסכון הכספי, היחס האישי הוא מה שעשה את ההבדל.\"",
+      "new_p_1574": "משפחת אהרוני הגיעה אלינו עם הצעה ראשונית מהבנק שהייתה נראית להם \"בסדר\". לאחר ניתוח מעמיק של יכולות ההחזר שלהם ובניית תמהיל חכם המשלב מסלולים שונים, הצלחנו להוזיל את הריביות ולקצר את תקופת המשכנתא ב-3 שנים. התוצאה: חיסכון נקי של 240,000 ₪ בתשלומי הריבית לאורך חיי ההלוואה.",
+      "new_p_1576": "לקוח שהגיע אלינו לאחר סירוב בשני בנקים עקב בעיות רישום ישנות. באמצעות עבודה נכונה, הכנת התיק בצורה מקצועית והגשתו לגורמים המתאימים בבנק שמכירים את עבודתנו, הצלחנו לאשר את המשכנתא בתנאים מצוינים ולאפשר לו לרכוש את הדירה שרצה.",
+      "new_p_1579": "אנו מאמינים שהלקוח צריך להבין על מה הוא חותם. אנו מסבירים כל שלב בתהליך בשפה פשוטה וברורה, ללא \"אותיות קטנות\".",
+      "new_p_1581": "ההיכרות המעמיקה שלנו עם המערכת הבנקאית והנפח שאנו מביאים מאפשרים לנו להשיג עבורכם ריביות ותנאים שלקוח פרטי יתקשה להשיג לבד.",
+      "new_p_1583": "אין \"משכנתא מדף\". כל משפחה היא עולם ומלואו. אנו בונים תמהיל המותאם בדיוק לצרכים העתידיים שלכם, לשינויים בהכנסה ולתוכניות המשפחתיות.",
+      "new_p_1585": "אל תיקחו משכנתא לפני שבדקתם איתנו. שיחת ייעוץ ראשונית ללא התחייבות יכולה לחסוך לכם מאות אלפי שקלים. השאירו פרטים ונחזור אליכם בהקדם.",
       "terms_h1_1": "תנאי שימוש",
       "terms_h2_2": "1. הגדרות",
       "terms_h2_3": "2. תיאור השירותים",
@@ -2804,6 +2807,7 @@ img[data-no-hero-position] { position: static !important; }
       "new_h1_1353": "לוחות סילוקין במשכנתא – המדריך המלא",
       "new_h1_1422": "הגבלות בנק ישראל במשכנתאות – המדריך המלא",
       "new_h1_1491": "יחס החזר במשכנתא – המספר שקובע הכל",
+      "new_h1_1555": "מה הלקוחות שלנו מספרים?",
       "new_h2_1121": "רוצים להתייעץ איתנו?",
       "new_h2_1130": "מהו בעצם ייעוץ משכנתאות?",
       "new_h2_1133": "מושגי יסוד שחשוב להכיר",
@@ -2852,6 +2856,11 @@ img[data-no-hero-position] { position: static !important; }
       "new_h2_1506": "איך לשפר את יחס ההחזר?",
       "new_h2_1512": "חשיבות התכנון העתידי",
       "new_h2_1515": "רוצים לדעת מה יחס ההחזר שלכם?",
+      "new_h2_1561": "למה חשוב לבחור יועץ משכנתאות בקפידה?",
+      "new_h2_1565": "מילה מהלקוחות שלנו",
+      "new_h2_1572": "סיפורי הצלחה מהשטח",
+      "new_h2_1577": "למה הלקוחות שלנו בוחרים בנו שוב ושוב?",
+      "new_h2_1584": "רוצים להיות סיפור ההצלחה הבא?",
       "new_h3_1107": "מדריך למתחילים",
       "new_h3_1111": "דירה ראשונה",
       "new_h3_1118": "טיפים לחיסכון",
@@ -2881,6 +2890,11 @@ img[data-no-hero-position] { position: static !important; }
       "new_h3_1500": "שכירים ועצמאיים",
       "new_h3_1502": "הלוואות והתחייבויות",
       "new_h3_1504": "הכנסות נוספות",
+      "new_h3_1573": "המקרה של משפחת אהרוני: חיסכון של 240,000 ₪",
+      "new_h3_1575": "פתרון למסורבי משכנתא",
+      "new_h3_1578": "שקיפות מלאה",
+      "new_h3_1580": "כוח מיקוח",
+      "new_h3_1582": "התאמה אישית",
       "new_h4_1199": "זקוקים לעזרה בהוצאת האישור?",
       "new_h4_1382": "טיפ של מומחים:",
       "new_li_1135": "ריבית פריים: ריבית המשתנה בהתאם להחלטות בנק ישראל, ואינה צמודה למדד המחירים לצרכן.",
@@ -3030,6 +3044,9 @@ img[data-no-hero-position] { position: static !important; }
       "new_span_1166": "פורסם בתאריך: 30/10/2023",
       "new_span_1184": "חתימה על זיכרון דברים או חוזה רכישה ללא אישור עקרוני תקף היא הימור פיננסי מסוכן שעלול לעלות לכם בקנסות הפרת חוזה של עשרות אלפי שקלים.",
       "new_span_1218": "במסגרת ייעוץ משכנתאות מקצועי, אנו בוחנים לא רק את הריביות בבנק, אלא גם את כדאיות הקדמת התשלומים לקבלן כדי לחסוך את עלויות המדד.",
+      "new_span_1557": "לקוחות מרוצים",
+      "new_span_1558": "₪100M+",
+      "new_span_1559": "חיסכון מצטבר",
       "privacy_li_27": "מידע אישי: שם, כתובת אימייל, מספר טלפון וכתובת",
       "privacy_li_28": "מידע טכני: כתובת IP, סוג דפדפן, מערכת הפעלה ונתוני שימוש באתר",
       "privacy_li_29": "עוגיות: מידע הנשמר במחשבכם לשיפור חוויית השימוש",
@@ -3307,13 +3324,13 @@ img[data-no-hero-position] { position: static !important; }
       "home_p_28": "Happily created by&nbsp;Zappy",
       "home_p_29": "In today's complex financial world, receiving professional mortgage consulting is not just an advantage - it's a necessity. We at Ariel Achon Mortgage and Financial Consulting - Mortgage in Pajamas understand that purchasing property or refinancing a mortgage are among the most significant financial steps in your life. Therefore, we offer comprehensive mortgage consulting tailored to your specific needs.",
       "home_p_30": "With extensive experience in the financial field and deep familiarity with the Israeli market, we provide professional and reliable service that saves you considerable time and money. Our goal is to ensure you receive the best possible terms for your mortgage.",
-      "home_p_31": "Our motto \"Mortgage in Pajamas\" symbolizes our unique approach to service. We understand that your life is busy - work, family, commitments. That's why we come to you or through video calls - at a time convenient for you, in a place convenient for you. Want to receive consulting in the evening after the kids have gone to sleep? No problem. Prefer a weekend meeting? Gladly. You don't need to leave your home.\nEven if you're in pajamas - that's perfectly fine! Our service is built on maximum convenience, high availability, and a homely feeling that makes you feel relaxed and confident throughout the entire process.",
+      "home_p_31": "Our motto \"Mortgage in Pajamas\" symbolizes our unique approach to service. We understand that your lives are busy - work, family, commitments. That's why we come to you or through video calls - at a time convenient for you, in a place convenient for you. Want to get advice in the evening after the kids have gone to sleep? No problem. Prefer a meeting on the weekend? Gladly. You don't need to leave the house.\n\nEven if you're in pajamas - that's perfectly fine! Our service is built on maximum comfort, high availability, and a homey feeling that makes you feel relaxed and confident throughout the entire process.",
       "home_p_32": "Starting your journey toward your first home? We provide comprehensive first home mortgage consulting that accompanies you at every stage. We'll explain all the options, help you understand your rights, and find the most suitable mortgage for your budget and needs.",
-      "home_p_33": "Won the lottery as part of the project? Congratulations!\nWe'll help you navigate this exciting journey, so you can choose the most suitable apartment for you, and we'll accompany you until you receive the right, suitable, and cheapest mortgage.",
+      "home_p_33": "Did you win the lottery as part of the project? Congratulations!\n\nWe'll help you navigate the exciting journey, so you can choose the most suitable apartment for you, and we'll accompany you until you get the right, suitable, and cheapest mortgage",
       "home_p_34": "Already have a mortgage? You might be able to save thousands of shekels per year! We specialize in mortgage refinancing and terms improvement, examining your existing mortgage and negotiating with banks to improve terms. Our service includes a comprehensive review of all savings opportunities.",
       "home_p_35": "Planning to move to a larger apartment? We provide mortgage consulting for housing upgraders that takes into account your existing mortgage and finds the optimal solution for the move. We'll help you understand the different options and find the most cost-effective path for you.",
-      "home_p_36": "Found yourself in a situation where loans and commitments taken are making things difficult for you? Running out of money at the beginning of the month? Have debts that keep you awake at night?\nWe'll help you get a mortgage for debt consolidation and debt relief.",
-      "home_p_37": "Did you know you can get a large loan, even at more advanced ages?&nbsp;\nThis is a solution that can help you leverage your property for any purpose you need,\nwithout being obligated for life insurance, and without needing to prove repayment ability, like with a regular mortgage&nbsp;",
+      "home_p_36": "Have you found yourself in a situation where the loans and commitments taken make things difficult for you? Does the money run out at the beginning of the month? Do you have debts that keep you awake at night?\n\nWe'll help you get a mortgage for making loans and getting out of debt",
+      "home_p_37": "Did you know that it's possible to get a large loan, even at more advanced ages?\n\nThis is a solution that can help you leverage your property, for any purpose you may need,\n\nwithout being obligated for life insurance, and even without having to prove repayment ability, like with a regular mortgage",
       "home_p_38": "We conduct interest rate bidding among all banks and financial institutions in Israel, ensuring you get the best possible terms. The savings you'll receive can reach tens of thousands of shekels over the mortgage period.",
       "home_p_39": "Each client receives personalized mortgage consulting that takes into account their unique financial situation, future plans, and special needs. We believe there's no one-size-fits-all solution.",
       "home_p_40": "From the first meeting until signing the mortgage and beyond - we're here for you. We'll accompany you at every stage, answer every question, and ensure you feel confident and informed throughout the entire process.",
@@ -3671,7 +3688,7 @@ img[data-no-hero-position] { position: static !important; }
       "new_p_251": "Remember: A mortgage is a complex financial product. Don't deal with it alone. Professional mortgage consultation is an investment that pays for itself many times over in long-term savings and peace of mind throughout the entire process.",
       "new_p_268": "Many tend to think that a mortgage is a \"Catholic wedding\" for 25 or 30 years, and that once we've signed - that's it. But the truth is that a mortgage is a dynamic product. The market changes, interest rates in the economy rise and fall, and your personal situation also changes (promotion at work, inheritance, or heaven forbid a decrease in income). Mortgage refinancing and terms improvement is a powerful financial tool that allows you to open your existing mortgage and rebuild it under better terms.",
       "new_p_270": "Mortgage refinancing is a process where we take a new mortgage to pay off the old mortgage. The goal is almost always one of two things: either to reduce the monthly payment to ease the current financial burden, or to shorten the mortgage period to save on accumulated interest payments and finish with the debt faster. Often, through proper mortgage consultation, it's possible to achieve both goals together.",
-      "new_p_272": "There are several junctures where you must check your mortgage:\n\n1. Change in economy interest rates: If you took a mortgage during a period of high interest rates and now rates have dropped, there's potential for huge savings.\n\n2. Change in financial status: If your income has increased, consider increasing the monthly payment and shortening the years. This will save you a lot of money.\n\n3. Receiving a lump sum: A released study fund or inheritance can be used to pay off part of the mortgage as part of refinancing.\n\n4. Difficulty with monthly payments: If you're facing cash flow difficulties, refinancing can redistribute the loan and reduce the monthly payment.",
+      "new_p_272": "There are several junctions where you must check your mortgage:\n\n1. Change in market interest rates: If you took a mortgage during a period of high interest rates and now rates have dropped, there's potential for huge savings.\n\n2. Change in financial status: If your income has increased, consider increasing the monthly payment and shortening the years. This will save you a lot of money.\n\n3. Receiving a lump sum: Released continuing education fund or inheritance can be used to pay off part of the mortgage as part of refinancing.\n\n4. Difficulty with monthly payments: If you've encountered cash flow difficulties, refinancing can redistribute the loan and reduce the monthly payment.",
       "new_p_274": "One of the important things in checking refinancing feasibility is the early repayment fee (exit penalty). Sometimes the interest savings are large, but the penalty makes the move unprofitable. A mortgage advisor for housing improvers and refinancers will perform an accurate calculation for you including all associated fees, to ensure you're actually saving net money and not just \"on paper\".",
       "new_p_275": "Warm recommendation: Don't let your mortgage \"sleep\" for long years without checking. A feasibility check for refinancing once every year or two could be worth a lot of money to you. Contact us for a professional check without obligation.",
       "new_p_292": "Many families in Israel find themselves in a financial trap: they have a mortgage, and over the years have added a car loan, renovation loan, overdraft coverage loan, and other credit card obligations. The result is a monthly payment that strangles the family and prevents them from managing normally. The solution of loan consolidation through mortgage (all-purpose loan) is one of the most effective tools for getting out of financial trouble.",
@@ -4167,6 +4184,45 @@ img[data-no-hero-position] { position: static !important; }
       "new_a_1490": "Return Ratio",
       "new_a_1493": "Free Eligibility Check",
       "new_a_1517": "To mortgage calculator",
+      "new_a_1518": "Recommended by Customers",
+      "new_a_1519": "Recommended by Customers",
+      "new_a_1520": "Recommended by Customers",
+      "new_a_1521": "Recommended by Customers",
+      "new_a_1522": "Recommended by Customers",
+      "new_a_1523": "Recommended by Customers",
+      "new_a_1524": "Recommended by Customers",
+      "new_a_1525": "Recommended by Customers",
+      "new_a_1526": "Recommended by Customers",
+      "new_a_1527": "Recommended by Customers",
+      "new_a_1528": "Recommended by Customers",
+      "new_a_1529": "Recommended by Customers",
+      "new_a_1530": "Recommended by Customers",
+      "new_a_1531": "Recommended by Customers",
+      "new_a_1532": "Recommended by Customers",
+      "new_a_1533": "Recommended by Customers",
+      "new_a_1534": "Recommended by Customers",
+      "new_a_1535": "Recommended by Customers",
+      "new_a_1536": "Recommended by Customers",
+      "new_a_1537": "Recommended by Customers",
+      "new_a_1538": "Recommended by Customers",
+      "new_a_1539": "Recommended by Customers",
+      "new_a_1540": "Recommended by Customers",
+      "new_a_1541": "Recommended by Customers",
+      "new_a_1542": "Recommended by Customers",
+      "new_a_1543": "Recommended by Customers",
+      "new_a_1544": "Recommended by Customers",
+      "new_a_1545": "Recommended by Customers",
+      "new_a_1546": "Recommended by Customers",
+      "new_a_1547": "Recommended by Customers",
+      "new_a_1548": "Recommended by Customers",
+      "new_a_1549": "Recommended by Customers",
+      "new_a_1550": "Recommended by Customers",
+      "new_a_1551": "Recommended by Customers",
+      "new_a_1552": "Recommended by Customers",
+      "new_a_1553": "Recommended by Customers",
+      "new_a_1554": "Recommended by Customers",
+      "new_a_1560": "Read the Reviews",
+      "new_a_1586": "Call Us",
       "new_h1_109": "Mortgage in Pajamas Podcast – Finance at Eye Level",
       "new_h1_214": "Knowledge Center: Everything You Need to Know About Mortgages",
       "new_h1_239": "The Complete Guide: Step-by-Step Mortgage Process",
@@ -4650,6 +4706,22 @@ img[data-no-hero-position] { position: static !important; }
       "new_p_1513": "When we provide mortgage consulting for a first home, we always recommend not to look only at the current situation. A young couple without children might be able to handle a 35% repayment ratio, but with children joining the family, expenses increase significantly (kindergartens, babysitters, food). Therefore, proper planning takes into account future changes in income and expenses.",
       "new_p_1514": "Even in the process of mortgage refinancing, checking the repayment ratio is an excellent opportunity to rebalance the family budget and adjust the repayments to your current financial capability.",
       "new_p_1516": "Don't let complex calculations stop you on your way to a home. Our team at \"Mortgage in Pajamas\" is here to sort out the numbers and build the most accurate mix for you.",
+      "new_p_1556": "The real stories behind the big savings. Join hundreds of families who chose professional mortgage consulting services and successfully realized their dream home with peace of mind and financial security.",
+      "new_p_1562": "Taking out a mortgage is probably the largest and most significant financial transaction most of us will make in our lifetime. When you're looking for mortgage consulting, you're not just looking for someone to fill out forms for you, but a partner who will look after your financial interests with the banks. Our customers repeatedly testify that the professional guidance of 'Mortgage in Pajamas' provided them not only with tremendous financial savings, but also peace of mind in a complex and stressful process.",
+      "new_p_1563": "Whether it's mortgage consulting for a first home for young couples taking their first step into the real estate world, or established families interested in mortgage refinancing and improving terms to reduce monthly payments – the reviews speak for themselves. The professionalism, availability, and ability to simplify complex financial concepts are what make our service unique.",
+      "new_p_1564": "We are proud to present a variety of recommendations from real customers who experienced the process with us and today enjoy optimal mortgage terms perfectly tailored to their needs. Every review here represents a family we helped realize their dream.",
+      "new_p_1566": "\"We came to Ariel after we were at the bank and received an offer that seemed reasonable to us. Ariel went over the data, explained where we could improve, and ultimately built us a portfolio that saved us over 150,000 NIS over the life of the mortgage! The service was professional, patient, and available for any question. Highly recommended for anyone looking for mortgage consulting at a different level.\"",
+      "new_p_1567": "\"As a couple buying our first home, we were under terrible pressure from the process. We didn't understand the terms and didn't know where to start. The service of 'Mortgage in Pajamas' simply organized our thoughts. We received close guidance, explanations at eye level, and most importantly, a sense of security. Thank you very much for everything!\"",
+      "new_p_1568": "\"I approached them for mortgage refinancing and improving terms. I couldn't believe it was possible to save so much on the monthly payment. Ariel fought for me against the banks and secured interest rates I would never have gotten on my own. His professionalism is worth every shekel.\"",
+      "new_p_1569": "\"Ariel is a magician! We came to him with a complex case and rejections from two banks. He didn't give up, found creative solutions, and in the end we got the financing we needed for our dream home. There are no words to describe our appreciation.\"",
+      "new_p_1570": "\"We sought mortgage advice for home upgraders because we were selling and buying simultaneously. The process was very complex with mortgage transfer and additional financing. Ariel managed everything expertly, coordinating with the banks and protecting our interests. Highly recommended!\"",
+      "new_p_1571": "\"Ariel's availability is something you don't encounter today. He answered every message, explained with endless patience, and made us feel like we were his only clients. Beyond the financial savings, the personal service is what made the difference.\"",
+      "new_p_1574": "The Aharoni family came to us with an initial offer from the bank that seemed \"okay\" to them. After an in-depth analysis of their repayment capabilities and building a smart mix combining different tracks, we managed to reduce interest rates and shorten the mortgage period by 3 years. The result: net savings of ₪240,000 in interest payments over the life of the loan.",
+      "new_p_1576": "A client who came to us after being rejected by two banks due to old registration issues. Through proper work, professional preparation of the file and submitting it to the appropriate parties at the bank who know our work, we managed to approve the mortgage under excellent terms and enable him to purchase the apartment he wanted.",
+      "new_p_1579": "We believe the client needs to understand what they're signing. We explain every step of the process in simple and clear language, without \"fine print.\"",
+      "new_p_1581": "Our deep familiarity with the banking system and the volume we bring allows us to secure interest rates and terms for you that a private client would struggle to obtain alone.",
+      "new_p_1583": "There's no \"off-the-shelf mortgage.\" Every family is a world unto itself. We build a mix tailored exactly to your future needs, income changes, and family plans.",
+      "new_p_1585": "Don't take a mortgage before checking with us. An initial consultation call without commitment could save you hundreds of thousands of shekels. Leave your details and we'll get back to you soon.",
       "terms_h1_1": "Terms of Use",
       "terms_h2_2": "1. Definitions",
       "terms_h2_3": "2. Service Description",
@@ -4715,6 +4787,7 @@ img[data-no-hero-position] { position: static !important; }
       "new_h1_1353": "Mortgage Amortization Schedules – The Complete Guide",
       "new_h1_1422": "Bank of Israel Mortgage Restrictions – The Complete Guide",
       "new_h1_1491": "Mortgage Return Ratio – The Number That Determines Everything",
+      "new_h1_1555": "What Our Customers Say?",
       "new_h2_1121": "Want to consult with us?",
       "new_h2_1130": "What exactly is mortgage consulting?",
       "new_h2_1133": "Basic concepts you should know",
@@ -4763,6 +4836,11 @@ img[data-no-hero-position] { position: static !important; }
       "new_h2_1506": "How to improve the repayment ratio?",
       "new_h2_1512": "The importance of future planning",
       "new_h2_1515": "Want to know what your repayment ratio is?",
+      "new_h2_1561": "Why Is It Important to Choose a Mortgage Advisor Carefully?",
+      "new_h2_1565": "A Word from Our Customers",
+      "new_h2_1572": "Success Stories from the Field",
+      "new_h2_1577": "Why Do Our Clients Choose Us Again and Again?",
+      "new_h2_1584": "Want to Be the Next Success Story?",
       "new_h3_1107": "Beginner's Guide",
       "new_h3_1111": "First Home",
       "new_h3_1118": "Money-Saving Tips",
@@ -4792,6 +4870,11 @@ img[data-no-hero-position] { position: static !important; }
       "new_h3_1500": "Employees and Self-Employed",
       "new_h3_1502": "Loans and Obligations",
       "new_h3_1504": "Additional Income",
+      "new_h3_1573": "The Aharoni Family Case: Savings of ₪240,000",
+      "new_h3_1575": "Solution for Mortgage Rejects",
+      "new_h3_1578": "Complete Transparency",
+      "new_h3_1580": "Negotiating Power",
+      "new_h3_1582": "Personal Customization",
       "new_h4_1199": "Need help obtaining approval?",
       "new_h4_1382": "Expert tip:",
       "new_li_1135": "Prime interest rate: A variable interest rate that changes according to Bank of Israel decisions and is not linked to the Consumer Price Index.",
@@ -4941,6 +5024,9 @@ img[data-no-hero-position] { position: static !important; }
       "new_span_1166": "Published on: 30/10/2023",
       "new_span_1184": "Signing a memorandum of understanding or purchase contract without valid pre-approval is a dangerous financial gamble that could cost you tens of thousands of shekels in contract breach penalties.",
       "new_span_1218": "As part of professional mortgage consulting, we examine not only the interest rates at the bank, but also the feasibility of advancing payments to the contractor to save on index costs.",
+      "new_span_1557": "Satisfied Customers",
+      "new_span_1558": "₪100M+",
+      "new_span_1559": "Cumulative Savings",
       "privacy_li_27": "Personal information: name, email address, phone number and address",
       "privacy_li_28": "Technical information: IP address, browser type, operating system and website usage data",
       "privacy_li_29": "Cookies: information stored on your computer to improve user experience",
@@ -5218,13 +5304,13 @@ img[data-no-hero-position] { position: static !important; }
       "home_p_28": "Creado con amor por&nbsp;Zappy",
       "home_p_29": "En el complejo mundo financiero de hoy, recibir asesoría hipotecaria profesional no es solo una ventaja - es una necesidad. En Ariel Ajón Asesoría Hipotecaria y Financiera - Hipoteca en Pijama entendemos que la compra de una propiedad o la refinanciación hipotecaria son algunos de los pasos financieros más significativos de tu vida. Por eso ofrecemos asesoría hipotecaria integral personalizada según tus necesidades específicas.",
       "home_p_30": "Con amplia experiencia en el sector financiero y conocimiento profundo del mercado israelí, brindamos un servicio profesional y confiable que te ahorra tiempo y mucho dinero. Nuestro objetivo es asegurar que obtengas las mejores condiciones posibles para tu hipoteca.",
-      "home_p_31": "Nuestro lema \"Hipoteca en Pijama\" simboliza nuestro enfoque único del servicio. Entendemos que tu vida está ocupada - trabajo, familia, compromisos. Por eso vamos a ti o a través de videollamadas - en el horario que te convenga, en el lugar que te convenga. ¿Quieres recibir asesoría por la noche después de que los niños se hayan ido a dormir? No hay problema. ¿Prefieres una reunión el fin de semana? Con gusto. No necesitas salir de casa.\n¡Incluso si estás en pijama - está perfectamente bien! Nuestro servicio está construido sobre máxima comodidad, alta disponibilidad y una sensación hogareña que te hace sentir relajado y seguro durante todo el proceso.",
+      "home_p_31": "Nuestro lema \"hipoteca en pijama\" simboliza nuestro enfoque único del servicio. Entendemos que sus vidas están ocupadas - trabajo, familia, compromisos. Por eso vamos a ustedes o mediante videollamadas - en el momento que les convenga, en el lugar que les convenga. ¿Quieren recibir asesoría por la noche después de que los niños se hayan ido a dormir? No hay problema. ¿Prefieren una reunión el fin de semana? Con gusto. No necesitan salir de casa.\n\nIncluso si están en pijama - ¡está perfectamente bien! Nuestro servicio está construido sobre máxima comodidad, alta disponibilidad y una sensación hogareña que los hace sentir relajados y seguros durante todo el proceso.",
       "home_p_32": "¿Comenzando el viaje hacia tu primer hogar? Proporcionamos asesoría hipotecaria integral para primera vivienda que te acompaña en cada paso. Te explicaremos todas las opciones, te ayudaremos a entender tus derechos y encontraremos la hipoteca más adecuada para tu presupuesto y necesidades",
-      "home_p_33": "¿Ganaste en el sorteo del proyecto? ¡Felicidades!\nTe ayudaremos a navegar este emocionante viaje, para que puedas elegir el apartamento más adecuado para ti, y te acompañaremos hasta obtener la hipoteca correcta, adecuada y más económica",
+      "home_p_33": "¿Ganaron en el sorteo en el marco del proyecto? ¡Felicitaciones!\n\nLes ayudaremos a atravesar este emocionante viaje, para que puedan elegir el apartamento más adecuado para ustedes, y los acompañaremos hasta obtener la hipoteca correcta, adecuada y más económica",
       "home_p_34": "¿Ya tienes una hipoteca? ¡Podrías ahorrar miles de shekels al año! Nos especializamos en refinanciación hipotecaria y mejora de condiciones, examinamos tu hipoteca existente y negociamos con los bancos para mejorar las condiciones. Nuestro servicio incluye una revisión integral de todas las oportunidades de ahorro",
       "home_p_35": "¿Planeas mudarte a un apartamento más grande? Proporcionamos asesoría hipotecaria para mejoradores de vivienda que considera tu hipoteca existente y encuentra la solución óptima para la mudanza. Te ayudaremos a entender las diferentes opciones y encontrar la ruta más rentable para ti",
-      "home_p_36": "¿Te encuentras en una situación donde los préstamos y compromisos adquiridos te están dificultando las cosas? ¿Se te acaba el dinero al principio del mes? ¿Tienes deudas que te quitan el sueño?\nTe ayudaremos a obtener una hipoteca para realizar préstamos y salir de deudas",
-      "home_p_37": "¿Sabías que es posible obtener un préstamo grande, incluso en edades más avanzadas?&nbsp;\nSe trata de una solución que puede ayudarte a aprovechar tu propiedad, para cualquier propósito que necesites,\ny esto sin estar obligado a un seguro de vida, e incluso sin necesidad de demostrar capacidad de pago, como en una hipoteca regular&nbsp;",
+      "home_p_36": "¿Se encontraron en una situación donde los préstamos y compromisos adquiridos les dificultan las cosas? ¿El dinero se acaba ya a principios de mes? ¿Tienen deudas que les quitan el sueño?\n\nLes ayudaremos a obtener una hipoteca para realizar préstamos y salir de deudas",
+      "home_p_37": "¿Sabían que es posible obtener un préstamo grande, incluso en edades más avanzadas?\n\nSe trata de una solución que puede ayudarles a apalancar su propiedad, para cualquier propósito que necesiten,\n\ny esto sin estar obligados a un seguro de vida, e incluso sin necesidad de demostrar capacidad de pago, como en una hipoteca regular",
       "home_p_38": "Gestionamos una licitación de tasas de interés entre todos los bancos e instituciones financieras en Israel, lo que te garantiza las mejores condiciones posibles. El ahorro que obtendrás puede llegar a decenas de miles de shekels durante el período de la hipoteca.",
       "home_p_39": "Cada cliente recibe asesoría hipotecaria personalizada que considera su situación financiera única, planes futuros y necesidades especiales. Creemos que no hay una solución única que funcione para todos.",
       "home_p_40": "Desde la primera reunión hasta la firma de la hipoteca e incluso más allá - estamos aquí para ti. Te acompañaremos en cada paso, responderemos cada pregunta y nos aseguraremos de que te sientas seguro e informado durante todo el proceso.",
@@ -5582,7 +5668,7 @@ img[data-no-hero-position] { position: static !important; }
       "new_p_251": "Recuerden: la hipoteca es un producto financiero complejo. No lo enfrenten solos. La asesoría hipotecaria profesional es una inversión que se paga a sí misma varias veces en ahorro a largo plazo y tranquilidad durante todo el proceso.",
       "new_p_268": "Muchos tienden a pensar que una hipoteca es una \"boda católica\" por 25 o 30 años, y que una vez que firmamos, eso es todo. Pero la verdad es que una hipoteca es un producto dinámico. El mercado cambia, las tasas de interés en la economía suben y bajan, y también su situación personal cambia (promoción en el trabajo, herencia, o lamentablemente disminución de ingresos). El refinanciamiento hipotecario y mejora de condiciones es una herramienta financiera poderosa que les permite abrir la hipoteca existente y reconstruirla con mejores condiciones.",
       "new_p_270": "El refinanciamiento hipotecario es un proceso donde tomamos una nueva hipoteca para liquidar la hipoteca antigua. El objetivo es casi siempre uno de dos: o reducir el pago mensual para aliviar la carga financiera corriente, o acortar el período de la hipoteca para ahorrar en pagos de interés acumulados y terminar con la deuda más rápido. A menudo, mediante asesoría hipotecaria correcta, es posible lograr ambos objetivos juntos.",
-      "new_p_272": "Hay varios momentos en los que es obligatorio revisar su hipoteca:\n\n1. Cambio en las tasas de interés en la economía: Si tomaron una hipoteca en un período de tasas altas y ahora las tasas bajaron, hay potencial para un ahorro enorme.\n\n2. Cambio en el estatus financiero: Si sus ingresos aumentaron, vale la pena considerar aumentar el pago mensual y acortar los años. Esto les ahorrará mucho dinero.\n\n3. Recibir una suma de dinero única: Un fondo de capacitación liberado o una herencia pueden servir para liquidar parte de la hipoteca en el marco del refinanciamiento.\n\n4. Dificultad en el pago mensual: Si se encuentran en dificultad de flujo de caja, el refinanciamiento puede redistribuir el préstamo nuevamente y reducir el pago mensual.",
+      "new_p_272": "Existen varios momentos clave en los que es obligatorio revisar su hipoteca:\n\n1. Cambio en las tasas de interés en la economía: Si tomaron una hipoteca en un período de tasas altas y ahora las tasas bajaron, hay potencial para un ahorro enorme.\n\n2. Cambio en el estatus financiero: Si sus ingresos aumentaron, vale la pena considerar incrementar el pago mensual y acortar los años. Esto les ahorrará mucho dinero.\n\n3. Recibir una suma de dinero única: Un fondo de capacitación liberado o una herencia pueden servir para liquidar parte de la hipoteca en el marco del refinanciamiento.\n\n4. Dificultad en el pago mensual: Si se encontraron con dificultades de flujo de caja, el refinanciamiento puede redistribuir el préstamo nuevamente y reducir el pago mensual.",
       "new_p_274": "Una de las cosas importantes al verificar la conveniencia del refinanciamiento es la comisión de pago anticipado (penalidad por salida). A veces el ahorro en interés es grande, pero la penalidad hace que la medida no sea conveniente. Un asesor hipotecario para mejoradores de vivienda y refinanciadores realizará para ustedes un cálculo preciso que incluye todas las comisiones asociadas, para asegurar que realmente ahorren dinero neto y no solo \"en papel\".",
       "new_p_275": "Recomendación cálida: No dejen que su hipoteca \"duerma\" años largos sin revisión. Una verificación de conveniencia para refinanciamiento una vez al año o cada dos años puede valerles mucho dinero. Contáctennos para una revisión profesional sin compromiso.",
       "new_p_292": "Muchas familias en Israel se encuentran en una trampa financiera: tienen una hipoteca, y sobre ella se han agregado con los años un préstamo para auto, préstamo para renovación, préstamo para cubrir el sobregiro y más obligaciones en tarjetas de crédito. El resultado es un pago mensual que ahoga a la familia y le impide manejarse de manera normal. La solución de consolidación de préstamos mediante hipoteca (préstamo para cualquier propósito) es una de las herramientas más eficaces para salir del lodo financiero.",
@@ -6078,6 +6164,45 @@ img[data-no-hero-position] { position: static !important; }
       "new_a_1490": "Relación de retorno",
       "new_a_1493": "Verificación de elegibilidad gratuita",
       "new_a_1517": "A la calculadora hipotecaria",
+      "new_a_1518": "Clientes recomiendan",
+      "new_a_1519": "Clientes recomiendan",
+      "new_a_1520": "Clientes recomiendan",
+      "new_a_1521": "Clientes recomiendan",
+      "new_a_1522": "Clientes recomiendan",
+      "new_a_1523": "Clientes recomiendan",
+      "new_a_1524": "Clientes recomiendan",
+      "new_a_1525": "Clientes recomiendan",
+      "new_a_1526": "Clientes recomiendan",
+      "new_a_1527": "Clientes recomiendan",
+      "new_a_1528": "Clientes recomiendan",
+      "new_a_1529": "Clientes recomiendan",
+      "new_a_1530": "Clientes recomiendan",
+      "new_a_1531": "Clientes recomiendan",
+      "new_a_1532": "Clientes recomiendan",
+      "new_a_1533": "Clientes recomiendan",
+      "new_a_1534": "Clientes recomiendan",
+      "new_a_1535": "Clientes recomiendan",
+      "new_a_1536": "Clientes recomiendan",
+      "new_a_1537": "Clientes recomiendan",
+      "new_a_1538": "Clientes recomiendan",
+      "new_a_1539": "Clientes recomiendan",
+      "new_a_1540": "Clientes recomiendan",
+      "new_a_1541": "Clientes recomiendan",
+      "new_a_1542": "Clientes recomiendan",
+      "new_a_1543": "Clientes recomiendan",
+      "new_a_1544": "Clientes recomiendan",
+      "new_a_1545": "Clientes recomiendan",
+      "new_a_1546": "Clientes recomiendan",
+      "new_a_1547": "Clientes recomiendan",
+      "new_a_1548": "Clientes recomiendan",
+      "new_a_1549": "Clientes recomiendan",
+      "new_a_1550": "Clientes recomiendan",
+      "new_a_1551": "Clientes recomiendan",
+      "new_a_1552": "Clientes recomiendan",
+      "new_a_1553": "Clientes recomiendan",
+      "new_a_1554": "Clientes recomiendan",
+      "new_a_1560": "Lee las reseñas",
+      "new_a_1586": "Llámennos",
       "new_h1_109": "Podcast Hipoteca en Pijama – Finanzas a la altura de los ojos",
       "new_h1_214": "Centro de Conocimiento: Todo lo que necesita saber sobre hipotecas",
       "new_h1_239": "La Guía Completa: Proceso de obtención de hipoteca paso a paso",
@@ -6561,6 +6686,22 @@ img[data-no-hero-position] { position: static !important; }
       "new_p_1513": "Cuando realizamos asesoría hipotecaria para primera vivienda, siempre recomendamos no mirar solo la situación actual. Una pareja joven sin hijos puede quizás soportar una relación de devolución del 35%, pero con la incorporación de hijos a la familia los gastos aumentan significativamente (guarderías, cuidadoras, alimentación). Por eso, una planificación correcta toma en cuenta cambios futuros en ingresos y gastos.",
       "new_p_1514": "También en el proceso de refinanciamiento hipotecario, la verificación de la relación de devolución es una excelente oportunidad para rebalancear el presupuesto familiar y ajustar las devoluciones a su capacidad económica actual.",
       "new_p_1516": "No dejen que los cálculos complejos los detengan en el camino hacia la vivienda. Nuestro equipo en \"Hipoteca en Pijama\" está aquí para poner orden en los números y construir para ustedes la combinación más precisa.",
+      "new_p_1556": "Las historias reales detrás del gran ahorro. Únanse a cientos de familias que eligieron servicios profesionales de asesoría hipotecaria y lograron realizar el sueño del hogar con tranquilidad y seguridad financiera.",
+      "new_p_1562": "Obtener una hipoteca es probablemente la transacción financiera más grande y significativa que la mayoría de nosotros realizará en la vida. Cuando buscan asesoría hipotecaria, no solo buscan a alguien que llene formularios por ustedes, sino un socio en el camino que se preocupe por sus intereses financieros frente a los bancos. Nuestros clientes testimonian una y otra vez que el acompañamiento profesional de \"Hipoteca en Pijama\" les brindó no solo un ahorro económico enorme, sino también tranquilidad mental en un proceso complejo y estresante.",
+      "new_p_1563": "Ya sea que se trate de asesoría hipotecaria para la primera vivienda para parejas jóvenes que dan su primer paso en el mundo inmobiliario, o familias establecidas interesadas en refinanciar su hipoteca y mejorar condiciones para reducir el pago mensual, las reseñas hablan por sí mismas. La profesionalidad, disponibilidad y capacidad para simplificar conceptos financieros complejos son lo que hace único nuestro servicio.",
+      "new_p_1564": "Nos enorgullece presentarles una variedad de recomendaciones de clientes reales, que vivieron el proceso con nosotros y disfrutan hoy de condiciones hipotecarias óptimas adaptadas exactamente a sus necesidades. Cada reseña aquí representa una familia a la que ayudamos a realizar su sueño.",
+      "new_p_1566": "\"Llegamos a Ariel después de haber estado en el banco y recibir una oferta que nos pareció razonable. Ariel revisó los datos, nos explicó dónde podíamos mejorar, y al final nos construyó una combinación que nos ahorró más de 150,000 shekels durante la vida de la hipoteca. El servicio fue profesional, paciente y disponible para cualquier pregunta. Altamente recomendado para cualquiera que busque asesoría hipotecaria de otro nivel.\"",
+      "new_p_1567": "\"Como pareja comprando su primera vivienda, estábamos bajo una presión terrible por el proceso. No entendíamos los términos y no sabíamos por dónde empezar. El servicio de 'Hipoteca en Pijama' simplemente nos organizó las ideas. Recibimos acompañamiento cercano, explicaciones a nuestro nivel y sobre todo sensación de seguridad. ¡Muchas gracias por todo!\"",
+      "new_p_1568": "\"Me dirigí para refinanciar mi hipoteca y mejorar las condiciones. No podía creer que fuera posible ahorrar tanto en el pago mensual. Ariel luchó por mí frente a los bancos y consiguió tasas de interés que nunca habría obtenido solo. Su profesionalismo vale cada peso.\"",
+      "new_p_1569": "\"¡Ariel es un mago! Llegamos a él con un caso complejo y rechazos de dos bancos. No se rindió, encontró soluciones creativas y al final obtuvimos el financiamiento que necesitábamos para la casa de nuestros sueños. No hay palabras para describir nuestro agradecimiento.\"",
+      "new_p_1570": "\"Buscamos asesoría hipotecaria para mejoradores de vivienda porque vendimos y compramos simultáneamente. El proceso fue muy complejo con transferencia de hipoteca y financiamiento adicional. Ariel manejó todo con excelencia, coordinaciones con los bancos y protegiendo nuestros intereses. ¡Lo recomiendo encarecidamente!\"",
+      "new_p_1571": "\"La disponibilidad de Ariel es algo que no se encuentra hoy en día. Respondió cada mensaje, explicó con paciencia infinita, y nos hizo sentir como si fuéramos sus únicos clientes. Más allá del ahorro económico, el trato personal es lo que marcó la diferencia.\"",
+      "new_p_1574": "La familia Aharoni llegó a nosotros con una oferta inicial del banco que les parecía \"aceptable\". Después de un análisis profundo de sus capacidades de pago y construir una combinación inteligente que integra diferentes modalidades, logramos reducir las tasas de interés y acortar el período de la hipoteca en 3 años. El resultado: un ahorro neto de 240,000 ₪ en pagos de intereses durante la vida del préstamo.",
+      "new_p_1576": "Un cliente que llegó a nosotros después de ser rechazado por dos bancos debido a problemas de registro antiguos. Mediante trabajo correcto, preparación profesional del expediente y presentación a las personas adecuadas en el banco que conocen nuestro trabajo, logramos aprobar la hipoteca en excelentes condiciones y permitirle comprar el apartamento que quería.",
+      "new_p_1579": "Creemos que el cliente debe entender lo que está firmando. Explicamos cada paso del proceso en lenguaje simple y claro, sin \"letra pequeña\".",
+      "new_p_1581": "Nuestro conocimiento profundo del sistema bancario y el volumen que manejamos nos permite conseguir para ustedes tasas de interés y condiciones que un cliente particular tendría dificultades para obtener solo.",
+      "new_p_1583": "No existe una \"hipoteca estándar\". Cada familia es un mundo completo. Construimos una combinación adaptada exactamente a sus necesidades futuras, a los cambios en ingresos y a los planes familiares.",
+      "new_p_1585": "No tomen una hipoteca antes de consultarnos. Una llamada de asesoría inicial sin compromiso puede ahorrarles cientos de miles de pesos. Dejen sus datos y nos pondremos en contacto lo antes posible.",
       "terms_h1_1": "Términos de Uso",
       "terms_h2_2": "1. Definiciones",
       "terms_h2_3": "2. Descripción de los Servicios",
@@ -6626,6 +6767,7 @@ img[data-no-hero-position] { position: static !important; }
       "new_h1_1353": "Tablas de amortización hipotecaria – La guía completa",
       "new_h1_1422": "Restricciones del Banco de Israel en hipotecas – La guía completa",
       "new_h1_1491": "Relación de retorno en hipoteca – El número que lo determina todo",
+      "new_h1_1555": "¿Qué dicen nuestros clientes?",
       "new_h2_1121": "¿Quieren consultarnos?",
       "new_h2_1130": "¿Qué es realmente el asesoramiento hipotecario?",
       "new_h2_1133": "Conceptos básicos importantes que debe conocer",
@@ -6674,6 +6816,11 @@ img[data-no-hero-position] { position: static !important; }
       "new_h2_1506": "¿Cómo mejorar la relación de devolución?",
       "new_h2_1512": "Importancia de la planificación futura",
       "new_h2_1515": "¿Quieren saber cuál es su relación de devolución?",
+      "new_h2_1561": "¿Por qué es importante elegir un asesor hipotecario con cuidado?",
+      "new_h2_1565": "Palabras de nuestros clientes",
+      "new_h2_1572": "Historias de éxito del campo",
+      "new_h2_1577": "¿Por qué nuestros clientes nos eligen una y otra vez?",
+      "new_h2_1584": "¿Quieren ser la próxima historia de éxito?",
       "new_h3_1107": "Guía para principiantes",
       "new_h3_1111": "Primera vivienda",
       "new_h3_1118": "Consejos para ahorrar",
@@ -6703,6 +6850,11 @@ img[data-no-hero-position] { position: static !important; }
       "new_h3_1500": "Empleados y autónomos",
       "new_h3_1502": "Préstamos y obligaciones",
       "new_h3_1504": "Ingresos adicionales",
+      "new_h3_1573": "El caso de la familia Aharoni: ahorro de 240,000 ₪",
+      "new_h3_1575": "Solución para rechazados de hipoteca",
+      "new_h3_1578": "Transparencia total",
+      "new_h3_1580": "Poder de negociación",
+      "new_h3_1582": "Personalización",
       "new_h4_1199": "¿Necesitan ayuda para obtener la aprobación?",
       "new_h4_1382": "Consejo de expertos:",
       "new_li_1135": "Tasa prime: Tasa que varía según las decisiones del Banco de Israel, y no está indexada al índice de precios al consumidor.",
@@ -6852,6 +7004,9 @@ img[data-no-hero-position] { position: static !important; }
       "new_span_1166": "Publicado el: 30/10/2023",
       "new_span_1184": "Firmar un memorándum de entendimiento o contrato de compra sin una aprobación previa válida es una apuesta financiera peligrosa que puede costarles multas por incumplimiento de contrato de decenas de miles de shekels.",
       "new_span_1218": "En el marco de asesoría hipotecaria profesional, examinamos no solo las tasas de interés del banco, sino también la conveniencia de adelantar pagos al contratista para ahorrar los costos del índice.",
+      "new_span_1557": "Clientes satisfechos",
+      "new_span_1558": "₪100M+",
+      "new_span_1559": "Ahorro acumulado",
       "privacy_li_27": "Información personal: nombre, dirección de correo electrónico, número de teléfono y dirección",
       "privacy_li_28": "Información técnica: dirección IP, tipo de navegador, sistema operativo y datos de uso del sitio",
       "privacy_li_29": "Cookies: información almacenada en su computadora para mejorar la experiencia de uso",
@@ -7129,13 +7284,13 @@ img[data-no-hero-position] { position: static !important; }
       "home_p_28": "Happily created by&nbsp;Zappy",
       "home_p_29": "В сложном финансовом мире сегодня получение профессионального ипотечного консультирования - это не просто преимущество, это необходимость. Мы в Ариэль Ахон ипотечное и финансовое консультирование - ипотека в пижаме понимаем, что покупка недвижимости или рефинансирование ипотеки являются одними из самых значительных финансовых шагов в вашей жизни. Поэтому мы предлагаем комплексное ипотечное консультирование, адаптированное под ваши специфические потребности.",
       "home_p_30": "С большим опытом в финансовой сфере и глубоким знанием израильского рынка мы предоставляем профессиональный и надежный сервис, который экономит вам много времени и денег. Наша цель - убедиться, что вы получите наилучшие возможные условия для вашей ипотеки.",
-      "home_p_31": "Наш девиз \"ипотека в пижаме\" символизирует наш уникальный подход к обслуживанию. Мы понимаем, что ваша жизнь насыщена - работа, семья, обязательства. Поэтому мы приезжаем к вам или проводим видеозвонки - в удобное для вас время, в удобном для вас месте. Хотите получить консультацию вечером после того, как дети легли спать? Без проблем. Предпочитаете встречу на выходных? С удовольствием. Вам не нужно выходить из дома.\nДаже если вы в пижаме - это совершенно нормально! Наш сервис построен на максимальном комфорте, высокой доступности и домашней атмосфере, которая заставляет вас чувствовать себя спокойно и уверенно на протяжении всего процесса.",
+      "home_p_31": "Наш девиз \"ипотека в пижаме\" символизирует наш уникальный подход к обслуживанию. Мы понимаем, что ваша жизнь насыщена - работа, семья, обязательства. Поэтому мы приезжаем к вам или проводим видеозвонки - в удобное для вас время, в удобном для вас месте. Хотите получить консультацию вечером после того, как дети легли спать? Без проблем. Предпочитаете встречу в выходные? С удовольствием. Вам не нужно выходить из дома.\n\nДаже если вы в пижаме - это совершенно нормально! Наш сервис построен на максимальном удобстве, высокой доступности и домашней атмосфере, которая заставляет вас чувствовать себя спокойно и уверенно на протяжении всего процесса.",
       "home_p_32": "Начинаете путь к первому дому? Мы предоставляем комплексное консультирование по ипотеке для первой квартиры, которое сопровождает вас на каждом этапе. Объясним вам все возможности, поможем понять ваши права и найдем для вас наиболее подходящую ипотеку для вашего бюджета и потребностей",
-      "home_p_33": "Выиграли в лотерее в рамках проекта? Поздравляем!\nПоможем вам пройти этот захватывающий путь, чтобы вы могли выбрать наиболее подходящую для вас квартиру, и сопроводим вас до получения правильной, подходящей и самой дешевой ипотеки",
+      "home_p_33": "Выиграли в розыгрыше в рамках проекта? Поздравляем!\n\nПоможем вам пройти увлекательное путешествие, чтобы вы могли выбрать наиболее подходящую для вас квартиру, и сопроводим вас до получения правильной, подходящей и самой дешевой ипотеки",
       "home_p_34": "У вас уже есть ипотека? Возможно, вы сможете сэкономить тысячи шекелей в год! Мы специализируемся на рефинансировании ипотеки и улучшении условий, изучаем вашу существующую ипотеку и ведем переговоры с банками для улучшения условий. Наш сервис включает комплексную проверку всех возможностей для экономии",
       "home_p_35": "Планируете переехать в квартиру побольше? Мы предоставляем консультирование по ипотеке для улучшающих жилищные условия, которое учитывает вашу существующую ипотеку и находит оптимальное решение для переезда. Поможем вам понять различные возможности и найдем самый выгодный для вас маршрут",
-      "home_p_36": "Попали в ситуацию, когда взятые кредиты и обязательства усложняют вам жизнь? Деньги заканчиваются уже в начале месяца? У вас есть долги, которые лишают вас сна?\nПоможем вам получить ипотеку для погашения кредитов и избавления от долгов",
-      "home_p_37": "Знали ли вы, что можно получить большой кредит даже в более зрелом возрасте?&nbsp;\nРечь идет о решении, которое может помочь вам использовать вашу недвижимость в качестве залога для любой цели, в которой вы нуждаетесь,\nи это без обязательства страхования жизни и даже без необходимости доказывать способность к погашению, как при обычной ипотеке&nbsp;",
+      "home_p_36": "Попали в ситуацию, когда взятые кредиты и обязательства усложняют вам жизнь? Деньги заканчиваются уже в начале месяца? У вас есть долги, которые не дают вам спать?\n\nПоможем вам получить ипотеку для погашения кредитов и избавления от долгов",
+      "home_p_37": "Знали ли вы, что можно получить крупный кредит даже в более зрелом возрасте?\n\nРечь идет о решении, которое может помочь вам использовать ваше имущество в качестве рычага для любых целей, которые вам понадобятся,\n\nи это без обязательства страхования жизни и даже без необходимости доказывать способность погашения, как при обычной ипотеке",
       "home_p_38": "Мы проводим тендер по процентным ставкам среди всех банков и финансовых учреждений в Израиле, что гарантирует вам наилучшие возможные условия. Экономия, которую вы получите, может достигать десятков тысяч шекелей на протяжении срока ипотеки.",
       "home_p_39": "Каждый клиент получает персонализированное ипотечное консультирование, учитывающее его уникальное финансовое положение, планы на будущее и особые потребности. Мы верим, что не существует одного решения, подходящего всем.",
       "home_p_40": "От первой встречи до подписания ипотеки и даже после этого - мы здесь для вас. Сопроводим вас на каждом этапе, ответим на любой вопрос и убедимся, что вы чувствуете себя уверенно и в курсе событий на протяжении всего процесса.",
@@ -7493,7 +7648,7 @@ img[data-no-hero-position] { position: static !important; }
       "new_p_251": "Помните: ипотека - это сложный финансовый продукт. Не справляйтесь с ним в одиночку. Профессиональная консультация по ипотеке - это инвестиция, которая окупается многократно в долгосрочной экономии и душевном спокойствии на протяжении всего процесса.",
       "new_p_268": "Многие склонны думать, что ипотека - это \"католическая свадьба\" на 25 или 30 лет, и что как только подписали - все, конец. Но правда в том, что ипотека - это динамичный продукт. Рынок меняется, процентные ставки в экономике растут и падают, и ваше личное положение тоже меняется (продвижение по службе, наследство или, не дай бог, снижение доходов). Рефинансирование ипотеки и улучшение условий - это мощный финансовый инструмент, который позволяет вам открыть существующую ипотеку и перестроить ее на лучших условиях.",
       "new_p_270": "Рефинансирование ипотеки - это процесс, при котором мы берем новую ипотеку, чтобы погасить старую. Цель почти всегда одна из двух: либо уменьшить ежемесячный платеж, чтобы облегчить текущую финансовую нагрузку, либо сократить срок ипотеки, чтобы сэкономить на накопленных процентных платежах и быстрее закончить с долгом. Часто, с помощью правильной консультации по ипотеке, можно достичь обеих целей одновременно.",
-      "new_p_272": "Есть несколько узловых моментов, когда обязательно нужно проверить вашу ипотеку:\n\n1. Изменение процентных ставок в экономике: Если вы взяли ипотеку в период высоких процентных ставок, а теперь ставки упали, есть потенциал для огромной экономии.\n\n2. Изменение финансового статуса: Если ваши доходы выросли, стоит рассмотреть увеличение ежемесячного платежа и сокращение лет. Это сэкономит вам много денег.\n\n3. Получение единовременной суммы денег: Освободившийся фонд повышения квалификации или наследство могут служить для погашения части ипотеки в рамках рефинансирования.\n\n4. Трудности с ежемесячным платежом: Если вы попали в трудности с денежным потоком, рефинансирование может заново распределить кредит и уменьшить ежемесячный платеж.",
+      "new_p_272": "Существует несколько моментов, когда обязательно нужно проверить вашу ипотеку:\n\n1. Изменение процентных ставок в экономике: если вы взяли ипотеку в период высоких процентных ставок, а сейчас ставки снизились, есть потенциал для огромной экономии.\n\n2. Изменение финансового статуса: если ваши доходы выросли, стоит рассмотреть увеличение ежемесячного платежа и сокращение срока. Это сэкономит вам много денег.\n\n3. Получение единовременной суммы денег: освободившийся фонд повышения квалификации или наследство могут быть использованы для частичного погашения ипотеки в рамках рефинансирования.\n\n4. Трудности с ежемесячным платежом: если у вас возникли проблемы с денежным потоком, рефинансирование может перераспределить кредит заново и уменьшить ежемесячный платеж.",
       "new_p_274": "Одна из важных вещей при проверке целесообразности рефинансирования - это комиссия за досрочное погашение (штраф за выход). Иногда экономия на процентах большая, но штраф делает операцию нецелесообразной. Консультант по ипотеке для улучшающих жилье и рефинансирующих проведет для вас точный расчет, включающий все сопутствующие комиссии, чтобы убедиться, что вы действительно экономите чистые деньги, а не только \"на бумаге\".",
       "new_p_275": "Горячая рекомендация: не позволяйте вашей ипотеке \"спать\" долгие годы без проверки. Проверка целесообразности рефинансирования раз в год-два может стоить вам очень много денег. Обратитесь к нам для профессиональной проверки без обязательств.",
       "new_p_292": "Многие семьи в Израиле оказываются в финансовой ловушке: у них есть ипотека, и к ней с годами добавились кредит на автомобиль, кредит на ремонт, кредит на покрытие минуса и другие обязательства по кредитным картам. Результат - ежемесячный платеж, который душит семью и не позволяет ей нормально функционировать. Решение консолидации кредитов через ипотеку (кредит для любых целей) - один из самых эффективных инструментов для выхода из финансового болота.",
@@ -7989,6 +8144,45 @@ img[data-no-hero-position] { position: static !important; }
       "new_a_1490": "Коэффициент возврата",
       "new_a_1493": "Бесплатная проверка права на получение",
       "new_a_1517": "К калькулятору ипотеки",
+      "new_a_1518": "Рекомендации клиентов",
+      "new_a_1519": "Рекомендации клиентов",
+      "new_a_1520": "Рекомендации клиентов",
+      "new_a_1521": "Рекомендации клиентов",
+      "new_a_1522": "Рекомендации клиентов",
+      "new_a_1523": "Рекомендации клиентов",
+      "new_a_1524": "Рекомендации клиентов",
+      "new_a_1525": "Рекомендации клиентов",
+      "new_a_1526": "Рекомендации клиентов",
+      "new_a_1527": "Рекомендации клиентов",
+      "new_a_1528": "Рекомендации клиентов",
+      "new_a_1529": "Рекомендации клиентов",
+      "new_a_1530": "Рекомендации клиентов",
+      "new_a_1531": "Рекомендации клиентов",
+      "new_a_1532": "Рекомендации клиентов",
+      "new_a_1533": "Рекомендации клиентов",
+      "new_a_1534": "Рекомендации клиентов",
+      "new_a_1535": "Рекомендации клиентов",
+      "new_a_1536": "Рекомендации клиентов",
+      "new_a_1537": "Рекомендации клиентов",
+      "new_a_1538": "Рекомендации клиентов",
+      "new_a_1539": "Рекомендации клиентов",
+      "new_a_1540": "Рекомендации клиентов",
+      "new_a_1541": "Рекомендации клиентов",
+      "new_a_1542": "Рекомендации клиентов",
+      "new_a_1543": "Рекомендации клиентов",
+      "new_a_1544": "Рекомендации клиентов",
+      "new_a_1545": "Рекомендации клиентов",
+      "new_a_1546": "Рекомендации клиентов",
+      "new_a_1547": "Рекомендации клиентов",
+      "new_a_1548": "Рекомендации клиентов",
+      "new_a_1549": "Рекомендации клиентов",
+      "new_a_1550": "Рекомендации клиентов",
+      "new_a_1551": "Рекомендации клиентов",
+      "new_a_1552": "Рекомендации клиентов",
+      "new_a_1553": "Рекомендации клиентов",
+      "new_a_1554": "Рекомендации клиентов",
+      "new_a_1560": "Читайте отзывы",
+      "new_a_1586": "Звоните нам",
       "new_h1_109": "Подкаст «Ипотека в пижаме» – финансы на уровне глаз",
       "new_h1_214": "Центр знаний: всё, что нужно знать об ипотеке",
       "new_h1_239": "Полное руководство: процесс получения ипотеки шаг за шагом",
@@ -8472,6 +8666,22 @@ img[data-no-hero-position] { position: static !important; }
       "new_p_1513": "Когда мы проводим консультацию по ипотеке для первой квартиры, мы всегда рекомендуем смотреть не только на текущую ситуацию. Молодая пара без детей может, возможно, справиться с коэффициентом возврата 35%, но с появлением детей в семье расходы значительно возрастают (детские сады, няни, питание). Поэтому правильное планирование учитывает будущие изменения в доходах и расходах.",
       "new_p_1514": "Также в процессе рефинансирования ипотеки проверка коэффициента возврата является отличной возможностью заново сбалансировать семейный бюджет и адаптировать возвраты к вашим текущим финансовым возможностям.",
       "new_p_1516": "Не позволяйте сложным расчетам остановить вас на пути к квартире. Наша команда в \"Ипотека в пижаме\" здесь, чтобы навести порядок в цифрах и построить для вас наиболее точную комбинацию.",
+      "new_p_1556": "Реальные истории за большой экономией. Присоединяйтесь к сотням семей, которые выбрали профессиональные консультационные услуги по ипотеке и смогли осуществить мечту о квартире со спокойной душой и финансовой уверенностью.",
+      "new_p_1562": "Получение ипотеки - это, вероятно, самая крупная и значимая финансовая сделка, которую большинство из нас совершает в жизни. Когда вы ищете консультацию по ипотеке, вы ищете не просто кого-то, кто заполнит за вас формы, а партнера, который позаботится о ваших финансовых интересах перед банками. Наши клиенты снова и снова подтверждают, что профессиональное сопровождение \"Ипотека в пижаме\" дало им не только огромную экономию денег, но и душевное спокойствие в сложном и стрессовом процессе.",
+      "new_p_1563": "Будь то консультация по ипотеке для первой квартиры молодых пар, для которых это первый шаг в мире недвижимости, или для опытных семей, заинтересованных в рефинансировании ипотеки и улучшении условий для уменьшения ежемесячного платежа - отзывы говорят сами за себя. Профессионализм, доступность и способность упростить сложные финансовые понятия - это то, что делает наш сервис уникальным.",
+      "new_p_1564": "Мы с гордостью представляем вам разнообразные рекомендации от реальных клиентов, которые прошли процесс с нами и сегодня наслаждаются оптимальными условиями ипотеки, точно подобранными под их потребности. Каждый отзыв здесь представляет семью, которой мы помогли осуществить мечту.",
+      "new_p_1566": "\"Мы обратились к Ариэлю после того, как были в банке и получили предложение, которое показалось нам разумным. Ариэль просмотрел данные, объяснил нам, где мы можем улучшить, и в итоге построил нам портфель, который сэкономил нам более 150,000 шекелей за весь срок ипотеки! Сервис был профессиональным, терпеливым и доступным для любого вопроса. Горячо рекомендую всем, кто ищет консультацию по ипотеке на другом уровне.\"",
+      "new_p_1567": "\"Как пара, покупающая первую квартиру, мы были в ужасном стрессе от процесса. Мы не понимали терминов и не знали, с чего начать. Сервис 'Ипотека в пижаме' просто навел порядок в наших головах. Мы получили постоянное сопровождение, объяснения на понятном уровне и, главное, чувство уверенности. Большое спасибо за все!\"",
+      "new_p_1568": "\"Я обратился для рефинансирования ипотеки и улучшения условий. Не мог поверить, что можно так сильно сэкономить на ежемесячном платеже. Ариэль боролся за меня с банками и получил процентные ставки, которые я никогда бы не получил самостоятельно. Его профессионализм стоит каждого шекеля.\"",
+      "new_p_1569": "\"Ариэль - настоящий волшебник! Мы пришли к нему со сложным делом и отказами от двух банков. Он не сдался, нашел творческие решения и в итоге мы получили финансирование, которое нам было нужно для дома нашей мечты. Нет слов, чтобы выразить нашу благодарность.\"",
+      "new_p_1570": "\"Мы искали консультацию по ипотеке для улучшения жилищных условий, так как продавали и покупали одновременно. Процесс был очень сложным с переносом ипотеки и дополнительным финансированием. Ариэль управлял всем на высшем уровне, координировал с банками и защищал наши интересы. Горячо рекомендую!\"",
+      "new_p_1571": "\"Доступность Ариэля - это то, с чем сегодня не сталкиваешься. Отвечал на каждое сообщение, объяснял с бесконечным терпением и заставлял нас чувствовать, что мы его единственные клиенты. Помимо финансовой экономии, личное отношение - это то, что сделало разницу.\"",
+      "new_p_1574": "Семья Ахарони пришла к нам с первоначальным предложением от банка, которое казалось им \"нормальным\". После глубокого анализа их возможностей погашения и создания умной комбинации, объединяющей различные программы, мы смогли снизить процентные ставки и сократить срок ипотеки на 3 года. Результат: чистая экономия 240,000 ₪ на процентных платежах за весь срок кредита.",
+      "new_p_1576": "Клиент, который пришел к нам после отказа в двух банках из-за старых проблем с регистрацией. Благодаря правильной работе, профессиональной подготовке досье и подаче его соответствующим лицам в банке, которые знают нашу работу, мы смогли одобрить ипотеку на отличных условиях и позволить ему купить желаемую квартиру.",
+      "new_p_1579": "Мы верим, что клиент должен понимать, под чем он подписывается. Мы объясняем каждый этап процесса простым и понятным языком, без \"мелкого шрифта\".",
+      "new_p_1581": "Наше глубокое знание банковской системы и объемы, которые мы приносим, позволяют нам получать для вас процентные ставки и условия, которые частному клиенту будет трудно получить самостоятельно.",
+      "new_p_1583": "Не существует \"готовой ипотеки\". Каждая семья - это целый мир. Мы создаем комбинацию, точно адаптированную к вашим будущим потребностям, изменениям в доходах и семейным планам.",
+      "new_p_1585": "Не берите ипотеку, пока не проверили с нами. Первичная консультация без обязательств может сэкономить вам сотни тысяч шекелей. Оставьте контакты, и мы свяжемся с вами в ближайшее время.",
       "terms_h1_1": "Условия использования",
       "terms_h2_2": "1. Определения",
       "terms_h2_3": "2. Описание услуг",
@@ -8537,6 +8747,7 @@ img[data-no-hero-position] { position: static !important; }
       "new_h1_1353": "Таблицы погашения ипотеки – полное руководство",
       "new_h1_1422": "Ограничения Банка Израиля по ипотеке – полное руководство",
       "new_h1_1491": "Коэффициент возврата по ипотеке – цифра, которая определяет всё",
+      "new_h1_1555": "Что рассказывают наши клиенты?",
       "new_h2_1121": "Хотите проконсультироваться с нами?",
       "new_h2_1130": "Что такое ипотечные консультации?",
       "new_h2_1133": "Основные понятия, которые важно знать",
@@ -8585,6 +8796,11 @@ img[data-no-hero-position] { position: static !important; }
       "new_h2_1506": "Как улучшить коэффициент возврата?",
       "new_h2_1512": "Важность планирования на будущее",
       "new_h2_1515": "Хотите узнать ваш коэффициент возврата?",
+      "new_h2_1561": "Почему важно тщательно выбирать консультанта по ипотеке?",
+      "new_h2_1565": "Слово от наших клиентов",
+      "new_h2_1572": "Истории успеха с места событий",
+      "new_h2_1577": "Почему наши клиенты выбирают нас снова и снова?",
+      "new_h2_1584": "Хотите стать следующей историей успеха?",
       "new_h3_1107": "Руководство для начинающих",
       "new_h3_1111": "Первая квартира",
       "new_h3_1118": "Советы по экономии",
@@ -8614,6 +8830,11 @@ img[data-no-hero-position] { position: static !important; }
       "new_h3_1500": "Наемные работники и самозанятые",
       "new_h3_1502": "Кредиты и обязательства",
       "new_h3_1504": "Дополнительные доходы",
+      "new_h3_1573": "Случай семьи Ахарони: экономия 240,000 ₪",
+      "new_h3_1575": "Решение для отказников по ипотеке",
+      "new_h3_1578": "Полная прозрачность",
+      "new_h3_1580": "Переговорная сила",
+      "new_h3_1582": "Индивидуальный подход",
       "new_h4_1199": "Нужна помощь в получении одобрения?",
       "new_h4_1382": "Совет экспертов:",
       "new_li_1135": "Прайм-ставка: процентная ставка, которая изменяется в соответствии с решениями Банка Израиля и не привязана к индексу потребительских цен.",
@@ -8763,6 +8984,9 @@ img[data-no-hero-position] { position: static !important; }
       "new_span_1166": "Опубликовано: 30/10/2023",
       "new_span_1184": "Подписание меморандума или договора купли-продажи без действующего предварительного одобрения - это опасная финансовая авантюра, которая может обойтись вам в штрафы за нарушение договора в размере десятков тысяч шекелей.",
       "new_span_1218": "В рамках профессиональной консультации по ипотеке мы рассматриваем не только процентные ставки в банке, но и целесообразность досрочных платежей подрядчику для экономии на индексных расходах.",
+      "new_span_1557": "Довольные клиенты",
+      "new_span_1558": "₪100M+",
+      "new_span_1559": "Накопленная экономия",
       "privacy_li_27": "Личная информация: имя, адрес электронной почты, номер телефона и адрес",
       "privacy_li_28": "Техническая информация: IP-адрес, тип браузера, операционная система и данные об использовании сайта",
       "privacy_li_29": "Файлы cookie: информация, сохраняемая на вашем компьютере для улучшения пользовательского опыта",
@@ -9566,29 +9790,56 @@ img[data-no-hero-position] { position: static !important; }
   }
 })();
 </script>
-</body></html>
-    <script src="/script.js"></script>
+
     <script id="zappy-mobile-submenu-script">
     (function() {
       function initMobileSubmenuToggles() {
-        if (window.innerWidth > 768) { document.querySelectorAll('.mobile-submenu-toggle').forEach(function(b){b.remove();}); document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(m){m.classList.remove('mobile-expanded');}); return; }
-        document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)').forEach(function(li) {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
           if (li.querySelector('.mobile-submenu-toggle')) return;
-          var sm = li.querySelector('.sub-menu'), pl = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
-          if (!sm || !pl) return;
-          var tb = document.createElement('button'); tb.className = 'mobile-submenu-toggle'; tb.setAttribute('aria-label', 'Toggle submenu'); tb.setAttribute('type', 'button');
-          pl.insertAdjacentElement('afterend', tb);
-          tb.addEventListener('click', function(e) { e.preventDefault(); e.stopPropagation();
-            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(m) { if (m !== sm) { m.classList.remove('mobile-expanded'); var t = m.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }});
-            sm.classList.toggle('mobile-expanded'); tb.classList.toggle('expanded');
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
           });
         });
       }
-      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); } else { initMobileSubmenuToggles(); }
-      window.addEventListener('resize', function() { clearTimeout(window._mrt); window._mrt = setTimeout(initMobileSubmenuToggles, 250); });
-      var observer = new MutationObserver(function(mutations) { mutations.forEach(function(mutation) { if (mutation.type === 'attributes') { var target = mutation.target; if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) { setTimeout(initMobileSubmenuToggles, 100); } } }); });
-      setTimeout(function() { document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) { observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] }); }); }, 500);
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
     })();
     </script>
-</body>
-</html>
+    <script src="/script.js"></script>
+</body></html>

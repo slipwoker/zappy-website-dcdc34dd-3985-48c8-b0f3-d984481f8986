@@ -1,5 +1,5 @@
 # Clean URL redirects for Render static hosting
-# Generated: 2026-01-23T16:38:21.847Z
+# Generated: 2026-01-23T17:07:44.426Z
 # NOTE: Render uses render.yaml for routing, not _redirects (that is Netlify)
 # This file is kept for reference only
 
@@ -38,6 +38,7 @@
 /articles/amortization-schedules  /articles/amortization-schedules.html  200!
 /articles/boi-regulations  /articles/boi-regulations.html  200!
 /articles/repayment-ratio  /articles/repayment-ratio.html  200!
+/testimonials  /testimonials.html  200!
 
 # Language slug rewrites for SEO
 /en  /en/index.html  200!
@@ -50,6 +51,7 @@
 /en/mashkanta-bepijama-podcast  /en/mashkanta-bepijama-podcast.html  200!
 /en/articles  /en/articles.html  200!
 /en/blog  /en/blog.html  200!
+/en/testimonials  /en/testimonials.html  200!
 /en  /en/index.html  200!
 /es  /es/index.html  200!
 /es/services  /es/services.html  200!
@@ -61,6 +63,7 @@
 /es/mashkanta-bepijama-podcast  /es/mashkanta-bepijama-podcast.html  200!
 /es/articles  /es/articles.html  200!
 /es/blog  /es/blog.html  200!
+/es/testimonials  /es/testimonials.html  200!
 /es  /es/index.html  200!
 /ru  /ru/index.html  200!
 /ru/services  /ru/services.html  200!
@@ -72,6 +75,7 @@
 /ru/mashkanta-bepijama-podcast  /ru/mashkanta-bepijama-podcast.html  200!
 /ru/articles  /ru/articles.html  200!
 /ru/blog  /ru/blog.html  200!
+/ru/testimonials  /ru/testimonials.html  200!
 /ru  /ru/index.html  200!
 
 # Legal pages - redirect old .html URLs to friendly URLs
