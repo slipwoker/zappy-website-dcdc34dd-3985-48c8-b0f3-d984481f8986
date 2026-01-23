@@ -290,22 +290,40 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/mortgage-insurance" />
   </url>
   <url>
-    <loc>https://mashkanta-bepijama.co.il/articles/reverse-mortgage</loc>
+    <loc>https://mashkanta-bepijama.co.il/articles/self-construction-mortgage</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/reverse-mortgage" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/reverse-mortgage" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/reverse-mortgage" />
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/self-construction-mortgage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/self-construction-mortgage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/self-construction-mortgage" />
   </url>
   <url>
-    <loc>https://mashkanta-bepijama.co.il/en/articles/reverse-mortgage</loc>
+    <loc>https://mashkanta-bepijama.co.il/en/articles/self-construction-mortgage</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/reverse-mortgage" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/reverse-mortgage" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/reverse-mortgage" />
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/self-construction-mortgage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/self-construction-mortgage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/self-construction-mortgage" />
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/articles/mortgage-ancillary-costs</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/mortgage-ancillary-costs" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/mortgage-ancillary-costs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/mortgage-ancillary-costs" />
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/en/articles/mortgage-ancillary-costs</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/mortgage-ancillary-costs" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/mortgage-ancillary-costs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/mortgage-ancillary-costs" />
   </url>
   <url>
     <loc>https://mashkanta-bepijama.co.il/privacy</loc>
