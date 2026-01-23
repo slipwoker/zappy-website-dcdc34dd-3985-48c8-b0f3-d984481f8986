@@ -182,6 +182,42 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/mechir-lamishtaken" />
   </url>
   <url>
+    <loc>https://mashkanta-bepijama.co.il/articles/common-mortgage-mistakes</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/common-mortgage-mistakes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/common-mortgage-mistakes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/common-mortgage-mistakes" />
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/en/articles/common-mortgage-mistakes</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/common-mortgage-mistakes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/common-mortgage-mistakes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/common-mortgage-mistakes" />
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/articles/mortgage-tracks</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/mortgage-tracks" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/mortgage-tracks" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/mortgage-tracks" />
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/en/articles/mortgage-tracks</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/mortgage-tracks" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/mortgage-tracks" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/mortgage-tracks" />
+  </url>
+  <url>
     <loc>https://mashkanta-bepijama.co.il/privacy</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>monthly</changefreq>
