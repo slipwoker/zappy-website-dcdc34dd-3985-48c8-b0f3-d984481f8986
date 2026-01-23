@@ -397,11 +397,7 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}html[dir="ltr"] .service-detailed.reverse{
-  direction: ltr;
-}html[dir="rtl"] .service-detailed.reverse .service-text{
-  direction: rtl;
-}
+}html[dir="ltr"] .service-detailed.reverse{direction: ltr;}html[dir="rtl"] .service-detailed.reverse .service-text{direction: rtl;}
 
 .service-image img {
   width: 100%;
@@ -872,12 +868,9 @@ section {
     justify-content: center;
   }
   
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    right: 0;
-    left: auto;
-  }
+  html[lang="ar"] .nav-menu{right: 0;left: auto;}
   
   html[dir="ltr"] .nav-menu,
   html[lang="en"] .nav-menu,
@@ -887,19 +880,13 @@ section {
     right: auto;
   }
   
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    right: 15px;
-    left: auto;
-  }
+  html[lang="ar"] .mobile-toggle{right: 15px;left: auto;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px;
-    right: auto;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px;right: auto;}
   
   html[dir="ltr"] .mobile-toggle,
   html[lang="en"] .mobile-toggle,
@@ -936,10 +923,7 @@ section {
   
   html[lang="he"] .whatsapp-float,
   html[lang="ar"] .whatsapp-float,
-  html[dir="rtl"] .whatsapp-float {
-    right: 20px;
-    left: auto;
-  }
+  .whatsapp-float{right: 20px;left: auto;}
   
   html[lang="en"] .whatsapp-float,
   html[lang="es"] .whatsapp-float,
@@ -976,9 +960,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }html[dir="rtl"] .service-detailed.reverse{
-    direction: rtl;
-  }
+  }html[dir="rtl"] .service-detailed.reverse{direction: rtl;}
   
   .service-image img,
   .audience-item img,
@@ -1693,7 +1675,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -1701,10 +1683,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -1800,49 +1787,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -1850,32 +1836,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -1887,17 +1864,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -2309,11 +2280,7 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}html[dir="ltr"] .service-detailed.reverse{
-  direction: ltr;
-}html[dir="rtl"] .service-detailed.reverse .service-text{
-  direction: rtl;
-}
+}html[dir="ltr"] .service-detailed.reverse{direction: ltr;}html[dir="rtl"] .service-detailed.reverse .service-text{direction: rtl;}
 
 .service-image img {
   width: 100%;
@@ -2784,12 +2751,9 @@ section {
     justify-content: center;
   }
   
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    right: 0;
-    left: auto;
-  }
+  html[lang="ar"] .nav-menu{right: 0;left: auto;}
   
   html[dir="ltr"] .nav-menu,
   html[lang="en"] .nav-menu,
@@ -2799,19 +2763,13 @@ section {
     right: auto;
   }
   
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    right: 15px;
-    left: auto;
-  }
+  html[lang="ar"] .mobile-toggle{right: 15px;left: auto;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px;
-    right: auto;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px;right: auto;}
   
   html[dir="ltr"] .mobile-toggle,
   html[lang="en"] .mobile-toggle,
@@ -2848,10 +2806,7 @@ section {
   
   html[lang="he"] .whatsapp-float,
   html[lang="ar"] .whatsapp-float,
-  html[dir="rtl"] .whatsapp-float {
-    right: 20px;
-    left: auto;
-  }
+  .whatsapp-float{right: 20px;left: auto;}
   
   html[lang="en"] .whatsapp-float,
   html[lang="es"] .whatsapp-float,
@@ -2888,9 +2843,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }html[dir="rtl"] .service-detailed.reverse{
-    direction: rtl;
-  }
+  }html[dir="rtl"] .service-detailed.reverse{direction: rtl;}
   
   .service-image img,
   .audience-item img,
@@ -3605,7 +3558,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -3613,10 +3566,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -3712,49 +3670,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -3762,32 +3719,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -3799,17 +3747,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -3819,40 +3761,11 @@ html[dir="rtl"] .zappy-lang-switcher-container {
     padding: 10px 14px;
     font-size: 13px;
   }
-}html[dir="ltr"] /* === AI CUSTOMIZATION ADDITIONS === */
+}/* === AI CUSTOMIZATION ADDITIONS === */
 /* Zappy Attribution Header Styles */
-.zappy-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
-  padding: 16px 10px;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
-  font-size: 16px;
-  color: #4a4a4a;
-  line-height: 21px;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 21px;
-  direction: ltr !important;
-  unicode-bidi: isolate;
-}html[dir="ltr"] .zappy-header p{
-      margin: 0;
-      padding: 0;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 21px;
-      white-space: nowrap;
-      display: inline-block;
-      vertical-align: baseline;
-      margin-bottom: 0 !important;
-      direction: ltr !important;
-    }
+.zappy-header{position: fixed;top: 0;left: 0;width: 100%;background: white;box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);padding: 16px 10px;text-align: center;font-family: 'Nunito', sans-serif;font-size: 16px;color: #4a4a4a;line-height: 21px;z-index: 99999;display: flex;align-items: center;justify-content: center;min-height: 21px;unicode-bidi: isolate;}html[dir="ltr"] /* === AI CUSTOMIZATION ADDITIONS === */
+/* Zappy Attribution Header Styles */
+.zappy-header{direction: ltr !important;}.zappy-header p{margin: 0;padding: 0;font-weight: 400;font-size: 16px;line-height: 21px;white-space: nowrap;display: inline-block;vertical-align: baseline;margin-bottom: 0 !important;}html[dir="ltr"] .zappy-header p{direction: ltr !important;}
 
 .zappy-header .zappy-link {
   font-weight: 700;
@@ -4265,11 +4178,7 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}html[dir="ltr"] .service-detailed.reverse{
-  direction: ltr;
-}html[dir="rtl"] .service-detailed.reverse .service-text{
-  direction: rtl;
-}
+}html[dir="ltr"] .service-detailed.reverse{direction: ltr;}html[dir="rtl"] .service-detailed.reverse .service-text{direction: rtl;}
 
 .service-image img {
   width: 100%;
@@ -4740,12 +4649,9 @@ section {
     justify-content: center;
   }
   
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    right: 0;
-    left: auto;
-  }
+  html[lang="ar"] .nav-menu{right: 0;left: auto;}
   
   html[dir="ltr"] .nav-menu,
   html[lang="en"] .nav-menu,
@@ -4755,19 +4661,13 @@ section {
     right: auto;
   }
   
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    right: 15px;
-    left: auto;
-  }
+  html[lang="ar"] .mobile-toggle{right: 15px;left: auto;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px;
-    right: auto;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px;right: auto;}
   
   html[dir="ltr"] .mobile-toggle,
   html[lang="en"] .mobile-toggle,
@@ -4804,10 +4704,7 @@ section {
   
   html[lang="he"] .whatsapp-float,
   html[lang="ar"] .whatsapp-float,
-  html[dir="rtl"] .whatsapp-float {
-    right: 20px;
-    left: auto;
-  }
+  .whatsapp-float{right: 20px;left: auto;}
   
   html[lang="en"] .whatsapp-float,
   html[lang="es"] .whatsapp-float,
@@ -4844,9 +4741,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }html[dir="rtl"] .service-detailed.reverse{
-    direction: rtl;
-  }
+  }html[dir="rtl"] .service-detailed.reverse{direction: rtl;}
   
   .service-image img,
   .audience-item img,
@@ -5561,7 +5456,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -5569,10 +5464,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -5668,49 +5568,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -5718,32 +5617,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -5755,17 +5645,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -5810,12 +5694,9 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 }
 
 /* RTL positioning */
-html[dir="rtl"] .whatsapp-float,
+.whatsapp-float,
 html[lang="he"] .whatsapp-float,
-html[lang="ar"] .whatsapp-float {
-  right: auto;
-  left: 20px;
-}
+html[lang="ar"] .whatsapp-float{right: auto;left: 20px;}
 
 /* Tooltip on hover */
 .whatsapp-float::before {
@@ -5841,12 +5722,9 @@ html[lang="ar"] .whatsapp-float {
 }
 
 /* RTL tooltip positioning */
-html[dir="rtl"] .whatsapp-float::before,
+.whatsapp-float::before,
 html[lang="he"] .whatsapp-float::before,
-html[lang="ar"] .whatsapp-float::before {
-  right: auto;
-  left: 70px;
-}
+html[lang="ar"] .whatsapp-float::before{right: auto;left: 70px;}
 
 /* Show on all screen sizes (override mobile hide) */
 .whatsapp-float {
@@ -5863,12 +5741,9 @@ html[lang="ar"] .whatsapp-float::before {
     right: 16px;
   }
   
-  html[dir="rtl"] .whatsapp-float,
+  .whatsapp-float,
   html[lang="he"] .whatsapp-float,
-  html[lang="ar"] .whatsapp-float {
-    right: auto;
-    left: 16px;
-  }
+  html[lang="ar"] .whatsapp-float{right: auto;left: 16px;}
   
   .whatsapp-float::before {
     font-size: 12px;
@@ -6276,11 +6151,7 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}html[dir="ltr"] .service-detailed.reverse{
-  direction: ltr;
-}html[dir="rtl"] .service-detailed.reverse .service-text{
-  direction: rtl;
-}
+}html[dir="ltr"] .service-detailed.reverse{direction: ltr;}html[dir="rtl"] .service-detailed.reverse .service-text{direction: rtl;}
 
 .service-image img {
   width: 100%;
@@ -6751,12 +6622,9 @@ section {
     justify-content: center;
   }
   
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    right: 0;
-    left: auto;
-  }
+  html[lang="ar"] .nav-menu{right: 0;left: auto;}
   
   html[dir="ltr"] .nav-menu,
   html[lang="en"] .nav-menu,
@@ -6766,19 +6634,13 @@ section {
     right: auto;
   }
   
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    right: 15px;
-    left: auto;
-  }
+  html[lang="ar"] .mobile-toggle{right: 15px;left: auto;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px;
-    right: auto;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px;right: auto;}
   
   html[dir="ltr"] .mobile-toggle,
   html[lang="en"] .mobile-toggle,
@@ -6815,10 +6677,7 @@ section {
   
   html[lang="he"] .whatsapp-float,
   html[lang="ar"] .whatsapp-float,
-  html[dir="rtl"] .whatsapp-float {
-    right: 20px;
-    left: auto;
-  }
+  .whatsapp-float{right: 20px;left: auto;}
   
   html[lang="en"] .whatsapp-float,
   html[lang="es"] .whatsapp-float,
@@ -6855,9 +6714,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }html[dir="rtl"] .service-detailed.reverse{
-    direction: rtl;
-  }
+  }html[dir="rtl"] .service-detailed.reverse{direction: rtl;}
   
   .service-image img,
   .audience-item img,
@@ -7572,7 +7429,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -7580,10 +7437,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -7679,49 +7541,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -7729,32 +7590,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -7766,17 +7618,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -7842,15 +7688,9 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 }
 
 /* RTL positioning for WhatsApp button */
-html[dir="rtl"] .whatsapp-float {
-  right: auto;
-  left: 20px;
-}
+.whatsapp-float{right: auto;left: 20px;}
 
-html[dir="rtl"] .whatsapp-tooltip {
-  right: auto;
-  left: 70px;
-}
+.whatsapp-tooltip{right: auto;left: 70px;}
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
@@ -8266,11 +8106,7 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}html[dir="ltr"] .service-detailed.reverse{
-  direction: ltr;
-}html[dir="rtl"] .service-detailed.reverse .service-text{
-  direction: rtl;
-}
+}html[dir="ltr"] .service-detailed.reverse{direction: ltr;}html[dir="rtl"] .service-detailed.reverse .service-text{direction: rtl;}
 
 .service-image img {
   width: 100%;
@@ -8741,12 +8577,9 @@ section {
     justify-content: center;
   }
   
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    right: 0;
-    left: auto;
-  }
+  html[lang="ar"] .nav-menu{right: 0;left: auto;}
   
   html[dir="ltr"] .nav-menu,
   html[lang="en"] .nav-menu,
@@ -8756,19 +8589,13 @@ section {
     right: auto;
   }
   
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    right: 15px;
-    left: auto;
-  }
+  html[lang="ar"] .mobile-toggle{right: 15px;left: auto;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px;
-    right: auto;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px;right: auto;}
   
   html[dir="ltr"] .mobile-toggle,
   html[lang="en"] .mobile-toggle,
@@ -8805,10 +8632,7 @@ section {
   
   html[lang="he"] .whatsapp-float,
   html[lang="ar"] .whatsapp-float,
-  html[dir="rtl"] .whatsapp-float {
-    right: 20px;
-    left: auto;
-  }
+  .whatsapp-float{right: 20px;left: auto;}
   
   html[lang="en"] .whatsapp-float,
   html[lang="es"] .whatsapp-float,
@@ -8845,9 +8669,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }html[dir="rtl"] .service-detailed.reverse{
-    direction: rtl;
-  }
+  }html[dir="rtl"] .service-detailed.reverse{direction: rtl;}
   
   .service-image img,
   .audience-item img,
@@ -9562,7 +9384,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -9570,10 +9392,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -9669,49 +9496,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -9719,32 +9545,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -9756,17 +9573,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -9834,19 +9645,13 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 }
 
 /* RTL positioning for WhatsApp button */
-html[dir="rtl"] .whatsapp-float,
+.whatsapp-float,
 html[lang="he"] .whatsapp-float,
-html[lang="ar"] .whatsapp-float {
-  right: auto;
-  left: 20px;
-}
+html[lang="ar"] .whatsapp-float{right: auto;left: 20px;}
 
-html[dir="rtl"] .whatsapp-tooltip,
+.whatsapp-tooltip,
 html[lang="he"] .whatsapp-tooltip,
-html[lang="ar"] .whatsapp-tooltip {
-  right: auto;
-  left: 70px;
-}
+html[lang="ar"] .whatsapp-tooltip{right: auto;left: 70px;}
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
@@ -10262,11 +10067,7 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}html[dir="ltr"] .service-detailed.reverse{
-  direction: ltr;
-}html[dir="rtl"] .service-detailed.reverse .service-text{
-  direction: rtl;
-}
+}html[dir="ltr"] .service-detailed.reverse{direction: ltr;}html[dir="rtl"] .service-detailed.reverse .service-text{direction: rtl;}
 
 .service-image img {
   width: 100%;
@@ -10737,12 +10538,9 @@ section {
     justify-content: center;
   }
   
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    right: 0;
-    left: auto;
-  }
+  html[lang="ar"] .nav-menu{right: 0;left: auto;}
   
   html[dir="ltr"] .nav-menu,
   html[lang="en"] .nav-menu,
@@ -10752,19 +10550,13 @@ section {
     right: auto;
   }
   
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    right: 15px;
-    left: auto;
-  }
+  html[lang="ar"] .mobile-toggle{right: 15px;left: auto;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px;
-    right: auto;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px;right: auto;}
   
   html[dir="ltr"] .mobile-toggle,
   html[lang="en"] .mobile-toggle,
@@ -10801,10 +10593,7 @@ section {
   
   html[lang="he"] .whatsapp-float,
   html[lang="ar"] .whatsapp-float,
-  html[dir="rtl"] .whatsapp-float {
-    right: 20px;
-    left: auto;
-  }
+  .whatsapp-float{right: 20px;left: auto;}
   
   html[lang="en"] .whatsapp-float,
   html[lang="es"] .whatsapp-float,
@@ -10841,9 +10630,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }html[dir="rtl"] .service-detailed.reverse{
-    direction: rtl;
-  }
+  }html[dir="rtl"] .service-detailed.reverse{direction: rtl;}
   
   .service-image img,
   .audience-item img,
@@ -11558,7 +11345,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -11566,10 +11353,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -11665,49 +11457,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -11715,32 +11506,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -11752,17 +11534,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -11807,12 +11583,9 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 }
 
 /* RTL positioning */
-html[dir="rtl"] .whatsapp-float-btn,
+.whatsapp-float-btn,
 html[lang="he"] .whatsapp-float-btn,
-html[lang="ar"] .whatsapp-float-btn {
-  right: auto;
-  left: 20px;
-}
+html[lang="ar"] .whatsapp-float-btn{right: auto;left: 20px;}
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -11824,12 +11597,9 @@ html[lang="ar"] .whatsapp-float-btn {
     right: 15px;
   }
   
-  html[dir="rtl"] .whatsapp-float-btn,
+  .whatsapp-float-btn,
   html[lang="he"] .whatsapp-float-btn,
-  html[lang="ar"] .whatsapp-float-btn {
-    right: auto;
-    left: 15px;
-  }
+  html[lang="ar"] .whatsapp-float-btn{right: auto;left: 15px;}
 }
 
 
@@ -12232,11 +12002,7 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}html[dir="ltr"] .service-detailed.reverse{
-  direction: ltr;
-}html[dir="rtl"] .service-detailed.reverse .service-text{
-  direction: rtl;
-}
+}html[dir="ltr"] .service-detailed.reverse{direction: ltr;}html[dir="rtl"] .service-detailed.reverse .service-text{direction: rtl;}
 
 .service-image img {
   width: 100%;
@@ -12707,12 +12473,9 @@ section {
     justify-content: center;
   }
   
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    right: 0;
-    left: auto;
-  }
+  html[lang="ar"] .nav-menu{right: 0;left: auto;}
   
   html[dir="ltr"] .nav-menu,
   html[lang="en"] .nav-menu,
@@ -12722,19 +12485,13 @@ section {
     right: auto;
   }
   
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    right: 15px;
-    left: auto;
-  }
+  html[lang="ar"] .mobile-toggle{right: 15px;left: auto;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px;
-    right: auto;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px;right: auto;}
   
   html[dir="ltr"] .mobile-toggle,
   html[lang="en"] .mobile-toggle,
@@ -12771,10 +12528,7 @@ section {
   
   html[lang="he"] .whatsapp-float,
   html[lang="ar"] .whatsapp-float,
-  html[dir="rtl"] .whatsapp-float {
-    right: 20px;
-    left: auto;
-  }
+  .whatsapp-float{right: 20px;left: auto;}
   
   html[lang="en"] .whatsapp-float,
   html[lang="es"] .whatsapp-float,
@@ -12811,9 +12565,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }html[dir="rtl"] .service-detailed.reverse{
-    direction: rtl;
-  }
+  }html[dir="rtl"] .service-detailed.reverse{direction: rtl;}
   
   .service-image img,
   .audience-item img,
@@ -13528,7 +13280,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -13536,10 +13288,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -13635,49 +13392,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -13685,32 +13441,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -13722,17 +13469,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -13777,12 +13518,9 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 }
 
 /* RTL positioning for WhatsApp button */
-html[dir="rtl"] .whatsapp-float-btn,
+.whatsapp-float-btn,
 html[lang="he"] .whatsapp-float-btn,
-html[lang="ar"] .whatsapp-float-btn {
-  right: auto;
-  left: 20px;
-}
+html[lang="ar"] .whatsapp-float-btn{right: auto;left: 20px;}
 
 /* Tooltip on hover (optional) */
 .whatsapp-float-btn::before {
@@ -13809,12 +13547,9 @@ html[lang="ar"] .whatsapp-float-btn {
 }
 
 /* RTL tooltip positioning */
-html[dir="rtl"] .whatsapp-float-btn::before,
+.whatsapp-float-btn::before,
 html[lang="he"] .whatsapp-float-btn::before,
-html[lang="ar"] .whatsapp-float-btn::before {
-  right: auto;
-  left: 0;
-}
+html[lang="ar"] .whatsapp-float-btn::before{right: auto;left: 0;}
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
@@ -13826,12 +13561,9 @@ html[lang="ar"] .whatsapp-float-btn::before {
     right: 16px;
   }
   
-  html[dir="rtl"] .whatsapp-float-btn,
+  .whatsapp-float-btn,
   html[lang="he"] .whatsapp-float-btn,
-  html[lang="ar"] .whatsapp-float-btn {
-    right: auto;
-    left: 16px;
-  }
+  html[lang="ar"] .whatsapp-float-btn{right: auto;left: 16px;}
 }
 
 
@@ -14234,11 +13966,7 @@ section {
   gap: 3rem;
   align-items: center;
   margin-bottom: 4rem;
-}html[dir="ltr"] .service-detailed.reverse{
-  direction: ltr;
-}html[dir="rtl"] .service-detailed.reverse .service-text{
-  direction: rtl;
-}
+}html[dir="ltr"] .service-detailed.reverse{direction: ltr;}html[dir="rtl"] .service-detailed.reverse .service-text{direction: rtl;}
 
 .service-image img {
   width: 100%;
@@ -14709,12 +14437,9 @@ section {
     justify-content: center;
   }
   
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    right: 0;
-    left: auto;
-  }
+  html[lang="ar"] .nav-menu{right: 0;left: auto;}
   
   html[dir="ltr"] .nav-menu,
   html[lang="en"] .nav-menu,
@@ -14724,19 +14449,13 @@ section {
     right: auto;
   }
   
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    right: 15px;
-    left: auto;
-  }
+  html[lang="ar"] .mobile-toggle{right: 15px;left: auto;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px;
-    right: auto;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px;right: auto;}
   
   html[dir="ltr"] .mobile-toggle,
   html[lang="en"] .mobile-toggle,
@@ -14773,10 +14492,7 @@ section {
   
   html[lang="he"] .whatsapp-float,
   html[lang="ar"] .whatsapp-float,
-  html[dir="rtl"] .whatsapp-float {
-    right: 20px;
-    left: auto;
-  }
+  .whatsapp-float{right: 20px;left: auto;}
   
   html[lang="en"] .whatsapp-float,
   html[lang="es"] .whatsapp-float,
@@ -14813,9 +14529,7 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }html[dir="rtl"] .service-detailed.reverse{
-    direction: rtl;
-  }
+  }html[dir="rtl"] .service-detailed.reverse{direction: rtl;}
   
   .service-image img,
   .audience-item img,
@@ -15530,7 +15244,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -15538,10 +15252,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -15637,49 +15356,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -15687,32 +15405,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -15724,17 +15433,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -15779,12 +15482,9 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 }
 
 /* RTL positioning */
-html[dir="rtl"] .whatsapp-float-btn,
+.whatsapp-float-btn,
 html[lang="he"] .whatsapp-float-btn,
-html[lang="ar"] .whatsapp-float-btn {
-  right: auto;
-  left: 20px;
-}
+html[lang="ar"] .whatsapp-float-btn{right: auto;left: 20px;}
 
 /* Optional tooltip on hover */
 .whatsapp-float-btn::after {
@@ -15812,12 +15512,9 @@ html[lang="ar"] .whatsapp-float-btn {
 }
 
 /* RTL tooltip positioning */
-html[dir="rtl"] .whatsapp-float-btn::after,
+.whatsapp-float-btn::after,
 html[lang="he"] .whatsapp-float-btn::after,
-html[lang="ar"] .whatsapp-float-btn::after {
-  right: auto;
-  left: 70px;
-}
+html[lang="ar"] .whatsapp-float-btn::after{right: auto;left: 70px;}
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -15829,12 +15526,9 @@ html[lang="ar"] .whatsapp-float-btn::after {
     right: 15px;
   }
   
-  html[dir="rtl"] .whatsapp-float-btn,
+  .whatsapp-float-btn,
   html[lang="he"] .whatsapp-float-btn,
-  html[lang="ar"] .whatsapp-float-btn {
-    right: auto;
-    left: 15px;
-  }
+  html[lang="ar"] .whatsapp-float-btn{right: auto;left: 15px;}
   
   /* Hide tooltip on mobile */
   .whatsapp-float-btn::after {
@@ -15990,11 +15684,9 @@ img.logo[loading="lazy"] {
 }
 
 /* RTL support */
-html[dir="rtl"] .logo-link,
+.logo-link,
 html[lang="he"] .logo-link,
-html[lang="ar"] .logo-link {
-  gap: 8px !important;
-}
+html[lang="ar"] .logo-link{gap: 8px !important;}
 
 /* === SUPER AGGRESSIVE LOGO FIX - Override ALL inline styles === */
 
@@ -16273,12 +15965,9 @@ img[alt*="logo" i],
 }
 
 /* RTL support */
-html[dir="rtl"] .nav-brand img,
+.nav-brand img,
 html[lang="he"] .nav-brand img,
-html[lang="ar"] .nav-brand img {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[lang="ar"] .nav-brand img{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -16410,7 +16099,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -16418,10 +16107,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -16517,49 +16211,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -16567,32 +16260,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -16604,17 +16288,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -16636,11 +16314,8 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 /* ----------------------------------------- */
 
 /* Prevent horizontal scroll on RTL pages */
-html[dir="rtl"],
-html[dir="rtl"] body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-}
+,
+html[dir="rtl"] body{overflow-x: hidden !important;max-width: 100vw !important;}
 
 /* Ensure carousel containers clip their overflow */
 .zappy-carousel-container,
@@ -16689,41 +16364,27 @@ html[dir="rtl"] body {
   }
   
   /* RTL: Hamburger on RIGHT, Phone CTA on LEFT (mirrored) */
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    left: auto !important;
-    right: 15px !important;
-  }
+  html[lang="ar"] .mobile-toggle{left: auto !important;right: 15px !important;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px !important;
-    right: auto !important;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px !important;right: auto !important;}
   
   /* RTL mobile menu slides from RIGHT */
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    left: auto !important;
-    right: 0 !important;
-  }
+  html[lang="ar"] .nav-menu{left: auto !important;right: 0 !important;}
   
   /* ----------------------------------------- */
   /* 3. LANG-SWITCHER DROPDOWN FIX             */
   /* ----------------------------------------- */
   
   /* Fix lang-switcher-dropdown positioning in RTL mobile */
-  html[dir="rtl"] .lang-switcher-dropdown,
+  .lang-switcher-dropdown,
   html[lang="he"] .lang-switcher-dropdown,
-  html[lang="ar"] .lang-switcher-dropdown {
-    left: auto !important;
-    right: 0 !important;
-    max-width: calc(100vw - 20px) !important;
-    overflow-x: hidden !important;
-  }
+  html[lang="ar"] .lang-switcher-dropdown{left: auto !important;right: 0 !important;max-width: calc(100vw - 20px) !important;overflow-x: hidden !important;}
 }
 
 /* ========================================= */
@@ -16779,7 +16440,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -16787,10 +16448,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -16899,49 +16565,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -16949,32 +16614,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -16986,17 +16642,11 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -17009,10 +16659,7 @@ html[dir="rtl"] .zappy-lang-switcher-container {
   
   /* FIX: Prevent lang-switcher-dropdown from extending past viewport in RTL mobile */
   /* The dropdown was causing horizontal overflow with left: 0 in RTL */
-  html[dir="rtl"] .lang-switcher-dropdown {
-    left: auto !important;
-    right: 0 !important;
-  }
+  .lang-switcher-dropdown{left: auto !important;right: 0 !important;}
 }
 
 /* ===========================================
@@ -17022,11 +16669,8 @@ html[dir="rtl"] .zappy-lang-switcher-container {
    =========================================== */
 
 /* Prevent horizontal scroll on RTL pages */
-html[dir="rtl"],
-html[dir="rtl"] body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-}
+,
+html[dir="rtl"] body{overflow-x: hidden !important;max-width: 100vw !important;}
 
 /* Ensure carousel containers clip overflow to prevent horizontal scroll */
 .zappy-carousel-container,
@@ -17073,41 +16717,26 @@ html[dir="rtl"] body {
   }
   
   /* RTL lang-switcher dropdown constraint */
-  html[dir="rtl"] .lang-switcher {
-    position: relative;
-  }
+  .lang-switcher{position: relative;}
   
-  html[dir="rtl"] .lang-switcher-dropdown {
-    left: auto !important;
-    right: 0 !important;
-    max-width: calc(100vw - 20px);
-  }
+  .lang-switcher-dropdown{left: auto !important;right: 0 !important;max-width: calc(100vw - 20px);}
   
   /* ===========================================
      RTL MOBILE NAV BUTTON POSITIONING
      In RTL: hamburger RIGHT, phone LEFT (mirror of LTR)
      =========================================== */
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    left: auto !important;
-    right: 15px !important;
-  }
+  html[lang="ar"] .mobile-toggle{left: auto !important;right: 15px !important;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px !important;
-    right: auto !important;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px !important;right: auto !important;}
   
   /* RTL mobile menu slides from RIGHT */
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    left: auto !important;
-    right: 0 !important;
-  }
+  html[lang="ar"] .nav-menu{left: auto !important;right: 0 !important;}
 }
 
 
@@ -17161,7 +16790,7 @@ html[dir="rtl"] .wrapper {
 }
 
 /* ONLY apply text-align to legal page content that needs RTL alignment */
-html[dir="rtl"] .legal-content,
+.legal-content,
 html[dir="rtl"] .terms-content,
 html[dir="rtl"] .privacy-content,
 html[dir="rtl"] .legal-content p,
@@ -17169,10 +16798,15 @@ html[dir="rtl"] .terms-content p,
 html[dir="rtl"] .privacy-content p,
 html[dir="rtl"] .legal-content li,
 html[dir="rtl"] .terms-content li,
-html[dir="rtl"] .privacy-content li {
-  direction: rtl !important;
-  text-align: right !important;
-}
+html[dir="rtl"] .privacy-content li{text-align: right !important;}html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li{direction: rtl !important;}
 
 /* ============================================
    NAVIGATION/HEADER DIRECTION FIXES
@@ -17281,49 +16915,48 @@ html[dir="ltr"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL Navigation - Logo right, menu items next to logo, CTA on far left */
-html[dir="rtl"] header,
+header,
 html[dir="rtl"] nav,
 html[dir="rtl"] .navbar,
 html[dir="rtl"] .nav-container,
-html[dir="rtl"] .header-container {
-  direction: rtl !important;
-  flex-direction: row !important;
-  justify-content: flex-start !important; /* Group items to the right (RTL start), CTA's margin-right:auto will push it left */
-}
+html[dir="rtl"] .header-container{flex-direction: row !important;justify-content: flex-start !important;/* Group items to the right (RTL start), CTA's margin-right:auto will push it left */;}html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .header-container{direction: rtl !important;}
 
 /* Force nav/menu items to stay near logo in RTL - DESKTOP ONLY */
 /* Don't override mobile menu which should be vertical */
 @media (min-width: 768px) {
-  html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  .nav-menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
   html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
-  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav) {
-    direction: rtl !important;
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){flex-direction: row !important;margin-left: 0 !important;margin-right: 0 !important;}html[dir="rtl"] .nav-menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .nav-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .menu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] .navigation-links:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] nav ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] header ul:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] #navMenu:not(.mobile-menu):not(.mobile-nav),
+  html[dir="rtl"] ul.nav-menu:not(.mobile-menu):not(.mobile-nav){direction: rtl !important;}
 }
 
 /* Individual nav links in RTL - ensure no auto margins */
-html[dir="rtl"] .nav-menu > a,
+.nav-menu > a,
 html[dir="rtl"] .nav-menu > li,
 html[dir="rtl"] .nav-links > a,
 html[dir="rtl"] .nav-links > li,
 html[dir="rtl"] nav > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] header > a:not(.btn):not(.button):not(.cta):not([class*="btn-"]),
 html[dir="rtl"] nav ul > li,
-html[dir="rtl"] header ul > li {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] header ul > li{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* In RTL: Logo should have no auto margins */
-html[dir="rtl"] .logo,
+.logo,
 html[dir="rtl"] .site-logo,
 html[dir="rtl"] .brand,
 html[dir="rtl"] .navbar-brand,
@@ -17331,32 +16964,23 @@ html[dir="rtl"] .nav-brand,
 html[dir="rtl"] header a:first-child:has(img),
 html[dir="rtl"] nav a:first-child:has(img),
 html[dir="rtl"] header > a:first-child,
-html[dir="rtl"] nav > a:first-child {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+html[dir="rtl"] nav > a:first-child{margin-left: 0 !important;margin-right: 0 !important;}
 
 /* CTA button - no auto margin when lang-switcher is present (lang-switcher handles positioning) */
 /* This acts as fallback when lang-switcher is not present */
-html[dir="rtl"] header .btn:not(.lang-switcher ~ .btn),
+header .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] header .button:not(.lang-switcher ~ .button),
 html[dir="rtl"] header .cta:not(.lang-switcher ~ .cta),
 html[dir="rtl"] nav .btn:not(.lang-switcher ~ .btn),
 html[dir="rtl"] nav .button:not(.lang-switcher ~ .button),
-html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn) {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .navbar .btn:not(.lang-switcher ~ .btn){margin-right: auto !important;margin-left: 0 !important;}
 
 /* CTA after lang-switcher should have no auto margin */
-html[dir="rtl"] .lang-switcher ~ .btn,
+.lang-switcher ~ .btn,
 html[dir="rtl"] .lang-switcher ~ .button,
 html[dir="rtl"] .lang-switcher ~ .cta,
 html[dir="rtl"] .lang-switcher ~ [class*="btn-"],
-html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+html[dir="rtl"] .lang-switcher ~ .nav-cta-container{margin-right: 0 !important;margin-left: 0 !important;}
 
 /* Language Switcher Container - Fixed Position */
 .zappy-lang-switcher-container {
@@ -17368,10 +16992,7 @@ html[dir="rtl"] .lang-switcher ~ .nav-cta-container {
 }
 
 /* RTL: Move to left side */
-html[dir="rtl"] .zappy-lang-switcher-container {
-  right: auto;
-  left: 12px;
-}
+.zappy-lang-switcher-container{right: auto;left: 12px;}
 
 /* Language Switcher Styles */
 .lang-switcher {
@@ -17391,12 +17012,9 @@ html[dir="ltr"] .navbar .lang-switcher {
 }
 
 /* RTL: Push to the left with margin-right:auto */
-html[dir="rtl"] header .lang-switcher,
+header .lang-switcher,
 html[dir="rtl"] nav .lang-switcher,
-html[dir="rtl"] .navbar .lang-switcher {
-  margin-right: auto !important;
-  margin-left: 8px !important;
-}
+html[dir="rtl"] .navbar .lang-switcher{margin-right: auto !important;margin-left: 8px !important;}
 
 .lang-switcher-current {
   display: flex;
@@ -17446,14 +17064,9 @@ html[dir="rtl"] .navbar .lang-switcher {
   transition: background 0.15s ease;
 }
 
-html[dir="rtl"] .lang-option {
-  text-align: right;
-}
+.lang-option{text-align: right;}
 
-html[dir="rtl"] .lang-switcher-dropdown {
-  right: auto;
-  left: 0;
-}
+.lang-switcher-dropdown{right: auto;left: 0;}
 
 .lang-option:hover {
   background: #f5f5f5;
@@ -17466,10 +17079,7 @@ html[dir="rtl"] .lang-switcher-dropdown {
     right: 8px;
   }
   
-  html[dir="rtl"] .zappy-lang-switcher-container {
-    right: auto;
-    left: 8px;
-  }
+  .zappy-lang-switcher-container{right: auto;left: 8px;}
   
   .lang-switcher-current {
     padding: 6px;
@@ -17482,10 +17092,7 @@ html[dir="rtl"] .lang-switcher-dropdown {
   
   /* FIX: Prevent lang-switcher-dropdown from extending past viewport in RTL mobile */
   /* The dropdown was causing horizontal overflow with left: 0 in RTL */
-  html[dir="rtl"] .lang-switcher-dropdown {
-    left: auto !important;
-    right: 0 !important;
-  }
+  .lang-switcher-dropdown{left: auto !important;right: 0 !important;}
 }
 
 /* ===========================================
@@ -17495,11 +17102,8 @@ html[dir="rtl"] .lang-switcher-dropdown {
    =========================================== */
 
 /* Prevent horizontal scroll on RTL pages */
-html[dir="rtl"],
-html[dir="rtl"] body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-}
+,
+html[dir="rtl"] body{overflow-x: hidden !important;max-width: 100vw !important;}
 
 /* Ensure carousel containers clip overflow to prevent horizontal scroll */
 .zappy-carousel-container,
@@ -17546,40 +17150,98 @@ html[dir="rtl"] body {
   }
   
   /* RTL lang-switcher dropdown constraint */
-  html[dir="rtl"] .lang-switcher {
-    position: relative;
-  }
+  .lang-switcher{position: relative;}
   
-  html[dir="rtl"] .lang-switcher-dropdown {
-    left: auto !important;
-    right: 0 !important;
-    max-width: calc(100vw - 20px);
-  }
+  .lang-switcher-dropdown{left: auto !important;right: 0 !important;max-width: calc(100vw - 20px);}
   
   /* ===========================================
      RTL MOBILE NAV BUTTON POSITIONING
      In RTL: hamburger RIGHT, phone LEFT (mirror of LTR)
      =========================================== */
-  html[dir="rtl"] .mobile-toggle,
+  .mobile-toggle,
   html[lang="he"] .mobile-toggle,
-  html[lang="ar"] .mobile-toggle {
-    left: auto !important;
-    right: 15px !important;
-  }
+  html[lang="ar"] .mobile-toggle{left: auto !important;right: 15px !important;}
   
-  html[dir="rtl"] .phone-header-btn,
+  .phone-header-btn,
   html[lang="he"] .phone-header-btn,
-  html[lang="ar"] .phone-header-btn {
-    left: 15px !important;
-    right: auto !important;
-  }
+  html[lang="ar"] .phone-header-btn{left: 15px !important;right: auto !important;}
   
   /* RTL mobile menu slides from RIGHT */
-  html[dir="rtl"] .nav-menu,
+  .nav-menu,
   html[lang="he"] .nav-menu,
-  html[lang="ar"] .nav-menu {
-    left: auto !important;
-    right: 0 !important;
+  html[lang="ar"] .nav-menu{left: auto !important;right: 0 !important;}
+}
+
+
+
+/* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
+/* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
+/* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
+
+@media (max-width: 768px) {
+  /* RTL Mobile Toggle (hamburger) - positioned on RIGHT */
+  /* Using multiple parent selectors for higher specificity */
+  .navbar .mobile-toggle,
+  html[dir="rtl"] nav .mobile-toggle,
+  html[dir="rtl"] header .mobile-toggle,
+  html[dir="rtl"] .nav-container .mobile-toggle,
+  html[dir="rtl"] .mobile-toggle{left: auto !important;right: 15px !important;}
+  
+  /* RTL Phone Button - positioned on LEFT */
+  .navbar .phone-header-btn,
+  html[dir="rtl"] nav .phone-header-btn,
+  html[dir="rtl"] header .phone-header-btn,
+  html[dir="rtl"] .nav-container .phone-header-btn,
+  html[dir="rtl"] .phone-header-btn{left: 15px !important;right: auto !important;}
+  
+  /* RTL Mobile Menu - slides from RIGHT */
+  .navbar .nav-menu,
+  html[dir="rtl"] nav .nav-menu,
+  html[dir="rtl"] header .nav-menu,
+  html[dir="rtl"] .nav-container .nav-menu,
+  html[dir="rtl"] .nav-menu{left: auto !important;right: 0 !important;}
+  
+  /* RTL Mobile Menu Links - text align right */
+  .nav-menu a,
+  html[dir="rtl"] .nav-menu li{text-align: right !important;}
+}
+
+/* ========== END RTL MOBILE NAVBAR FIX ========== */
+
+
+/* ========== GRID MOBILE RESPONSIVE FIX (zappy-grid-mobile-fix) ========== */
+/* Ensures AI-generated grids with fixed pixel widths are responsive on mobile */
+
+@media (max-width: 768px) {
+  /* Auto-grid (AI-generated) grids - force single column on mobile */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"],
+  [data-zappy-auto-grid="true"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Media-only grid items - constrain height on mobile */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > .zappy-grid-item-media-only,
+  [data-zappy-auto-grid="true"] > .zappy-grid-item-media-only {
+    height: auto !important;
+    max-height: 300px !important;
+  }
+  
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > .zappy-grid-item-media-only img,
+  [data-zappy-auto-grid="true"] > .zappy-grid-item-media-only img {
+    height: auto !important;
+    max-height: 300px !important;
+  }
+  
+  /* Explicit column grids - force single column on mobile */
+  [data-zappy-explicit-columns="true"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Inline grid with fixed pixel columns - make responsive */
+  .zappy-inline-grid-active.zappy-preserve-css-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
+/* ========== END GRID MOBILE RESPONSIVE FIX ========== */
