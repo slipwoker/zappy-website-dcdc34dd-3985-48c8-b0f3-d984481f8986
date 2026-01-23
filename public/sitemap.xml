@@ -254,6 +254,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/investment-mortgage" />
   </url>
   <url>
+    <loc>https://mashkanta-bepijama.co.il/articles/first-apartment-mortgage</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/first-apartment-mortgage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/first-apartment-mortgage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/first-apartment-mortgage" />
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/en/articles/first-apartment-mortgage</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://mashkanta-bepijama.co.il/articles/first-apartment-mortgage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashkanta-bepijama.co.il/en/articles/first-apartment-mortgage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mashkanta-bepijama.co.il/articles/first-apartment-mortgage" />
+  </url>
+  <url>
     <loc>https://mashkanta-bepijama.co.il/privacy</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>monthly</changefreq>
