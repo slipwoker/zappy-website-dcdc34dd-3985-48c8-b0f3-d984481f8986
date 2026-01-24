@@ -1,5 +1,5 @@
 # Clean URL redirects for Render static hosting
-# Generated: 2026-01-23T17:37:23.590Z
+# Generated: 2026-01-24T05:33:01.754Z
 # NOTE: Render uses render.yaml for routing, not _redirects (that is Netlify)
 # This file is kept for reference only
 
@@ -44,6 +44,15 @@
 /articles/comparing-mortgage-offers  /articles/comparing-mortgage-offers.html  200!
 /articles/mortgage-grace  /articles/mortgage-grace.html  200!
 /articles/early-repayment-fee  /articles/early-repayment-fee.html  200!
+/articles/mortgage-refusal  /articles/mortgage-refusal.html  200!
+/blog/housing-improvers  /blog/housing-improvers.html  200!
+/articles/credit-score-mortgage  /articles/credit-score-mortgage.html  200!
+/articles/divorce-mortgage  /articles/divorce-mortgage.html  200!
+/articles/early-appraisal  /articles/early-appraisal.html  200!
+/articles/all-purpose-mortgage  /articles/all-purpose-mortgage.html  200!
+/articles/mortgage-savings-tips  /articles/mortgage-savings-tips.html  200!
+/articles/cpi-mortgage-impact  /articles/cpi-mortgage-impact.html  200!
+/articles/contractor-mortgage  /articles/contractor-mortgage.html  200!
 
 # Language slug rewrites for SEO
 /en  /en/index.html  200!
