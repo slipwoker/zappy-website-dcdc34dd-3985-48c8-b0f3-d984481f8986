@@ -654,3 +654,143 @@ window.onload = function() {
   } catch (eOuter) {}
 })();
 /* END ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
+
+
+/* ZAPPY_MOBILE_MENU_TOGGLE */
+(function(){
+  try {
+    if (window.__zappyMobileMenuToggleInit) return;
+    window.__zappyMobileMenuToggleInit = true;
+
+    function initMobileToggle() {
+      var toggle = document.querySelector('.mobile-toggle, #mobileToggle');
+      var navMenu = document.querySelector('#navMenu, .nav-menu, .navbar-menu');
+      if (!toggle || !navMenu) return;
+
+      // Skip if this toggle already has a click handler from the site's own JS
+      if (toggle.__zappyMobileToggleBound) return;
+      toggle.__zappyMobileToggleBound = true;
+
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var hamburgerIcon = toggle.querySelector('.hamburger-icon');
+        var closeIcon = toggle.querySelector('.close-icon');
+        var isOpen = navMenu.classList.contains('active') || navMenu.style.display === 'block';
+
+        if (isOpen) {
+          navMenu.classList.remove('active');
+          navMenu.style.display = '';
+          if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+          if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+          document.body.style.overflow = '';
+        } else {
+          navMenu.classList.add('active');
+          navMenu.style.display = 'block';
+          if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+          if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+          document.body.style.overflow = 'hidden';
+        }
+      }, true);
+
+      // Close on clicking outside
+      document.addEventListener('click', function(e) {
+        if (!navMenu.classList.contains('active')) return;
+        if (toggle.contains(e.target) || navMenu.contains(e.target)) return;
+        navMenu.classList.remove('active');
+        navMenu.style.display = '';
+        var hi = toggle.querySelector('.hamburger-icon');
+        var ci = toggle.querySelector('.close-icon');
+        if (hi) hi.style.setProperty('display', 'block', 'important');
+        if (ci) ci.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          navMenu.style.display = '';
+          var hi = toggle.querySelector('.hamburger-icon');
+          var ci = toggle.querySelector('.close-icon');
+          if (hi) hi.style.setProperty('display', 'block', 'important');
+          if (ci) ci.style.setProperty('display', 'none', 'important');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close when clicking a nav link (navigating)
+      navMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+          navMenu.style.display = '';
+          var hi = toggle.querySelector('.hamburger-icon');
+          var ci = toggle.querySelector('.close-icon');
+          if (hi) hi.style.setProperty('display', 'block', 'important');
+          if (ci) ci.style.setProperty('display', 'none', 'important');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMobileToggle, { once: true });
+    } else {
+      initMobileToggle();
+    }
+  } catch (e) {}
+})();
+/* END ZAPPY_MOBILE_MENU_TOGGLE */
+
+
+/* ZAPPY_FAQ_ACCORDION_TOGGLE */
+(function(){
+  try {
+    if (window.__zappyFaqToggleInit) return;
+    window.__zappyFaqToggleInit = true;
+
+    function initFaqToggle() {
+      // Match both exact (.faq-item) and page-prefixed (e.g. .home-faq-item) classes
+      var items = document.querySelectorAll('[class*="faq-item"], .accordion-item');
+      if (!items.length) return;
+
+      items.forEach(function(item) {
+        var question = item.querySelector(
+          '[class*="faq-question"], [class*="faq-header"], .accordion-header, .accordion-toggle'
+        );
+        if (!question) return;
+        if (question.__zappyFaqBound) return;
+        question.__zappyFaqBound = true;
+
+        question.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          // Close sibling items in the same accordion group
+          var parent = item.parentElement;
+          if (parent) {
+            var siblings = parent.querySelectorAll('[class*="faq-item"], .accordion-item');
+            siblings.forEach(function(sib) {
+              if (sib !== item && sib.classList.contains('active')) {
+                sib.classList.remove('active');
+                var sibQ = sib.querySelector('[class*="faq-question"], [class*="faq-header"], .accordion-header');
+                if (sibQ) sibQ.setAttribute('aria-expanded', 'false');
+              }
+            });
+          }
+
+          // Toggle current item
+          var isActive = item.classList.toggle('active');
+          question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFaqToggle, { once: true });
+    } else {
+      initFaqToggle();
+    }
+  } catch (e) {}
+})();
+/* END ZAPPY_FAQ_ACCORDION_TOGGLE */
