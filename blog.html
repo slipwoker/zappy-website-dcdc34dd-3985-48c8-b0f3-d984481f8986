@@ -712,78 +712,346 @@ img[data-no-hero-position] { position: static !important; }
         </li>
       </div>
     </div>
-  </nav><main class="page-main blog-page ai-generated-page"><section class="section hero-section" id="blog-hero" style="background-color: #f8f9fa !6important; padding: 80px 0; text-align: center;; position: relative; overflow: hidden;" data-zappy-section="true">
-  <div class="container">
-    <h1 style="color: #304060 !6important; font-size: 3rem; margin-bottom: 20px; font-weight: 700;">בלוג משכנתאות ופיננסיים</h1>
-    <p style="color: #305060 !6important; font-size: 1.25rem; max-width: 800px; margin: 0 auto 30px;">כל המידע, הטיפים והמדריכים שאתם צריכים בנושא ייעוץ משכנתאות, תכנון פיננסי ורכישת דירה.</p>
+  </nav><main class="page-main blog-page ai-generated-page"><section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: linear-gradient(135deg, var(--primary-color) 0%, #0f172a 100%); overflow: hidden; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 20px 80px;" data-zappy-section="true" class="section">
+  <style>
+    .blog-hero-container {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    .blog-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .blog-hero-content {
+      text-align: center;
+      position: relative;
+    }
+
+    .blog-hero-label {
+      display: inline-block;
+      background: var(--secondary-color);
+      color: var(--text-dark);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      animation: fadeSlideDown 0.8s ease-out;
+    }
+
+    .blog-hero-h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      color: var(--text-light);
+      margin: 0 0 24px 0;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      animation: fadeSlideUp 1s ease-out 0.2s both;
+    }
+
+    .blog-hero-description {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      color: rgba(255,255,255,0.9);
+      margin: 0 auto 60px;
+      max-width: 700px;
+      line-height: 1.6;
+      animation: fadeSlideUp 1s ease-out 0.4s both;
+    }
+
+    .blog-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeSlideUp 1s ease-out 0.6s both;
+    }
+
+    .blog-stat-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 32px 20px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+
+    .blog-stat-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      border-color: var(--secondary-color);
+      box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3);
+    }
+
+    .blog-stat-card:hover::before {
+      opacity: 1;
+    }
+
+    .blog-stat-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .blog-stat-number {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--text-light);
+      margin: 0 0 8px 0;
+      display: block;
+      line-height: 1;
+    }
+
+    .blog-stat-label {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 600;
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    .blog-stat-card:hover .blog-stat-label {
+      color: var(--text-dark);
+    }
+
+    .blog-floating-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.15;
+    }
+
+    .floating-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--secondary-color);
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .floating-circle:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      top: 10%;
+      right: 5%;
+      animation-delay: 0s;
+    }
+
+    .floating-circle:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      bottom: 15%;
+      left: 8%;
+      animation-delay: -5s;
+    }
+
+    .floating-circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      left: 15%;
+      animation-delay: -10s;
+    }
+
+    .floating-circle:nth-child(4) {
+      width: 250px;
+      height: 250px;
+      bottom: 20%;
+      right: 10%;
+      animation-delay: -15s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      25% {
+        transform: translate(30px, -30px) rotate(90deg);
+      }
+      50% {
+        transform: translate(-20px, 20px) rotate(180deg);
+      }
+      75% {
+        transform: translate(40px, 10px) rotate(270deg);
+      }
+    }
+
+    @keyframes fadeSlideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .blog-hero-container {
+        padding-top: 40px;
+      }
+
+      .blog-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .blog-stat-card {
+        padding: 24px 16px;
+      }
+
+      .floating-circle {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .blog-stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="blog-floating-shapes">
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+  </div>
+
+  <div class="blog-hero-container">
+    <div class="blog-hero-grid">
+      <div class="blog-hero-content">
+        <span class="blog-hero-label">מרכז הידע שלנו</span>
+        <h1 class="blog-hero-h1">בלוג משכנתאות ופיננסיים</h1>
+        <p class="blog-hero-description">כל המידע, הטיפים והמדריכים שאתם צריכים בנושא ייעוץ משכנתאות, תכנון פיננסי ורכישת דירה.</p>
+        
+        <div class="blog-stats-grid">
+          <div class="blog-stat-card">
+            <span class="blog-stat-number">100+</span>
+            <p class="blog-stat-label">מאמרים</p>
+          </div>
+          <div class="blog-stat-card">
+            <span class="blog-stat-number">50K+</span>
+            <p class="blog-stat-label">קוראים</p>
+          </div>
+          <div class="blog-stat-card">
+            <span class="blog-stat-number">10+</span>
+            <p class="blog-stat-label">קטגוריות</p>
+          </div>
+          <div class="blog-stat-card">
+            <span class="blog-stat-number">24/7</span>
+            <p class="blog-stat-label">נגישות</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section blog-grid-section" id="blog-posts" style="background-color: #ffffff !6important; padding: 60px 0;" data-zappy-section="true">
   <div class="container">
-    <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+    <div class="blog-grid zappy-preserve-css-grid" style="display: grid; grid-template-columns: 327.5px 327.5px 327.5px 327.5px; gap: 30px;" id="zappy-auto-grid-1770898453622-qal6g3" data-zappy-auto-grid="true" data-original-item-width="254" data-original-gap="32px">
       
       <!--6-- Article Card 1 ---->
-      <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;">
+      <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;" data-grid-item-index="0">
         <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
-          <img data-placeholder="blog-thumb-1" data-context="Professional mortgage consultant shaking hands with clients in modern office" data-zappy-editable-image="true" src="/assets/page-blog-thumb-1-1769179860455.webp" alt="ייעוץ משכנתאות למתחילים" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" data-no-hero-position="true" class="generated-image">
+          <img data-placeholder="blog-thumb-1" data-context="Professional mortgage consultant shaking hands with clients in modern office" data-zappy-editable-image="true" src="/assets/page-blog-thumb-1-1769179860455.webp" alt="ייעוץ משכנתאות למתחילים" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; position: relative" data-no-hero-position="true" class="generated-image zappy-editable-image" data-element-type="image" data-element-id="img-1770898453613-589fnkkvl" data-resize-handler-attached="true" data-original-position="static">
         </div>
         <div style="padding: 25px;">
           <span style="background-color: #e0e7ff; color: #1e3a8a !6important; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 12px;">מדריך</span>
           <h3 style="margin: 0 0 12px; font-size: 1.5rem; color: #304060 !6important;">מדריך למתחילים</h3>
           <p style="color: #305060 !6important; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">כל מה שצריך לדעת לפני שלוקחים משכנתא: מושגי יסוד, מסלולים וחשיבות הייעוץ המקצועי.</p>
-          <a href="/blog/beginners-guide" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;">קרא עוד ←</a>
+          <a href="/blog/beginners-guide" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;" data-element-type="button" data-element-id="btn-1770898453611-7igdlcjdb" data-native-element="true">קרא עוד ←</a>
         </div>
       </article>
 
       <!--6-- Article Card 2 ---->
-      <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;">
+      <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;" data-grid-item-index="1">
         <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
-          <img data-placeholder="blog-thumb-2" data-context="Happy young couple holding keys to their new first apartment" data-zappy-editable-image="true" src="/assets/page-blog-thumb-2-1769179862781.webp" alt="משכנתא לדירה ראשונה" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" data-no-hero-position="true" class="generated-image">
+          <img data-placeholder="blog-thumb-2" data-context="Happy young couple holding keys to their new first apartment" data-zappy-editable-image="true" src="/assets/page-blog-thumb-2-1769179862781.webp" alt="משכנתא לדירה ראשונה" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; position: relative" data-no-hero-position="true" class="generated-image zappy-editable-image" data-element-type="image" data-element-id="img-1770898453613-lxcdggwbo" data-resize-handler-attached="true" data-original-position="static">
         </div>
         <div style="padding: 25px;">
           <span style="background-color: #e0e7ff; color: #1e3a8a !6important; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 12px;">דירה ראשונה</span>
           <h3 style="margin: 0 0 12px; font-size: 1.5rem; color: #304060 !6important;">דירה ראשונה</h3>
           <p style="color: #305060 !6important; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">מתכננים לרכוש את הדירה הראשונה שלכם? כך תתכוננו נכון לתהליך ותחסכו כסף רב.</p>
-          <a href="/blog/first-apartment" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;">קרא עוד ←</a>
+          <a href="/blog/first-apartment" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;" data-element-type="button" data-element-id="btn-1770898453611-5hp2cq2zc" data-native-element="true">קרא עוד ←</a>
         </div>
       </article>
 
       <!--6-- Article Card 3 ---->
-      <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;">
+      <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;" data-grid-item-index="2">
         <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
-          <img data-placeholder="blog-thumb-3" data-context="Financial charts and calculator showing savings from mortgage recycling" data-zappy-editable-image="true" src="/assets/page-blog-thumb-3-1769179862845.webp" alt="מיחזור משכנתא" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" data-no-hero-position="true" class="generated-image">
+          <img data-placeholder="blog-thumb-3" data-context="Financial charts and calculator showing savings from mortgage recycling" data-zappy-editable-image="true" src="/assets/page-blog-thumb-3-1770898508642-i69t5t.webp?v=1770898510203" alt="מיחזור משכנתא" style="width: 100%; height: auto; object-fit: cover; transition: transform 0.5s; position: relative; object-position: 50% 50% !important; max-width: 100%" data-no-hero-position="true" class="generated-image zappy-editable-image" data-element-type="image" data-element-id="img-1770898453613-ggykqyqed" data-resize-handler-attached="true" data-original-position="static" data-zappy-original-width="325.5" data-zappy-original-height="183.09375" data-zappy-zoom="1">
         </div>
         <div style="padding: 25px;">
           <span style="background-color: #e0e7ff; color: #1e3a8a !6important; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 12px;">חיסכון</span>
           <h3 style="margin: 0 0 12px; font-size: 1.5rem; color: #304060 !6important;">מיחזור משכנתא</h3>
           <p style="color: #305060 !6important; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">האם תנאי השוק השתנו? בדקו האם משתלם לכם למחזר את המשכנתא ולשפר תנאים.</p>
-          <a href="/blog/recycling" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;">קרא עוד ←</a>
+          <a href="/blog/recycling" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;" data-element-type="button" data-element-id="btn-1770898453611-crwjp4amc" data-native-element="true">קרא עוד ←</a>
         </div>
       </article>
 
       <!--6-- Article Card 4 ---->
-      <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;">
+      <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;" data-grid-item-index="3">
         <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
-          <img data-placeholder="blog-thumb-4" data-context="Person writing financial tips in a notebook with coffee" data-zappy-editable-image="true" src="/assets/page-blog-thumb-4-1769179886186.webp" alt="טיפים למשכנתא" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" data-no-hero-position="true" class="generated-image">
+          <img data-placeholder="blog-thumb-4" data-context="Person writing financial tips in a notebook with coffee" data-zappy-editable-image="true" src="/assets/page-blog-thumb-4-1769179886186.webp" alt="טיפים למשכנתא" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; position: relative" data-no-hero-position="true" class="generated-image zappy-editable-image" data-element-type="image" data-element-id="img-1770898453613-2mrkk3jlx" data-resize-handler-attached="true" data-original-position="static">
         </div>
         <div style="padding: 25px;">
           <span style="background-color: #e0e7ff; color: #1e3a8a !6important; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 12px;">טיפים</span>
           <h3 style="margin: 0 0 12px; font-size: 1.5rem; color: #304060 !6important;">טיפים לחיסכון</h3>
           <p style="color: #305060 !6important; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">אוסף טיפים חשובים שיעזרו לכם לנהל את המשכנתא בצורה חכמה ויעילה יותר.</p>
-          <a href="/blog/tips" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;">קרא עוד ←</a>
+          <a href="/blog/tips" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;" data-element-type="button" data-element-id="btn-1770898453611-0ywx84i7n" data-native-element="true">קרא עוד ←</a>
         </div>
       </article>
 
-    <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;">
+    <article class="card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e0e0e0;" data-grid-item-index="4">
         <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
-          <img data-context="Blog article image for משכנתא למשפרי דיור - המדריך המלא | אריאל אחון" data-zappy-editable-image="true" src="/assets/page-housing-improvers-hero-1769191379531.webp" alt="משכנתא למשפרי דיור - המדריך המלא | אריאל אחון" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" data-no-hero-position="true" class="generated-image">
+          <img data-context="Blog article image for משכנתא למשפרי דיור - המדריך המלא | אריאל אחון" data-zappy-editable-image="true" src="/assets/page-housing-improvers-hero-1769191379531.webp" alt="משכנתא למשפרי דיור - המדריך המלא | אריאל אחון" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; position: relative" data-no-hero-position="true" class="generated-image zappy-editable-image" data-element-type="image" data-element-id="img-1770898453613-lwfl3zh7g" data-resize-handler-attached="true" data-original-position="static">
         </div>
         <div style="padding: 25px;">
           <span style="background-color: #e0e7ff; color: #1e3a8a !6important; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 12px;">מדריך</span>
           <h3 style="margin: 0 0 12px; font-size: 1.5rem; color: #304060 !6important;">משפרי דיור</h3>
           <p style="color: #305060 !6important; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">מדריך מקיף למשפרי דיור: כל מה שצריך לדעת על לקיחת משכנתא בעת מעבר דירה, הלוואות גישור, גרירת משכנתא וטיפים לחיסכון משמעותי בתהליך....</p>
-          <a href="/blog/housing-improvers" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;">קרא עוד ←</a>
+          <a href="/blog/housing-improvers" class="btn" style="display: inline-block; color: #1e3a8a !6important; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px;" data-element-type="button" data-element-id="btn-1770898453611-gi695dg7e" data-native-element="true">קרא עוד ←</a>
         </div>
       </article></div>
   </div>

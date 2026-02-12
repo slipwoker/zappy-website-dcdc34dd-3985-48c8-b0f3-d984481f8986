@@ -794,3 +794,96 @@ window.onload = function() {
   } catch (e) {}
 })();
 /* END ZAPPY_FAQ_ACCORDION_TOGGLE */
+
+
+/* ZAPPY_PUBLISHED_GRID_CENTERING */
+(function(){
+  try {
+    if (window.__zappyGridCenteringInit) return;
+    window.__zappyGridCenteringInit = true;
+
+    function centerPartialGridRows() {
+      var grids = document.querySelectorAll('[data-zappy-explicit-columns="true"], [data-zappy-auto-grid="true"]');
+      for (var g = 0; g < grids.length; g++) {
+        try {
+          var container = grids[g];
+          // Skip if already processed
+          if (container.getAttribute('data-zappy-grid-centered') === 'true') continue;
+
+          var items = [];
+          for (var c = 0; c < container.children.length; c++) {
+            var ch = container.children[c];
+            if (!ch || !ch.tagName) continue;
+            var tag = ch.tagName.toLowerCase();
+            if (tag === 'script' || tag === 'style') continue;
+            items.push(ch);
+          }
+          var totalItems = items.length;
+          if (totalItems === 0) continue;
+
+          var cs = window.getComputedStyle(container);
+          if (cs.display !== 'grid') continue;
+          var gtc = (cs.gridTemplateColumns || '').trim();
+          if (!gtc || gtc === 'none') continue;
+          var colWidths = gtc.split(' ').filter(function(v) { return v && parseFloat(v) > 0; });
+          var colCount = colWidths.length;
+          if (colCount <= 1) continue;
+
+          var itemsInLastRow = totalItems % colCount;
+          if (itemsInLastRow === 0) continue;
+
+          var colWidth = parseFloat(colWidths[0]) || 0;
+          var gap = parseFloat(cs.columnGap);
+          if (isNaN(gap)) gap = parseFloat(cs.gap) || 0;
+
+          var missingCols = colCount - itemsInLastRow;
+          var offset = missingCols * (colWidth + gap) / 2;
+
+          // Detect RTL
+          var dir = cs.direction || 'ltr';
+          var el = container;
+          while (el && dir === 'ltr') {
+            if (el.getAttribute && el.getAttribute('dir')) { dir = el.getAttribute('dir'); break; }
+            if (el.style && el.style.direction) { dir = el.style.direction; break; }
+            el = el.parentElement;
+          }
+          var translateValue = dir === 'rtl' ? -offset : offset;
+
+          // Apply transform to last-row items
+          // Temporarily disable CSS transitions to prevent visible animation
+          // Preserve any existing transforms (e.g., scale, rotate) by composing
+          var startIndex = totalItems - itemsInLastRow;
+          var savedTransitions = [];
+          for (var i = startIndex; i < totalItems; i++) {
+            var item = items[i];
+            savedTransitions.push(item.style.transition);
+            item.style.transition = 'none';
+            var existingTransform = item.style.transform || '';
+            var newTransform = existingTransform
+              ? existingTransform + ' translateX(' + translateValue + 'px)'
+              : 'translateX(' + translateValue + 'px)';
+            item.style.transform = newTransform;
+          }
+
+          // Force synchronous reflow so the transform is applied instantly
+          void container.offsetHeight;
+
+          // Restore original transitions
+          for (var j = startIndex; j < totalItems; j++) {
+            items[j].style.transition = savedTransitions[j - startIndex];
+          }
+
+          // Mark grid as processed so we don't double-apply
+          container.setAttribute('data-zappy-grid-centered', 'true');
+        } catch(e) {}
+      }
+    }
+
+    // Run once after DOM is fully loaded (fonts, images, layout complete)
+    if (document.readyState === 'complete') {
+      centerPartialGridRows();
+    } else {
+      window.addEventListener('load', centerPartialGridRows);
+    }
+  } catch(e) {}
+})();

@@ -538,7 +538,7 @@
       }
     </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -590,16 +590,16 @@
       
       <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט">
         <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
         <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
       </button>
       
       <button class="phone-header-btn" aria-label="התקשר אלינו">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
       </button>
       
@@ -786,6 +786,555 @@
     </div>
   </div>
 </section>
+
+<section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, var(--primary-color) 0%, #0f172a 100%); padding: 0; margin: 0;" data-zappy-section="true" class="section">
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .subsidized-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 120px 20px 80px;
+      z-index: 1;
+    }
+    
+    .subsidized-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.15) 0%, transparent 50%);
+      z-index: -1;
+    }
+    
+    .subsidized-hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+      z-index: -1;
+    }
+    
+    .subsidized-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    .subsidized-content {
+      text-align: center;
+      animation: slideInLeft 1s ease-out;
+    }
+    
+    .subsidized-badge {
+      display: inline-block;
+      background: var(--secondary-color);
+      color: var(--text-dark);
+      padding: 10px 30px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 30px;
+      transform: rotate(-2deg);
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+    }
+    
+    .subsidized-h2 {
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--text-light);
+      margin: 0 0 30px 0;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .subsidized-intro {
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 auto 60px;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+    
+    .subsidized-cta {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 100px;
+    }
+    
+    .subsidized-btn-primary {
+      background: var(--secondary-color);
+      color: var(--text-dark);
+      padding: 20px 50px;
+      font-size: 20px;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 40px rgba(245, 158, 11, 0.4);
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .subsidized-btn-primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(245, 158, 11, 0.6);
+      animation: pulse 0.5s ease infinite;
+    }
+    
+    .subsidized-btn-secondary {
+      background: transparent;
+      color: var(--text-light);
+      padding: 20px 50px;
+      font-size: 20px;
+      font-weight: 700;
+      border: 3px solid var(--text-light);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .subsidized-btn-secondary:hover {
+      background: var(--text-light);
+      color: var(--primary-color);
+      transform: translateY(-5px);
+    }
+    
+    .subsidized-programs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 120px;
+      animation: slideInRight 1s ease-out;
+    }
+    
+    .program-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      padding: 50px 30px;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .program-card:hover {
+      transform: translateY(-15px);
+      border-color: var(--secondary-color);
+      box-shadow: 0 20px 60px rgba(245, 158, 11, 0.3);
+    }
+    
+    .program-card:hover::before {
+      opacity: 1;
+    }
+    
+    .program-h3 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--secondary-color);
+      margin: 0 0 20px 0;
+    }
+    
+    .program-text {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .subsidized-process {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 40px;
+      padding: 80px 60px;
+      margin-bottom: 120px;
+    }
+    
+    .process-h3 {
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--text-light);
+      text-align: center;
+      margin: 0 0 80px 0;
+    }
+    
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      position: relative;
+    }
+    
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 12%;
+      right: 12%;
+      height: 4px;
+      background: linear-gradient(to left, var(--secondary-color), var(--accent-color));
+      z-index: 0;
+    }
+    
+    .process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .process-number {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--text-dark);
+      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
+      border: 6px solid var(--primary-color);
+    }
+    
+    .process-h4 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-light);
+      margin: 0 0 15px 0;
+    }
+    
+    .process-text {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .subsidized-benefits {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.1));
+      border-radius: 40px;
+      padding: 80px 60px;
+      margin-bottom: 120px;
+      border: 2px solid rgba(245, 158, 11, 0.2);
+    }
+    
+    .benefits-h3 {
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--text-light);
+      text-align: center;
+      margin: 0 0 60px 0;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    
+    .benefit-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .benefit-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateX(10px);
+    }
+    
+    .benefit-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--secondary-color);
+      border-radius: 15px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    
+    .benefit-text {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .subsidized-final-cta {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 40px;
+      padding: 80px 60px;
+    }
+    
+    .final-h3 {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--text-light);
+      margin: 0 0 30px 0;
+    }
+    
+    .final-text {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0 0 50px 0;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .final-cta-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    @media (max-width: 1024px) {
+      .subsidized-programs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .process-grid::before {
+        display: none;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .subsidized-hero {
+        padding: 100px 20px 60px;
+      }
+      
+      .subsidized-h2 {
+        font-size: 42px;
+      }
+      
+      .subsidized-intro {
+        font-size: 18px;
+      }
+      
+      .subsidized-programs {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .subsidized-process {
+        padding: 50px 30px;
+      }
+      
+      .process-h3 {
+        font-size: 36px;
+        margin-bottom: 50px;
+      }
+      
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .process-number {
+        width: 90px;
+        height: 90px;
+        font-size: 36px;
+      }
+      
+      .subsidized-benefits {
+        padding: 50px 30px;
+      }
+      
+      .benefits-h3 {
+        font-size: 36px;
+      }
+      
+      .subsidized-final-cta {
+        padding: 50px 30px;
+      }
+      
+      .final-h3 {
+        font-size: 32px;
+      }
+      
+      .final-text {
+        font-size: 16px;
+      }
+      
+      .subsidized-btn-primary,
+      .subsidized-btn-secondary {
+        padding: 16px 40px;
+        font-size: 16px;
+      }
+      
+      .benefit-item {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <div class="subsidized-hero">
+    <div class="subsidized-container">
+      <div class="subsidized-content">
+        <div class="subsidized-badge">פתרונות משכנתא חכמים</div>
+        <h2 class="subsidized-h2">משכנתא לזוכי פרויקטים מסובסדים</h2>
+        <p class="subsidized-intro">ליווי מקצועי ומלא לזוכי מחיר למשתכן, דירה בהנחה ומחיר מטרה</p>
+        
+        <div class="subsidized-cta">
+          <button class="subsidized-btn-primary">קבעו פגישה</button>
+          <button class="subsidized-btn-secondary">התקשרו עכשיו</button>
+        </div>
+      </div>
+      
+      <div class="subsidized-programs">
+        <div class="program-card">
+          <h3 class="program-h3">מחיר למשתכן</h3>
+          <p class="program-text">ליווי מלא בתהליך קבלת המשכנתא לדירות מחיר למשתכן, כולל התאמת המסלולים האופטימליים לתנאי הפרויקט</p>
+        </div>
+        
+        <div class="program-card">
+          <h3 class="program-h3">דירה בהנחה</h3>
+          <p class="program-text">ייעוץ מקצועי לזוכי דירה בהנחה עם הבנה מעמיקה של התנאים המיוחדים והדרישות הספציפיות של התכנית</p>
+        </div>
+        
+        <div class="program-card">
+          <h3 class="program-h3">מחיר מטרה</h3>
+          <p class="program-text">התמחות בתכניות מחיר מטרה והבנת הדקויות הייחודיות לכל פרויקט ויזם</p>
+        </div>
+      </div>
+      
+      <div class="subsidized-process">
+        <h3 class="process-h3">התהליך שלנו</h3>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-number">1</div>
+            <h4 class="process-h4">בדיקת זכאות</h4>
+            <p class="process-text">בדיקה מקיפה של תנאי הזכייה והתאמת המשכנתא לדרישות הפרויקט</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="process-number">2</div>
+            <h4 class="process-h4">איסוף מסמכים</h4>
+            <p class="process-text">ליווי בהכנת כל המסמכים הנדרשים והתאמתם לדרישות הבנקים והיזם</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="process-number">3</div>
+            <h4 class="process-h4">משא ומתן</h4>
+            <p class="process-text">ניהול משא ומתן עם הבנקים להשגת התנאים הטובים ביותר</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="process-number">4</div>
+            <h4 class="process-h4">אישור וסגירה</h4>
+            <p class="process-text">ליווי עד לאישור סופי וסגירת העסקה בהצלחה</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="subsidized-benefits">
+        <h3 class="benefits-h3">למה לבחור בנו?</h3>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <p class="benefit-text">התמחות בפרויקטים מסובסדים ובדיקת זכאות מקיפה</p>
+          </div>
+          
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <p class="benefit-text">ניסיון רב בעבודה מול יזמים וחברות בניה</p>
+          </div>
+          
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <p class="benefit-text">הכרות מעמיקה עם דרישות הבנקים לפרויקטים מסוג זה</p>
+          </div>
+          
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <p class="benefit-text">ליווי אישי וצמוד לאורך כל התהליך</p>
+          </div>
+          
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <p class="benefit-text">טיפול מהיר ויעיל בהתאם ללוחות הזמנים של הפרויקט</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="subsidized-final-cta">
+        <h3 class="final-h3">זכיתם בפרויקט? בואו נתחיל!</h3>
+        <p class="final-text">קבעו פגישת ייעוץ ללא התחייבות ונבדוק יחד את הזכאות והאפשרויות שלכם</p>
+        <div class="final-cta-group">
+          <button class="subsidized-btn-primary">קבעו פגישה</button>
+          <button class="subsidized-btn-secondary">התקשרו עכשיו</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
   <section class="cta-section">
     <div class="container">
