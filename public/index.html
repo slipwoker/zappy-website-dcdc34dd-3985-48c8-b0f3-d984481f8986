@@ -863,151 +863,201 @@
 
   
 
-  <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, var(--primary-color) 0%, #0f172a 100%); padding: 120px 0; margin: 0;" data-zappy-section="true" class="section">
+  <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%); overflow: hidden; padding: 120px 0 100px 0; margin: 0;" data-zappy-section="true" class="section">
   <style>
-    .concept-section {
-      direction: rtl;
+    .pajama-section {
       font-family: system-ui, sans-serif;
+      direction: rtl;
     }
     
-    .concept-container {
+    .pajama-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
       position: relative;
-      z-index: 2;
+      z-index: 10;
     }
     
-    .concept-grid {
+    .pajama-label {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--secondary-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+      padding: 8px 20px;
+      background: rgba(245, 158, 11, 0.1);
+      border-radius: 50px;
+      border: 2px solid var(--secondary-color);
+      animation: fadeSlideIn 0.8s ease-out;
+    }
+    
+    .pajama-title {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+      color: var(--primary-color);
+      margin: 0 0 40px 0;
+      line-height: 1.2;
+      position: relative;
+      animation: fadeSlideIn 1s ease-out 0.2s backwards;
+    }
+    
+    .pajama-title::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      right: 0;
+      width: 120px;
+      height: 6px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      border-radius: 3px;
+    }
+    
+    .pajama-content {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: center;
+      margin-top: 60px;
     }
     
-    .concept-content {
-      position: relative;
+    .pajama-text-wrapper {
+      animation: fadeSlideIn 1.2s ease-out 0.4s backwards;
     }
     
-    .concept-badge {
-      display: inline-block;
-      background: var(--secondary-color);
+    .pajama-text {
+      font-size: 18px;
+      line-height: 1.9;
       color: var(--text-dark);
-      padding: 8px 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.875rem;
-      letter-spacing: 1px;
-      margin-bottom: 24px;
-      animation: fadeSlideIn 0.8s ease-out;
-      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
-    }
-    
-    .concept-title {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      color: var(--text-light);
-      margin: 0 0 32px 0;
-      line-height: 1.1;
-      animation: fadeSlideIn 0.8s ease-out 0.2s backwards;
-      text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    .concept-text-wrapper {
-      position: relative;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      padding: 48px;
-      animation: fadeSlideIn 0.8s ease-out 0.4s backwards;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-    
-    .concept-text {
-      font-size: clamp(1.125rem, 2vw, 1.375rem);
-      line-height: 2;
-      color: rgba(255, 255, 255, 0.95);
       margin: 0;
+      padding: 40px;
+      background: var(--bg-white);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
       position: relative;
-      z-index: 1;
+      border-right: 6px solid var(--secondary-color);
+      transition: all 0.4s ease;
     }
     
-    .highlight-word {
-      color: var(--secondary-color);
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
+    .pajama-text:hover {
+      transform: translateX(-8px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
     }
     
-    .floating-shapes {
+    .pajama-text::before {
+      content: '"';
       position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 1;
+      top: -20px;
+      right: 20px;
+      font-size: 120px;
+      font-weight: 900;
+      color: var(--secondary-color);
+      opacity: 0.15;
+      line-height: 1;
+    }
+    
+    .pajama-visual {
+      position: relative;
+      animation: fadeSlideIn 1.4s ease-out 0.6s backwards;
+    }
+    
+    .pajama-icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    
+    .pajama-icon-card {
+      background: var(--bg-white);
+      padding: 36px 28px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid transparent;
+      position: relative;
       overflow: hidden;
     }
     
-    .shape {
+    .pajama-icon-card::before {
+      content: '';
       position: absolute;
-      opacity: 0.1;
-      animation: float 20s infinite ease-in-out;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
     }
     
-    .shape-1 {
-      width: 300px;
-      height: 300px;
-      background: var(--secondary-color);
+    .pajama-icon-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(245, 158, 11, 0.2);
+      border-color: var(--secondary-color);
+    }
+    
+    .pajama-icon-card:hover::before {
+      opacity: 0.05;
+    }
+    
+    .pajama-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .pajama-icon-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 0 0 8px 0;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .pajama-icon-text {
+      font-size: 15px;
+      color: #666;
+      margin: 0;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .floating-element {
+      position: absolute;
       border-radius: 50%;
-      top: -100px;
-      right: 10%;
-      animation-delay: 0s;
-      filter: blur(60px);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.1));
+      z-index: 0;
+      animation: float 6s ease-in-out infinite;
     }
     
-    .shape-2 {
-      width: 400px;
-      height: 400px;
-      background: var(--accent-color);
-      border-radius: 50%;
-      bottom: -150px;
-      left: 5%;
-      animation-delay: 7s;
-      filter: blur(80px);
-    }
-    
-    .shape-3 {
+    .floating-1 {
       width: 200px;
       height: 200px;
-      background: #3b82f6;
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      animation-delay: 14s;
-      filter: blur(50px);
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
     }
     
-    .decorative-icon {
-      position: absolute;
-      font-size: 120px;
-      opacity: 0.03;
-      z-index: 0;
-      pointer-events: none;
+    .floating-2 {
+      width: 150px;
+      height: 150px;
+      bottom: 15%;
+      left: 8%;
+      animation-delay: 2s;
     }
     
-    .icon-1 {
-      top: -40px;
-      left: -40px;
-      transform: rotate(-15deg);
-    }
-    
-    .icon-2 {
-      bottom: -60px;
-      right: -60px;
-      transform: rotate(25deg);
+    .floating-3 {
+      width: 180px;
+      height: 180px;
+      top: 30%;
+      right: 10%;
+      animation-delay: 4s;
     }
     
     @keyframes fadeSlideIn {
@@ -1023,75 +1073,92 @@
     
     @keyframes float {
       0%, 100% {
-        transform: translate(0, 0) scale(1);
+        transform: translateY(0) rotate(0deg);
       }
-      33% {
-        transform: translate(50px, -50px) scale(1.1);
+      50% {
+        transform: translateY(-30px) rotate(180deg);
       }
-      66% {
-        transform: translate(-30px, 30px) scale(0.9);
+    }
+    
+    @media (max-width: 968px) {
+      .pajama-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .pajama-text {
+        padding: 32px 24px;
+        font-size: 16px;
+      }
+      
+      .pajama-icon-grid {
+        grid-template-columns: 1fr;
       }
     }
     
     @media (max-width: 768px) {
-      .concept-section {
-        padding: 80px 0;
+      section {
+        padding-top: 100px !important;
+        padding-bottom: 80px;
       }
       
-      .concept-text-wrapper {
-        padding: 32px 24px;
+      .pajama-label {
+        font-size: 12px;
       }
       
-      .concept-text {
-        font-size: 1.125rem;
-        line-height: 1.8;
+      .pajama-title {
+        margin-bottom: 30px;
       }
       
-      .concept-title {
-        font-size: 2.5rem;
-        margin-bottom: 24px;
+      .pajama-text {
+        border-right-width: 4px;
       }
       
-      .shape-1, .shape-2, .shape-3 {
+      .floating-element {
         display: none;
       }
     }
-    
-    @media (min-width: 992px) {
-      .concept-grid {
-        grid-template-columns: 1fr;
-        gap: 80px;
-      }
-      
-      .concept-text-wrapper:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-        border-color: rgba(245, 158, 11, 0.3);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-    }
   </style>
-
-  <div class="floating-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-  </div>
-
-  <div class="concept-section">
-    <div class="concept-container">
-      <div class="concept-grid">
-        <div class="concept-content">
-          <div class="concept-badge">הגישה שלנו</div>
-          <h2 class="concept-title">משכנתא בפיג'מה - מה זה אומר?</h2>
-          
-          <div class="concept-text-wrapper">
-            <div class="decorative-icon icon-1">🏠</div>
-            <p class="concept-text">
-              המוטו שלנו <span>"משכנתא בפיג'מה"</span> מסמל את הגישה הייחודית שלנו לשירות. אנחנו מבינים שהחיים שלכם עמוסים - עבודה, משפחה, התחייבויות. לכן אנחנו מגיעים אליכם או באמצעות שיחות ווידאו - בזמן שנוח לכם, במקום שנוח לכם. רוצים לקבל ייעוץ בערב אחרי שהילדים הלכו לישון? אין בעיה. מעדיפים פגישה בסוף השבוע? בשמחה. אתם לא צריכים לצאת מהבית.אפילו אם אתם בפיג'מה - זה בסדר גמור! השירות שלנו בנוי על נוחות מקסימלית, זמינות גבוהה ותחושה ביתית שגורמת לכם להרגיש רגועים ובטוחים לאורך כל התהליך.
-            "&gt;"משכנתא בפיג'מה" מסמל את הגישה הייחודית שלנו לשירות. אנחנו מבינים שהחיים שלכם עמוסים - עבודה, משפחה, התחייבויות. לכן אנחנו מגיעים אליכם או באמצעות שיחות ווידאו - בזמן שנוח לכם, במקום שנוח לכם. רוצים לקבל ייעוץ בערב אחרי שהילדים הלכו לישון? אין בעיה. מעדיפים פגישה בסוף השבוע? בשמחה. אתם לא צריכים לצאת מהבית.אפילו אם אתם בפיג'מה - זה בסדר גמור! השירות שלנו בנוי על נוחות מקסימלית, זמינות גבוהה ותחושה ביתית שגורמת לכם להרגיש רגועים ובטוחים לאורך כל התהליך.
-            </p>
-            <div class="decorative-icon icon-2">💼</div>
+  
+  <div class="floating-element floating-1"></div>
+  <div class="floating-element floating-2"></div>
+  <div class="floating-element floating-3"></div>
+  
+  <div class="pajama-section">
+    <div class="pajama-container">
+      <div class="pajama-label">הגישה שלנו</div>
+      <h2 class="pajama-title">משכנתא בפיג'מה - מה זה אומר?</h2>
+      
+      <div class="pajama-content">
+        <div class="pajama-text-wrapper">
+          <p class="pajama-text">המוטו שלנו "משכנתא בפיג'מה" מסמל את הגישה הייחודית שלנו לשירות. אנחנו מבינים שהחיים שלכם עמוסים - עבודה, משפחה, התחייבויות. לכן אנחנו מגיעים אליכם או באמצעות שיחות ווידאו - בזמן שנוח לכם, במקום שנוח לכם. רוצים לקבל ייעוץ בערב אחרי שהילדים הלכו לישון? אין בעיה. מעדיפים פגישה בסוף השבוע? בשמחה. אתם לא צריכים לצאת מהבית.אפילו אם אתם בפיג'מה - זה בסדר גמור! השירות שלנו בנוי על נוחות מקסימלית, זמינות גבוהה ותחושה ביתית שגורמת לכם להרגיש רגועים ובטוחים לאורך כל התהליך.</p>
+        </div>
+        
+        <div class="pajama-visual">
+          <div class="pajama-icon-grid">
+            <div class="pajama-icon-card">
+              <span class="pajama-icon">🏠</span>
+              <h3 class="pajama-icon-title">בנוחות הבית</h3>
+              <p class="pajama-icon-text">פגישות ווידאו או בבית - בזמן שנוח לכם</p>
+            </div>
+            
+            <div class="pajama-icon-card">
+              <span class="pajama-icon">🌙</span>
+              <h3 class="pajama-icon-title">בכל שעה</h3>
+              <p class="pajama-icon-text">זמינות גבוהה גם בערבים וסופי שבוע</p>
+            </div>
+            
+            <div class="pajama-icon-card">
+              <span class="pajama-icon">💼</span>
+              <h3 class="pajama-icon-title">שירות מקצועי</h3>
+              <p class="pajama-icon-text">ייעוץ איכותי בלי לוותר על נוחות</p>
+            </div>
+            
+            <div class="pajama-icon-card">
+              <span class="pajama-icon">😌</span>
+              <h3 class="pajama-icon-title">אווירה נעימה</h3>
+              <p class="pajama-icon-text">תחושה ביתית ורגועה לאורך כל הדרך</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1099,36 +1166,386 @@
   </div>
 </section>
 
-  <section class="services-highlight" id="zappy-section-2">
-    <div class="container">
-      <h2>השירותים המובילים שלנו</h2>
-      <div class="services-grid zappy-preserve-css-grid" data-original-item-width="684" data-original-gap="32px" data-zappy-explicit-columns="true" id="zappy-auto-grid-1770905074167-71uugd" data-zappy-auto-grid="true" style="display: grid; "><div class="service-card">
-          <img data-placeholder="service-1" data-context="Israeli mortgage consultant reviewing loan documents with first-time home buyers in bright office" src="/assets/service-service-1.webp" alt="ייעוץ משכנתא לדירה ראשונה" data-element-type="image" data-element-id="img-1767341101297-qqhkiu0ta" class="zappy-editable-image" data-original-position="static" style="position: relative; object-position: 50% 50%;">
-          <h3 class="">ייעוץ משכנתא לדירה ראשונה</h3>
-          <p class="">מתחילים את המסע לקראת הבית הראשון? אנו מספקים ייעוץ משכנתא לדירה ראשונה מקיף שמלווה אתכם בכל שלב. נסביר לכם את כל האפשרויות, נעזור לכם להבין את הזכויות שלכם ונמצא עבורכם את המשכנתא המתאימה ביותר לתקציב ולצרכים שלכם</p>
-        </div><div class="service-card" style="background-color: rgb(255, 255, 255) !6important; padding: 24px !6important; box-sizing: border-box;">
-          <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1767341484569-0-ihs6nwzzt" data-element-type="image" data-zappy-zoom-wrapper-width="627px" data-zappy-zoom-wrapper-height="350px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 627px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 350px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" class=""><img data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" src="/assets/hero-hero-1-1767341615769-l01zrd.webp" alt="Image placeholder" data-element-type="image" data-element-id="new-grid-img-1767341484569-0-ihs6nwzzt" class="zappy-editable-image" data-original-position="static" style="position: absolute !important; cursor: pointer; object-position: 50% 50%; object-fit: fill !important; width: 100% !important; max-width: none !important; display: block !important; margin: 0px !important; height: 100% !important; left: 0% !important; top: 0% !important; max-height: none !important;" id="new-grid-img-1767341484569-0-ihs6nwzzt" data-ai-slot="grid-item-image" data-zappy-zoom="0.5"></div>
-          <h3 style="cursor: text;" class="">מחיר למשתכן / דירה בהנחה</h3>
-          <p style="cursor: text;" class="">זכיתם בהגרלה במסגרת הפרויקט? מזל טוב!<br><br>נעזור לכם לצלוח את המסע המרגש, על מנת שתוכלו לבחור את הדירה המתאימה ביותר עבורכם, ונלווה אתכם עד לקבלת המשכנתא הנכונה, המתאימה והזולה ביותר</p>
-        </div><div class="service-card">
-          <img data-placeholder="service-2" data-context="Financial advisor analyzing mortgage refinancing options on computer screen with charts and graphs" src="/assets/service-service-2.webp" alt="מיחזור משכנתא ושיפור תנאים" data-element-type="image" data-element-id="img-1767341101297-bayud4f4g" class="zappy-editable-image" data-original-position="static" style="position: relative;">
-          <h3 class="">מיחזור משכנתא ושיפור תנאים</h3>
-          <p class="">כבר יש לכם משכנתא? ייתכן שתוכלו לחסוך אלפי שקלים בשנה!6 אנו מתמחים במיחזור משכנתא ושיפור תנאים, בוחנים את המשכנתא הקיימת שלכם ומנהלים מו"מ עם הבנקים לשיפור התנאים. השירות שלנו כולל בדיקה מקיפה של כל ההזדמנויות לחיסכון</p>
-        </div><div class="service-card">
-          <img data-placeholder="service-3" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" src="/assets/service-service-3-1767353208410-nk1rnq.webp" alt="ייעוץ משכנתא למשפרי דיור" data-element-type="image" data-element-id="img-1767341101297-fg6ihktu4" class="zappy-editable-image" data-original-position="static" style="position: relative;;; object-position: 50% 50%;">
-          <h3 class="">ייעוץ משכנתא למשפרי דיור</h3>
-          <p class="">מתכננים לעבור לדירה גדולה יותר? אנו מספקים ייעוץ משכנתא למשפרי דיור המתחשב במשכנתא הקיימת שלכם ומוצא את הפתרון האופטימלי למעבר. נעזור לכם להבין את האפשרויות השונות ונמצא את המסלול הכי משתלם עבורכם</p>
-        </div><div class="service-card" style="background-color: rgb(255, 255, 255) !6important; padding: 24px !6important; box-sizing: border-box;">
-          <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1767341672809-0-f8l0ghfpx" data-element-type="image" data-zappy-zoom-wrapper-width="636px" data-zappy-zoom-wrapper-height="356px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 636px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 356px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" class=""><img data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" src="/assets/hero-hero-1-1767341878130-4joo94.webp" alt="Image placeholder" data-element-type="image" data-element-id="new-grid-img-1767341672809-0-f8l0ghfpx" class="zappy-editable-image" data-original-position="static" style="position: absolute !important; cursor: pointer; object-position: 50% 50%; object-fit: fill !important; width: 100% !important; max-width: none !important; display: block !important; margin: 0px !important; left: 0% !important; top: 0% !important; height: 100% !important; max-height: none !important;" id="new-grid-img-1767341672809-0-f8l0ghfpx" data-ai-slot="grid-item-image" data-zappy-zoom="0.5"></div>
-          <h3 style="cursor: text;" class="">איחוד הלוואות ויציאה מחובות</h3>
-          <p style="cursor: text;" class="">נקלעתם למצב שבו ההלוואות וההתחייבויות שנלקחו מקשים עליכם? הכסף נגמר כבר בתחילת החודש? יש לכם חובות שמדירים שינה מעיניכם?<br><br>נעזור לכם לקבל משכנתא לטובת ביצוע הלוואות ויציאה מחובות</p>
-        </div><div class="service-card" style="background-color: rgb(255, 255, 255) !6important; padding: 24px !6important; box-sizing: border-box;">
-          <img data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" src="/assets/hero-hero-1-1767342053706-2afalb.webp" alt="Image placeholder" data-element-type="image" data-element-id="new-grid-img-1767341953657-0-xg09j77g4" class="zappy-editable-image" style="position: relative; cursor: pointer; object-fit: cover; width: 636px; max-width: 100%; display: block; margin-left: auto; margin-right: auto; object-position: 50% 50%;" id="new-grid-img-1767341953657-0-xg09j77g4" data-ai-slot="grid-item-image" data-pixel-width="636">
-          <h3 style="cursor: text;" class="">משכנתא הפוכה בגיל השלישי</h3>
-          <p style="cursor: text;" class="">הידעתם שניתן לקבל הלוואה גדולה, גם בגילאים מתקדמים יותר?&nbsp;<br>מדובר בפתרון שיכול לעזור לכם למנף את הנכס שלכם, לכל מטרה שאליה תזדקקו,<br>וזאת מבלי להיות מחויבים בביטוח חיים, ואף מבלי שתידרשו להוכיח יכולת החזר, כמו במשכנתא רגילה&nbsp;</p>
-        </div></div>
+  <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: linear-gradient(135deg, var(--bg-light) 0%, #e0f2fe 100%); overflow: visible; padding: 120px 0 180px;" data-zappy-section="true" class="section">
+  <style>
+    .services-grid-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      direction: rtl;
+    }
+    
+    .services-main-title {
+      text-align: center;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      color: var(--primary-color);
+      margin-bottom: 80px;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .services-main-title::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 120px;
+      height: 6px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      border-radius: 3px;
+    }
+    
+    .services-asymmetric-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+      position: relative;
+    }
+    
+    .service-card {
+      background: var(--bg-white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(30, 58, 138, 0.25);
+    }
+    
+    .service-card:nth-child(1) {
+      grid-column: span 7;
+      grid-row: span 2;
+    }
+    
+    .service-card:nth-child(2) {
+      grid-column: span 5;
+    }
+    
+    .service-card:nth-child(3) {
+      grid-column: span 5;
+    }
+    
+    .service-card:nth-child(4) {
+      grid-column: span 6;
+    }
+    
+    .service-card:nth-child(5) {
+      grid-column: span 6;
+    }
+    
+    .service-card:nth-child(6) {
+      grid-column: span 12;
+      flex-direction: row;
+    }
+    
+    .service-image-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+      flex-shrink: 0;
+    }
+    
+    .service-card:nth-child(1) .service-image-wrapper {
+      height: 400px;
+    }
+    
+    .service-card:nth-child(6) .service-image-wrapper {
+      width: 45%;
+      height: auto;
+      min-height: 350px;
+    }
+    
+    .service-image-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(217, 119, 6, 0.6) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 2;
+    }
+    
+    .service-card:hover .service-image-wrapper::before {
+      opacity: 1;
+    }
+    
+    .service-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .service-card:hover .service-image-wrapper img {
+      transform: scale(1.15) rotate(2deg);
+    }
+    
+    .service-content {
+      padding: 35px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .service-card:nth-child(1) .service-content {
+      padding: 45px;
+    }
+    
+    .service-card:nth-child(6) .service-content {
+      width: 55%;
+      padding: 50px;
+    }
+    
+    .service-title {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      position: relative;
+      padding-right: 25px;
+    }
+    
+    .service-title::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 60%;
+      background: var(--secondary-color);
+      border-radius: 4px;
+    }
+    
+    .service-description {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #475569;
+      flex-grow: 1;
+    }
+    
+    .service-card:nth-child(1) .service-description {
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+    
+    .service-number {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+      color: var(--text-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      z-index: 3;
+    }
+    
+    .floating-accent {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15), transparent);
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .floating-accent:nth-child(1) {
+      top: -100px;
+      right: 10%;
+      animation-delay: 0s;
+    }
+    
+    .floating-accent:nth-child(2) {
+      bottom: -150px;
+      left: 15%;
+      animation-delay: 2s;
+      width: 400px;
+      height: 400px;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-30px) scale(1.1);
+      }
+    }
+    
+    @media (max-width: 1024px) {
+      .services-asymmetric-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 25px;
+      }
+      
+      .service-card:nth-child(1) {
+        grid-column: span 6;
+      }
+      
+      .service-card:nth-child(2),
+      .service-card:nth-child(3),
+      .service-card:nth-child(4),
+      .service-card:nth-child(5) {
+        grid-column: span 6;
+      }
+      
+      .service-card:nth-child(6) {
+        flex-direction: column;
+      }
+      
+      .service-card:nth-child(6) .service-image-wrapper {
+        width: 100%;
+        height: 300px;
+      }
+      
+      .service-card:nth-child(6) .service-content {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .services-asymmetric-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .service-card {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+      }
+      
+      .service-image-wrapper,
+      .service-card:nth-child(1) .service-image-wrapper {
+        height: 220px !important;
+      }
+      
+      .service-content,
+      .service-card:nth-child(1) .service-content {
+        padding: 30px !important;
+      }
+      
+      .service-card:nth-child(6) {
+        flex-direction: column;
+      }
+      
+      .service-card:nth-child(6) .service-image-wrapper {
+        width: 100%;
+        height: 220px;
+      }
+      
+      .service-card:nth-child(6) .service-content {
+        width: 100%;
+        padding: 30px;
+      }
+      
+      .services-main-title {
+        margin-bottom: 50px;
+      }
+    }
+  </style>
+
+  <div class="floating-accent"></div>
+  <div class="floating-accent"></div>
+
+  <div class="services-grid-container">
+    <h2 class="services-main-title">השירותים המובילים שלנו</h2>
+    
+    <div class="services-asymmetric-grid">
+      <div class="service-card">
+        <div class="service-number">1</div>
+        <div class="service-image-wrapper">
+          <img alt="ייעוץ משכנתא לדירה ראשונה" src="/assets/service-service-1.webp" data-placeholder="service-1" data-context="Israeli mortgage consultant reviewing loan documents with first-time home buyers in bright office" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">ייעוץ משכנתא לדירה ראשונה</h3>
+          <p class="service-description">מתחילים את המסע לקראת הבית הראשון? אנו מספקים ייעוץ משכנתא לדירה ראשונה מקיף שמלווה אתכם בכל שלב. נסביר לכם את כל האפשרויות, נעזור לכם להבין את הזכויות שלכם ונמצא עבורכם את המשכנתא המתאימה ביותר לתקציב ולצרכים שלכם</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">2</div>
+        <div class="service-image-wrapper">
+          <img alt="Image placeholder" src="/assets/hero-hero-1-1767341615769-l01zrd.webp" data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">משכנתא במחיר למשתכן / דירה בהנחה</h3>
+          <p class="service-description">זכיתם בהגרלה במסגרת הפרויקט? מזל טוב!נעזור לכם לצלוח את המסע המרגש, על מנת שתוכלו לבחור את הדירה המתאימה ביותר עבורכם, ונלווה אתכם עד לקבלת המשכנתא הנכונה, המתאימה והזולה ביותר</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">3</div>
+        <div class="service-image-wrapper">
+          <img alt="מיחזור משכנתא ושיפור תנאים" src="/assets/service-service-2.webp" data-placeholder="service-2" data-context="Financial advisor analyzing mortgage refinancing options on computer screen with charts and graphs" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">מיחזור משכנתא ושיפור תנאים</h3>
+          <p class="service-description">כבר יש לכם משכנתא? ייתכן שתוכלו לחסוך אלפי שקלים בשנה!6 אנו מתמחים במיחזור משכנתא ושיפור תנאים, בוחנים את המשכנתא הקיימת שלכם ומנהלים מו"מ עם הבנקים לשיפור התנאים. השירות שלנו כולל בדיקה מקיפה של כל ההזדמנויות לחיסכון</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">4</div>
+        <div class="service-image-wrapper">
+          <img alt="ייעוץ משכנתא למשפרי דיור" src="/assets/service-service-3-1767353208410-nk1rnq.webp" data-placeholder="service-3" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">ייעוץ משכנתא למשפרי דיור</h3>
+          <p class="service-description">מתכננים לעבור לדירה גדולה יותר? אנו מספקים ייעוץ משכנתא למשפרי דיור המתחשב במשכנתא הקיימת שלכם ומוצא את הפתרון האופטימלי למעבר. נעזור לכם להבין את האפשרויות השונות ונמצא את המסלול הכי משתלם עבורכם</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">5</div>
+        <div class="service-image-wrapper">
+          <img alt="Image placeholder" src="/assets/hero-hero-1-1767341878130-4joo94.webp" data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">איחוד הלוואות ויציאה מחובות</h3>
+          <p class="service-description">נקלעתם למצב שבו ההלוואות וההתחייבויות שנלקחו מקשים עליכם? הכסף נגמר כבר בתחילת החודש? יש לכם חובות שמדירים שינה מעיניכם?נעזור לכם לקבל משכנתא לטובת ביצוע הלוואות ויציאה מחובות</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">6</div>
+        <div class="service-image-wrapper">
+          <img alt="Image placeholder" src="/assets/hero-hero-1-1767342053706-2afalb.webp" data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">משכנתא הפוכה בגיל השלישי</h3>
+          <p class="service-description">הידעתם שניתן לקבל הלוואה גדולה, גם בגילאים מתקדמים יותר? מדובר בפתרון שיכול לעזור לכם למנף את הנכס שלכם, לכל מטרה שאליה תזדקקו,וזאת מבלי להיות מחויבים בביטוח חיים, ואף מבלי שתידרשו להוכיח יכולת החזר, כמו במשכנתא רגילה</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; pointer-events: none; z-index: 5;">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="display: block; width: 100%; height: 100%;">
+      <path d="M0,100 Q300,20 600,50 T1200,100 L1200,100 L0,100 Z" fill="#ffffff"></path>
+    </svg>
+  </div>
+</section>
 
 
 
@@ -1216,36 +1633,297 @@
     </div>
   </section>
 
-  <section class="additional-services">
-    <div class="container">
-      <h2>שירותים נוספים שאנו מציעים</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img data-placeholder="service-7" data-context="Financial advisor reviewing family budget and financial planning documents with Israeli family" src="/assets/service-service-7.webp" alt="ייעוץ לכלכלת המשפחה">
-          <h3>ייעוץ לכלכלת המשפחה</h3>
-          <p>ניהול כלכלת המשפחה הוא אתגר מורכב. אנו מספקים ייעוץ פיננסי מקיף שעוזר לכם לנהל את התקציב המשפחתי בצורה חכמה, לתכנן לעתיד ולהשיג יציבות כלכלית לטווח ארוך.</p>
-        </div>
-        
-        <div class="service-card">
-          <img data-placeholder="service-8" data-context="Pension consultant analyzing retirement portfolio and investment plans on computer screen" src="/assets/service-service-8.webp" alt="בחינת תיק פנסיוני וביטוחי">
-          <h3>בחינת תיק פנסיוני וביטוחי</h3>
-          <p>התיק הפנסיוני והביטוחי שלכם הוא אחד הנכסים החשובים ביותר שלכם. אנו בוחנים את התיק הפנסיוני הקיים שלכם, מזהים הזדמנויות לשיפור ומספקים המלצות מקצועיות למקסום התשואה.</p>
-        </div>
-        
-        <div class="service-card">
-          <img data-placeholder="service-9" data-context="Business loan consultant meeting with Israeli entrepreneur discussing financing options and business plans" src="/assets/service-service-9.webp" alt="הלוואה לכל מטרה">
-          <h3>הלוואה לכל מטרה</h3>
-          <p>זקוקים להלוואה לצורך מיוחד? אנו מסייעים במציאת הלוואות לכל מטרה בתנאים הטובים ביותר, בין אם מדובר בשיפוץ, השקעה עסקית או כל צורך פיננסי אחר.</p>
-        </div>
-        
-        <div class="service-card">
-          <img data-placeholder="service-10" data-context="Corporate financial advisor presenting business financing solutions to Israeli company executives in boardroom" src="/assets/service-service-10.webp" alt="ייעוץ ללקוחות עסקיים">
-          <h3>ייעוץ ללקוחות עסקיים</h3>
-          <p>בעלי עסקים זקוקים לפתרונות פיננסיים מיוחדים. אנו מספקים ייעוץ משכנתאות וייעוץ פיננסי ללקוחות עסקיים, כולל מימון לרכישת נכסים מסחריים והלוואות עסקיות.</p>
-        </div>
+  <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: linear-gradient(135deg, var(--bg-light) 0%, #e0e7ff 100%); padding: 100px 20px; overflow: visible; direction: rtl;" data-zappy-section="true" class="section">
+  <style>
+    .services-grid-bold {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .service-card-bold {
+      position: relative;
+      min-height: 450px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .service-card-bold::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(30, 58, 138, 0.2) 0%, rgba(30, 58, 138, 0.9) 100%);
+      z-index: 1;
+      transition: all 0.6s ease;
+    }
+
+    .service-card-bold:hover::before {
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.3) 0%, rgba(217, 119, 6, 0.95) 100%);
+    }
+
+    .service-card-bold:hover {
+      transform: scale(1.03) translateY(-10px);
+      z-index: 10;
+      box-shadow: 0 25px 50px rgba(30, 58, 138, 0.3);
+    }
+
+    .service-content-bold {
+      position: relative;
+      z-index: 10;
+      padding: 40px;
+      width: 100%;
+      transform: translateY(20px);
+      transition: transform 0.6s ease;
+    }
+
+    .service-card-bold:hover .service-content-bold {
+      transform: translateY(0);
+    }
+
+    .service-card-bold h3 {
+      color: var(--text-light);
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 0 15px 0;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      transition: all 0.4s ease;
+    }
+
+    .service-card-bold:hover h3 {
+      transform: translateX(-10px);
+      letter-spacing: 1px;
+    }
+
+    .service-card-bold p {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease 0.1s;
+    }
+
+    .service-card-bold:hover p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-img-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-position: center;
+      background-size: cover;
+      z-index: 0;
+      transition: transform 0.6s ease;
+    }
+
+    .service-card-bold:hover .service-img-bg {
+      transform: scale(1.1);
+    }
+
+    .section-header-bold {
+      text-align: center;
+      margin-bottom: 80px;
+      position: relative;
+    }
+
+    .section-header-bold h2 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--primary-color);
+      margin: 0;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 20px;
+    }
+
+    .section-header-bold h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      width: 120px;
+      height: 6px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      border-radius: 3px;
+    }
+
+    .decorative-shape {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.2), transparent);
+      z-index: 0;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .shape-1 {
+      top: -100px;
+      right: 10%;
+      animation-delay: 0s;
+    }
+
+    .shape-2 {
+      bottom: -100px;
+      left: 15%;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(180deg); }
+    }
+
+    .icon-wrapper {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      transition: all 0.4s ease;
+    }
+
+    .service-card-bold:hover .icon-wrapper {
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(360deg) scale(1.1);
+    }
+
+    .icon-wrapper svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--text-light);
+    }
+
+    @media (max-width: 968px) {
+      .services-grid-bold {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .service-card-bold {
+        min-height: 400px;
+      }
+
+      .section-header-bold h2 {
+        font-size: 2.5rem;
+      }
+
+      .service-card-bold h3 {
+        font-size: 1.6rem;
+      }
+
+      .service-card-bold p {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 15px;
+      }
+
+      .section-header-bold {
+        margin-bottom: 50px;
+      }
+
+      .section-header-bold h2 {
+        font-size: 2rem;
+      }
+
+      .service-card-bold {
+        min-height: 350px;
+      }
+
+      .service-content-bold {
+        padding: 30px;
+      }
+    }
+  </style>
+
+  <div class="decorative-shape shape-1"></div>
+  <div class="decorative-shape shape-2"></div>
+
+  <div class="section-header-bold">
+    <h2>שירותים נוספים שאנו מציעים</h2>
+  </div>
+
+  <div class="services-grid-bold">
+    <div class="service-card-bold">
+      <div class="service-img-bg" style="background-image: url('assets/service-service-7.webp'); background-size: cover; background-position: center;"></div>
+      <div class="icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+        </svg>
+      </div>
+      <div class="service-content-bold">
+        <h3>ייעוץ לכלכלת המשפחה</h3>
+        <p>ניהול כלכלת המשפחה הוא אתגר מורכב. אנו מספקים ייעוץ פיננסי מקיף שעוזר לכם לנהל את התקציב המשפחתי בצורה חכמה, לתכנן לעתיד ולהשיג יציבות כלכלית לטווח ארוך.</p>
       </div>
     </div>
-  </section>
+
+    <div class="service-card-bold">
+      <div class="service-img-bg" style="background-image: url('assets/service-service-8.webp'); background-size: cover; background-position: center;"></div>
+      <div class="icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+        </svg>
+      </div>
+      <div class="service-content-bold">
+        <h3>בחינת תיק פנסיוני וביטוחי</h3>
+        <p>התיק הפנסיוני והביטוחי שלכם הוא אחד הנכסים החשובים ביותר שלכם. אנו בוחנים את התיק הפנסיוני הקיים שלכם, מזהים הזדמנויות לשיפור ומספקים המלצות מקצועיות למקסום התשואה.</p>
+      </div>
+    </div>
+
+    <div class="service-card-bold">
+      <div class="service-img-bg" style="background-image: url('assets/service-service-9.webp'); background-size: cover; background-position: center;"></div>
+      <div class="icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+        </svg>
+      </div>
+      <div class="service-content-bold">
+        <h3>הלוואה לכל מטרה</h3>
+        <p>זקוקים להלוואה לצורך מיוחד? אנו מסייעים במציאת הלוואות לכל מטרה בתנאים הטובים ביותר, בין אם מדובר בשיפוץ, השקעה עסקית או כל צורך פיננסי אחר.</p>
+      </div>
+    </div>
+
+    <div class="service-card-bold">
+      <div class="service-img-bg" style="background-image: url('assets/service-service-10.webp'); background-size: cover; background-position: center;"></div>
+      <div class="icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+        </svg>
+      </div>
+      <div class="service-content-bold">
+        <h3>ייעוץ ללקוחות עסקיים</h3>
+        <p>בעלי עסקים זקוקים לפתרונות פיננסיים מיוחדים. אנו מספקים ייעוץ משכנתאות וייעוץ פיננסי ללקוחות עסקיים, כולל מימון לרכישת נכסים מסחריים והלוואות עסקיות.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="cta-section">
     <div class="container">
