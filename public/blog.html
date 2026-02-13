@@ -635,7 +635,7 @@ img[data-no-hero-position] { position: static !important; }
 
 </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -687,16 +687,16 @@ img[data-no-hero-position] { position: static !important; }
       
       <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט">
         <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
         <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
       </button>
       
       <button class="phone-header-btn" aria-label="התקשר אלינו">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
       </button>
       
@@ -712,83 +712,120 @@ img[data-no-hero-position] { position: static !important; }
         </li>
       </div>
     </div>
-  </nav><main class="page-main blog-page ai-generated-page"><section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: linear-gradient(135deg, var(--primary-color) 0%, #0f172a 100%); overflow: hidden; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 20px 80px;" data-zappy-section="true" class="section">
+  </nav><main class="page-main blog-page ai-generated-page"><section style="margin: 0; padding: 0; width: 100%; max-width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; justify-content: center;" data-zappy-section="true" class="section">
   <style>
-    .blog-hero-container {
-      max-width: 1400px;
+    .blog-hero-section {
       width: 100%;
+      position: relative;
+      padding: 120px 20px 80px;
+      direction: rtl;
+    }
+
+    .floating-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .shape-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--secondary-color);
+      top: -100px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+
+    .shape-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--primary-color);
+      bottom: -50px;
+      left: 10%;
+      animation-delay: 3s;
+    }
+
+    .shape-3 {
+      width: 200px;
+      height: 200px;
+      background: var(--accent-color);
+      top: 50%;
+      left: -50px;
+      animation-delay: 6s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(120deg); }
+      66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+
+    .blog-content-wrapper {
+      max-width: 1400px;
       margin: 0 auto;
       position: relative;
       z-index: 10;
     }
 
-    .blog-hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .blog-hero-content {
+    .blog-header {
       text-align: center;
-      position: relative;
+      margin-bottom: 80px;
     }
 
-    .blog-hero-label {
-      display: inline-block;
-      background: var(--secondary-color);
-      color: var(--text-dark);
-      padding: 8px 24px;
-      border-radius: 50px;
-      font-size: 0.875rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 24px;
-      animation: fadeSlideDown 0.8s ease-out;
-    }
-
-    .blog-hero-h1 {
-      font-size: clamp(2.5rem, 7vw, 5rem);
+    .blog-header h1 {
+      font-family: system-ui, sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 900;
       color: var(--text-light);
-      margin: 0 0 24px 0;
-      line-height: 1.1;
+      margin: 0 0 20px 0;
       text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      animation: fadeSlideUp 1s ease-out 0.2s both;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .blog-hero-description {
-      font-size: clamp(1.125rem, 2vw, 1.5rem);
+    .blog-header p {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
       color: rgba(255,255,255,0.9);
-      margin: 0 auto 60px;
       max-width: 700px;
-      line-height: 1.6;
-      animation: fadeSlideUp 1s ease-out 0.4s both;
-    }
-
-    .blog-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 30px;
-      max-width: 900px;
       margin: 0 auto;
-      animation: fadeSlideUp 1s ease-out 0.6s both;
+      line-height: 1.8;
     }
 
-    .blog-stat-card {
-      background: rgba(255,255,255,0.1);
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.05);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 20px;
-      padding: 32px 20px;
+      padding: 40px 30px;
       text-align: center;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
     }
 
-    .blog-stat-card::before {
+    .stat-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -801,186 +838,221 @@ img[data-no-hero-position] { position: static !important; }
       z-index: 0;
     }
 
-    .blog-stat-card:hover {
-      transform: translateY(-10px) scale(1.05);
+    .stat-card:hover {
+      transform: translateY(-10px) scale(1.02);
       border-color: var(--secondary-color);
-      box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3);
+      box-shadow: 0 20px 60px rgba(245, 158, 11, 0.3);
     }
 
-    .blog-stat-card:hover::before {
-      opacity: 1;
+    .stat-card:hover::before {
+      opacity: 0.1;
     }
 
-    .blog-stat-card > * {
+    .stat-card > * {
       position: relative;
       z-index: 1;
     }
 
-    .blog-stat-number {
-      font-size: clamp(2rem, 4vw, 3rem);
+    .stat-number {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
       font-weight: 900;
-      color: var(--text-light);
-      margin: 0 0 8px 0;
-      display: block;
+      color: var(--secondary-color);
+      margin: 0 0 10px 0;
       line-height: 1;
     }
 
-    .blog-stat-label {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.8);
-      font-weight: 600;
+    .stat-label {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
       margin: 0;
-      transition: color 0.3s ease;
     }
 
-    .blog-stat-card:hover .blog-stat-label {
-      color: var(--text-dark);
+    .center-label {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin: 0 0 60px 0;
+      text-transform: uppercase;
+      letter-spacing: 3px;
     }
 
-    .blog-floating-shapes {
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    }
+
+    .category-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 30px;
+      padding: 50px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .category-card::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-15px) rotate(-2deg);
+      border-color: var(--secondary-color);
+      box-shadow: 0 30px 80px rgba(245, 158, 11, 0.4);
+    }
+
+    .category-card:hover::before {
       opacity: 0.15;
     }
 
-    .floating-circle {
-      position: absolute;
-      border-radius: 50%;
-      background: var(--secondary-color);
-      animation: float 20s infinite ease-in-out;
+    .category-card h3 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-light);
+      margin: 0 0 20px 0;
+      position: relative;
+      z-index: 2;
     }
 
-    .floating-circle:nth-child(1) {
-      width: 300px;
-      height: 300px;
-      top: 10%;
-      right: 5%;
-      animation-delay: 0s;
+    .category-card p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+      margin: 0;
+      position: relative;
+      z-index: 2;
     }
 
-    .floating-circle:nth-child(2) {
-      width: 200px;
-      height: 200px;
-      bottom: 15%;
-      left: 8%;
-      animation-delay: -5s;
+    .category-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+      transition: all 0.4s ease;
     }
 
-    .floating-circle:nth-child(3) {
-      width: 150px;
-      height: 150px;
-      top: 50%;
-      left: 15%;
-      animation-delay: -10s;
+    .category-card:hover .category-icon {
+      transform: rotate(360deg) scale(1.1);
     }
 
-    .floating-circle:nth-child(4) {
-      width: 250px;
-      height: 250px;
-      bottom: 20%;
-      right: 10%;
-      animation-delay: -15s;
+    .category-icon::after {
+      content: '📊';
+      font-size: 2rem;
     }
 
-    @keyframes float {
-      0%, 100% {
-        transform: translate(0, 0) rotate(0deg);
-      }
-      25% {
-        transform: translate(30px, -30px) rotate(90deg);
-      }
-      50% {
-        transform: translate(-20px, 20px) rotate(180deg);
-      }
-      75% {
-        transform: translate(40px, 10px) rotate(270deg);
-      }
+    .category-card:nth-child(2) .category-icon::after {
+      content: '💡';
     }
 
-    @keyframes fadeSlideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeSlideUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .category-card:nth-child(3) .category-icon::after {
+      content: '🏠';
     }
 
     @media (max-width: 768px) {
-      .blog-hero-container {
-        padding-top: 40px;
+      .blog-hero-section {
+        padding-top: 100px;
+        padding-bottom: 60px;
       }
 
-      .blog-stats-grid {
+      .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        margin-bottom: 60px;
       }
 
-      .blog-stat-card {
-        padding: 24px 16px;
+      .stat-card {
+        padding: 30px 20px;
       }
 
-      .floating-circle {
-        display: none;
+      .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .category-card {
+        padding: 40px 30px;
+      }
+
+      .center-label {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
       }
     }
 
     @media (max-width: 480px) {
-      .blog-stats-grid {
+      .stats-grid {
         grid-template-columns: 1fr;
       }
     }
   </style>
 
-  <div class="blog-floating-shapes">
-    <div class="floating-circle"></div>
-    <div class="floating-circle"></div>
-    <div class="floating-circle"></div>
-    <div class="floating-circle"></div>
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
   </div>
 
-  <div class="blog-hero-container">
-    <div class="blog-hero-grid">
-      <div class="blog-hero-content">
-        <span class="blog-hero-label">מרכז הידע שלנו</span>
-        <h1 class="blog-hero-h1">בלוג משכנתאות ופיננסיים</h1>
-        <p class="blog-hero-description"><b><font color="#e6e68a">כל המידע, הטיפים והמדריכים שאתם צריכים בנושא ייעוץ משכנתאות, תכנון פיננסי ורכישת דירה.</font></b></p>
-        
-        <div class="blog-stats-grid">
-          <div class="blog-stat-card">
-            <span class="blog-stat-number">100+</span>
-            <p class="blog-stat-label">מאמרים</p>
-          </div>
-          <div class="blog-stat-card">
-            <span class="blog-stat-number">50K+</span>
-            <p class="blog-stat-label">קוראים</p>
-          </div>
-          <div class="blog-stat-card">
-            <span class="blog-stat-number">10+</span>
-            <p class="blog-stat-label">קטגוריות</p>
-          </div>
-          <div class="blog-stat-card">
-            <span class="blog-stat-number">24/7</span>
-            <p class="blog-stat-label">נגישות</p>
-          </div>
+  <div class="blog-hero-section">
+    <div class="blog-content-wrapper">
+      <div class="blog-header">
+        <h1>בלוג משכנתאות ופיננסיים</h1>
+        <p>כל המידע, הטיפים והמדריכים שאתם צריכים בנושא ייעוץ משכנתאות, תכנון פיננסי ו<font color="#ffffff">רכישת דירה</font>.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">מאמרים</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">50K+</div>
+          <div class="stat-label">קוראים</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">קטגוריות</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">נגישות</div>
+        </div>
+      </div>
+
+      <div class="center-label">מרכז הידע שלנו</div>
+
+      <div class="categories-grid">
+        <div class="category-card">
+          <div class="category-icon"></div>
+          <h3>ניתוח משכנתא</h3>
+          <p><font color="#ffffff">מדריכים מקיפים לחישוב והשוואת מסלולי משכנתא</font></p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon"></div>
+          <h3>טיפים חכמים</h3>
+          <p><font color="#ffffff">עצות מקצועיות לחיסכון ותכנון פיננסי נכון</font></p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon"></div>
+          <h3>רכישת דירה</h3>
+          <p><font color="#ffffff">המדריך המלא לרוכשי דירה ראשונה</font></p>
         </div>
       </div>
     </div>
@@ -1061,7 +1133,7 @@ img[data-no-hero-position] { position: static !important; }
   <div class="container">
     <h2 style="color: #304060 !6important; font-size: 2.5rem; margin-bottom: 20px;">רוצים להתייעץ איתנו?</h2>
     <p style="color: #305060 !6important; font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">אנחנו כאן כדי לעזור לכם לקבל את ההחלטות הפיננסיות הנכונות ביותר עבורכם.</p>
-    <a href="/contact" class="btn" style="background-color: #1e3a8a; color: #ffffff !6important; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: background-color 0.3s ease;">צור קשר לייעוץ</a>
+    <a href="/contact" class="btn btn-primary" style="padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: background-color 0.3s; outline: none; border-color: rgb(245, 158, 11) !important; color: rgb(255, 255, 255) !important; background-color: rgb(245, 158, 11) !important; background-image: none !important;" data-element-type="button" data-element-id="btn-1770964995266-1r0xw7olr" data-native-element="true">צור קשר לייעוץ</a>
   </div>
 </section></main>
 
