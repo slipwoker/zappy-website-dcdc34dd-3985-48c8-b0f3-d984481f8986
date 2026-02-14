@@ -1,15 +1,9 @@
 # Clean URL redirects for Render static hosting
-# Generated: 2026-02-13T08:16:34.210Z
+# Generated: 2026-02-14T05:20:16.366Z
 # NOTE: Render uses render.yaml for routing, not _redirects (that is Netlify)
 # This file is kept for reference only
 
 /services  /services.html  200!
-/about  /about.html  200!
-/privacy  /privacy.html  200!
-/accessibility  /accessibility.html  200!
-/terms  /terms.html  200!
-/contact-us  /contact-us.html  200!
-/mashkanta-bepijama-podcast  /mashkanta-bepijama-podcast.html  200!
 /articles  /articles.html  200!
 /articles/mortgage-process  /articles/mortgage-process.html  200!
 /articles/refinancing  /articles/refinancing.html  200!
@@ -27,10 +21,6 @@
 /articles/self-employed-mortgage  /articles/self-employed-mortgage.html  200!
 /articles/mortgage-porting  /articles/mortgage-porting.html  200!
 /articles/private-consulting-benefits  /articles/private-consulting-benefits.html  200!
-/blog  /blog.html  200!
-/blog/beginners-guide  /blog/beginners-guide.html  200!
-/blog/first-apartment  /blog/first-apartment.html  200!
-/blog/recycling  /blog/recycling.html  200!
 /articles/mortgage-pre-approval  /articles/mortgage-pre-approval.html  200!
 /articles/construction-input-index  /articles/construction-input-index.html  200!
 /articles/mortgage-equity  /articles/mortgage-equity.html  200!
@@ -38,14 +28,12 @@
 /articles/amortization-schedules  /articles/amortization-schedules.html  200!
 /articles/boi-regulations  /articles/boi-regulations.html  200!
 /articles/repayment-ratio  /articles/repayment-ratio.html  200!
-/testimonials  /testimonials.html  200!
 /articles/ministry-of-housing-eligibility  /articles/ministry-of-housing-eligibility.html  200!
 /articles/mortgage-bait-tracks  /articles/mortgage-bait-tracks.html  200!
 /articles/comparing-mortgage-offers  /articles/comparing-mortgage-offers.html  200!
 /articles/mortgage-grace  /articles/mortgage-grace.html  200!
 /articles/early-repayment-fee  /articles/early-repayment-fee.html  200!
 /articles/mortgage-refusal  /articles/mortgage-refusal.html  200!
-/blog/housing-improvers  /blog/housing-improvers.html  200!
 /articles/credit-score-mortgage  /articles/credit-score-mortgage.html  200!
 /articles/divorce-mortgage  /articles/divorce-mortgage.html  200!
 /articles/early-appraisal  /articles/early-appraisal.html  200!
@@ -106,6 +94,18 @@
 /articles/musha-property-mortgage  /articles/musha-property-mortgage.html  200!
 /articles/third-apartment-mortgage  /articles/third-apartment-mortgage.html  200!
 /articles/preparing-bank-account  /articles/preparing-bank-account.html  200!
+/privacy  /privacy.html  200!
+/accessibility  /accessibility.html  200!
+/terms  /terms.html  200!
+/mashkanta-bepijama-podcast  /mashkanta-bepijama-podcast.html  200!
+/blog  /blog.html  200!
+/blog/beginners-guide  /blog/beginners-guide.html  200!
+/blog/first-apartment  /blog/first-apartment.html  200!
+/blog/recycling  /blog/recycling.html  200!
+/testimonials  /testimonials.html  200!
+/blog/housing-improvers  /blog/housing-improvers.html  200!
+/about  /about.html  200!
+/contact-us  /contact-us.html  200!
 
 # Legal pages - redirect old .html URLs to friendly URLs
 /privacy.html  /privacy  301
