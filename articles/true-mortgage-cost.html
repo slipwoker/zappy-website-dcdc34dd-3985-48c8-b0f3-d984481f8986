@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="he" dir="rtl"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>משכנתא לרכישת דירה מקבלן | המדריך המלא לתכנון תשלומים</title>
-  <meta name="description" content="מדריך מקיף ללקיחת משכנתא לרכישת דירה מקבלן. איך מתמודדים עם מדד תשומות הבנייה, מתי כדאי להקדים תשלומים ואיך משלבים גרייס? כל התשובות בפנים.">
+  <title>חישוב עלות משכנתא אמיתית | כמה באמת עולה הדירה?</title>
+  <meta name="description" content="המדריך המלא לחישוב העלות האמיתית של המשכנתא. כמה תשלמו לבנק בסוף התקופה? על ריבית דריבית, הצמדה למדד ועלויות נלוות שחובה להכיר לפני שלוקחים משכנתא.">
   <meta name="keywords" content="ייעוץ משכנתאות, ייעוץ משכנתא לדירה ראשונה, מיחזור משכנתא, ייעוץ פיננסי">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -536,24 +536,33 @@
         left: auto;
         right: 0;
       }
-    </style>
+    </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EY9JJ9BZN4');
+</script>
+<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+  
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:url" content="https://mashkanta-bepijama.co.il/articles/contractor-mortgage">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="משכנתא לרכישת דירה מקבלן | המדריך המלא לתכנון תשלומים">
-    <meta property="og:description" content="מדריך מקיף ללקיחת משכנתא לרכישת דירה מקבלן. איך מתמודדים עם מדד תשומות הבנייה, מתי כדאי להקדים תשלומים ואיך משלבים גרייס? כל התשובות בפנים.">
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-construction-plans-1769193790478-og.jpg">
+    <meta property="og:title" content="חישוב עלות משכנתא אמיתית | כמה באמת עולה הדירה?">
+    <meta property="og:description" content="המדריך המלא לחישוב העלות האמיתית של המשכנתא. כמה תשלמו לבנק בסוף התקופה? על ריבית דריבית, הצמדה למדד ועלויות נלוות שחובה להכיר לפני שלוקחים משכנתא.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-mortgage-calculator-hero-1771415485619-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="משכנתא לרכישת דירה מקבלן | המדריך המלא לתכנון תשלומים">
+    <meta property="og:image:alt" content="חישוב עלות משכנתא אמיתית | כמה באמת עולה הדירה?">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="משכנתא לרכישת דירה מקבלן | המדריך המלא לתכנון תשלומים">
-    <meta name="twitter:description" content="מדריך מקיף ללקיחת משכנתא לרכישת דירה מקבלן. איך מתמודדים עם מדד תשומות הבנייה, מתי כדאי להקדים תשלומים ואיך משלבים גרייס? כל התשובות בפנים.">
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-construction-plans-1769193790478-og.jpg">
-    <meta name="twitter:image:alt" content="משכנתא לרכישת דירה מקבלן | המדריך המלא לתכנון תשלומים"><style id="zappy-ai-page-styles">
+    <meta name="twitter:title" content="חישוב עלות משכנתא אמיתית | כמה באמת עולה הדירה?">
+    <meta name="twitter:description" content="המדריך המלא לחישוב העלות האמיתית של המשכנתא. כמה תשלמו לבנק בסוף התקופה? על ריבית דריבית, הצמדה למדד ועלויות נלוות שחובה להכיר לפני שלוקחים משכנתא.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-mortgage-calculator-hero-1771415485619-og.jpg">
+    <meta name="twitter:image:alt" content="חישוב עלות משכנתא אמיתית | כמה באמת עולה הדירה?"><style id="zappy-ai-page-styles">
 
 
 /* Zappy Base Styles for Edit Mode Compatibility */
@@ -616,8 +625,9 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+/* Hero container fixes - contain absolute images and prevent viewport overflow */
+/* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
+[class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
@@ -633,17 +643,7 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EY9JJ9BZN4');
-</script>
-<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
-  
+</style>
     <style id="mobile-lang-menu-deployed-css">
     @media (max-width: 768px) {
       .lang-switcher,
@@ -712,137 +712,126 @@ img[data-no-hero-position] { position: static !important; }
         </li>
       </div>
     </div>
-  </nav><main class="page-main blog-page ai-generated-page">
-  <!--6-- Hero Section ---->
-  <section class="section hero-section" id="contractor-hero" style="background-color: #f8f9fa !6important; padding: 80px 0; text-align: center;; position: relative; overflow: hidden;" data-zappy-section="true">
-    <div class="container">
-      <div style="max-width: 800px; margin: 0 auto;">
-        <h1 style="color: #1e3a8a !6important; font-size: 2.5rem; margin-bottom: 20px; font-weight: 700;">משכנתא לרכישת דירה מקבלן: תכנון פיננסי חכם</h1>
-        <p style="color: #304060 !6important; font-size: 1.25rem; line-height: 1.6; margin-bottom: 30px;">
-          רכישת דירה "על הנייר" או בשלבי בנייה שונה מהותית מרכישת דירה יד שנייה. גלו איך לנהל נכון את תזרים התשלומים, להימנע מטעויות יקרות ולחסוך עשרות אלפי שקלים בתהליך.
-        </p>
-        <div style="width: 100%; height: 4px; background: linear-gradient(90deg, #1e3a8a, transparent); margin: 0 auto 30px auto; max-width: 200px;"></div>
-      </div>
+  </nav><main class="page-main blog-page ai-generated-page"><section class="section page-content-section" id="zappy-section-0" data-zappy-section="true"><div class="container">
+
+  <!-- Article Container -->
+  <div class="container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+
+    <!-- Top Back Button -->
+    <div style="margin-bottom: 20px;">
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #305060 !important; font-weight: 500; transition: color 0.2s;">
+        <span style="margin-left: 8px;">←</span> חזרה למאמרים
+      </a>
     </div>
-  </section>
 
-  <!--6-- Introduction Section ---->
-  <section class="section intro-section" id="intro" style="background-color: #ffffff !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
-        <div class="content-column">
-          <h2 style="color: #1e3a8a !6important; font-size: 2rem; margin-bottom: 20px;">האתגר: לשלם על דירה שעדיין לא מוכנה</h2>
-          <p style="color: #304060 !6important; line-height: 1.8; margin-bottom: 15px;">
-            רכישת דירה מקבלן היא אחת העסקאות הנפוצות והמורכבות בשוק הנדל"ן הישראלי. בניגוד לרכישת דירה יד שנייה, בה מעבירים את התשלום ומקבלים מפתח תוך זמן קצר, ברכישה מקבלן התהליך נפרס על פני תקופה ארוכה – לעיתים שנתיים ואף שלוש שנים.
-          </p>
-          <p style="color: #304060 !6important; line-height: 1.8; margin-bottom: 15px;">
-            תהליך זה דורש <strong>ייעוץ משכנתאות</strong> ייעודי ומותאם אישית. הלווה נדרש לקבל החלטות קריטיות לגבי תזמון משיכת הכספים: האם לשלם לקבלן מוקדם ככל האפשר כדי להימנע מעליית מדד תשומות הבנייה? או שמא עדיף להשאיר את הכסף בבנק ולהימנע מתשלום ריביות משכנתא בשלב מוקדם?
-          </p>
-          <p style="color: #304060 !6important; line-height: 1.8;">
-            בין אם מדובר על תהליך של <a href="/articles/first-apartment-mortgage" style="color: #1e3a8a !6important; text-decoration: none; font-weight: bold;">ייעוץ משכנתא לדירה ראשונה</a> עבור זוגות צעירים, ובין אם מדובר על משפרי דיור המוכרים נכס קיים, ההתנהלות מול הקבלן והבנק דורשת אסטרטגיה ברורה.
-          </p>
-        </div>
-        <div class="image-column">
-          <img data-placeholder="construction-plans" data-context="Couple looking at construction plans with a calculator" data-zappy-editable-image="true" src="/assets/page-construction-plans-1769193790478.webp" alt="תוכניות בנייה ותכנון תקציב" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" data-no-hero-position="true" class="generated-image">
-        </div>
-      </div>
+    <!-- Top Social Share -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
+      <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+      <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
-  </section>
 
-  <!--6-- Key Challenges Cards ---->
-  <section class="section challenges-section" id="challenges" style="background-color: #e0e0e0 !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #1e3a8a !6important; text-align: center; margin-bottom: 40px;">3 המוקשים העיקריים במשכנתא מקבלן</h2>
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        <!--6-- Card 1 ---->
-        <article class="card" style="background: #ffffff; padding: 30px; border-radius: 8px; border-top: 5px solid #1e3a8a; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <h3 style="color: #304060 !6important; margin-bottom: 15px; font-size: 1.4rem;">1. מדד תשומות הבנייה</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">
-            היתרה שטרם שולמה לקבלן צמודה בדרך כלל למדד תשומות הבנייה. כאשר המדד עולה, החוב שלכם לקבלן גדל אוטומטית. לעיתים, התייקרות זו יכולה להגיע לעשרות אלפי שקלים בשנה, מה שהופך את הקדמת התשלומים (באמצעות המשכנתא) למהלך משתלם כלכלית.
-          </p>
-        </article>
-        
-        <!--6-- Card 2 ---->
-        <article class="card" style="background: #ffffff; padding: 30px; border-radius: 8px; border-top: 5px solid #1e3a8a; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <h3 style="color: #304060 !6important; margin-bottom: 15px; font-size: 1.4rem;">2. כפל תשלומים (שכירות + משכנתא)</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">
-            רבים מרוכשי הדירות מקבלן עדיין גרים בשכירות בזמן שהבניין נבנה. התחלת תשלומי המשכנתא המלאים במקביל לתשלום שכר דירה יוצרת עומס תזרימי כבד. הפתרון לכך הוא לרוב "משכנתא בגרייס" (Grace) – תשלום הריבית בלבד בתקופת הביניים.
-          </p>
-        </article>
-
-        <!--6-- Card 3 ---->
-        <article class="card" style="background: #ffffff; padding: 30px; border-radius: 8px; border-top: 5px solid #1e3a8a; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <h3 style="color: #304060 !6important; margin-bottom: 15px; font-size: 1.4rem;">3. שינויים בריביות השוק</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">
-            מכיוון שהמשכנתא נמשכת בפעימות (לפי התקדמות הבנייה), הריביות על החלקים שטרם נמשכו עלולות להשתנות (אם לא קובעו מראש). ניהול נכון של "עוגנים" ומסלולים מבטיח שלא תופתעו מעליית ריבית חדה באמצע הבנייה.
-          </p>
-        </article>
-      </div>
+    <!-- Hero Image -->
+    <div class="article-hero-image" style="width: 100%; max-height: 400px; overflow: hidden; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);; position: relative; overflow: hidden;">
+      <img data-placeholder="mortgage-calculator-hero" data-context="Financial calculator, coins, and house model on a desk, representing mortgage cost calculation" data-zappy-editable-image="true" alt="חישוב עלות משכנתא" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 16/9;" src="/assets/page-mortgage-calculator-hero-1771415485619.webp" class="generated-image" data-og-image="/assets/page-mortgage-calculator-hero-1771415485619-og.jpg">
     </div>
-  </section>
 
-  <!--6-- Deep Dive Content ---->
-  <section class="section strategy-section" id="strategy" style="background-color: #ffffff !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div style="max-width: 900px; margin: 0 auto;">
-        <h2 style="color: #1e3a8a !6important; margin-bottom: 30px;">אסטרטגיית התשלומים: מתי לשלם מה?</h2>
-        <p style="color: #304060 !6important; line-height: 1.8; margin-bottom: 20px;">
-          אחת השאלות המרכזיות בייעוץ משכנתאות לרוכשי דירות מקבלן היא סדר הפעולות. בדרך כלל, הבנקים דורשים שהרוכש ישלם את ההון העצמי שלו לפני שהוא מתחיל למשוך כספים מהמשכנתא. עם זאת, ישנם מקרים בהם ניתן ורצוי לבקש אישור חריג להקדים את כספי המשכנתא, במיוחד בסביבת אינפלציה גבוהה ומדד תשומות בנייה עולה.
-        </p>
-        <p style="color: #304060 !6important; line-height: 1.8; margin-bottom: 20px;">
-          <strong>תכנון נכון כולל:</strong>
-        </p>
-        <ul style="color: #304060 !6important; line-height: 1.8; margin-bottom: 30px; padding-right: 20px;">
-          <li style="margin-bottom: 10px;">בדיקת לוח התשלומים מול הקבלן (האם הוא גמיש?).</li>
-          <li style="margin-bottom: 10px;">חישוב העלות הצפויה של מדד תשומות הבנייה מול עלות הריבית על המשכנתא.</li>
-          <li style="margin-bottom: 10px;">שמירת "כרית ביטחון" להוצאות נלוות (שדרוגים, מטבח, מזגנים) שלרוב משולמים בסוף.</li>
-          <li style="margin-bottom: 10px;">בניית תמהיל משכנתא המותאם למשיכה מדורגת – מסלולים מסוימים עדיף למשוך ראשונים כדי לקבע ריבית נמוכה.</li>
-        </ul>
-        
-        <div style="background-color: #f0f4f8 !6important; padding: 30px; border-radius: 8px; border-right: 4px solid #1e3a8a; margin-top: 40px;">
-          <h3 style="color: #1e3a8a !6important; margin-bottom: 15px;">טיפ זהב למשפרי דיור</h3>
-          <p style="color: #304060 !6important; margin: 0;">
-            עבור לקוחות המבצעים <a href="/articles/housing-improvers" style="color: #1e3a8a !6important; text-decoration: none; font-weight: bold;">ייעוץ משכנתא למשפרי דיור</a>, המצב מורכב עוד יותר. לעיתים הכסף לרכישת הדירה החדשה תלוי במכירת הדירה הישנה. במקרים אלו, ניתן להשתמש בפתרונות כמו "הלוואת גישור" (בלון) כנגד הדירה הקיימת, כדי לשלם לקבלן בזמן ולחסוך את המדד, עוד לפני שהדירה הישנה נמכרה.
-          </p>
-        </div>
+    <!-- Article Header -->
+    <header style="margin-bottom: 30px;">
+      <h1 style="font-size: 2.5rem; color: #304060 !important; margin-bottom: 15px; line-height: 1.2;">כמה באמת עולה המשכנתא שלכם? המדריך לחישוב העלות הכוללת</h1>
+      <div style="color: #305060 !important; font-size: 0.9rem; display: flex; gap: 15px;">
+        <span>📅 פורסם: 24.05.2024</span>
+        <span>⏱️ זמן קריאה: 6 דקות</span>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!--6-- Why Consult Section ---->
-  <section class="section consulting-benefits" id="consulting" style="background-color: #f8f9fa !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
-        <div class="image-column" style="order: 2;">
-           <img data-placeholder="meeting-consultant" data-context="Professional mortgage consultation meeting in an office" data-zappy-editable-image="true" src="/assets/page-meeting-consultant-1769193784768.webp" alt="פגישת ייעוץ משכנתא" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 50%; border: 10px solid #e0e0e0;" data-no-hero-position="true" class="generated-image">
-        </div>
-        <div class="content-column" style="order: 1;">
-          <h2 style="color: #1e3a8a !6important; margin-bottom: 20px;">למה חשוב לקחת יועץ משכנתאות ברכישה מקבלן?</h2>
-          <p style="color: #304060 !6important; line-height: 1.8; margin-bottom: 20px;">
-            רבים טועים לחשוב שמשכנתא היא רק "ריביות". ברכישה מקבלן, ה"תכנון" חשוב לא פחות מה"מחיר". טעות בתזמון משיכת הכספים יכולה לעלות יותר מכל הפרש של עשירית האחוז בריבית.
-          </p>
-          <p style="color: #304060 !6important; line-height: 1.8; margin-bottom: 20px;">
-            תהליך <strong>ייעוץ משכנתאות</strong> מקצועי לוקח בחשבון את כל המשתנים: צפי סיום הבנייה, יכולת ההחזר הנוכחית מול העתידית, מדדים צפויים, ושינויים רגולטוריים. המטרה שלנו היא לבנות עבורכם "חליפה פיננסית" שתאפשר לכם לעבור את תקופת הבנייה בראש שקט, ולהגיע לקבלת המפתח עם משכנתא יציבה וחסכונית.
-          </p>
-          <p style="color: #304060 !6important; line-height: 1.8;">
-            אל תשאירו את הכסף שלכם ליד המקרה. תכנון מוקדם הוא המפתח לחיסכון משמעותי.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--6-- CTA Section ---->
-  <section class="section cta-section" id="cta" style="background-color: #1e3a8a !6important; padding: 60px 0; text-align: center;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #ffffff !6important; margin-bottom: 20px;">רוכשים דירה מקבלן? בואו נבנה תוכנית עבודה</h2>
-      <p style="color: #e0e0e0 !6important; font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px auto;">
-        הצוות שלנו מתמחה בליווי רוכשי דירות בפרויקטים ובניית אסטרטגיות מימון חכמות. השאירו פרטים ונחסוך לכם כסף וכאב ראש.
+    <!-- Article Content -->
+    <article style="font-size: 1.1rem; line-height: 1.7; color: #304060 !important;">
+      <p style="margin-bottom: 20px;">
+        כאשר זוגות צעירים מגיעים לבנק או פונים לקבלת <strong>ייעוץ משכנתאות</strong>, השאלה הראשונה והנפוצה ביותר שהם שואלים היא: "כמה נצטרך לשלם בחודש?". זוהי שאלה טבעית וחשובה, שכן ההחזר החודשי הוא זה שמשפיע על תזרים המזומנים השוטף של המשפחה. עם זאת, התמקדות בלעדית בהחזר החודשי היא אחת הטעויות הפיננסיות הגדולות ביותר שניתן לעשות בעת לקיחת המשכנתא.
       </p>
-      <a href="/contact" class="btn" style="display: inline-block; background-color: #ffffff; color: #1e3a8a !6important; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.2s ease;">תיאום פגישת ייעוץ</a>
+
+      <p style="margin-bottom: 20px;">
+        השאלה החשובה באמת, זו שיכולה לחסוך לכם מאות אלפי שקלים, היא: "כמה נחזיר לבנק בסוף התקופה על כל שקל שלקחנו?". הפער בין סכום המשכנתא המקורי לבין סך ההחזרים הסופי הוא "עלות הכסף". במאמר זה נצלול לעומק המספרים ונבין ממה מורכבת העלות האמיתית של המשכנתא, וכיצד תכנון נכון יכול להקטין אותה משמעותית.
+      </p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 35px 0 20px;">אשליית ההחזר החודשי הנמוך</h2>
+      <p style="margin-bottom: 20px;">
+        בנקים אוהבים לשווק משכנתאות עם החזר חודשי נמוך ואטרקטיבי. אך כיצד משיגים החזר נמוך? בדרך כלל על ידי פריסת ההלוואה לתקופה ארוכה מאוד (30 שנה) או על ידי בחירה במסלולים צמודי מדד עם ריבית התחלתית נמוכה. הבעיה היא שהחזר חודשי נמוך היום, עולה ביוקר מחר.
+      </p>
+      <p style="margin-bottom: 20px;">
+        ככל שתקופת ההלוואה ארוכה יותר, כך אתם משלמים ריבית במשך יותר שנים. ההבדל בעלות הכוללת בין משכנתא ל-20 שנה לעומת 30 שנה יכול להגיע למאות אלפי שקלים, גם אם הריבית זהה לחלוטין. זהו כלל הברזל הראשון ב<strong>ייעוץ משכנתא לדירה ראשונה</strong>: קיצור תקופה שווה המון כסף.
+      </p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 35px 0 20px;">האויב השקט: הצמדה למדד</h2>
+      <p style="margin-bottom: 20px;">
+        אחד הגורמים המשמעותיים ביותר המנפחים את עלות המשכנתא הוא המדד (מדד המחירים לצרכן). כאשר אתם לוקחים מסלול צמוד מדד, יתרת הקרן שלכם (החוב שטרם שולם) מוצמדת לאינפלציה. המשמעות היא שגם אם שילמתם את המשכנתא באדיקות במשך שנה, ייתכן שתגלו בסוף השנה שהחוב שלכם לבנק גדל במקום לקטון, פשוט כי המדד עלה.
+      </p>
+      <p style="margin-bottom: 20px;">
+        לדוגמה: על משכנתא של מיליון ש"ח, עליית מדד של 3% בשנה מוסיפה לחוב שלכם 30,000 ש"ח בשנה הראשונה בלבד. סכום זה מצטרף לקרן וצובר ריבית דריבית לאורך כל חיי המשכנתא. בחישוב עלות כוללת, מסלולים צמודי מדד לתקופות ארוכות הם לרוב היקרים ביותר.
+      </p>
+
+      <div style="background-color: #e0e0e0 !important; padding: 25px; border-radius: 8px; border-right: 4px solid #1e3a8a; margin: 30px 0;">
+        <h3 style="color: #1e3a8a !important; margin-top: 0; font-size: 1.4rem;">טיפ של יועצים</h3>
+        <p style="margin-bottom: 0;">אל תסתכלו רק על הריבית הנקובה ("קיבלתי פריים מינוס 0.6!"). בקשו מהבנק או מהיועץ שלכם לראות את "לוח הסילוקין החזוי" הכולל הנחות אינפלציה ריאליות. רק שם תראו את המספר האמיתי בסוף הטור.</p>
+      </div>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 35px 0 20px;">עלויות נלוות: הביטוחים והעמלות</h2>
+      <p style="margin-bottom: 20px;">
+        חישוב עלות המשכנתא לא מסתיים בתשלומי הריבית והקרן. ישנן עלויות נוספות שמצטברות לסכומים משמעותיים לאורך השנים:
+      </p>
+      <ul style="list-style-type: disc; padding-right: 20px; margin-bottom: 20px;">
+        <li style="margin-bottom: 10px;"><strong>ביטוח חיים למשכנתא:</strong> הפרמיה עולה עם הגיל. לאורך 30 שנה, מדובר בהוצאה של עשרות אלפי שקלים.</li>
+        <li style="margin-bottom: 10px;"><strong>ביטוח מבנה:</strong> עלות שנתית קבועה המגנה על הנכס.</li>
+        <li style="margin-bottom: 10px;"><strong>עמלות הקמה ושמאות:</strong> עלויות חד פעמיות בתחילת הדרך.</li>
+        <li style="margin-bottom: 10px;"><strong>עמלות פירעון מוקדם:</strong> ה"קנסות" שתשלמו אם תרצו לסגור את המשכנתא לפני הזמן (רלוונטי במיוחד במסלולים בריבית קבועה).</li>
+      </ul>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 35px 0 20px;">יחס החזר כולל: המדד להצלחה</h2>
+      <p style="margin-bottom: 20px;">
+        כדי להשוות בין הצעות משכנתא שונות, השתמשו במדד פשוט: "יחס החזר כולל". חלקו את הסכום הכולל שתחזירו לבנק בסכום ההלוואה שלקחתם. 
+        לדוגמה, אם לקחתם מיליון ש"ח ותחזירו בסוף התקופה 1.5 מיליון ש"ח, היחס הוא 1.5. שילמתם שקל וחצי על כל שקל שקיבלתם.
+      </p>
+      <p style="margin-bottom: 20px;">
+        במשכנתאות גרועות (למשל, ללא ייעוץ מקצועי או בפריסה ארוכה מדי), היחס יכול להגיע ל-1.8 ואף ל-2.0 ויותר. לעומת זאת, תמהיל משכנתא חכם ומותאם אישית יכול להוריד את היחס הזה משמעותית ולחסוך הון עתק.
+      </p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 35px 0 20px;">איך מקטינים את עלות המשכנתא?</h2>
+      <p style="margin-bottom: 20px;">
+        הדרך הטובה ביותר להוזיל את העלות הכוללת היא תכנון אסטרטגי. זה לא תמיד אומר לבחור בריבית הכי נמוכה כרגע, אלא לבנות תמהיל שמאזן בין סיכון לסיכוי, ומאפשר גמישות לשינויים עתידיים.
+      </p>
+      <p style="margin-bottom: 20px;">
+        למשל, שילוב של מסלולים שאינם צמודי מדד, התאמת ההחזר החודשי ליכולת האמיתית שלכם (ולא למינימום האפשרי), ותכנון נקודות יציאה ללא קנסות – כל אלו הם כלים בארגז הכלים של <strong>ייעוץ משכנתאות</strong> איכותי. גם אם כבר לקחתם משכנתא, תמיד ניתן לבדוק כדאיות של <strong>מיחזור משכנתא</strong> כדי לשפר תנאים ולקצר תקופות, מהלך שיכול לחסוך מאות אלפי שקלים בעלות הכוללת.
+      </p>
+
+      <p style="margin-bottom: 30px; font-weight: bold;">
+        זכרו: המשכנתא היא כנראה העסקה הפיננסית הגדולה ביותר בחייכם. אל תתפשרו על בדיקת הנתונים לעומק. חיסכון של עשירית האחוז בריבית או בחירה נכונה של מסלול יכולים להיות שווים לכם שנה של עבודה.
+      </p>
+
+    </article>
+
+    <!-- Bottom Social Share -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+      <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+      <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
-  </section>
-</main>
+
+    <!-- Bottom Back Button -->
+    <div style="margin-bottom: 20px;">
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #305060 !important; font-weight: 500; transition: color 0.2s;">
+        <span style="margin-left: 8px;">←</span> חזרה למאמרים
+      </a>
+    </div>
+
+  </div>
+</div></section></main>
 
   
 
@@ -851,6 +840,14 @@ img[data-no-hero-position] { position: static !important; }
   
 
   
+
+
+
+
+
+
+
+
 
   
 
@@ -864,15 +861,7 @@ img[data-no-hero-position] { position: static !important; }
 
   
     <!--6-- Legal Footer ---->
-    
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>משכנתא בפיג'מה</title>
-
-
-<footer class="legal-footer">
+    <footer class="legal-footer">
       <div class="container">
         <div class="footer-main">
           <div class="all-rights-reserved">
@@ -881,7 +870,7 @@ img[data-no-hero-position] { position: static !important; }
           <div class="footer-social"><a href="https://facebook.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 <a href="https://instagram.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 <a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1736700000000-y9t3b2" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
+<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819966672-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -903,9 +892,7 @@ img[data-no-hero-position] { position: static !important; }
     </footer>
 
 
-
-
-
+<!--6-- Zappy Attribution Header Script ---->
 <script>
 (function() {
   var websiteId = 'dcdc34dd-3985-48c8-b0f3-d984481f8986';
@@ -1685,6 +1672,120 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
+<script id="zappy-share-script">
+(function() {
+  function getShareUrl() {
+    // Priority 1: Check for deployed site URL meta tag (set by Zappy when site is published)
+    var siteUrl = document.querySelector('meta[name="zappy-site-url"]');
+    if (siteUrl && siteUrl.content) {
+      var basePath = window.location.pathname;
+      var pageParam = new URLSearchParams(window.location.search).get('page');
+      var pagePath = pageParam || basePath;
+      if (pagePath.startsWith('/api/website/preview')) pagePath = '/';
+      return siteUrl.content.replace(/\/$/, '') + pagePath;
+    }
+    var c = document.querySelector('link[rel="canonical"]');
+    if (c && c.href && !c.href.includes('localhost') && !c.href.includes('preview')) return c.href;
+    var m = document.querySelector('meta[property="og:url"]');
+    if (m && m.content && !m.content.includes('localhost') && !m.content.includes('preview')) return m.content;
+    var isPreview = window.location.href.includes('preview') || window.location.href.includes('localhost') || window.location.href.includes('auth_token');
+    if (isPreview) return null;
+    return window.location.origin + window.location.pathname;
+  }
+  function setShareHref(selectors, href, isDisabled) {
+    selectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Share links will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.href = href;
+        }
+      });
+    });
+  }
+  // Normalize share bars to ensure all 5 icons are present
+  function normalizeShareBars() {
+    var shareBars = document.querySelectorAll('.social-share-bar');
+    if (shareBars.length === 0) return;
+    // Define all required share icons with their SVG
+    var shareIcons = {
+      copy: { selectors: ['.share-copy', 'button[title="Copy link"]', 'a[title="Copy link"]'], 
+        html: '<a href="#" class="share-copy" title="Copy link" style="color:#666;display:flex;align-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>' },
+      linkedin: { selectors: ['.share-linkedin', 'a[title="LinkedIn"]'], 
+        html: '<a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color:#0a66c2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>' },
+      twitter: { selectors: ['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+        html: '<a href="#" class="share-twitter" target="_blank" title="X" style="color:#000!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' },
+      facebook: { selectors: ['.share-facebook', 'a[title="Facebook"]'], 
+        html: '<a href="#" class="share-facebook" target="_blank" title="Facebook" style="color:#1877f2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' },
+      whatsapp: { selectors: ['.share-whatsapp', 'a[title="WhatsApp"]'], 
+        html: '<a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color:#25d366!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' }
+    };
+    // Order of icons (right to left for RTL, so we add in this order)
+    var iconOrder = ['copy', 'linkedin', 'twitter', 'facebook', 'whatsapp'];
+    shareBars.forEach(function(bar) {
+      iconOrder.forEach(function(iconKey) {
+        var icon = shareIcons[iconKey];
+        var exists = icon.selectors.some(function(sel) { return bar.querySelector(sel); });
+        if (!exists) {
+          // Find the label span and insert after it
+          var label = bar.querySelector('span');
+          if (label) {
+            label.insertAdjacentHTML('afterend', icon.html);
+          } else {
+            bar.insertAdjacentHTML('afterbegin', icon.html);
+          }
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    // First normalize the share bars to ensure all icons exist
+    normalizeShareBars();
+    var url = getShareUrl();
+    var title = document.title;
+    var isDisabled = !url;
+    if (isDisabled) console.log('[Zappy] Share links disabled in preview mode - will work after publishing');
+    // WhatsApp
+    setShareHref(['.share-whatsapp', 'a[title="WhatsApp"]', 'a[title="whatsapp"]'], 
+      url ? 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url) : '#', isDisabled);
+    // Facebook
+    setShareHref(['.share-facebook', 'a[title="Facebook"]', 'a[title="facebook"]'], 
+      url ? 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) : '#', isDisabled);
+    // Twitter/X
+    setShareHref(['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+      url ? 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title) : '#', isDisabled);
+    // LinkedIn
+    setShareHref(['.share-linkedin', 'a[title="LinkedIn"]', 'a[title="linkedin"]'], 
+      url ? 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) : '#', isDisabled);
+    // Copy link button
+    ['.share-copy', 'button[title="Copy link"]', 'button[title="copy"]', 'a[title="Copy link"]'].forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Copy link will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.onclick = function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(url).then(function() {
+              var orig = el.innerHTML;
+              el.innerHTML = '✓';
+              setTimeout(function() { el.innerHTML = orig; }, 1500);
+            });
+          };
+        }
+      });
+    });
+  });
+})();
+</script><a href="https://wa.me/972542668566" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
     <script id="zappy-mobile-submenu-script">
     (function() {
       function initMobileSubmenuToggles() {
@@ -1806,4 +1907,4 @@ img[data-no-hero-position] { position: static !important; }
     })();
     </script>
     <script src="/script.js"></script>
-</body></html><!--6-- Zappy Attribution Header Script ---->
+</body></html>
