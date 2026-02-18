@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="he" dir="rtl"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>משכנתא עם לווה תומך - הפתרון להגדלת אישור המשכנתא | אריאל אחון</title>
-  <meta name="description" content="מהו לווה תומך במשכנתא? המדריך המלא לזוגות צעירים שצריכים עזרה באישור המשכנתא. ההבדל בין ערב ללווה תומך, תנאי סף ואיך עושים זאת נכון.">
+  <title>משכנתא למסורבי ביטוח חיים - פתרונות מעשיים</title>
+  <meta name="description" content="מדריך מקיף למסורבי ביטוח חיים למשכנתא: מה עושים כשהחברה מסרבת לבטח? איך משיגים פטור מביטוח חיים בבנק? וכיצד ייעוץ משכנתאות מקצועי יכול להציל את העסקה.">
   <meta name="keywords" content="ייעוץ משכנתאות, ייעוץ משכנתא לדירה ראשונה, מיחזור משכנתא, ייעוץ פיננסי">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -536,24 +536,33 @@
         left: auto;
         right: 0;
       }
-    </style>
+    </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EY9JJ9BZN4');
+</script>
+<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+  
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:url" content="https://mashkanta-bepijama.co.il/articles/supporting-borrower">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="משכנתא עם לווה תומך - הפתרון להגדלת אישור המשכנתא | אריאל אחון">
-    <meta property="og:description" content="מהו לווה תומך במשכנתא? המדריך המלא לזוגות צעירים שצריכים עזרה באישור המשכנתא. ההבדל בין ערב ללווה תומך, תנאי סף ואיך עושים זאת נכון.">
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-family-consulting-1769505191039-og.jpg">
+    <meta property="og:title" content="משכנתא למסורבי ביטוח חיים - פתרונות מעשיים">
+    <meta property="og:description" content="מדריך מקיף למסורבי ביטוח חיים למשכנתא: מה עושים כשהחברה מסרבת לבטח? איך משיגים פטור מביטוח חיים בבנק? וכיצד ייעוץ משכנתאות מקצועי יכול להציל את העסקה.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-insurance-refusal-hero-1771420201609-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="משכנתא עם לווה תומך - הפתרון להגדלת אישור המשכנתא | אריאל אחון">
+    <meta property="og:image:alt" content="משכנתא למסורבי ביטוח חיים - פתרונות מעשיים">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="משכנתא עם לווה תומך - הפתרון להגדלת אישור המשכנתא | אריאל אחון">
-    <meta name="twitter:description" content="מהו לווה תומך במשכנתא? המדריך המלא לזוגות צעירים שצריכים עזרה באישור המשכנתא. ההבדל בין ערב ללווה תומך, תנאי סף ואיך עושים זאת נכון.">
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-family-consulting-1769505191039-og.jpg">
-    <meta name="twitter:image:alt" content="משכנתא עם לווה תומך - הפתרון להגדלת אישור המשכנתא | אריאל אחון"><style id="zappy-ai-page-styles">
+    <meta name="twitter:title" content="משכנתא למסורבי ביטוח חיים - פתרונות מעשיים">
+    <meta name="twitter:description" content="מדריך מקיף למסורבי ביטוח חיים למשכנתא: מה עושים כשהחברה מסרבת לבטח? איך משיגים פטור מביטוח חיים בבנק? וכיצד ייעוץ משכנתאות מקצועי יכול להציל את העסקה.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-insurance-refusal-hero-1771420201609-og.jpg">
+    <meta name="twitter:image:alt" content="משכנתא למסורבי ביטוח חיים - פתרונות מעשיים"><style id="zappy-ai-page-styles">
 
 
 /* Zappy Base Styles for Edit Mode Compatibility */
@@ -616,8 +625,9 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+/* Hero container fixes - contain absolute images and prevent viewport overflow */
+/* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
+[class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
@@ -633,17 +643,7 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EY9JJ9BZN4');
-</script>
-<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
-  
+</style>
     <style id="mobile-lang-menu-deployed-css">
     @media (max-width: 768px) {
       .lang-switcher,
@@ -713,136 +713,125 @@ img[data-no-hero-position] { position: static !important; }
       </div>
     </div>
   </nav><main class="page-main blog-page ai-generated-page">
-  <!-- Hero Section -->
-  <section class="section hero-section" id="hero-supporting-borrower" style="background-color: #f8f9fa !important; padding: 60px 0; text-align: center;; position: relative; overflow: hidden;" data-zappy-section="true">
-    <div class="container">
-      <div style="max-width: 800px; margin: 0 auto;">
-        <h1 style="color: #304060 !important; font-size: 2.5rem; margin-bottom: 20px; font-weight: 700;">משכנתא עם לווה תומך: הפתרון החכם להגדלת סכום המשכנתא</h1>
-        <p style="color: #305060 !important; font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px;">
-          זוגות צעירים רבים נתקלים בבעיה מוכרת: יש הון עצמי, אבל ההכנסה החודשית לא מספיקה לאישור המשכנתא הרצויה. הפתרון של "לווה תומך" מאפשר לצרף את ההורים למשכנתא ולהגדיל את כוח הקנייה שלכם בצורה משמעותית.
-        </p>
-        <a href="/contact" class="btn" style="display: inline-block; background-color: #1e3a8a; color: #ffffff !important; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s;">תיאום שיחת ייעוץ ראשונית</a>
+  <!-- Blog Article Section -->
+  <section class="section blog-article-section" id="article-content" style="background-color: #f8f9fa !important; padding: 40px 0;" data-zappy-section="true">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
+      
+      <!-- Top Back Button -->
+      <div style="margin-bottom: 20px;">
+        <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #1e3a8a !important; font-weight: 500; font-size: 16px;">
+          <span style="margin-left: 8px;">←</span> חזרה למאמרים
+        </a>
       </div>
-    </div>
-  </section>
 
-  <!-- Main Content Section -->
-  <section class="section content-section" id="what-is-supporting-borrower" style="background-color: #ffffff !important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
-        <div class="content-column">
-          <h2 style="color: #304060 !important; font-size: 1.8rem; margin-bottom: 20px; border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; display: inline-block;">מהו לווה תומך ולמה הוא נדרש?</h2>
-          <p style="color: #305060 !important; line-height: 1.8; margin-bottom: 20px;">
-            אחד החסמים המרכזיים בקבלת משכנתא בישראל הוא "יחס ההחזר". על פי הנחיות בנק ישראל, ההחזר החודשי של המשכנתא לא יכול לעלות על 50% מההכנסה הפנויה של הלווים (ובפועל, הבנקים מעדיפים לא לעבור את ה-40%). עבור זוגות צעירים בתחילת דרכם המקצועית, או סטודנטים, ההכנסה המשותפת לעיתים קרובות אינה מספיקה כדי לאשר את גובה המשכנתא הנדרש לרכישת דירה במחירים של היום.
-          </p>
-          <p style="color: #305060 !important; line-height: 1.8; margin-bottom: 20px;">
-            כאן נכנס לתמונה מוסד ה"לווה תומך". בניגוד לערב רגיל של פעם, לווה תומך (בדרך כלל הורה או קרוב משפחה מדרגה ראשונה) הוא שותף פעיל במשכנתא. הבנק מצרף את ההכנסות של הלווה התומך להכנסות של הזוג הצעיר, ובכך מגדיל את ההכנסה המשותפת הקובעת לצורך חישוב יחס ההחזר. צעד זה מאפשר לאשר משכנתא גבוהה יותר, שמתאימה למחירי הדיור הנוכחיים.
-          </p>
-          <p style="color: #305060 !important; line-height: 1.8; margin-bottom: 20px;">
-            במסגרת תהליך של <strong>ייעוץ משכנתאות</strong> מקצועי, אנו בוחנים האם צירוף לווה תומך הוא הצעד הנכון עבורכם, שכן יש לכך השלכות גם על הלווים וגם על ההורים המצטרפים לעסקה.
-          </p>
+      <!-- Top Social Share Bar -->
+      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
+        <span style="font-weight: 500; color: #304060 !important;">שתף ב:</span>
+        <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="article-hero-image" style="width: 100%; margin-bottom: 30px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);; position: relative; overflow: hidden;">
+        <img data-placeholder="insurance-refusal-hero" data-context="Medical documents and a rejected stamp or a person looking concerned at paperwork regarding mortgage insurance" data-zappy-editable-image="true" alt="משכנתא למסורבי ביטוח חיים" style="width: 100%; aspect-ratio: 21/9; object-fit: cover;" src="/assets/page-insurance-refusal-hero-1771420201609.webp" class="generated-image" data-og-image="/assets/page-insurance-refusal-hero-1771420201609-og.jpg">
+      </div>
+
+      <!-- Article Header -->
+      <header style="margin-bottom: 30px;">
+        <h1 style="color: #304060 !important; font-size: 2.5rem; margin-bottom: 15px; line-height: 1.2;">משכנתא למסורבי ביטוח חיים: המדריך המלא לפתרונות מימון</h1>
+        <div class="article-meta" style="color: #305060 !important; font-size: 0.9rem; display: flex; gap: 15px;">
+          <span>📅 פורסם: אוקטובר 2023</span>
+          <span>⏱️ זמן קריאה: 6 דקות</span>
         </div>
-        <div class="image-column">
-          <img data-placeholder="family-consulting" data-context="Young couple sitting with parents and a financial advisor reviewing documents" data-zappy-editable-image="true" src="/assets/page-family-consulting-1769505191039.webp" alt="ייעוץ משכנתא עם הורים" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" data-no-hero-position="true" class="generated-image">
-        </div>
-      </div>
-    </div>
-  </section>
+      </header>
 
-  <!-- Comparison Section -->
-  <section class="section comparison-section" id="guarantor-vs-supporter" style="background-color: #e0e0e0 !important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #304060 !important; text-align: center; margin-bottom: 40px; font-size: 2rem;">ההבדל בין ערב ללווה תומך</h2>
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        <article class="card" style="background-color: #ffffff !important; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 5px solid #405070;">
-          <h3 style="color: #1e3a8a !important; font-size: 1.5rem; margin-bottom: 15px;">ערב למשכנתא (הישן)</h3>
-          <ul style="list-style: none; padding: 0; color: #305060 !important;">
-            <li style="margin-bottom: 10px; padding-right: 20px; position: relative;">❌ לא נחשב כחלק מההכנסה הקובעת באופן מלא</li>
-            <li style="margin-bottom: 10px; padding-right: 20px; position: relative;">❌ נכנס לתמונה רק במקרה של כשל בפירעון</li>
-            <li style="margin-bottom: 10px; padding-right: 20px; position: relative;">❌ פחות מקובל כיום כפתרון להגדלת סכום האישור</li>
-            <li style="margin-bottom: 10px; padding-right: 20px; position: relative;">❌ הבנקים ממעטים להשתמש בו לצרכי יחס החזר</li>
-          </ul>
-        </article>
-        <article class="card" style="background-color: #ffffff !important; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 5px solid #1e3a8a;">
-          <h3 style="color: #1e3a8a !important; font-size: 1.5rem; margin-bottom: 15px;">לווה תומך (החדש)</h3>
-          <ul style="list-style: none; padding: 0; color: #305060 !important;">
-            <li style="margin-bottom: 10px; padding-right: 20px; position: relative;">✅ הכנסתו נספרת ב-100% לצורך חישוב יחס ההחזר</li>
-            <li style="margin-bottom: 10px; padding-right: 20px; position: relative;">✅ משלם בפועל חלק מהמשכנתא (אפילו סכום סמלי)</li>
-            <li style="margin-bottom: 10px; padding-right: 20px; position: relative;">✅ נחשב כלווה לכל דבר ועניין בתיק</li>
-            <li style="margin-bottom: 10px; padding-right: 20px; position: relative;">✅ הפתרון המועדף לזוגות צעירים עם הון עצמי אך שכר התחלתי</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Deep Dive Content -->
-  <section class="section details-section" id="how-it-works" style="background-color: #ffffff !important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div style="max-width: 900px; margin: 0 auto;">
-        <h2 style="color: #304060 !important; margin-bottom: 25px;">איך זה עובד בפועל?</h2>
-        <p style="color: #305060 !important; line-height: 1.8; margin-bottom: 20px;">
-          בפועל, כאשר אנו בונים תיק <strong>ייעוץ משכנתא לדירה ראשונה</strong> ומשלבים לווה תומך, הבנק דורש שהלווה התומך ישלם חלק מההחזר החודשי מחשבון הבנק שלו. בחלק מהבנקים ניתן להסתפק בתשלום סמלי של כמה מאות שקלים בחודש, בעוד שבבנקים אחרים נדרש תשלום מהותי יותר (למשל, 20% מההחזר).
+      <!-- Article Content -->
+      <article style="color: #304060 !important; line-height: 1.8; font-size: 1.1rem;">
+        <p style="margin-bottom: 20px;">
+          אחד המכשולים הגדולים והכואבים ביותר בדרך לדירה הוא הסירוב לביטוח חיים. עבור רוב הלווים, ביטוח חיים למשכנתא הוא הליך בירוקרטי פשוט – חותמים על הצהרת בריאות, משלמים פרמיה חודשית, והבנק מאשר את התיק. אך עבור אנשים עם רקע רפואי מורכב, מחלימים ממחלות קשות, בעלי BMI גבוה או גיל מבוגר, הסירוב של חברות הביטוח עלול להרגיש כמו סוף החלום לדירה.
         </p>
-        <p style="color: #305060 !important; line-height: 1.8; margin-bottom: 20px;">
-          חשוב להבין: הלווה התומך הוא בעל חוב לכל דבר. המשכנתא תופיע בדו"ח נתוני האשראי שלו, מה שעשוי להשפיע על יכולתו לקחת הלוואות אחרות בעתיד. לכן, לפני שנכנסים למהלך כזה, חובה לבצע תכנון פיננסי משפחתי רחב הכולל את שני הצדדים.
+        
+        <p style="margin-bottom: 30px;">
+          חשוב להבין: <strong>ייעוץ משכנתאות</strong> מקצועי יכול לעשות את ההבדל בין ויתור על העסקה לבין מציאת פתרון יצירתי שמאפשר קבלת מימון. הבנקים דורשים ביטוח חיים כבטוחה לכך שאם חלילה הלווה ילך לעולמו, חברת הביטוח תסלק את יתרת החוב. כאשר אין ביטוח, הבנק נותר חשוף לסיכון. עם זאת, המצב אינו אבוד, וישנם מספר נתיבים שניתן לפעול בהם.
         </p>
 
-        <h3 style="color: #304060 !important; margin-top: 40px; margin-bottom: 20px;">מגבלות וקריטריונים חשובים</h3>
-        <p style="color: #305060 !important; line-height: 1.8; margin-bottom: 20px;">
-          לא כל הורה יכול לשמש כלווה תומך. הבנקים בוחנים מספר פרמטרים:
+        <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">למה חברות הביטוח מסרבות לבטח?</h2>
+        <p style="margin-bottom: 20px;">
+          חברות הביטוח פועלות על בסיס ניהול סיכונים סטטיסטי. כאשר מוגשת בקשה לביטוח חיים, החתם הרפואי של החברה בוחן את התיק הרפואי של המועמד. גורמים כמו מחלות לב, סרטן בעבר (גם אם הייתה החלמה מלאה), סוכרת לא מאוזנת, או אפילו משקל עודף קיצוני, עלולים להוביל לסירוב או לדרישת פרמיה (תוספת תשלום) גבוהה מאוד שהופכת את העסקה ללא כדאית.
         </p>
-        <ul style="color: #305060 !important; line-height: 1.8; margin-bottom: 30px; padding-right: 20px;">
-          <li><strong>גיל הלווה התומך:</strong> הבנקים בדרך כלל דורשים שהלוואה תסתיים עד שהלווה התומך יגיע לגיל 75 או 80. נתון זה עשוי לקצר את תקופת המשכנתא ולהגדיל את ההחזר החודשי, ולכן דורש תכנון תמהיל חכם (למשל, פיצול מסלולים).</li>
-          <li><strong>ביטוח חיים:</strong> גם הלווה התומך נדרש בדרך כלל לביטוח חיים משכנתא, שעלותו עולה משמעותית עם הגיל.</li>
-          <li><strong>מצב פיננסי:</strong> על הלווה התומך להציג הכנסות יציבות ותקינות, ללא היסטוריית אשראי שלילית (BDI שלילי).</li>
+        <p style="margin-bottom: 20px;">
+          הבעיה מחמירה כאשר בנק אחד מסרב לקבל את התיק ללא ביטוח, והלווה מתייאש. חשוב לדעת שחברות ביטוח שונות פועלות לפי מדיניות חיתום שונה. מה שחברה אחת דוחה על הסף, חברה אחרת עשויה לקבל בתוספת מחיר מסוימת. לכן, הצעד הראשון הוא תמיד לבצע סקר שוק נרחב ולא להסתפק בתשובה שלילית אחת.
+        </p>
+
+        <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">הפתרון המוביל: בקשה לפטור מביטוח חיים (ויתור)</h2>
+        <p style="margin-bottom: 20px;">
+          הבנקים למשכנתאות מודעים לבעיה ולעיתים מאפשרים "ויתור ביטוח חיים". זהו הליך חריג שבו הבנק מסכים להעמיד את ההלוואה גם ללא הכיסוי הביטוחי, אך הוא דורש אישור של דרגים גבוהים במערכת הבנקאית ולעיתים קרובות מותנה בתנאים מסוימים.
+        </p>
+        <p style="margin-bottom: 20px;">
+          כדי לקבל אישור לפטור כזה, הבנק יבחן את הפרמטרים הבאים:
+        </p>
+        <ul style="margin-bottom: 20px; padding-right: 20px;">
+          <li style="margin-bottom: 10px;"><strong>אחוז המימון:</strong> ככל שאחוז המימון נמוך יותר (כלומר, הבאתם יותר הון עצמי), הסיכון לבנק יורד והסיכוי לאישור הפטור עולה.</li>
+          <li style="margin-bottom: 10px;"><strong>קיומו של לווה נוסף:</strong> אם יש לווה נוסף בתיק (בן/בת זוג) שהוא צעיר, בריא ומבוטח, הבנק עשוי להסתפק בביטוח שלו בלבד.</li>
+          <li style="margin-bottom: 10px;"><strong>נכסים נוספים:</strong> שעבוד נכס נוסף או הצגת איתנות פיננסית גבוהה יכולים לסייע בשכנוע הבנק.</li>
         </ul>
 
-        <div style="background-color: #f0f4f8 !important; padding: 30px; border-radius: 8px; border-right: 4px solid #1e3a8a; margin-top: 40px;">
-          <h3 style="color: #1e3a8a !important; margin-bottom: 15px;">אסטרטגיית היציאה (Exit Strategy)</h3>
-          <p style="color: #305060 !important; margin-bottom: 0;">
-            אחד היתרונות הגדולים בשימוש בלווה תומך הוא שמדובר בפתרון זמני. התכנון הנכון הוא להשתמש בעזרה זו בשנים הראשונות, כאשר הכנסות הזוג הצעיר עדיין נמוכות. לאחר מספר שנים, כאשר השכר עולה והמשפחה מתבססת כלכלית, ניתן לבצע <strong>מיחזור משכנתא</strong>, להוכיח לבנק שהזוג יכול לעמוד בהחזרים לבדו, ולשחרר את ההורים מההתחייבות. זהו חלק קריטי בייעוץ משכנתאות אסטרטגי.
+        <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">אסטרטגיות נוספות להתמודדות עם סירוב</h2>
+        <p style="margin-bottom: 20px;">
+          במסגרת תהליך <strong>ייעוץ משכנתאות</strong> למסורבי ביטוח, אנו בוחנים מספר פתרונות יצירתיים מעבר לבקשת הפטור הרגילה:
+        </p>
+        
+        <h3 style="color: #304060 !important; font-size: 1.4rem; margin-top: 25px; margin-bottom: 15px;">1. צירוף ערב תומך או לווה נוסף</h3>
+        <p style="margin-bottom: 20px;">
+          אחד הפתרונות היעילים הוא לצרף בן משפחה מדרגה ראשונה (ילד או הורה) כלווה נוסף בתיק. אם הלווה הנוסף הוא בעל הכנסה יציבה וניתן לבטח אותו בביטוח חיים מלא, הבנק עשוי להסכים לוותר על הביטוח של הלווה הבעייתי, שכן יש לו "גב" כלכלי וביטוחי בתיק.
+        </p>
+
+        <h3 style="color: #304060 !important; font-size: 1.4rem; margin-top: 25px; margin-bottom: 15px;">2. קיצור תקופת המשכנתא</h3>
+        <p style="margin-bottom: 20px;">
+          ככל שתקופת ההלוואה ארוכה יותר, כך הסיכון הסטטיסטי לתמותה עולה. לעיתים, קיצור תקופת המשכנתא (למשל ל-10 או 15 שנים במקום 30) יכול להניח את דעתם של החתמים בבנק או בחברת הביטוח ולאפשר את העסקה.
+        </p>
+
+        <h3 style="color: #304060 !important; font-size: 1.4rem; margin-top: 25px; margin-bottom: 15px;">3. ביטוח תאונות אישיות כחלופה</h3>
+        <p style="margin-bottom: 20px;">
+          במקרים מסוימים, כאשר הסירוב נובע ממחלה פעילה, ניתן להציע לבנק פוליסת ביטוח חיים למקרה מוות מתאונה בלבד (ללא כיסוי למחלות). לא כל הבנקים מסכימים לכך, וזה תלוי מאוד במדיניות הסניף והמרחב, אך זהו כיוון ששווה לבדוק.
+        </p>
+
+        <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">חשיבות הליווי המקצועי</h2>
+        <p style="margin-bottom: 20px;">
+          התמודדות מול המערכת הבנקאית במצבי קיצון כאלו דורשת ידע, קשרים והבנה מעמיקה של הרגולציה. יועץ משכנתאות מנוסה יודע לאיזה בנק לגשת, כיצד להציג את התיק הרפואי בצורה שלא "תשרוף" את הלקוח, וכיצד לנהל משא ומתן על תנאי הפטור.
+        </p>
+        <p style="margin-bottom: 20px;">
+          חשוב לזכור: גם אם קיבלתם סירוב בבנק אחד, זה לא סוף הסיפור. הבנקים שונים זה מזה בתיאבון הסיכון שלהם ובגמישות הניהולית. פנייה מוקדמת לייעוץ, עוד לפני החתימה על חוזה הרכישה, היא קריטית במקרים של רקע רפואי מורכב, כדי למנוע עוגמת נפש והפרת חוזה.
+        </p>
+        
+        <div style="background-color: #e0e0e0 !important; padding: 25px; border-radius: 8px; margin-top: 40px;">
+          <h3 style="color: #1e3a8a !important; margin-top: 0; margin-bottom: 15px;">לסיכום</h3>
+          <p style="margin-bottom: 0;">
+            משכנתא למסורבי ביטוח היא אפשרית, אך היא מחייבת תכנון מדויק ועבודה נכונה מול הבנקים. אל תתנו לבירוקרטיה לעצור אתכם – בדקו את האפשרויות, השוו בין חברות הביטוח, ושקלו להיעזר במומחים שיודעים כיצד לפלס את הדרך לאישור המיוחל.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
+      </article>
 
-  <!-- Tips Section -->
-  <section class="section tips-section" id="tips-supporting-borrower" style="background-color: #e0e0e0 !important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #304060 !important; text-align: center; margin-bottom: 40px;">3 כללי זהב למשכנתא עם לווה תומך</h2>
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-        <article class="card" style="background-color: #ffffff !important; padding: 25px; border-radius: 8px;">
-          <div style="width: 50px; height: 50px; background-color: #1e3a8a !important; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px;">1</div>
-          <h4 style="color: #304060 !important; font-size: 1.2rem; margin-bottom: 10px;">בדיקת עלויות ביטוח</h4>
-          <p style="color: #305060 !important; font-size: 0.95rem;">עלות ביטוח החיים להורים מבוגרים יכולה להגיע למאות שקלים בחודש. ודאו שאתם לוקחים זאת בחשבון בתחשיב הכללי או בודקים אפשרות לפטור מביטוח (בכפוף לאישור הבנק).</p>
-        </article>
-        <article class="card" style="background-color: #ffffff !important; padding: 25px; border-radius: 8px;">
-          <div style="width: 50px; height: 50px; background-color: #1e3a8a !important; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px;">2</div>
-          <h4 style="color: #304060 !important; font-size: 1.2rem; margin-bottom: 10px;">תכנון מסלולים חכם</h4>
-          <p style="color: #305060 !important; font-size: 0.95rem;">בגלל מגבלת הגיל של ההורים, חלק מהמסלולים עלולים להיות קצרים ויקרים. יועץ משכנתאות מנוסה ידע לבנות תמהיל המשלב מסלולים ארוכים (על שם הילדים) וקצרים (על שם ההורים) לאיזון ההחזר.</p>
-        </article>
-        <article class="card" style="background-color: #ffffff !important; padding: 25px; border-radius: 8px;">
-          <div style="width: 50px; height: 50px; background-color: #1e3a8a !important; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px;">3</div>
-          <h4 style="color: #304060 !important; font-size: 1.2rem; margin-bottom: 10px;">שקיפות משפחתית</h4>
-          <p style="color: #305060 !important; font-size: 0.95rem;">ודאו שכל הצדדים מבינים את המשמעות. ההורים חותמים על הלוואה אמיתית. מומלץ לערוך הסכם פנימי או הבנה ברורה לגבי מי משלם בפועל את חלקם של ההורים בחשבון השוטף.</p>
-        </article>
+      <!-- Bottom Social Share Bar -->
+      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0 20px 0; border-top: 1px solid #d0d0d0; padding-top: 20px;">
+        <span style="font-weight: 500; color: #304060 !important;">שתף ב:</span>
+        <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA Section -->
-  <section class="section cta-section" id="contact-cta" style="background-color: #1e3a8a !important; padding: 80px 0; text-align: center;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #ffffff !important; margin-bottom: 20px; font-size: 2.2rem;">צריכים עזרה באישור המשכנתא?</h2>
-      <p style="color: #e0e0e0 !important; font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
-        בניית תיק משכנתא עם לווה תומך דורשת מומחיות ודיוק מול המערכת הבנקאית. צוות "משכנתא בפיג'מה" כאן כדי ללוות אתכם ואת הוריכם בדרך לדירה בטוחה ושקטה.
-      </p>
-      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-        <a href="/contact" class="btn" style="background-color: #ffffff; color: #1e3a8a !important; padding: 15px 35px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.2s;">דברו איתנו</a>
-        <a href="/articles/first-apartment-mortgage" class="btn" style="background-color: transparent; border: 2px solid #ffffff; color: #ffffff !important; padding: 15px 35px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: background-color 0.2s;">מדריך למשכנתא ראשונה</a>
+      <!-- Bottom Back Button -->
+      <div>
+        <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #1e3a8a !important; font-weight: 500; font-size: 16px;">
+          <span style="margin-left: 8px;">←</span> חזרה למאמרים
+        </a>
       </div>
+
     </div>
   </section>
 </main>
@@ -854,6 +843,14 @@ img[data-no-hero-position] { position: static !important; }
   
 
   
+
+
+
+
+
+
+
+
 
   
 
@@ -867,15 +864,7 @@ img[data-no-hero-position] { position: static !important; }
 
   
     <!--6-- Legal Footer ---->
-    
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>משכנתא בפיג'מה</title>
-
-
-<footer class="legal-footer">
+    <footer class="legal-footer">
       <div class="container">
         <div class="footer-main">
           <div class="all-rights-reserved">
@@ -884,7 +873,7 @@ img[data-no-hero-position] { position: static !important; }
           <div class="footer-social"><a href="https://facebook.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 <a href="https://instagram.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 <a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819969965-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
+<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819966672-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -906,9 +895,7 @@ img[data-no-hero-position] { position: static !important; }
     </footer>
 
 
-
-
-
+<!--6-- Zappy Attribution Header Script ---->
 <script>
 (function() {
   var websiteId = 'dcdc34dd-3985-48c8-b0f3-d984481f8986';
@@ -1688,6 +1675,120 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
+<script id="zappy-share-script">
+(function() {
+  function getShareUrl() {
+    // Priority 1: Check for deployed site URL meta tag (set by Zappy when site is published)
+    var siteUrl = document.querySelector('meta[name="zappy-site-url"]');
+    if (siteUrl && siteUrl.content) {
+      var basePath = window.location.pathname;
+      var pageParam = new URLSearchParams(window.location.search).get('page');
+      var pagePath = pageParam || basePath;
+      if (pagePath.startsWith('/api/website/preview')) pagePath = '/';
+      return siteUrl.content.replace(/\/$/, '') + pagePath;
+    }
+    var c = document.querySelector('link[rel="canonical"]');
+    if (c && c.href && !c.href.includes('localhost') && !c.href.includes('preview')) return c.href;
+    var m = document.querySelector('meta[property="og:url"]');
+    if (m && m.content && !m.content.includes('localhost') && !m.content.includes('preview')) return m.content;
+    var isPreview = window.location.href.includes('preview') || window.location.href.includes('localhost') || window.location.href.includes('auth_token');
+    if (isPreview) return null;
+    return window.location.origin + window.location.pathname;
+  }
+  function setShareHref(selectors, href, isDisabled) {
+    selectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Share links will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.href = href;
+        }
+      });
+    });
+  }
+  // Normalize share bars to ensure all 5 icons are present
+  function normalizeShareBars() {
+    var shareBars = document.querySelectorAll('.social-share-bar');
+    if (shareBars.length === 0) return;
+    // Define all required share icons with their SVG
+    var shareIcons = {
+      copy: { selectors: ['.share-copy', 'button[title="Copy link"]', 'a[title="Copy link"]'], 
+        html: '<a href="#" class="share-copy" title="Copy link" style="color:#666;display:flex;align-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>' },
+      linkedin: { selectors: ['.share-linkedin', 'a[title="LinkedIn"]'], 
+        html: '<a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color:#0a66c2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>' },
+      twitter: { selectors: ['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+        html: '<a href="#" class="share-twitter" target="_blank" title="X" style="color:#000!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' },
+      facebook: { selectors: ['.share-facebook', 'a[title="Facebook"]'], 
+        html: '<a href="#" class="share-facebook" target="_blank" title="Facebook" style="color:#1877f2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' },
+      whatsapp: { selectors: ['.share-whatsapp', 'a[title="WhatsApp"]'], 
+        html: '<a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color:#25d366!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' }
+    };
+    // Order of icons (right to left for RTL, so we add in this order)
+    var iconOrder = ['copy', 'linkedin', 'twitter', 'facebook', 'whatsapp'];
+    shareBars.forEach(function(bar) {
+      iconOrder.forEach(function(iconKey) {
+        var icon = shareIcons[iconKey];
+        var exists = icon.selectors.some(function(sel) { return bar.querySelector(sel); });
+        if (!exists) {
+          // Find the label span and insert after it
+          var label = bar.querySelector('span');
+          if (label) {
+            label.insertAdjacentHTML('afterend', icon.html);
+          } else {
+            bar.insertAdjacentHTML('afterbegin', icon.html);
+          }
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    // First normalize the share bars to ensure all icons exist
+    normalizeShareBars();
+    var url = getShareUrl();
+    var title = document.title;
+    var isDisabled = !url;
+    if (isDisabled) console.log('[Zappy] Share links disabled in preview mode - will work after publishing');
+    // WhatsApp
+    setShareHref(['.share-whatsapp', 'a[title="WhatsApp"]', 'a[title="whatsapp"]'], 
+      url ? 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url) : '#', isDisabled);
+    // Facebook
+    setShareHref(['.share-facebook', 'a[title="Facebook"]', 'a[title="facebook"]'], 
+      url ? 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) : '#', isDisabled);
+    // Twitter/X
+    setShareHref(['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+      url ? 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title) : '#', isDisabled);
+    // LinkedIn
+    setShareHref(['.share-linkedin', 'a[title="LinkedIn"]', 'a[title="linkedin"]'], 
+      url ? 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) : '#', isDisabled);
+    // Copy link button
+    ['.share-copy', 'button[title="Copy link"]', 'button[title="copy"]', 'a[title="Copy link"]'].forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Copy link will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.onclick = function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(url).then(function() {
+              var orig = el.innerHTML;
+              el.innerHTML = '✓';
+              setTimeout(function() { el.innerHTML = orig; }, 1500);
+            });
+          };
+        }
+      });
+    });
+  });
+})();
+</script><a href="https://wa.me/972542668566" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
     <script id="zappy-mobile-submenu-script">
     (function() {
       function initMobileSubmenuToggles() {
@@ -1809,4 +1910,4 @@ img[data-no-hero-position] { position: static !important; }
     })();
     </script>
     <script src="/script.js"></script>
-</body></html><!--6-- Zappy Attribution Header Script ---->
+</body></html>
