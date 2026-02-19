@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="he" dir="rtl"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ניהול המשכנתא | אריאל אחון</title>
-  <meta name="description" content="המדריך המלא לניהול ומעקב אחר המשכנתא לאחר החתימה. גלו איך בדיקה שנתית, הבנת הדו"חות ושינויים בריבית יכולים לחסוך לכם כסף רב לאורך חיי ההלוואה.">
+  <title>שמאות נמוכה - מתי היא מסכנת את העסקה? | משכנתא בפיג'מה</title>
+  <meta name="description" content="באילו מקרים שמאות מוקדמת או נמוכה יכולה לתקוע עסקת נדל\"ן? כל מה שצריך לדעת על הערכת שמאי, חריגות בנייה ופערים במימון המשכנתא. מדריך חובה לרוכשים.">
   <meta name="keywords" content="ייעוץ משכנתאות, ייעוץ משכנתא לדירה ראשונה, מיחזור משכנתא, ייעוץ פיננסי">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -536,23 +536,33 @@
         left: auto;
         right: 0;
       }
-    </style>
+    </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EY9JJ9BZN4');
+</script>
+<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+  
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="ניהול המשכנתא | אריאל אחון">
-    <meta property="og:description" content="המדריך המלא לניהול ומעקב אחר המשכנתא לאחר החתימה. גלו איך בדיקה שנתית, הבנת הדו&quot;חות ושינויים בריבית יכולים לחסוך לכם כסף רב לאורך חיי ההלוואה.">
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1769711262342-og.jpg">
+    <meta property="og:title" content="שמאות נמוכה - מתי היא מסכנת את העסקה? | משכנתא בפיג'מה">
+    <meta property="og:description" content="באילו מקרים שמאות מוקדמת או נמוכה יכולה לתקוע עסקת נדל\&quot;ן? כל מה שצריך לדעת על הערכת שמאי, חריגות בנייה ופערים במימון המשכנתא. מדריך חובה לרוכשים.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1771515523607-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="ניהול המשכנתא | אריאל אחון">
+    <meta property="og:image:alt" content="שמאות נמוכה - מתי היא מסכנת את העסקה? | משכנתא בפיג'מה">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ניהול המשכנתא | אריאל אחון">
-    <meta name="twitter:description" content="המדריך המלא לניהול ומעקב אחר המשכנתא לאחר החתימה. גלו איך בדיקה שנתית, הבנת הדו&quot;חות ושינויים בריבית יכולים לחסוך לכם כסף רב לאורך חיי ההלוואה.">
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1769711262342-og.jpg">
-    <meta name="twitter:image:alt" content="ניהול המשכנתא | אריאל אחון"><style id="zappy-ai-page-styles">
+    <meta name="twitter:title" content="שמאות נמוכה - מתי היא מסכנת את העסקה? | משכנתא בפיג'מה">
+    <meta name="twitter:description" content="באילו מקרים שמאות מוקדמת או נמוכה יכולה לתקוע עסקת נדל\&quot;ן? כל מה שצריך לדעת על הערכת שמאי, חריגות בנייה ופערים במימון המשכנתא. מדריך חובה לרוכשים.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1771515523607-og.jpg">
+    <meta name="twitter:image:alt" content="שמאות נמוכה - מתי היא מסכנת את העסקה? | משכנתא בפיג'מה"><style id="zappy-ai-page-styles">
 
 
 /* Zappy Base Styles for Edit Mode Compatibility */
@@ -615,8 +625,9 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+/* Hero container fixes - contain absolute images and prevent viewport overflow */
+/* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
+[class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
@@ -632,17 +643,7 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EY9JJ9BZN4');
-</script>
-<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
-  
+</style>
     <style id="mobile-lang-menu-deployed-css">
     @media (max-width: 768px) {
       .lang-switcher,
@@ -712,105 +713,130 @@ img[data-no-hero-position] { position: static !important; }
       </div>
     </div>
   </nav><main class="page-main blog-page ai-generated-page">
-  <!-- Article Section -->
-  <section class="section article-section" id="article-content" style="background-color: #f8f9fa !important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container" style="max-width: 800px; margin: 0 auto;">
+  <section class="section blog-article-section" id="blog-article-content" style="padding: 40px 0; background-color: #ffffff !important;" data-zappy-section="true">
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
       
-      <!-- Top Back Button -->
+      <!-- TOP BACK BUTTON -->
       <div style="margin-bottom: 20px;">
-        <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #304060 !important; font-weight: 500; font-size: 16px; transition: color 0.2s ease;">
+        <a href="/articles" style="text-decoration: none; color: #305060 !important; font-weight: 500; display: inline-flex; align-items: center; transition: color 0.3s;">
           <span style="margin-left: 8px;">←</span> חזרה לבלוג
         </a>
       </div>
 
-      <!-- Top Social Share Bar -->
-      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
-        <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
-        <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
-        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      <!-- TOP SOCIAL SHARE -->
+      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0; flex-wrap: wrap;">
+        <span style="font-weight: 500; color: #304060 !important;">שתף ב:</span>
+        <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
       </div>
 
-      <!-- Hero Image -->
+      <!-- HERO IMAGE -->
       <div class="article-hero-image" style="width: 100%; max-height: 400px; overflow: hidden; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);; position: relative; overflow: hidden;">
-        <img data-placeholder="blog-article-hero" data-context="Hero image for blog article about mortgage management, financial tracking, charts, calculator, calm atmosphere" alt="ניהול משכנתא" data-zappy-editable-image="true" src="/assets/page-blog-article-hero-1769711262342.webp" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 21/9;" class="generated-image" data-og-image="/assets/page-blog-article-hero-1769711262342-og.jpg">
+        <img data-placeholder="blog-article-hero" data-context="Hero image for blog article about real estate appraisal problems, close up of architectural plans and calculator" data-zappy-editable-image="true" alt="שמאות מקרקעין" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 16/9;" src="/assets/page-blog-article-hero-1771515523607.webp" class="generated-image" data-og-image="/assets/page-blog-article-hero-1771515523607-og.jpg">
       </div>
 
-      <!-- Article Header -->
-      <header style="margin-bottom: 40px;">
-        <h1 style="color: #304060 !important; font-size: 2.5rem; line-height: 1.2; margin-bottom: 15px; font-weight: 700;">ניהול ומעקב אחר המשכנתא: המדריך ליום שאחרי החתימה</h1>
-        <div style="color: #305060 !important; font-size: 0.95rem; display: flex; gap: 15px; align-items: center;">
-          <span>📅 24 באוקטובר 2023</span>
-          <span>⏱️ זמן קריאה: 6 דקות</span>
-        </div>
-      </header>
+      <!-- ARTICLE HEADER -->
+      <h1 style="font-size: 2.5rem; color: #304060 !important; margin-bottom: 15px; line-height: 1.2;">באילו מקרים שמאות יכולה לתקוע עסקת נדל"ן?</h1>
+      
+      <div class="article-meta" style="display: flex; gap: 20px; color: #305060 !important; font-size: 0.95rem; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+        <span>📅 עודכן לאחרונה: אוקטובר 2023</span>
+        <span>⏱️ זמן קריאה: 6 דקות</span>
+      </div>
 
-      <!-- Article Content -->
-      <article style="color: #304060 !important; line-height: 1.8; font-size: 1.1rem;">
-        <p style="margin-bottom: 24px;">
-          מזל טוב! חתמתם על המשכנתא, קיבלתם את המפתח, והתחלתם לשלם את ההחזר החודשי. עבור רוב האנשים, זהו הרגע שבו הם נושמים לרווחה ומפסיקים לחשוב על המשכנתא. אך האמת היא שקבלת המשכנתא היא רק תחילתה של מערכת יחסים פיננסית ארוכת טווח שתימשך 20 או אפילו 30 שנה. ניהול נכון של תיק המשכנתא לאורך השנים הוא קריטי לא פחות משלב הייעוץ והחתימה הראשוני.
+      <!-- ARTICLE CONTENT -->
+      <div class="article-content" style="font-size: 1.1rem; line-height: 1.8; color: #304060 !important;">
+        <p style="margin-bottom: 25px;">
+          רכישת דירה היא כנראה העסקה הגדולה ביותר שתעשו בחייכם. מצאתם את דירת החלומות, חתמתם על חוזה, לחצתם ידיים עם המוכר, ואתם בטוחים שהדרך לבית החדש סלולה. אבל אז מגיע שלב קריטי שרבים נוטים להמעיט בערכו עד שהוא הופך לבעיה: <strong>הערכת השמאי (שמאות)</strong>.
         </p>
         
-        <p style="margin-bottom: 32px;">
-          משכנתא היא מוצר חי ודינמי. הריביות במשק משתנות, מדד המחירים לצרכן עולה (או יורד), והצרכים המשפחתיים שלכם מתפתחים. התעלמות מהמשכנתא לאחר החתימה עלולה לעלות לכם עשרות אלפי שקלים בתשלומי ריבית מיותרים. במדריך זה נסביר כיצד לנהל את המשכנתא בחוכמה, מתי כדאי לבדוק אותה, ואיך להבטיח שאתם תמיד נמצאים במסלול המשתלם ביותר.
+        <p style="margin-bottom: 25px;">
+          רבים חושבים שהשמאי הוא רק "חותמת גומי" של הבנק, אך למעשה, הערכת שמאי נמוכה או בעייתית יכולה לשנות את כל התמונה הפיננסית, לחייב אתכם להביא עשרות או מאות אלפי שקלים נוספים מהבית, ובמקרים קיצוניים אף להוביל לביטול העסקה ולהפרת חוזה.
+        </p>
+        
+        <p style="margin-bottom: 35px;">
+          במאמר זה נסקור את המוקשים העיקריים בשמאות מקרקעין, נבין מדוע <strong>ייעוץ משכנתאות</strong> מקצועי חייב לכלול התייחסות לנושא השמאות עוד לפני החתימה, ואיך ניתן להימנע ממצבים לא נעימים.
         </p>
 
-        <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px; font-weight: 600;">למה חשוב לעקוב אחרי המשכנתא?</h2>
-        <p style="margin-bottom: 24px;">
-          רבים סבורים שמשכנתא היא "שגר ושכח" – הבנק גובה את הכסף, ואנחנו משלמים. זוהי טעות נפוצה. הסביבה הכלכלית בישראל משתנה תדיר. מסלולים שהיו אטרקטיביים לפני שנתיים עשויים להיות יקרים היום, ולהפך. לדוגמה, שינויים בריבית בנק ישראל משפיעים ישירות על מסלול הפריים, בעוד ששינויים בציפיות האינפלציה משפיעים על מסלולים צמודי מדד.
+        <h2 style="font-size: 1.8rem; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">1. שמאות נמוכה ממחיר החוזה</h2>
+        <p style="margin-bottom: 20px;">
+          הבנק למשכנתאות מעניק מימון (אחוזי מימון) לפי השווי הנמוך מבין השניים: מחיר החוזה (כמה שסיכמתם לשלם) או הערכת השמאי. אם השמאי מעריך את הדירה בפחות ממה שסיכמתם, הבנק יגזור את אחוז המימון מהסכום הנמוך יותר.
         </p>
-        <p style="margin-bottom: 24px;">
-          מעבר לשינויים החיצוניים, גם החיים שלכם משתנים. ייתכן שההכנסה שלכם גדלה, שנפתח קרן השתלמות, או שקיבלתם סכום כסף בירושה. כל אחד מהאירועים הללו הוא הזדמנות לבחון מחדש את תנאי ההלוואה. <strong style="color: #1e3a8a !important;">ייעוץ משכנתאות</strong> איכותי לא מסתיים בחתימה, אלא כולל ראייה אסטרטגית לטווח הארוך.
+        <p style="margin-bottom: 20px;">
+          <strong>דוגמה מספרית:</strong>
+          נניח שרכשתם דירה ב-2 מיליון ₪ כרוכשי דירה ראשונה, ובניתם על 75% מימון (משכנתא של 1.5 מיליון ₪). אם השמאי יעריך את הדירה ב-1.8 מיליון ₪ בלבד, הבנק ייתן לכם 75% מתוך 1.8 מיליון – כלומר 1.35 מיליון ₪.
         </p>
-
-        <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px; font-weight: 600;">הדו"ח השנתי: המצפן שלכם</h2>
-        <p style="margin-bottom: 24px;">
-          אחת לשנה, הבנק שולח אליכם דו"ח יתרת משכנתא מפורט. רוב האנשים מתייקים אותו (או זורקים אותו) מבלי להביט בו, וחבל. הדו"ח הזה הוא כלי הניהול החשוב ביותר שלכם. הוא מפרט בדיוק כמה קרן נותרה לתשלום, מהו גובה הריבית בכל מסלול, מהי עמלת הפירעון המוקדם (אם קיימת), וכיצד השתנה ההחזר החודשי.
-        </p>
-        <p style="margin-bottom: 24px;">
-          שימו לב במיוחד לשורת "עמלת פירעון מוקדם" (קנס יציאה). אם הסכום שם גבוה, זה סימן שהריבית שאתם משלמים נמוכה מהריבית הממוצעת בשוק כרגע, וזה טוב. אם הסכום הוא אפס או נמוך מאוד, ייתכן שהריבית שלכם גבוהה מהשוק, וזהו תמרור אזהרה שכדאי לבדוק אפשרות למיחזור.
+        <p style="margin-bottom: 25px;">
+          המשמעות: נוצר לכם "חור" של 150,000 ₪ שתצטרכו להביא מההון העצמי. אם אין לכם את הכסף הזה, אתם בבעיה רצינית שעלולה להוביל להפרת חוזה.
         </p>
 
-        <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px; font-weight: 600;">זיהוי נקודות יציאה ומיחזור משכנתא</h2>
-        <p style="margin-bottom: 24px;">
-          מיחזור משכנתא הוא תהליך של סילוק המשכנתא הישנה ולקיחת משכנתא חדשה בתנאים טובים יותר. זהו הכלי המרכזי בניהול התיק. מתי כדאי לשקול זאת?
+        <h2 style="font-size: 1.8rem; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">2. חריגות בנייה ושימושים לא חוקיים</h2>
+        <p style="margin-bottom: 20px;">
+          אחד המכשולים הנפוצים ביותר הוא חריגות בנייה. השמאי מחויב לדווח לבנק על כל בנייה שנעשתה ללא היתר או בניגוד להיתר קיים. זה כולל סגירת מרפסות, פרגולות לא מאושרות, הסבת מחסנים למגורים, ועוד.
         </p>
-        <ul style="margin-bottom: 24px; padding-right: 20px; list-style-type: disc;">
-          <li style="margin-bottom: 10px;">כאשר הריביות בשוק ירדו משמעותית ביחס לריביות במשכנתא שלכם.</li>
-          <li style="margin-bottom: 10px;">כאשר ההחזר החודשי מכביד עליכם ואתם רוצים לפרוס את ההלוואה מחדש.</li>
-          <li style="margin-bottom: 10px;">כאשר יש לכם יכולת החזר גבוהה יותר ואתם רוצים לקצר את התקופה (ובכך לחסוך המון ריבית).</li>
-          <li style="margin-bottom: 10px;">כאשר מסלול מסוים (כמו צמוד מדד) הפך ללא משתלם עקב אינפלציה גבוהה.</li>
+        <p style="margin-bottom: 20px;">
+          במקרים קלים, השמאי יפחית מערך הדירה את עלות ההריסה או ההסדרה של החריגה ("הפחתה בגין עלויות התאמה"). במקרים חמורים יותר, כמו פיצול דירה ללא היתר, הבנק עלול לסרב לתת משכנתא על הנכס לחלוטין עד להחזרת המצב לקדמותו.
+        </p>
+        <p style="margin-bottom: 25px;">
+          במסגרת <strong>ייעוץ משכנתא למשפרי דיור</strong> או משקיעים, אנו נתקלים לא פעם בדירות מחולקות שנמכרות כ"מציאה", אך מבחינת הבנק מדובר בסיכון משפטי שהם לא מוכנים לקחת.
+        </p>
+
+        <h2 style="font-size: 1.8rem; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">3. בעיות ברישום (נסח טאבו)</h2>
+        <p style="margin-bottom: 20px;">
+          השמאי בודק לא רק את הדירה הפיזית אלא גם את המצב המשפטי שלה. אי-התאמות בין התשריט (השרטוט ההנדסי) לבין המצב בשטח, או בעיות בזהות הבעלים בנסח הטאבו, עלולות לעכב את העסקה.
+        </p>
+        <p style="margin-bottom: 25px;">
+          למשל, אם המוכר בנה תוספת חדר על הגג והיא לא מופיעה בתשריט הבית המשותף, השמאי לא יוכל להתייחס לשטח הזה כחלק מהדירה למגורים, מה שיוריד משמעותית את השווי המוערך.
+        </p>
+
+        <h2 style="font-size: 1.8rem; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">4. מצב תחזוקתי ירוד (מבנה מסוכן)</h2>
+        <p style="margin-bottom: 20px;">
+          בנקים נזהרים מאוד מנכסים המוגדרים כ"מבנה מסוכן". אם השמאי מזהה סדקים משמעותיים בעמודים, התפוררות בטון או צו של העירייה המגדיר את המבנה כמסוכן, הבנק עשוי לדרוש תיקון הליקויים כתנאי לקבלת הכסף, או לסרב לממן את הנכס.
+        </p>
+        <p style="margin-bottom: 25px;">
+          זהו תרחיש נפוץ בבניינים ישנים מאוד שטרם עברו תהליך של התחדשות עירונית. במקרים כאלו, <strong>מיחזור משכנתא ושיפור תנאים</strong> עבור דיירים קיימים עשוי להיות מורכב יותר.
+        </p>
+
+        <h2 style="font-size: 1.8rem; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">הפתרון: שמאות מוקדמת</h2>
+        <p style="margin-bottom: 20px;">
+          איך נמנעים מכל הצרות האלו? הפתרון הטוב ביותר, במיוחד בעסקאות גבוליות או בנכסים מיוחדים (דירות גן, גג, בתים פרטיים), הוא לבצע <strong>שמאות מוקדמת</strong>.
+        </p>
+        <p style="margin-bottom: 20px;">
+          הזמנת שמאי מתוך רשימת השמאים של הבנק אליו אתם מתכננים לפנות, *לפני* החתימה על החוזה, תעלה לכם כמה אלפי שקלים, אך יכולה לחסוך לכם עוגמת נפש עצומה והפסד כספי של מאות אלפים.
+        </p>
+        <ul style="margin-bottom: 25px; padding-right: 20px;">
+          <li style="margin-bottom: 10px;">השמאי ייתן לכם את השווי הריאלי בעיני הבנק.</li>
+          <li style="margin-bottom: 10px;">תדעו מראש על חריגות בנייה ועלויות הסדרה.</li>
+          <li style="margin-bottom: 10px;">תוכלו לנהל משא ומתן יעיל יותר מול המוכר על המחיר.</li>
         </ul>
-        <p style="margin-bottom: 24px;">
-          עבור זוגות צעירים שנעזרו בשירותי <strong style="color: #1e3a8a !important;">ייעוץ משכנתא לדירה ראשונה</strong>, השנים הראשונות הן קריטיות. לעיתים נלקחים מסלולים "זמניים" כדי להקל על ההתחלה, מתוך כוונה למחזר אותם כשההכנסות יעלו. חשוב לא לשכוח את התוכנית הזו ולבצע את השינוי בזמן.
-        </p>
 
-        <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px; font-weight: 600;">ביטוח משכנתא: עדכון וחיסכון</h2>
-        <p style="margin-bottom: 24px;">
-          עלות המשכנתא כוללת גם את הביטוחים הנלווים – ביטוח חיים וביטוח מבנה. הפרמיה של ביטוח החיים עולה עם הגיל, אך יתרת החוב יורדת. לעיתים קרובות, חברות הביטוח לא מעדכנות את התעריפים בצורה אופטימלית לטובת המבוטח. אחת לכמה שנים, מומלץ לבצע סקר שוק ולבדוק האם ניתן להוזיל את הביטוחים. חיסכון של 50 ש"ח בחודש מצטבר ל-12,000 ש"ח לאורך 20 שנה.
+        <h2 style="font-size: 1.8rem; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">סיכום: אל תסמכו על המזל</h2>
+        <p style="margin-bottom: 20px;">
+          עסקת נדל"ן מורכבת מהרבה משתנים, והשמאות היא אחד החשובים שבהם. כשאתם פונים לקבלת <strong>ייעוץ משכנתא לדירה ראשונה</strong> או לכל מטרה אחרת, ודאו שהיועץ שלכם מתייחס גם להיבט השמאי.
         </p>
-
-        <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px; font-weight: 600;">סיכום: היו אקטיביים</h2>
-        <p style="margin-bottom: 24px;">
-          המשכנתא היא ככל הנראה החוב הגדול ביותר שתנהלו בחייכם. אל תתנו לה להתנהל מעצמה. קבעו לעצמכם "תאריך משכנתא" אחת לשנה ביומן, שבו תעברו על הדו"חות, תבדקו את הריביות, ותשקלו צעדים לשיפור. אם אינכם בטוחים כיצד לנתח את הנתונים, פנייה ליועץ משכנתאות לבדיקת תיק קיימת יכולה להיות השקעה משתלמת ביותר שתחזיר את עצמה בחיסכון משמעותי.
+        <p style="margin-bottom: 20px;">
+          יועץ משכנתאות מנוסה יידע לזהות "נורות אדומות" בנכס עוד לפני השלב המשפטי, ימליץ מתי כדאי להזמין שמאות מוקדמת, ויכין לכם תוכנית מגירה פיננסית למקרה שהשמאות תהיה נמוכה מהצפוי.
         </p>
-      </article>
-
-      <!-- Bottom Social Share Bar -->
-      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0 20px;">
-        <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
-        <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
-        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <p style="font-weight: bold; color: #1e3a8a !important; margin-top: 30px;">
+          מתכננים רכישת דירה? אל תיקחו סיכונים מיותרים. פנו אלינו לייעוץ משכנתאות מקצועי שיעניק לכם שקט נפשי וביטחון בעסקה.
+        </p>
       </div>
 
-      <!-- Bottom Back Button -->
+      <!-- BOTTOM SOCIAL SHARE -->
+      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee; flex-wrap: wrap;">
+        <span style="font-weight: 500; color: #304060 !important;">שתף ב:</span>
+        <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center; padding: 8px; background: #f0f4f8; border-radius: 50%; transition: all 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+
+      <!-- BOTTOM BACK BUTTON -->
       <div style="margin-top: 20px;">
-        <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #304060 !important; font-weight: 500; font-size: 16px; transition: color 0.2s ease;">
+        <a href="/articles" style="text-decoration: none; color: #305060 !important; font-weight: 500; display: inline-flex; align-items: center; transition: color 0.3s;">
           <span style="margin-left: 8px;">←</span> חזרה לבלוג
         </a>
       </div>
@@ -827,6 +853,14 @@ img[data-no-hero-position] { position: static !important; }
 
   
 
+
+
+
+
+
+
+
+
   
 
   
@@ -839,15 +873,7 @@ img[data-no-hero-position] { position: static !important; }
 
   
     <!--6-- Legal Footer ---->
-    
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>משכנתא בפיג'מה</title>
-
-
-<footer class="legal-footer">
+    <footer class="legal-footer">
       <div class="container">
         <div class="footer-main">
           <div class="all-rights-reserved">
@@ -856,7 +882,7 @@ img[data-no-hero-position] { position: static !important; }
           <div class="footer-social"><a href="https://facebook.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 <a href="https://instagram.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 <a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819970587-y9t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
+<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819966672-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -878,9 +904,7 @@ img[data-no-hero-position] { position: static !important; }
     </footer>
 
 
-
-
-
+<!--6-- Zappy Attribution Header Script ---->
 <script>
 (function() {
   var websiteId = 'dcdc34dd-3985-48c8-b0f3-d984481f8986';
@@ -1638,6 +1662,28 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script id="zappy-share-script">
 (function() {
   function getShareUrl() {
@@ -1748,28 +1794,9 @@ img[data-no-hero-position] { position: static !important; }
     });
   });
 })();
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</script><a href="https://wa.me/972542668566" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
     <script id="zappy-mobile-submenu-script">
     (function() {
@@ -1892,4 +1919,4 @@ img[data-no-hero-position] { position: static !important; }
     })();
     </script>
     <script src="/script.js"></script>
-</body></html><!--6-- Zappy Attribution Header Script ---->
+</body></html>
