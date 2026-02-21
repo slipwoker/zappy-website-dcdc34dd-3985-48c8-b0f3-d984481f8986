@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="he" dir="rtl"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>משכנתא לגיל השלישי - פתרונות מימון וייעוץ למבוגרים | אריאל אחון</title>
-  <meta name="description" content="האם ניתן לקחת משכנתא רגילה בגיל השלישי? כל מה שצריך לדעת על משכנתא למבוגרים, ההבדל בינה לבין משכנתא הפוכה, וכיצד ייעוץ משכנתאות מקצועי יכול לעזור לכם להגשים חלום גם אחרי גיל 60.">
+  <title>זכייה וחששות</title>
+  <meta name="description" content="זכיתם בדירה בהנחה או מחיר למשתכן והפחד משתלט? המדריך המלא להתמודדות עם החששות, התכנון הפיננסי וחשיבות ייעוץ משכנתאות בדרך לדירה.">
   <meta name="keywords" content="ייעוץ משכנתאות, ייעוץ משכנתא לדירה ראשונה, מיחזור משכנתא, ייעוץ פיננסי">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -536,24 +536,33 @@
         left: auto;
         right: 0;
       }
-    </style>
+    </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EY9JJ9BZN4');
+</script>
+<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+  
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:url" content="https://mashkanta-bepijama.co.il/articles/senior-mortgage">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="משכנתא לגיל השלישי - פתרונות מימון וייעוץ למבוגרים | אריאל אחון">
-    <meta property="og:description" content="האם ניתן לקחת משכנתא רגילה בגיל השלישי? כל מה שצריך לדעת על משכנתא למבוגרים, ההבדל בינה לבין משכנתא הפוכה, וכיצד ייעוץ משכנתאות מקצועי יכול לעזור לכם להגשים חלום גם אחרי גיל 60.">
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-senior-couple-home-1769250611158-og.jpg">
+    <meta property="og:title" content="זכייה וחששות">
+    <meta property="og:description" content="זכיתם בדירה בהנחה או מחיר למשתכן והפחד משתלט? המדריך המלא להתמודדות עם החששות, התכנון הפיננסי וחשיבות ייעוץ משכנתאות בדרך לדירה.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1771655371732-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="משכנתא לגיל השלישי - פתרונות מימון וייעוץ למבוגרים | אריאל אחון">
+    <meta property="og:image:alt" content="זכייה וחששות">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="משכנתא לגיל השלישי - פתרונות מימון וייעוץ למבוגרים | אריאל אחון">
-    <meta name="twitter:description" content="האם ניתן לקחת משכנתא רגילה בגיל השלישי? כל מה שצריך לדעת על משכנתא למבוגרים, ההבדל בינה לבין משכנתא הפוכה, וכיצד ייעוץ משכנתאות מקצועי יכול לעזור לכם להגשים חלום גם אחרי גיל 60.">
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-senior-couple-home-1769250611158-og.jpg">
-    <meta name="twitter:image:alt" content="משכנתא לגיל השלישי - פתרונות מימון וייעוץ למבוגרים | אריאל אחון"><style id="zappy-ai-page-styles">
+    <meta name="twitter:title" content="זכייה וחששות">
+    <meta name="twitter:description" content="זכיתם בדירה בהנחה או מחיר למשתכן והפחד משתלט? המדריך המלא להתמודדות עם החששות, התכנון הפיננסי וחשיבות ייעוץ משכנתאות בדרך לדירה.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1771655371732-og.jpg">
+    <meta name="twitter:image:alt" content="זכייה וחששות"><style id="zappy-ai-page-styles">
 
 
 /* Zappy Base Styles for Edit Mode Compatibility */
@@ -616,8 +625,9 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+/* Hero container fixes - contain absolute images and prevent viewport overflow */
+/* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
+[class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
@@ -633,17 +643,7 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EY9JJ9BZN4');
-</script>
-<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
-  
+</style>
     <style id="mobile-lang-menu-deployed-css">
     @media (max-width: 768px) {
       .lang-switcher,
@@ -687,16 +687,16 @@ img[data-no-hero-position] { position: static !important; }
       
       <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט" data-element-type="button" data-element-id="btn-1770967430896-miyxbfglb" data-native-element="true">
         <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
         <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
       </button>
       
       <button class="phone-header-btn" aria-label="התקשר אלינו" data-element-type="button" data-element-id="btn-1770967430896-uhwetvz99" data-native-element="true">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
       </button>
       
@@ -712,127 +712,115 @@ img[data-no-hero-position] { position: static !important; }
         </li>
       </div>
     </div>
-  </nav><main class="page-main blog-page ai-generated-page">
-  <!--6-- Hero Section ---->
-  <section class="section hero-section" id="senior-mortgage-hero" style="background-color: #f8f9fa !6important; padding: 60px 0;; position: relative; overflow: hidden;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
-        <div class="hero-content" style="position: relative; overflow: hidden;">
-          <h1 style="color: #304060 !6important; font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2;">משכנתא לגיל השלישי: אפשרויות מימון שחשוב להכיר</h1>
-          <p style="color: #305060 !6important; font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px;">
-            רבים מניחים בטעות כי דלתות הבנק נסגרות בפני לווים שעברו את גיל 60. המציאות מורכבת יותר – עם התכנון הנכון וליווי מקצועי של <strong>ייעוץ משכנתאות</strong>, גם בגיל השלישי ניתן לקבל משכנתא בתנאים מצוינים, בין אם לשיפור דיור, עזרה לילדים או מיחזור הלוואות קיימות.
-          </p>
-          <a href="/contact" class="btn" style="display: inline-block; background-color: #1e3a8a; color: #ffffff !6important; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background-color 0.3s;">תיאום פגישת ייעוץ</a>
-        </div>
-        <div class="hero-image" style="position: relative; overflow: hidden;">
-          <img data-placeholder="senior-couple-home" data-context="Happy senior couple sitting in their living room looking at financial documents with a smile, warm lighting, high quality" data-zappy-editable-image="true" src="/assets/page-senior-couple-home-1769250611158.webp" alt="זוג בגיל השלישי בוחן מסמכים בנחת" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);" class="generated-image">
-        </div>
-      </div>
+  </nav><main class="page-main blog-page ai-generated-page"><section class="section page-content-section" id="zappy-section-0" data-zappy-section="true"><div class="container">
+
+  <!-- Article Container -->
+  <article style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Top Back Button -->
+    <div style="margin-bottom: 20px;">
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #1e3a8a !important; font-weight: 500; transition: opacity 0.2s;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        חזרה לבלוג
+      </a>
     </div>
-  </section>
 
-  <!--6-- Introduction & Challenges Section ---->
-  <section class="section" id="senior-challenges" style="background-color: #ffffff !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="content-wrapper" style="max-width: 800px; margin: 0 auto;">
-        <h2 style="color: #1e3a8a !6important; font-size: 2rem; margin-bottom: 25px;">האם באמת אפשר לקחת משכנתא אחרי גיל 60?</h2>
-        <p style="color: #304060 !6important; margin-bottom: 20px; line-height: 1.8; font-size: 1.1rem;">
-          העלייה בתוחלת החיים והשינויים בשוק העבודה הביאו לכך שהבנקים פתוחים יותר מבעבר למתן אשראי גם לאוכלוסייה מבוגרת. עם זאת, אישור משכנתא בגיל השלישי הוא תהליך המציב אתגרים ייחודיים הדורשים היערכות שונה מאשר משכנתא לזוג צעיר.
-        </p>
-        <p style="color: #304060 !6important; margin-bottom: 20px; line-height: 1.8; font-size: 1.1rem;">
-          האתגר המרכזי הוא <strong>ביטוח החיים</strong>. עלות הביטוח עולה דרמטית עם הגיל, ולעיתים קרובות חברות הביטוח מסרבות לבטח לווים מעל גיל מסוים או עם היסטוריה רפואית מורכבת. ללא ביטוח חיים, הבנקים לרוב מסרבים לתת משכנתא. כאן בדיוק נכנס לתמונה הערך של <strong>ייעוץ משכנתאות</strong> מקצועי, היודע לנווט בין הנהלים השונים של הבנקים ולמצוא פתרונות יצירתיים כמו החרגות ביטוח או צירוף ערבים צעירים.
-        </p>
-      </div>
+    <!-- Top Social Share -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
+      <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+      <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
     </div>
-  </section>
 
-  <!--6-- Regular vs Reverse Mortgage Section ---->
-  <section class="section" id="mortgage-types-comparison" style="background-color: #e0e0e0 !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #1e3a8a !6important; text-align: center; margin-bottom: 40px; font-size: 2rem;">משכנתא רגילה מול משכנתא הפוכה: מה ההבדל?</h2>
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        <!--6-- Card 1 ---->
-        <article class="card" style="background-color: #ffffff !6important; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 5px solid #1e3a8a;">
-          <h3 style="color: #304060 !6important; margin-bottom: 15px; font-size: 1.5rem;">משכנתא רגילה לגיל השלישי</h3>
-          <p style="color: #305060 !6important; line-height: 1.7; margin-bottom: 15px;">
-            זוהי הלוואה סטנדרטית המחייבת החזר חודשי שוטף. היא מתאימה למי שיש לו הכנסה פנויה (פנסיה, קצבאות או שכר דירה) המאפשרת עמידה בתשלומים.
-          </p>
-          <ul style="color: #305060 !6important; padding-right: 20px; line-height: 1.8;">
-            <li>מחייבת ביטוח חיים (או פטור מיוחד)</li>
-            <li>החוב הולך וקטן עם הזמן</li>
-            <li>מתאימה למי שעובר לדירה קטנה יותר ("משפרי דיור")</li>
-            <li>ריביות בדרך כלל נמוכות יותר ממשכנתא הפוכה</li>
-          </ul>
-        </article>
-
-        <!--6-- Card 2 ---->
-        <article class="card" style="background-color: #ffffff !6important; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 5px solid #405070;">
-          <h3 style="color: #304060 !6important; margin-bottom: 15px; font-size: 1.5rem;">משכנתא הפוכה</h3>
-          <p style="color: #305060 !6important; line-height: 1.7; margin-bottom: 15px;">
-            הלוואה כנגד נכס קיים ללא החזר חודשי (הריבית נצברת לקרן). מתאימה למי שרוצה להשתמש בכספי הבית למחייה או עזרה לילדים.
-          </p>
-          <ul style="color: #305060 !6important; padding-right: 20px; line-height: 1.8;">
-            <li>אין צורך בביטוח חיים</li>
-            <li>אין צורך בהוכחת הכנסה חודשית</li>
-            <li>החוב הולך וגדל עם הזמן</li>
-            <li>פירעון ההלוואה מתבצע לרוב במכירת הנכס או פטירה</li>
-          </ul>
-        </article>
-      </div>
+    <!-- Hero Image -->
+    <div class="article-hero-image" style="width: 100%; max-height: 400px; overflow: hidden; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);; position: relative; overflow: hidden;">
+      <img data-placeholder="blog-article-hero" data-context="Hero image for blog article about winning a lottery apartment, showing a young couple looking at architectural plans with a mix of excitement and concern" data-zappy-editable-image="true" alt="זוג צעיר מתכנן רכישת דירה" style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover;" src="/assets/page-blog-article-hero-1771655371732.webp" class="generated-image" data-og-image="/assets/page-blog-article-hero-1771655371732-og.jpg">
     </div>
-  </section>
 
-  <!--6-- Solutions & Strategies Section ---->
-  <section class="section" id="senior-solutions" style="background-color: #ffffff !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
-        <div class="solutions-image">
-          <img data-placeholder="consultation-meeting" data-context="Professional mortgage consultant explaining options to an older couple in a modern office, close up on hands and charts" data-zappy-editable-image="true" src="/assets/page-consultation-meeting-1769250607948.webp" alt="ייעוץ משכנתא למשפרי דיור בגיל השלישי" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px;" data-no-hero-position="true" class="generated-image">
-        </div>
-        <div class="solutions-content">
-          <h2 style="color: #1e3a8a !6important; margin-bottom: 20px; font-size: 1.8rem;">פתרונות יצירתיים למשפרי דיור בגיל השלישי</h2>
-          <p style="color: #304060 !6important; margin-bottom: 20px; line-height: 1.8;">
-            רבים מבני הגיל השלישי הם למעשה <strong>משפרי דיור</strong> – מוכרים את הבית הגדול והריק ועוברים לדירה קטנה וחדשה יותר, או לדיור מוגן. במקרים אלו, לעיתים נדרשת "משכנתא גישור" עד למכירת הנכס הישן, או משכנתא קטנה להשלמת ההון העצמי.
-          </p>
-          <p style="color: #304060 !6important; margin-bottom: 20px; line-height: 1.8;">
-            במסגרת תהליך <strong>ייעוץ משכנתא למשפרי דיור</strong> בגיל מבוגר, אנו בוחנים מספר אסטרטגיות:
-          </p>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #1e3a8a !6important; font-weight: bold;">✓</span>
-              <strong>קיצור תקופת המשכנתא:</strong> פריסה לפחות שנים (עד גיל 75 או 80) כדי להוזיל את הריבית הכוללת.
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #1e3a8a !6important; font-weight: bold;">✓</span>
-              <strong>צירוף ערב תומך:</strong> הכנסת אחד הילדים כלווה נוסף (ערב משלם) לחיזוק התיק והוזלת עלויות הביטוח.
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #1e3a8a !6important; font-weight: bold;">✓</span>
-              <strong>מיחזור משכנתא ושיפור תנאים:</strong> אם קיימת משכנתא ישנה, ניתן למחזר אותה כדי להתאים את ההחזר החודשי להכנסות הפנסיה.
-            </li>
-          </ul>
-        </div>
+    <!-- Article Header -->
+    <header style="margin-bottom: 30px;">
+      <h1 style="font-size: 2.5rem; font-weight: 800; color: #304060 !important; margin-bottom: 15px; line-height: 1.2;">זכיתי בפרויקט מחיר למשתכן / דירה בהנחה - ועכשיו אני מפחד יותר מאי פעם</h1>
+      <div style="color: #305060 !important; font-size: 0.9rem; display: flex; gap: 15px; align-items: center;">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-left: 4px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 24 באוקטובר 2023</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-left: 4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 5 דקות קריאה</span>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!--6-- Why Consult Section ---->
-  <section class="section" id="why-consult" style="background-color: #f8f9fa !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
-      <h2 style="color: #1e3a8a !6important; margin-bottom: 30px; font-size: 2rem;">למה חשוב לקחת ייעוץ משכנתאות בגיל השלישי?</h2>
-      <p style="color: #304060 !6important; margin-bottom: 40px; line-height: 1.8; font-size: 1.1rem;">
-        הבנקים מעריכים סיכונים בצורה שמרנית מאוד כשמדובר בלווים מבוגרים. טעות קטנה בהגשת הבקשה, חוסר הבנה בדרישות הביטוח או בחירה במסלול לא נכון עלולים להוביל לסירוב גורף או לריביות גבוהות במיוחד.
-        <br><br>
-        תהליך של <strong>ייעוץ משכנתאות</strong> מקצועי מאפשר לכם להגיע לבנק מוכנים. אנו באריאל אחון יודעים בדיוק אילו מסמכים רפואיים להכין, כיצד להציג את ההכנסות הפנסיוניות בצורה המיטבית, ואיך לבנות תמהיל משכנתא שיהיה בטוח ויציב עבורכם לשנים קדימה. המטרה שלנו היא להעניק לכם שקט נפשי וביטחון כלכלי בביתכם.
+    <!-- Content Body -->
+    <div style="font-size: 1.1rem; line-height: 1.7; color: #304060 !important;">
+      <p style="margin-bottom: 24px;">
+        הודעת ה-SMS המיוחלת הגיעה. "ברכותינו, זכית בהגרלה!". באותו רגע, הלב מחסיר פעימה והידיים רועדות מהתרגשות. אתם רצים לספר לבן או בת הזוג, מתקשרים להורים, שולחים הודעות בקבוצת הוואטסאפ המשפחתית. כולם מוחאים כפיים, כולם אומרים לכם "איזה מזל! חסכתם מאות אלפי שקלים! הסתדרתם בחיים". זו תחושת אופוריה ממכרת, רגע של ניצחון במציאות הנדל"נית הבלתי אפשרית של ישראל.
       </p>
-      <div class="cta-box" style="background-color: #1e3a8a; padding: 40px; border-radius: 12px; color: #ffffff !6important;">
-        <h3 style="color: #ffffff !6important; margin-bottom: 15px; font-size: 1.5rem;">רוצים לבדוק את זכאותכם למשכנתא?</h3>
-        <p style="color: #e0e0e0 !6important; margin-bottom: 25px; font-size: 1.1rem;">אל תוותרו על החלום בגלל הגיל. השאירו פרטים ונבדוק יחד את האפשרויות העומדות בפניכם.</p>
-        <a href="/contact" class="btn" style="background-color: #ffffff; color: #1e3a8a !6important; padding: 12px 35px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: transform 0.2s;">צור קשר לייעוץ ראשוני</a>
+      
+      <p style="margin-bottom: 24px;">
+        אבל אז, כשהערב יורד והשקט משתלט, משהו אחר מתחיל לזחול פנימה. המחשבות מתחילות לרוץ בראש ללא שליטה. "איך נשלם את זה?", "מה אם המדד יעלה וישחוק את כל ההנחה?", "אנחנו בכלל לא יודעים איזו דירה תישאר לנו לבחור", "האם הבנק יאשר לנו משכנתא בסכום כזה?". הפחד הזה, שמשתק אתכם דווקא ברגע שאמור להיות מהמאושרים בחייכם, הוא טבעי לחלוטין. הוא אפילו בריא. הוא מנגנון הגנה שנועד לוודא שאתם לא עושים טעות כלכלית הרת גורל.
+      </p>
+
+      <h2 style="font-size: 1.8rem; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">למה הזכייה מעוררת בנו פחד?</h2>
+      <p style="margin-bottom: 24px;">
+        רכישת דירה היא העסקה הכלכלית הגדולה ביותר שרובנו נעשה בימי חיינו. כשמדובר בתוכניות ממשלתיות כמו "מחיר למשתכן" או "דירה בהנחה", נוסף למשוואה אלמנט של חוסר ודאות קיצוני. בניגוד לרכישת דירה בשוק החופשי, שם אתם רואים את הנכס, מתמקחים על המחיר ויודעים בדיוק מה אתם מקבלים, כאן אתם נכנסים לתהליך "על עיוור". אתם לא יודעים באיזו קומה תהיה הדירה, מה יהיה הכיוון שלה, או מתי בדיוק תקבלו מפתח.
+      </p>
+      <p style="margin-bottom: 24px;">
+        בנוסף, קיים החשש המתמיד משינויים מאקרו-כלכליים. עליית ריבית בנק ישראל, שינויים במדד תשומות הבנייה, והצורך לשלם במקביל שכר דירה ומשכנתא (במקרים מסוימים) – כל אלו יוצרים לחץ תזרימי שקשה להתעלם ממנו. כאן בדיוק נכנסת לתמונה החשיבות של <strong>ייעוץ משכנתאות</strong> מקצועי, שיכול לעשות סדר בבלאגן ולהפוך את אי-הודאות לתוכנית עבודה מסודרת.
+      </p>
+
+      <h2 style="font-size: 1.8rem; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">האתגר המימוני: משכנתא לדירה בהנחה</h2>
+      <p style="margin-bottom: 24px;">
+        אחד היתרונות הגדולים, שגם מהווה מקור לבלבול, הוא אופן חישוב המשכנתא בתוכניות אלו. הבנקים רשאים להתייחס לשווי השוק של הדירה (על פי שמאות) ולא למחיר החוזה בפועל (המחיר המוזל שבו זכיתם), עד תקרה מסוימת. המשמעות היא שבאופן תיאורטי, ניתן לקבל אחוזי מימון גבוהים מאוד ביחס למחיר הרכישה, מה שמקל על הזוגות הצעירים בגיוס ההון העצמי.
+      </p>
+      <p style="margin-bottom: 24px;">
+        עם זאת, זו יכולה להיות חרב פיפיות. מינוף גבוה מדי עלול להוביל להחזרים חודשיים חונקים. <strong>ייעוץ משכנתא לדירה ראשונה</strong> במסגרת מחיר למשתכן דורש מומחיות ספציפית. יש להבין את לוחות התשלומים המיוחדים של הקבלנים, את ההצמדות למדד, ואת האפשרות לגרייס (תשלום ריבית בלבד) בתקופת הבנייה כדי להקל על תזרים המזומנים המשפחתי.
+      </p>
+
+      <div style="background-color: #f8f9fa !important; border-right: 4px solid #1e3a8a; padding: 20px; margin: 30px 0; border-radius: 4px;">
+        <h3 style="margin-top: 0; color: #1e3a8a !important; font-size: 1.3rem;">נקודה למחשבה: הזמן הוא גורם קריטי</h3>
+        <p style="margin-bottom: 0;">מרגע הזכייה ועד כנס בחירת הדירה, הזמן טס. אל תחכו לרגע האחרון. הוציאו אישור עקרוני למשכנתא מוקדם ככל האפשר, כדי שתדעו בדיוק מה התקציב שלכם ואיזו דירה אתם יכולים להרשות לעצמכם לבחור.</p>
       </div>
+
+      <h2 style="font-size: 1.8rem; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">הלוחמה הפסיכולוגית: איך הופכים פחד לתוכנית פעולה?</h2>
+      <p style="margin-bottom: 24px;">
+        הדרך הטובה ביותר לנצח את הפחד היא ידע. כשיודעים מול מה מתמודדים, השד לא נורא כל כך. השלב הראשון הוא מיפוי פיננסי מדויק. שברו את כל ההוצאות וההכנסות שלכם. בדקו כמה הון עצמי נזיל יש לכם באמת (כולל עזרה מההורים, קרנות השתלמות וחסכונות ועוד). לאחר מכן, גשו לבדוק את יכולת ההחזר שלכם.
+      </p>
+      <p style="margin-bottom: 24px;">
+        רבים חוששים מ"מה יקרה אם". מה יקרה אם הריבית תעלה? מה יקרה אם אחד מאיתנו יאבד את עבודתו? תכנון משכנתא חכם כולל בתוכו מקדמי ביטחון. בניית תמהיל משכנתא שמשלב מסלולים יציבים לצד מסלולים גמישים יותר, מאפשרת לכם לישון בשקט בלילה. זהו היתרון המובהק של <strong>ייעוץ משכנתאות</strong> פרטי – היכולת להתאים את החליפה הפיננסית למידותיכם המדויקות, ולא למה שהבנק מנסה למכור לכם כמוצר מדף.
+      </p>
+
+      <h2 style="font-size: 1.8rem; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">אל תתמודדו לבד</h2>
+      <p style="margin-bottom: 24px;">
+        הזכייה בדירה היא מתנה גדולה, והפחד הוא רק תמרור אזהרה שמבקש מכם לנהוג באחריות. אל תתנו לו לשתק אתכם. במקום זה, השתמשו בו כמנוע לפעולה. התייעצו עם אנשי מקצוע, למדו את החומר, והגיעו לרגע החתימה כשאתם מבינים על מה אתם חותמים.
+      </p>
+      <p style="margin-bottom: 24px;">
+        זכרו: משכנתא היא לא חתונה קתולית. תמיד ניתן יהיה לבצע <strong>מיחזור משכנתא ושיפור תנאים</strong> בעתיד, כשההכנסות שלכם יגדלו או כשהריביות במשק ישתנו. אבל הבסיס חייב להיות איתן. התחלה נכונה תחסוך לכם עשרות ואף מאות אלפי שקלים לאורך חיי המשכנתא, ותהפוך את הדירה מנטל כלכלי לנכס מניב ובית חם.
+      </p>
+      
+      <p style="font-weight: 700; margin-top: 30px;">
+        רוצים להפוך את הזכייה לחוויה בטוחה ורגועה? אנחנו כאן כדי לעזור לכם לתכנן את הצעד הבא בחוכמה.
+      </p>
     </div>
-  </section>
-</main>
+
+    <!-- Bottom Social Share -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0 20px 0; border-top: 1px solid #e0e0e0; padding-top: 20px;">
+      <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+      <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
+    </div>
+
+    <!-- Bottom Back Button -->
+    <div>
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #1e3a8a !important; font-weight: 500; transition: opacity 0.2s;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        חזרה לבלוג
+      </a>
+    </div>
+
+  </article>
+</div></section></main>
 
   
 
@@ -841,6 +829,14 @@ img[data-no-hero-position] { position: static !important; }
   
 
   
+
+
+
+
+
+
+
+
 
   
 
@@ -854,15 +850,7 @@ img[data-no-hero-position] { position: static !important; }
 
   
     <!--6-- Legal Footer ---->
-    
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>משכנתא בפיג'מה</title>
-
-
-<footer class="legal-footer">
+    <footer class="legal-footer">
       <div class="container">
         <div class="footer-main">
           <div class="all-rights-reserved">
@@ -870,8 +858,8 @@ img[data-no-hero-position] { position: static !important; }
           </div>
           <div class="footer-social"><a href="https://facebook.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 <a href="https://instagram.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819969176-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a>
-<a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+<a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819966672-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -893,9 +881,7 @@ img[data-no-hero-position] { position: static !important; }
     </footer>
 
 
-
-
-
+<!--6-- Zappy Attribution Header Script ---->
 <script>
 (function() {
   var websiteId = 'dcdc34dd-3985-48c8-b0f3-d984481f8986';
@@ -1675,6 +1661,120 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
+<script id="zappy-share-script">
+(function() {
+  function getShareUrl() {
+    // Priority 1: Check for deployed site URL meta tag (set by Zappy when site is published)
+    var siteUrl = document.querySelector('meta[name="zappy-site-url"]');
+    if (siteUrl && siteUrl.content) {
+      var basePath = window.location.pathname;
+      var pageParam = new URLSearchParams(window.location.search).get('page');
+      var pagePath = pageParam || basePath;
+      if (pagePath.startsWith('/api/website/preview')) pagePath = '/';
+      return siteUrl.content.replace(/\/$/, '') + pagePath;
+    }
+    var c = document.querySelector('link[rel="canonical"]');
+    if (c && c.href && !c.href.includes('localhost') && !c.href.includes('preview')) return c.href;
+    var m = document.querySelector('meta[property="og:url"]');
+    if (m && m.content && !m.content.includes('localhost') && !m.content.includes('preview')) return m.content;
+    var isPreview = window.location.href.includes('preview') || window.location.href.includes('localhost') || window.location.href.includes('auth_token');
+    if (isPreview) return null;
+    return window.location.origin + window.location.pathname;
+  }
+  function setShareHref(selectors, href, isDisabled) {
+    selectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Share links will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.href = href;
+        }
+      });
+    });
+  }
+  // Normalize share bars to ensure all 5 icons are present
+  function normalizeShareBars() {
+    var shareBars = document.querySelectorAll('.social-share-bar');
+    if (shareBars.length === 0) return;
+    // Define all required share icons with their SVG
+    var shareIcons = {
+      copy: { selectors: ['.share-copy', 'button[title="Copy link"]', 'a[title="Copy link"]'], 
+        html: '<a href="#" class="share-copy" title="Copy link" style="color:#666;display:flex;align-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>' },
+      linkedin: { selectors: ['.share-linkedin', 'a[title="LinkedIn"]'], 
+        html: '<a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color:#0a66c2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>' },
+      twitter: { selectors: ['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+        html: '<a href="#" class="share-twitter" target="_blank" title="X" style="color:#000!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' },
+      facebook: { selectors: ['.share-facebook', 'a[title="Facebook"]'], 
+        html: '<a href="#" class="share-facebook" target="_blank" title="Facebook" style="color:#1877f2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' },
+      whatsapp: { selectors: ['.share-whatsapp', 'a[title="WhatsApp"]'], 
+        html: '<a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color:#25d366!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' }
+    };
+    // Order of icons (right to left for RTL, so we add in this order)
+    var iconOrder = ['copy', 'linkedin', 'twitter', 'facebook', 'whatsapp'];
+    shareBars.forEach(function(bar) {
+      iconOrder.forEach(function(iconKey) {
+        var icon = shareIcons[iconKey];
+        var exists = icon.selectors.some(function(sel) { return bar.querySelector(sel); });
+        if (!exists) {
+          // Find the label span and insert after it
+          var label = bar.querySelector('span');
+          if (label) {
+            label.insertAdjacentHTML('afterend', icon.html);
+          } else {
+            bar.insertAdjacentHTML('afterbegin', icon.html);
+          }
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    // First normalize the share bars to ensure all icons exist
+    normalizeShareBars();
+    var url = getShareUrl();
+    var title = document.title;
+    var isDisabled = !url;
+    if (isDisabled) console.log('[Zappy] Share links disabled in preview mode - will work after publishing');
+    // WhatsApp
+    setShareHref(['.share-whatsapp', 'a[title="WhatsApp"]', 'a[title="whatsapp"]'], 
+      url ? 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url) : '#', isDisabled);
+    // Facebook
+    setShareHref(['.share-facebook', 'a[title="Facebook"]', 'a[title="facebook"]'], 
+      url ? 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) : '#', isDisabled);
+    // Twitter/X
+    setShareHref(['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+      url ? 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title) : '#', isDisabled);
+    // LinkedIn
+    setShareHref(['.share-linkedin', 'a[title="LinkedIn"]', 'a[title="linkedin"]'], 
+      url ? 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) : '#', isDisabled);
+    // Copy link button
+    ['.share-copy', 'button[title="Copy link"]', 'button[title="copy"]', 'a[title="Copy link"]'].forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Copy link will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.onclick = function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(url).then(function() {
+              var orig = el.innerHTML;
+              el.innerHTML = '✓';
+              setTimeout(function() { el.innerHTML = orig; }, 1500);
+            });
+          };
+        }
+      });
+    });
+  });
+})();
+</script><a href="https://wa.me/972542668566" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
     <script id="zappy-mobile-submenu-script">
     (function() {
       function initMobileSubmenuToggles() {
@@ -1796,4 +1896,4 @@ img[data-no-hero-position] { position: static !important; }
     })();
     </script>
     <script src="/script.js"></script>
-</body></html><!--6-- Zappy Attribution Header Script ---->
+</body></html>
