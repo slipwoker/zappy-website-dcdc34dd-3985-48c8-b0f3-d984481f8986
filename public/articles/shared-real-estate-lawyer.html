@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>לקוחות ממליצים | אריאל אחון ייעוץ משכנתאות - משכנתא בפיג'מה</title>
-    <meta name="description" content="קראו מה הלקוחות שלנו אומרים על שירותי ייעוץ משכנתאות, מיחזור משכנתא וליווי פיננסי. מאות משפחות כבר חסכו מאות אלפי שקלים עם משכנתא בפיג'מה.">
+    <title>עו"ד משותף בעסקת נדל"ן - האם כדאי? | משכנתא בפיג'מה</title>
+    <meta name="description" content="האם כדאי לקחת עורך דין שמייצג גם את המוכר וגם את הקונה בעסקת נדל"ן? כל הסיכונים, ניגודי האינטרסים וההמלצות במדריך המלא של משכנתא בפיג'מה.">
     <meta name="keywords" content="">
     
     <!-- Zappy Analytics -->
@@ -742,24 +742,33 @@
         left: auto;
         right: 0;
       }
-    </style>
+    </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EY9JJ9BZN4');
+</script>
+<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+  
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:url" content="https://mashkanta-bepijama.co.il/testimonials">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="לקוחות ממליצים | אריאל אחון ייעוץ משכנתאות - משכנתא בפיג'מה">
-    <meta property="og:description" content="קראו מה הלקוחות שלנו אומרים על שירותי ייעוץ משכנתאות, מיחזור משכנתא וליווי פיננסי. מאות משפחות כבר חסכו מאות אלפי שקלים עם משכנתא בפיג'מה.">
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-happy-clients-1769186518212-og.jpg">
+    <meta property="og:title" content="עו&quot;ד משותף בעסקת נדל&quot;ן - האם כדאי? | משכנתא בפיג'מה">
+    <meta property="og:description" content="האם כדאי לקחת עורך דין שמייצג גם את המוכר וגם את הקונה בעסקת נדל&quot;ן? כל הסיכונים, ניגודי האינטרסים וההמלצות במדריך המלא של משכנתא בפיג'מה.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1771770161842-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="לקוחות ממליצים | אריאל אחון ייעוץ משכנתאות - משכנתא בפיג'מה">
+    <meta property="og:image:alt" content="עו&quot;ד משותף בעסקת נדל&quot;ן - האם כדאי? | משכנתא בפיג'מה">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="לקוחות ממליצים | אריאל אחון ייעוץ משכנתאות - משכנתא בפיג'מה">
-    <meta name="twitter:description" content="קראו מה הלקוחות שלנו אומרים על שירותי ייעוץ משכנתאות, מיחזור משכנתא וליווי פיננסי. מאות משפחות כבר חסכו מאות אלפי שקלים עם משכנתא בפיג'מה.">
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-happy-clients-1769186518212-og.jpg">
-    <meta name="twitter:image:alt" content="לקוחות ממליצים | אריאל אחון ייעוץ משכנתאות - משכנתא בפיג'מה"><style id="zappy-ai-page-styles">
+    <meta name="twitter:title" content="עו&quot;ד משותף בעסקת נדל&quot;ן - האם כדאי? | משכנתא בפיג'מה">
+    <meta name="twitter:description" content="האם כדאי לקחת עורך דין שמייצג גם את המוכר וגם את הקונה בעסקת נדל&quot;ן? כל הסיכונים, ניגודי האינטרסים וההמלצות במדריך המלא של משכנתא בפיג'מה.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-blog-article-hero-1771770161842-og.jpg">
+    <meta name="twitter:image:alt" content="עו&quot;ד משותף בעסקת נדל&quot;ן - האם כדאי? | משכנתא בפיג'מה"><style id="zappy-ai-page-styles">
 
 
 /* Zappy Base Styles for Edit Mode Compatibility */
@@ -822,8 +831,9 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+/* Hero container fixes - contain absolute images and prevent viewport overflow */
+/* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
+[class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
@@ -839,16 +849,7 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EY9JJ9BZN4');
-</script>
-<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="mobile-lang-menu-deployed-css">
@@ -928,920 +929,119 @@ img[data-no-hero-position] { position: static !important; }
         </li>
       </div>
     </div>
-  </nav><main class="page-main blog-page ai-generated-page">
-  <!--6-- Hero Section ---->
-  <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; overflow: visible; background: linear-gradient(135deg, var(--primary-color) 0%, #0f172a 100%); padding: 120px 0 180px 0; margin: 0;" data-zappy-section="true" class="section">
-  <style>
-    .testimonials-hero-section {
-      font-family: system-ui, sans-serif;
-      direction: rtl;
-      color: var(--text-light);
-    }
+  </nav><main class="page-main blog-page ai-generated-page"><section class="section article-section" style="background-color: #ffffff; padding: 40px 0; direction: rtl; text-align: right; color: #304060 !important;" id="zappy-section-0" data-zappy-section="true">
+  <div class="container" style="max-width: 800px; margin: 0 auto;">
     
-    .testimonials-hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      position: relative;
-      z-index: 10;
-    }
-    
-    .testimonials-hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    
-    .testimonials-content {
-      position: relative;
-      z-index: 10;
-    }
-    
-    .testimonials-badge {
-      display: inline-block;
-      background: var(--secondary-color);
-      color: var(--text-dark);
-      padding: 8px 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      animation: fadeInUp 0.6s ease-out;
-    }
-    
-    .testimonials-hero-section h1 {
-      font-size: 56px;
-      font-weight: 900;
-      line-height: 1.1;
-      margin: 0 0 24px 0;
-      color: var(--text-light);
-      animation: fadeInUp 0.6s ease-out 0.2s backwards;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-    
-    .testimonials-hero-section p {
-      font-size: 20px;
-      line-height: 1.7;
-      margin: 0 0 40px 0;
-      color: rgba(255,255,255,0.9);
-      animation: fadeInUp 0.6s ease-out 0.4s backwards;
-    }
-    
-    .testimonials-stats {
-      display: flex;
-      gap: 40px;
-      margin-bottom: 40px;
-      animation: fadeInUp 0.6s ease-out 0.5s backwards;
-    }
-    
-    .stat-item {
-      position: relative;
-      padding: 20px 30px;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.2);
-      transition: all 0.4s ease;
-    }
-    
-    .stat-item:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-    
-    .stat-number {
-      display: block;
-      font-size: 42px;
-      font-weight: 900;
-      color: var(--secondary-color);
-      margin-bottom: 4px;
-      line-height: 1;
-    }
-    
-    .stat-label {
-      display: block;
-      font-size: 16px;
-      color: rgba(255,255,255,0.8);
-      font-weight: 600;
-    }
-    
-    .testimonials-cta-btn {
-      display: inline-block;
-      background: var(--secondary-color);
-      color: var(--text-dark);
-      padding: 18px 48px;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
-      animation: fadeInUp 0.6s ease-out 0.6s backwards;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .testimonials-cta-btn::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.3);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
-    }
-    
-    .testimonials-cta-btn:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-    
-    .testimonials-cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
-    }
-    
-    .testimonials-cta-btn span {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .testimonials-image-side {
-      position: relative;
-      height: 600px;
-      animation: fadeInRight 0.8s ease-out 0.3s backwards;
-    }
-    
-    .testimonials-image-container {
-      position: relative;
-      height: 100%;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-      transform: rotate(2deg);
-      transition: all 0.5s ease;
-    }
-    
-    .testimonials-image-container:hover {
-      transform: rotate(0deg) scale(1.02);
-      box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-    }
-    
-    .testimonials-image-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(245, 158, 11, 0.2) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
-    
-    .testimonials-image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    
-    .decorative-circle-1 {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
-      top: -100px;
-      right: -100px;
-      z-index: 0;
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    .decorative-circle-2 {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(30, 58, 138, 0.2) 0%, transparent 70%);
-      bottom: -50px;
-      left: -50px;
-      z-index: 0;
-      animation: float 8s ease-in-out infinite reverse;
-    }
-    
-    .divider-wrapper {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      pointer-events: none;
-      z-index: 5;
-    }
-    
-    .divider-wrapper svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes fadeInRight {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-30px);
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .testimonials-hero-section {
-        padding: 100px 0 150px 0;
-      }
-      
-      .testimonials-hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .testimonials-hero-section h1 {
-        font-size: 36px;
-      }
-      
-      .testimonials-hero-section p {
-        font-size: 18px;
-      }
-      
-      .testimonials-stats {
-        flex-direction: column;
-        gap: 20px;
-      }
-      
-      .stat-item {
-        padding: 16px 24px;
-      }
-      
-      .stat-number {
-        font-size: 32px;
-      }
-      
-      .stat-label {
-        font-size: 14px;
-      }
-      
-      .testimonials-image-side {
-        height: 400px;
-      }
-      
-      .testimonials-cta-btn {
-        padding: 16px 40px;
-        font-size: 16px;
-      }
-      
-      .decorative-circle-1,
-      .decorative-circle-2 {
-        display: none;
-      }
-    }
-  </style>
-  
-  <div class="decorative-circle-1"></div>
-  <div class="decorative-circle-2"></div>
-  
-  <div class="testimonials-hero-section">
-    <div class="testimonials-hero-container">
-      <div class="testimonials-hero-grid">
-        <div class="testimonials-content">
-          <div class="testimonials-badge">✨ המלצות לקוחות</div>
-          <h1>מה הלקוחות שלנו מספרים?</h1>
-          <p>הסיפורים האמיתיים מאחורי החיסכון הגדול. הצטרפו למאות משפחות שבחרו בשירותי ייעוץ משכנתאות מקצועי והצליחו להגשים את חלום הדירה בראש שקט ובביטחון כלכלי.</p>
-          
-          <div class="testimonials-stats">
-            <div class="stat-item">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">לקוחות מרוצים</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">₪100M+</span>
-              <span class="stat-label">חיסכון מצטבר</span>
-            </div>
-          </div>
-          
-          <a href="#reviews-grid" class="testimonials-cta-btn">
-            <span>קראו את הביקורות</span>
-          </a>
-        </div>
-        
-        <div class="testimonials-image-side">
-          <div class="testimonials-image-container">
-            <img alt="לקוחות מרוצים בדירה חדשה" src="/assets/page-happy-clients-1769186518212.webp" data-placeholder="happy-clients" data-context="Happy couple holding keys to their new apartment after successful mortgage consulting" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="divider-wrapper">
-    <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
-      <path d="M0,100 C300,20 600,40 900,20 C1050,10 1150,30 1200,40 L1200,100 L0,100 Z" fill="#ffffff"/>
-    </svg>
-  </div>
-</section>
-
-  <!--6-- Intro Content Section (SEO Heavy) ---->
-  <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 50%, #e0f2fe 100%); overflow: hidden; padding: 120px 0 80px;" data-zappy-section="true" class="section">
-  <style>
-    .testimonials-hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .testimonials-title-wrapper {
-      text-align: center;
-      position: relative;
-      margin-bottom: 60px;
-    }
-
-    .testimonials-title-wrapper::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      right: 50%;
-      transform: translateX(50%);
-      width: 120px;
-      height: 6px;
-      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-      border-radius: 3px;
-      animation: pulseWidth 2s ease-in-out infinite;
-    }
-
-    @keyframes pulseWidth {
-      0%, 100% { width: 120px; }
-      50% { width: 160px; }
-    }
-
-    .testimonials-hero-h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 900;
-      color: var(--primary-color);
-      margin: 0 0 20px;
-      line-height: 1.2;
-      text-shadow: 2px 4px 8px rgba(30, 58, 138, 0.1);
-      animation: fadeInUp 0.8s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .testimonials-content-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-      animation: fadeInStagger 1s ease-out 0.3s both;
-    }
-
-    @keyframes fadeInStagger {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .testimonials-card {
-      background: var(--bg-white);
-      border-radius: 24px;
-      padding: 40px 32px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-      position: relative;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 2px solid transparent;
-      overflow: hidden;
-    }
-
-    .testimonials-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
-      opacity: 0.1;
-      transition: all 0.4s ease;
-    }
-
-    .testimonials-card:hover {
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 20px 60px rgba(30, 58, 138, 0.15);
-      border-color: var(--secondary-color);
-    }
-
-    .testimonials-card:hover::before {
-      width: 200px;
-      height: 200px;
-      opacity: 0.15;
-    }
-
-    .testimonials-card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .testimonials-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .testimonials-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .testimonials-paragraph {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--text-dark);
-      margin: 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    .testimonials-card:nth-child(1) .testimonials-paragraph {
-      font-weight: 600;
-      color: var(--primary-color);
-      font-size: 1.15rem;
-    }
-
-    .testimonials-decorative-quote {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 80px;
-      font-weight: 900;
-      color: var(--secondary-color);
-      opacity: 0.08;
-      line-height: 1;
-      font-family: Georgia, serif;
-      z-index: 1;
-    }
-
-    .testimonials-accent-circle {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
-      opacity: 0.05;
-      pointer-events: none;
-      animation: floatCircle 8s ease-in-out infinite;
-    }
-
-    .testimonials-accent-circle:nth-child(1) {
-      top: -100px;
-      left: -100px;
-    }
-
-    .testimonials-accent-circle:nth-child(2) {
-      bottom: -150px;
-      right: -150px;
-      animation-delay: 2s;
-      animation-duration: 10s;
-    }
-
-    @keyframes floatCircle {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(30px, -30px) scale(1.1); }
-      66% { transform: translate(-20px, 20px) scale(0.9); }
-    }
-
-    .testimonials-number-badge {
-      position: absolute;
-      top: -15px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: var(--text-light);
-      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
-      z-index: 3;
-      animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    @keyframes bounceIn {
-      0% { transform: scale(0); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-
-    @media (max-width: 768px) {
-      section {
-        padding-top: 100px;
-        padding-bottom: 60px;
-      }
-
-      .testimonials-content-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .testimonials-card {
-        padding: 32px 24px;
-      }
-
-      .testimonials-decorative-quote {
-        font-size: 60px;
-      }
-
-      .testimonials-accent-circle {
-        width: 200px;
-        height: 200px;
-      }
-    }
-  </style>
-
-  <div class="testimonials-accent-circle"></div>
-  <div class="testimonials-accent-circle"></div>
-
-  <div class="testimonials-hero-container">
-    <div class="testimonials-title-wrapper">
-      <h2 class="testimonials-hero-h2">למה חשוב לבחור יועץ משכנתאות בקפידה?</h2>
+    <!-- Back Button Top -->
+    <div style="margin-bottom: 20px;">
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #1e3a8a !important; font-weight: 500; transition: color 0.3s;">
+        ← חזרה לבלוג
+      </a>
     </div>
 
-    <div class="testimonials-content-grid">
-      <div class="testimonials-card">
-        <div class="testimonials-decorative-quote">"</div>
-        <div class="testimonials-number-badge">1</div>
-        <p class="testimonials-paragraph">לקיחת משכנתא היא ככל הנראה העסקה הפיננסית הגדולה והמשמעותית ביותר שרובנו נעשה בחיינו. כאשר אתם מחפשים ייעוץ משכנתאות, אתם לא רק מחפשים מישהו שימלא טפסים עבורכם, אלא שותף לדרך שידאג לאינטרסים הכלכליים שלכם מול הבנקים. הלקוחות שלנו מעידים שוב ושוב כי הליווי המקצועי של "משכנתא בפיג'מה" העניק להם לא רק חיסכון כספי אדיר, אלא גם שקט נפשי בתהליך מורכב ומלחיץ.</p>
-      </div>
-
-      <div class="testimonials-card">
-        <div class="testimonials-decorative-quote">"</div>
-        <div class="testimonials-number-badge">2</div>
-        <p class="testimonials-paragraph">בין אם מדובר על ייעוץ משכנתא לדירה ראשונה לזוגות צעירים שזוהי דריסת הרגל הראשונה שלהם בעולם הנדל"ן, ובין אם מדובר על משפחות ותיקות המעוניינות בביצוע מיחזור משכנתא ושיפור תנאים כדי להקטין את ההחזר החודשי – הביקורות מדברות בעד עצמן. המקצועיות, הזמינות והיכולת לפשט מושגים פיננסיים מורכבים הם אלו שהופכים את השירות שלנו לייחודי.</p>
-      </div>
-
-      <div class="testimonials-card">
-        <div class="testimonials-decorative-quote">"</div>
-        <div class="testimonials-number-badge">3</div>
-        <p class="testimonials-paragraph">אנו גאים להציג בפניכם מגוון המלצות מלקוחות אמיתיים, אשר חוו את התהליך איתנו ונהנים היום מתנאי משכנתא אופטימליים המותאמים בדיוק לצרכים שלהם. כל ביקורת כאן מייצגת משפחה שעזרנו לה להגשים חלום.</p>
-      </div>
+    <!-- Social Share Bar Top -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0; flex-wrap: wrap;">
+      <span style="font-weight: 500; color: #304060 !important;">שתף ב:</span>
+      <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
-  </div>
-</section>
 
-
-
-
-
-  <!--6-- Testimonials Grid Section ---->
-  <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: linear-gradient(135deg, var(--bg-light) 0%, #e0e7ff 100%); padding: 120px 0 80px; overflow: hidden;" data-zappy-section="true" class="section">
-  <style>
-    .testimonials-grid-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 20px;
-      direction: rtl;
-    }
-
-    .testimonials-header {
-      text-align: center;
-      margin-bottom: 80px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .testimonials-header h2 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      color: var(--primary-color);
-      margin: 0;
-      position: relative;
-      display: inline-block;
-      text-shadow: 2px 2px 20px rgba(30, 58, 138, 0.1);
-    }
-
-    .testimonials-header h2::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      right: 50%;
-      transform: translateX(50%);
-      width: 120px;
-      height: 6px;
-      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-      border-radius: 3px;
-    }
-
-    .testimonials-masonry {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      position: relative;
-      z-index: 5;
-    }
-
-    .testimonial-card {
-      background: var(--bg-white);
-      padding: 40px 35px;
-      border-radius: 24px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      position: relative;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 2px solid transparent;
-      overflow: hidden;
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: -20px;
-      right: 20px;
-      font-size: 150px;
-      font-weight: 900;
-      color: var(--secondary-color);
-      opacity: 0.1;
-      line-height: 1;
-      font-family: Georgia, serif;
-      z-index: 0;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-12px) rotate(-1deg);
-      box-shadow: 0 20px 60px rgba(30, 58, 138, 0.15);
-      border-color: var(--secondary-color);
-    }
-
-    .testimonial-card:nth-child(even):hover {
-      transform: translateY(-12px) rotate(1deg);
-    }
-
-    .testimonial-stars {
-      font-size: 24px;
-      color: var(--secondary-color);
-      margin-bottom: 20px;
-      letter-spacing: 4px;
-      position: relative;
-      z-index: 2;
-      animation: starsPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes starsPulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
-    .testimonial-text {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text-dark);
-      margin: 0;
-      position: relative;
-      z-index: 2;
-      font-weight: 400;
-    }
-
-    .floating-shape {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.08;
-      z-index: 1;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    .shape-1 {
-      width: 300px;
-      height: 300px;
-      background: var(--primary-color);
-      top: 10%;
-      right: 5%;
-      animation-delay: 0s;
-    }
-
-    .shape-2 {
-      width: 200px;
-      height: 200px;
-      background: var(--secondary-color);
-      bottom: 15%;
-      left: 8%;
-      animation-delay: 5s;
-    }
-
-    .shape-3 {
-      width: 150px;
-      height: 150px;
-      background: var(--accent-color);
-      top: 60%;
-      right: 15%;
-      animation-delay: 10s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      25% { transform: translate(30px, -30px) scale(1.1); }
-      50% { transform: translate(-20px, 20px) scale(0.9); }
-      75% { transform: translate(40px, 10px) scale(1.05); }
-    }
-
-    @media (max-width: 768px) {
-      .testimonials-masonry {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .testimonial-card {
-        padding: 30px 25px;
-      }
-
-      .testimonials-header {
-        margin-bottom: 50px;
-      }
-
-      .testimonials-header h2::after {
-        width: 80px;
-        height: 5px;
-      }
-
-      .floating-shape {
-        opacity: 0.04;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .testimonial-card::before {
-        font-size: 100px;
-        top: -10px;
-      }
-
-      .testimonial-stars {
-        font-size: 20px;
-        letter-spacing: 2px;
-      }
-
-      .testimonial-text {
-        font-size: 15px;
-        line-height: 1.7;
-      }
-    }
-  </style>
-
-  <div class="floating-shape shape-1"></div>
-  <div class="floating-shape shape-2"></div>
-  <div class="floating-shape shape-3"></div>
-
-  <div class="testimonials-grid-container zappy-vertical-grid"><div class="testimonials-header">
-      <h2 class>מילה מהלקוחות שלנו</h2>
-    </div><div class="testimonials-masonry">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">הגענו לאריאל אחרי שהיינו בבנק וקיבלנו הצעה שנראתה לנו סבירה. אריאל עבר על הנתונים, הסביר לנו איפה אנחנו יכולים לשפר, ובסופו של דבר בנה לנו תמהיל שחסך לנו מעל 150,000 ש"ח לאורך חיי המשכנתא!6 השירות היה מקצועי, סבלני וזמין לכל שאלה. מומלץ בחום לכל מי שמחפש ייעוץ משכנתאות ברמה אחרת.</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">בתור זוג שקונה דירה ראשונה, היינו בלחץ נוראי מהתהליך. לא הבנו את המושגים ולא ידענו מאיפה להתחיל. השירות של 'משכנתא בפיג'מה' פשוט עשה לנו סדר בראש. קיבלנו ליווי צמוד, הסברים בגובה העיניים ובעיקר תחושת ביטחון. תודה רבה על הכל!6</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">פניתי לצורך מיחזור משכנתא ושיפור תנאים. לא האמנתי שאפשר לחסוך כל כך הרבה בהחזר החודשי. אריאל נלחם בשבילי מול הבנקים והשיג ריביות שלא הייתי מקבל בחיים לבד. המקצועיות שלו שווה כל שקל.</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text" style>אריאל הוא קוסם! הגענו אליו עם תיק מורכב וסירובים משני בנקים. הוא לא ויתר, מצא פתרונות יצירתיים ובסוף קיבלנו את המימון שהיינו צריכים לבית החלומות שלנו. אין מילים לתאר את ההערכה שלנו.</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">חיפשנו ייעוץ משכנתא למשפרי דיור כי מכרנו וקנינו במקביל. התהליך היה מורכב מאוד עם גרירת משכנתא ותוספת מימון. אריאל ניהל את הכל ביד רמה, תיאומים מול הבנקים ושמירה על האינטרסים שלנו. ממליץ בחום!6</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">הזמינות של אריאל היא משהו שלא נתקלים בו היום. ענה לכל הודעה, הסביר בסבלנות אין קץ, וגרם לנו להרגיש שאנחנו הלקוחות היחידים שלו. מעבר לחיסכון הכספי, היחס האישי הוא מה שעשה את ההבדל.</p>
-      </div>
-    </div></div>
-</section>
-
-  <!--6-- Success Stories / Case Studies Section ---->
-  <section class="section stories-section" id="success-stories" style="background-color: #ffffff !6important; padding: 80px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
-        
-        <div class="stories-image">
-          <img data-placeholder="consulting-meeting" data-context="Financial consultant explaining mortgage papers to a young couple in an office" data-zappy-editable-image="true" src="/assets/page-consulting-meeting-1769186518692.webp" alt="פגישת ייעוץ משכנתא" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" data-no-hero-position="true" class="generated-image">
-        </div>
-
-        <div class="stories-content">
-          <h2 style="color: #304060 !6important; font-size: 2rem; margin-bottom: 25px;">סיפורי הצלחה מהשטח</h2>
-          
-          <div style="margin-bottom: 30px;">
-            <h3 style="color: #1e3a8a !6important; font-size: 1.3rem; margin-bottom: 10px;">המקרה של משפחת אהרוני: חיסכון של 240,000 ₪</h3>
-            <p style="color: #305060 !6important; line-height: 1.7;">
-              משפחת אהרוני הגיעה אלינו עם הצעה ראשונית מהבנק שהייתה נראית להם "בסדר". לאחר ניתוח מעמיק של יכולות ההחזר שלהם ובניית תמהיל חכם המשלב מסלולים שונים, הצלחנו להוזיל את הריביות ולקצר את תקופת המשכנתא ב-3 שנים. התוצאה: חיסכון נקי של 240,000 ₪ בתשלומי הריבית לאורך חיי ההלוואה.
-            </p>
-          </div>
-
-          <div>
-            <h3 style="color: #1e3a8a !6important; font-size: 1.3rem; margin-bottom: 10px;">פתרון למסורבי משכנתא</h3>
-            <p style="color: #305060 !6important; line-height: 1.7;">
-              לקוח שהגיע אלינו לאחר סירוב בשני בנקים עקב בעיות רישום ישנות. באמצעות עבודה נכונה, הכנת התיק בצורה מקצועית והגשתו לגורמים המתאימים בבנק שמכירים את עבודתנו, הצלחנו לאשר את המשכנתא בתנאים מצוינים ולאפשר לו לרכוש את הדירה שרצה.
-            </p>
-          </div>
-        </div>
-
-      </div>
+    <!-- Hero Image -->
+    <div class="article-hero-image" style="width: 100%; max-height: 400px; overflow: hidden; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);; position: relative; overflow: hidden;">
+      <img data-placeholder="blog-article-hero" data-context="Close up of a real estate contract signing with a gavel and keys on the table, professional legal atmosphere" data-zappy-editable-image="true" alt="חתימה על חוזה נדלן" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 21/9;" src="/assets/page-blog-article-hero-1771770161842.webp" class="generated-image" data-og-image="/assets/page-blog-article-hero-1771770161842-og.jpg">
     </div>
-  </section>
 
-  <!--6-- Value Proposition / Informational Section ---->
-  <section class="section info-section" id="our-value" style="background-color: #f8f9fa !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #304060 !6important; text-align: center; margin-bottom: 40px;">למה הלקוחות שלנו בוחרים בנו שוב ושוב?</h2>
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-        
-        <div class="feature-box" style="background: white; padding: 25px; border-radius: 8px; border-top: 4px solid #1e3a8a;">
-          <h3 style="color: #1e3a8a !6important; margin-bottom: 15px;">שקיפות מלאה</h3>
-          <p style="color: #305060 !6important;">אנו מאמינים שהלקוח צריך להבין על מה הוא חותם. אנו מסבירים כל שלב בתהליך בשפה פשוטה וברורה, ללא "אותיות קטנות".</p>
-        </div>
-
-        <div class="feature-box" style="background: white; padding: 25px; border-radius: 8px; border-top: 4px solid #1e3a8a;">
-          <h3 style="color: #1e3a8a !6important; margin-bottom: 15px;">כוח מיקוח</h3>
-          <p style="color: #305060 !6important;">ההיכרות המעמיקה שלנו עם המערכת הבנקאית והנפח שאנו מביאים מאפשרים לנו להשיג עבורכם ריביות ותנאים שלקוח פרטי יתקשה להשיג לבד.</p>
-        </div>
-
-        <div class="feature-box" style="background: white; padding: 25px; border-radius: 8px; border-top: 4px solid #1e3a8a;">
-          <h3 style="color: #1e3a8a !6important; margin-bottom: 15px;">התאמה אישית</h3>
-          <p style="color: #305060 !6important;">אין "משכנתא מדף". כל משפחה היא עולם ומלואו. אנו בונים תמהיל המותאם בדיוק לצרכים העתידיים שלכם, לשינויים בהכנסה ולתוכניות המשפחתיות.</p>
-        </div>
-
-      </div>
+    <!-- Article Header -->
+    <h1 style="font-size: 2.5rem; font-weight: 800; color: #1e3a8a !important; margin-bottom: 15px; line-height: 1.2;">האם כדאי לקחת עורך דין שמייצג גם את המוכר וגם את הקונה בעסקת נדל"ן?</h1>
+    
+    <div class="article-meta" style="display: flex; gap: 15px; color: #305060 !important; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #e0e0e0; padding-bottom: 15px;">
+      <span>📅 15 נובמבר 2023</span>
+      <span>⏱️ זמן קריאה: 5 דקות</span>
+      <span>👤 מאת: אריאל אחון</span>
     </div>
-  </section>
 
-  <!--6-- CTA Section ---->
-  <section class="section cta-section" id="testimonials-cta" style="background-color: #1e3a8a !6important; padding: 80px 0; text-align: center;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #ffffff !6important; font-size: 2.2rem; margin-bottom: 20px;">רוצים להיות סיפור ההצלחה הבא?</h2>
-      <p style="color: #e0e0e0 !6important; font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; line-height: 1.6;">
-        אל תיקחו משכנתא לפני שבדקתם איתנו. שיחת ייעוץ ראשונית ללא התחייבות יכולה לחסוך לכם מאות אלפי שקלים. השאירו פרטים ונחזור אליכם בהקדם.
+    <!-- Article Content -->
+    <div class="article-content" style="line-height: 1.8; font-size: 1.1rem; color: #304060 !important;">
+      <p style="margin-bottom: 20px;">
+        רכישת דירה היא ככל הנראה העסקה הכלכלית הגדולה ביותר שתבצעו בחייכם. מדובר בהתחייבות של מיליוני שקלים, לקיחת משכנתא לשנים רבות, והשקעה של כל החסכונות שצברתם בעמל רב. באופן טבעי, הרצון לחסוך בעלויות הנלוות הוא חזק ומובן. אחת הדרכים שרוכשים רבים שוקלים כדי לחסוך היא שימוש בעורך הדין של המוכר, שייצג גם אותם בעסקה, ובכך לחסוך תשלום שכר טרחה לעורך דין נוסף.
       </p>
-      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-        <a href="/contact" class="btn" style="background-color: #ffffff; color: #1e3a8a !6important; padding: 15px 40px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.1rem; transition: transform 0.2s;" data-element-type="button" data-element-id="btn-1770965379939-fkms1vgoh" data-native-element="true">תיאום פגישת ייעוץ</a>
-        <a href="tel:054-2668566" class="btn btn-outline btn-secondary" style="border-width: 2px; border-style: solid; border-color: rgb(245, 158, 11) !important; border-image: initial; padding: 13px 40px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.1rem; outline: none; color: rgb(245, 158, 11) !important; background-color: transparent !important; background-image: none !important;" data-element-type="button" data-element-id="btn-1770965379939-xl8a515ya" data-native-element="true">חייגו אלינו</a>
-      </div>
+
+      <p style="margin-bottom: 20px;">
+        על פניו, זה נשמע כמו פתרון יעיל: פחות בירוקרטיה, תקשורת מהירה יותר, וכמובן - חיסכון כספי של אלפי עד עשרות אלפי שקלים. אך האם החיסכון הזה משתלם בטווח הארוך? והאם עורך דין אחד באמת יכול לייצג בנאמנות שני צדדים בעלי אינטרסים מנוגדים?
+      </p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 700;">המצב המשפטי: מותר, אבל מסוכן</h2>
+      <p style="margin-bottom: 20px;">
+        חשוב להבחין בין שני מצבים עיקריים ברכישת דירה:
+      </p>
+      <ul style="margin-bottom: 20px; padding-right: 20px;">
+        <li style="margin-bottom: 10px;"><strong>רכישת דירה מקבלן:</strong> במקרה זה, החוק אוסר על עורך הדין של הקבלן לייצג את הרוכש, למעט בנושא רישום הדירה בטאבו. כלומר, ברכישת דירה חדשה, עורך הדין של הקבלן דואג אך ורק לאינטרסים של הקבלן, ואתם חייבים עורך דין מטעמכם כדי להגן על זכויותיכם.</li>
+        <li style="margin-bottom: 10px;"><strong>רכישת דירה יד שנייה:</strong> כאן החוק מתיר לעורך דין אחד לייצג את שני הצדדים, בתנאי ששניהם הסכימו לכך בכתב. זהו המצב הנפוץ שבו עולה הדילמה.</li>
+      </ul>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 700;">ניגוד האינטרסים המובנה</h2>
+      <p style="margin-bottom: 20px;">
+        עסקת נדל"ן היא עסקה שבה האינטרסים של הצדדים הם כמעט תמיד מנוגדים. המוכר רוצה למכור את הנכס במחיר הגבוה ביותר, לקבל את הכסף כמה שיותר מהר, ולהתחייב לכמה שפחות אחריות על מצב הדירה. לעומתו, הקונה רוצה לשלם כמה שפחות, לפרוס את התשלומים בצורה נוחה ובטוחה, ולקבל מקסימום הגנות ובטוחות לכספו.
+      </p>
+      <p style="margin-bottom: 20px;">
+        כאשר עורך דין אחד מייצג את שני הצדדים, הוא נמצא במצב בלתי אפשרי של ניגוד עניינים. הוא אינו יכול להילחם בנחישות עבור האינטרס של הקונה מבלי לפגוע באינטרס של המוכר, ולהפך. התוצאה היא לרוב חוזה "פרווה", פשרה בינונית שלא בהכרח מגנה עליכם במקרי קיצון.
+      </p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 700;">החשיבות של ייעוץ משכנתאות וייעוץ משפטי נפרד</h2>
+      <p style="margin-bottom: 20px;">
+        כמו בתחום המימון, גם בתחום המשפטי, הפרדת כוחות היא קריטית. בדיוק כפי שמומלץ לקחת <strong>ייעוץ משכנתאות</strong> פרטי ולא להסתמך רק על יועץ המשכנתאות של הבנק (שמייצג את האינטרס של הבנק), כך גם בייצוג המשפטי. יועץ משכנתאות אובייקטיבי דואג לבנות לכם תמהיל שחוסך לכם כסף ומקטין סיכונים, בעוד שהבנק שואף למקסם רווחים. באותו אופן, עורך דין מטעמכם יבדוק את הנכס בציציות: עיקולים, שעבודים, חריגות בנייה, והתאמה להיתר הבנייה.
+      </p>
+      <p style="margin-bottom: 20px;">
+        במיוחד כאשר מדובר על <strong>ייעוץ משכנתא לדירה ראשונה</strong>, הרוכשים לרוב חסרי ניסיון ואינם מודעים לבורות המשפטיים והפיננסיים שעלולים לצוץ בדרך. עורך דין משותף עלול "להחליק" בעיות קטנות כדי שהעסקה תצא לפועל (וכדי שהוא יקבל את שכרו), בעיות שעלולות להתגלות בעתיד כהרות גורל.
+      </p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 700;">מה קורה כשיש הפרת חוזה?</h2>
+      <p style="margin-bottom: 20px;">
+        זהו המבחן האמיתי והבעייתי ביותר. נניח שהמוכר לא פינה את הדירה בזמן, או שהתגלתה רטיבות קשה שהוסתרה, או שהקונה מאחר בתשלומים. במצב של סכסוך משפטי, עורך הדין המשותף מנוע מלייצג אף אחד מהצדדים נגד השני. הוא יצטרך להתפטר מייצוג שניהם, ואתם תמצאו את עצמכם בשיא המשבר, ללא ליווי משפטי, נאלצים לשכור עורך דין חדש שילמד את התיק מאפס – תהליך שיעלה לכם הרבה יותר כסף ועוגמת נפש.
+      </p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 700;">השורה התחתונה: אל תחסכו איפה שאסור</h2>
+      <p style="margin-bottom: 20px;">
+        שכר טרחת עורך דין בעסקת נדל"ן נע בדרך כלל סביב 0.5% עד 1% מערך העסקה. זהו סכום לא מבוטל, אך הוא בטל בשישים לעומת הסיכון של רכישת נכס בעייתי, אובדן המקדמה, או הסתבכות משפטית של שנים. עורך דין מטעמכם הוא תעודת הביטוח שלכם.
+      </p>
+      <p style="margin-bottom: 20px;">
+        ההמלצה החד-משמעית שלנו ב"משכנתא בפיג'מה" היא: קחו עורך דין שייצג **רק אתכם**. תפקידו להגן עליכם, להתריע בפניכם על סיכונים, ולנהל משא ומתן קשוח על תנאי החוזה לטובתכם הבלעדית. שלבו זאת עם <strong>ייעוץ משכנתאות</strong> מקצועי לבניית התקציב והמימון, ותוכלו לישון בשקט בדירה החדשה שלכם.
+      </p>
     </div>
-  </section>
-</main>
+
+    <!-- CTA Box -->
+    <div style="background-color: #f8f9fa !important; border: 1px solid #e0e0e0; border-radius: 8px; padding: 30px; margin-top: 50px; text-align: center;">
+      <h3 style="color: #1e3a8a !important; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">מתכננים רכישת דירה?</h3>
+      <p style="margin-bottom: 20px; color: #305060 !important;">
+        אל תיכנסו לעסקה הגדולה בחייכם בלי ליווי מקצועי. אנחנו כאן כדי לדאוג לצד הפיננסי של העסקה ולבנות עבורכם את תמהיל המשכנתא המשתלם ביותר.
+      </p>
+      <a href="/contact" class="btn" style="display: inline-block; background-color: #1e3a8a !important; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: background-color 0.3s;">
+        דברו איתנו לייעוץ ראשוני
+      </a>
+    </div>
+
+    <!-- Social Share Bar Bottom -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0 20px 0; border-top: 1px solid #e0e0e0; padding-top: 20px;">
+      <span style="font-weight: 500; color: #304060 !important;">שתף ב:</span>
+      <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+
+    <!-- Back Button Bottom -->
+    <div style="margin-top: 20px;">
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #1e3a8a !important; font-weight: 500; transition: color 0.3s;">
+        ← חזרה לבלוג
+      </a>
+    </div>
+
+  </div>
+</section></main>
 
   
 
@@ -1850,6 +1050,14 @@ img[data-no-hero-position] { position: static !important; }
   
 
   
+
+
+
+
+
+
+
+
 
   
 
@@ -1872,7 +1080,7 @@ img[data-no-hero-position] { position: static !important; }
           <div class="footer-social"><a href="https://facebook.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 <a href="https://instagram.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 <a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819968261-y7t3k9" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
+<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819966672-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -2673,6 +1881,120 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
+
+<script id="zappy-share-script">
+(function() {
+  function getShareUrl() {
+    // Priority 1: Check for deployed site URL meta tag (set by Zappy when site is published)
+    var siteUrl = document.querySelector('meta[name="zappy-site-url"]');
+    if (siteUrl && siteUrl.content) {
+      var basePath = window.location.pathname;
+      var pageParam = new URLSearchParams(window.location.search).get('page');
+      var pagePath = pageParam || basePath;
+      if (pagePath.startsWith('/api/website/preview')) pagePath = '/';
+      return siteUrl.content.replace(/\/$/, '') + pagePath;
+    }
+    var c = document.querySelector('link[rel="canonical"]');
+    if (c && c.href && !c.href.includes('localhost') && !c.href.includes('preview')) return c.href;
+    var m = document.querySelector('meta[property="og:url"]');
+    if (m && m.content && !m.content.includes('localhost') && !m.content.includes('preview')) return m.content;
+    var isPreview = window.location.href.includes('preview') || window.location.href.includes('localhost') || window.location.href.includes('auth_token');
+    if (isPreview) return null;
+    return window.location.origin + window.location.pathname;
+  }
+  function setShareHref(selectors, href, isDisabled) {
+    selectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Share links will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.href = href;
+        }
+      });
+    });
+  }
+  // Normalize share bars to ensure all 5 icons are present
+  function normalizeShareBars() {
+    var shareBars = document.querySelectorAll('.social-share-bar');
+    if (shareBars.length === 0) return;
+    // Define all required share icons with their SVG
+    var shareIcons = {
+      copy: { selectors: ['.share-copy', 'button[title="Copy link"]', 'a[title="Copy link"]'], 
+        html: '<a href="#" class="share-copy" title="Copy link" style="color:#666;display:flex;align-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>' },
+      linkedin: { selectors: ['.share-linkedin', 'a[title="LinkedIn"]'], 
+        html: '<a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color:#0a66c2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>' },
+      twitter: { selectors: ['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+        html: '<a href="#" class="share-twitter" target="_blank" title="X" style="color:#000!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' },
+      facebook: { selectors: ['.share-facebook', 'a[title="Facebook"]'], 
+        html: '<a href="#" class="share-facebook" target="_blank" title="Facebook" style="color:#1877f2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' },
+      whatsapp: { selectors: ['.share-whatsapp', 'a[title="WhatsApp"]'], 
+        html: '<a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color:#25d366!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' }
+    };
+    // Order of icons (right to left for RTL, so we add in this order)
+    var iconOrder = ['copy', 'linkedin', 'twitter', 'facebook', 'whatsapp'];
+    shareBars.forEach(function(bar) {
+      iconOrder.forEach(function(iconKey) {
+        var icon = shareIcons[iconKey];
+        var exists = icon.selectors.some(function(sel) { return bar.querySelector(sel); });
+        if (!exists) {
+          // Find the label span and insert after it
+          var label = bar.querySelector('span');
+          if (label) {
+            label.insertAdjacentHTML('afterend', icon.html);
+          } else {
+            bar.insertAdjacentHTML('afterbegin', icon.html);
+          }
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    // First normalize the share bars to ensure all icons exist
+    normalizeShareBars();
+    var url = getShareUrl();
+    var title = document.title;
+    var isDisabled = !url;
+    if (isDisabled) console.log('[Zappy] Share links disabled in preview mode - will work after publishing');
+    // WhatsApp
+    setShareHref(['.share-whatsapp', 'a[title="WhatsApp"]', 'a[title="whatsapp"]'], 
+      url ? 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url) : '#', isDisabled);
+    // Facebook
+    setShareHref(['.share-facebook', 'a[title="Facebook"]', 'a[title="facebook"]'], 
+      url ? 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) : '#', isDisabled);
+    // Twitter/X
+    setShareHref(['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+      url ? 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title) : '#', isDisabled);
+    // LinkedIn
+    setShareHref(['.share-linkedin', 'a[title="LinkedIn"]', 'a[title="linkedin"]'], 
+      url ? 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) : '#', isDisabled);
+    // Copy link button
+    ['.share-copy', 'button[title="Copy link"]', 'button[title="copy"]', 'a[title="Copy link"]'].forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Copy link will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.onclick = function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(url).then(function() {
+              var orig = el.innerHTML;
+              el.innerHTML = '✓';
+              setTimeout(function() { el.innerHTML = orig; }, 1500);
+            });
+          };
+        }
+      });
+    });
+  });
+})();
+</script><a href="https://wa.me/972542668566" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
     <script src="/script.js"></script>
 
