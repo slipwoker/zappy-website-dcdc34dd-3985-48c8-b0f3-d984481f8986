@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>משכנתא לשיפוצים - המדריך המלא למימון שיפוץ הבית | אריאל אחון</title>
-    <meta name="description" content="מתכננים שיפוץ? גלו איך לממן את השיפוץ בעזרת הרחבת המשכנתא בתנאים אטרקטיביים. כל מה שצריך לדעת על משכנתא לשיפוצים, ריביות ותהליך האישור.">
+    <title>מכירת דירת מחיר למשתכן | מתי מותר למכור? מדריך מלא</title>
+    <meta name="description" content="מתי מותר למכור דירת מחיר למשתכן או דירה בהנחה? כל המידע על תקופת החסימה, חישוב מועד המכירה המותר, קנסות יציאה והיבטי מיסוי ומשכנתא. מדריך חובה לזוכים.">
     <meta name="keywords" content="">
     
     <!-- Zappy Analytics -->
@@ -742,24 +742,33 @@
         left: auto;
         right: 0;
       }
-    </style>
+    </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EY9JJ9BZN4');
+</script>
+<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+  
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:url" content="https://mashkanta-bepijama.co.il/articles/renovation-mortgage">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="משכנתא לשיפוצים - המדריך המלא למימון שיפוץ הבית | אריאל אחון">
-    <meta property="og:description" content="מתכננים שיפוץ? גלו איך לממן את השיפוץ בעזרת הרחבת המשכנתא בתנאים אטרקטיביים. כל מה שצריך לדעת על משכנתא לשיפוצים, ריביות ותהליך האישור.">
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-renovation-hero-1769249117668-og.jpg">
+    <meta property="og:title" content="מכירת דירת מחיר למשתכן | מתי מותר למכור? מדריך מלא">
+    <meta property="og:description" content="מתי מותר למכור דירת מחיר למשתכן או דירה בהנחה? כל המידע על תקופת החסימה, חישוב מועד המכירה המותר, קנסות יציאה והיבטי מיסוי ומשכנתא. מדריך חובה לזוכים.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-selling-mechir-lamishtaken-hero-1771736985194-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="משכנתא לשיפוצים - המדריך המלא למימון שיפוץ הבית | אריאל אחון">
+    <meta property="og:image:alt" content="מכירת דירת מחיר למשתכן | מתי מותר למכור? מדריך מלא">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="משכנתא לשיפוצים - המדריך המלא למימון שיפוץ הבית | אריאל אחון">
-    <meta name="twitter:description" content="מתכננים שיפוץ? גלו איך לממן את השיפוץ בעזרת הרחבת המשכנתא בתנאים אטרקטיביים. כל מה שצריך לדעת על משכנתא לשיפוצים, ריביות ותהליך האישור.">
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-renovation-hero-1769249117668-og.jpg">
-    <meta name="twitter:image:alt" content="משכנתא לשיפוצים - המדריך המלא למימון שיפוץ הבית | אריאל אחון"><style id="zappy-ai-page-styles">
+    <meta name="twitter:title" content="מכירת דירת מחיר למשתכן | מתי מותר למכור? מדריך מלא">
+    <meta name="twitter:description" content="מתי מותר למכור דירת מחיר למשתכן או דירה בהנחה? כל המידע על תקופת החסימה, חישוב מועד המכירה המותר, קנסות יציאה והיבטי מיסוי ומשכנתא. מדריך חובה לזוכים.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-selling-mechir-lamishtaken-hero-1771736985194-og.jpg">
+    <meta name="twitter:image:alt" content="מכירת דירת מחיר למשתכן | מתי מותר למכור? מדריך מלא"><style id="zappy-ai-page-styles">
 
 
 /* Zappy Base Styles for Edit Mode Compatibility */
@@ -822,8 +831,9 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+/* Hero container fixes - contain absolute images and prevent viewport overflow */
+/* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
+[class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
@@ -839,16 +849,7 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EY9JJ9BZN4');
-</script>
-<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="mobile-lang-menu-deployed-css">
@@ -928,184 +929,173 @@ img[data-no-hero-position] { position: static !important; }
         </li>
       </div>
     </div>
-  </nav><main class="page-main blog-page ai-generated-page">
-  <!--6-- Hero Section ---->
-  <section class="section hero-section" id="hero-renovation" style="background-color: #f8f9fa !6important; padding: 80px 0; border-bottom: 1px solid #e0e0e0;; position: relative; overflow: hidden;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
-        <div class="hero-content" style="position: relative; overflow: hidden;">
-          <h1 style="color: #1e3a8a !6important; font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; line-height: 1.2;">משכנתא לשיפוצים: איך לממן את בית החלומות בתבונה?</h1>
-          <p style="color: #304060 !6important; font-size: 1.2rem; margin-bottom: 30px; line-height: 1.6;">
-            שיפוץ הבית הוא הרפתקה מרגשת אך יקרה. גלו כיצד ייעוץ משכנתאות חכם יכול לעזור לכם להפוך את השיפוץ לאפשרי כלכלית, באמצעות פתרונות מימון זולים וארוכי טווח.
-          </p>
-          <a href="/contact" class="btn" style="display: inline-block; background-color: #1e3a8a; color: #ffffff !6important; padding: 15px 35px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s ease;">קבלו הצעה לייעוץ</a>
-        </div>
-        <div class="hero-image" style="position: relative; overflow: hidden;">
-          <img data-placeholder="renovation-hero" data-context="Happy couple looking at renovation blueprints in a bright living room" data-zappy-editable-image="true" src="/assets/page-renovation-hero-1769249117668.webp" alt="זוג מתכנן שיפוץ לבית" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" class="generated-image" data-og-image="/assets/page-renovation-hero-1769249117668-og.jpg">
-        </div>
-      </div>
-    </div>
-  </section>
+  </nav><main class="page-main blog-page ai-generated-page"><section class="section page-content-section" id="zappy-section-0" data-zappy-section="true"><div class="container">
 
-  <!--6-- Introduction Section ---->
-  <section class="section content-section" id="intro-renovation" style="background-color: #ffffff !6important; padding: 80px 0;" data-zappy-section="true">
-    <div class="container" style="max-width: 900px; margin: 0 auto;">
-      <h2 style="color: #304060 !6important; font-size: 2rem; margin-bottom: 25px; border-right: 5px solid #1e3a8a; padding-right: 15px;">למה דווקא משכנתא לשיפוצים?</h2>
-      <p style="color: #305060 !6important; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-        רבים מבעלי הדירות בישראל חולמים על שדרוג הנכס הקיים. בין אם מדובר בהרחבת הסלון, הוספת חדר לילד החדש, או פשוט מודרניזציה של תשתיות ישנות - שיפוץ הוא אחת הדרכים הטובות ביותר להשביח את הנכס ולשפר את איכות החיים. עם זאת, העלות הכספית של שיפוץ מקיף יכולה להגיע למאות אלפי שקלים, סכום שלא תמיד זמין בחשבון העובר ושב.
+  <!-- Article Container -->
+  <article class="section article-section" id="article-content" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Top Back Button -->
+    <div style="margin-bottom: 20px;">
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #305060 !important; font-weight: 500; transition: color 0.2s;">
+        <span style="margin-left: 8px;">←</span> חזרה לבלוג
+      </a>
+    </div>
+
+    <!-- Top Social Share -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
+      <span style="font-weight: 500; font-size: 14px; color: #305060 !important;">שתף ב:</span>
+      <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center; transition: opacity 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center; transition: opacity 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center; transition: opacity 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center; transition: opacity 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center; transition: opacity 0.2s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="article-hero-image" style="width: 100%; margin-bottom: 30px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);; position: relative; overflow: hidden;">
+      <img data-placeholder="selling-mechir-lamishtaken-hero" data-context="Happy couple shaking hands with real estate agent or holding sold sign in front of modern apartment building, bright and professional style" data-zappy-editable-image="true" alt="מכירת דירת מחיר למשתכן" style="width: 100%; aspect-ratio: 21/9; object-fit: cover;" src="/assets/page-selling-mechir-lamishtaken-hero-1771736985194.webp" class="generated-image" data-og-image="/assets/page-selling-mechir-lamishtaken-hero-1771736985194-og.jpg">
+    </div>
+
+    <!-- Article Header -->
+    <header style="margin-bottom: 40px;">
+      <h1 style="font-size: clamp(28px, 5vw, 42px); font-weight: 800; color: #304060 !important; margin-bottom: 15px; line-height: 1.2;">מכירת דירת מחיר למשתכן ודירה בהנחה - מתי מותר ואיך עושים את זה נכון?</h1>
+      <div class="article-meta" style="display: flex; gap: 15px; color: #305060 !important; font-size: 14px;">
+        <span>📅 עודכן לאחרונה: אוקטובר 2023</span>
+        <span>⏱️ זמן קריאה: 6 דקות</span>
+      </div>
+    </header>
+
+    <!-- Article Body -->
+    <div class="article-content" style="font-size: 18px; color: #304060 !important;">
+      <p style="margin-bottom: 24px;">
+        אחד הרגעים המאושרים בחייו של זוכה בתוכניות "מחיר למשתכן" או "דירה בהנחה" הוא קבלת המפתח. אך מיד לאחר ההתרגשות הראשונית, ובוודאי בחלוף מספר שנים, עולה השאלה הגדולה: <strong>מתי אני יכול למכור את הדירה ולממש את הרווח?</strong>
       </p>
-      <p style="color: #305060 !6important; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-        הטעות הנפוצה ביותר היא נטילת "הלוואה לכל מטרה" או הלוואה צרכנית רגילה מהבנק למימון השיפוץ. הלוואות אלו מתאפיינות בדרך כלל בריביות גבוהות ובתקופות החזר קצרות (עד 5-7 שנים), מה שיוצר עומס חודשי כבד על התקציב המשפחתי. לעומת זאת, <strong>משכנתא לשיפוצים</strong> היא למעשה הרחבה של המשכנתא הקיימת (או נטילת משכנתא חדשה על נכס קיים), המאפשרת לכם לקבל כסף בתנאי דיור - כלומר, בריביות נמוכות משמעותית ובפריסה ארוכה של עד 30 שנה.
+      <p style="margin-bottom: 24px;">
+        הרי כל הרעיון בתוכניות הממשלתיות הללו הוא ההנחה המשמעותית במחיר הרכישה לעומת מחיר השוק. הפער הזה, שיכול להגיע למאות אלפי שקלים ואף יותר, הוא "רווח על הנייר" שרבים רוצים להפוך לכסף נזיל – בין אם כדי לשפר דיור, לסגור חובות או פשוט לעבור לאזור מגורים אחר.
       </p>
-      <div style="background-color: #f0f4f8 !6important; padding: 30px; border-radius: 10px; border-right: 4px solid #1e3a8a; margin-top: 30px;">
-        <h3 style="color: #1e3a8a !6important; margin-bottom: 15px; font-size: 1.3rem;">נקודה למחשבה</h3>
-        <p style="color: #304060 !6important; margin: 0;">
-          בתהליך של ייעוץ משכנתאות מקצועי, אנו בוחנים לא רק את עלות השיפוץ, אלא את יכולת ההחזר הכוללת של המשפחה. לעיתים, פריסת עלות השיפוץ ל-20 שנה תאפשר לכם לשפץ "בראש שקט" מבלי להיחנק מההחזרים החודשיים, ובמקרים מסוימים אף ניתן לשלב זאת עם מיחזור משכנתא ושיפור תנאים כולל להלוואה הקיימת.
+      <p style="margin-bottom: 32px;">
+        במדריך זה נעשה סדר בכל הנוגע למגבלות המכירה, נבין בדיוק איך מחשבים את תאריך השחרור, ונבדוק האם יש דרך חוקית למכור את הנכס לפני תום התקופה.
+      </p>
+
+      <h2 style="font-size: 28px; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">חוק המכר ותקופת החסימה: הכלל הקובע</h2>
+      <p style="margin-bottom: 24px;">
+        המדינה, ברצונה למנוע ספקולציות נדל"ן (אנשים שיקנו בזול וימכרו מיד ביוקר), קבעה בחוק מגבלה ברורה על מכירת הדירה. חשוב להבין: המגבלה היא על <strong>מכירה</strong> בלבד, ולא על השכרה (פרט למקרים חריגים מאוד במענקים ספציפיים בפריפריה, אך הרוב המוחלט רשאי להשכיר את הדירה מהיום הראשון).
+      </p>
+      <p style="margin-bottom: 24px;">
+        הכלל הקובע לגבי מועד המכירה המותר הוא פשוט, אך לעיתים מבלבל. מותר למכור את הדירה במועד <strong>המוקדם</strong> מבין השניים:
+      </p>
+      <ul style="list-style-type: none; padding: 0; margin-bottom: 24px;">
+        <li style="background: #ffffff; padding: 15px; margin-bottom: 10px; border-right: 4px solid #1e3a8a; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+          <strong>1. חלפו 5 שנים מקבלת טופס 4 (אישור אכלוס) לדירה.</strong>
+        </li>
+        <li style="background: #ffffff; padding: 15px; margin-bottom: 10px; border-right: 4px solid #1e3a8a; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+          <strong>2. חלפו 7 שנים ממועד הזכייה בהגרלה.</strong>
+        </li>
+      </ul>
+      <p style="margin-bottom: 24px;">
+        שימו לב לדגש על המילה <strong>המוקדם</strong>. זהו שינוי לטובת הרוכשים שנכנס לתוקף בעבר, ומאפשר גמישות רבה יותר. אם הפרויקט שלכם התעכב בבנייה (מה שקורה לא מעט), ייתכן ש-7 השנים ממועד הזכייה יסתיימו עוד לפני שחלפו 5 שנים מהאכלוס, ואז תוכלו למכור את הדירה מוקדם מהצפוי.
+      </p>
+
+      <h2 style="font-size: 28px; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">איך בודקים את התאריך המדויק שלכם?</h2>
+      <p style="margin-bottom: 24px;">
+        כדי להימנע מטעויות קריטיות (מכירה יום אחד לפני הזמן עלולה לגרור קנסות עתק וביטול עסקה), מומלץ לבדוק את התאריך המדויק.
+      </p>
+      <p style="margin-bottom: 24px;">
+        בחוזה הרכישה שלכם מול הקבלן, וכן ברישומי משרד הבינוי והשיכון, מופיע תאריך הזכייה. הוסיפו לו 7 שנים. במקביל, בדקו את תאריך קבלת טופס 4 לפרויקט (ניתן לבדוק מול הקבלן או בוועדה לתכנון ובנייה ברשות המקומית) והוסיפו לו 5 שנים. התאריך הקרוב יותר הוא "יום השחרור" שלכם.
+      </p>
+      <p style="margin-bottom: 24px;">
+        <strong>טיפ חשוב:</strong> מומלץ להוציא נסח טאבו עדכני. ברוב המקרים, תופיע שם הערת אזהרה לטובת המדינה המגבילה את המכירה. מחיקת ההערה הזו היא תנאי לביצוע המכירה בטאבו.
+      </p>
+
+      <h2 style="font-size: 28px; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">האם ניתן למכור לפני הזמן? (ועדת חריגים)</h2>
+      <p style="margin-bottom: 24px;">
+        רבים פונים אלינו בשאלה: "האם יש דרך לעקוף את האיסור?". התשובה הקצרה היא: כן, אבל זה כנראה לא משתלם לכם.
+      </p>
+      <p style="margin-bottom: 24px;">
+        ניתן להגיש בקשה ל<strong>ועדת חריגים</strong> של משרד הבינוי והשיכון. הוועדה מאשרת מכירה מוקדמת במקרים קיצוניים בלבד, כגון:
+      </p>
+      <ul style="margin-bottom: 24px; padding-right: 20px;">
+        <li style="margin-bottom: 10px;">מצוקה בריאותית קשה של אחד מבני המשפחה.</li>
+        <li style="margin-bottom: 10px;">מצוקה כלכלית חריפה (פשיטת רגל, כינוס נכסים).</li>
+        <li style="margin-bottom: 10px;">גירושין (במקרים מסוימים, וגם אז לעיתים הפתרון הוא העברת חלקו של אחד מבני הזוג לשני ולא מכירה לצד ג').</li>
+      </ul>
+      <p style="margin-bottom: 24px;">
+        <strong>הקאץ' הגדול: הקנס.</strong> גם אם הוועדה תאשר לכם למכור, תדרשו להחזיר למדינה את סכום ההטבה שקיבלתם (ההנחה), בתוספת הצמדה וריבית. סכום זה יכול להגיע ל-300,000 ₪, 450,000 ₪ ואף יותר. ברוב המקרים, תשלום הקנס הופך את המכירה ללא כדאית כלכלית.
+      </p>
+
+      <div style="background-color: #e0e0e0 !important; padding: 30px; border-radius: 12px; margin: 40px 0;">
+        <h3 style="color: #1e3a8a !important; margin-top: 0; font-size: 24px;">מה לגבי משפרי דיור?</h3>
+        <p style="margin-bottom: 0;">
+          אם אתם רוצים לשפר דיור ולקנות דירה אחרת לפני תום תקופת החסימה, אתם בבעיה. לא תוכלו למכור את הדירה הנוכחית כדי לממן את החדשה. הפתרון הנפוץ הוא <strong>השכרת הדירה</strong> שלכם ושכירת דירה אחרת המתאימה לצרכיכם, עד שיגיע מועד השחרור המיוחל.
         </p>
       </div>
-    </div>
-  </section>
 
-  <!--6-- Comparison Grid Section ---->
-  <section class="section comparison-section" id="loan-comparison" style="background-color: #e0e0e0 !6important; padding: 80px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
-        <h2 style="color: #304060 !6important; font-size: 2.2rem; margin-bottom: 15px;">הלוואה רגילה מול משכנתא לשיפוצים</h2>
-        <p style="color: #305060 !6important; font-size: 1.1rem;">מה ההבדל הגדול ולמה זה משתלם?</p>
-      </div>
-      
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        <!--6-- Card 1: Regular Loan ---->
-        <article class="card" style="background-color: #ffffff !6important; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-          <div style="width: 60px; height: 60px; background-color: #f0f0f0 !6important; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-            <span style="font-size: 24px;">💳</span>
-          </div>
-          <h3 style="color: #304060 !6important; font-size: 1.5rem; margin-bottom: 20px;">הלוואה בנקאית רגילה</h3>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #e74c3c !6important;">✖</span>
-              ריביות גבוהות (לרוב דו-ספרתיות)
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #e74c3c !6important;">✖</span>
-              פריסה קצרה (עד 5-7 שנים)
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #e74c3c !6important;">✖</span>
-              החזר חודשי גבוה ומכביד
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #2ecc71 !6important;">✔</span>
-              תהליך אישור מהיר יחסית
-            </li>
-          </ul>
-        </article>
-
-        <!--6-- Card 2: Renovation Mortgage ---->
-        <article class="card" style="background-color: #ffffff !6important; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 5px solid #1e3a8a;">
-          <div style="width: 60px; height: 60px; background-color: #e8f0fe !6important; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-            <span style="font-size: 24px;">🏠</span>
-          </div>
-          <h3 style="color: #1e3a8a !6important; font-size: 1.5rem; margin-bottom: 20px;">משכנתא לשיפוצים</h3>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #2ecc71 !6important;">✔</span>
-              ריביות דיור אטרקטיביות
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #2ecc71 !6important;">✔</span>
-              פריסה ארוכה (עד 30 שנה)
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #2ecc71 !6important;">✔</span>
-              החזר חודשי נמוך ונוח
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; color: #f39c12 !6important;">⚠</span>
-              דורש שמאות ובירוקרטיה
-            </li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!--6-- Process Steps Section ---->
-  <section class="section steps-section" id="process-steps" style="background-color: #ffffff !6important; padding: 80px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;">
-        <div class="content-side">
-          <h2 style="color: #304060 !6important; font-size: 2rem; margin-bottom: 30px;">תהליך קבלת משכנתא לשיפוצים</h2>
-          <p style="color: #305060 !6important; margin-bottom: 20px; line-height: 1.7;">
-            קבלת אישור למשכנתא עבור שיפוץ שונה במעט מרכישת דירה רגילה. הבנק רוצה לוודא שהכסף אכן הולך להשבחת הנכס. הנה השלבים העיקריים בתהליך:
-          </p>
-          
-          <div class="step-item" style="margin-bottom: 25px;">
-            <h4 style="color: #1e3a8a !6important; font-size: 1.2rem; margin-bottom: 10px;">1. תכנון תקציב וקבלת הצעות מחיר</h4>
-            <p style="color: #305060 !6important; font-size: 1rem;">לפני שניגשים לבנק, עליכם לדעת כמה יעלה השיפוץ. אספו הצעות מחיר מקבלנים וכתבי כמויות מסודרים. זהו שלב קריטי גם עבור ייעוץ משכנתא לדירה ראשונה וגם למשפרי דיור.</p>
-          </div>
-          
-          <div class="step-item" style="margin-bottom: 25px;">
-            <h4 style="color: #1e3a8a !6important; font-size: 1.2rem; margin-bottom: 10px;">2. הערכת שמאי</h4>
-            <p style="color: #305060 !6important; font-size: 1rem;">הבנק ידרוש שמאות מוקדמת. השמאי יעריך את שווי הבית הנוכחי ואת השווי הצפוי לאחר השיפוץ ("שווי כגמור"). גובה המשכנתא ייגזר לרוב כאחוז משווי הנכס.</p>
-          </div>
-          
-          <div class="step-item" style="margin-bottom: 25px;">
-            <h4 style="color: #1e3a8a !6important; font-size: 1.2rem; margin-bottom: 10px;">3. אישור עקרוני ובניית תמהיל</h4>
-            <p style="color: #305060 !6important; font-size: 1rem;">בשלב זה נבנה עבורכם תמהיל משכנתא המותאם ליכולת ההחזר שלכם, תוך שילוב מסלולים שיגנו עליכם מעליית הריבית והמדד.</p>
-          </div>
-
-          <div class="step-item">
-            <h4 style="color: #1e3a8a !6important; font-size: 1.2rem; margin-bottom: 10px;">4. שחרור הכספים בפעימות</h4>
-            <p style="color: #305060 !6important; font-size: 1rem;">בשיפוצים גדולים, הבנק לא תמיד משחרר את כל הכסף מראש. לעיתים הכסף משוחרר בפעימות בהתאם להתקדמות השיפוץ ואישור השמאי.</p>
-          </div>
-        </div>
-        
-        <div class="image-side">
-          <img data-placeholder="process-meeting" data-context="Professional mortgage advisor explaining documents to clients in an office" data-zappy-editable-image="true" src="/assets/page-process-meeting-1769249118140.webp" alt="ייעוץ משכנתאות מקצועי" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" data-no-hero-position="true" class="generated-image">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--6-- Tips & Value Section ---->
-  <section class="section tips-section" id="renovation-tips" style="background-color: #f8f9fa !6important; padding: 80px 0;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="text-align: center; color: #304060 !6important; font-size: 2rem; margin-bottom: 50px;">טיפים לחיסכון במשכנתא לשיפוצים</h2>
-      
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        <div class="tip-card" style="background-color: #ffffff !6important; padding: 30px; border-radius: 8px; border-top: 4px solid #1e3a8a;">
-          <h3 style="color: #304060 !6important; font-size: 1.3rem; margin-bottom: 15px;">נצלו את ההזדמנות למיחזור</h3>
-          <p style="color: #305060 !6important;">אם כבר פותחים את תיק המשכנתא להוספת כסף, זו הזדמנות מצוינת לבדוק כדאיות מיחזור משכנתא ושיפור תנאים עבור החוב הקיים. לעיתים החיסכון במיחזור יכול לממן את הריבית על התוספת לשיפוץ.</p>
-        </div>
-        
-        <div class="tip-card" style="background-color: #ffffff !6important; padding: 30px; border-radius: 8px; border-top: 4px solid #1e3a8a;">
-          <h3 style="color: #304060 !6important; font-size: 1.3rem; margin-bottom: 15px;">שימו לב לאחוזי המימון</h3>
-          <p style="color: #305060 !6important;">בנק ישראל מגביל את אחוז המימון הכולל (משכנתא קיימת + תוספת). בדירה יחידה ניתן להגיע עד 75% משווי הנכס, ובדירה חליפית (משפרי דיור) עד 70%. ייעוץ משכנתאות מקצועי יסייע לכם לחשב את הגבולות המדויקים.</p>
-        </div>
-        
-        <div class="tip-card" style="background-color: #ffffff !6important; padding: 30px; border-radius: 8px; border-top: 4px solid #1e3a8a;">
-          <h3 style="color: #304060 !6important; font-size: 1.3rem; margin-bottom: 15px;">הגדירו "כרית ביטחון"</h3>
-          <p style="color: #305060 !6important;">שיפוצים נוטים להתייקר תוך כדי תנועה. בעת בקשת המשכנתא, מומלץ לבקש סכום מעט גבוה יותר מהצעת המחיר (כ-10%-15%) לבלת"מים. אם לא תשתמשו בכסף, פשוט לא תמשכו אותו מהבנק.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--6-- CTA Section ---->
-  <section class="section cta-section" id="cta-renovation" style="background-color: #1e3a8a !6important; padding: 80px 0; text-align: center;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #ffffff !6important; font-size: 2.2rem; margin-bottom: 20px;">מתכננים שיפוץ? אל תשלמו ביוקר על הכסף</h2>
-      <p style="color: #e0e0e0 !6important; font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px;">
-        באריאל אחון ייעוץ משכנתאות ופיננסיים, נבנה עבורכם את תמהיל המימון המדויק לשיפוץ החלומות שלכם. נחסוך לכם ריביות מיותרות, בירוקרטיה מתישה וטעויות יקרות.
+      <h2 style="font-size: 28px; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">המשכנתא במעמד המכירה – גרירה או סילוק?</h2>
+      <p style="margin-bottom: 24px;">
+        כאשר מגיע הרגע למכור, עליכם לקבל החלטה לגבי המשכנתא הקיימת. כיוון שמשכנתאות ב"מחיר למשתכן" נלקחו לעיתים בתנאים מצוינים (ריביות נמוכות של לפני מספר שנים), שווה לשקול <strong>גרירת משכנתא</strong>.
       </p>
-      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-        <a href="/contact" class="btn" style="background-color: #ffffff; color: #1e3a8a !6important; padding: 15px 40px; border-radius: 8px; font-weight: bold; text-decoration: none; font-size: 1.1rem; transition: transform 0.2s;">תיאום פגישת ייעוץ</a>
-        <a href="/articles" class="btn" style="background-color: transparent; color: #ffffff !6important; border: 2px solid #ffffff; padding: 15px 40px; border-radius: 8px; font-weight: bold; text-decoration: none; font-size: 1.1rem;">למאמרים נוספים</a>
+      <p style="margin-bottom: 24px;">
+        גרירת משכנתא מאפשרת לכם לקחת את תנאי ההלוואה הקיימים ולהעביר אותם לנכס החדש שתרכשו. זהו יתרון עצום בסביבת ריבית עולה. אם אינכם קונים נכס חדש מיד, ניתן לעיתים לבצע "גרירה לפיקדון" (הקפאת הכסף בבנק) לתקופה מוגבלת.
+      </p>
+      <p style="margin-bottom: 24px;">
+        לעומת זאת, אם המשכנתא שלכם בתנאים פחות טובים מהשוק הנוכחי (פחות סביר, אך ייתכן), או אם אתם זקוקים לכסף נזיל ולא לרכישת דירה אחרת, תבצעו <strong>סילוק משכנתא</strong> מכספי המכירה.
+      </p>
+      <p style="margin-bottom: 24px;">
+        כחלק מתהליך <a href="/" style="color: #1e3a8a !important; text-decoration: underline;">ייעוץ משכנתאות</a>, אנו בוחנים תמיד את כדאיות הגרירה מול הסילוק, כדי לוודא שאתם לא זורקים כסף לפח.
+      </p>
+
+      <h2 style="font-size: 28px; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">היבטי מיסוי: מס שבח בדירה בהנחה</h2>
+      <p style="margin-bottom: 24px;">
+        נקודה קריטית נוספת היא מס השבח. כאשר אתם מוכרים דירה ברווח, המדינה דורשת מס של 25% על הרווח הריאלי. בדירות מחיר למשתכן, הרווח הוא לרוב עצום (כי קניתם בזול ומכרתם במחיר שוק מלא).
+      </p>
+      <p style="margin-bottom: 24px;">
+        החדשות הטובות: אם זו דירתכם היחידה (וזו לרוב הדרישה בתוכניות אלו), סביר להניח שתהיו זכאים ל<strong>פטור ממס שבח</strong> במכירת דירת מגורים יחידה (עד לתקרה מסוימת, שרוב הדירות בתוכנית לא עוברות אותה).
+      </p>
+      <p style="margin-bottom: 24px;">
+        עם זאת, אם רכשתם נכסים נוספים במהלך השנים, או אם יש לכם שותפים בדירה, המצב עלול להסתבך. תמיד מומלץ להתייעץ עם עורך דין או יועץ מס לפני החתימה על חוזה המכירה כדי להימנע מהפתעות של מאות אלפי שקלים.
+      </p>
+
+      <h2 style="font-size: 28px; font-weight: 700; color: #1e3a8a !important; margin-top: 40px; margin-bottom: 20px;">לסיכום: התכנון הוא המפתח</h2>
+      <p style="margin-bottom: 24px;">
+        מכירת דירת מחיר למשתכן היא ה"אקזיט" של המשפחה הישראלית הממוצעת. זהו רגע פיננסי משמעותי שיכול להזניק אתכם כלכלית. כדי למקסם את הרווח, חשוב:
+      </p>
+      <ol style="margin-bottom: 32px; padding-right: 20px;">
+        <li style="margin-bottom: 10px;">לוודא במדויק את תום תקופת החסימה.</li>
+        <li style="margin-bottom: 10px;">להכין את הדירה למכירה (צביעה, תיקונים קלים) – הרושם הראשוני קובע את המחיר.</li>
+        <li style="margin-bottom: 10px;">לתכנן את המהלך הפיננסי הבא (גרירת משכנתא, השקעה מחדש).</li>
+      </ol>
+      <p style="margin-bottom: 24px;">
+        רוצים לוודא שאתם עושים את הצעד הנכון? מתלבטים אם למכור או למחזר את המשכנתא ולהשאיר את הנכס להשקעה? אנחנו כאן בשבילכם.
+      </p>
+
+      <!-- CTA Section -->
+      <div style="background-color: #1e3a8a; color: #ffffff !important; padding: 40px; border-radius: 12px; text-align: center; margin-top: 60px;">
+        <h3 style="color: #ffffff !important; margin-top: 0; font-size: 28px; margin-bottom: 15px;">מתכננים למכור או למחזר?</h3>
+        <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">אל תעשו צעדים משמעותיים בלי ייעוץ מקצועי. בואו נבדוק יחד את כדאיות המהלך ונבנה לכם אסטרטגיה מנצחת.</p>
+        <a href="/contact" class="btn" style="display: inline-block; background-color: #ffffff; color: #1e3a8a !important; padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 18px; transition: transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">תיאום שיחת ייעוץ ללא עלות</a>
       </div>
+
     </div>
-  </section>
-</main>
+
+    <!-- Bottom Social Share -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0 20px 0; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+      <span style="font-weight: 500; font-size: 14px; color: #305060 !important;">שתף ב:</span>
+      <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+
+    <!-- Bottom Back Button -->
+    <div style="margin-top: 20px;">
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #305060 !important; font-weight: 500; transition: color 0.2s;">
+        <span style="margin-left: 8px;">←</span> חזרה לבלוג
+      </a>
+    </div>
+
+  </article>
+</div></section></main>
 
   
 
@@ -1114,6 +1104,14 @@ img[data-no-hero-position] { position: static !important; }
   
 
   
+
+
+
+
+
+
+
+
 
   
 
@@ -1127,15 +1125,7 @@ img[data-no-hero-position] { position: static !important; }
 
   
     <!--6-- Legal Footer ---->
-    
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>משכנתא בפיג'מה</title>
-
-
-<footer class="legal-footer">
+    <footer class="legal-footer">
       <div class="container">
         <div class="footer-main">
           <div class="all-rights-reserved">
@@ -1144,7 +1134,7 @@ img[data-no-hero-position] { position: static !important; }
           <div class="footer-social"><a href="https://facebook.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 <a href="https://instagram.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 <a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819969107-y9t4k2"><i class="fab fa-youtube"></i></a></div>
+<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819966672-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -1166,9 +1156,7 @@ img[data-no-hero-position] { position: static !important; }
     </footer>
 
 
-
-
-
+<!--6-- Zappy Attribution Header Script ---->
 <script>
 (function() {
   var websiteId = 'dcdc34dd-3985-48c8-b0f3-d984481f8986';
@@ -1947,6 +1935,120 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
+
+<script id="zappy-share-script">
+(function() {
+  function getShareUrl() {
+    // Priority 1: Check for deployed site URL meta tag (set by Zappy when site is published)
+    var siteUrl = document.querySelector('meta[name="zappy-site-url"]');
+    if (siteUrl && siteUrl.content) {
+      var basePath = window.location.pathname;
+      var pageParam = new URLSearchParams(window.location.search).get('page');
+      var pagePath = pageParam || basePath;
+      if (pagePath.startsWith('/api/website/preview')) pagePath = '/';
+      return siteUrl.content.replace(/\/$/, '') + pagePath;
+    }
+    var c = document.querySelector('link[rel="canonical"]');
+    if (c && c.href && !c.href.includes('localhost') && !c.href.includes('preview')) return c.href;
+    var m = document.querySelector('meta[property="og:url"]');
+    if (m && m.content && !m.content.includes('localhost') && !m.content.includes('preview')) return m.content;
+    var isPreview = window.location.href.includes('preview') || window.location.href.includes('localhost') || window.location.href.includes('auth_token');
+    if (isPreview) return null;
+    return window.location.origin + window.location.pathname;
+  }
+  function setShareHref(selectors, href, isDisabled) {
+    selectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Share links will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.href = href;
+        }
+      });
+    });
+  }
+  // Normalize share bars to ensure all 5 icons are present
+  function normalizeShareBars() {
+    var shareBars = document.querySelectorAll('.social-share-bar');
+    if (shareBars.length === 0) return;
+    // Define all required share icons with their SVG
+    var shareIcons = {
+      copy: { selectors: ['.share-copy', 'button[title="Copy link"]', 'a[title="Copy link"]'], 
+        html: '<a href="#" class="share-copy" title="Copy link" style="color:#666;display:flex;align-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>' },
+      linkedin: { selectors: ['.share-linkedin', 'a[title="LinkedIn"]'], 
+        html: '<a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color:#0a66c2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>' },
+      twitter: { selectors: ['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+        html: '<a href="#" class="share-twitter" target="_blank" title="X" style="color:#000!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' },
+      facebook: { selectors: ['.share-facebook', 'a[title="Facebook"]'], 
+        html: '<a href="#" class="share-facebook" target="_blank" title="Facebook" style="color:#1877f2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' },
+      whatsapp: { selectors: ['.share-whatsapp', 'a[title="WhatsApp"]'], 
+        html: '<a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color:#25d366!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' }
+    };
+    // Order of icons (right to left for RTL, so we add in this order)
+    var iconOrder = ['copy', 'linkedin', 'twitter', 'facebook', 'whatsapp'];
+    shareBars.forEach(function(bar) {
+      iconOrder.forEach(function(iconKey) {
+        var icon = shareIcons[iconKey];
+        var exists = icon.selectors.some(function(sel) { return bar.querySelector(sel); });
+        if (!exists) {
+          // Find the label span and insert after it
+          var label = bar.querySelector('span');
+          if (label) {
+            label.insertAdjacentHTML('afterend', icon.html);
+          } else {
+            bar.insertAdjacentHTML('afterbegin', icon.html);
+          }
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    // First normalize the share bars to ensure all icons exist
+    normalizeShareBars();
+    var url = getShareUrl();
+    var title = document.title;
+    var isDisabled = !url;
+    if (isDisabled) console.log('[Zappy] Share links disabled in preview mode - will work after publishing');
+    // WhatsApp
+    setShareHref(['.share-whatsapp', 'a[title="WhatsApp"]', 'a[title="whatsapp"]'], 
+      url ? 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url) : '#', isDisabled);
+    // Facebook
+    setShareHref(['.share-facebook', 'a[title="Facebook"]', 'a[title="facebook"]'], 
+      url ? 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) : '#', isDisabled);
+    // Twitter/X
+    setShareHref(['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+      url ? 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title) : '#', isDisabled);
+    // LinkedIn
+    setShareHref(['.share-linkedin', 'a[title="LinkedIn"]', 'a[title="linkedin"]'], 
+      url ? 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) : '#', isDisabled);
+    // Copy link button
+    ['.share-copy', 'button[title="Copy link"]', 'button[title="copy"]', 'a[title="Copy link"]'].forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Copy link will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.onclick = function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(url).then(function() {
+              var orig = el.innerHTML;
+              el.innerHTML = '✓';
+              setTimeout(function() { el.innerHTML = orig; }, 1500);
+            });
+          };
+        }
+      });
+    });
+  });
+})();
+</script><a href="https://wa.me/972542668566" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
     <script src="/script.js"></script>
 
