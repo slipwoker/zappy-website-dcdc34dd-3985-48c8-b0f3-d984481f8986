@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>אישור עקרוני למשכנתא - המדריך המלא והמקיף | אריאל אחון</title>
-    <meta name="description" content="כל מה שחשוב לדעת על אישור עקרוני למשכנתא: איך מוציאים אותו, אילו מסמכים נדרשים, מה התוקף שלו ולמה הוא קריטי לפני חתימת חוזה. מדריך מקצועי לרוכשי דירות.">
+    <title>משכנתא למילואימניקים</title>
+    <meta name="description" content="מדריך מקיף על הטבות משכנתא לאנשי מילואים: מתווה בנק ישראל, דחיית תשלומים, פטור מעמלות וטיפים להתנהלות פיננסית נכונה בתקופת שירות.">
     <meta name="keywords" content="">
     
     <!-- Zappy Analytics -->
@@ -742,24 +742,33 @@
         left: auto;
         right: 0;
       }
-    </style>
+    </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EY9JJ9BZN4');
+</script>
+<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+  
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:url" content="https://mashkanta-bepijama.co.il/articles/mortgage-pre-approval">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="אישור עקרוני למשכנתא - המדריך המלא והמקיף | אריאל אחון">
-    <meta property="og:description" content="כל מה שחשוב לדעת על אישור עקרוני למשכנתא: איך מוציאים אותו, אילו מסמכים נדרשים, מה התוקף שלו ולמה הוא קריטי לפני חתימת חוזה. מדריך מקצועי לרוכשי דירות.">
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-approval-doc-1769180361197-og.jpg">
+    <meta property="og:title" content="משכנתא למילואימניקים">
+    <meta property="og:description" content="מדריך מקיף על הטבות משכנתא לאנשי מילואים: מתווה בנק ישראל, דחיית תשלומים, פטור מעמלות וטיפים להתנהלות פיננסית נכונה בתקופת שירות.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-reservists-mortgage-hero-1771951879857-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="אישור עקרוני למשכנתא - המדריך המלא והמקיף | אריאל אחון">
+    <meta property="og:image:alt" content="משכנתא למילואימניקים">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="אישור עקרוני למשכנתא - המדריך המלא והמקיף | אריאל אחון">
-    <meta name="twitter:description" content="כל מה שחשוב לדעת על אישור עקרוני למשכנתא: איך מוציאים אותו, אילו מסמכים נדרשים, מה התוקף שלו ולמה הוא קריטי לפני חתימת חוזה. מדריך מקצועי לרוכשי דירות.">
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-approval-doc-1769180361197-og.jpg">
-    <meta name="twitter:image:alt" content="אישור עקרוני למשכנתא - המדריך המלא והמקיף | אריאל אחון"><style id="zappy-ai-page-styles">
+    <meta name="twitter:title" content="משכנתא למילואימניקים">
+    <meta name="twitter:description" content="מדריך מקיף על הטבות משכנתא לאנשי מילואים: מתווה בנק ישראל, דחיית תשלומים, פטור מעמלות וטיפים להתנהלות פיננסית נכונה בתקופת שירות.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-reservists-mortgage-hero-1771951879857-og.jpg">
+    <meta name="twitter:image:alt" content="משכנתא למילואימניקים"><style id="zappy-ai-page-styles">
 
 
 /* Zappy Base Styles for Edit Mode Compatibility */
@@ -822,8 +831,9 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+/* Hero container fixes - contain absolute images and prevent viewport overflow */
+/* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
+[class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
@@ -839,16 +849,7 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EY9JJ9BZN4');
-</script>
-<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="mobile-lang-menu-deployed-css">
@@ -929,160 +930,110 @@ img[data-no-hero-position] { position: static !important; }
       </div>
     </div>
   </nav><main class="page-main blog-page ai-generated-page">
-  <!--6-- Hero Section ---->
-  <section class="section hero-section" id="approval-hero" style="background-color: #f8f9fa !6important; padding: 80px 0; text-align: center; direction: rtl;; position: relative; overflow: hidden;" data-zappy-section="true">
-    <div class="container">
-      <div style="max-width: 900px; margin: 0 auto;">
-        <h1 style="color: #304060 !6important; font-size: 2.8rem; margin-bottom: 25px; font-weight: 800; line-height: 1.2;">אישור עקרוני למשכנתא: הצעד הראשון לדירה</h1>
-        <p style="color: #305060 !6important; font-size: 1.25rem; margin-bottom: 35px; line-height: 1.6;">לפני שמתחילים לחפש את בית החלומות, חייבים להבין את מסגרת התקציב. המדריך המלא להוצאת אישור עקרוני בצורה חכמה ונכונה.</p>
-        <a href="/contact" class="btn" style="background-color: #1e3a8a !6important; color: white; padding: 15px 40px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: background-color 0.3s;">תיאום שיחת ייעוץ ראשונית</a>
-      </div>
-    </div>
-  </section>
-
-  <!--6-- Introduction Section with Image ---->
-  <section class="section intro-section" id="approval-intro" style="background-color: #ffffff !6important; padding: 80px 0; direction: rtl;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
-        <div class="content-column">
-          <h2 style="color: #304060 !6important; font-size: 2rem; margin-bottom: 20px; border-bottom: 3px solid #1e3a8a; display: inline-block; padding-bottom: 10px;">מהו בעצם אישור עקרוני?</h2>
-          <p style="color: #305060 !6important; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-            אישור עקרוני למשכנתא הוא המסמך הרשמי הראשון שאתם מקבלים מהבנק בתהליך נטילת המשכנתא. מסמך זה מהווה אסמכתא לכך שהבנק בדק את הנתונים הפיננסיים הבסיסיים שלכם – הכנסות, התחייבויות, והיסטוריית אשראי – והסכים באופן עקרוני להעמיד לרשותכם הלוואה לרכישת נכס, בכפוף לתנאים מסוימים.
-          </p>
-          <p style="color: #305060 !6important; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-            חשוב להבין: ללא אישור עקרוני, אתם למעשה "הולכים בערפל". זוגות רבים מתחילים את התהליך בחיפוש דירה, מתאהבים בנכס, ואז מגלים ברגע האמת שהבנק לא מוכן לאשר להם את סכום המימון הנדרש. במסגרת <strong>ייעוץ משכנתאות</strong> מקצועי, אנו תמיד ממליצים להוציא את האישור עוד לפני הסיור הראשון בדירה.
-          </p>
-          <div style="background-color: #f0f4f8 !6important; padding: 20px; border-right: 4px solid #1e3a8a; border-radius: 4px; margin-top: 20px;">
-            <strong style="color: #1e3a8a !6important; display: block; margin-bottom: 10px;">טיפ זהב:</strong>
-            <span style="color: #305060 !6important;">חתימה על זיכרון דברים או חוזה רכישה ללא אישור עקרוני תקף היא הימור פיננסי מסוכן שעלול לעלות לכם בקנסות הפרת חוזה של עשרות אלפי שקלים.</span>
-          </div>
-        </div>
-        <div class="image-column">
-          <img data-placeholder="approval-doc" data-context="Close up of a couple reviewing a mortgage approval document with a calculator on the table" data-zappy-editable-image="true" src="/assets/page-approval-doc-1769180361197.webp" alt="סקירת מסמכי אישור עקרוני למשכנתא" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" data-no-hero-position="true" class="generated-image">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--6-- The Process Steps ---->
-  <section class="section steps-section" id="approval-steps" style="background-color: #e0e0e0 !6important; padding: 80px 0; direction: rtl;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #304060 !6important; font-size: 2.2rem; text-align: center; margin-bottom: 50px;">איך מוציאים אישור עקרוני? שלב אחר שלב</h2>
+  <section class="section article-content-section" id="article-content" style="padding: 40px 0;" data-zappy-section="true">
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
       
-      <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        <!--6-- Step 1 ---->
-        <article class="card" style="background-color: #ffffff !6important; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s;">
-          <div style="width: 50px; height: 50px; background-color: #1e3a8a !6important; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px;">1</div>
-          <h3 style="color: #304060 !6important; font-size: 1.4rem; margin-bottom: 15px;">איסוף מסמכים</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">
-            לפני הפנייה לבנק, הכינו את הניירת: תעודות זהות וספחים, 3 תלושי שכר אחרונים (לשכירים) או שומות מס ואישורי רו"ח (לעצמאיים), ותדפיסי עו"ש של 3 חודשים אחרונים מכל החשבונות הפעילים.
-          </p>
-        </article>
-
-        <!--6-- Step 2 ---->
-        <article class="card" style="background-color: #ffffff !6important; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s;">
-          <div style="width: 50px; height: 50px; background-color: #1e3a8a !6important; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px;">2</div>
-          <h3 style="color: #304060 !6important; font-size: 1.4rem; margin-bottom: 15px;">פנייה לערוצים הדיגיטליים</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">
-            כיום ניתן להגיש בקשה לאישור עקרוני דרך אתרי האינטרנט של הבנקים או המוקדים הטלפוניים. זהו תהליך מהיר יחסית שנותן אינדיקציה ראשונית, אך חשוב לדייק בנתונים המוזנים.
-          </p>
-        </article>
-
-        <!--6-- Step 3 ---->
-        <article class="card" style="background-color: #ffffff !6important; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s;">
-          <div style="width: 50px; height: 50px; background-color: #1e3a8a !6important; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px;">3</div>
-          <h3 style="color: #304060 !6important; font-size: 1.4rem; margin-bottom: 15px;">קבלת האישור ותוקפו</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">
-            האישור שתקבלו תקף בדרך כלל ל-3 חודשים מבחינת נכונות הבנק לתת אשראי, אך שימו לב: <strong>שמירת הריביות</strong> תקפה ל-24 ימים בלבד!6 לאחר מכן, הבנק רשאי לשנות את התמחור.
-          </p>
-        </article>
+      <!-- Top Back Button -->
+      <div style="margin-bottom: 20px;">
+        <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #1e3a8a !important; font-weight: 500; transition: opacity 0.3s;">
+          <span style="margin-left: 8px;">←</span> חזרה לבלוג
+        </a>
       </div>
-    </div>
-  </section>
 
-  <!--6-- Detailed Information Block ---->
-  <section class="section details-section" id="approval-details" style="background-color: #ffffff !6important; padding: 80px 0; direction: rtl;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px;">
-        <!--6-- Content Side ---->
-        <div>
-          <h2 style="color: #304060 !6important; font-size: 2rem; margin-bottom: 25px;">למה הבנק עלול לסרב לבקשה?</h2>
-          <p style="color: #305060 !6important; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-            קבלת סירוב לאישור עקרוני היא חוויה לא נעימה, אך חשוב להבין ממה היא נובעת. הסיבות הנפוצות ביותר כוללות:
-          </p>
-          <ul style="list-style-type: none; padding: 0; margin-bottom: 30px;">
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; top: 5px; width: 10px; height: 10px; background-color: #1e3a8a !6important; border-radius: 50%;"></span>
-              <strong>היסטוריית אשראי שלילית (BDI):</strong> צ'קים חוזרים, הוצאה לפועל או הגבלות בחשבון בעבר.
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; top: 5px; width: 10px; height: 10px; background-color: #1e3a8a !6important; border-radius: 50%;"></span>
-              <strong>יחס החזר גבוה:</strong> כאשר ההחזר החודשי הצפוי עולה על 35%-40% מההכנסה הפנויה נטו.
-            </li>
-            <li style="margin-bottom: 15px; padding-right: 25px; position: relative; color: #305060 !6important;">
-              <span style="position: absolute; right: 0; top: 5px; width: 10px; height: 10px; background-color: #1e3a8a !6important; border-radius: 50%;"></span>
-              <strong>בעיות בנכס:</strong> נכסים עם רישום בעייתי בטאבו או חריגות בנייה משמעותיות.
-            </li>
-          </ul>
-          
-          <h3 style="color: #304060 !6important; font-size: 1.6rem; margin-bottom: 20px; margin-top: 40px;">החשיבות של ייעוץ משכנתא לדירה ראשונה</h3>
-          <p style="color: #305060 !6important; font-size: 1.1rem; line-height: 1.8;">
-            עבור זוגות צעירים, תהליך זה יכול להיות מבלבל ומלחיץ. <strong>ייעוץ משכנתא לדירה ראשונה</strong> מעניק לכם יתרון משמעותי: אנו מנתחים את הפרופיל הפיננסי שלכם עוד לפני הפנייה לבנק, מזהים מוקשים פוטנציאליים, ויודעים להגיש את הבקשה בצורה שתמקסם את סיכויי האישור ואת התנאים שתקבלו.
-          </p>
-        </div>
-        
-        <!--6-- Image Side ---->
-        <div>
-          <img data-placeholder="bank-meeting" data-context="Professional meeting in a modern office, financial advisor explaining documents to clients" data-zappy-editable-image="true" src="/assets/page-bank-meeting-1769180362765.webp" alt="פגישת ייעוץ משכנתאות" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" data-no-hero-position="true" class="generated-image">
-          
-          <div style="background-color: #f8f9fa !6important; padding: 30px; border-radius: 8px; border: 1px solid #e0e0e0;">
-            <h4 style="color: #1e3a8a !6important; font-size: 1.3rem; margin-bottom: 15px;">זקוקים לעזרה בהוצאת האישור?</h4>
-            <p style="color: #305060 !6important; margin-bottom: 20px;">אל תתמודדו עם הבירוקרטיה לבד. תנו לנו לעזור לכם להשיג את האישור הטוב ביותר.</p>
-            <a href="/contact" style="color: #1e3a8a !6important; font-weight: bold; text-decoration: none; display: flex; align-items: center;">
-              צור קשר עכשיו 
-              <span style="margin-right: 10px;">←</span>
-            </a>
-          </div>
-        </div>
+      <!-- Top Social Share -->
+      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
+        <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+        <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
       </div>
-    </div>
-  </section>
 
-  <!--6-- FAQ / Additional Info Section ---->
-  <section class="section info-section" id="approval-faq" style="background-color: #f8f9fa !6important; padding: 80px 0; direction: rtl;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #304060 !6important; font-size: 2.2rem; text-align: center; margin-bottom: 50px;">שאלות נפוצות על אישור עקרוני</h2>
+      <!-- Hero Image -->
+      <div class="article-hero-image" style="width: 100%; max-height: 400px; overflow: hidden; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);; position: relative; overflow: hidden;">
+        <img data-placeholder="reservists-mortgage-hero" data-context="Israeli soldier uniform texture or military reserve service concept with calculator and house keys on a desk, warm professional lighting, financial planning context" data-zappy-editable-image="true" alt="הטבות משכנתא לאנשי מילואים" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16/9;" src="/assets/page-reservists-mortgage-hero-1771951879857.webp" class="generated-image" data-og-image="/assets/page-reservists-mortgage-hero-1771951879857-og.jpg">
+      </div>
+
+      <!-- Article Header -->
+      <h1 style="font-size: 2.5rem; color: #304060 !important; margin-bottom: 15px; font-weight: 700; line-height: 1.2;">הטבות משכנתא לאנשי מילואים – המדריך המלא לזכויות שלכם</h1>
       
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <h3 style="color: #1e3a8a !6important; font-size: 1.3rem; margin-bottom: 15px;">האם האישור העקרוני מחייב את הבנק?</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">האישור מחייב את הבנק לתת לכם את ההלוואה, אך רק בתנאי שכל הנתונים שמסרתם יאומתו במדויק (באמצעות מסמכים) ושהנכס שתבחרו יאושר על ידי שמאי הבנק. אם יתגלו פערים בין ההצהרה למציאות, הבנק רשאי לחזור בו.</p>
-        </div>
-        
-        <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <h3 style="color: #1e3a8a !6important; font-size: 1.3rem; margin-bottom: 15px;">האם כדאי להוציא אישור ממספר בנקים?</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">בהחלט. הוצאת אישור עקרוני ממספר בנקים מאפשרת לכם לבצע סקר שוק ראשוני ולהשוות תנאים. עם זאת, בשלב הסופי של המשא ומתן, מומלץ להיעזר ביועץ משכנתאות כדי לנהל את המכרז בצורה יעילה ולא "לשרוף" את עצמכם מול הבנקים.</p>
-        </div>
-        
-        <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <h3 style="color: #1e3a8a !6important; font-size: 1.3rem; margin-bottom: 15px;">כמה זמן לוקח לקבל את האישור?</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">בערוצים הדיגיטליים ניתן לקבל אישור ראשוני תוך דקות עד 24 שעות. בטיפול מול בנקאי בסניף או דרך יועץ משכנתאות, התהליך עשוי לקחת מספר ימים, אך הוא לרוב יהיה מדויק ומותאם יותר לצרכים המורכבים שלכם.</p>
-        </div>
+      <div style="display: flex; align-items: center; gap: 15px; font-size: 0.9rem; color: #305060 !important; margin-bottom: 40px; border-bottom: 1px solid #e0e0e0; padding-bottom: 20px;">
+        <span>📅 25.05.2024</span>
+        <span>⏱️ זמן קריאה: 5 דקות</span>
+        <span>✍️ מאת: אריאל אחון</span>
       </div>
-    </div>
-  </section>
 
-  <!--6-- CTA Section ---->
-  <section class="section cta-section" id="approval-cta" style="background-color: #1e3a8a !6important; padding: 80px 0; text-align: center; direction: rtl;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #ffffff !6important; font-size: 2.5rem; margin-bottom: 20px;">מתכננים לקנות דירה בקרוב?</h2>
-      <p style="color: #e0e0e0 !6important; font-size: 1.3rem; max-width: 700px; margin: 0 auto 40px; line-height: 1.6;">
-        אל תיקחו סיכונים מיותרים. הצוות שלנו ב"משכנתא בפיג'מה" ילווה אתכם החל משלב האישור העקרוני ועד לקבלת המפתח, בביטחון ובשקט נפשי.
-      </p>
-      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-        <a href="/contact" class="btn" style="background-color: #ffffff; color: #1e3a8a !6important; padding: 15px 40px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.1rem; transition: transform 0.2s;">דברו איתנו</a>
-        <a href="/articles/mortgage-process" class="btn" style="background-color: transparent; color: #ffffff !6important; border: 2px solid #ffffff; padding: 13px 38px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.1rem; transition: background-color 0.2s;">קראו על תהליך המשכנתא</a>
+      <!-- Article Body -->
+      <div class="article-body" style="font-size: 1.1rem; color: #305060 !important;">
+        <p style="margin-bottom: 24px;">
+          תקופות של לחימה ואי-ודאות ביטחונית מביאות איתן אתגרים רבים, לא רק בחזית אלא גם בעורף, ובמיוחד בפן הכלכלי. אנשי המילואים, שעוזבים את ביתם, עבודתם ומשפחתם כדי להגן על המדינה, מוצאים את עצמם לעיתים קרובות מתמודדים עם ירידה בהכנסות או קושי בניהול התזרים השוטף של משק הבית. כדי לסייע בהתמודדות זו, המערכת הבנקאית ובנק ישראל גיבשו שורת הטבות משמעותיות בתחום המשכנתאות. במדריך זה נסקור את ההטבות המרכזיות בנטילת משכנתא ובתשלומי המשכנתא הקיימת עבור משרתי המילואים, וכיצד ניתן לנצל אותן בתבונה.
+        </p>
+
+        <h2 style="color: #304060 !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 600;">מתווה בנק ישראל להקלות באשראי</h2>
+        <p style="margin-bottom: 24px;">
+          עם פרוץ מלחמת "חרבות ברזל", בנק ישראל גיבש מתווה סיוע מקיף שנועד להקל על אוכלוסיות שנפגעו באופן ישיר, וביניהן משרתי המילואים (המוגדרים כמעגל ראשון). המתווה מאפשר דחייה של תשלומי המשכנתא לתקופה של מספר חודשים (בדרך כלל 3 חודשים עם אופציה להארכה), ללא ריבית וללא עמלות, עבור הזכאים.
+        </p>
+        <p style="margin-bottom: 24px;">
+          חשוב להבין את גודל ההטבה: בדרך כלל, דחיית תשלומים (המכונה "גרייס") כרוכה בצבירת ריבית דריבית שמגדילה את החוב הכולל לבנק. אולם עבור משרתי מילואים במתווה המיוחד, הדחייה היא לעיתים קרובות "הקפאת מצב" אמיתית – התשלומים נדחים לסוף תקופת המשכנתא או נפרסים מחדש, מבלי שהקרן צוברת ריבית נוספת בגין תקופת הדחייה (בכפוף למדיניות הספציפית של כל בנק ולעדכוני בנק ישראל). זהו צעד קריטי שנועד לתת אוויר לנשימה בתקופה בה ההכנסה הפנויה עלולה להיפגע עקב היעדרות מהעבודה.
+        </p>
+
+        <h2 style="color: #304060 !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 600;">הטבות בנטילת משכנתא חדשה</h2>
+        <p style="margin-bottom: 24px;">
+          אם אתם נמצאים בשלבי רכישת דירה וזקוקים למימון, דעו כי בנקים רבים מציעים הטבות ייעודיות לאנשי מילואים המעוניינים לקחת <strong>ייעוץ משכנתאות</strong> ולרכוש נכס בתקופה זו. ההטבות עשויות להשתנות בין הבנקים השונים אך לרוב כוללות:
+        </p>
+        <ul style="margin-bottom: 24px; padding-right: 20px; list-style-type: disc;">
+          <li style="margin-bottom: 10px;"><strong>פטור מעמלת פתיחת תיק:</strong> חיסכון של מאות עד אלפי שקלים בעמלת הטיפול הראשונית בבנק.</li>
+          <li style="margin-bottom: 10px;"><strong>הטבות בריבית:</strong> הנחות נקודתיות במרווחי הריבית במסלולים מסוימים, מתוך הכרה בתרומתם של המשרתים ולעידוד רכישת דירות.</li>
+          <li style="margin-bottom: 10px;"><strong>מסלולי גרייס מובנים:</strong> אפשרות להתחיל לשלם את קרן המשכנתא רק לאחר תקופה של שנה או שנתיים (תשלום ריבית בלבד), כדי להקל על המעבר לדירה החדשה במקביל לשירות המילואים.</li>
+        </ul>
+
+        <h2 style="color: #304060 !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 600;">קרן הסיוע למשרתי מילואים</h2>
+        <p style="margin-bottom: 24px;">
+          בנוסף להטבות הבנקאיות הישירות, הוקמה קרן סיוע ממשלתית למשרתי מילואים שנקלעו לקשיים כלכליים עקב השירות הממושך. במקרים מסוימים, ניתן לקבל מענקים חד-פעמיים או הלוואות בתנאים מועדפים לסגירת חובות או לגישור על פערים תזרימיים שנוצרו בתשלומי המשכנתא או שכר הדירה. מומלץ מאוד לבדוק את הזכאות מול הגורמים הרלוונטיים בצה"ל ובמוסד לביטוח לאומי, שכן סיוע זה יכול להוות רשת ביטחון חשובה.
+        </p>
+
+        <h2 style="color: #304060 !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 600;">האם כדאי להקפיא את המשכנתא?</h2>
+        <p style="margin-bottom: 24px;">
+          זוהי שאלת מיליון הדולר, והתשובה עליה אינה חד-משמעית. למרות שההטבה קיימת, לא תמיד נכון כלכלית להשתמש בה אם אין צורך אמיתי. דחיית תשלומים, גם אם היא ללא ריבית לתקופה מסוימת, בסופו של דבר דורשת את החזר הכספים בעתיד – מה שעשוי להאריך את חיי המשכנתא או להגדיל את ההחזר החודשי העתידי לאחר תום תקופת ההטבה.
+        </p>
+        <p style="margin-bottom: 24px;">
+          הכלל המנחה צריך להיות: אם ההכנסה המשפחתית לא נפגעה משמעותית ואתם מסוגלים להמשיך לשלם כרגיל, עדיף בדרך כלל לא לדחות תשלומים כדי "לסיים עם החוב" מהר ככל האפשר. לעומת זאת, אם נוצר קושי תזרימי, ההטבה הזו היא גלגל הצלה מצוין שמונע פיגורים, טלפונים לא נעימים מהבנק וריביות פיגורים הרסניות שיכולות לפגוע בדירוג האשראי שלכם לאורך זמן.
+        </p>
+
+        <h2 style="color: #304060 !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 600;">חשיבות הליווי המקצועי בתקופה זו</h2>
+        <p style="margin-bottom: 24px;">
+          הבנקים מציעים מגוון פתרונות, אך הפקיד בבנק, עם כל הרצון הטוב, מייצג בסופו של דבר את האינטרס של המערכת הבנקאית. דווקא בתקופה מורכבת זו, <strong>ייעוץ משכנתאות</strong> אובייקטיבי ופרטי הוא קריטי מתמיד. יועץ מקצועי ידע לבחון את תנאי המילואים הספציפיים שלכם, להשוות בין ההטבות בבנקים השונים (שכן כל בנק עשוי לתת פרשנות מעט שונה או הטבות נוספות מעבר למתווה בנק ישראל המינימלי), ולבנות תמהיל שמגן עליכם מפני עלויות מיותרות בעתיד.
+        </p>
+        <p style="margin-bottom: 24px;">
+          לסיכום, המדינה והמערכת הבנקאית מוקירות את תרומתכם ומעמידות לרשותכם כלים פיננסיים משמעותיים. אל תהססו לבדוק את זכויותיכם, דרשו את ההטבות המגיעות לכם, אך עשו זאת בתבונה ותוך ראייה ארוכת טווח של מצבכם הפיננסי המשפחתי.
+        </p>
       </div>
+
+      <!-- Bottom Social Share -->
+      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0 20px 0; border-top: 1px solid #e0e0e0; padding-top: 20px;">
+        <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+        <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+
+      <!-- Bottom Back Button -->
+      <div style="margin-bottom: 40px;">
+        <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #1e3a8a !important; font-weight: 500; transition: opacity 0.3s;">
+          <span style="margin-left: 8px;">←</span> חזרה לבלוג
+        </a>
+      </div>
+
+      <!-- CTA Section -->
+      <div style="background-color: #f0f4f8 !important; padding: 30px; border-radius: 12px; margin-top: 40px; border-right: 4px solid #1e3a8a;">
+        <h3 style="margin-top: 0; color: #1e3a8a !important; font-size: 1.5rem; margin-bottom: 15px;">משרתים במילואים ומתכננים לקחת משכנתא?</h3>
+        <p style="margin-bottom: 20px; color: #305060 !important;">אנחנו כאן כדי לוודא שתקבלו את כל ההטבות המגיעות לכם. בואו לבדוק זכאות ולבנות תמהיל משכנתא מנצח שמתאים למצבכם הייחודי.</p>
+        <a href="/contact" style="display: inline-block; background-color: #1e3a8a !important; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background-color 0.3s;">תיאום שיחת ייעוץ ללא עלות</a>
+      </div>
+
     </div>
   </section>
 </main>
@@ -1094,6 +1045,14 @@ img[data-no-hero-position] { position: static !important; }
   
 
   
+
+
+
+
+
+
+
+
 
   
 
@@ -1107,15 +1066,7 @@ img[data-no-hero-position] { position: static !important; }
 
   
     <!--6-- Legal Footer ---->
-    
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>משכנתא בפיג'מה</title>
-
-
-<footer class="legal-footer">
+    <footer class="legal-footer">
       <div class="container">
         <div class="footer-main">
           <div class="all-rights-reserved">
@@ -1123,8 +1074,8 @@ img[data-no-hero-position] { position: static !important; }
           </div>
           <div class="footer-social"><a href="https://facebook.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 <a href="https://instagram.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819967932-y7t3k1"><i class="fab fa-youtube"></i></a>
-<a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+<a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819966672-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -1146,9 +1097,7 @@ img[data-no-hero-position] { position: static !important; }
     </footer>
 
 
-
-
-
+<!--6-- Zappy Attribution Header Script ---->
 <script>
 (function() {
   var websiteId = 'dcdc34dd-3985-48c8-b0f3-d984481f8986';
@@ -1927,6 +1876,120 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
+
+<script id="zappy-share-script">
+(function() {
+  function getShareUrl() {
+    // Priority 1: Check for deployed site URL meta tag (set by Zappy when site is published)
+    var siteUrl = document.querySelector('meta[name="zappy-site-url"]');
+    if (siteUrl && siteUrl.content) {
+      var basePath = window.location.pathname;
+      var pageParam = new URLSearchParams(window.location.search).get('page');
+      var pagePath = pageParam || basePath;
+      if (pagePath.startsWith('/api/website/preview')) pagePath = '/';
+      return siteUrl.content.replace(/\/$/, '') + pagePath;
+    }
+    var c = document.querySelector('link[rel="canonical"]');
+    if (c && c.href && !c.href.includes('localhost') && !c.href.includes('preview')) return c.href;
+    var m = document.querySelector('meta[property="og:url"]');
+    if (m && m.content && !m.content.includes('localhost') && !m.content.includes('preview')) return m.content;
+    var isPreview = window.location.href.includes('preview') || window.location.href.includes('localhost') || window.location.href.includes('auth_token');
+    if (isPreview) return null;
+    return window.location.origin + window.location.pathname;
+  }
+  function setShareHref(selectors, href, isDisabled) {
+    selectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Share links will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.href = href;
+        }
+      });
+    });
+  }
+  // Normalize share bars to ensure all 5 icons are present
+  function normalizeShareBars() {
+    var shareBars = document.querySelectorAll('.social-share-bar');
+    if (shareBars.length === 0) return;
+    // Define all required share icons with their SVG
+    var shareIcons = {
+      copy: { selectors: ['.share-copy', 'button[title="Copy link"]', 'a[title="Copy link"]'], 
+        html: '<a href="#" class="share-copy" title="Copy link" style="color:#666;display:flex;align-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>' },
+      linkedin: { selectors: ['.share-linkedin', 'a[title="LinkedIn"]'], 
+        html: '<a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color:#0a66c2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>' },
+      twitter: { selectors: ['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+        html: '<a href="#" class="share-twitter" target="_blank" title="X" style="color:#000!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' },
+      facebook: { selectors: ['.share-facebook', 'a[title="Facebook"]'], 
+        html: '<a href="#" class="share-facebook" target="_blank" title="Facebook" style="color:#1877f2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' },
+      whatsapp: { selectors: ['.share-whatsapp', 'a[title="WhatsApp"]'], 
+        html: '<a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color:#25d366!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' }
+    };
+    // Order of icons (right to left for RTL, so we add in this order)
+    var iconOrder = ['copy', 'linkedin', 'twitter', 'facebook', 'whatsapp'];
+    shareBars.forEach(function(bar) {
+      iconOrder.forEach(function(iconKey) {
+        var icon = shareIcons[iconKey];
+        var exists = icon.selectors.some(function(sel) { return bar.querySelector(sel); });
+        if (!exists) {
+          // Find the label span and insert after it
+          var label = bar.querySelector('span');
+          if (label) {
+            label.insertAdjacentHTML('afterend', icon.html);
+          } else {
+            bar.insertAdjacentHTML('afterbegin', icon.html);
+          }
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    // First normalize the share bars to ensure all icons exist
+    normalizeShareBars();
+    var url = getShareUrl();
+    var title = document.title;
+    var isDisabled = !url;
+    if (isDisabled) console.log('[Zappy] Share links disabled in preview mode - will work after publishing');
+    // WhatsApp
+    setShareHref(['.share-whatsapp', 'a[title="WhatsApp"]', 'a[title="whatsapp"]'], 
+      url ? 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url) : '#', isDisabled);
+    // Facebook
+    setShareHref(['.share-facebook', 'a[title="Facebook"]', 'a[title="facebook"]'], 
+      url ? 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) : '#', isDisabled);
+    // Twitter/X
+    setShareHref(['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+      url ? 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title) : '#', isDisabled);
+    // LinkedIn
+    setShareHref(['.share-linkedin', 'a[title="LinkedIn"]', 'a[title="linkedin"]'], 
+      url ? 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) : '#', isDisabled);
+    // Copy link button
+    ['.share-copy', 'button[title="Copy link"]', 'button[title="copy"]', 'a[title="Copy link"]'].forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Copy link will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.onclick = function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(url).then(function() {
+              var orig = el.innerHTML;
+              el.innerHTML = '✓';
+              setTimeout(function() { el.innerHTML = orig; }, 1500);
+            });
+          };
+        }
+      });
+    });
+  });
+})();
+</script><a href="https://wa.me/972542668566" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
     <script src="/script.js"></script>
 
