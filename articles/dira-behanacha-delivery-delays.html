@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>משכנתא ירוקה - הטבות לרוכשי דירות בבנייה ירוקה | משכנתא בפיג'מה</title>
-    <meta name="description" content="גלו את היתרונות של משכנתא ירוקה: ריביות מופחתות והטבות לרוכשי דירות העומדות בתקן הבנייה הירוקה. מדריך מקיף על חיסכון אנרגטי ופיננסי במשכנתא.">
+    <title>איחור במסירת דירה בהנחה - המדריך המלא | אריאל אחון</title>
+    <meta name="description" content="עיכובים במסירת דירה בהנחה ומחיר למשתכן הפכו למכת מדינה. המדריך המלא: כל מה שצריך לדעת על פיצויים, הצמדה למדד בתקופת האיחור, ופתרונות למשכנתא ולתזרים.">
     <meta name="keywords" content="">
     
     <!-- Zappy Analytics -->
@@ -742,24 +742,33 @@
         left: auto;
         right: 0;
       }
-    </style>
+    </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EY9JJ9BZN4');
+</script>
+<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+  
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:url" content="https://mashkanta-bepijama.co.il/articles/green-mortgage">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="משכנתא ירוקה - הטבות לרוכשי דירות בבנייה ירוקה | משכנתא בפיג'מה">
-    <meta property="og:description" content="גלו את היתרונות של משכנתא ירוקה: ריביות מופחתות והטבות לרוכשי דירות העומדות בתקן הבנייה הירוקה. מדריך מקיף על חיסכון אנרגטי ופיננסי במשכנתא.">
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-green-building-1769244631139-og.jpg">
+    <meta property="og:title" content="איחור במסירת דירה בהנחה - המדריך המלא | אריאל אחון">
+    <meta property="og:description" content="עיכובים במסירת דירה בהנחה ומחיר למשתכן הפכו למכת מדינה. המדריך המלא: כל מה שצריך לדעת על פיצויים, הצמדה למדד בתקופת האיחור, ופתרונות למשכנתא ולתזרים.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-construction-delay-1771948685935-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="משכנתא ירוקה - הטבות לרוכשי דירות בבנייה ירוקה | משכנתא בפיג'מה">
+    <meta property="og:image:alt" content="איחור במסירת דירה בהנחה - המדריך המלא | אריאל אחון">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="משכנתא ירוקה - הטבות לרוכשי דירות בבנייה ירוקה | משכנתא בפיג'מה">
-    <meta name="twitter:description" content="גלו את היתרונות של משכנתא ירוקה: ריביות מופחתות והטבות לרוכשי דירות העומדות בתקן הבנייה הירוקה. מדריך מקיף על חיסכון אנרגטי ופיננסי במשכנתא.">
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-green-building-1769244631139-og.jpg">
-    <meta name="twitter:image:alt" content="משכנתא ירוקה - הטבות לרוכשי דירות בבנייה ירוקה | משכנתא בפיג'מה"><style id="zappy-ai-page-styles">
+    <meta name="twitter:title" content="איחור במסירת דירה בהנחה - המדריך המלא | אריאל אחון">
+    <meta name="twitter:description" content="עיכובים במסירת דירה בהנחה ומחיר למשתכן הפכו למכת מדינה. המדריך המלא: כל מה שצריך לדעת על פיצויים, הצמדה למדד בתקופת האיחור, ופתרונות למשכנתא ולתזרים.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-construction-delay-1771948685935-og.jpg">
+    <meta name="twitter:image:alt" content="איחור במסירת דירה בהנחה - המדריך המלא | אריאל אחון"><style id="zappy-ai-page-styles">
 
 
 /* Zappy Base Styles for Edit Mode Compatibility */
@@ -822,8 +831,9 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+/* Hero container fixes - contain absolute images and prevent viewport overflow */
+/* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
+[class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
@@ -839,16 +849,7 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EY9JJ9BZN4');
-</script>
-<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="mobile-lang-menu-deployed-css">
@@ -928,143 +929,118 @@ img[data-no-hero-position] { position: static !important; }
         </li>
       </div>
     </div>
-  </nav><main class="page-main blog-page ai-generated-page">
-  <!--6-- Hero Section ---->
-  <section class="section hero-section" id="green-mortgage-hero" style="background-color: #f8f9fa !6important; padding: 60px 0;; position: relative; overflow: hidden;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
-        <div class="hero-content" style="position: relative; overflow: hidden;">
-          <h1 style="color: #304060 !6important; font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2;">משכנתא ירוקה: חוסכים בכסף, שומרים על הסביבה</h1>
-          <p style="color: #305060 !6important; font-size: 1.2rem; margin-bottom: 30px; line-height: 1.6;">
-            העולם הפיננסי מתגייס למען הסביבה, ואתם מרוויחים. גלו כיצד רכישת דירה בבנייה ירוקה יכולה להעניק לכם הטבות משמעותיות בתנאי המשכנתא, ריביות מוזלות וחיסכון ארוך טווח.
-          </p>
-          <a href="/contact" class="btn" style="background-color: #1e3a8a !6important; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">בדיקת זכאות להטבה</a>
-        </div>
-        <div class="hero-image" style="position: relative; overflow: hidden;">
-          <img data-placeholder="green-building" data-context="Modern eco-friendly apartment building with solar panels and greenery, sunny day in Israel" data-zappy-editable-image="true" src="/assets/page-green-building-1769244631139.webp" alt="בנייה ירוקה בישראל" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" class="generated-image">
-        </div>
+  </nav><main class="page-main blog-page ai-generated-page"><section class="section page-content-section" id="zappy-section-0" data-zappy-section="true"><div class="container">
+  
+  <!-- Article Container -->
+  <div class="container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Top Back Button -->
+    <div style="margin-bottom: 20px;">
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #305060 !important; font-weight: 500; transition: color 0.2s;">
+        <span style="margin-left: 8px;">←</span> חזרה לבלוג
+      </a>
+    </div>
+
+    <!-- Top Social Share -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
+      <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+      <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="article-hero-image" style="width: 100%; max-height: 400px; overflow: hidden; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);; position: relative; overflow: hidden;">
+      <img data-placeholder="construction-delay" data-context="Construction site with calendar or clock overlay representing delays in housing delivery" data-zappy-editable-image="true" alt="איחור במסירת דירה בהנחה" style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover;" src="/assets/page-construction-delay-1771948685935.webp" class="generated-image">
+    </div>
+
+    <!-- Article Header -->
+    <header style="margin-bottom: 40px;">
+      <h1 style="color: #304060 !important; font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px;">איחור במסירת דירה בהנחה - זכויות, פיצויים ופתרונות למשכנתא</h1>
+      <div class="article-meta" style="display: flex; gap: 16px; color: #305060 !important; font-size: 0.9rem;">
+        <span>📅 עודכן לאחרונה: אוקטובר 2023</span>
+        <span>⏱️ זמן קריאה: 6 דקות</span>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!--6-- Introduction Section ---->
-  <section class="section content-section" id="what-is-green-mortgage" style="background-color: #ffffff !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="content-wrapper" style="max-width: 800px; margin: 0 auto;">
-        <h2 style="color: #304060 !6important; font-size: 2rem; margin-bottom: 25px; border-bottom: 3px solid #1e3a8a; display: inline-block; padding-bottom: 10px;">מהי משכנתא ירוקה?</h2>
-        <p style="color: #305060 !6important; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-          בשנים האחרונות, המודעות לאיכות הסביבה ולבנייה מקיימת תפסה תאוצה רבה בישראל. כתגובה לכך, המערכת הבנקאית יצרה מוצר פיננסי ייעודי המכונה "משכנתא ירוקה". מטרת המוצר היא לעודד רוכשי דירות לבחור בפרויקטים שנבנו על פי תקנים מחמירים של התייעלות אנרגטית ושמירה על הסביבה.
-        </p>
-        <p style="color: #305060 !6important; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-          במסגרת תהליך <strong>ייעוץ משכנתאות</strong> מקצועי, אנו בוחנים תמיד האם הנכס המיועד לרכישה עומד בקריטריונים המזכים בהטבות אלו. משכנתא ירוקה אינה סוג נפרד של הלוואה, אלא מסלול הטבות המשתלב בתוך תמהיל המשכנתא הכולל שלכם, ומעניק תנאים מועדפים למי שרוכש דירה בפרויקט בעל תו תקן ירוק.
-        </p>
+    <!-- Article Body -->
+    <article style="font-size: 1.1rem; color: #304060 !important;">
+      <p style="margin-bottom: 24px;">הזכייה בהגרלת "דירה בהנחה" או "מחיר למשתכן" היא רגע משמח ומלא תקווה עבור זוגות צעירים רבים. החלום על דירה משלכם במחיר שפוי נראה קרוב מתמיד. אך המציאות בישראל, במיוחד בשנים האחרונות, מביאה איתה אתגר לא פשוט: <strong>עיכובים ואיחורים משמעותיים במסירת הדירות</strong>. המחסור בפועלים, המצב הביטחוני ועיכובים בירוקרטיים גורמים לכך שפרויקטים רבים נמסרים חודשים ואף שנים לאחר המועד המקורי בחוזה.</p>
+      
+      <p style="margin-bottom: 24px;">עבור הזוכים, האיחור הוא לא רק עוגמת נפש, אלא "בור" כלכלי מסוכן. רבים מוצאים את עצמם במצב של "תשלום כפול": גם משלמים שכר דירה מלא על הדירה הנוכחית, וגם מתחילים לשלם את המשכנתא (או לפחות את הריביות) על הדירה החדשה שטרם מוכנה. כמי שמעניק <strong>ייעוץ משכנתאות</strong> למאות זוכים, אני נתקל במצוקה הזו מדי יום. במדריך זה נעשה סדר בזכויות שלכם, בגובה הפיצוי שמגיע לכם, ובדרכים החכמות להתמודד עם המצב מבחינה מימונית.</p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">פיצוי בגין איחור במסירה - מה קובע החוק?</h2>
+      
+      <p style="margin-bottom: 24px;">חוק המכר (דירות) עבר מספר שינויים בשנים האחרונות, והוא המגן העיקרי שלכם מול הקבלן. חשוב להבין את ההבחנה בין הדין הכללי לבין הכללים הספציפיים החלים לעיתים על פרויקטים של דירה בהנחה:</p>
+      
+      <ul style="margin-bottom: 24px; padding-right: 20px; list-style-type: disc;">
+        <li style="margin-bottom: 10px;"><strong>תקופת ה"גרייס" של הקבלן:</strong> החוק מתיר לקבלן לאחר במסירה עד 60 יום (ולעיתים יותר בנסיבות של כוח עליון מוכח) ללא תשלום פיצוי.</li>
+        <li style="margin-bottom: 10px;"><strong>גובה הפיצוי:</strong> החל מהיום ה-61 לאיחור (שאינו מוצדק), הקבלן מחויב לשלם פיצוי רטרואקטיבית מהיום הראשון לאיחור במועד החוזי.</li>
+        <li style="margin-bottom: 10px;"><strong>חישוב הפיצוי בדירה בהנחה:</strong> כאן טמון המוקש. בעוד שבשוק החופשי הפיצוי הוא לרוב 150% משכר דירה ראוי באזור, בחוזי מחיר למשתכן ודירה בהנחה, המנגנון לעיתים שונה ומוצמד למחיר הדירה החוזי (שהוא נמוך ממחיר השוק) או לתקרה מסוימת. חשוב מאוד לבדוק את הסעיף הספציפי בחוזה המכר שלכם.</li>
+      </ul>
+
+      <p style="margin-bottom: 24px;"><strong>שימו לב:</strong>&nbsp;מלחמה ומצב ביטחוני הוכרו בחלק מהמקרים כנסיבות המצדיקות איחור ("כוח עליון"), מה שעשוי לפטור את הקבלנים מתשלום פיצוי לתקופות מסוימות. עם זאת, לא כל איחור הוא אוטומטית "בגלל המלחמה", ומומלץ להתייעץ עם עורך דין המתמחה בנדל"ן אם האיחור מתמשך מעבר לסביר.</p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">המלכודת הפיננסית: המשכנתא בתקופת האיחור</h2>
+      
+      <p style="margin-bottom: 24px;">הבעיה הגדולה ביותר באיחור היא התזרים החודשי. רוב הזוכים בונים על כך שייכנסו לדירה בתאריך מסוים, ויפסיקו לשלם שכר דירה. כשהמסירה מתעכבת בחצי שנה או שנה, נוצר "חור" תקציבי של עשרות אלפי שקלים. הנה כמה פתרונות במסגרת <strong>ייעוץ משכנתא לדירה ראשונה</strong> שיכולים לעזור:</p>
+
+      <h3 style="color: #304060 !important; font-size: 1.4rem; margin: 25px 0 15px;">1. הארכת תקופת הגרייס (דחיית תשלומי קרן)</h3>
+      <p style="margin-bottom: 24px;">אם לקחתם משכנתא ב"גרייס" (משלמים רק ריבית) לתקופת הבנייה, והגרייס מסתיים לפני קבלת המפתח, ההחזר החודשי שלכם יקפוץ דרמטית כי תתחילו לשלם גם את הקרן. במקרה של איחור, ניתן לפנות לבנק ולבקש <strong>הארכת גרייס</strong>. הבנקים לרוב מאשרים זאת כשיש איחור מוכח במסירה, אך חשוב לעשות זאת מראש ולא לחכות לחודש האחרון.</p>
+
+      <h3 style="color: #304060 !important; font-size: 1.4rem; margin: 25px 0 15px;">2. הלוואת גישור או "בלון" על בסיס קרן השתלמות</h3>
+      <p style="margin-bottom: 24px;">כדי לממן את חודשי השכירות הכפולים, ניתן לקחת הלוואה זולה יחסית על חשבון קרן השתלמות (אם יש כזו נזילה או לא נזילה), בשיטת "בלון" (משלמים רק ריבית או לא משלמים כלל עד הסוף). זהו פתרון "חמצן" שיאפשר לכם לעבור את התקופה הקשה בלי לקרוס כלכלית.</p>
+
+      <h3 style="color: #304060 !important; font-size: 1.4rem; margin: 25px 0 15px;">3. בדיקת תוקף אישור עקרוני וריביות</h3>
+      <p style="margin-bottom: 24px;">אם טרם משכתם את כל כספי המשכנתא (למשל, השארתם תשלום אחרון למסירה), וודאו שהאישורים שלכם בתוקף. איחור במסירה עלול לגרור מצב בו תוקף הריביות פג, והבנק ינסה לתמחר מחדש את החלק שטרם נמשך בריביות גבוהות יותר. ניהול נכון מול הבנק יכול למנוע זאת.</p>
+
+      <div class="tip-box" style="background-color: #e0e7ff !important; border-right: 4px solid #1e3a8a; padding: 20px; margin: 30px 0; border-radius: 4px;">
+        <h4 style="color: #1e3a8a !important; margin-top: 0; margin-bottom: 10px;">טיפ זהב לזוכים:</h4>
+        <p style="margin-bottom: 0;">אל תחתמו על מסמך "ויתור תביעות" מול הקבלן בעת קבלת המפתח לפני שהתייעצתם. לעיתים הקבלן מתנה את מסירת המפתח בויתור על פיצוי בגין האיחור. זוהי דרישה שלעיתים אינה חוקית, אך דורשת התנהלות זהירה וחכמה כדי לא להישאר בלי דירה ובלי פיצוי.</p>
       </div>
-    </div>
-  </section>
 
-  <!--6-- The Standard Section ---->
-  <section class="section standard-section" id="green-standard" style="background-color: #e0e0e0 !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
-        <div class="standard-image">
-          <img data-placeholder="energy-efficiency" data-context="Energy efficiency rating certificate and green building blueprints" data-zappy-editable-image="true" src="/assets/page-energy-efficiency-1769244630578.webp" alt="תקן בנייה ירוקה" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" data-no-hero-position="true" class="generated-image">
-        </div>
-        <div class="standard-content">
-          <h2 style="color: #304060 !6important; margin-bottom: 20px;">תקן 5281 לבנייה ירוקה</h2>
-          <p style="color: #305060 !6important; line-height: 1.7; margin-bottom: 15px;">
-            כדי להיות זכאים למשכנתא ירוקה, הנכס הנרכש חייב לעמוד בתקן הישראלי לבנייה ירוקה (תקן 5281). תקן זה מדרג בניינים לפי רמת הידידותיות שלהם לסביבה ולדייר, תוך התייחסות לפרמטרים כמו:
-          </p>
-          <ul style="list-style-type: none; padding: 0; margin-bottom: 20px;">
-            <li style="margin-bottom: 10px; display: flex; align-items: center; color: #305060 !6important;">
-              <span style="color: #1e3a8a !6important; font-weight: bold; margin-left: 10px;">✓</span> בידוד תרמי מתקדם (חיסכון בחימום וקירור)
-            </li>
-            <li style="margin-bottom: 10px; display: flex; align-items: center; color: #305060 !6important;">
-              <span style="color: #1e3a8a !6important; font-weight: bold; margin-left: 10px;">✓</span> ניצול תאורה טבעית ואוורור
-            </li>
-            <li style="margin-bottom: 10px; display: flex; align-items: center; color: #305060 !6important;">
-              <span style="color: #1e3a8a !6important; font-weight: bold; margin-left: 10px;">✓</span> שימוש בחומרי בנייה שאינם רעילים
-            </li>
-            <li style="margin-bottom: 10px; display: flex; align-items: center; color: #305060 !6important;">
-              <span style="color: #1e3a8a !6important; font-weight: bold; margin-left: 10px;">✓</span> חיסכון במים ובחשמל בשטחים המשותפים
-            </li>
-          </ul>
-          <p style="color: #305060 !6important; font-size: 0.95rem;">
-            הערה: קבלת האישור הסופי על עמידה בתקן מתקבלת לעיתים רק בסיום הפרויקט, אך הבנקים לרוב מסתפקים באישור מקדמי מהקבלן לצורך מתן ההטבות.
-          </p>
-        </div>
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">מה קורה עם מדד תשומות הבנייה בזמן האיחור?</h2>
+      
+      <p style="margin-bottom: 24px;">סוגיה כואבת נוספת היא מדד תשומות הבנייה. האם אתם צריכים להמשיך לשלם הצמדה למדד גם כשהקבלן מאחר? החוק קובע כי בתקופת איחור <strong>שבאשמת הקבלן</strong>, לא ניתן לחייב את הרוכש במדד תשומות הבנייה (אם המדד עלה). כלומר, המדד "מוקפא" למועד המסירה החוזי המקורי. </p>
+      
+      <p style="margin-bottom: 24px;">עם זאת, אם המדד ירד בתקופה זו - אתם זכאים ליהנות מהירידה! זהו סעיף שרבים לא מודעים אליו, וקבלנים לעיתים "שוכחים" ליישם אותו בחשבון הסופי. בדיקה דקדקנית של גמר החשבון יכולה לחסוך לכם אלפי שקלים.</p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">סיכום: אל תישארו לבד מול האיחור</h2>
+      
+      <p style="margin-bottom: 24px;">איחור במסירת דירה בהנחה הוא אירוע מלחיץ שמשבש תוכניות. אבל עם היערכות נכונה, ניתן למזער נזקים. אם אתם נמצאים בסיטואציה הזו, או חוששים ממנה, זה הזמן לבצע <strong>בדיקת תיק משכנתא</strong> ולראות האם התמהיל שלכם ערוך לתרחיש של עיכוב. האם יש לכם "אוויר" תזרימי? האם כדאי להקדים תשלומים כדי לחסוך מדד, או לשמור את הכסף נזיל למקרה חירום?</p>
+      
+      <p style="margin-bottom: 24px;">כיועץ משכנתאות המלווה מאות משפחות בפרויקטים אלו, אני ממליץ לא לחכות ליום המסירה. ברגע שאתם מקבלים מכתב על דחייה - פנו לייעוץ מקצועי כדי להתאים את המימון למציאות החדשה.</p>
+
+      <!-- CTA Section -->
+      <div style="background-color: #1e3a8a !important; color: white; padding: 40px; border-radius: 12px; text-align: center; margin-top: 50px;">
+        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 15px;">הקבלן מאחר והמשכנתא לוחצת?</h3>
+        <p style="font-size: 1.2rem; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">אל תתמודדו עם הנטל הכלכלי לבד. בואו נבנה תוכנית פעולה שתאפשר לכם לעבור את תקופת האיחור בשלום ובביטחון כלכלי.</p>
+        <a href="/contact" style="display: inline-block; background-color: #ffffff; color: #1e3a8a !important; font-weight: 700; padding: 14px 32px; border-radius: 50px; text-decoration: none; transition: transform 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">לתיאום שיחת ייעוץ ←</a>
       </div>
-    </div>
-  </section>
 
-  <!--6-- Benefits Grid Section ---->
-  <section class="section benefits-section" id="mortgage-benefits" style="background-color: #f8f9fa !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="text-align: center; color: #304060 !6important; margin-bottom: 50px;">למה זה משתלם לכם?</h2>
-      <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-        <!--6-- Benefit 1 ---->
-        <article class="card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 4px solid #1e3a8a;">
-          <h3 style="color: #304060 !6important; margin-bottom: 15px; font-size: 1.4rem;">הנחה בריביות</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">
-            ההטבה המרכזית היא הוזלה בריבית המשכנתא. הבנקים מציעים בדרך כלל הנחה של כ-0.1% עד 0.25% במסלולים ספציפיים לתקופה מוגדרת או לכל חיי ההלוואה. בחישוב מצטבר לאורך שנים, מדובר בחיסכון של אלפי עד עשרות אלפי שקלים.
-          </p>
-        </article>
-        
-        <!--6-- Benefit 2 ---->
-        <article class="card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 4px solid #1e3a8a;">
-          <h3 style="color: #304060 !6important; margin-bottom: 15px; font-size: 1.4rem;">אחוז מימון מוגדל</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">
-            במקרים מסוימים, הבנקים עשויים לגלות גמישות רבה יותר באחוזי המימון או בתנאי החיתום כאשר מדובר בנכס ירוק, מתוך הבנה כי ערך הנכס נשמר טוב יותר לאורך זמן והוצאות התחזוקה השוטפות של הלווים יהיו נמוכות יותר.
-          </p>
-        </article>
+    </article>
 
-        <!--6-- Benefit 3 ---->
-        <article class="card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 4px solid #1e3a8a;">
-          <h3 style="color: #304060 !6important; margin-bottom: 15px; font-size: 1.4rem;">חיסכון שוטף</h3>
-          <p style="color: #305060 !6important; line-height: 1.6;">
-            מעבר להטבות הבנקאיות, המגורים בדירה ירוקה מובילים לחיסכון ישיר בחשבונות החשמל והמים. כושר ההחזר החודשי של המשפחה משתפר בזכות הוצאות שוטפות נמוכות יותר, מה שמקטין את הסיכון הפיננסי.
-          </p>
-        </article>
-      </div>
+    <!-- Bottom Social Share -->
+    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0 20px;">
+      <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+      <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
-  </section>
 
-  <!--6-- Consulting Importance Section ---->
-  <section class="section consulting-section" id="consulting-role" style="background-color: #ffffff !6important; padding: 60px 0;" data-zappy-section="true">
-    <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
-        <div class="consulting-text">
-          <h2 style="color: #304060 !6important; margin-bottom: 20px;">תפקיד יועץ המשכנתאות בתהליך</h2>
-          <p style="color: #305060 !6important; line-height: 1.8; margin-bottom: 20px;">
-            רבים מהלווים אינם מודעים לכך שהפרויקט בו הם רוכשים דירה מזכה אותם בהטבות אלו. <strong>ייעוץ משכנתאות</strong> מקצועי כולל בדיקת עומק של הנכס והפרויקט כדי לוודא שאינכם משאירים כסף על השולחן.
-          </p>
-          <p style="color: #305060 !6important; line-height: 1.8; margin-bottom: 20px;">
-            חשוב לזכור: לא כל "הטבה" שהבנק מציג היא בהכרח המשתלמת ביותר. לעיתים הבנק יציע מסלול ירוק בריבית אטרקטיבית, אך יקשיח תנאים במסלולים אחרים בתמהיל. התפקיד שלנו הוא לבחון את התמונה הכוללת, להשוות בין ההצעות "הירוקות" של הבנקים השונים, ולבנות עבורכם תמהיל אופטימלי שבאמת חוסך כסף.
-          </p>
-          <h3 style="color: #304060 !6important; font-size: 1.2rem; margin-top: 20px; margin-bottom: 10px;">מה אנחנו בודקים?</h3>
-          <ul style="color: #305060 !6important; list-style-type: disc; padding-right: 20px; line-height: 1.6;">
-            <li>האם הפרויקט אכן מוכר על ידי הבנק כפרויקט ירוק?</li>
-            <li>האם ההנחה בריבית משמעותית ביחס למסלולים רגילים?</li>
-            <li>האם כדאי לשלב את המסלול הירוק עם מסלולים אחרים?</li>
-          </ul>
-        </div>
-        <div class="consulting-image">
-          <img data-placeholder="mortgage-consultant" data-context="Professional mortgage consultant analyzing documents with clients, modern office" data-zappy-editable-image="true" src="/assets/page-mortgage-consultant-1769244631722.webp" alt="ייעוץ משכנתא לדירה ירוקה" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 50%; border: 10px solid #f8f9fa; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" data-no-hero-position="true" class="generated-image">
-        </div>
-      </div>
+    <!-- Bottom Back Button -->
+    <div style="margin-top: 20px;">
+      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #305060 !important; font-weight: 500; transition: color 0.2s;">
+        <span style="margin-left: 8px;">←</span> חזרה לבלוג
+      </a>
     </div>
-  </section>
 
-  <!--6-- CTA Section ---->
-  <section class="section cta-section" id="green-cta" style="background-color: #1e3a8a !6important; padding: 80px 0; text-align: center;" data-zappy-section="true">
-    <div class="container">
-      <h2 style="color: #ffffff !6important; margin-bottom: 20px; font-size: 2.2rem;">מתכננים לרכוש דירה חדשה?</h2>
-      <p style="color: #e0e0e0 !6important; font-size: 1.2rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
-        אל תוותרו על ההטבות המגיעות לכם. צוות המומחים שלנו יבדוק עבורכם את זכאותכם למשכנתא ירוקה ויבנה עבורכם תמהיל חכם וחסכוני.
-      </p>
-      <a href="/contact" class="btn" style="background-color: #ffffff; color: #1e3a8a !6important; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; transition: transform 0.2s;">תיאום פגישת ייעוץ</a>
-    </div>
-  </section>
-</main>
+  </div>
+</div></section></main>
 
   
 
@@ -1073,6 +1049,14 @@ img[data-no-hero-position] { position: static !important; }
   
 
   
+
+
+
+
+
+
+
+
 
   
 
@@ -1086,12 +1070,7 @@ img[data-no-hero-position] { position: static !important; }
 
   
     <!--6-- Legal Footer ---->
-    
-
-
-
-
-<footer class="legal-footer">
+    <footer class="legal-footer">
       <div class="container">
         <div class="footer-main">
           <div class="all-rights-reserved">
@@ -1100,7 +1079,7 @@ img[data-no-hero-position] { position: static !important; }
           <div class="footer-social"><a href="https://facebook.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 <a href="https://instagram.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 <a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819969072-y7t3k1"><i class="fab fa-youtube"></i></a></div>
+<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819966672-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -1122,9 +1101,7 @@ img[data-no-hero-position] { position: static !important; }
     </footer>
 
 
-
-
-
+<!--6-- Zappy Attribution Header Script ---->
 <script>
 (function() {
   var websiteId = 'dcdc34dd-3985-48c8-b0f3-d984481f8986';
@@ -1903,6 +1880,120 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
+
+<script id="zappy-share-script">
+(function() {
+  function getShareUrl() {
+    // Priority 1: Check for deployed site URL meta tag (set by Zappy when site is published)
+    var siteUrl = document.querySelector('meta[name="zappy-site-url"]');
+    if (siteUrl && siteUrl.content) {
+      var basePath = window.location.pathname;
+      var pageParam = new URLSearchParams(window.location.search).get('page');
+      var pagePath = pageParam || basePath;
+      if (pagePath.startsWith('/api/website/preview')) pagePath = '/';
+      return siteUrl.content.replace(/\/$/, '') + pagePath;
+    }
+    var c = document.querySelector('link[rel="canonical"]');
+    if (c && c.href && !c.href.includes('localhost') && !c.href.includes('preview')) return c.href;
+    var m = document.querySelector('meta[property="og:url"]');
+    if (m && m.content && !m.content.includes('localhost') && !m.content.includes('preview')) return m.content;
+    var isPreview = window.location.href.includes('preview') || window.location.href.includes('localhost') || window.location.href.includes('auth_token');
+    if (isPreview) return null;
+    return window.location.origin + window.location.pathname;
+  }
+  function setShareHref(selectors, href, isDisabled) {
+    selectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Share links will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.href = href;
+        }
+      });
+    });
+  }
+  // Normalize share bars to ensure all 5 icons are present
+  function normalizeShareBars() {
+    var shareBars = document.querySelectorAll('.social-share-bar');
+    if (shareBars.length === 0) return;
+    // Define all required share icons with their SVG
+    var shareIcons = {
+      copy: { selectors: ['.share-copy', 'button[title="Copy link"]', 'a[title="Copy link"]'], 
+        html: '<a href="#" class="share-copy" title="Copy link" style="color:#666;display:flex;align-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>' },
+      linkedin: { selectors: ['.share-linkedin', 'a[title="LinkedIn"]'], 
+        html: '<a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color:#0a66c2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>' },
+      twitter: { selectors: ['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+        html: '<a href="#" class="share-twitter" target="_blank" title="X" style="color:#000!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' },
+      facebook: { selectors: ['.share-facebook', 'a[title="Facebook"]'], 
+        html: '<a href="#" class="share-facebook" target="_blank" title="Facebook" style="color:#1877f2!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' },
+      whatsapp: { selectors: ['.share-whatsapp', 'a[title="WhatsApp"]'], 
+        html: '<a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color:#25d366!important;display:flex;align-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' }
+    };
+    // Order of icons (right to left for RTL, so we add in this order)
+    var iconOrder = ['copy', 'linkedin', 'twitter', 'facebook', 'whatsapp'];
+    shareBars.forEach(function(bar) {
+      iconOrder.forEach(function(iconKey) {
+        var icon = shareIcons[iconKey];
+        var exists = icon.selectors.some(function(sel) { return bar.querySelector(sel); });
+        if (!exists) {
+          // Find the label span and insert after it
+          var label = bar.querySelector('span');
+          if (label) {
+            label.insertAdjacentHTML('afterend', icon.html);
+          } else {
+            bar.insertAdjacentHTML('afterbegin', icon.html);
+          }
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    // First normalize the share bars to ensure all icons exist
+    normalizeShareBars();
+    var url = getShareUrl();
+    var title = document.title;
+    var isDisabled = !url;
+    if (isDisabled) console.log('[Zappy] Share links disabled in preview mode - will work after publishing');
+    // WhatsApp
+    setShareHref(['.share-whatsapp', 'a[title="WhatsApp"]', 'a[title="whatsapp"]'], 
+      url ? 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url) : '#', isDisabled);
+    // Facebook
+    setShareHref(['.share-facebook', 'a[title="Facebook"]', 'a[title="facebook"]'], 
+      url ? 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) : '#', isDisabled);
+    // Twitter/X
+    setShareHref(['.share-twitter', 'a[title="Twitter"]', 'a[title="Twitter/X"]', 'a[title="X"]'], 
+      url ? 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title) : '#', isDisabled);
+    // LinkedIn
+    setShareHref(['.share-linkedin', 'a[title="LinkedIn"]', 'a[title="linkedin"]'], 
+      url ? 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) : '#', isDisabled);
+    // Copy link button
+    ['.share-copy', 'button[title="Copy link"]', 'button[title="copy"]', 'a[title="Copy link"]'].forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        if (isDisabled) {
+          el.style.opacity = '0.5';
+          el.style.cursor = 'not-allowed';
+          el.title = 'Copy link will work after publishing';
+          el.onclick = function(e) { e.preventDefault(); };
+        } else {
+          el.onclick = function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(url).then(function() {
+              var orig = el.innerHTML;
+              el.innerHTML = '✓';
+              setTimeout(function() { el.innerHTML = orig; }, 1500);
+            });
+          };
+        }
+      });
+    });
+  });
+})();
+</script><a href="https://wa.me/972542668566" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
     <script src="/script.js"></script>
 
