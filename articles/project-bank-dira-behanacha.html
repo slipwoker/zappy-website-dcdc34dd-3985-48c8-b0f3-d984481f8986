@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>משכנתא לנכס במושע - המדריך המלא לרכישת נכס בבעלות משותפת</title>
-    <meta name="description" content="מה זה נכס במושע ואיך מקבלים עליו משכנתא? כל מה שצריך לדעת על הסכם שיתוף, דרישות הבנקים וחשיבות ייעוץ משכנתאות ברכישת דירה או מגרש בבעלות משותפת.">
+    <title>הבנק המלווה בפרויקט דירה בהנחה - האם חייבים לקחת ממנו משכנתא?</title>
+    <meta name="description" content="זכיתם בדירה בהנחה? המדריך המלא על הבנק המלווה בפרויקט: האם אתם חייבים לקחת ממנו את המשכנתא, מהם היתרונות והחסרונות, ואיך תשיגו את הריביות הטובות ביותר.">
     <meta name="keywords" content="">
     
     <!-- Zappy Analytics -->
@@ -742,23 +742,33 @@
         left: auto;
         right: 0;
       }
-    </style>
+    </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EY9JJ9BZN4');
+</script>
+<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+  
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="משכנתא לנכס במושע - המדריך המלא לרכישת נכס בבעלות משותפת">
-    <meta property="og:description" content="מה זה נכס במושע ואיך מקבלים עליו משכנתא? כל מה שצריך לדעת על הסכם שיתוף, דרישות הבנקים וחשיבות ייעוץ משכנתאות ברכישת דירה או מגרש בבעלות משותפת.">
-    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-musha-property-hero-1769844662159-og.jpg">
+    <meta property="og:title" content="הבנק המלווה בפרויקט דירה בהנחה - האם חייבים לקחת ממנו משכנתא?">
+    <meta property="og:description" content="זכיתם בדירה בהנחה? המדריך המלא על הבנק המלווה בפרויקט: האם אתם חייבים לקחת ממנו את המשכנתא, מהם היתרונות והחסרונות, ואיך תשיגו את הריביות הטובות ביותר.">
+    <meta property="og:image" content="https://mashkanta-bepijama.co.il/assets/page-bank-construction-project-1771950500171-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="משכנתא לנכס במושע - המדריך המלא לרכישת נכס בבעלות משותפת">
+    <meta property="og:image:alt" content="הבנק המלווה בפרויקט דירה בהנחה - האם חייבים לקחת ממנו משכנתא?">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="משכנתא לנכס במושע - המדריך המלא לרכישת נכס בבעלות משותפת">
-    <meta name="twitter:description" content="מה זה נכס במושע ואיך מקבלים עליו משכנתא? כל מה שצריך לדעת על הסכם שיתוף, דרישות הבנקים וחשיבות ייעוץ משכנתאות ברכישת דירה או מגרש בבעלות משותפת.">
-    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-musha-property-hero-1769844662159-og.jpg">
-    <meta name="twitter:image:alt" content="משכנתא לנכס במושע - המדריך המלא לרכישת נכס בבעלות משותפת"><style id="zappy-ai-page-styles">
+    <meta name="twitter:title" content="הבנק המלווה בפרויקט דירה בהנחה - האם חייבים לקחת ממנו משכנתא?">
+    <meta name="twitter:description" content="זכיתם בדירה בהנחה? המדריך המלא על הבנק המלווה בפרויקט: האם אתם חייבים לקחת ממנו את המשכנתא, מהם היתרונות והחסרונות, ואיך תשיגו את הריביות הטובות ביותר.">
+    <meta name="twitter:image" content="https://mashkanta-bepijama.co.il/assets/page-bank-construction-project-1771950500171-og.jpg">
+    <meta name="twitter:image:alt" content="הבנק המלווה בפרויקט דירה בהנחה - האם חייבים לקחת ממנו משכנתא?"><style id="zappy-ai-page-styles">
 
 
 /* Zappy Base Styles for Edit Mode Compatibility */
@@ -821,8 +831,9 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
-/* Hero container fixes - contain absolute images */
-[class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
+/* Hero container fixes - contain absolute images and prevent viewport overflow */
+/* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
+[class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
@@ -838,16 +849,7 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EY9JJ9BZN4');
-</script>
-<!-- ZAPPY_INTEGRATION_END analytics:add_google_analytics -->
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="mobile-lang-menu-deployed-css">
@@ -927,107 +929,140 @@ img[data-no-hero-position] { position: static !important; }
         </li>
       </div>
     </div>
-  </nav><main class="page-main blog-page ai-generated-page"><section class="section blog-article-section" style="background-color: #ffffff !important; padding: 40px 0;" id="zappy-section-0" data-zappy-section="true">
-  <div class="container" style="max-width: 800px; margin: 0 auto;">
-    
-    <!-- TOP NAVIGATION & SHARE -->
-    <div class="article-header-nav" style="margin-bottom: 20px;">
-      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #305060 !important; font-weight: 500; font-size: 16px;">
-        ← חזרה למאמרים
-      </a>
+  </nav><main class="page-main blog-page ai-generated-page">
+  <!-- Hero Section -->
+  <section class="section hero-section" id="article-hero" style="background-color: #f8f9fa !important; padding: 40px 0 20px;; position: relative; overflow: hidden;" data-zappy-section="true">
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+      <!-- Back Button Top -->
+      <div style="margin-bottom: 20px;">
+        <a href="/articles" style="text-decoration: none; color: #305060 !important; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s;">
+          <span>→</span> חזרה לבלוג
+        </a>
+      </div>
+
+      <!-- Social Share Bar Top -->
+      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
+        <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+        <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="article-hero-image" style="width: 100%; max-height: 400px; overflow: hidden; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);; position: relative; overflow: hidden;">
+        <img data-placeholder="bank-construction-project" data-context="Modern residential construction site with a bank building or financial documents in the foreground, high quality, professional style" data-zappy-editable-image="true" alt="הבנק המלווה בפרויקט דירה בהנחה" style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover;" src="/assets/page-bank-construction-project-1771950500171.webp" class="generated-image">
+      </div>
+
+      <!-- Article Title & Meta -->
+      <h1 style="color: #304060 !important; font-size: 2.5rem; margin-bottom: 15px; line-height: 1.2;">הבנק המלווה בפרויקט דירה בהנחה – האם חייבים לקחת ממנו משכנתא?</h1>
+      <div style="color: #305060 !important; font-size: 0.9rem; margin-bottom: 30px; display: flex; gap: 15px; border-bottom: 1px solid #e0e0e0; padding-bottom: 20px;">
+        <span>📅 פורסם: אוקטובר 2023</span>
+        <span>⏱️ זמן קריאה: 5 דקות</span>
+      </div>
     </div>
+  </section>
 
-    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
-      <span style="font-weight: 500; color: #304060 !important;">שתף ב:</span>
-      <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
-      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-    </div>
-
-    <!-- HERO IMAGE -->
-    <div class="article-hero-image" style="width: 100%; max-height: 400px; overflow: hidden; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);; position: relative; overflow: hidden;">
-      <img data-placeholder="musha-property-hero" data-context="Real estate blueprint and keys on a wooden table, representing shared property ownership" data-zappy-editable-image="true" alt="משכנתא לנכס במושע" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 16/9;" src="/assets/page-musha-property-hero-1769844662159.webp" class="generated-image" data-og-image="/assets/page-musha-property-hero-1769844662159-og.jpg">
-    </div>
-
-    <!-- ARTICLE HEADER -->
-    <h1 style="color: #304060 !important; font-size: 2.5rem; margin-bottom: 15px; line-height: 1.2;">משכנתא לנכס במושע – כל מה שחשוב לדעת</h1>
-    
-    <div class="article-meta" style="color: #305060 !important; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #e0e0e0; padding-bottom: 20px;">
-      <span>פורסם בתאריך: 24/05/2024</span> | 
-      <span>זמן קריאה משוער: 6 דקות</span>
-    </div>
-
-    <!-- ARTICLE CONTENT -->
-    <div class="article-content" style="color: #304060 !important; font-size: 1.1rem; line-height: 1.8;">
-      <p style="margin-bottom: 20px;">
-        רכישת נכס היא אחת ההחלטות הכלכליות הגדולות ביותר בחיינו, אך כאשר מדובר בנכס המוגדר כ"מושע" (בעלות משותפת), התהליך הופך למורכב הרבה יותר. רוכשים רבים נתקלים במושג הזה לראשונה רק כשהם מוצאים נכס במחיר אטרקטיבי, אך לא תמיד מבינים את המשמעויות המשפטיות והמימוניות הנלוות לכך. קבלת <strong>ייעוץ משכנתאות</strong> מקצועי במקרים אלו היא קריטית, שכן הבנקים מתייחסים לנכסים אלו בחשדנות ובזהירות יתרה.
+  <!-- Article Content -->
+  <section class="section article-content" id="article-body" style="background-color: #ffffff !important; padding: 40px 0;" data-zappy-section="true">
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; color: #304060 !important; font-size: 1.1rem; line-height: 1.8;">
+      
+      <p style="margin-bottom: 24px;">
+        זכיתם בהגרלת "דירה בהנחה" או "מחיר למשתכן"? קודם כל – מזל טוב! אחרי ההתרגשות הראשונית, בחירת הדירה וחתימת החוזה מול הקבלן, מגיע השלב הבא והמשמעותי ביותר: לקיחת המשכנתא. בשלב זה, זוכים רבים נתקלים במושג "הבנק המלווה" ושומעים לא פעם ממשרד המכירות אמירות כמו: "הכי כדאי לכם לקחת משכנתא מהבנק שמלווה את הפרויקט" או אפילו רמזים שזו הדרך היחידה להתקדם.
       </p>
 
-      <p style="margin-bottom: 30px;">
-        במאמר זה נסביר בדיוק מהו נכס במושע, מדוע הבנקים מקשים במתן מימון לנכסים אלו, ומהם הפתרונות הקיימים עבורכם אם החלטתם לרכוש נכס כזה.
+      <p style="margin-bottom: 24px;">
+        הבלבול הזה גורם לרבים לוותר על <strong>ייעוץ משכנתאות</strong> מקצועי או על השוואת מחירים (סקר שוק), ולהיכנע לתנאים שהבנק המלווה מציע, גם אם הם פחות טובים. במאמר זה נעשה סדר: מהו בדיוק בנק מלווה, האם אתם באמת "שבויים" שלו, ואיך תוכלו לחסוך עשרות ואף מאות אלפי שקלים אם תפעלו נכון.
       </p>
 
-      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">מה זה בעצם "נכס במושע"?</h2>
-      <p style="margin-bottom: 20px;">
-        המונח "מושע" (Musha) מגיע מהחוק העות'מאני ומשמעותו בעלות משותפת במקרקעין שאינה מסוימת. במילים פשוטות, כאשר אתם רוכשים נכס במושע, אתם רוכשים אחוז מסוים מחלקת קרקע גדולה, אך אין רישום ספציפי בטאבו שמגדיר איזה חלק בדיוק שייך לכם. 
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px;">מהו "בנק מלווה" ולמה הוא קיים?</h2>
+      <p style="margin-bottom: 24px;">
+        פרויקטים של בנייה בישראל, ובמיוחד פרויקטים ממשלתיים כמו דירה בהנחה, פועלים לרוב בשיטת "ליווי פיננסי סגור". המשמעות היא שיש בנק אחד (או גוף מימון אחר) שמפקח על הפרויקט מבחינה כספית. כל הכספים שאתם משלמים לקבלן נכנסים לחשבון בנק ייעודי ומפוקח (חשבון הליווי), והבנק משחרר כספים לקבלן רק בהתאם להתקדמות הבנייה בפועל.
       </p>
-      <p style="margin-bottom: 20px;">
-        מצב זה נפוץ מאוד בבתים דו-משפחתיים ישנים, בבניינים שטרם עברו פרצלציה (חלוקה לתתי-חלקות), או בקרקעות חקלאיות שנרכשות להשקעה. מבחינה משפטית, כל השותפים בחלקה הם בעלים של כל גרגר אדמה במשותף, בהתאם לחלקם היחסי. זהו מצב שונה לחלוטין מרכישת דירה בבית משותף רגיל, שם הדירה רשומה כתת-חלקה נפרדת על שמכם.
-      </p>
-
-      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">למה הבנקים חוששים מנכסים במושע?</h2>
-      <p style="margin-bottom: 20px;">
-        עבור הבנק, משכנתא היא הלוואה כנגד בטוחה (הנכס). כאשר הנכס אינו מוגדר משפטית באופן ספציפי, הבטוחה נחשבת לבעייתית יותר. הסיבה העיקרית היא הקושי במימוש הנכס במקרה של אי-תשלום המשכנתא. אם הלווה לא עומד בתשלומים והבנק רוצה למכור את הנכס, הוא עלול להיתקל בהתנגדויות מצד השותפים האחרים לקרקע, מה שעלול לגרור הליכים משפטיים ארוכים ויקרים של "פירוק שיתוף".
-      </p>
-      <p style="margin-bottom: 20px;">
-        בנוסף, לעיתים קרובות בנכסי מושע ישנן חריגות בנייה או אי-הסכמות בין השכנים לגבי השימוש בשטחים המשותפים, מה שמוסיף נדבך נוסף של סיכון מבחינת השמאי של הבנק.
+      <p style="margin-bottom: 24px;">
+        בתמורה לכל תשלום שאתם מעבירים, הבנק המלווה מנפיק לכם "ערבות חוק מכר". ערבות זו נועדה להגן עליכם במקרה שהקבלן יפשוט רגל חלילה ולא יוכל להשלים את הדירה. זהו מנגנון הגנה מצוין וחשוב לרוכשים.
       </p>
 
-      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">הפתרון: הסכם שיתוף במקרקעין</h2>
-      <p style="margin-bottom: 20px;">
-        כדי לאפשר קבלת משכנתא לנכס במושע, הבנקים דורשים ברוב המקרים קיומו של "הסכם שיתוף". זהו מסמך משפטי שנחתם בין כל הבעלים בחלקה, והוא מגדיר בבירור מי מחזיק באיזה חלק פיזי של הקרקע, למי מותר לבנות איפה, וכיצד מתחלקות הזכויות והחובות.
+      <div style="background-color: #f0f7ff !important; border-right: 4px solid #1e3a8a; padding: 20px; margin: 30px 0; border-radius: 8px;">
+        <p style="margin: 0; font-weight: bold;">
+          חשוב לדעת: הבנק המלווה הוא הבנק של הפרויקט, לא בהכרח הבנק שלכם. התפקיד שלו הוא להבטיח שהבניין יושלם, לאו דווקא לתת לכם את המשכנתא הזולה ביותר.
+        </p>
+      </div>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px;">המיתוס: "חייבים לקחת משכנתא מהבנק המלווה"</h2>
+      <p style="margin-bottom: 24px;">
+        בואו ננפץ את המיתוס הזה מיד: <strong>אין שום חובה חוקית לקחת משכנתא מהבנק שמלווה את הפרויקט.</strong> כרוכשי דירה, יש לכם זכות מלאה לבחור בכל בנק למשכנתאות בישראל שירצה לממן את העסקה שלכם. אתם לקוחות חופשיים, והכוח בידיים שלכם.
       </p>
-      <p style="margin-bottom: 20px;">
-        הסכם שיתוף איכותי צריך להיות רשום בטאבו. אם קיים הסכם שיתוף רשום וברור, הבנק ירגיש בטוח יותר להעמיד מימון, שכן ההסכם מסדיר את היחסים ומקטין את הסיכון המשפטי. אם אין הסכם שיתוף, או שההסכם ישן ולא רלוונטי, קבלת אישור למשכנתא תהיה משימה כמעט בלתי אפשרית בבנקים הרגילים, ועשויה לדרוש פתרונות מימון חוץ-בנקאיים יקרים יותר.
+      <p style="margin-bottom: 24px;">
+        מדוע, אם כן, נציגי המכירות בפרויקט לוחצים עליכם לעבוד עם הבנק המלווה? הסיבה היא בעיקר נוחות תפעולית. עבור הקבלן ועבור הבנק המלווה, התהליך פשוט יותר כשהכל מתנהל "בתוך הבית". הם חוסכים החלפת מסמכים בין בנקים שונים והעברות כספים חיצוניות. אבל הנוחות שלהם – היא לא בהכרח הרווח שלכם.
       </p>
 
-      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">טיפים לרוכשי נכס במושע</h2>
-      <p style="margin-bottom: 20px;">
-        אם אתם שוקלים לרכוש נכס כזה, במיוחד אם מדובר על <strong>ייעוץ משכנתא לדירה ראשונה</strong> או למשפרי דיור שנתקלו בהזדמנות נדל"נית, הנה מספר כללי ברזל:
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px;">היתרונות בלקיחת משכנתא בבנק המלווה</h2>
+      <p style="margin-bottom: 24px;">
+        למרות שאין חובה, ישנם מצבים בהם לקיחת משכנתא מהבנק המלווה עשויה להיות משתלמת או נוחה יותר:
       </p>
-      <ul style="margin-bottom: 20px; padding-right: 20px; list-style-type: disc;">
-        <li style="margin-bottom: 10px;"><strong>בדיקה מקדימה:</strong> אל תחתמו על חוזה לפני שעורך דין מטעמכם בדק את הרישום בטאבו ווידא קיום של הסכם שיתוף תקף.</li>
-        <li style="margin-bottom: 10px;"><strong>שמאות מוקדמת:</strong> מומלץ מאוד להזמין שמאות מוקדמת (לפני רכישה) כדי להבין האם הבנק יקבל את הנכס כבטוחה ובאיזה אחוז מימון.</li>
-        <li style="margin-bottom: 10px;"><strong>אישור עקרוני ספציפי:</strong> אישור עקרוני כללי לא מספיק כאן. יש להגיש לבנק את ניירת הנכס הספציפית ולקבל אישור עקרוני המתייחס לנכס הזה בפרט.</li>
-        <li style="margin-bottom: 10px;"><strong>הון עצמי:</strong> בנכסים מורכבים, הבנקים לעיתים מאשרים אחוז מימון נמוך יותר (למשל 60% במקום 75%). וודאו שיש לכם מספיק הון עצמי להשלמת העסקה.</li>
+      <ul style="list-style-type: none; padding: 0; margin-bottom: 24px;">
+        <li style="margin-bottom: 15px; padding-right: 20px; position: relative;">
+          <span style="position: absolute; right: 0; color: #1e3a8a !important; font-weight: bold;">✓</span>
+          <strong>חיסכון בעמלות ערבות:</strong> לעיתים, הבנק המלווה יפטור אתכם מתשלום עמלות מסוימות הקשורות להנפקת ערבויות חוק מכר, הטבה שיכולה להיות שווה כמה מאות שקלים.
+        </li>
+        <li style="margin-bottom: 15px; padding-right: 20px; position: relative;">
+          <span style="position: absolute; right: 0; color: #1e3a8a !important; font-weight: bold;">✓</span>
+          <strong>תהליך בירוקרטי מהיר יותר:</strong> הבנק כבר מכיר את הפרויקט, השמאות כבר קיימת במערכת (בדרך כלל), והמשפטנים כבר אישרו את החוזה. זה יכול לקצר זמנים, יתרון חשוב אם אתם לחוצים בזמן.
+        </li>
+        <li style="margin-bottom: 15px; padding-right: 20px; position: relative;">
+          <span style="position: absolute; right: 0; color: #1e3a8a !important; font-weight: bold;">✓</span>
+          <strong>גמישות באחוזי מימון:</strong> במקרים מסוימים, הבנק המלווה עשוי להיות גמיש יותר באישור העסקה כי הוא "שולט" בכסף ובנכס.
+        </li>
       </ul>
 
-      <p style="margin-bottom: 20px;">
-        לסיכום, משכנתא לנכס במושע היא אפשרית, אך היא דורשת מומחיות, הכנה מוקדמת והתנהלות נכונה מול המערכת הבנקאית. אל תיגשו לתהליך הזה לבד – הליווי המקצועי יכול להיות ההבדל בין אישור המשכנתא לבין עוגמת נפש וביטול חוזה.
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px;">החסרונות והסיכונים: המלכודת השקטה</h2>
+      <p style="margin-bottom: 24px;">
+        החיסרון הגדול ביותר הוא היעדר תחרות. כשאתם ניגשים רק לבנק המלווה, הוא יודע שאתם "לקוחות שבויים". במקרים רבים, הריביות שתקבלו יהיו גבוהות יותר מאלה שתוכלו להשיג בבנקים אחרים. הפרש של עשירית האחוז בריבית יכול להצטבר לעשרות אלפי שקלים לאורך חיי המשכנתא.
+      </p>
+      <p style="margin-bottom: 24px;">
+        במסגרת תהליך <strong>ייעוץ משכנתא לדירה ראשונה</strong>, אנו רואים לא פעם זוגות שקיבלו הצעה ראשונית מהבנק המלווה שהייתה יקרה משמעותית מהצעות שהשגנו להם בבנקים מתחרים. הנוחות הבירוקרטית לא שווה את המחיר הכלכלי הכבד בטווח הארוך.
+      </p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px;">איך לוקחים משכנתא מבנק חיצוני?</h2>
+      <p style="margin-bottom: 24px;">
+        התהליך פשוט למדי, אך דורש מעט יותר ניירת. כאשר אתם לוקחים משכנתא מבנק חיצוני (שאינו הבנק המלווה), הבנק שלכם יבקש מהבנק המלווה "מכתב החרגה" (או התחייבות להחרגה). מסמך זה מבטיח שאם חלילה הקבלן יקרוס, הבנק שלכם יקבל את הזכויות על הדירה.
+      </p>
+      <p style="margin-bottom: 24px;">
+        בפועל, הבנק שלכם יעביר את הכסף ישירות לחשבון הליווי של הפרויקט באמצעות שוברים (פנקס שוברים), בדיוק כפי שהייתם משלמים מההון העצמי שלכם. זהו תהליך סטנדרטי לחלוטין שמתבצע באלפי עסקאות מדי חודש.
+      </p>
+
+      <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin: 40px 0 20px;">סיכום והמלצות לזוכים</h2>
+      <p style="margin-bottom: 24px;">
+        אל תתנו ללחץ במשרד המכירות להכתיב לכם החלטות פיננסיות של מיליוני שקלים. הכלל החשוב ביותר הוא: <strong>תמיד להשוות</strong>. קבלו הצעה מהבנק המלווה, אך אל תעצרו שם. פנו לעוד 2-3 בנקים לפחות.
+      </p>
+      <p style="margin-bottom: 24px;">
+        זכרו כי בפרויקטים של דירה בהנחה, שווי הנכס לרוב גבוה ממחיר הרכישה, מה שמעמיד אתכם בעמדת מיקוח מצוינת מול הבנקים (אחוזי המימון הריאליים נמוכים יותר). נצלו את הכוח הזה. אם אתם חוששים מהבירוקרטיה או לא בטוחים איך לנהל את המשא ומתן, זה הזמן לשקול <strong>ייעוץ משכנתאות</strong> פרטי שילווה אתכם בתהליך וידאג לאינטרסים שלכם בלבד.
       </p>
     </div>
+  </section>
 
-    <!-- BOTTOM SOCIAL SHARE -->
-    <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 40px 0 20px 0; border-top: 1px solid #e0e0e0; padding-top: 30px;">
-      <span style="font-weight: 500; color: #304060 !important;">שתף ב:</span>
-      <a href="#" class="share-copy" title="העתק קישור" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
-      <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-      <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-      <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <!-- Bottom Share & Back -->
+  <section class="section" style="background-color: #f8f9fa !important; padding: 30px 0;" id="zappy-section-2" data-zappy-section="true">
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+      <div class="social-share-bar" style="display: flex; align-items: center; gap: 12px; margin: 20px 0;">
+        <span style="font-weight: 500; color: #304060 !important;">שתף ב</span>
+        <a href="#" class="share-copy" title="Copy link" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+        <a href="#" class="share-linkedin" target="_blank" title="LinkedIn" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="share-twitter" target="_blank" title="X" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="share-facebook" target="_blank" title="Facebook" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="share-whatsapp" target="_blank" title="WhatsApp" style="color: #1e3a8a !important; display: flex; align-items: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+      
+      <div style="margin-top: 20px;">
+        <a href="/articles" style="text-decoration: none; color: #305060 !important; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s;">
+          <span>→</span> חזרה לבלוג
+        </a>
+      </div>
     </div>
-
-    <!-- BOTTOM NAVIGATION -->
-    <div class="article-footer-nav" style="margin-top: 20px;">
-      <a href="/articles" style="display: inline-flex; align-items: center; text-decoration: none; color: #305060 !important; font-weight: 500; font-size: 16px;">
-        ← חזרה למאמרים
-      </a>
-    </div>
-
-  </div>
-</section></main>
+  </section>
+</main>
 
   
 
@@ -1036,6 +1071,14 @@ img[data-no-hero-position] { position: static !important; }
   
 
   
+
+
+
+
+
+
+
+
 
   
 
@@ -1049,15 +1092,7 @@ img[data-no-hero-position] { position: static !important; }
 
   
     <!--6-- Legal Footer ---->
-    
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>משכנתא בפיג'מה</title>
-
-
-<footer class="legal-footer">
+    <footer class="legal-footer">
       <div class="container">
         <div class="footer-main">
           <div class="all-rights-reserved">
@@ -1065,8 +1100,8 @@ img[data-no-hero-position] { position: static !important; }
           </div>
           <div class="footer-social"><a href="https://facebook.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 <a href="https://instagram.com/arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819970753-y7t3k1"><i class="fab fa-youtube"></i></a>
-<a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+<a href="https://wa.me/972542668566" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://youtube.com/@arielmashkanta" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1770819966672-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -1088,9 +1123,7 @@ img[data-no-hero-position] { position: static !important; }
     </footer>
 
 
-
-
-
+<!--6-- Zappy Attribution Header Script ---->
 <script>
 (function() {
   var websiteId = 'dcdc34dd-3985-48c8-b0f3-d984481f8986';
@@ -1860,6 +1893,16 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
+
+
+
+
+
+
+
+
+
+
 <script id="zappy-share-script">
 (function() {
   function getShareUrl() {
@@ -1970,16 +2013,9 @@ img[data-no-hero-position] { position: static !important; }
     });
   });
 })();
-</script>
-
-
-
-
-
-
-
-
-
+</script><a href="https://wa.me/972542668566" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
     <script src="/script.js"></script>
 
