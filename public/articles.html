@@ -916,7 +916,7 @@ img[data-no-hero-position] { position: static !important; }
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/services">שרותים</a></li><li><a href="/articles" class="nav-link" data-nav-menu-item="true">מאמרים</a><ul class="sub-menu"><li><a href="/articles/housing-programs-comparison" class="nav-link">השוואת תוכניות דיור</a></li><li><a href="/articles/waiting-list-dira-behanacha" class="nav-link">רשימת המתנה</a></li></ul></li><li><a href="/mashkanta-bepijama-podcast" class="nav-link" data-nav-menu-item="true">פודקאסט</a></li><li><a href="/blog" class="nav-link" data-nav-menu-item="true">בלוג</a><ul class="sub-menu"><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/beginners-guide">מדריך משכנתא למתחילים: כל מה שצריך לדעת</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/first-apartment">ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/recycling">מיחזור משכנתא: מתי זה כדאי ואיך זה חוסך לכם כסף?</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/housing-improvers">משכנתא למשפרי דיור - המדריך המלא | אריאל אחון</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/mortgage-mix">תמהיל משכנתא</a></li></ul></li><li><a href="/testimonials" class="nav-link" data-nav-menu-item="true">לקוחות ממליצים</a></li><li><a href="/about" data-nav-menu-item="true">אודות</a></li><li class="nav-cta-item-mobile"><a href="/contact-us">צור קשר</a></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/services">שרותים</a></li><li><a href="/articles" class="nav-link" data-nav-menu-item="true">מאמרים</a><ul class="sub-menu"><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/housing-programs-comparison" class="nav-link">השוואת תוכניות דיור</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/waiting-list-dira-behanacha" class="nav-link">רשימת המתנה</a></li></ul></li><li><a href="/mashkanta-bepijama-podcast" class="nav-link" data-nav-menu-item="true">פודקאסט</a></li><li><a href="/blog" class="nav-link" data-nav-menu-item="true">בלוג</a><ul class="sub-menu"><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/beginners-guide">מדריך משכנתא למתחילים: כל מה שצריך לדעת</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/first-apartment">ייעוץ משכנתא לדירה ראשונה: המדריך המלא לזוגות צעירים</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/recycling">מיחזור משכנתא: מתי זה כדאי ואיך זה חוסך לכם כסף?</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/housing-improvers">משכנתא למשפרי דיור - המדריך המלא | אריאל אחון</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/blog/mortgage-mix">תמהיל משכנתא</a></li></ul></li><li><a href="/testimonials" class="nav-link" data-nav-menu-item="true">לקוחות ממליצים</a></li><li><a href="/about" data-nav-menu-item="true">אודות</a></li><li class="nav-cta-item-mobile"><a href="/contact-us">צור קשר</a></li></ul>
       
       
 
@@ -2625,6 +2625,34 @@ img[data-no-hero-position] { position: static !important; }
       if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileLangMenu); }
       else { initMobileLangMenu(); }
       window.addEventListener('resize', function() { clearTimeout(window._mlrt); window._mlrt = setTimeout(initMobileLangMenu, 250); });
+    })();
+    </script>
+
+    <script>
+    (function(){
+      if(window.innerWidth>768)return;
+      function fixZW(){
+        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
+          var cw=w.style.getPropertyValue('width');
+          if(!cw||cw==='100%')return;
+          w.style.setProperty('width','100%','important');
+          w.style.setProperty('max-width','100%','important');
+          w.style.setProperty('height','auto','important');
+          var img=w.querySelector('img');
+          if(img){
+            img.style.setProperty('position','relative','important');
+            img.style.setProperty('width','100%','important');
+            img.style.setProperty('height','auto','important');
+            img.style.setProperty('max-width','100%','important');
+            img.style.setProperty('max-height','400px','important');
+            img.style.setProperty('object-fit','cover','important');
+            img.style.setProperty('left','0','important');
+            img.style.setProperty('top','0','important');
+          }
+        });
+      }
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixZW);
+      else setTimeout(fixZW,50);
     })();
     </script>
 </body></html></div>

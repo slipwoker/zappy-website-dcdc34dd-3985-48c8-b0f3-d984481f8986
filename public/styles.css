@@ -18044,6 +18044,16 @@ html[dir="rtl"] body {
     gap: 1.5rem !important;
   }
   
+  /* Grid children: override min-width:auto so children with fixed-width
+     content (e.g. zoom wrappers with width:448px!important) can shrink
+     to fit the 1fr column instead of overflowing the grid container. */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > *,
+  [data-zappy-auto-grid="true"] > *,
+  [data-zappy-explicit-columns="true"] > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  
   /* Featured/product grids - force single column on mobile */
   .featured-grid,
   .product-grid {
