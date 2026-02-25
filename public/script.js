@@ -599,8 +599,31 @@ window.onload = function() {
       } catch (e) {}
     }
 
+    function ensureLightboxCss(){
+      try {
+        var head = document.head || document.querySelector('head');
+        if (!head || head.querySelector('style[data-zappy-image-lightbox="true"]')) return;
+        var s = document.createElement('style');
+        s.setAttribute('data-zappy-image-lightbox','true');
+        s.textContent =
+          '.zappy-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;}'+
+          '.zappy-lightbox-content{position:relative;max-width:min(1100px,92vw);max-height:92vh;}'+
+          '.zappy-lightbox-content img{max-width:92vw;max-height:92vh;display:block;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.45);}'+
+          '.zappy-lightbox-close{position:absolute;top:-14px;right:-14px;width:32px;height:32px;border-radius:999px;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer;}'+
+          '.zappy-lightbox-backdrop{position:absolute;inset:0;display:block;cursor:pointer;}'+
+          'input.zappy-lightbox-toggle{position:absolute;opacity:0;pointer-events:none;}'+
+          'label.zappy-lightbox-trigger{display:contents;}'+
+          'label.zappy-lightbox-trigger{cursor:zoom-in;}'+
+          'label.zappy-lightbox-trigger [data-zappy-zoom-wrapper="true"],'+
+          'label.zappy-lightbox-trigger img{cursor:zoom-in !important;}'+
+          'input.zappy-lightbox-toggle:checked + label.zappy-lightbox-trigger + .zappy-lightbox{display:flex;}';
+        head.appendChild(s);
+      } catch(e){}
+    }
+
     function initZappyPublishedLightboxes(){
       try {
+        ensureLightboxCss();
         // Repair orphaned labels (label has for=toggleId but input is missing)
         var orphanLabels = document.querySelectorAll('label.zappy-lightbox-trigger[for^="zappy-lightbox-toggle-"]');
         for (var i=0;i<orphanLabels.length;i++){

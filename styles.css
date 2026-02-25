@@ -18057,9 +18057,10 @@ html[dir="rtl"] body {
   position: relative !important;
 }
 
-/* Prevent inserted elements from exceeding their container width */
+/* Prevent inserted elements from exceeding their container width.
+   max-width uses no !important so inline styles can set a specific constraint. */
 .zappy-inserted-element {
-  max-width: 100% !important;
+  max-width: 100%;
   box-sizing: border-box !important;
 }
 
@@ -18081,9 +18082,8 @@ html[dir="rtl"] body {
     max-width: 100% !important;
   }
   
-  /* Featured/product grids - force single column on mobile */
-  .featured-grid,
-  .product-grid {
+  /* Featured grids - force single column on mobile */
+  .featured-grid {
     grid-template-columns: 1fr !important;
   }
   
