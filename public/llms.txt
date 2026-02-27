@@ -1104,9 +1104,9 @@ https://mashkanta-bepijama.co.il/mortgage-calculators
 https://mashkanta-bepijama.co.il/construction-index-calculator
 מחשבון מדד תשומות הבנייה לרוכשי דירה מקבלן. חישוב הצמדה למדד, הערכת עלויות עתידיות ותכנון תקציב חכם. כלי חובה לפני חתימת חוזה.
 
-### מחשבון משכנתא מתקדם
-https://mashkanta-bepijama.co.il/advanced-mortgage-calculator
-מחשבון משכנתא מתקדם לתכנון החזרים חודשיים, בניית תמהיל וחיסכון בריביות. כלי עזר חיוני לפני ייעוץ משכנתאות וקבלת החלטות פיננסיות.
+### מחשבון תמהיל משכנתא
+https://mashkanta-bepijama.co.il/mortgage-mix-calculator
+מחשבון משכנתא מתקדם לבניית תמהיל אישי. השוואת מסלולים (קל"צ, פריים, משתנה), חישוב החזר חודשי ולוח סילוקין. כלי עזר חיוני לפני ייעוץ משכנתאות.
 
 ## Legal & Policy
 
