@@ -912,7 +912,7 @@ img[data-no-hero-position] { position: static !important; }
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/services">שרותים</a></li><li><a href="/articles" class="nav-link" data-nav-menu-item="true">מאמרים</a><ul class="sub-menu"></ul></li><li><a href="/mashkanta-bepijama-podcast" class="nav-link" data-nav-menu-item="true">פודקאסט</a></li><li><a href="/blog" class="nav-link" data-nav-menu-item="true">בלוג</a><ul class="sub-menu"></ul></li><li><a href="/testimonials" class="nav-link" data-nav-menu-item="true">לקוחות ממליצים</a></li><li><a href="/about" data-nav-menu-item="true">אודות</a></li><li><a href="/mortgage-calculators" class="nav-link">מחשבונים וכלים</a><ul class="sub-menu"><li><a href="/construction-index-calculator">מחשבון מדד תשומות הבנייה | משכנתא בפיג'מה</a></li><li><a href="/mortgage-mix-calculator" class="nav-link">מחשבון תמהיל משכנתא</a></li></ul></li><li class="nav-cta-item-mobile"><a href="/contact-us">צור קשר</a></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/services">שרותים</a></li><li><a href="/articles" class="nav-link" data-nav-menu-item="true">מאמרים</a><ul class="sub-menu"><li><a href="/articles/mortgage-during-war" class="nav-link">משכנתא בזמן מלחמה</a></li></ul></li><li><a href="/mashkanta-bepijama-podcast" class="nav-link" data-nav-menu-item="true">פודקאסט</a></li><li><a href="/blog" class="nav-link" data-nav-menu-item="true">בלוג</a><ul class="sub-menu"></ul></li><li><a href="/testimonials" class="nav-link" data-nav-menu-item="true">לקוחות ממליצים</a></li><li><a href="/about" data-nav-menu-item="true">אודות</a></li><li><a href="/mortgage-calculators" class="nav-link">מחשבונים וכלים</a><ul class="sub-menu"><li><a href="/construction-index-calculator">מחשבון מדד תשומות הבנייה | משכנתא בפיג'מה</a></li><li><a href="/mortgage-mix-calculator" class="nav-link">מחשבון תמהיל משכנתא</a></li></ul></li><li class="nav-cta-item-mobile"><a href="/contact-us">צור קשר</a></li></ul>
       
       
 
@@ -941,7 +941,7 @@ img[data-no-hero-position] { position: static !important; }
       <!-- Toolbar / Header -->
       <div style="background-color: #1e3a8a !important; padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
         <h2 style="margin: 0; font-size: 1.25rem; color: white;">בניית תמהיל משכנתא</h2>
-        <button id="add-track-btn" type="button" style="background-color: #ffffff; color: #1e3a8a !important; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">+ הוסף מסלול</button>
+        <button id="add-track-btn" type="button" style="background-color: #ffffff; color: #1e3a8a !important; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;" data-element-type="button" data-element-id="btn-1772208659361-8lmm1v5ba" data-native-element="true">+ הוסף מסלול</button>
       </div>
 
       <!-- Tracks Container -->
@@ -960,39 +960,87 @@ img[data-no-hero-position] { position: static !important; }
           </thead>
           <tbody id="tracks-body">
             <!-- Rows will be injected by JS -->
-          </tbody>
+          <tr style="border-bottom: 1px solid rgb(240, 240, 240);">
+        <td style="padding: 10px;">
+          <select class="track-type zappy-editable-dropdown" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: white;">
+            <option value="קל" צ" selected>קל"צ</option><option value="מל" צ">מל"צ</option><option value="פריים">פריים</option><option value="זכאות">זכאות</option><option value="ק" צ">ק"צ</option><option value="מ" צ">מ"צ</option><option value="יורו">יורו</option><option value="דולר">דולר</option>
+          </select>
+        </td>
+        <td style="padding: 10px;">
+          <select class="amort-type zappy-editable-dropdown" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: white;">
+            <option value="שפיצר" selected>שפיצר</option><option value="קרן שווה">קרן שווה</option><option value="גרייס (ריבית בלבד)">גרייס (ריבית בלבד)</option><option value="בלון מלא">בלון מלא</option>
+          </select>
+        </td>
+        <td style="padding: 10px;"><input type="number" class="amount" value="400000" step="1000" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></td>
+        <td style="padding: 10px;"><input type="number" class="years" value="20" step="1" max="30" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></td>
+        <td style="padding: 10px;"><input type="number" class="rate" value="4.5" step="0.1" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></td>
+        <td style="padding: 10px; font-weight: bold; color: #1e3a8a !important;" class="monthly-pmt">2,531 ₪</td>
+        <td style="padding: 10px; text-align: center;"><button type="button" class="remove-btn" style="background: none; border: none; color: #d9534f !important; font-weight: bold; cursor: pointer;" data-element-type="button" data-element-id="btn-1772208659361-r3i2e6xqz" data-native-element="true">✕</button></td>
+      </tr><tr style="border-bottom: 1px solid rgb(240, 240, 240);">
+        <td style="padding: 10px;">
+          <select class="track-type zappy-editable-dropdown" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: white;">
+            <option value="קל" צ">קל"צ</option><option value="מל" צ">מל"צ</option><option value="פריים" selected>פריים</option><option value="זכאות">זכאות</option><option value="ק" צ">ק"צ</option><option value="מ" צ">מ"צ</option><option value="יורו">יורו</option><option value="דולר">דולר</option>
+          </select>
+        </td>
+        <td style="padding: 10px;">
+          <select class="amort-type zappy-editable-dropdown" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: white;">
+            <option value="שפיצר" selected>שפיצר</option><option value="קרן שווה">קרן שווה</option><option value="גרייס (ריבית בלבד)">גרייס (ריבית בלבד)</option><option value="בלון מלא">בלון מלא</option>
+          </select>
+        </td>
+        <td style="padding: 10px;"><input type="number" class="amount" value="300000" step="1000" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></td>
+        <td style="padding: 10px;"><input type="number" class="years" value="25" step="1" max="30" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></td>
+        <td style="padding: 10px;"><input type="number" class="rate" value="6" step="0.1" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></td>
+        <td style="padding: 10px; font-weight: bold; color: #1e3a8a !important;" class="monthly-pmt">1,933 ₪</td>
+        <td style="padding: 10px; text-align: center;"><button type="button" class="remove-btn" style="background: none; border: none; color: #d9534f !important; font-weight: bold; cursor: pointer;" data-element-type="button" data-element-id="btn-1772208659361-caxfkqc4y" data-native-element="true">✕</button></td>
+      </tr><tr style="border-bottom: 1px solid rgb(240, 240, 240);">
+        <td style="padding: 10px;">
+          <select class="track-type zappy-editable-dropdown" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: white;">
+            <option value="קל" צ">קל"צ</option><option value="מל" צ">מל"צ</option><option value="פריים">פריים</option><option value="זכאות">זכאות</option><option value="ק" צ">ק"צ</option><option value="מ" צ">מ"צ</option><option value="יורו">יורו</option><option value="דולר">דולר</option>
+          </select>
+        </td>
+        <td style="padding: 10px;">
+          <select class="amort-type zappy-editable-dropdown" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: white;">
+            <option value="שפיצר" selected>שפיצר</option><option value="קרן שווה">קרן שווה</option><option value="גרייס (ריבית בלבד)">גרייס (ריבית בלבד)</option><option value="בלון מלא">בלון מלא</option>
+          </select>
+        </td>
+        <td style="padding: 10px;"><input type="number" class="amount" value="200000" step="1000" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></td>
+        <td style="padding: 10px;"><input type="number" class="years" value="20" step="1" max="30" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></td>
+        <td style="padding: 10px;"><input type="number" class="rate" value="3.5" step="0.1" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></td>
+        <td style="padding: 10px; font-weight: bold; color: #1e3a8a !important;" class="monthly-pmt">1,160 ₪</td>
+        <td style="padding: 10px; text-align: center;"><button type="button" class="remove-btn" style="background: none; border: none; color: #d9534f !important; font-weight: bold; cursor: pointer;" data-element-type="button" data-element-id="btn-1772208659361-4c4yjc89k" data-native-element="true">✕</button></td>
+      </tr></tbody>
         </table>
       </div>
 
       <!-- Summary Section -->
       <div style="background-color: #f8f9fa !important; border-top: 1px solid #e0e0e0; padding: 30px;">
-        <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+        <div class="grid zappy-preserve-css-grid" style="display: grid; grid-template-columns: 320px 320px 320px 320px 0px 0px; gap: 20px;" id="zappy-auto-grid-1772208659390-py63c0" data-zappy-auto-grid="true" data-original-item-width="311" data-original-gap="32px">
           
-          <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; text-align: center;">
+          <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; text-align: center;" data-grid-item-index="0">
             <div style="color: #305060 !important; font-size: 0.9rem; margin-bottom: 5px;">סה"כ משכנתא</div>
-            <div id="total-amount" style="color: #1e3a8a !important; font-size: 1.5rem; font-weight: 700;">0 ₪</div>
+            <div id="total-amount" style="color: #1e3a8a !important; font-size: 1.5rem; font-weight: 700;">900,000 ₪</div>
           </div>
 
-          <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; text-align: center;">
+          <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; text-align: center;" data-grid-item-index="1">
             <div style="color: #305060 !important; font-size: 0.9rem; margin-bottom: 5px;">החזר חודשי התחלתי</div>
-            <div id="total-monthly" style="color: #1e3a8a !important; font-size: 1.5rem; font-weight: 700;">0 ₪</div>
+            <div id="total-monthly" style="color: #1e3a8a !important; font-size: 1.5rem; font-weight: 700;">5,623 ₪</div>
           </div>
 
-          <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; text-align: center;">
+          <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; text-align: center;" data-grid-item-index="2">
             <div style="color: #305060 !important; font-size: 0.9rem; margin-bottom: 5px;">סה"כ החזר לבנק</div>
-            <div id="total-cost" style="color: #304060 !important; font-size: 1.5rem; font-weight: 700;">0 ₪</div>
+            <div id="total-cost" style="color: #304060 !important; font-size: 1.5rem; font-weight: 700;">1,465,595 ₪</div>
           </div>
 
-          <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; text-align: center;">
+          <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; text-align: center;" data-grid-item-index="3">
             <div style="color: #305060 !important; font-size: 0.9rem; margin-bottom: 5px;">החזר לכל שקל</div>
-            <div id="return-ratio" style="color: #304060 !important; font-size: 1.5rem; font-weight: 700;">0.00</div>
+            <div id="return-ratio" style="color: #304060 !important; font-size: 1.5rem; font-weight: 700;">1.63</div>
           </div>
 
         </div>
 
         <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center;">
-          <button id="save-mix-btn" style="background-color: #405070 !important; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; cursor: pointer;">שמור תמהיל להשוואה</button>
-          <button id="toggle-details-btn" style="background-color: #1e3a8a !important; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; cursor: pointer;">הצג לוח סילוקין מפורט</button>
+          <button id="save-mix-btn" style="background-color: #405070 !important; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; cursor: pointer;" data-element-type="button" data-element-id="btn-1772208659361-xtg1e7363" data-native-element="true">שמור תמהיל להשוואה</button>
+          <button id="toggle-details-btn" style="background-color: #1e3a8a !important; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; cursor: pointer;" data-element-type="button" data-element-id="btn-1772208659361-66ewd1m30" data-native-element="true">הצג לוח סילוקין מפורט</button>
         </div>
       </div>
     </div>
