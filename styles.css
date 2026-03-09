@@ -18314,6 +18314,22 @@ html[dir="rtl"] body {
 @media (max-width: 480px) { .favorites-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
 /* ========== END PRODUCT ICON STYLES ========== */
 
+/* ========== ORPHANED_ZOOM_IMG_FIX ========== */
+@media (max-width: 768px) {
+  .zappy-preserve-css-grid > img[data-zappy-zoom],
+  [class*="-grid"] > img[data-zappy-zoom] {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 300px !important;
+    object-fit: cover !important;
+    left: auto !important;
+    top: auto !important;
+  }
+}
+/* ========== END ORPHANED_ZOOM_IMG_FIX ========== */
+
 
 /* ========== GRID RESPONSIVE FIX (zappy-grid-mobile-fix) ========== */
 /* Ensures grids with explicit columns use CSS variable and are responsive on mobile */
@@ -18452,23 +18468,6 @@ html[dir="rtl"] body {
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
-  }
-  
-  /* Orphaned zoom-cropped images: absolutely-positioned images with zoom data
-     that are NOT inside a proper zoom wrapper. These overflow their grid container
-     and in RTL layouts cause the entire page to shift, clipping content. */
-  .zappy-preserve-css-grid > img[style*="position: absolute"],
-  .zappy-preserve-css-grid > img[style*="position:absolute"],
-  [class*="-grid"] > img[style*="position: absolute"],
-  [class*="-grid"] > img[style*="position:absolute"] {
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    max-height: 300px !important;
-    object-fit: cover !important;
-    left: auto !important;
-    top: auto !important;
   }
   
   /* Carousel: ensure block display on mobile */
