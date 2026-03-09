@@ -18454,6 +18454,23 @@ html[dir="rtl"] body {
     bottom: auto !important;
   }
   
+  /* Orphaned zoom-cropped images: absolutely-positioned images with zoom data
+     that are NOT inside a proper zoom wrapper. These overflow their grid container
+     and in RTL layouts cause the entire page to shift, clipping content. */
+  .zappy-preserve-css-grid > img[style*="position: absolute"],
+  .zappy-preserve-css-grid > img[style*="position:absolute"],
+  [class*="-grid"] > img[style*="position: absolute"],
+  [class*="-grid"] > img[style*="position:absolute"] {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 300px !important;
+    object-fit: cover !important;
+    left: auto !important;
+    top: auto !important;
+  }
+  
   /* Carousel: ensure block display on mobile */
   .zappy-carousel-mode,
   [data-zappy-display-mode="carousel"] {
