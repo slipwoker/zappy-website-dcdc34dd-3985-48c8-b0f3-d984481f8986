@@ -893,10 +893,27 @@ window.onload = function() {
       phoneBtn.__zappyPhoneBound = true;
 
       phoneBtn.addEventListener('click', function() {
-        var telLinks = document.querySelectorAll('a[href^="tel:"]');
-        var phoneNumber = telLinks.length > 0
-          ? telLinks[0].getAttribute('href').replace('tel:', '')
-          : null;
+        var phoneNumber = phoneBtn.getAttribute('data-phone') || null;
+
+        if (!phoneNumber) {
+          var telLinks = document.querySelectorAll('a[href^="tel:"]');
+          if (telLinks.length > 0) {
+            phoneNumber = telLinks[0].getAttribute('href').replace('tel:', '');
+          }
+        }
+
+        if (!phoneNumber) {
+          var allLinks = document.querySelectorAll('a[href]');
+          for (var i = 0; i < allLinks.length; i++) {
+            var h = allLinks[i].getAttribute('href') || '';
+            var cleaned = h.replace(/[-\s()]/g, '');
+            if (/^(\+?\d{9,15}|0\d{8,9})$/.test(cleaned)) {
+              phoneNumber = cleaned;
+              break;
+            }
+          }
+        }
+
         if (phoneNumber && phoneNumber.indexOf('[') === -1) {
           window.location.href = 'tel:' + phoneNumber;
         }
