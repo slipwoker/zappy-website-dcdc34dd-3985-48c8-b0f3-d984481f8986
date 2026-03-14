@@ -553,60 +553,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mashkanta-bepijama.co.il/blog</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/blog/beginners-guide</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/blog/first-apartment</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/blog/recycling</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/testimonials</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/blog/housing-improvers</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/about</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/contact-us</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/cpi-calculator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://mashkanta-bepijama.co.il/articles/mortgage-strategy</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -808,12 +754,6 @@
     <loc>https://mashkanta-bepijama.co.il/articles/doctors-mortgage</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/blog/mortgage-mix</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -1633,24 +1573,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mashkanta-bepijama.co.il/mortgage-calculators</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/construction-index-calculator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mashkanta-bepijama.co.il/mortgage-mix-calculator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://mashkanta-bepijama.co.il/articles/mortgage-during-war</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -2221,12 +2143,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mashkanta-bepijama.co.il/mashkanta-bepijama-podcast</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://mashkanta-bepijama.co.il/articles/start-vs-manage</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -2264,6 +2180,90 @@
   </url>
   <url>
     <loc>https://mashkanta-bepijama.co.il/articles/mortgage-tracks-pricing-differences</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/podcast</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/blog</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/blog/beginners-guide</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/blog/first-apartment</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/blog/recycling</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/testimonials</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/blog/housing-improvers</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/about</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/contact-us</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/cpi-calculator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/blog/mortgage-mix</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/mortgage-calculators</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/construction-index-calculator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mashkanta-bepijama.co.il/mortgage-mix-calculator</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

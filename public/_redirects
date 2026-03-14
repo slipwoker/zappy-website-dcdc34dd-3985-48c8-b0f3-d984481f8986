@@ -1,5 +1,5 @@
 # Clean URL redirects for Render static hosting
-# Generated: 2026-03-14T19:07:46.373Z
+# Generated: 2026-03-14T19:31:48.536Z
 # NOTE: Render uses render.yaml for routing, not _redirects (that is Netlify)
 # This file is kept for reference only
 
@@ -94,18 +94,6 @@
 /articles/musha-property-mortgage  /articles/musha-property-mortgage.html  200!
 /articles/third-apartment-mortgage  /articles/third-apartment-mortgage.html  200!
 /articles/preparing-bank-account  /articles/preparing-bank-account.html  200!
-/privacy  /privacy.html  200!
-/accessibility  /accessibility.html  200!
-/terms  /terms.html  200!
-/blog  /blog.html  200!
-/blog/beginners-guide  /blog/beginners-guide.html  200!
-/blog/first-apartment  /blog/first-apartment.html  200!
-/blog/recycling  /blog/recycling.html  200!
-/testimonials  /testimonials.html  200!
-/blog/housing-improvers  /blog/housing-improvers.html  200!
-/about  /about.html  200!
-/contact-us  /contact-us.html  200!
-/cpi-calculator  /cpi-calculator.html  200!
 /articles/mortgage-strategy  /articles/mortgage-strategy.html  200!
 /articles/strategic-mortgage-planning  /articles/strategic-mortgage-planning.html  200!
 /articles/mortgage-for-singles  /articles/mortgage-for-singles.html  200!
@@ -140,7 +128,6 @@
 /articles/pre-sale-mortgage  /articles/pre-sale-mortgage.html  200!
 /articles/mortgage-in-pajamas-process  /articles/mortgage-in-pajamas-process.html  200!
 /articles/doctors-mortgage  /articles/doctors-mortgage.html  200!
-/blog/mortgage-mix  /blog/mortgage-mix.html  200!
 /articles/teachers-mortgage  /articles/teachers-mortgage.html  200!
 /articles/mortgage-approval-retraction  /articles/mortgage-approval-retraction.html  200!
 /articles/cpi-linked-tracks-effects  /articles/cpi-linked-tracks-effects.html  200!
@@ -277,9 +264,6 @@
 /articles/mortgage-during-high-interest  /articles/mortgage-during-high-interest.html  200!
 /articles/mortgage-refusal-check-other-banks  /articles/mortgage-refusal-check-other-banks.html  200!
 /articles/construction-index-payments-guide  /articles/construction-index-payments-guide.html  200!
-/mortgage-calculators  /mortgage-calculators.html  200!
-/construction-index-calculator  /construction-index-calculator.html  200!
-/mortgage-mix-calculator  /mortgage-mix-calculator.html  200!
 /articles/mortgage-during-war  /articles/mortgage-during-war.html  200!
 /articles/dangerous-building-mortgage  /articles/dangerous-building-mortgage.html  200!
 /articles/contractor-vs-second-hand-comparison  /articles/contractor-vs-second-hand-comparison.html  200!
@@ -375,7 +359,6 @@
 /articles/vat-increase-mortgage-impact  /articles/vat-increase-mortgage-impact.html  200!
 /articles/unmarried-couples-eligibility  /articles/unmarried-couples-eligibility.html  200!
 /articles/estimating-construction-index  /articles/estimating-construction-index.html  200!
-/mashkanta-bepijama-podcast  /mashkanta-bepijama-podcast.html  200!
 /articles/start-vs-manage  /articles/start-vs-manage.html  200!
 /articles/partial-early-repayment  /articles/partial-early-repayment.html  200!
 /articles/toxic-mortgage  /articles/toxic-mortgage.html  200!
@@ -383,6 +366,23 @@
 /articles/rent-to-own-transition  /articles/rent-to-own-transition.html  200!
 /articles/financial-planning-lifecycle  /articles/financial-planning-lifecycle.html  200!
 /articles/mortgage-tracks-pricing-differences  /articles/mortgage-tracks-pricing-differences.html  200!
+/podcast  /podcast.html  200!
+/privacy  /privacy.html  200!
+/accessibility  /accessibility.html  200!
+/terms  /terms.html  200!
+/blog  /blog.html  200!
+/blog/beginners-guide  /blog/beginners-guide.html  200!
+/blog/first-apartment  /blog/first-apartment.html  200!
+/blog/recycling  /blog/recycling.html  200!
+/testimonials  /testimonials.html  200!
+/blog/housing-improvers  /blog/housing-improvers.html  200!
+/about  /about.html  200!
+/contact-us  /contact-us.html  200!
+/cpi-calculator  /cpi-calculator.html  200!
+/blog/mortgage-mix  /blog/mortgage-mix.html  200!
+/mortgage-calculators  /mortgage-calculators.html  200!
+/construction-index-calculator  /construction-index-calculator.html  200!
+/mortgage-mix-calculator  /mortgage-mix-calculator.html  200!
 
 # Legal pages - redirect old .html URLs to friendly URLs
 /privacy.html  /privacy  301
