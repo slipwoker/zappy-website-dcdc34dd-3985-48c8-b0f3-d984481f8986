@@ -1556,6 +1556,10 @@ https://mashkanta-bepijama.co.il/articles/bond-yield-curve-mechanics
 https://mashkanta-bepijama.co.il/articles/anchor-margin-update
 למה קיבלנו מרווח טוב יותר במסלול בריבית משתנה אך הריבית נהייתה גבוהה יותר? הסבר מקיף על עדכון עוגן, מרווחים, ואיך ייעוץ משכנתאות מקצועי עוזר לכם לחסוך.
 
+### קרן והחזר
+https://mashkanta-bepijama.co.il/articles/principal-vs-repayment-effects
+מאמר מקצועי המסביר מה ההבדל בין מסלולי משכנתא המשפיעים על יתרת הקרן לבין מסלולים המשפיעים רק על ההחזר החודשי. כל מה שחשוב לדעת לפני שלוקחים משכנתא.
+
 ## Legal & Policy
 
 ### Privacy Policy
