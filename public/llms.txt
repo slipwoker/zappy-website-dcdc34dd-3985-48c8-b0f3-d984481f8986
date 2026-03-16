@@ -1548,6 +1548,10 @@ https://mashkanta-bepijama.co.il/articles/first-apartment-vs-housing-improvers
 https://mashkanta-bepijama.co.il/articles/self-construction-fund-release
 מדריך מקיף המסביר מדוע הבנק משחרר את כספי המשכנתא בשלבים בבנייה עצמית, איך עובד מנגנון השמאות, ולמה חשוב לתכנן את התזרים נכון.
 
+### עקום התשואות
+https://mashkanta-bepijama.co.il/articles/bond-yield-curve-mechanics
+מדריך מקצועי ומעמיק המסביר כיצד עובד מנגנון שינוי הריבית במסלולי משכנתא בעלי עוגן אג"ח, התנהגות עקום התשואות, ומהו עקום אפס (Zero Curve).
+
 ## Legal & Policy
 
 ### Privacy Policy
