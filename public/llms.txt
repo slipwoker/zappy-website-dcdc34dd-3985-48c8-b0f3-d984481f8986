@@ -1552,6 +1552,10 @@ https://mashkanta-bepijama.co.il/articles/self-construction-fund-release
 https://mashkanta-bepijama.co.il/articles/bond-yield-curve-mechanics
 מדריך מקצועי ומעמיק המסביר כיצד עובד מנגנון שינוי הריבית במסלולי משכנתא בעלי עוגן אג"ח, התנהגות עקום התשואות, ומהו עקום אפס (Zero Curve).
 
+### מרווח ועוגן
+https://mashkanta-bepijama.co.il/articles/anchor-margin-update
+למה קיבלנו מרווח טוב יותר במסלול בריבית משתנה אך הריבית נהייתה גבוהה יותר? הסבר מקיף על עדכון עוגן, מרווחים, ואיך ייעוץ משכנתאות מקצועי עוזר לכם לחסוך.
+
 ## Legal & Policy
 
 ### Privacy Policy
