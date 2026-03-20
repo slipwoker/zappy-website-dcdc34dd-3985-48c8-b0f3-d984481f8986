@@ -1,5 +1,5 @@
 # Clean URL redirects for Render static hosting
-# Generated: 2026-03-20T08:25:31.686Z
+# Generated: 2026-03-20T08:38:05.118Z
 # NOTE: Render uses render.yaml for routing, not _redirects (that is Netlify)
 # This file is kept for reference only
 
@@ -440,6 +440,7 @@
 /articles/cpi-15th-of-month-impact  /articles/cpi-15th-of-month-impact.html  200!
 /articles/maximum-credit-score  /articles/maximum-credit-score.html  200!
 /articles/golden-cage-mortgage  /articles/golden-cage-mortgage.html  200!
+/articles/bank-loyalty-cost  /articles/bank-loyalty-cost.html  200!
 
 # Legal pages - redirect old .html URLs to friendly URLs
 /privacy.html  /privacy  301
