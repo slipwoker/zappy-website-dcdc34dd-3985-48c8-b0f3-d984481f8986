@@ -983,6 +983,30 @@ window.onload = function() {
 /* END ZAPPY_FAQ_ACCORDION_TOGGLE */
 
 
+/* ZAPPY_NAV_SCROLL_PADDING */
+(function(){
+  try {
+    if (window.__zappyNavScrollPaddingInit) return;
+    window.__zappyNavScrollPaddingInit = true;
+    function updateScrollPadding() {
+      var nav = document.querySelector('nav.navbar') || document.querySelector('nav') || document.querySelector('header');
+      if (!nav) return;
+      var s = window.getComputedStyle(nav);
+      if (s.position !== 'fixed' && s.position !== 'sticky') return;
+      var h = nav.offsetHeight;
+      if (h > 0) document.documentElement.style.scrollPaddingTop = h + 'px';
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateScrollPadding, { once: true });
+    } else {
+      updateScrollPadding();
+    }
+    window.addEventListener('resize', updateScrollPadding, { passive: true });
+  } catch (e) {}
+})();
+/* END ZAPPY_NAV_SCROLL_PADDING */
+
+
 /* ZAPPY_CONTACT_FORM_PREVENT_DEFAULT */
 (function(){
   try {
