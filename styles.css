@@ -18508,6 +18508,127 @@ html[dir="rtl"] body {
   }
 }
 
+/* Added Component Styles */
+.article-contact-cta {
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+  padding: 2rem 1rem;
+  margin: 2.5rem auto 0;
+  max-width: 860px;
+}
+
+.article-contact-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #2a4fa8 100%);
+  border-right: 5px solid var(--secondary-color);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 18px rgba(30, 58, 138, 0.13);
+  flex-wrap: wrap;
+}
+
+.article-contact-cta__content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.article-contact-cta__icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.article-contact-cta__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.article-contact-cta__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.3rem;
+  line-height: 1.4;
+}
+
+.article-contact-cta__desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.article-contact-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--secondary-color);
+  color: #1a1a1a;
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.article-contact-cta__btn:hover,
+.article-contact-cta__btn:focus-visible {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+.article-contact-cta__btn:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.article-contact-cta__btn-arrow {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.article-contact-cta__btn:hover .article-contact-cta__btn-arrow {
+  transform: translateX(-3px);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .article-contact-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .article-contact-cta__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .article-contact-cta__title {
+    font-size: 1rem;
+  }
+
+  .article-contact-cta__desc {
+    font-size: 0.85rem;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
