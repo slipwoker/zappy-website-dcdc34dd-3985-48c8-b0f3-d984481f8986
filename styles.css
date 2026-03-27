@@ -18803,7 +18803,7 @@ html[dir="rtl"] body {
 /* Ensures grids with explicit columns use CSS variable and are responsive on mobile */
 
 /* DESKTOP: Explicit column grids use CSS variable for grid-template-columns */
-/* This rule reads the --zappy-grid-cols CSS variable set in inline styles */
+/* The deployment process ensures --zappy-grid-cols is always set in inline styles */
 [data-zappy-explicit-columns="true"] {
   display: grid !important;
   grid-template-columns: var(--zappy-grid-cols, repeat(2, minmax(0, 1fr))) !important;
