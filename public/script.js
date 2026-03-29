@@ -797,7 +797,7 @@ window.onload = function() {
     }
 
     function restoreWrapperDimensions(wrapper) {
-      var widthMode = wrapper.getAttribute('data-zappy-zoom-wrapper-width-mode');
+      var widthMode = wrapper.getAttribute('data-zappy-zoom-wrapper-width-mode') || 'px';
       if (widthMode === 'full' || widthMode === 'grid-responsive') return;
 
       var storedW = wrapper.getAttribute('data-zappy-zoom-wrapper-width');
