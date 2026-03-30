@@ -980,8 +980,9 @@ window.onload = function() {
     if (window.__zappyFaqToggleInit) return;
     window.__zappyFaqToggleInit = true;
 
+    var answerSel = '[class*="faq-answer"], [class*="faq-content"], [class*="faq-body"], .accordion-content, .accordion-body';
+
     function initFaqToggle() {
-      // Match both exact (.faq-item) and page-prefixed (e.g. .home-faq-item) classes
       var items = document.querySelectorAll('[class*="faq-item"], .accordion-item');
       if (!items.length) return;
 
@@ -992,11 +993,12 @@ window.onload = function() {
         if (!question) return;
         if (question.__zappyFaqBound) return;
         question.__zappyFaqBound = true;
+        question.style.cursor = 'pointer';
 
         question.addEventListener('click', function(e) {
           e.preventDefault();
+          e.stopPropagation();
 
-          // Close sibling items in the same accordion group
           var parent = item.parentElement;
           if (parent) {
             var siblings = parent.querySelectorAll('[class*="faq-item"], .accordion-item');
@@ -1005,14 +1007,59 @@ window.onload = function() {
                 sib.classList.remove('active');
                 var sibQ = sib.querySelector('[class*="faq-question"], [class*="faq-header"], .accordion-header');
                 if (sibQ) sibQ.setAttribute('aria-expanded', 'false');
+                var sibA = sib.querySelector(answerSel);
+                if (sibA) {
+                  sibA.style.maxHeight = '0';
+                  sibA.style.overflow = 'hidden';
+                  sibA.style.opacity = '0';
+                  sibA.style.paddingTop = '0';
+                  sibA.style.paddingBottom = '0';
+                }
               }
             });
           }
 
-          // Toggle current item
           var isActive = item.classList.toggle('active');
           question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+
+          var answer = item.querySelector(answerSel);
+          if (answer) {
+            answer.style.transition = 'max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease';
+            if (isActive) {
+              answer.style.display = '';
+              answer.style.maxHeight = answer.scrollHeight + 'px';
+              answer.style.overflow = 'hidden';
+              answer.style.opacity = '1';
+              answer.style.paddingTop = '';
+              answer.style.paddingBottom = '';
+            } else {
+              answer.style.maxHeight = '0';
+              answer.style.overflow = 'hidden';
+              answer.style.opacity = '0';
+              answer.style.paddingTop = '0';
+              answer.style.paddingBottom = '0';
+            }
+          }
+
+          var chevron = question.querySelector('[class*="chevron"], [class*="icon"], svg');
+          if (chevron) {
+            chevron.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
+            chevron.style.transition = 'transform 0.3s ease';
+          }
         });
+      });
+
+      items.forEach(function(item) {
+        if (item.classList.contains('active')) return;
+        var answer = item.querySelector(answerSel);
+        if (answer) {
+          answer.style.maxHeight = '0';
+          answer.style.overflow = 'hidden';
+          answer.style.opacity = '0';
+          answer.style.paddingTop = '0';
+          answer.style.paddingBottom = '0';
+          answer.style.transition = 'max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease';
+        }
       });
     }
 
