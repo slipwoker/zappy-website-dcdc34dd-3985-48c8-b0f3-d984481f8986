@@ -18635,48 +18635,6 @@ html[dir="rtl"] body {
   fill: #ffffff;
 }
 
-body .whatsapp-float {
-  position: fixed !important;
-  bottom: 24px;
-  right: 24px;
-  z-index: 99990;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: #25D366 !important;
-  color: #ffffff !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-body .whatsapp-float:hover {
-  background-color: #1ebe5d !important;
-  transform: scale(1.08);
-}
-
-body .whatsapp-float i {
-  font-size: 30px;
-  line-height: 1;
-}
-
-body .whatsapp-float {
-  right: 24px !important;
-  left: auto !important;
-}
-
-body .whatsapp-float {
-  position: fixed !important;
-  bottom: 24px !important;
-  right: 24px !important;
-  left: unset !important;
-  inset-inline-start: unset !important;
-  inset-inline-end: unset !important;
-}
-
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
