@@ -1422,3 +1422,116 @@ window.onload = function() {
     }
   } catch(e) {}
 })();
+
+
+/* ZAPPY_CONTENT_ALIGNMENT_RUNTIME */
+(function(){
+  try {
+    if (window.__zappyContentAlignInit) return;
+    window.__zappyContentAlignInit = true;
+
+    var vShiftMap = { top: -0.5, upper: -0.25, center: 0, lower: 0.25, bottom: 0.5 };
+    var hShiftMap = { left: -0.5, 'mid-left': -0.25, center: 0, 'mid-right': 0.25, right: 0.5 };
+
+    function restoreContentAlignments() {
+      var sections = document.querySelectorAll('[data-zappy-content-align]');
+      for (var i = 0; i < sections.length; i++) {
+        try { applyAlignment(sections[i]); } catch(e) {}
+      }
+    }
+
+    function applyAlignment(section) {
+      var target = section.querySelector('[data-zappy-align-target]');
+      if (!target) return;
+
+      var align = section.getAttribute('data-zappy-content-align') || 'center-center';
+      var idx = align.indexOf('-');
+      if (idx === -1) return;
+      var vAlign = align.substring(0, idx) || 'center';
+      var hAlign = align.substring(idx + 1) || 'center';
+
+      if (!section.id) {
+        section.id = 'zappy-section-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6);
+      }
+      var sel = '#' + section.id;
+
+      var old = section.querySelector('style[data-zappy-align-style]');
+      if (old) old.remove();
+
+      var ts = window.getComputedStyle(target);
+      var isFlex = (ts.display === 'flex' || ts.display === 'inline-flex');
+      var isColumn = (ts.flexDirection === 'column' || ts.flexDirection === 'column-reverse');
+
+      var sectionRect = section.getBoundingClientRect();
+      var sW = sectionRect.width || section.offsetWidth || 0;
+      var sH = sectionRect.height || section.offsetHeight || 0;
+
+      var orig = target.style.cssText;
+      target.style.setProperty('width', 'fit-content', 'important');
+      target.style.setProperty('height', 'auto', 'important');
+      target.style.setProperty('min-height', '0', 'important');
+      target.style.setProperty('max-height', 'none', 'important');
+      target.style.setProperty('align-self', 'flex-start', 'important');
+      target.style.setProperty('flex', 'none', 'important');
+      var tRect = target.getBoundingClientRect();
+      var tW = tRect.width || 0;
+      var tH = tRect.height || 0;
+      target.style.cssText = orig;
+
+      var freeH = Math.max(0, sW - tW);
+      var freeV = Math.max(0, sH - tH);
+      var hPx = Math.round((hShiftMap[hAlign] || 0) * freeH);
+      var vPx = Math.round((vShiftMap[vAlign] || 0) * freeV);
+
+      var t = [];
+      t.push('margin:auto!important');
+      if (hPx !== 0 || vPx !== 0) {
+        t.push('transform:translate(' + hPx + 'px,' + vPx + 'px)!important');
+      }
+      if (isFlex) {
+        t.push('align-items:center!important');
+        t.push('justify-content:center!important');
+      } else {
+        t.push('display:flex!important');
+        t.push('flex-direction:column!important');
+        t.push('align-items:center!important');
+      }
+
+      var c = ['justify-content:center!important'];
+      if (!isFlex && hAlign !== 'center') {
+        c.push('min-width:33.33%!important');
+        c.push('text-align:start!important');
+      }
+
+      var css = '';
+      if (hPx !== 0 || vPx !== 0) css += sel + '{overflow:hidden!important}';
+      css += sel + '>[data-zappy-align-target]{' + t.join(';') + '}';
+      css += sel + '>[data-zappy-align-target]>*{' + c.join(';') + '}';
+      css += '@media(max-width:768px){' +
+        sel + '>[data-zappy-align-target]{align-items:center!important;margin-left:auto!important;margin-right:auto!important;' +
+        (vPx !== 0 ? 'transform:translateY(' + vPx + 'px)!important' : 'transform:none!important') +
+        '}' + sel + '>[data-zappy-align-target]>*{margin-left:auto!important;margin-right:auto!important}}';
+
+      var s = document.createElement('style');
+      s.setAttribute('data-zappy-align-style', 'true');
+      s.textContent = css;
+      section.insertBefore(s, section.firstChild);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', restoreContentAlignments);
+    } else {
+      restoreContentAlignments();
+    }
+
+    var _timer = null;
+    window.addEventListener('resize', function() {
+      clearTimeout(_timer);
+      _timer = setTimeout(restoreContentAlignments, 200);
+    });
+    window.addEventListener('orientationchange', function() {
+      clearTimeout(_timer);
+      _timer = setTimeout(restoreContentAlignments, 200);
+    });
+  } catch(e) {}
+})();
