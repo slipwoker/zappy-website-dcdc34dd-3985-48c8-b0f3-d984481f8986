@@ -2082,24 +2082,10 @@ img[data-no-hero-position] { position: static !important; }
       var _applied=false;
       function _isHeroBg(w){var img=w.querySelector('img');if(img&&(img.getAttribute('data-hero-bg')==='true'||img.getAttribute('data-hero-background')==='true'))return true;var p=(w.style.position||'').replace(/\s*!important\s*/g,'').trim();var ww=(w.style.width||'').replace(/\s*!important\s*/g,'').trim();var hh=(w.style.height||'').replace(/\s*!important\s*/g,'').trim();return p==='absolute'&&ww==='100%'&&hh==='100%';}
       function fixDesktopWrappers(){
-        if(window.innerWidth<=768)return;
-        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
-          var mode=w.getAttribute('data-zappy-zoom-wrapper-width-mode');
-          if(mode==='full'||mode==='grid-responsive')return;
-          if(_isHeroBg(w))return;
-          var storedW=parseFloat(w.getAttribute('data-zappy-zoom-wrapper-width'));
-          if(!storedW||!isFinite(storedW))return;
-          var parent=w.parentElement;
-          if(!parent)return;
-          var parentW=parent.getBoundingClientRect().width;
-          if(parentW>0&&storedW<parentW*0.6&&storedW<=400){
-            var ratio=storedW/parseFloat(w.getAttribute('data-zappy-zoom-wrapper-height')||'1');
-            var newW=Math.round(Math.min(parentW,800));
-            var newH=Math.round(newW/ratio);
-            w.style.setProperty('width',newW+'px','important');
-            w.style.setProperty('height',newH+'px','important');
-          }
-        });
+        // No-op: desktop wrapper restoration is handled by ZAPPY_PUBLISHED_ZOOM_WRAPPER_RUNTIME
+        // in script.js (restoreWrapperDimensions). The old inflation logic here was expanding
+        // small wrappers (e.g. 139px logo wrappers) to their parent width, conflicting with
+        // the correct stored dimensions.
       }
       function applyMobile(){
         if(_applied)return;_applied=true;
@@ -2113,8 +2099,14 @@ img[data-no-hero-position] { position: static !important; }
           var mobileZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));
           var mobileSrc=img.getAttribute('data-zappy-mobile-src');
           var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
-          w.style.setProperty('width','100%','important');
-          w.style.setProperty('max-width','100%','important');
+          var parentOvf=w.parentElement?((w.parentElement.style.overflow||'')+(window.getComputedStyle(w.parentElement).overflow||'')).trim():'';
+          var inConstrainedParent=parentOvf.indexOf('hidden')!==-1||parentOvf.indexOf('clip')!==-1;
+          if(inConstrainedParent){
+            w.style.setProperty('max-width','100%','important');
+          }else{
+            w.style.setProperty('width','100%','important');
+            w.style.setProperty('max-width','100%','important');
+          }
           if(mobileSrc)img.src=mobileSrc;
           var pos=mobilePos||img.style.getPropertyValue('object-position')||'50% 50%';
           if(mobileZoom>1){
@@ -2133,12 +2125,12 @@ img[data-no-hero-position] { position: static !important; }
             img.style.setProperty('transform','scale('+mobileZoom+')','important');
             img.style.setProperty('transform-origin',pos,'important');
           }else{
-            w.style.setProperty('height','auto','important');
+            if(!inConstrainedParent)w.style.setProperty('height','auto','important');
             img.style.setProperty('position','relative','important');
             img.style.setProperty('width','100%','important');
             img.style.setProperty('height','auto','important');
             img.style.setProperty('max-width','100%','important');
-            img.style.setProperty('max-height','400px','important');
+            img.style.setProperty('max-height',inConstrainedParent?'none':'400px','important');
             img.style.setProperty('object-fit','cover','important');
             img.style.setProperty('left','0','important');
             img.style.setProperty('top','0','important');

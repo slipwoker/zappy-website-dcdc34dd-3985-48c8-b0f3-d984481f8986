@@ -828,14 +828,16 @@ window.onload = function() {
 
       if (widthMode === 'px' && storedW) {
         var curW = (wrapper.style.width || '').replace(/s*!importants*/g, '').trim();
-        if (!curW || curW === '100%' || curW.indexOf('%') !== -1) {
+        var storedWNorm = storedW.replace(/s*!importants*/g, '').trim();
+        if (!curW || curW === '100%' || curW.indexOf('%') !== -1 || curW !== storedWNorm) {
           wrapper.style.setProperty('width', storedW, 'important');
           wrapper.style.setProperty('max-width', '100%', 'important');
         }
       }
       if (storedH) {
         var curH = (wrapper.style.height || '').replace(/s*!importants*/g, '').trim();
-        if (!curH || curH === 'auto' || curH === '100%' || curH.indexOf('%') !== -1) {
+        var storedHNorm = storedH.replace(/s*!importants*/g, '').trim();
+        if (!curH || curH === 'auto' || curH === '100%' || curH.indexOf('%') !== -1 || curH !== storedHNorm) {
           wrapper.style.setProperty('height', storedH, 'important');
         }
       }
