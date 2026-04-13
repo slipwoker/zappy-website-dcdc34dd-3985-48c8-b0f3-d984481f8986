@@ -18926,6 +18926,20 @@ body .whatsapp-float {
   pointer-events: none !important;
 }
 
+/* ========== EMPTY SUBMENU HIDING (Auto-added by Zappy) ========== */
+.sub-menu:empty,
+.dropdown-menu:empty,
+.sub-menu.zappy-empty-submenu,
+.dropdown-menu.zappy-empty-submenu,
+.nav-menu .sub-menu.zappy-empty-submenu,
+nav .sub-menu.zappy-empty-submenu,
+.navbar .sub-menu.zappy-empty-submenu,
+#navMenu .sub-menu.zappy-empty-submenu,
+#navMenu .dropdown-menu.zappy-empty-submenu {
+  display: none !important;
+}
+
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
@@ -19529,9 +19543,6 @@ section[data-hero-type] {
 
 /* ========== END GRID RESPONSIVE FIX ========== */
 
-/* Footer contact alignment fix */
-.footer-contact li > a { display: flex; align-items: flex-start; gap: inherit; }
-
 
 /* ZAPPY_CONTACT_FORM_LAYOUT_FIX */
 form.contact-form, .contact-form { flex-direction: column !important; align-items: stretch !important; }
@@ -19543,3 +19554,6 @@ form.contact-form .contact-input, form.contact-form .contact-textarea { width: 1
 [data-zappy-bg-type="color"] { background-image: none !important; background-color: var(--zappy-bg-color, transparent) !important; }
 [data-zappy-bg-type="image"] { background-image: linear-gradient(var(--zappy-bg-overlay, rgba(0,0,0,0)), var(--zappy-bg-overlay, rgba(0,0,0,0))), var(--zappy-bg-image, none) !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; }
 [data-zappy-bg-type="video"] { background-image: none !important; }
+
+/* Footer contact alignment fix */
+.footer-contact li > a { display: flex; align-items: flex-start; gap: inherit; }
