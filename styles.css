@@ -19067,6 +19067,27 @@ nav .sub-menu.zappy-empty-submenu,
 /* ========== END HERO IMAGE GRADIENT FIX ========== */
 
 
+/* ========== FULLSCREEN HERO OVERFLOW FIX (fullscreen-hero-overflow-fix) ========== */
+/* On mobile (especially iOS Safari where 100vh includes the address bar),
+   the hero card content + padding can exceed the section height.
+   Use 100svh + height:auto so the section grows with its content.
+   Restore padding-bottom for the SVG divider area. */
+
+@media (max-width: 768px) {
+  section[data-hero-type*="fullscreen"] {
+    height: auto !important;
+    min-height: 100svh !important;
+    padding: 0 0 90px 0 !important;
+  }
+  section[data-hero-type*="fullscreen"] > [class*="-container"]:not([class*="bg"]):not([class*="scrim"]):not([class*="divider"]) {
+    padding-bottom: 100px !important;
+    min-height: auto !important;
+  }
+}
+
+/* ========== END FULLSCREEN HERO OVERFLOW FIX ========== */
+
+
 /* ========== PRODUCT ICON STYLES (product-icon-styles) ========== */
 .product-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; width: 100%; }
 .product-title-row h1 { flex: 1; min-width: 0; }
@@ -19236,7 +19257,8 @@ nav .sub-menu.zappy-empty-submenu,
   }
   
   /* Fix zoom wrapper images on mobile - make responsive */
-  [data-zappy-zoom-wrapper="true"] img {
+  /* Exclude images with mobile overrides — those are handled by JS to honor user settings */
+  [data-zappy-zoom-wrapper="true"] img:not([data-zappy-mobile-object-position]):not([data-zappy-mobile-zoom]) {
     position: relative !important;
     width: 100% !important;
     height: auto !important;
@@ -19428,6 +19450,21 @@ nav .sub-menu.zappy-empty-submenu,
   .zappy-inserted-element,
   [data-zappy-zoom-wrapper] {
     max-width: 100% !important;
+  }
+
+  /* ========== FULLSCREEN HERO OVERFLOW FIX ========== */
+  /* On mobile (especially iOS Safari where 100vh includes the address bar),
+     the hero card content + padding can exceed the section height.
+     Use min-height instead of height so the section grows with its content.
+     The container also needs padding-bottom to clear the SVG divider area. */
+  section[data-hero-type*="fullscreen"] {
+    height: auto !important;
+    min-height: 100svh !important;
+    padding: 0 0 90px 0 !important;
+  }
+  section[data-hero-type*="fullscreen"] > [class*="-container"]:not([class*="bg"]):not([class*="scrim"]):not([class*="divider"]) {
+    padding-bottom: 100px !important;
+    min-height: auto !important;
   }
 }
 
