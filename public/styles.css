@@ -18926,6 +18926,36 @@ body .whatsapp-float {
   pointer-events: none !important;
 }
 
+/* zappy-nav-child-indent */
+.zappy-products-dropdown .zappy-nav-child > a,
+.sub-menu .zappy-nav-child > a {
+  padding-left: 28px !important;
+  font-size: 0.9em !important;
+  opacity: 0.85 !important;
+}
+[dir="rtl"] .zappy-products-dropdown .zappy-nav-child > a,
+[dir="rtl"] .sub-menu .zappy-nav-child > a,
+html[lang="he"] .zappy-products-dropdown .zappy-nav-child > a,
+html[lang="he"] .sub-menu .zappy-nav-child > a,
+html[lang="ar"] .zappy-products-dropdown .zappy-nav-child > a,
+html[lang="ar"] .sub-menu .zappy-nav-child > a {
+  padding-left: 0 !important;
+  padding-right: 28px !important;
+}
+.zappy-products-dropdown .zappy-nav-parent > a,
+.sub-menu .zappy-nav-parent > a {
+  font-weight: 600 !important;
+}
+@media (max-width: 768px) {
+  .nav-menu.active,
+  #navMenu.active {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
 /* ========== EMPTY SUBMENU HIDING (Auto-added by Zappy) ========== */
 .sub-menu:empty,
 .dropdown-menu:empty,
@@ -19068,23 +19098,19 @@ nav .sub-menu.zappy-empty-submenu,
 
 
 /* ========== FULLSCREEN HERO OVERFLOW FIX (fullscreen-hero-overflow-fix) ========== */
-/* On mobile (especially iOS Safari where 100vh includes the address bar),
-   the hero card content + padding can exceed the section height.
-   Use 100svh + height:auto so the section grows with its content.
-   Restore padding-bottom for the SVG divider area. */
-
 @media (max-width: 768px) {
+
   section[data-hero-type*="fullscreen"] {
     height: auto !important;
     min-height: 100svh !important;
     padding: 0 0 90px 0 !important;
   }
-  section[data-hero-type*="fullscreen"] > [class*="-container"]:not([class*="bg"]):not([class*="scrim"]):not([class*="divider"]) {
+  section[data-hero-type*="fullscreen"] > [class*="-container"]:not([class*="bg"]):not([class*="scrim"]):not([class*="divider"]),
+  section[data-hero-type*="fullscreen"] > .container {
     padding-bottom: 100px !important;
     min-height: auto !important;
   }
 }
-
 /* ========== END FULLSCREEN HERO OVERFLOW FIX ========== */
 
 
@@ -19453,16 +19479,14 @@ nav .sub-menu.zappy-empty-submenu,
   }
 
   /* ========== FULLSCREEN HERO OVERFLOW FIX ========== */
-  /* On mobile (especially iOS Safari where 100vh includes the address bar),
-     the hero card content + padding can exceed the section height.
-     Use min-height instead of height so the section grows with its content.
-     The container also needs padding-bottom to clear the SVG divider area. */
+
   section[data-hero-type*="fullscreen"] {
     height: auto !important;
     min-height: 100svh !important;
     padding: 0 0 90px 0 !important;
   }
-  section[data-hero-type*="fullscreen"] > [class*="-container"]:not([class*="bg"]):not([class*="scrim"]):not([class*="divider"]) {
+  section[data-hero-type*="fullscreen"] > [class*="-container"]:not([class*="bg"]):not([class*="scrim"]):not([class*="divider"]),
+  section[data-hero-type*="fullscreen"] > .container {
     padding-bottom: 100px !important;
     min-height: auto !important;
   }
@@ -19580,9 +19604,6 @@ section[data-hero-type] {
 
 /* ========== END GRID RESPONSIVE FIX ========== */
 
-/* Footer contact alignment fix */
-.footer-contact li > a { display: flex; align-items: flex-start; gap: inherit; }
-
 
 /* ZAPPY_CONTACT_FORM_LAYOUT_FIX */
 form.contact-form, .contact-form { flex-direction: column !important; align-items: stretch !important; }
@@ -19600,3 +19621,12 @@ form.contact-form .contact-input, form.contact-form .contact-textarea { width: 1
 [data-zappy-bg-type="color"] { background-image: none !important; background-color: var(--zappy-bg-color, transparent) !important; }
 [data-zappy-bg-type="image"] { background-image: linear-gradient(var(--zappy-bg-overlay, rgba(0,0,0,0)), var(--zappy-bg-overlay, rgba(0,0,0,0))), var(--zappy-bg-image, none) !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; }
 [data-zappy-bg-type="video"] { background-image: none !important; }
+
+/* Footer contact alignment fix */
+.footer-contact li > a { display: flex; align-items: flex-start; gap: inherit; }
+
+/* RTL footer contact: icon on the right (start) side, text on the left */
+html[dir="rtl"] .footer-contact li, html[dir="rtl"] .site-footer .footer-contact li, html[dir="rtl"] .site-footer .footer-col:nth-child(3) .footer-contact li { flex-direction: row !important; justify-content: flex-start !important; }
+html[dir="rtl"] .footer-contact .contact-icon { order: 0 !important; }
+html[dir="rtl"] .footer-contact .contact-text { order: 1 !important; }
+html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
