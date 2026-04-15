@@ -1540,7 +1540,7 @@ https://mashkanta-bepijama.co.il/articles/mortgage-early-warning
 https://mashkanta-bepijama.co.il/articles/overdraft-impact
 האם אפשר לקבל אישור למשכנתא כשיש מינוס קבוע בחשבון העו"ש? כל מה שצריך לדעת על התנהלות פיננסית נכונה, אוברדרפט, ואיך ייעוץ משכנתאות מקצועי יכול לעזור.
 
-### דירה ראשונה מול משפרי דיור
+### הבדלים בייעוץ משכנתא
 https://mashkanta-bepijama.co.il/articles/first-apartment-vs-housing-improvers
 המדריך המלא המנתח את ההבדלים המהותיים בין ייעוץ משכנתא לדירה ראשונה לבין ייעוץ משכנתא למשפרי דיור. גלו מתי כדאי למחזר ואיך לתכנן נכון.
 
@@ -1548,7 +1548,7 @@ https://mashkanta-bepijama.co.il/articles/first-apartment-vs-housing-improvers
 https://mashkanta-bepijama.co.il/articles/self-construction-fund-release
 מדריך מקיף המסביר מדוע הבנק משחרר את כספי המשכנתא בשלבים בבנייה עצמית, איך עובד מנגנון השמאות, ולמה חשוב לתכנן את התזרים נכון.
 
-### עקום התשואות
+### עקום התשואות ועקום אפס
 https://mashkanta-bepijama.co.il/articles/bond-yield-curve-mechanics
 מדריך מקצועי ומעמיק המסביר כיצד עובד מנגנון שינוי הריבית במסלולי משכנתא בעלי עוגן אג"ח, התנהגות עקום התשואות, ומהו עקום אפס (Zero Curve).
 
@@ -1572,7 +1572,7 @@ https://mashkanta-bepijama.co.il/articles/negative-early-repayment-fee
 https://mashkanta-bepijama.co.il/articles/repayment-fee-advantage
 מדוע עמלת פירעון מוקדם במשכנתא היא בעצם חדשות טובות? המדריך המלא שמסביר איך קנס היציאה מעיד על חיסכון של מאות אלפי שקלים ואיך ייעוץ משכנתאות נכון ממנף זאת.
 
-### תשלום העמלה
+### איך משלמים עמלת פירעון מוקדם במשכנתא?
 https://mashkanta-bepijama.co.il/articles/paying-early-repayment-fee
 האם את עמלת הפירעון המוקדם (קנס המשכנתא) משלמים במזומן לבנק או שאפשר לפרוס אותה מחדש בתוך המשכנתא? המדריך המלא שיעשה לכם סדר בתהליך.
 
@@ -1584,15 +1584,15 @@ https://mashkanta-bepijama.co.il/articles/mortgage-periphery-vs-center
 https://mashkanta-bepijama.co.il/articles/reserve-duty-payslip-substitute
 האם שירות מילואים ארוך יכול להוות תחליף לתלוש שכר מסודר בבקשת משכנתא? המדריך המלא למשרתי מילואים על הכרת הכנסות, אישור עקרוני וייעוץ משכנתאות מקצועי.
 
-### דירוג אשראי זוגי
+### השפעת דירוג האשראי של בן הזוג על המשכנתא | משכנתא בפיג'מה
 https://mashkanta-bepijama.co.il/articles/spouse-credit-score-impact
 איך דירוג אשראי שלילי של אחד מבני הזוג משפיע על אישור המשכנתא? המדריך המלא להתמודדות עם דירוג BDI נמוך, פתרונות אפשריים וטיפים לקראת ייעוץ משכנתאות.
 
-### משכנתא ללא הון עצמי
+### משכנתא ללא הון עצמי | משכנתא בפיג'מה
 https://mashkanta-bepijama.co.il/articles/mortgage-without-equity
 חולמים על דירה אבל אין לכם הון עצמי? המדריך המלא על האפשרויות, הסיכונים והפתרונות החוקיים להשגת משכנתא ללא הון עצמי ראשוני.
 
-### מרחב מוגן
+### מרחב מוגן במשכנתא
 https://mashkanta-bepijama.co.il/articles/protected-space-mortgage
 המדריך המלא למימון הוספת מרחב מוגן (ממ״ד) באמצעות משכנתא. כל מה שצריך לדעת על תהליך האישור, מסלולים, ואיך ייעוץ משכנתאות יכול לעזור לכם לחסוך.
 
@@ -1612,15 +1612,15 @@ https://mashkanta-bepijama.co.il/articles/bank-heat-level
 https://mashkanta-bepijama.co.il/qa-hub
 מרכז השאלות והתשובות המקיף של משכנתא בפיג'מה. כל המידע על ייעוץ משכנתאות, דירה ראשונה, מיחזור ומשפרי דיור במקום אחד.
 
-### דירה ראשונה
+### שאלות ותשובות: משכנתא לדירה ראשונה
 https://mashkanta-bepijama.co.il/qa-hub/first-apartment
 כל השאלות והתשובות שאתם חייבים לדעת לפני שלוקחים ייעוץ משכנתא לדירה ראשונה. הון עצמי, אישור עקרוני, מסלולים ועוד.
 
-### מיחזור משכנתא
+### שאלות ותשובות: מיחזור משכנתא ושיפור תנאים
 https://mashkanta-bepijama.co.il/qa-hub/refinance
 מתי כדאי לבצע מיחזור משכנתא? האם יש קנסות? כל התשובות לשאלות החשובות ביותר על מיחזור משכנתא ושיפור תנאים כדי לחסוך כסף.
 
-### משפרי דיור
+### שאלות ותשובות: המדריך למשפרי דיור
 https://mashkanta-bepijama.co.il/qa-hub/upgraders
 כל מה שצריך לדעת על ייעוץ משכנתא למשפרי דיור. הלוואות גישור, גרירת משכנתא, והתנהלות נכונה במעבר דירה.
 
@@ -1632,7 +1632,7 @@ https://mashkanta-bepijama.co.il/qa-hub/mortgage-tracks
 https://mashkanta-bepijama.co.il/qa-hub/glossary
 מילון מונחי משכנתא חזותי. כל המושגים שחשוב להכיר לקראת ייעוץ משכנתאות: פריים, שפיצר, LTV, גרייס, הלוואת בלון ועוד, בשפה ברורה ופשוטה.
 
-### שלבי המשכנתא
+### שלבי לקיחת משכנתא
 https://mashkanta-bepijama.co.il/qa-hub/mortgage-steps
 המדריך הוויזואלי המלא לשלבי לקיחת משכנתא. מתכנון פיננסי ועד קבלת המפתח, כל מה שצריך לדעת על תהליך ייעוץ משכנתאות בצורה פשוטה וברורה.
 
@@ -1648,7 +1648,7 @@ https://mashkanta-bepijama.co.il/qa-hub/loan-consolidation
 https://mashkanta-bepijama.co.il/qa-hub/reverse-mortgage
 כל השאלות והתשובות בנושא משכנתא הפוכה לגיל השלישי. מידע חיוני על תנאים, יתרונות, ותהליך קבלת ההלוואה במסגרת ייעוץ משכנתאות מקצועי.
 
-### משכנתא לעצמאיים
+### שאלות ותשובות: משכנתא לעצמאיים
 https://mashkanta-bepijama.co.il/qa-hub/business-owners
 כל מה שצריך לדעת על קבלת משכנתא לבעלי עסקים ועצמאיים. שאלות ותשובות בנושא אישורים, שומות מס, ותהליך ייעוץ משכנתאות חכם.
 
@@ -1664,7 +1664,7 @@ https://mashkanta-bepijama.co.il/articles/no-full-tabu
 https://mashkanta-bepijama.co.il/articles/income-and-equity-requirements
 מדריך מקיף המפרט את ההכנסה הפנויה וההון העצמי המינימלי הנדרשים לקבלת משכנתאות בטווחים של 600 אלף עד 2.5 מיליון שקלים. היכנסו לקריאה.
 
-### הטבות לעדה האתיופית
+### הטבות משכנתא לבני העדה האתיופית
 https://mashkanta-bepijama.co.il/articles/ethiopian-community-mortgage
 המדריך המלא להטבות משכנתא לבני העדה האתיופית. כל מה שצריך לדעת על תנאי הזכאות, סכומי ההלוואה, וחשיבותו של ייעוץ משכנתאות מקצועי למימוש ההטבה.
 
@@ -1680,7 +1680,7 @@ https://mashkanta-bepijama.co.il/articles/negev-law-eligibility
 https://mashkanta-bepijama.co.il/articles/bank-repayment-ability
 הבנק סירב למשכנתא? גלו למה הבנק לא נותן הלוואה למי שלא יכול להחזיר, איך מחושבת יכולת ההחזר שלכם, ואיך ייעוץ משכנתאות מקצועי יכול לעזור.
 
-### בנקאי משכנתאות
+### האם בנקאי המשכנתאות דואג לכם?
 https://mashkanta-bepijama.co.il/articles/does-the-mortgage-banker-care
 האם בנקאי המשכנתאות באמת דואג לאינטרסים שלכם? גלו את האמת מאחורי הקלעים של הבנקים, ולמה ייעוץ משכנתאות פרטי הוא קריטי לחיסכון שלכם.
 
@@ -1688,7 +1688,7 @@ https://mashkanta-bepijama.co.il/articles/does-the-mortgage-banker-care
 https://mashkanta-bepijama.co.il/articles/perfect-mortgage-mix
 מהו תמהיל המשכנתא המושלם? המדריך המלא לבניית תמהיל מנצח, שילוב מסלולים נכון, ואיך ייעוץ משכנתאות מקצועי יכול לחסוך לכם מאות אלפי שקלים.
 
-### בנקאות פתוחה
+### בנקאות פתוחה ומשכנתאות
 https://mashkanta-bepijama.co.il/articles/open-banking-mortgage-impact
 המדריך המלא להשפעת רפורמת הבנקאות הפתוחה על עולם המשכנתאות. גלו כיצד שיתוף נתונים פיננסיים יכול להוזיל לכם את הריביות ולשפר תנאים.
 
@@ -1740,11 +1740,11 @@ https://mashkanta-bepijama.co.il/articles/cpi-15th-of-month-impact
 https://mashkanta-bepijama.co.il/articles/maximum-credit-score
 המדריך המלא להשגת דירוג אשראי מקסימלי של 1,000 נקודות. גלו איך לשפר את נתוני האשראי שלכם לקראת לקיחת משכנתא או מיחזור בתנאים הטובים ביותר.
 
-### כלוב של זהב
+### כלוב של זהב במשכנתא - המדריך המלא | אריאל אחון
 https://mashkanta-bepijama.co.il/articles/golden-cage-mortgage
 מהו כלוב של זהב במשכנתא ואיך יוצאים ממנו? המדריך המלא למשפרי דיור שרוצים לעבור דירה אבל חוששים לאבד את הריביות הישנות והנמוכות. כל הפתרונות בפנים.
 
-### נאמנות לבנק
+### האם נאמנות לבנק עולה ביוקר?
 https://mashkanta-bepijama.co.il/articles/bank-loyalty-cost
 האם כדאי לקחת משכנתא בבנק שבו מתנהל החשבון שלכם? גלו מדוע נאמנות לבנק עשויה לעלות לכם מאות אלפי שקלים ואיך ייעוץ משכנתאות מקצועי יכול לחסוך לכם כסף.
 
@@ -1792,7 +1792,7 @@ https://mashkanta-bepijama.co.il/articles/anchoring-effect
 https://mashkanta-bepijama.co.il/articles/questions-bank-hates
 מהן השאלות שהבנק לא ישמח שתשאלו אותו בפגישת המשכנתא? המדריך המלא שיעזור לכם להבין את האינטרסים של הבנק ולחסוך כסף בעזרת ייעוץ משכנתאות מקצועי.
 
-### קריאת חוזה משכנתא
+### האם צריך לקרוא את כל חוזה המשכנתא? | משכנתא בפיג'מה
 https://mashkanta-bepijama.co.il/articles/reading-mortgage-contract
 האם חובה לקרוא כל מילה בחוזה המשכנתא לפני החתימה בבנק? מדריך מקיף על הסעיפים הקריטיים שחובה לבדוק בחוזה ההלוואה, מתי צריך ייעוץ משכנתאות ואיך להימנע מטעויות יקרות.
 
@@ -1800,7 +1800,7 @@ https://mashkanta-bepijama.co.il/articles/reading-mortgage-contract
 https://mashkanta-bepijama.co.il/articles/renting-with-mortgage
 האם מותר להשכיר דירה שיש עליה משכנתא? המדריך המלא להשכרת נכס ממושכן, דרישות הבנק, ביטוח מבנה וההשלכות על תמהיל המשכנתא שלכם.
 
-### פשיטת רגל
+### פשיטת רגל קבלן
 https://mashkanta-bepijama.co.il/articles/contractor-bankruptcy
 מה קורה אם הקבלן פושט רגל במהלך הבנייה? המדריך המלא לזכויות הרוכשים, חוק המכר, ערבויות בנקאיות והשפעת הקריסה על המשכנתא שלכם.
 
@@ -1876,7 +1876,7 @@ https://mashkanta-bepijama.co.il/articles/financial-spite-divorce
 https://mashkanta-bepijama.co.il/articles/hearat-azhara
 קריאת חובה לפני רכישת דירה: מהי הערת אזהרה בטאבו, מדוע היא קריטית להבטחת כספכם, ואיך היא משפיעה על תהליך קבלת המשכנתא. המדריך המלא מאת משכנתא בפיג'מה.
 
-### משכנתא בחוסר ודאות כלכלית
+### ייעוץ משכנתאות בחוסר ודאות כלכלית
 https://mashkanta-bepijama.co.il/articles/mortgage-in-economic-uncertainty
 המדריך המלא לתכנון משכנתא בסביבה כלכלית משתנה. גלו איך ייעוץ משכנתאות מקצועי מגן על ההחזר החודשי שלכם, מתי כדאי למחזר, ואיך נערכים נכון.
 
@@ -1896,7 +1896,7 @@ https://mashkanta-bepijama.co.il/articles/managing-100-percent-cpi-mortgage
 https://mashkanta-bepijama.co.il/articles/gender-differences-mortgage
 גברים ממאדים ונשים מנוגה - איך משפיעים הבדלי הגישות בין בני הזוג על תהליך לקיחת המשכנתא? המדריך המלא לפסיכולוגיה של ייעוץ משכנתאות לזוגות.
 
-### טיימינג לייעוץ משכנתא
+### מתי לפנות לייעוץ משכנתאות? המדריך לטיימינג מנצח
 https://mashkanta-bepijama.co.il/articles/mortgage-consulting-timing
 מתי הזמן הנכון ביותר להתחיל תהליך של ייעוץ משכנתאות? המדריך המלא לרוכשי דירה ראשונה, משפרי דיור, ומיחזור משכנתא. תזמון נכון שווה כסף.
 
@@ -1948,11 +1948,11 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-rules-restrictions
 https://mashkanta-bepijama.co.il/articles/controlling-shareholders-mortgage
 המדריך המלא למשכנתא עבור שכירים בעלי שליטה בחברה בע"מ. כל מה שצריך לדעת על דרישות הבנק, רווחים כלואים, דיבידנדים ותכנון פיננסי נכון לפני הגשת הבקשה.
 
-### משכנתא לעובדי עמלות
+### משכנתא לעובדים מבוססי עמלות
 https://mashkanta-bepijama.co.il/articles/commission-based-income-mortgage
 המדריך המלא לקבלת משכנתא לעובדים שהכנסתם מבוססת על עמלות, בונוסים או שכר משתנה. איך הבנק מחשב את ההכנסה ולמה חשוב לקחת ייעוץ משכנתאות מקצועי.
 
-### חישוב הכנסה פנויה
+### חישוב הכנסה פנויה למשכנתא
 https://mashkanta-bepijama.co.il/articles/disposable-income-calculation
 איך הבנק מחשב את ההכנסה הפנויה שלכם למשכנתא? מדריך מקיף על יוקר המחיה, קיזוז התחייבויות ואיך להגדיל את סיכויי האישור בבנק.
 
@@ -1992,7 +1992,7 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-contract-breach
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-for-singles
 המדריך המלא לרווקים בתוכנית דירה בהנחה: תנאי זכאות, התמודדות עם משכנתא ממשכורת יחידה, פתרונות מימון וחשיבות ייעוץ משכנתאות מותאם אישית.
 
-### חיזוי ומיקוח עמלת פירעון
+### חיזוי ומיקוח עמלת פירעון מוקדם
 https://mashkanta-bepijama.co.il/articles/predicting-negotiating-early-repayment-fee
 האם ניתן לדעת מראש מה תהיה עמלת הפירעון המוקדם במשכנתא? האם אפשר להתמקח עליה לפני החתימה? כל התשובות במאמר מקצועי מבית משכנתא בפיג'מה.
 
@@ -2000,11 +2000,11 @@ https://mashkanta-bepijama.co.il/articles/predicting-negotiating-early-repayment
 https://mashkanta-bepijama.co.il/articles/discounted-apartment-vs-free-market
 האם כדאי לחכות שנים לדירה בהנחה או שעדיף לקנות בשוק החופשי? מדריך מקיף הבוחן את עלויות השכירות, עליית מחירי הדירות ומדד תשומות הבנייה.
 
-### ויתור זכייה
+### מתי כדאי לוותר על זכייה בדירה בהנחה?
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-giving-up-win
 זכיתם בדירה בהנחה או במחיר למשתכן? לא תמיד מדובר בעסקה משתלמת. גלו באילו מצבים עדיף לוותר על הזכייה ומדוע ייעוץ משכנתאות מקצועי הוא קריטי לפני החלטה.
 
-### שינויי דיירים
+### מדוע אי אפשר לערוך שינויים בדירות של פרויקט דירה בהנחה ומחיר למשתכן?
 https://mashkanta-bepijama.co.il/articles/tenant-changes-dira-behanacha
 מדוע אי אפשר לערוך שינויים בדירות של פרויקטי דירה בהנחה ומחיר למשתכן? הסבר מקיף על הסיבות הקבלניות, מה בכל זאת מותר לשנות, ואיך לתכנן נכון את המשכנתא לשיפוץ עתידי.
 
@@ -2036,7 +2036,7 @@ https://mashkanta-bepijama.co.il/articles/moving-timing-and-bridging
 https://mashkanta-bepijama.co.il/articles/agricultural-land-mortgage
 המדריך המלא למימון ורכישת קרקע חקלאית. האם ניתן לקבל משכנתא על קרקע חקלאית? כל הפתרונות, הסיכונים ואפשרויות המימון עם ייעוץ משכנתאות מקצועי.
 
-### חירות פיננסית
+### יציאה מעבדות לחירות פיננסית במשכנתא
 https://mashkanta-bepijama.co.il/articles/passover-financial-freedom
 חג הפסח מסמל התחדשות ויציאה לחירות. גלו כיצד ניתן ליישם את ערכי החג על המשכנתא שלכם, לעשות סדר פיננסי ולחסוך המון כסף בעזרת ייעוץ משכנתאות מקצועי.
 
@@ -2056,7 +2056,7 @@ https://mashkanta-bepijama.co.il/articles/cash-is-king
 https://mashkanta-bepijama.co.il/articles/mortgage-vs-loan-bureaucracy
 למה נטילת משכנתא דורשת כל כך הרבה ניירת ובירוקרטיה לעומת הלוואה רגילה באותו סכום? המדריך המלא שמסביר את ההבדלים ואיך לצלוח את התהליך בקלות.
 
-### בדיקת כדאיות מיחזור משכנתא
+### במיחזור משכנתא - איך יודעים אם ההצעה טובה?
 https://mashkanta-bepijama.co.il/articles/refinancing-good-offer-check
 קיבלתם הצעת מחיר למיחזור משכנתא מהבנק? מדריך מקיף שיעזור לכם לבחון האם ההצעה באמת משתלמת, איך להשוות נכון וממה להיזהר בדרך לחיסכון.
 
@@ -2092,7 +2092,7 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-living-renting-rules
 https://mashkanta-bepijama.co.il/articles/out-of-sight-out-of-mind
 לקחתם משכנתא ושכחתם ממנה? תופעת רחוק מהעין רחוק מהלב עולה לכם ביוקר. המדריך המלא לניהול שוטף של המשכנתא, מיחזור ובדיקת כדאיות.
 
-### נקודת מבט
+### מה שרואים מכאן לא רואים משם
 https://mashkanta-bepijama.co.il/articles/different-perspectives-mortgage
 הפער בין איך שאתם רואים את עצמכם לבין איך שהבנק רואה אתכם בתהליך המשכנתא. למה ייעוץ משכנתאות מקצועי הוא המפתח לגישור על הפער ולחיסכון כספי אדיר.
 
@@ -2104,7 +2104,7 @@ https://mashkanta-bepijama.co.il/articles/mortgage-rights-exhaustion
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-winning-tips
 המדריך המקיף למיקסום סיכויי הזכייה בהגרלות דירה בהנחה ומחיר למשתכן. כל הטיפים, הטריקים והאסטרטגיות החוקיות שיעזרו לכם לזכות בדירה. משכנתא בפיג'מה.
 
-### משיכת שליש קבועה
+### משיכת שליש בריבית קבועה במשכנתא
 https://mashkanta-bepijama.co.il/articles/one-third-fixed-rate-drawdown
 מדוע הבנקים דורשים שבכל פעימת משיכת כספים מהמשכנתא תתבצע משיכה של לפחות שליש בריבית קבועה? המדריך המלא להבנת דרישות הבנק ותכנון נכון של שחרור כספים.
 
@@ -2116,7 +2116,7 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-waiting-period-finances
 https://mashkanta-bepijama.co.il/articles/inheritance-eligibility-discount
 האם בעלות על דירה בירושה שוללת זכאות לדירה בהנחה? כל מה שצריך לדעת על זכויות חלקיות בנכס, מתי מאבדים את הזכאות ואיך להיערך נכון עם ייעוץ משכנתאות.
 
-### זכאות למשפר
+### זכאות משפרי דיור
 https://mashkanta-bepijama.co.il/articles/improver-eligibility-cancellation
 כל מה שצריך לדעת על תנאי זכאות למשפרי דיור בתוכניות דירה בהנחה ומחיר למשתכן, מתי הזכאות מתבטלת ואיך לתכנן נכון את המעבר.
 
@@ -2128,19 +2128,15 @@ https://mashkanta-bepijama.co.il/articles/payment-discrepancy
 https://mashkanta-bepijama.co.il/articles/status-changes-dira-behanacha
 המדריך המלא לזוכי דירה בהנחה ומחיר למשתכן: אילו שינויי סטטוס חובה לעדכן במשרד השיכון (נישואין, גירושין ועוד), למה זה קריטי ואיך זה משפיע על המשכנתא שלכם.
 
-### להיחנק במשכנתא
+### להיחנק במשכנתא:  עד כמה כדאי למתוח את הגבול הפיננסי ברכישת דירה? על ההבדל בין קושי זמני לקריסה כלכלית
 https://mashkanta-bepijama.co.il/articles/choking-vs-drowning-mortgage
 כמה כדאי למתוח את הגבול הפיננסי ברכישת דירה? על ההבדל בין קושי זמני לקריסה כלכלית, ומדוע ייעוץ משכנתאות קריטי לקביעת גובה ההחזר החודשי.
-
-### גירושין במשתכן
-https://mashkanta-bepijama.co.il/articles/divorce-mechir-lamishtaken
-המדריך המלא לזוגות מתגרשים שזכו במחיר למשתכן: מה קורה לפני ואחרי חתימת חוזה, האם מותר למכור, ואיך ייעוץ משכנתאות יכול להציל את העסקה.
 
 ### איסוף הון עצמי
 https://mashkanta-bepijama.co.il/articles/saving-equity-first-apartment
 המדריך המלא לזוגות צעירים: איך לאסוף ולתכנן את ההון העצמי לקראת רכישת דירה ראשונה. טיפים, אסטרטגיות וחשיבות תכנון פיננסי מקדים.
 
-### תשלום 7% לקבלן
+### תשלום 7% לקבלן ללא שוברים
 https://mashkanta-bepijama.co.il/articles/contractor-payment-7-percent-rule
 מדריך מקיף לרוכשי דירות מקבלן: מדוע אסור לשלם יותר מ-7% כשאין פנקס שוברים? למי משלמים את הסכום הראשון, ומה קורה אם הקבלן דורש תשלום נוסף? כל התשובות בפנים.
 
@@ -2164,8 +2160,13 @@ https://mashkanta-bepijama.co.il/articles/mortgage-repayment-jump
 https://mashkanta-bepijama.co.il/articles/disposable-income-investment
 ההכנסה הפנויה שלכם עלתה? גלו האם כדאי להגדיל את ההחזר החודשי של המשכנתא או להשקיע את הכסף הפנוי בשוק ההון. יתרונות, חסרונות וייעוץ משכנתאות מקצועי.
 
-### Page
-https://mashkanta-bepijama.co.il/discounted-housing-subsidized
+### גירושין במשתכן
+https://mashkanta-bepijama.co.il/articles/divorce-mechir-lamishtaken
+המדריך המלא לזוגות מתגרשים שזכו במחיר למשתכן: מה קורה לפני ואחרי חתימת חוזה, האם מותר למכור, ואיך ייעוץ משכנתאות יכול להציל את העסקה.
+
+### זוגיות ומשכנתא
+https://mashkanta-bepijama.co.il/articles/mortgage-and-relationships
+איך מגשרים על חילוקי דעות בין בני זוג בתהליך המשכנתא? המדריך המלא להתמודדות עם פערים פיננסיים, שמועות ומידע מוטעה בדרך לבית משלכם.
 
 ## Legal & Policy
 
