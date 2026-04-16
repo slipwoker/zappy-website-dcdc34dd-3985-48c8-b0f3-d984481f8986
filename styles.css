@@ -18926,6 +18926,180 @@ body .whatsapp-float {
   pointer-events: none !important;
 }
 
+/* Added Component Styles */
+/* ===== CTA Contact Section ===== */
+.cta-contact-section {
+  background: linear-gradient(135deg, var(--primary-color, #1e3a8a) 0%, #162d6e 100%);
+  padding: 64px 24px;
+  font-family: system-ui, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.cta-contact-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 52px 48px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* Icon */
+.cta-contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(245, 158, 11, 0.18);
+  border: 2px solid var(--secondary-color, #f59e0b);
+  border-radius: 50%;
+  color: var(--secondary-color, #f59e0b);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-contact-section:hover .cta-contact-icon {
+  transform: scale(1.08);
+  background: rgba(245, 158, 11, 0.28);
+}
+
+/* Content */
+.cta-contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.cta-contact-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.cta-contact-subtext {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 560px;
+}
+
+.cta-contact-subtext strong {
+  color: var(--secondary-color, #f59e0b);
+  font-weight: 600;
+}
+
+/* Button */
+.cta-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--secondary-color, #f59e0b);
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.45);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  margin-top: 4px;
+}
+
+.cta-contact-btn:hover,
+.cta-contact-btn:focus-visible {
+  background: var(--accent-color, #d97706);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(217, 119, 6, 0.55);
+  color: #ffffff;
+  outline: none;
+}
+
+.cta-contact-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+}
+
+.cta-contact-btn:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.cta-contact-btn-icon {
+  flex-shrink: 0;
+  /* Mirror arrow for RTL — arrow points left */
+  transform: scaleX(-1);
+  transition: transform 0.2s ease;
+}
+
+.cta-contact-btn:hover .cta-contact-btn-icon {
+  transform: scaleX(-1) translateX(-4px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .cta-contact-section {
+    padding: 48px 16px;
+  }
+
+  .cta-contact-container {
+    padding: 40px 28px;
+    gap: 22px;
+    border-radius: 16px;
+  }
+
+  .cta-contact-heading {
+    font-size: 1.55rem;
+  }
+
+  .cta-contact-subtext {
+    font-size: 0.97rem;
+  }
+
+  .cta-contact-btn {
+    font-size: 1rem;
+    padding: 14px 32px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-contact-container {
+    padding: 32px 20px;
+  }
+
+  .cta-contact-heading {
+    font-size: 1.35rem;
+  }
+
+  .cta-contact-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .cta-contact-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 /* zappy-nav-child-indent */
 .zappy-products-dropdown .zappy-nav-child > a,
 .sub-menu .zappy-nav-child > a {
@@ -19630,3 +19804,6 @@ html[dir="rtl"] .footer-contact li, html[dir="rtl"] .site-footer .footer-contact
 html[dir="rtl"] .footer-contact .contact-icon { order: 0 !important; }
 html[dir="rtl"] .footer-contact .contact-text { order: 1 !important; }
 html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
+
+/* Spec table BiDi fix: isolate cells so mixed LTR/RTL content renders correctly */
+.specs-table th, .specs-table td { unicode-bidi: plaintext !important; }
