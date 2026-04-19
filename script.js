@@ -2123,3 +2123,47 @@ document.addEventListener('DOMContentLoaded', function() {
     else{fixLinks()}
   }catch(e){}
 })();
+
+
+/* ZAPPY_IOS_VIEWPORT_GAP_FIX */
+(function(){
+  try {
+    if (window.__zappyIosViewportGapInit) return;
+    window.__zappyIosViewportGapInit = true;
+
+    function update() {
+      try {
+        var visual = window.innerWidth;
+        var layout = document.documentElement.clientWidth;
+        var gap = Math.max(0, (visual || 0) - (layout || 0));
+        document.documentElement.style.setProperty('--ios-viewport-gap', gap + 'px');
+
+        // Also publish the navbar height so the mobile dropdown menu CSS can
+        // anchor `top` to the navbar's bottom edge. This is needed because
+        // older v2 patches set `top: 100% !important` on .nav-menu, which
+        // with position:fixed resolves against the viewport (=height of
+        // screen) instead of the navbar. --zappy-navbar-bottom gives the
+        // v3 CSS something concrete to override that with.
+        var nav = document.querySelector('nav.navbar, .navbar, header nav, header.navbar');
+        if (nav) {
+          var h = Math.round(nav.getBoundingClientRect().height);
+          if (h > 0) {
+            document.documentElement.style.setProperty('--zappy-navbar-bottom', h + 'px');
+          }
+        }
+      } catch (e) {}
+    }
+
+    update();
+    window.addEventListener('resize', update, { passive: true });
+    window.addEventListener('orientationchange', update, { passive: true });
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', update);
+    }
+    document.addEventListener('DOMContentLoaded', update);
+    window.addEventListener('load', update);
+    // Re-measure after the navbar layout settles (fonts, images, logo load).
+    setTimeout(update, 250);
+    setTimeout(update, 1000);
+  } catch (e) {}
+})();
