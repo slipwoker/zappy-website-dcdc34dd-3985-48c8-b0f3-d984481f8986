@@ -19847,6 +19847,71 @@ form.contact-form .contact-input, form.contact-form .contact-textarea { width: 1
   }
 }
 
+
+/* ZAPPY_PRODUCTS_DROPDOWN_LTR_INDENT */
+/* LTR mirror of the [dir="rtl"] indentation block. Equal-or-higher
+   specificity than the shorthand .navbar .sub-menu li a override so the
+   nested sub-category items keep their visual indent on every LTR page —
+   English, Spanish, French, Russian, German, etc. The selectors target
+   dir="ltr" (the source of truth set on <html> by per-language page
+   generation), NOT a specific language code, so the rule stays generic
+   across every site / language combination. */
+[dir="ltr"] .sub-menu .zappy-nav-child > a,
+[dir="ltr"] .zappy-products-dropdown .zappy-nav-child > a,
+html[dir="ltr"] .sub-menu .zappy-nav-child > a,
+html[dir="ltr"] .zappy-products-dropdown .zappy-nav-child > a {
+  padding-left: 28px !important;
+  padding-right: 16px !important;
+  font-size: 0.9em !important;
+  opacity: 0.85 !important;
+}
+@media (max-width: 768px) {
+  [dir="ltr"] .navbar .zappy-products-dropdown > .sub-menu .zappy-nav-child > a,
+  [dir="ltr"] nav.navbar .zappy-products-dropdown > .sub-menu .zappy-nav-child > a,
+  html[dir="ltr"] .navbar .zappy-products-dropdown > .sub-menu .zappy-nav-child > a,
+  html[dir="ltr"] nav.navbar .zappy-products-dropdown > .sub-menu .zappy-nav-child > a {
+    padding-left: 36px !important;
+    padding-right: 16px !important;
+  }
+}
+
+
+/* ZAPPY_MOBILE_NAV_MENU_ITEM_PADDING */
+@media (max-width: 768px) {
+  .navbar .nav-menu.active > li > a,
+  nav.navbar .nav-menu.active > li > a,
+  #navMenu.active > li > a,
+  .nav-menu.open > li > a {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 16px !important;
+    height: auto !important;
+    min-height: 44px !important;
+    line-height: 1.4 !important;
+  }
+  .navbar .nav-menu.active > li,
+  nav.navbar .nav-menu.active > li,
+  #navMenu.active > li,
+  .nav-menu.open > li {
+    margin: 4px 0 !important;
+  }
+  .navbar .nav-menu.active > li.zappy-products-dropdown > a,
+  nav.navbar .nav-menu.active > li.zappy-products-dropdown > a,
+  #navMenu.active > li.zappy-products-dropdown > a,
+  .nav-menu.open > li.zappy-products-dropdown > a {
+    padding-right: 56px !important;
+  }
+  html[dir="rtl"] .navbar .nav-menu.active > li.zappy-products-dropdown > a,
+  html[dir="rtl"] nav.navbar .nav-menu.active > li.zappy-products-dropdown > a,
+  html[dir="rtl"] #navMenu.active > li.zappy-products-dropdown > a,
+  html[dir="rtl"] .nav-menu.open > li.zappy-products-dropdown > a {
+    padding-right: 16px !important;
+    padding-left: 56px !important;
+  }
+}
+
 /* Footer contact alignment fix */
 .footer-contact li > a { display: flex; align-items: flex-start; gap: inherit; }
 
