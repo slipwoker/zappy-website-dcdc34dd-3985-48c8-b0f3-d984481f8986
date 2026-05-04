@@ -2234,6 +2234,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-lottery-delay
 https://mashkanta-bepijama.co.il/articles/signing-contract-at-selection
 האם כדאי לחתום על חוזה רכישת דירה כבר במעמד כנס בחירת דירה בדירה בהנחה ומחיר למשתכן? כל היתרונות, החסרונות והחשיבות של תכנון פיננסי מראש.
 
+### חתימת חוזה
+https://mashkanta-bepijama.co.il/articles/dira-behanacha-contract-signing
+האם הקבלן יכול לחייב אתכם לחתום על חוזה רכישה במעמד בחירת הדירה בדירה בהנחה? המדריך המלא לזמני חתימה, תהליך הרכישה, וקבלת ייעוץ משכנתאות נכון.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2268,7 +2272,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
