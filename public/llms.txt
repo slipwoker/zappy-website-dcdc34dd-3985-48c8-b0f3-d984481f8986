@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# משכנתא בפיג'מה — Generative Engine Optimization Map
+
+> אנו מעניקים שירותי ייעוץ משכנתאות וייעוץ פיננסי ללקוחות פרטיים ועסקיים ומתמחים בהתאמת משכנתא לצרכי הלקוח. על מנת שתקבלו את ההלוואה בתנאים הטובים ביותר שניתן, נערוך מכרז ריביות בין הבנקים והגופים השונים אשר יאפשר לכם לחסוך כסף ולהנות מראש שקט לכל אורך הדרך
 
 ---
 
@@ -2228,6 +2230,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-unsure-signing
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-lottery-delay
 מה עושים כשההגרלה של דירה בהנחה או מחיר למשתכן נדחתה? מדריך מקיף שיעזור לכם להבין את המשמעויות, כיצד להתמודד עם העיכוב ואיך להיערך נכון לקראת משכנתא.
 
+### חתימה בכנס
+https://mashkanta-bepijama.co.il/articles/signing-contract-at-selection
+האם כדאי לחתום על חוזה רכישת דירה כבר במעמד כנס בחירת דירה בדירה בהנחה ומחיר למשתכן? כל היתרונות, החסרונות והחשיבות של תכנון פיננסי מראש.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2244,12 +2250,58 @@ Information about WCAG compliance and accessibility features.
 
 ---
 
-# Business Context (for LLM understanding)
+## How to Contact Us
 
-## About Business
+- Email: ariel@arielmash.com
+- Phone: 054-2668566
+- Phone (tel): tel:0542668566
+- Address: ,,
+
+### Contact form
+- URL: https://mashkanta-bepijama.co.il/contact-us
+- Endpoint: https://mashkanta-bepijama.co.il/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `email` (email, required)
+  - `phone` (tel, required)
+  - `service` (select)
+  - `message` (textarea)
+  - `terms` (checkbox)
+
 ---
 
-# Additional Resources
+# Business Context (for LLM understanding)
 
-- **Sitemap**: https://mashkanta-bepijama.co.il/sitemap.xml
-- **Robots.txt**: https://mashkanta-bepijama.co.il/robots.txt
+## About משכנתא בפיג'מה
+אנו מעניקים שירותי ייעוץ משכנתאות וייעוץ פיננסי ללקוחות פרטיים ועסקיים ומתמחים בהתאמת משכנתא לצרכי הלקוח. על מנת שתקבלו את ההלוואה בתנאים הטובים ביותר שניתן, נערוך מכרז ריביות בין הבנקים והגופים השונים אשר יאפשר לכם לחסוך כסף ולהנות מראש שקט לכל אורך הדרך
+
+## Services/Products
+- ייעוץ משכנתאות
+- התאמת משכנתא מדויקת ואישית
+- בדיקת המשכנתא הקיימת ושיפור התנאים
+- מיחזור משכנתא
+- ייעוץ פיננסי
+- ייעוץ לכלכלת המשפחה
+- בחינת תיק פנסיוני
+- הלוואה לכל מטרה
+- ייעוץ ללקוחות פרטיים ועסקיים
+
+## Target Audience
+- רוכשי דירות ראשונות
+- משקיעי נדל"ן
+- משפרי דיור
+- משפחות במתח כלכלי
+- חוזרים לארץ
+
+## Industry
+שירותים פיננסיים
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://mashkanta-bepijama.co.il/sitemap.xml
+- Robots: https://mashkanta-bepijama.co.il/robots.txt
+- Flattened page text (for LLMs): https://mashkanta-bepijama.co.il/llms-full.txt

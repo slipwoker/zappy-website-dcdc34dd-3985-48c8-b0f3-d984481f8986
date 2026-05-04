@@ -65,205 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-/* Cookie Consent */
-
-// Helper function to check cookie consent
-function hasConsentFor(category) {
-  if (typeof window.CookieConsent === 'undefined') {
-    return false; // Default to no consent if cookie consent not loaded
-  }
-  
-  return window.CookieConsent.validConsent(category);
-}
-
-// Helper function to execute code only with consent
-function withConsent(category, callback) {
-  if (hasConsentFor(category)) {
-    callback();
-  } else {
-    console.log(`[WARNING] Skipping ${category} code - no user consent`);
-  }
-}
-
-// Cookie Consent Initialization
-
-(function() {
-  'use strict';
-  
-  let initAttempts = 0;
-  const maxAttempts = 50; // 5 seconds max wait
-  
-  // Wait for DOM and vanilla-cookieconsent to be ready
-  function initCookieConsent() {
-    initAttempts++;
-    
-    
-    if (typeof window.CookieConsent === 'undefined') {
-      if (initAttempts < maxAttempts) {
-        setTimeout(initCookieConsent, 100);
-      } else {
-      }
-      return;
-    }
-
-    const cc = window.CookieConsent;
-    
-    
-    // Initialize cookie consent
-    try {
-      cc.run({
-  "autoShow": true,
-  "mode": "opt-in",
-  "revision": 0,
-  "categories": {
-    "necessary": {
-      "enabled": true,
-      "readOnly": true
-    },
-    "analytics": {
-      "enabled": false,
-      "readOnly": false,
-      "autoClear": {
-        "cookies": [
-          {
-            "name": "_ga"
-          },
-          {
-            "name": "_ga_*"
-          },
-          {
-            "name": "_gid"
-          },
-          {
-            "name": "_gat"
-          }
-        ]
-      }
-    },
-    "marketing": {
-      "enabled": false,
-      "readOnly": false,
-      "autoClear": {
-        "cookies": [
-          {
-            "name": "_fbp"
-          },
-          {
-            "name": "_fbc"
-          },
-          {
-            "name": "fr"
-          }
-        ]
-      }
-    }
-  },
-  "language": {
-    "default": "he",
-    "translations": {
-      "he": {
-        "consentModal": {
-          "title": "אנחנו משתמשים בעוגיות 🍪",
-          "description": "אריאל אחון ייעוץ משכנתאות ופיננסיים משתמש בעוגיות כדי לשפר את החוויה שלך, לנתח שימוש באתר ולסייע במאמצי השיווק שלנו.",
-          "acceptAllBtn": "אשר הכל",
-          "acceptNecessaryBtn": "רק הכרחי",
-          "showPreferencesBtn": "נהל העדפות",
-          "footer": "<a href=\"#privacy-policy\">מדיניות פרטיות</a> | <a href=\"#terms-conditions\">תנאי שימוש</a>"
-        },
-        "preferencesModal": {
-          "title": "העדפות עוגיות",
-          "acceptAllBtn": "אשר הכל",
-          "acceptNecessaryBtn": "רק הכרחי",
-          "savePreferencesBtn": "שמור העדפות",
-          "closeIconLabel": "סגור",
-          "sections": [
-            {
-              "title": "עוגיות חיוניות",
-              "description": "עוגיות אלה הכרחיות לתפקוד האתר ולא ניתן להשבית אותן.",
-              "linkedCategory": "necessary"
-            },
-            {
-              "title": "עוגיות ניתוח",
-              "description": "עוגיות אלה עוזרות לנו להבין איך המבקרים מתקשרים עם האתר שלנו.",
-              "linkedCategory": "analytics"
-            },
-            {
-              "title": "עוגיות שיווקיות",
-              "description": "עוגיות אלה משמשות להצגת פרסומות מותאמות אישית.",
-              "linkedCategory": "marketing"
-            }
-          ]
-        }
-      }
-    }
-  },
-  "guiOptions": {
-    "consentModal": {
-      "layout": "box",
-      "position": "bottom right",
-      "equalWeightButtons": true,
-      "flipButtons": false
-    },
-    "preferencesModal": {
-      "layout": "box",
-      "equalWeightButtons": true,
-      "flipButtons": false
-    }
-  }
-});
-      
-      // Optional: Handle consent changes (check if onChange is available)
-      if (typeof cc.onChange === 'function') {
-        cc.onChange(function(cookie, changed_preferences) {
-      
-      // Enable/disable analytics based on consent
-      if (changed_preferences.includes('analytics')) {
-        if (cc.validConsent('analytics')) {
-          // Enable analytics (e.g., Google Analytics)
-          // Example: gtag('consent', 'update', { analytics_storage: 'granted' });
-        } else {
-          // Example: gtag('consent', 'update', { analytics_storage: 'denied' });
-        }
-      }
-      
-      // Enable/disable marketing based on consent
-      if (changed_preferences.includes('marketing')) {
-        if (cc.validConsent('marketing')) {
-          // Example: gtag('consent', 'update', { ad_storage: 'granted' });
-        } else {
-          // Example: gtag('consent', 'update', { ad_storage: 'denied' });
-        }
-      }
-        });
-      } else {
-      }
-
-      // Note: Cookie Preferences button removed per marketing guidelines
-      // Footer should be clean and minimal - users can manage cookies via banner
-    } catch (error) {
-    }
-  }
-
-  // Initialize when DOM is ready - multiple approaches for reliability
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCookieConsent);
-    // Backup timeout in case DOMContentLoaded doesn't fire
-    setTimeout(initCookieConsent, 1000);
-  } else if (document.readyState === 'interactive' || document.readyState === 'complete') {
-    initCookieConsent();
-  } else {
-    // Fallback - try after a short delay
-    setTimeout(initCookieConsent, 500);
-  }
-  
-  // Additional fallback - try after page load
-  if (typeof window !== 'undefined') {
-    if (window.addEventListener) {
-      window.addEventListener('load', initCookieConsent, { once: true });
-    }
-  }
-})();
-
 /* Accessibility Features */
 
 /* Mickidum Accessibility Toolbar Initialization - Zappy Style */
@@ -1169,6 +970,257 @@ document.addEventListener('DOMContentLoaded', function() {
       return { w: 100, h: (contA / imgA) * 100 };
     }
 
+    // FULL-BLEED FIRST-CHILD MEDIA: when the wrapper's parent (the image-wrap)
+    // is the first visible child of a padded card, apply negative margins on all
+    // sides equal to the card's padding so the image extends edge-to-edge of the
+    // card. Without this, every padded card leaves a visible padding "frame"
+    // around the image which users perceive as the image not filling the card.
+    // Applies on BOTH desktop and mobile — this is a layout concern, not a
+    // viewport-specific one. Skipped for hero backgrounds and full-width wrappers.
+    function applyFirstChildBleed(wrapper) {
+      try {
+        if (!wrapper || isHeroBgWrapper(wrapper)) return;
+        var widthMode = wrapper.getAttribute('data-zappy-zoom-wrapper-width-mode');
+        if (widthMode === 'full') return;
+        // Bleed only recognized image-slot wrappers that are direct children
+        // of padded card-like containers. This still handles editor-injected
+        // wrappers (card -> image-wrap -> zappy-inserted-element -> wrapper)
+        // but avoids bleeding media into full section/layout containers.
+        var slotForBleed = null;
+        var slotNode = wrapper.parentElement;
+        for (var slotWalk = 0; slotWalk < 4 && slotNode && slotNode !== document.body; slotWalk++) {
+          var slotNodeClass = (slotNode.className || '').toString().toLowerCase();
+          if (/(image-wrap|image-tile|image-slot|card-image|card-media|media-wrap|portrait-wrap)/.test(slotNodeClass)) {
+            slotForBleed = slotNode;
+            break;
+          }
+          var slotNodeCS = window.getComputedStyle(slotNode);
+          var slotNodeRawClass = (slotNode.className || '').toString();
+          var slotThinAnchor = slotNode.tagName === 'A' && slotNodeCS.display === 'contents';
+          var slotUnclassedDiv = slotNode.tagName === 'DIV' && !slotNodeRawClass.trim();
+          var slotInserted = / zappy-inserted-element |^zappy-inserted-element | zappy-inserted-element$|^zappy-inserted-element$/.test(' ' + slotNodeRawClass + ' ');
+          if (!(slotThinAnchor || slotUnclassedDiv || slotInserted)) break;
+          slotNode = slotNode.parentElement;
+        }
+        var directInsertedForBleed = null;
+        if (!slotForBleed && wrapper.parentElement) {
+          var directParentClass = (wrapper.parentElement.className || '').toString();
+          var directParentIsInserted = / zappy-inserted-element |^zappy-inserted-element | zappy-inserted-element$|^zappy-inserted-element$/.test(' ' + directParentClass + ' ');
+          var directCard = wrapper.parentElement.parentElement;
+          var directCardClass = (directCard && directCard.className || '').toString().toLowerCase();
+          if (directParentIsInserted && /(card|tile|article|post|news|mention|press|journey|philosophy|feature|service)/.test(directCardClass)) {
+            directInsertedForBleed = wrapper.parentElement;
+          }
+        }
+        var bleedTarget = slotForBleed || directInsertedForBleed;
+        var card = bleedTarget && bleedTarget.parentElement;
+        var cardClass = (card && card.className || '').toString().toLowerCase();
+        var isCardLike = /(card|tile|article|post|news|mention|press|journey|philosophy|feature|service)/.test(cardClass);
+        if (!bleedTarget || !card || card === document.body || !isCardLike) return;
+        var firstVisibleChild = null;
+        for (var ci = 0; ci < card.children.length; ci++) {
+          var ch = card.children[ci];
+          var chCS = window.getComputedStyle(ch);
+          if (chCS.display !== 'none' && chCS.visibility !== 'hidden') {
+            firstVisibleChild = ch;
+            break;
+          }
+        }
+        if (firstVisibleChild !== bleedTarget) return;
+        var cardCS = window.getComputedStyle(card);
+        var padT = parseFloat(cardCS.paddingTop) || 0;
+        var padL = parseFloat(cardCS.paddingLeft) || 0;
+        var padR = parseFloat(cardCS.paddingRight) || 0;
+        if (padL <= 0 && padR <= 0 && padT <= 0) return;
+        bleedTarget.style.setProperty('margin-left', '-' + padL + 'px', 'important');
+        bleedTarget.style.setProperty('margin-right', '-' + padR + 'px', 'important');
+        bleedTarget.style.setProperty('margin-top', '-' + padT + 'px', 'important');
+        bleedTarget.style.setProperty('width', 'calc(100% + ' + (padL + padR) + 'px)', 'important');
+        bleedTarget.style.setProperty('max-width', 'calc(100% + ' + (padL + padR) + 'px)', 'important');
+        bleedTarget.style.setProperty('height', 'auto', 'important');
+        bleedTarget.style.setProperty('min-height', '0', 'important');
+        bleedTarget.style.setProperty('max-height', 'none', 'important');
+        bleedTarget.setAttribute('data-zappy-mobile-bleed', '1');
+        wrapper.style.setProperty('width', '100%', 'important');
+        wrapper.style.setProperty('max-width', '100%', 'important');
+        var bleedSW = parseFloat(wrapper.getAttribute('data-zappy-zoom-wrapper-width')) || 0;
+        var bleedSH = parseFloat(wrapper.getAttribute('data-zappy-zoom-wrapper-height')) || 0;
+        if (bleedSW > 0 && bleedSH > 0) {
+          wrapper.style.setProperty('aspect-ratio', bleedSW + '/' + bleedSH, 'important');
+          wrapper.style.setProperty('height', 'auto', 'important');
+        }
+      } catch (_e) {}
+    }
+
+    // FILL CARD-SLOT CONTAINER: stretch the wrapper to fill its parent when
+    // the parent is a designed image-slot container (class includes
+    // image-wrap / image-tile / image-slot / card-image / card-media /
+    // portrait-wrap) AND the wrapper is materially narrower than the parent.
+    // This handles the case where the saved desktop pixel width (e.g. 383px)
+    // is smaller than the rendered card slot at certain viewports / card
+    // variants (e.g. journey-card--short which is 790px wide while the saved
+    // image is 383px), leaving large empty gaps on the sides.
+    // Logos, footer brand marks, and intentionally smaller media are not
+    // matched because their parents do not carry image-slot class names.
+    // Skipped for hero backgrounds and full-width wrappers.
+    function applyCardSlotFill(wrapper, img) {
+      try {
+        if (!wrapper || isHeroBgWrapper(wrapper)) return;
+        var widthMode = wrapper.getAttribute('data-zappy-zoom-wrapper-width-mode');
+        if (widthMode === 'full') return;
+        // Walk UP through editor-injected / "thin" wrappers to find the real
+        // visual image-slot container. We tolerate at most 3 levels of:
+        //   - <a style="display:contents">           (editor link wrap)
+        //   - <div class="zappy-inserted-element">  (editor inserted media)
+        //   - <div> with no class                    (anonymous inline wrap)
+        var node = wrapper.parentElement;
+        var slotEl = null;
+        for (var walk = 0; walk < 3 && node && node !== document.body; walk++) {
+          var nodeClass = (node.className || '').toString().toLowerCase();
+          if (/(image-wrap|image-tile|image-slot|card-image|card-media|media-wrap|portrait-wrap)/.test(nodeClass)) {
+            slotEl = node;
+            break;
+          }
+          var nodeCS = window.getComputedStyle(node);
+          var nodeRawClass = (node.className || '').toString();
+          var isThinAnchor = node.tagName === 'A' && nodeCS.display === 'contents';
+          var isUnclassedDiv = node.tagName === 'DIV' && !nodeRawClass.trim();
+          var isInsertedEl = / zappy-inserted-element |^zappy-inserted-element | zappy-inserted-element$|^zappy-inserted-element$/.test(' ' + nodeRawClass + ' ');
+          if (!(isThinAnchor || isUnclassedDiv || isInsertedEl)) break;
+          node = node.parentElement;
+        }
+        if (!slotEl) {
+          // No image-slot found. Check if the walk stopped at a card-like
+          // container and the saved width fills most of the card — this handles
+          // user-replaced images where the original image-wrap is empty and the
+          // new image is in a zappy-inserted-element sibling.
+          if (node && node !== document.body && !wrapper.getAttribute('data-zappy-card-slot-fill')) {
+            var caClass = (node.className || '').toString().toLowerCase();
+            var caIsCard = /(card|tile|article|post|news|mention|press|journey|philosophy|feature|service)/.test(caClass);
+            if (caIsCard) {
+              var caSavedW = parseFloat(wrapper.getAttribute('data-zappy-zoom-wrapper-width')) || 0;
+              var caSavedH = parseFloat(wrapper.getAttribute('data-zappy-zoom-wrapper-height')) || 0;
+              var caRect = node.getBoundingClientRect();
+              if (caSavedW > 0 && caRect.width > 0 && caSavedW >= caRect.width * 0.8) {
+                wrapper.style.setProperty('width', '100%', 'important');
+                wrapper.style.setProperty('max-width', '100%', 'important');
+                if (caSavedH > 0) {
+                  wrapper.style.setProperty('aspect-ratio', caSavedW + '/' + caSavedH, 'important');
+                  wrapper.style.setProperty('height', 'auto', 'important');
+                }
+                wrapper.setAttribute('data-zappy-card-slot-fill', '1');
+                var caInt = wrapper.parentElement;
+                for (var cai = 0; cai < 3 && caInt && caInt !== node; cai++) {
+                  var caiRaw = (caInt.className || '').toString();
+                  if (/ zappy-inserted-element |^zappy-inserted-element | zappy-inserted-element$|^zappy-inserted-element$/.test(' ' + caiRaw + ' ')) {
+                    var caHasBleed = caInt.getAttribute('data-zappy-mobile-bleed');
+                    if (!caHasBleed) {
+                      caInt.style.setProperty('width', '100%', 'important');
+                      caInt.style.setProperty('max-width', '100%', 'important');
+                    }
+                    caInt.style.setProperty('height', 'auto', 'important');
+                    caInt.style.setProperty('min-height', '0', 'important');
+                    caInt.style.setProperty('max-height', 'none', 'important');
+                    var caIsFirst = true;
+                    var caPrev = caInt.previousElementSibling;
+                    while (caPrev) {
+                      if (caPrev.getBoundingClientRect().height > 1) { caIsFirst = false; break; }
+                      caPrev = caPrev.previousElementSibling;
+                    }
+                    if (caIsFirst) {
+                      if (!caHasBleed) {
+                        caInt.style.setProperty('margin-top', '0', 'important');
+                      }
+                      caInt.style.setProperty('border-radius', 'var(--radius-card, 20px) var(--radius-card, 20px) 0 0', 'important');
+                      caInt.style.setProperty('overflow', 'hidden', 'important');
+                    }
+                  }
+                  caInt = caInt.parentElement;
+                }
+              }
+            }
+          }
+          return;
+        }
+        var slotRect = slotEl.getBoundingClientRect();
+        var wrapRect = wrapper.getBoundingClientRect();
+        var slotCS = window.getComputedStyle(slotEl);
+        var slotWidthGap = slotRect.width - wrapRect.width;
+        var slotHeightGap = wrapRect.height - slotRect.height;
+        if (slotWidthGap <= 4 && !(slotHeightGap > 4 && slotRect.height > 0 && slotCS.overflow !== 'visible')) return;
+        var swStr = wrapper.getAttribute('data-zappy-zoom-wrapper-width');
+        var shStr = wrapper.getAttribute('data-zappy-zoom-wrapper-height');
+        var swNum = parseFloat(swStr) || 0;
+        var shNum = parseFloat(shStr) || 0;
+        wrapper.style.setProperty('width', '100%', 'important');
+        wrapper.style.setProperty('max-width', '100%', 'important');
+        if (slotHeightGap > 4 && slotRect.height > 0 && slotCS.overflow !== 'visible') {
+          wrapper.style.setProperty('height', '100%', 'important');
+          wrapper.style.setProperty('aspect-ratio', 'auto', 'important');
+          wrapper.style.setProperty('padding-bottom', '0', 'important');
+          // Recompute image crop after changing the wrapper from stale saved
+          // portrait dimensions to the real clipped slot height. Otherwise the
+          // image may keep horizontal-overflow-only sizing, making vertical
+          // object-position ineffective.
+          if (img) {
+            var finalRect = wrapper.getBoundingClientRect();
+            var nW = img.naturalWidth || 0;
+            var nH = img.naturalHeight || 0;
+            if (finalRect && finalRect.width > 0 && finalRect.height > 0 && nW > 0 && nH > 0) {
+              var finalCover = coverPercents(nW / nH, finalRect.width / finalRect.height);
+              var zAttr = parseFloat(img.getAttribute('data-zappy-mobile-zoom') || img.getAttribute('data-zappy-zoom') || '1');
+              var finalZoom = (isFinite(zAttr) && zAttr > 0) ? zAttr : 1;
+              var finalW = 100;
+              var finalH = 100;
+              if (finalZoom >= 1) {
+                finalW = finalCover.w * finalZoom;
+                finalH = finalCover.h * finalZoom;
+              } else {
+                var finalT = (finalZoom - 0.5) / 0.5;
+                if (!isFinite(finalT)) finalT = 0;
+                finalT = Math.max(0, Math.min(1, finalT));
+                finalW = 100 + finalT * (finalCover.w - 100);
+                finalH = 100 + finalT * (finalCover.h - 100);
+              }
+              var finalPos = parseObjPos(img.getAttribute('data-zappy-mobile-object-position') || img.getAttribute('data-zappy-object-position') || img.style.objectPosition || '50% 50%');
+              img.style.setProperty('position', 'absolute', 'important');
+              img.style.setProperty('left', ((100 - finalW) * (finalPos.x / 100)) + '%', 'important');
+              img.style.setProperty('top', ((100 - finalH) * (finalPos.y / 100)) + '%', 'important');
+              img.style.setProperty('width', finalW + '%', 'important');
+              img.style.setProperty('height', finalH + '%', 'important');
+              img.style.setProperty('max-width', 'none', 'important');
+              img.style.setProperty('max-height', 'none', 'important');
+              img.style.setProperty('display', 'block', 'important');
+              img.style.setProperty('object-fit', finalZoom < 1 ? 'fill' : 'cover', 'important');
+              img.style.setProperty('margin', '0', 'important');
+            }
+          }
+        } else if (swNum > 0 && shNum > 0) {
+          wrapper.style.setProperty('aspect-ratio', swNum + '/' + shNum, 'important');
+          wrapper.style.setProperty('height', 'auto', 'important');
+        }
+        wrapper.setAttribute('data-zappy-card-slot-fill', '1');
+        // Also stretch any intermediate .zappy-inserted-element ancestors up
+        // to the slot, so an editor-inserted media wrapper with a saved
+        // desktop pixel width doesn't constrain the wrapper we just stretched
+        // to 100%.
+        var intermediate = wrapper.parentElement;
+        for (var iw = 0; iw < 3 && intermediate && intermediate !== slotEl; iw++) {
+          var iwRawClass = (intermediate.className || '').toString();
+          var iwIsInserted = / zappy-inserted-element |^zappy-inserted-element | zappy-inserted-element$|^zappy-inserted-element$/.test(' ' + iwRawClass + ' ');
+          if (iwIsInserted) {
+            intermediate.style.setProperty('width', '100%', 'important');
+            intermediate.style.setProperty('max-width', '100%', 'important');
+            intermediate.style.setProperty('height', 'auto', 'important');
+            intermediate.style.setProperty('min-height', '0', 'important');
+            intermediate.style.setProperty('max-height', 'none', 'important');
+            intermediate.setAttribute('data-zappy-inserted-stretched', '1');
+          }
+          intermediate = intermediate.parentElement;
+        }
+      } catch (_fillErr) {}
+    }
+
     function applyZoom(wrapper, img) {
       var zoom = parseFloat(img.getAttribute('data-zappy-zoom')) || 1;
       if (!(zoom > 0)) zoom = 1;
@@ -1192,41 +1244,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var _sW = parseFloat(wrapper.getAttribute('data-zappy-zoom-wrapper-width')) || 0;
         var _sH = parseFloat(wrapper.getAttribute('data-zappy-zoom-wrapper-height')) || 0;
-        if (_sW > 0 && _sH > 0) {
+        var hasMobileOverrides = mPos || (isFinite(mZoom) && mZoom > 0);
+
+        if (hasMobileOverrides && _sW > 0 && _sH > 0) {
           wrapper.style.setProperty('padding-bottom', '0', 'important');
           wrapper.style.setProperty('aspect-ratio', _sW + '/' + _sH, 'important');
           wrapper.style.setProperty('height', 'auto', 'important');
-        }
 
-        function applyMobileZoomCrop(_img, _wrapper, _effPos, _effZoom) {
-          var rect = _wrapper.getBoundingClientRect();
-          if (!rect || !rect.width || !rect.height) return;
-          var nW = _img.naturalWidth || 0, nH = _img.naturalHeight || 0;
-          if (!(nW > 0 && nH > 0)) return;
-          var imgA = nW / nH;
-          var contA = rect.width / rect.height;
-          var cover = coverPercents(imgA, contA);
-          var wP = 100, hP = 100;
-          if (_effZoom >= 1) { wP = cover.w * _effZoom; hP = cover.h * _effZoom; }
-          else { var t2 = (_effZoom - 0.5) / 0.5; if (!isFinite(t2)) t2 = 0; t2 = Math.max(0, Math.min(1, t2)); wP = 100 + t2 * (cover.w - 100); hP = 100 + t2 * (cover.h - 100); }
-          var p2 = parseObjPos(_effPos);
-          var lP = (100 - wP) * (p2.x / 100);
-          var tP = (100 - hP) * (p2.y / 100);
-          _img.style.setProperty('position', 'absolute', 'important');
-          _img.style.setProperty('left', lP + '%', 'important');
-          _img.style.setProperty('top', tP + '%', 'important');
-          _img.style.setProperty('width', wP + '%', 'important');
-          _img.style.setProperty('height', hP + '%', 'important');
-          _img.style.setProperty('max-width', 'none', 'important');
-          _img.style.setProperty('max-height', 'none', 'important');
-          _img.style.setProperty('display', 'block', 'important');
-          _img.style.setProperty('object-fit', _effZoom < 1 ? 'fill' : 'cover', 'important');
-          _img.style.setProperty('margin', '0', 'important');
-        }
+          function applyMobileZoomCrop(_img, _wrapper, _effPos, _effZoom) {
+            var rect = _wrapper.getBoundingClientRect();
+            if (!rect || !rect.width || !rect.height) return;
+            var nW = _img.naturalWidth || 0, nH = _img.naturalHeight || 0;
+            if (!(nW > 0 && nH > 0)) return;
+            var imgA = nW / nH;
+            var contA = rect.width / rect.height;
+            var cover = coverPercents(imgA, contA);
+            var wP = 100, hP = 100;
+            if (_effZoom >= 1) { wP = cover.w * _effZoom; hP = cover.h * _effZoom; }
+            else { var t2 = (_effZoom - 0.5) / 0.5; if (!isFinite(t2)) t2 = 0; t2 = Math.max(0, Math.min(1, t2)); wP = 100 + t2 * (cover.w - 100); hP = 100 + t2 * (cover.h - 100); }
+            var p2 = parseObjPos(_effPos);
+            var lP = (100 - wP) * (p2.x / 100);
+            var tP = (100 - hP) * (p2.y / 100);
+            _img.style.setProperty('position', 'absolute', 'important');
+            _img.style.setProperty('left', lP + '%', 'important');
+            _img.style.setProperty('top', tP + '%', 'important');
+            _img.style.setProperty('width', wP + '%', 'important');
+            _img.style.setProperty('height', hP + '%', 'important');
+            _img.style.setProperty('max-width', 'none', 'important');
+            _img.style.setProperty('max-height', 'none', 'important');
+            _img.style.setProperty('display', 'block', 'important');
+            _img.style.setProperty('object-fit', _effZoom < 1 ? 'fill' : 'cover', 'important');
+            _img.style.setProperty('margin', '0', 'important');
+          }
 
-        var effZoom = (isFinite(mZoom) && mZoom > 0) ? mZoom : zoom;
-        var effPos = mPos || img.getAttribute('data-zappy-object-position') || img.style.objectPosition || '50% 50%';
-        if (_sW > 0 && _sH > 0) {
+          var effZoom = (isFinite(mZoom) && mZoom > 0) ? mZoom : zoom;
+          var effPos = mPos || img.getAttribute('data-zappy-object-position') || img.style.objectPosition || '50% 50%';
           applyMobileZoomCrop(img, wrapper, effPos, effZoom);
           if (!(img.complete && img.naturalWidth > 0)) {
             img.addEventListener('load', function _onLoad() {
@@ -1234,17 +1286,49 @@ document.addEventListener('DOMContentLoaded', function() {
               try { applyMobileZoomCrop(img, wrapper, effPos, effZoom); } catch(e) {}
             });
           }
+        } else if (_sW > 0 && _sH > 0) {
+          // No mobile overrides but the wrapper has a saved desktop aspect ratio.
+          // Preserve that crop frame at mobile width and use object-fit:cover with the
+          // saved object-position. This keeps the visual layout consistent with desktop
+          // (same crop, just narrower) without applying the percentage-offset math that
+          // produced "image overflows wrapper" rendering on the previous build.
+          var _savedObjPos = img.getAttribute('data-zappy-object-position') ||
+                             img.style.objectPosition || '50% 50%';
+          wrapper.style.setProperty('aspect-ratio', _sW + '/' + _sH, 'important');
+          wrapper.style.setProperty('padding-bottom', '0', 'important');
+          wrapper.style.setProperty('height', 'auto', 'important');
+          img.style.setProperty('position', 'absolute', 'important');
+          img.style.setProperty('top', '0', 'important');
+          img.style.setProperty('left', '0', 'important');
+          img.style.setProperty('width', '100%', 'important');
+          img.style.setProperty('height', '100%', 'important');
+          img.style.setProperty('max-width', '100%', 'important');
+          img.style.setProperty('max-height', 'none', 'important');
+          img.style.setProperty('display', 'block', 'important');
+          img.style.setProperty('object-fit', 'cover', 'important');
+          img.style.setProperty('object-position', _savedObjPos, 'important');
+          img.style.removeProperty('right');
+          img.style.removeProperty('bottom');
+          img.style.setProperty('margin', '0', 'important');
         } else {
+          // Legacy wrappers without saved dimensions — natural-aspect responsive image.
+          wrapper.style.setProperty('aspect-ratio', 'auto', 'important');
+          wrapper.style.setProperty('padding-bottom', '0', 'important');
+          wrapper.style.setProperty('height', 'auto', 'important');
           img.style.setProperty('position', 'relative', 'important');
           img.style.setProperty('width', '100%', 'important');
           img.style.setProperty('height', 'auto', 'important');
           img.style.setProperty('max-width', '100%', 'important');
+          img.style.setProperty('max-height', '300px', 'important');
           img.style.setProperty('display', 'block', 'important');
           img.style.setProperty('object-fit', 'cover', 'important');
           img.style.removeProperty('left');
           img.style.removeProperty('top');
           img.style.setProperty('margin', '0', 'important');
         }
+
+        applyFirstChildBleed(wrapper);
+        applyCardSlotFill(wrapper, img);
         return;
       }
 
@@ -1264,6 +1348,8 @@ document.addEventListener('DOMContentLoaded', function() {
         img.style.setProperty('object-fit', 'cover', 'important');
         img.style.setProperty('display', 'block', 'important');
         img.style.setProperty('margin', '0', 'important');
+        applyFirstChildBleed(wrapper);
+        applyCardSlotFill(wrapper, img);
         return;
       }
 
@@ -1277,6 +1363,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (existingPos === 'absolute' && existingW.indexOf('%') !== -1 && zoom > 1) {
         wrapper.style.setProperty('overflow', 'hidden', 'important');
         wrapper.style.setProperty('position', 'relative', 'important');
+        applyFirstChildBleed(wrapper);
+        applyCardSlotFill(wrapper, img);
         return;
       }
 
@@ -1318,6 +1406,8 @@ document.addEventListener('DOMContentLoaded', function() {
       img.style.setProperty('display', 'block', 'important');
       img.style.setProperty('object-fit', zoom < 1 ? 'fill' : 'cover', 'important');
       img.style.setProperty('margin', '0', 'important');
+      applyFirstChildBleed(wrapper);
+      applyCardSlotFill(wrapper, img);
     }
 
     function fixOrphanedZoomImages() {
@@ -1560,18 +1650,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.__zappyFaqToggleInit) return;
     window.__zappyFaqToggleInit = true;
 
-    var answerSel = '[class*="faq-answer"], [class*="faq-content"], [class*="faq-body"], .accordion-content, .accordion-body';
+    var answerSel = '[class*="faq-answer"], [class*="faq-content"], [class*="faq-body"], [class*="faq-item__answer"], .accordion-content, .accordion-body';
 
     function initFaqToggle() {
       var items = document.querySelectorAll('[class*="faq-item"], .accordion-item');
       if (!items.length) return;
 
       items.forEach(function(item) {
+        if (item.closest(answerSel)) return;
         var question = item.querySelector(
-          '[class*="faq-question"], [class*="faq-header"], .accordion-header, .accordion-toggle'
+          '[class*="faq-question"], [class*="faq-header"], [class*="faq-item__question"], [class*="faq-item__btn"], [class*="faq-btn"], .accordion-header, .accordion-toggle'
         );
         if (!question) return;
         if (question.__zappyFaqBound) return;
+        if (question.hasAttribute('onclick')) question.removeAttribute('onclick');
         question.__zappyFaqBound = true;
         question.style.cursor = 'pointer';
 
@@ -1585,7 +1677,7 @@ document.addEventListener('DOMContentLoaded', function() {
             siblings.forEach(function(sib) {
               if (sib !== item && sib.classList.contains('active')) {
                 sib.classList.remove('active');
-                var sibQ = sib.querySelector('[class*="faq-question"], [class*="faq-header"], .accordion-header');
+                var sibQ = sib.querySelector('[class*="faq-question"], [class*="faq-header"], [class*="faq-item__question"], [class*="faq-item__btn"], [class*="faq-btn"], .accordion-header');
                 if (sibQ) sibQ.setAttribute('aria-expanded', 'false');
                 var sibA = sib.querySelector(answerSel);
                 if (sibA) {
@@ -1604,15 +1696,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
           var answer = item.querySelector(answerSel);
           if (answer) {
-            answer.style.transition = 'max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease';
             if (isActive) {
               answer.style.display = '';
-              answer.style.maxHeight = answer.scrollHeight + 'px';
-              answer.style.overflow = 'hidden';
-              answer.style.opacity = '1';
               answer.style.paddingTop = '';
               answer.style.paddingBottom = '';
+              var inners = answer.querySelectorAll(answerSel);
+              inners.forEach(function(inn) {
+                inn.style.maxHeight = '';
+                inn.style.overflow = '';
+                inn.style.opacity = '';
+                inn.style.paddingTop = '';
+                inn.style.paddingBottom = '';
+              });
+              answer.style.transition = 'none';
+              answer.style.maxHeight = 'none';
+              answer.style.opacity = '0';
+              var realH = answer.scrollHeight;
+              answer.style.maxHeight = '0';
+              answer.offsetHeight;
+              answer.style.transition = 'max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease';
+              answer.style.maxHeight = realH + 'px';
+              answer.style.overflow = 'hidden';
+              answer.style.opacity = '1';
             } else {
+              answer.style.transition = 'max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease';
               answer.style.maxHeight = '0';
               answer.style.overflow = 'hidden';
               answer.style.opacity = '0';
@@ -1631,6 +1738,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       items.forEach(function(item) {
         if (item.classList.contains('active')) return;
+        if (item.closest(answerSel)) return;
         var answer = item.querySelector(answerSel);
         if (answer) {
           answer.style.maxHeight = '0';
@@ -1651,6 +1759,152 @@ document.addEventListener('DOMContentLoaded', function() {
   } catch (e) {}
 })();
 /* END ZAPPY_FAQ_ACCORDION_TOGGLE */
+
+
+/* ZAPPY_RUNTIME_CONTRAST_FIX */
+(function(){
+  try {
+    if (window.__zappyContrastFixInit) return;
+    window.__zappyContrastFixInit = true;
+
+    function getLum(r,g,b){
+      var a=[r,g,b].map(function(v){v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);});
+      return a[0]*0.2126+a[1]*0.7152+a[2]*0.0722;
+    }
+    function contrast(c1,c2){
+      var l1=getLum(c1.r,c1.g,c1.b),l2=getLum(c2.r,c2.g,c2.b);
+      var hi=Math.max(l1,l2),lo=Math.min(l1,l2);
+      return (hi+0.05)/(lo+0.05);
+    }
+    function parseRGB(c){
+      if(!c)return null;var m=c.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      return m?{r:+m[1],g:+m[2],b:+m[3]}:null;
+    }
+    function effectiveBg(el){
+      var e=el;
+      while(e){
+        var cs=window.getComputedStyle(e);
+        var bi=cs.backgroundImage;
+        if(bi&&bi!=='none'){
+          if(bi.indexOf('url(')>=0) return null;
+          var isRgba=bi.match(/rgba\(/);
+          if(!isRgba){
+            var gm=bi.match(/rgb\(\s*(\d+),\s*(\d+),\s*(\d+)/);
+            if(gm) return 'rgb('+gm[1]+','+gm[2]+','+gm[3]+')';
+          }
+        }
+        var bg=cs.backgroundColor;
+        if(bg&&bg!=='rgba(0, 0, 0, 0)'&&bg!=='transparent'){
+          var am=bg.match(/rgba\(\s*\d+,\s*\d+,\s*\d+,\s*([\d.]+)/);
+          if(!am||parseFloat(am[1])>=0.6) return bg;
+        }
+        e=e.parentElement;
+      }
+      return 'rgb(255,255,255)';
+    }
+
+    function resolveVar(val){
+      if(!val||val.indexOf('var(')===-1)return val;
+      var m=val.match(/var\(--([^,)]+)/);
+      if(!m)return val;
+      return getComputedStyle(document.documentElement).getPropertyValue('--'+m[1]).trim()||val;
+    }
+
+    function fixContrast(){
+      var root=getComputedStyle(document.documentElement);
+      var dark=root.getPropertyValue('--text-dark').trim()||root.getPropertyValue('--text').trim()||'#1a1a1a';
+      var light=root.getPropertyValue('--text-light').trim()||root.getPropertyValue('--background').trim()||'#ffffff';
+      var darkRGB=parseRGB(dark);
+      if(!darkRGB){
+        var d=document.createElement('div');d.style.color=dark;document.body.appendChild(d);
+        darkRGB=parseRGB(getComputedStyle(d).color);d.remove();
+      }
+      var lightRGB=parseRGB(light);
+      if(!lightRGB){
+        var d2=document.createElement('div');d2.style.color=light;document.body.appendChild(d2);
+        lightRGB=parseRGB(getComputedStyle(d2).color);d2.remove();
+      }
+      if(!darkRGB)darkRGB={r:26,g:26,b:26};
+      if(!lightRGB)lightRGB={r:255,g:255,b:255};
+
+      var mainEl=document.querySelector('main')||document.body;
+      var els=mainEl.querySelectorAll('h1,h2,h3,h4,h5,h6,p,span,a,button,li,label,td,th,dt,dd,figcaption');
+      var fixed=0;
+      for(var i=0;i<els.length;i++){
+        var el=els[i];
+        if(el.closest('nav,header,.zappy-header,footer,.zappy-footer'))continue;
+        var txt=el.textContent?el.textContent.trim():'';
+        if(!txt)continue;
+        var r=el.getBoundingClientRect();
+        if(r.width===0||r.height===0)continue;
+        var cs=getComputedStyle(el);
+        var col=resolveVar(cs.color);
+        var bg=effectiveBg(el);
+        var cRGB=parseRGB(col),bRGB=parseRGB(bg);
+        if(!cRGB||!bRGB)continue;
+        var ratio=contrast(cRGB,bRGB);
+        if(ratio<4.5){
+          var darkC=contrast(darkRGB,bRGB);
+          var lightC=contrast(lightRGB,bRGB);
+          var best=darkC>=lightC?dark:light;
+          var bestRatio=Math.max(darkC,lightC);
+          if(bestRatio<4.5){
+            var blackC=contrast({r:0,g:0,b:0},bRGB);
+            var whiteC=contrast({r:255,g:255,b:255},bRGB);
+            best=blackC>=whiteC?'#000000':'#ffffff';
+          }
+          el.style.setProperty('color',best,'important');
+          fixed++;
+        }
+      }
+      if(fixed>0)console.log('[Contrast Fix] Fixed '+fixed+' low-contrast elements');
+    }
+
+    if(document.readyState==='loading'){
+      document.addEventListener('DOMContentLoaded',fixContrast,{once:true});
+    } else {
+      fixContrast();
+    }
+  }catch(e){}
+})();
+/* END ZAPPY_RUNTIME_CONTRAST_FIX */
+
+// ZAPPY_CARD_IMAGE_BLEED
+(function(){
+  function run(){
+    var cards=document.querySelectorAll('article,[class*="card"],[class*="tile"]');
+    cards.forEach(function(card){
+      var cs=window.getComputedStyle(card);
+      var padL=parseFloat(cs.paddingLeft)||0;
+      var padR=parseFloat(cs.paddingRight)||0;
+      var padT=parseFloat(cs.paddingTop)||0;
+      if(padL<8&&padR<8)return;
+      var fv=null;
+      for(var i=0;i<card.children.length;i++){
+        var ch=card.children[i];
+        var chCs=window.getComputedStyle(ch);
+        if(chCs.display!=='none'&&chCs.visibility!=='hidden'&&ch.getBoundingClientRect().height>0){fv=ch;break;}
+      }
+      if(!fv)return;
+      if(fv.getAttribute('data-zappy-mobile-bleed'))return;
+      if(fv.querySelector('[data-zappy-zoom-wrapper]'))return;
+      var img=fv.querySelector('img');
+      if(!img)return;
+      var ir=img.getBoundingClientRect();
+      var cw=card.clientWidth-padL-padR;
+      if(cw<=0||ir.width<cw*0.8)return;
+      fv.style.setProperty('margin-left','-'+padL+'px','important');
+      fv.style.setProperty('margin-right','-'+padR+'px','important');
+      if(padT>0)fv.style.setProperty('margin-top','-'+padT+'px','important');
+      fv.style.setProperty('width','calc(100% + '+(padL+padR)+'px)','important');
+      fv.style.setProperty('max-width','calc(100% + '+(padL+padR)+'px)','important');
+      fv.setAttribute('data-zappy-mobile-bleed','1');
+      if(window.getComputedStyle(img).objectFit==='contain'){img.style.setProperty('object-fit','cover','important');}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(run,200);});}
+  else{setTimeout(run,200);}
+})();
 
 
 /* ZAPPY_NAV_SCROLL_PADDING */
@@ -2995,11 +3249,13 @@ document.addEventListener('DOMContentLoaded', function() {
         var runtimeLang = String(window.zappyI18n.getCurrentLanguage() || '').split('-')[0].toLowerCase();
         if (runtimeLang) return runtimeLang;
       }
+      var htmlLang = String(document.documentElement.lang || '').split('-')[0].toLowerCase();
+      if (htmlLang) return htmlLang;
       try {
         var storedLang = String(localStorage.getItem('zappy_lang') || localStorage.getItem('zappy-language') || localStorage.getItem('selectedLanguage') || '').split('-')[0].toLowerCase();
         if (storedLang) return storedLang;
       } catch (e) {}
-      return String(document.documentElement.lang || 'en').split('-')[0].toLowerCase();
+      return 'en';
     }
 
     function getText(key) {
@@ -3128,16 +3384,12 @@ document.addEventListener('DOMContentLoaded', function() {
         var runtimeLang = String(window.zappyI18n.getCurrentLanguage() || '').split('-')[0].toLowerCase();
         if (runtimeLang) return runtimeLang;
       }
+      var htmlLang = String(document.documentElement.lang || '').split('-')[0].toLowerCase();
+      if (htmlLang) return htmlLang;
       try {
         var storedLang = String(localStorage.getItem('zappy_lang') || '').split('-')[0].toLowerCase();
         if (storedLang) return storedLang;
       } catch (e) {}
-      var htmlLang = String(document.documentElement.lang || '').split('-')[0].toLowerCase();
-      if (htmlLang) return htmlLang;
-      var checkoutTitle = document.querySelector('.checkout-section h1, h1');
-      if (checkoutTitle && /checkout/i.test(checkoutTitle.textContent || '')) {
-        return 'en';
-      }
       return 'en';
     }
 
@@ -3415,16 +3667,17 @@ document.addEventListener('DOMContentLoaded', function() {
         return String(window.zappyI18n.language).split('-')[0].toLowerCase();
       }
     } catch (e) {}
-    try {
-      var stored = localStorage.getItem('zappy_lang') || localStorage.getItem('zappy-language') || localStorage.getItem('selectedLanguage') || localStorage.getItem('language');
-      if (stored) return String(stored).split('-')[0].toLowerCase();
-    } catch (e) {}
     var queryLang = getQueryLang();
     if (queryLang) return queryLang.toLowerCase();
     var pathLang = getPathLang();
     if (pathLang) return pathLang.toLowerCase();
     var htmlLang = document.documentElement.getAttribute('lang');
-    return htmlLang ? htmlLang.split('-')[0].toLowerCase() : '';
+    if (htmlLang) return htmlLang.split('-')[0].toLowerCase();
+    try {
+      var stored = localStorage.getItem('zappy_lang') || localStorage.getItem('zappy-language') || localStorage.getItem('selectedLanguage') || localStorage.getItem('language');
+      if (stored) return String(stored).split('-')[0].toLowerCase();
+    } catch (e) {}
+    return '';
   }
 
   function getDefaultLang() {
@@ -3637,4 +3890,896 @@ document.addEventListener('DOMContentLoaded', function() {
   }).observe(document.documentElement, { childList: true, subtree: true });
   setTimeout(patch, 250);
   setTimeout(patch, 1500);
+})();
+
+/* Cookie Consent */
+
+// Helper function to check cookie consent
+function hasConsentFor(category) {
+  if (typeof window.CookieConsent === 'undefined') {
+    return false; // Default to no consent if cookie consent not loaded
+  }
+  
+  return window.CookieConsent.validConsent(category);
+}
+
+// Helper function to execute code only with consent
+function withConsent(category, callback) {
+  if (hasConsentFor(category)) {
+    callback();
+  } else {
+    console.log(`[WARNING] Skipping ${category} code - no user consent`);
+  }
+}
+
+// Cookie Consent Initialization (multi-language) /* __ccConfigCustomBannerV1 */
+
+(function() {
+  'use strict';
+  
+  var initAttempts = 0;
+  var maxAttempts = 50;
+  
+  function initCookieConsent() {
+    initAttempts++;
+    
+    if (typeof window.CookieConsent === 'undefined') {
+      if (initAttempts < maxAttempts) {
+        setTimeout(initCookieConsent, 100);
+      }
+      return;
+    }
+
+    if (window.__zappyCookieConsentInitialized) {
+      return;
+    }
+    window.__zappyCookieConsentInitialized = true;
+
+    var cc = window.CookieConsent;
+    
+    try {
+      var __ccConfig = {
+  "autoShow": false,
+  "mode": "opt-in",
+  "revision": 0,
+  "categories": {
+    "necessary": {
+      "enabled": true,
+      "readOnly": true
+    },
+    "analytics": {
+      "enabled": false,
+      "readOnly": false,
+      "autoClear": {
+        "cookies": [
+          {
+            "name": "_ga"
+          },
+          {
+            "name": "_ga_*"
+          },
+          {
+            "name": "_gid"
+          },
+          {
+            "name": "_gat"
+          }
+        ]
+      }
+    },
+    "marketing": {
+      "enabled": false,
+      "readOnly": false,
+      "autoClear": {
+        "cookies": [
+          {
+            "name": "_fbp"
+          },
+          {
+            "name": "_fbc"
+          },
+          {
+            "name": "fr"
+          }
+        ]
+      }
+    }
+  },
+  "language": {
+    "default": "he",
+    "translations": {
+      "en": {
+        "consentModal": {
+          "description": "We use cookies to improve your experience and analyze site usage.",
+          "acceptAllBtn": "Accept",
+          "showPreferencesBtn": "Customize"
+        },
+        "preferencesModal": {
+          "title": "Cookie Preferences",
+          "acceptAllBtn": "Accept",
+          "acceptNecessaryBtn": "Accept Necessary",
+          "savePreferencesBtn": "Save Preferences",
+          "closeIconLabel": "Close",
+          "sections": [
+            {
+              "title": "Essential Cookies",
+              "description": "These cookies are necessary for the website to function and cannot be disabled.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Analytics Cookies",
+              "description": "These cookies help us understand how visitors interact with our website.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Marketing Cookies",
+              "description": "These cookies are used to deliver personalized advertisements.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "es": {
+        "consentModal": {
+          "description": "Usamos cookies para mejorar tu experiencia y analizar el uso del sitio.",
+          "acceptAllBtn": "Aceptar",
+          "showPreferencesBtn": "Personalizar"
+        },
+        "preferencesModal": {
+          "title": "Preferencias de Cookies",
+          "acceptAllBtn": "Aceptar",
+          "acceptNecessaryBtn": "Solo Necesarias",
+          "savePreferencesBtn": "Guardar Preferencias",
+          "closeIconLabel": "Cerrar",
+          "sections": [
+            {
+              "title": "Cookies Esenciales",
+              "description": "Estas cookies son necesarias para que el sitio web funcione y no se pueden desactivar.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Cookies de Análisis",
+              "description": "Estas cookies nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Cookies de Marketing",
+              "description": "Estas cookies se utilizan para entregar anuncios personalizados.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "fr": {
+        "consentModal": {
+          "description": "Nous utilisons des cookies pour améliorer votre expérience et analyser l'utilisation du site.",
+          "acceptAllBtn": "Accepter",
+          "showPreferencesBtn": "Personnaliser"
+        },
+        "preferencesModal": {
+          "title": "Préférences des Cookies",
+          "acceptAllBtn": "Accepter",
+          "acceptNecessaryBtn": "Accepter les Nécessaires",
+          "savePreferencesBtn": "Enregistrer les Préférences",
+          "closeIconLabel": "Fermer",
+          "sections": [
+            {
+              "title": "Cookies Essentiels",
+              "description": "Ces cookies sont nécessaires au fonctionnement du site web et ne peuvent pas être désactivés.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Cookies Analytiques",
+              "description": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Cookies Marketing",
+              "description": "Ces cookies sont utilisés pour diffuser des publicités personnalisées.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "de": {
+        "consentModal": {
+          "description": "Wir verwenden Cookies, um Ihr Erlebnis zu verbessern und die Nutzung der Website zu analysieren.",
+          "acceptAllBtn": "Akzeptieren",
+          "showPreferencesBtn": "Anpassen"
+        },
+        "preferencesModal": {
+          "title": "Cookie-Einstellungen",
+          "acceptAllBtn": "Akzeptieren",
+          "acceptNecessaryBtn": "Nur Notwendige",
+          "savePreferencesBtn": "Einstellungen speichern",
+          "closeIconLabel": "Schließen",
+          "sections": [
+            {
+              "title": "Notwendige Cookies",
+              "description": "Diese Cookies sind für die Funktion der Website erforderlich und können nicht deaktiviert werden.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Analyse-Cookies",
+              "description": "Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Marketing-Cookies",
+              "description": "Diese Cookies werden verwendet, um personalisierte Werbung zu liefern.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "it": {
+        "consentModal": {
+          "description": "Utilizziamo i cookie per migliorare la tua esperienza e analizzare l'utilizzo del sito.",
+          "acceptAllBtn": "Accetta",
+          "showPreferencesBtn": "Personalizza"
+        },
+        "preferencesModal": {
+          "title": "Preferenze Cookie",
+          "acceptAllBtn": "Accetta",
+          "acceptNecessaryBtn": "Solo Necessari",
+          "savePreferencesBtn": "Salva Preferenze",
+          "closeIconLabel": "Chiudi",
+          "sections": [
+            {
+              "title": "Cookie Essenziali",
+              "description": "Questi cookie sono necessari per il funzionamento del sito web e non possono essere disattivati.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Cookie Analitici",
+              "description": "Questi cookie ci aiutano a capire come i visitatori interagiscono con il nostro sito web.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Cookie di Marketing",
+              "description": "Questi cookie vengono utilizzati per fornire pubblicità personalizzate.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "pt": {
+        "consentModal": {
+          "description": "Usamos cookies para melhorar sua experiência e analisar o uso do site.",
+          "acceptAllBtn": "Aceitar",
+          "showPreferencesBtn": "Personalizar"
+        },
+        "preferencesModal": {
+          "title": "Preferências de Cookies",
+          "acceptAllBtn": "Aceitar",
+          "acceptNecessaryBtn": "Apenas Necessários",
+          "savePreferencesBtn": "Salvar Preferências",
+          "closeIconLabel": "Fechar",
+          "sections": [
+            {
+              "title": "Cookies Essenciais",
+              "description": "Estes cookies são necessários para o funcionamento do site e não podem ser desativados.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Cookies Analíticos",
+              "description": "Estes cookies nos ajudam a entender como os visitantes interagem com nosso site.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Cookies de Marketing",
+              "description": "Estes cookies são usados para exibir anúncios personalizados.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "nl": {
+        "consentModal": {
+          "description": "Wij gebruiken cookies om uw ervaring te verbeteren en het sitegebruik te analyseren.",
+          "acceptAllBtn": "Accepteren",
+          "showPreferencesBtn": "Aanpassen"
+        },
+        "preferencesModal": {
+          "title": "Cookie-voorkeuren",
+          "acceptAllBtn": "Accepteren",
+          "acceptNecessaryBtn": "Alleen noodzakelijke",
+          "savePreferencesBtn": "Voorkeuren opslaan",
+          "closeIconLabel": "Sluiten",
+          "sections": [
+            {
+              "title": "Noodzakelijke Cookies",
+              "description": "Deze cookies zijn nodig voor het functioneren van de website en kunnen niet worden uitgeschakeld.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Analytische Cookies",
+              "description": "Deze cookies helpen ons te begrijpen hoe bezoekers onze website gebruiken.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Marketing Cookies",
+              "description": "Deze cookies worden gebruikt om gepersonaliseerde advertenties te tonen.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "he": {
+        "consentModal": {
+          "description": "אנחנו משתמשים בעוגיות כדי לשפר את החוויה שלך ולנתח שימוש באתר.",
+          "acceptAllBtn": "אישור",
+          "showPreferencesBtn": "התאמה אישית"
+        },
+        "preferencesModal": {
+          "title": "העדפות עוגיות",
+          "acceptAllBtn": "אישור",
+          "acceptNecessaryBtn": "רק הכרחי",
+          "savePreferencesBtn": "שמור העדפות",
+          "closeIconLabel": "סגור",
+          "sections": [
+            {
+              "title": "עוגיות חיוניות",
+              "description": "עוגיות אלה הכרחיות לתפקוד האתר ולא ניתן להשבית אותן.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "עוגיות ניתוח",
+              "description": "עוגיות אלה עוזרות לנו להבין איך המבקרים מתקשרים עם האתר שלנו.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "עוגיות שיווקיות",
+              "description": "עוגיות אלה משמשות להצגת פרסומות מותאמות אישית.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "ar": {
+        "consentModal": {
+          "description": "نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتحليل استخدام الموقع.",
+          "acceptAllBtn": "قبول",
+          "showPreferencesBtn": "تخصيص"
+        },
+        "preferencesModal": {
+          "title": "تفضيلات ملفات تعريف الارتباط",
+          "acceptAllBtn": "قبول",
+          "acceptNecessaryBtn": "الضرورية فقط",
+          "savePreferencesBtn": "حفظ التفضيلات",
+          "closeIconLabel": "إغلاق",
+          "sections": [
+            {
+              "title": "ملفات تعريف الارتباط الأساسية",
+              "description": "هذه الملفات ضرورية لعمل الموقع ولا يمكن تعطيلها.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "ملفات تعريف الارتباط التحليلية",
+              "description": "تساعدنا هذه الملفات في فهم كيفية تفاعل الزوار مع موقعنا.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "ملفات تعريف الارتباط التسويقية",
+              "description": "تُستخدم هذه الملفات لعرض إعلانات مخصصة.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "tr": {
+        "consentModal": {
+          "description": "Deneyiminizi geliştirmek ve site kullanımını analiz etmek için çerezler kullanırız.",
+          "acceptAllBtn": "Kabul Et",
+          "showPreferencesBtn": "Özelleştir"
+        },
+        "preferencesModal": {
+          "title": "Çerez Tercihleri",
+          "acceptAllBtn": "Kabul Et",
+          "acceptNecessaryBtn": "Sadece Gerekli",
+          "savePreferencesBtn": "Tercihleri Kaydet",
+          "closeIconLabel": "Kapat",
+          "sections": [
+            {
+              "title": "Zorunlu Çerezler",
+              "description": "Bu çerezler web sitesinin çalışması için gereklidir ve devre dışı bırakılamaz.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Analiz Çerezleri",
+              "description": "Bu çerezler, ziyaretçilerin web sitemizle nasıl etkileşime girdiğini anlamamıza yardımcı olur.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Pazarlama Çerezleri",
+              "description": "Bu çerezler kişiselleştirilmiş reklamlar sunmak için kullanılır.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "ru": {
+        "consentModal": {
+          "description": "Мы используем файлы cookie для улучшения вашего опыта и анализа использования сайта.",
+          "acceptAllBtn": "Принять",
+          "showPreferencesBtn": "Настроить"
+        },
+        "preferencesModal": {
+          "title": "Настройки cookie",
+          "acceptAllBtn": "Принять",
+          "acceptNecessaryBtn": "Только необходимые",
+          "savePreferencesBtn": "Сохранить настройки",
+          "closeIconLabel": "Закрыть",
+          "sections": [
+            {
+              "title": "Необходимые cookie",
+              "description": "Эти файлы cookie необходимы для работы сайта и не могут быть отключены.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Аналитические cookie",
+              "description": "Эти файлы cookie помогают нам понять, как посетители взаимодействуют с нашим сайтом.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Маркетинговые cookie",
+              "description": "Эти файлы cookie используются для показа персонализированной рекламы.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "zh": {
+        "consentModal": {
+          "description": "我们使用 Cookie 来改善您的体验并分析网站使用情况。",
+          "acceptAllBtn": "接受",
+          "showPreferencesBtn": "自定义"
+        },
+        "preferencesModal": {
+          "title": "Cookie 偏好设置",
+          "acceptAllBtn": "接受",
+          "acceptNecessaryBtn": "仅接受必要",
+          "savePreferencesBtn": "保存偏好",
+          "closeIconLabel": "关闭",
+          "sections": [
+            {
+              "title": "必要 Cookie",
+              "description": "这些 Cookie 是网站正常运行所必需的，无法禁用。",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "分析 Cookie",
+              "description": "这些 Cookie 帮助我们了解访问者如何与我们的网站互动。",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "营销 Cookie",
+              "description": "这些 Cookie 用于投放个性化广告。",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "ja": {
+        "consentModal": {
+          "description": "お客様の体験向上とサイト利用状況の分析のためにCookieを使用しています。",
+          "acceptAllBtn": "許可する",
+          "showPreferencesBtn": "カスタマイズ"
+        },
+        "preferencesModal": {
+          "title": "Cookie設定",
+          "acceptAllBtn": "許可する",
+          "acceptNecessaryBtn": "必要なもののみ",
+          "savePreferencesBtn": "設定を保存",
+          "closeIconLabel": "閉じる",
+          "sections": [
+            {
+              "title": "必要なCookie",
+              "description": "これらのCookieはウェブサイトの機能に必要であり、無効にすることはできません。",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "分析Cookie",
+              "description": "これらのCookieは、訪問者がウェブサイトとどのように対話するかを理解するのに役立ちます。",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "マーケティングCookie",
+              "description": "これらのCookieはパーソナライズされた広告を配信するために使用されます。",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "ko": {
+        "consentModal": {
+          "description": "경험 향상과 사이트 사용 분석을 위해 쿠키를 사용합니다.",
+          "acceptAllBtn": "수락",
+          "showPreferencesBtn": "사용자 지정"
+        },
+        "preferencesModal": {
+          "title": "쿠키 설정",
+          "acceptAllBtn": "수락",
+          "acceptNecessaryBtn": "필수만 수락",
+          "savePreferencesBtn": "설정 저장",
+          "closeIconLabel": "닫기",
+          "sections": [
+            {
+              "title": "필수 쿠키",
+              "description": "이 쿠키는 웹사이트 작동에 필요하며 비활성화할 수 없습니다.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "분석 쿠키",
+              "description": "이 쿠키는 방문자가 웹사이트와 어떻게 상호작용하는지 이해하는 데 도움이 됩니다.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "마케팅 쿠키",
+              "description": "이 쿠키는 맞춤형 광고를 제공하는 데 사용됩니다.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "pl": {
+        "consentModal": {
+          "description": "Używamy plików cookie, aby poprawić Twoje wrażenia i analizować korzystanie z witryny.",
+          "acceptAllBtn": "Akceptuję",
+          "showPreferencesBtn": "Dostosuj"
+        },
+        "preferencesModal": {
+          "title": "Preferencje cookie",
+          "acceptAllBtn": "Akceptuję",
+          "acceptNecessaryBtn": "Tylko niezbędne",
+          "savePreferencesBtn": "Zapisz preferencje",
+          "closeIconLabel": "Zamknij",
+          "sections": [
+            {
+              "title": "Niezbędne pliki cookie",
+              "description": "Te pliki cookie są niezbędne do działania strony i nie można ich wyłączyć.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Analityczne pliki cookie",
+              "description": "Te pliki cookie pomagają nam zrozumieć, w jaki sposób odwiedzający korzystają z naszej strony.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Marketingowe pliki cookie",
+              "description": "Te pliki cookie służą do wyświetlania spersonalizowanych reklam.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "uk": {
+        "consentModal": {
+          "description": "Ми використовуємо файли cookie для покращення вашого досвіду та аналізу використання сайту.",
+          "acceptAllBtn": "Прийняти",
+          "showPreferencesBtn": "Налаштувати"
+        },
+        "preferencesModal": {
+          "title": "Налаштування cookie",
+          "acceptAllBtn": "Прийняти",
+          "acceptNecessaryBtn": "Лише необхідні",
+          "savePreferencesBtn": "Зберегти налаштування",
+          "closeIconLabel": "Закрити",
+          "sections": [
+            {
+              "title": "Необхідні cookie",
+              "description": "Ці файли cookie необхідні для роботи сайту і не можуть бути вимкнені.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Аналітичні cookie",
+              "description": "Ці файли cookie допомагають нам зрозуміти, як відвідувачі взаємодіють з нашим сайтом.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Маркетингові cookie",
+              "description": "Ці файли cookie використовуються для показу персоналізованої реклами.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "ro": {
+        "consentModal": {
+          "description": "Folosim cookie-uri pentru a vă îmbunătăți experiența și a analiza utilizarea site-ului.",
+          "acceptAllBtn": "Acceptă",
+          "showPreferencesBtn": "Personalizează"
+        },
+        "preferencesModal": {
+          "title": "Preferințe cookie",
+          "acceptAllBtn": "Acceptă",
+          "acceptNecessaryBtn": "Doar necesare",
+          "savePreferencesBtn": "Salvează preferințele",
+          "closeIconLabel": "Închide",
+          "sections": [
+            {
+              "title": "Cookie-uri esențiale",
+              "description": "Aceste cookie-uri sunt necesare pentru funcționarea site-ului și nu pot fi dezactivate.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Cookie-uri analitice",
+              "description": "Aceste cookie-uri ne ajută să înțelegem cum interacționează vizitatorii cu site-ul nostru.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Cookie-uri de marketing",
+              "description": "Aceste cookie-uri sunt folosite pentru a afișa reclame personalizate.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      },
+      "bg": {
+        "consentModal": {
+          "description": "Използваме бисквитки, за да подобрим изживяването ви и да анализираме използването на сайта.",
+          "acceptAllBtn": "Приемам",
+          "showPreferencesBtn": "Персонализиране"
+        },
+        "preferencesModal": {
+          "title": "Настройки за бисквитки",
+          "acceptAllBtn": "Приемам",
+          "acceptNecessaryBtn": "Само необходимите",
+          "savePreferencesBtn": "Запазване на предпочитанията",
+          "closeIconLabel": "Затвори",
+          "sections": [
+            {
+              "title": "Необходими бисквитки",
+              "description": "Тези бисквитки са необходими за функционирането на уебсайта и не могат да бъдат деактивирани.",
+              "linkedCategory": "necessary"
+            },
+            {
+              "title": "Аналитични бисквитки",
+              "description": "Тези бисквитки ни помагат да разберем как посетителите взаимодействат с нашия уебсайт.",
+              "linkedCategory": "analytics"
+            },
+            {
+              "title": "Маркетингови бисквитки",
+              "description": "Тези бисквитки се използват за показване на персонализирани реклами.",
+              "linkedCategory": "marketing"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "guiOptions": {
+    "consentModal": {
+      "layout": "bar inline",
+      "position": "bottom",
+      "equalWeightButtons": false,
+      "flipButtons": false
+    },
+    "preferencesModal": {
+      "layout": "box",
+      "equalWeightButtons": false,
+      "flipButtons": false
+    }
+  }
+};
+      var __ccCloseLabels = {"en":"Close","es":"Cerrar","fr":"Fermer","de":"Schließen","it":"Chiudi","pt":"Fechar","nl":"Sluiten","he":"סגור","ar":"إغلاق","tr":"Kapat","ru":"Закрыть","zh":"关闭","ja":"閉じる","ko":"닫기","pl":"Zamknij","uk":"Закрити","ro":"Închide","bg":"Затвори"};
+
+      // Detect the current page language and override the build-time default.
+      // Published multi-language sites set <html lang="…"> per URL prefix;
+      // preview pages may store the active language on zappyI18n.
+      var pageLang = (document.documentElement.getAttribute('lang') || '').split('-')[0].toLowerCase();
+      if (!pageLang && typeof zappyI18n !== 'undefined' && zappyI18n.language) {
+        pageLang = String(zappyI18n.language).split('-')[0].toLowerCase();
+      }
+      if (pageLang && __ccConfig.language.translations[pageLang]) {
+        __ccConfig.language.default = pageLang;
+      }
+
+      function getActiveLanguage() {
+        var lang = (document.documentElement.getAttribute('lang') || '').split('-')[0].toLowerCase();
+        if (!lang && typeof zappyI18n !== 'undefined' && zappyI18n.language) {
+          lang = String(zappyI18n.language).split('-')[0].toLowerCase();
+        }
+        if (!lang || !__ccConfig.language.translations[lang]) {
+          lang = __ccConfig.language.default || 'en';
+        }
+        return __ccConfig.language.translations[lang] ? lang : 'en';
+      }
+
+      function getConsentText() {
+        var lang = getActiveLanguage();
+        var translations = __ccConfig.language.translations || {};
+        var current = translations[lang] || translations.en || {};
+        var consent = current.consentModal || {};
+        var labels = __ccCloseLabels || {};
+        return {
+          description: consent.description || '',
+          accept: consent.acceptAllBtn || 'Accept',
+          customize: consent.showPreferencesBtn || 'Customize',
+          close: labels[lang] || labels.en || 'Close'
+        };
+      }
+
+      function removeCustomBanner() {
+        var banner = document.getElementById('zappy-cookie-banner');
+        if (banner && banner.parentNode) {
+          banner.parentNode.removeChild(banner);
+        }
+        document.documentElement.classList.remove('zappy-cookie-banner-visible');
+      }
+
+      function updateCustomBannerText() {
+        var banner = document.getElementById('zappy-cookie-banner');
+        if (!banner) return;
+        var text = getConsentText();
+        var desc = banner.querySelector('[data-zappy-cookie-description]');
+        var accept = banner.querySelector('[data-zappy-cookie-accept]');
+        var customize = banner.querySelector('[data-zappy-cookie-customize]');
+        var close = banner.querySelector('[data-zappy-cookie-close]');
+        banner.setAttribute('aria-label', text.description || text.close);
+        if (desc) desc.textContent = text.description;
+        if (accept) accept.textContent = text.accept;
+        if (customize) customize.textContent = text.customize;
+        if (close) close.setAttribute('aria-label', text.close);
+      }
+
+      // Google Consent Mode v2 integration
+      function updateGoogleConsentMode() {
+        if (typeof gtag !== 'function') {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){dataLayer.push(arguments);};
+        }
+        
+        var analyticsAccepted = cc.acceptedCategory('analytics');
+        var marketingAccepted = cc.acceptedCategory('marketing');
+        
+        gtag('consent', 'update', {
+          'analytics_storage': analyticsAccepted ? 'granted' : 'denied',
+          'ad_storage': marketingAccepted ? 'granted' : 'denied',
+          'ad_user_data': marketingAccepted ? 'granted' : 'denied',
+          'ad_personalization': marketingAccepted ? 'granted' : 'denied'
+        });
+      }
+
+      function acceptAndClose(categories) {
+        try { cc.acceptCategory(categories); } catch (_) {}
+        removeCustomBanner();
+        updateGoogleConsentMode();
+      }
+
+      function renderCustomBanner() {
+        try {
+          if (typeof cc.validConsent === 'function' && cc.validConsent()) {
+            removeCustomBanner();
+            return;
+          }
+          if (!document.body) {
+            setTimeout(renderCustomBanner, 50);
+            return;
+          }
+          var existing = document.getElementById('zappy-cookie-banner');
+          if (existing) {
+            updateCustomBannerText();
+            return;
+          }
+
+          var text = getConsentText();
+          var banner = document.createElement('div');
+          banner.id = 'zappy-cookie-banner';
+          banner.className = 'zappy-cookie-banner';
+          banner.setAttribute('role', 'region');
+          banner.setAttribute('aria-label', text.description || text.close);
+
+          var inner = document.createElement('div');
+          inner.className = 'zappy-cookie-banner__inner';
+
+          var description = document.createElement('p');
+          description.className = 'zappy-cookie-banner__text';
+          description.setAttribute('data-zappy-cookie-description', 'true');
+          description.textContent = text.description;
+
+          var actions = document.createElement('div');
+          actions.className = 'zappy-cookie-banner__actions';
+
+          var customizeBtn = document.createElement('button');
+          customizeBtn.type = 'button';
+          customizeBtn.className = 'zappy-cookie-banner__button zappy-cookie-banner__button--customize';
+          customizeBtn.setAttribute('data-zappy-cookie-customize', 'true');
+          customizeBtn.textContent = text.customize;
+          customizeBtn.addEventListener('click', function(ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            try { cc.showPreferences(); } catch (_) {}
+          });
+
+          var acceptBtn = document.createElement('button');
+          acceptBtn.type = 'button';
+          acceptBtn.className = 'zappy-cookie-banner__button zappy-cookie-banner__button--accept';
+          acceptBtn.setAttribute('data-zappy-cookie-accept', 'true');
+          acceptBtn.textContent = text.accept;
+          acceptBtn.addEventListener('click', function(ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            acceptAndClose('all');
+          });
+
+          var closeBtn = document.createElement('button');
+          closeBtn.type = 'button';
+          closeBtn.className = 'zappy-cookie-banner__close';
+          closeBtn.setAttribute('data-zappy-cookie-close', 'true');
+          closeBtn.setAttribute('aria-label', text.close);
+          closeBtn.textContent = '\u00D7';
+          closeBtn.addEventListener('click', function(ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            acceptAndClose([]);
+          });
+
+          actions.appendChild(customizeBtn);
+          actions.appendChild(acceptBtn);
+          inner.appendChild(description);
+          inner.appendChild(actions);
+          inner.appendChild(closeBtn);
+          banner.appendChild(inner);
+          document.body.appendChild(banner);
+          document.documentElement.classList.add('zappy-cookie-banner-visible');
+        } catch (_) {
+          // Defensive — never let the custom banner break the page.
+        }
+      }
+
+      function handleConsentResolved() {
+        removeCustomBanner();
+        updateGoogleConsentMode();
+      }
+
+      __ccConfig.onFirstConsent = handleConsentResolved;
+      __ccConfig.onConsent = handleConsentResolved;
+      __ccConfig.onChange = handleConsentResolved;
+
+      var runResult = cc.run(__ccConfig);
+      var afterRun = function() {
+        updateGoogleConsentMode();
+        if (!cc.validConsent || !cc.validConsent()) {
+          renderCustomBanner();
+        }
+      };
+      if (runResult && typeof runResult.then === 'function') {
+        runResult.then(afterRun).catch(afterRun);
+      } else {
+        setTimeout(afterRun, 0);
+      }
+
+      // Keep cookie consent in sync when the user switches language without
+      // a full navigation (preview / embedded-resources path).
+      if (typeof zappyI18n !== 'undefined' && typeof zappyI18n.onLanguageChange === 'function') {
+        zappyI18n.onLanguageChange(function(newLang) {
+          try {
+            if (__ccConfig.language.translations[newLang]) {
+              __ccConfig.language.default = newLang;
+              cc.setLanguage(newLang, true);
+              updateCustomBannerText();
+            }
+          } catch (_) {}
+        });
+      }
+    } catch (error) {
+      window.__zappyCookieConsentInitialized = false;
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCookieConsent);
+    setTimeout(initCookieConsent, 1000);
+  } else if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    initCookieConsent();
+  } else {
+    setTimeout(initCookieConsent, 500);
+  }
+  
+  if (typeof window !== 'undefined') {
+    if (window.addEventListener) {
+      window.addEventListener('load', initCookieConsent, { once: true });
+    }
+  }
 })();
