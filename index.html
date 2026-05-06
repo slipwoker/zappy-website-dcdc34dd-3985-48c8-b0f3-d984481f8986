@@ -750,7 +750,7 @@
       }
     </style>    <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EY9JJ9BZN4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -761,11 +761,37 @@
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-widget-visibility">
-      #mic-access-tool-general-button, .mic-access-tool-general-button,
-      #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
-      ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
-      #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
-        display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+      html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
+      html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
+      html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
+      html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="ltr"] ._access-icon,
+      html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
+      html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
+      @media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
+      @media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
+      @media (max-width: 768px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+        }
+      }
+      @media (min-width: 769px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+        }
       }
     </style>
 </head>
@@ -787,33 +813,33 @@
       
       <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט" data-element-type="button" data-element-id="btn-1770967430896-miyxbfglb" data-native-element="true">
         <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
         <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
       </button>
       
       <button class="phone-header-btn" aria-label="התקשר אלינו" data-element-type="button" data-element-id="btn-1770967430896-uhwetvz99" data-native-element="true">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
-      </button><button class="zappy-search-mobile-trigger" data-zappy-search-mobile-trigger aria-label="חיפוש">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button><button class="zappy-search-mobile-trigger" data-zappy-search-mobile-trigger="" aria-label="חיפוש">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
 </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/services">שרותים</a></li><li><a href="/articles" class="nav-link" data-nav-menu-item="true">מאמרים</a><ul class="sub-menu"><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/mortgage-and-relationships" class="nav-link">זוגיות ומשכנתא</a></li><li style="display: none !important;; display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/mortgage-gift-affidavit" class="nav-link">תצהיר מתנה במשכנתא</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/osek-patur-mortgage" class="nav-link">עסק פטור ומשכנתא</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/why-new-loan-for-consolidation" class="nav-link">איחוד הלוואות</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-appraisal-187365" class="nav-link">שמאות בהנחה</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/client-involvement-mortgage" class="nav-link">מעורבות במשכנתא</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/appraisal-eligibility-cost" class="nav-link">שמאות בזכאות</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/internal-refinance-repayment-ability" class="nav-link">מיחזור פנימי</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/internal-refinancing-negotiation" class="nav-link">מיחזור פנימי</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/mortgage-and-life" class="nav-link">משכנתא וחיים</a></li><li><a href="/articles/housing-eligibility-supporting-borrower" class="nav-link">לווה תומך בזכאות</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-waitlist-cancellation" class="nav-link">ביטול זכייה</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/employment-continuity" class="nav-link">רצף תעסוקתי</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-no-contract" class="nav-link">אי חתימה</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-unsure-signing" class="nav-link">בחירת דירה בספק</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-lottery-delay" class="nav-link">דחיית הגרלה</a></li><li><a href="/articles/signing-contract-at-selection" class="nav-link">חתימה בכנס</a></li></ul></li><li><a href="/podcast">פודקאסט</a></li><li><a href="/blog" class="nav-link" data-nav-menu-item="true">בלוג</a><ul class="sub-menu"></ul></li><li><a href="/testimonials" class="nav-link" data-nav-menu-item="true">לקוחות ממליצים</a></li><li><a href="/about" data-nav-menu-item="true">אודות</a></li><li><a href="/mortgage-calculators" class="nav-link">מחשבונים וכלים</a><ul class="sub-menu"><li><a href="/construction-index-calculator">מחשבון מדד תשומות הבנייה | משכנתא בפיג'מה</a></li><li><a href="/mortgage-mix-calculator">מחשבון משכנתא לבניית תמהיל | משכנתא בפיג'מה</a></li></ul></li><li><a href="/qa-hub" class="nav-link">שאלות ותשובות</a><ul class="sub-menu"></ul></li><li class="nav-cta-item-mobile"><a href="/contact-us">צור קשר</a></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/services">שרותים</a></li><li><a href="/articles" class="nav-link" data-nav-menu-item="true">מאמרים</a><ul class="sub-menu"><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/mortgage-and-relationships" class="nav-link">זוגיות ומשכנתא</a></li><li style="display: none !important;; display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/mortgage-gift-affidavit" class="nav-link">תצהיר מתנה במשכנתא</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/osek-patur-mortgage" class="nav-link">עסק פטור ומשכנתא</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/why-new-loan-for-consolidation" class="nav-link">איחוד הלוואות</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-appraisal-187365" class="nav-link">שמאות בהנחה</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/client-involvement-mortgage" class="nav-link">מעורבות במשכנתא</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/appraisal-eligibility-cost" class="nav-link">שמאות בזכאות</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/internal-refinance-repayment-ability" class="nav-link">מיחזור פנימי</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/internal-refinancing-negotiation" class="nav-link">מיחזור פנימי</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/mortgage-and-life" class="nav-link">משכנתא וחיים</a></li><li><a href="/articles/housing-eligibility-supporting-borrower" class="nav-link">לווה תומך בזכאות</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-waitlist-cancellation" class="nav-link">ביטול זכייה</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/employment-continuity" class="nav-link">רצף תעסוקתי</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-no-contract" class="nav-link">אי חתימה</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-unsure-signing" class="nav-link">בחירת דירה בספק</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-lottery-delay" class="nav-link">דחיית הגרלה</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/signing-contract-at-selection" class="nav-link">חתימה בכנס</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/dira-behanacha-contract-signing" class="nav-link">חתימת חוזה</a></li><li style="display: none !important;" class="zappy-hidden-menu-item"><a href="/articles/partial-mortgage-withdrawal" class="nav-link">משיכה חלקית</a></li><li><a href="/articles/equity-payment-timing" class="nav-link">תשלום הון</a></li></ul></li><li><a href="/podcast">פודקאסט</a></li><li><a href="/blog" class="nav-link" data-nav-menu-item="true">בלוג</a><ul class="sub-menu"></ul></li><li><a href="/testimonials" class="nav-link" data-nav-menu-item="true">לקוחות ממליצים</a></li><li><a href="/about" data-nav-menu-item="true">אודות</a></li><li><a href="/mortgage-calculators" class="nav-link">מחשבונים וכלים</a><ul class="sub-menu"><li><a href="/construction-index-calculator">מחשבון מדד תשומות הבנייה | משכנתא בפיג'מה</a></li><li><a href="/mortgage-mix-calculator">מחשבון משכנתא לבניית תמהיל | משכנתא בפיג'מה</a></li></ul></li><li><a href="/qa-hub" class="nav-link">שאלות ותשובות</a><ul class="sub-menu"></ul></li><li class="nav-cta-item-mobile"><a href="/contact-us">צור קשר</a></li></ul>
       
       
 
 
 
 <div class="nav-cta-container" style="display:flex;align-items:center;gap:8px;"><div class="zappy-search-container" id="zappy-search-container">
-  <button class="zappy-search-trigger" data-zappy-search-trigger aria-label="חיפוש">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+  <button class="zappy-search-trigger" data-zappy-search-trigger="" aria-label="חיפוש">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
   </button>
   <div class="zappy-search-expanded">
-    <svg class="zappy-search-exp-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <svg class="zappy-search-exp-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
     <input type="text" id="zappy-search-input" class="zappy-search-input" placeholder="חיפוש באתר..." autocomplete="off">
     <button class="zappy-search-close" aria-label="סגור חיפוש">×</button>
   </div>
@@ -828,7 +854,7 @@
   <div class="zappy-search-mobile-wrapper">
     <input type="text" id="zappy-search-mobile-input" class="zappy-search-mobile-input" placeholder="חיפוש באתר..." autocomplete="off">
     <button class="zappy-search-mobile-close" aria-label="סגור חיפוש">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
     </button>
   </div>
   <div id="zappy-search-mobile-results" class="zappy-search-mobile-results"></div>
@@ -1065,11 +1091,11 @@
     <div class="hero-content-wrapper">
       <div class="hero-icon-wrapper">✨</div>
       
-      <h1 class="hero-h1" style>משכנתא בפיג'מה<br>ייעוץ משכנתאות נוח ונגיש מהבית</h1>
+      <h1 class="hero-h1" style="color: rgb(26, 26, 26) !important;"><font color="#e6e68a">משכנתא בפיג'מה<br>ייעוץ משכנתאות נוח ונגיש מהבית</font></h1>
       
       
       
-      <p class="hero-description">קבלו ייעוץ משכנתאות מקצועי מהנוחות של הבית שלכם - בפיג'מה, עם קפה, בזמן שמתאים לכם</p>
+      <p class="hero-description" style="color: rgb(26, 26, 26) !important;"><b><font color="#e6e68a">קבלו ייעוץ משכנתאות מקצועי מהנוחות של הבית שלכם - בפיג'מה, עם קפה, בזמן שמתאים לכם</font></b></p>
       
       <p><a href="/contact-us" class="hero-cta-link">
         <span style="position: relative; z-index: 1;">אתם כבר בפיג'מה? יופי! השאירו פרטים</span>
@@ -1382,7 +1408,7 @@
       <div class="pijama-header">
         <div class="pijama-subtitle">הגישה שלנו</div>
         <h2 class="pijama-title">משכנתא בפיג'מה - מה זה אומר?</h2>
-        <p class="pijama-description" style>
+        <p class="pijama-description" style="">
           המוטו שלנו "משכנתא בפיג'מה" מסמל את הגישה הייחודית שלנו לשירות. אנחנו מבינים שהחיים שלכם עמוסים - עבודה, משפחה, התחייבויות. לכן אנחנו מגיעים אליכם או באמצעות שיחות ווידאו - בזמן שנוח לכם, במקום שנוח לכם. רוצים לקבל ייעוץ בערב אחרי שהילדים הלכו לישון? אין בעיה. מעדיפים פגישה בסוף השבוע? בשמחה. אתם לא צריכים לצאת מהבית.<br><br>אפילו אם אתם בפיג'מה - זה בסדר גמור! השירות שלנו בנוי על נוחות מקסימלית, זמינות גבוהה ותחושה ביתית שגורמת לכם להרגיש רגועים ובטוחים לאורך כל התהליך.<br><br>ואתם? בגדול - צריכים להגיע לחתום על המשכנתא המדויקת ביותר עבורכם!</p>
       </div>
       
@@ -1405,7 +1431,7 @@
           <p class="pijama-card-text">ייעוץ איכותי בלי לוותר על נוחות</p>
         </div>
         
-        <div class="pijama-card" data-grid-item-index="3" style>
+        <div class="pijama-card" data-grid-item-index="3" style="">
           <div class="pijama-card-icon">😊</div>
           <h3 class="pijama-card-title">אווירה נעימה</h3>
           <p class="pijama-card-text">תחושה ביתית ורגועה לאורך כל הדרך</p>
@@ -1724,7 +1750,7 @@
       <div class="service-card">
         <div class="service-number">1</div>
         <div class="service-image-wrapper">
-          <img alt="ייעוץ משכנתא לדירה ראשונה" src="/assets/service-service-1.webp" data-placeholder="service-1" data-context="Israeli mortgage consultant reviewing loan documents with first-time home buyers in bright office" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+          <img alt="ייעוץ משכנתא לדירה ראשונה" src="/assets/service-service-1.webp" data-placeholder="service-1" data-context="Israeli mortgage consultant reviewing loan documents with first-time home buyers in bright office" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
         </div>
         <div class="service-content">
           <h3 class="service-title">ייעוץ משכנתא לדירה ראשונה</h3>
@@ -1735,7 +1761,7 @@
       <div class="service-card">
         <div class="service-number">2</div>
         <div class="service-image-wrapper">
-          <img alt="Image placeholder" src="/assets/hero-hero-1-1767341615769-l01zrd.webp" data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+          <img alt="Image placeholder" src="/assets/hero-hero-1-1767341615769-l01zrd.webp" data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
         </div>
         <div class="service-content">
           <h3 class="service-title">משכנתא במחיר למשתכן / דירה בהנחה</h3>
@@ -1746,7 +1772,7 @@
       <div class="service-card">
         <div class="service-number">3</div>
         <div class="service-image-wrapper">
-          <img alt="מיחזור משכנתא ושיפור תנאים" src="/assets/service-service-2.webp" data-placeholder="service-2" data-context="Financial advisor analyzing mortgage refinancing options on computer screen with charts and graphs" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+          <img alt="מיחזור משכנתא ושיפור תנאים" src="/assets/service-service-2.webp" data-placeholder="service-2" data-context="Financial advisor analyzing mortgage refinancing options on computer screen with charts and graphs" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
         </div>
         <div class="service-content">
           <h3 class="service-title">מיחזור משכנתא ושיפור תנאים</h3>
@@ -1757,7 +1783,7 @@
       <div class="service-card">
         <div class="service-number">4</div>
         <div class="service-image-wrapper">
-          <img alt="ייעוץ משכנתא למשפרי דיור" src="/assets/service-service-3-1767353208410-nk1rnq.webp" data-placeholder="service-3" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+          <img alt="ייעוץ משכנתא למשפרי דיור" src="/assets/service-service-3-1767353208410-nk1rnq.webp" data-placeholder="service-3" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
         </div>
         <div class="service-content">
           <h3 class="service-title">ייעוץ משכנתא למשפרי דיור</h3>
@@ -1768,7 +1794,7 @@
       <div class="service-card">
         <div class="service-number">5</div>
         <div class="service-image-wrapper">
-          <img alt="Image placeholder" src="/assets/hero-hero-1-1767341878130-4joo94.webp" data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+          <img alt="Image placeholder" src="/assets/hero-hero-1-1767341878130-4joo94.webp" data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
         </div>
         <div class="service-content">
           <h3 class="service-title">איחוד הלוואות ויציאה מחובות</h3>
@@ -1779,7 +1805,7 @@
       <div class="service-card">
         <div class="service-number">6</div>
         <div class="service-image-wrapper">
-          <img alt="Image placeholder" src="/assets/hero-hero-1-1767342053706-2afalb.webp" data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+          <img alt="Image placeholder" src="/assets/hero-hero-1-1767342053706-2afalb.webp" data-placeholder="image-placeholder" data-context="Professional mortgage consultant meeting with home upgraders reviewing property documents and financial plans" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
         </div>
         <div class="service-content">
           <h3 class="service-title">משכנתא הפוכה בגיל השלישי</h3>
@@ -1791,7 +1817,7 @@
 
   <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; pointer-events: none; z-index: 5;">
     <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="display: block; width: 100%; height: 100%;">
-      <path d="M0,100 Q300,20 600,50 T1200,100 L1200,100 L0,100 Z" fill="#ffffff"/>
+      <path d="M0,100 Q300,20 600,50 T1200,100 L1200,100 L0,100 Z" fill="#ffffff"></path>
     </svg>
   </div>
 </section>
@@ -2124,7 +2150,7 @@
       <div class="service-img-bg" style="background-image: url('assets/service-service-7.webp'); background-size: cover; background-position: center;"></div>
       <div class="icon-wrapper">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
         </svg>
       </div>
       <div class="service-content-bold">
@@ -2137,7 +2163,7 @@
       <div class="service-img-bg" style="background-image: url('assets/service-service-8.webp'); background-size: cover; background-position: center;"></div>
       <div class="icon-wrapper">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
         </svg>
       </div>
       <div class="service-content-bold">
@@ -2150,7 +2176,7 @@
       <div class="service-img-bg" style="background-image: url('assets/service-service-9.webp'); background-size: cover; background-position: center;"></div>
       <div class="icon-wrapper">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
         </svg>
       </div>
       <div class="service-content-bold">
@@ -2163,7 +2189,7 @@
       <div class="service-img-bg" style="background-image: url('assets/service-service-10.webp'); background-size: cover; background-position: center;"></div>
       <div class="icon-wrapper">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
         </svg>
       </div>
       <div class="service-content-bold">
@@ -2281,7 +2307,7 @@
 </script>
     <div data-integration="accessibility:toolbar"></div>
 <button id="acc-trigger-btn" aria-label="כפתור נגישות" onclick="if(window.AccToolbar){AccToolbar.toggle()}else{var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js';document.head.appendChild(s);}">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 6c1.1 0 2 .9 2 2v4l1.5 3H16a1 1 0 0 1 0 2h-1.5l-1-2h-3l-1 2H8a1 1 0 0 1 0-2h.5L10 14v-4c0-1.1.9-2 2-2zm-4.5.5a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zm9 0a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 6c1.1 0 2 .9 2 2v4l1.5 3H16a1 1 0 0 1 0 2h-1.5l-1-2h-3l-1 2H8a1 1 0 0 1 0-2h.5L10 14v-4c0-1.1.9-2 2-2zm-4.5.5a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zm9 0a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1z"></path></svg>
 </button>
 
 
