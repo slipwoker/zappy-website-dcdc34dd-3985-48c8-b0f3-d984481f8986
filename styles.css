@@ -1383,11 +1383,6 @@ img, picture, figure {
 }
 
 /* Hide text nodes specifically */
-#mic-access-tool-general-button::before,
-#mic-access-tool-general-button::after {
-  content: none !important;
-  display: none !important;
-}
 
 /* Hover state - keep text hidden */
 #mic-access-tool-general-button:hover {
@@ -1501,73 +1496,19 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 /* TODO: Can be re-enabled in the future by removing display: none */
 /* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
 /* Target Mickidum accessibility button with high specificity */
-#mic-access-tool-general-button,
-.mic-access-tool-general-button,
-#mic-init-access-tool .mic-access-tool-general-button,
-#mic-init-access-tool #mic-access-tool-general-button,
-._access-icon {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Target Mickidum accessibility menu with high specificity */
-#mic-access-tool-box,
-.mic-access-tool-box,
-#mic-init-access-tool #mic-access-tool-box,
-div[id*="mic-access-tool-box"],
-._access-menu {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
-body.accessibility-widget-visible #mic-access-tool-general-button,
-body.accessibility-widget-visible .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-body.accessibility-widget-visible ._access-icon {
-  display: flex !important; /* Show button when visible class is added */
-}
 
-body.accessibility-widget-visible #mic-access-tool-box,
-body.accessibility-widget-visible .mic-access-tool-box,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-body.accessibility-widget-visible ._access-menu {
-  display: block !important; /* Show menu when visible class is added */
-}
 
 /* On mobile, ensure it stays hidden */
 @media (max-width: 768px) {
   /* Hide the accessibility button on mobile - higher specificity */
-  #mic-access-tool-general-button,
-  .mic-access-tool-general-button,
-  #mic-init-access-tool .mic-access-tool-general-button,
-  #mic-init-access-tool #mic-access-tool-general-button,
-  ._access-icon {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Hide the accessibility menu on mobile - higher specificity */
-  #mic-access-tool-box,
-  .mic-access-tool-box,
-  #mic-init-access-tool #mic-access-tool-box,
-  div[id*="mic-access-tool-box"],
-  ._access-menu {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Ensure mobile never shows widget even with keyboard shortcut */
-  body.accessibility-widget-visible #mic-access-tool-general-button,
-  body.accessibility-widget-visible .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-  body.accessibility-widget-visible ._access-icon,
-  body.accessibility-widget-visible #mic-access-tool-box,
-  body.accessibility-widget-visible .mic-access-tool-box,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-  body.accessibility-widget-visible ._access-menu {
-    display: none !important;
-  }
 }
 
 /* === AI CUSTOMIZATION ADDITIONS === */
@@ -3268,11 +3209,6 @@ img, picture, figure {
 }
 
 /* Hide text nodes specifically */
-#mic-access-tool-general-button::before,
-#mic-access-tool-general-button::after {
-  content: none !important;
-  display: none !important;
-}
 
 /* Hover state - keep text hidden */
 #mic-access-tool-general-button:hover {
@@ -3386,73 +3322,19 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 /* TODO: Can be re-enabled in the future by removing display: none */
 /* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
 /* Target Mickidum accessibility button with high specificity */
-#mic-access-tool-general-button,
-.mic-access-tool-general-button,
-#mic-init-access-tool .mic-access-tool-general-button,
-#mic-init-access-tool #mic-access-tool-general-button,
-._access-icon {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Target Mickidum accessibility menu with high specificity */
-#mic-access-tool-box,
-.mic-access-tool-box,
-#mic-init-access-tool #mic-access-tool-box,
-div[id*="mic-access-tool-box"],
-._access-menu {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
-body.accessibility-widget-visible #mic-access-tool-general-button,
-body.accessibility-widget-visible .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-body.accessibility-widget-visible ._access-icon {
-  display: flex !important; /* Show button when visible class is added */
-}
 
-body.accessibility-widget-visible #mic-access-tool-box,
-body.accessibility-widget-visible .mic-access-tool-box,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-body.accessibility-widget-visible ._access-menu {
-  display: block !important; /* Show menu when visible class is added */
-}
 
 /* On mobile, ensure it stays hidden */
 @media (max-width: 768px) {
   /* Hide the accessibility button on mobile - higher specificity */
-  #mic-access-tool-general-button,
-  .mic-access-tool-general-button,
-  #mic-init-access-tool .mic-access-tool-general-button,
-  #mic-init-access-tool #mic-access-tool-general-button,
-  ._access-icon {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Hide the accessibility menu on mobile - higher specificity */
-  #mic-access-tool-box,
-  .mic-access-tool-box,
-  #mic-init-access-tool #mic-access-tool-box,
-  div[id*="mic-access-tool-box"],
-  ._access-menu {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Ensure mobile never shows widget even with keyboard shortcut */
-  body.accessibility-widget-visible #mic-access-tool-general-button,
-  body.accessibility-widget-visible .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-  body.accessibility-widget-visible ._access-icon,
-  body.accessibility-widget-visible #mic-access-tool-box,
-  body.accessibility-widget-visible .mic-access-tool-box,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-  body.accessibility-widget-visible ._access-menu {
-    display: none !important;
-  }
 }
 
 /* === AI CUSTOMIZATION ADDITIONS === */
@@ -5203,11 +5085,6 @@ img, picture, figure {
 }
 
 /* Hide text nodes specifically */
-#mic-access-tool-general-button::before,
-#mic-access-tool-general-button::after {
-  content: none !important;
-  display: none !important;
-}
 
 /* Hover state - keep text hidden */
 #mic-access-tool-general-button:hover {
@@ -5321,73 +5198,19 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 /* TODO: Can be re-enabled in the future by removing display: none */
 /* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
 /* Target Mickidum accessibility button with high specificity */
-#mic-access-tool-general-button,
-.mic-access-tool-general-button,
-#mic-init-access-tool .mic-access-tool-general-button,
-#mic-init-access-tool #mic-access-tool-general-button,
-._access-icon {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Target Mickidum accessibility menu with high specificity */
-#mic-access-tool-box,
-.mic-access-tool-box,
-#mic-init-access-tool #mic-access-tool-box,
-div[id*="mic-access-tool-box"],
-._access-menu {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
-body.accessibility-widget-visible #mic-access-tool-general-button,
-body.accessibility-widget-visible .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-body.accessibility-widget-visible ._access-icon {
-  display: flex !important; /* Show button when visible class is added */
-}
 
-body.accessibility-widget-visible #mic-access-tool-box,
-body.accessibility-widget-visible .mic-access-tool-box,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-body.accessibility-widget-visible ._access-menu {
-  display: block !important; /* Show menu when visible class is added */
-}
 
 /* On mobile, ensure it stays hidden */
 @media (max-width: 768px) {
   /* Hide the accessibility button on mobile - higher specificity */
-  #mic-access-tool-general-button,
-  .mic-access-tool-general-button,
-  #mic-init-access-tool .mic-access-tool-general-button,
-  #mic-init-access-tool #mic-access-tool-general-button,
-  ._access-icon {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Hide the accessibility menu on mobile - higher specificity */
-  #mic-access-tool-box,
-  .mic-access-tool-box,
-  #mic-init-access-tool #mic-access-tool-box,
-  div[id*="mic-access-tool-box"],
-  ._access-menu {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Ensure mobile never shows widget even with keyboard shortcut */
-  body.accessibility-widget-visible #mic-access-tool-general-button,
-  body.accessibility-widget-visible .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-  body.accessibility-widget-visible ._access-icon,
-  body.accessibility-widget-visible #mic-access-tool-box,
-  body.accessibility-widget-visible .mic-access-tool-box,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-  body.accessibility-widget-visible ._access-menu {
-    display: none !important;
-  }
 }
 
 /* === AI CUSTOMIZATION ADDITIONS === */
@@ -7187,11 +7010,6 @@ img, picture, figure {
 }
 
 /* Hide text nodes specifically */
-#mic-access-tool-general-button::before,
-#mic-access-tool-general-button::after {
-  content: none !important;
-  display: none !important;
-}
 
 /* Hover state - keep text hidden */
 #mic-access-tool-general-button:hover {
@@ -7305,73 +7123,19 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 /* TODO: Can be re-enabled in the future by removing display: none */
 /* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
 /* Target Mickidum accessibility button with high specificity */
-#mic-access-tool-general-button,
-.mic-access-tool-general-button,
-#mic-init-access-tool .mic-access-tool-general-button,
-#mic-init-access-tool #mic-access-tool-general-button,
-._access-icon {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Target Mickidum accessibility menu with high specificity */
-#mic-access-tool-box,
-.mic-access-tool-box,
-#mic-init-access-tool #mic-access-tool-box,
-div[id*="mic-access-tool-box"],
-._access-menu {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
-body.accessibility-widget-visible #mic-access-tool-general-button,
-body.accessibility-widget-visible .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-body.accessibility-widget-visible ._access-icon {
-  display: flex !important; /* Show button when visible class is added */
-}
 
-body.accessibility-widget-visible #mic-access-tool-box,
-body.accessibility-widget-visible .mic-access-tool-box,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-body.accessibility-widget-visible ._access-menu {
-  display: block !important; /* Show menu when visible class is added */
-}
 
 /* On mobile, ensure it stays hidden */
 @media (max-width: 768px) {
   /* Hide the accessibility button on mobile - higher specificity */
-  #mic-access-tool-general-button,
-  .mic-access-tool-general-button,
-  #mic-init-access-tool .mic-access-tool-general-button,
-  #mic-init-access-tool #mic-access-tool-general-button,
-  ._access-icon {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Hide the accessibility menu on mobile - higher specificity */
-  #mic-access-tool-box,
-  .mic-access-tool-box,
-  #mic-init-access-tool #mic-access-tool-box,
-  div[id*="mic-access-tool-box"],
-  ._access-menu {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Ensure mobile never shows widget even with keyboard shortcut */
-  body.accessibility-widget-visible #mic-access-tool-general-button,
-  body.accessibility-widget-visible .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-  body.accessibility-widget-visible ._access-icon,
-  body.accessibility-widget-visible #mic-access-tool-box,
-  body.accessibility-widget-visible .mic-access-tool-box,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-  body.accessibility-widget-visible ._access-menu {
-    display: none !important;
-  }
 }
 
 /* === AI CUSTOMIZATION ADDITIONS === */
@@ -9150,11 +8914,6 @@ img, picture, figure {
 }
 
 /* Hide text nodes specifically */
-#mic-access-tool-general-button::before,
-#mic-access-tool-general-button::after {
-  content: none !important;
-  display: none !important;
-}
 
 /* Hover state - keep text hidden */
 #mic-access-tool-general-button:hover {
@@ -9268,73 +9027,19 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 /* TODO: Can be re-enabled in the future by removing display: none */
 /* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
 /* Target Mickidum accessibility button with high specificity */
-#mic-access-tool-general-button,
-.mic-access-tool-general-button,
-#mic-init-access-tool .mic-access-tool-general-button,
-#mic-init-access-tool #mic-access-tool-general-button,
-._access-icon {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Target Mickidum accessibility menu with high specificity */
-#mic-access-tool-box,
-.mic-access-tool-box,
-#mic-init-access-tool #mic-access-tool-box,
-div[id*="mic-access-tool-box"],
-._access-menu {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
-body.accessibility-widget-visible #mic-access-tool-general-button,
-body.accessibility-widget-visible .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-body.accessibility-widget-visible ._access-icon {
-  display: flex !important; /* Show button when visible class is added */
-}
 
-body.accessibility-widget-visible #mic-access-tool-box,
-body.accessibility-widget-visible .mic-access-tool-box,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-body.accessibility-widget-visible ._access-menu {
-  display: block !important; /* Show menu when visible class is added */
-}
 
 /* On mobile, ensure it stays hidden */
 @media (max-width: 768px) {
   /* Hide the accessibility button on mobile - higher specificity */
-  #mic-access-tool-general-button,
-  .mic-access-tool-general-button,
-  #mic-init-access-tool .mic-access-tool-general-button,
-  #mic-init-access-tool #mic-access-tool-general-button,
-  ._access-icon {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Hide the accessibility menu on mobile - higher specificity */
-  #mic-access-tool-box,
-  .mic-access-tool-box,
-  #mic-init-access-tool #mic-access-tool-box,
-  div[id*="mic-access-tool-box"],
-  ._access-menu {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Ensure mobile never shows widget even with keyboard shortcut */
-  body.accessibility-widget-visible #mic-access-tool-general-button,
-  body.accessibility-widget-visible .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-  body.accessibility-widget-visible ._access-icon,
-  body.accessibility-widget-visible #mic-access-tool-box,
-  body.accessibility-widget-visible .mic-access-tool-box,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-  body.accessibility-widget-visible ._access-menu {
-    display: none !important;
-  }
 }
 
 /* === AI CUSTOMIZATION ADDITIONS === */
@@ -11119,11 +10824,6 @@ img, picture, figure {
 }
 
 /* Hide text nodes specifically */
-#mic-access-tool-general-button::before,
-#mic-access-tool-general-button::after {
-  content: none !important;
-  display: none !important;
-}
 
 /* Hover state - keep text hidden */
 #mic-access-tool-general-button:hover {
@@ -11237,73 +10937,19 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 /* TODO: Can be re-enabled in the future by removing display: none */
 /* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
 /* Target Mickidum accessibility button with high specificity */
-#mic-access-tool-general-button,
-.mic-access-tool-general-button,
-#mic-init-access-tool .mic-access-tool-general-button,
-#mic-init-access-tool #mic-access-tool-general-button,
-._access-icon {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Target Mickidum accessibility menu with high specificity */
-#mic-access-tool-box,
-.mic-access-tool-box,
-#mic-init-access-tool #mic-access-tool-box,
-div[id*="mic-access-tool-box"],
-._access-menu {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
-body.accessibility-widget-visible #mic-access-tool-general-button,
-body.accessibility-widget-visible .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-body.accessibility-widget-visible ._access-icon {
-  display: flex !important; /* Show button when visible class is added */
-}
 
-body.accessibility-widget-visible #mic-access-tool-box,
-body.accessibility-widget-visible .mic-access-tool-box,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-body.accessibility-widget-visible ._access-menu {
-  display: block !important; /* Show menu when visible class is added */
-}
 
 /* On mobile, ensure it stays hidden */
 @media (max-width: 768px) {
   /* Hide the accessibility button on mobile - higher specificity */
-  #mic-access-tool-general-button,
-  .mic-access-tool-general-button,
-  #mic-init-access-tool .mic-access-tool-general-button,
-  #mic-init-access-tool #mic-access-tool-general-button,
-  ._access-icon {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Hide the accessibility menu on mobile - higher specificity */
-  #mic-access-tool-box,
-  .mic-access-tool-box,
-  #mic-init-access-tool #mic-access-tool-box,
-  div[id*="mic-access-tool-box"],
-  ._access-menu {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Ensure mobile never shows widget even with keyboard shortcut */
-  body.accessibility-widget-visible #mic-access-tool-general-button,
-  body.accessibility-widget-visible .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-  body.accessibility-widget-visible ._access-icon,
-  body.accessibility-widget-visible #mic-access-tool-box,
-  body.accessibility-widget-visible .mic-access-tool-box,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-  body.accessibility-widget-visible ._access-menu {
-    display: none !important;
-  }
 }
 
 /* === AI CUSTOMIZATION ADDITIONS === */
@@ -13062,11 +12708,6 @@ img, picture, figure {
 }
 
 /* Hide text nodes specifically */
-#mic-access-tool-general-button::before,
-#mic-access-tool-general-button::after {
-  content: none !important;
-  display: none !important;
-}
 
 /* Hover state - keep text hidden */
 #mic-access-tool-general-button:hover {
@@ -13180,73 +12821,19 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 /* TODO: Can be re-enabled in the future by removing display: none */
 /* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
 /* Target Mickidum accessibility button with high specificity */
-#mic-access-tool-general-button,
-.mic-access-tool-general-button,
-#mic-init-access-tool .mic-access-tool-general-button,
-#mic-init-access-tool #mic-access-tool-general-button,
-._access-icon {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Target Mickidum accessibility menu with high specificity */
-#mic-access-tool-box,
-.mic-access-tool-box,
-#mic-init-access-tool #mic-access-tool-box,
-div[id*="mic-access-tool-box"],
-._access-menu {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
-body.accessibility-widget-visible #mic-access-tool-general-button,
-body.accessibility-widget-visible .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-body.accessibility-widget-visible ._access-icon {
-  display: flex !important; /* Show button when visible class is added */
-}
 
-body.accessibility-widget-visible #mic-access-tool-box,
-body.accessibility-widget-visible .mic-access-tool-box,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-body.accessibility-widget-visible ._access-menu {
-  display: block !important; /* Show menu when visible class is added */
-}
 
 /* On mobile, ensure it stays hidden */
 @media (max-width: 768px) {
   /* Hide the accessibility button on mobile - higher specificity */
-  #mic-access-tool-general-button,
-  .mic-access-tool-general-button,
-  #mic-init-access-tool .mic-access-tool-general-button,
-  #mic-init-access-tool #mic-access-tool-general-button,
-  ._access-icon {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Hide the accessibility menu on mobile - higher specificity */
-  #mic-access-tool-box,
-  .mic-access-tool-box,
-  #mic-init-access-tool #mic-access-tool-box,
-  div[id*="mic-access-tool-box"],
-  ._access-menu {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Ensure mobile never shows widget even with keyboard shortcut */
-  body.accessibility-widget-visible #mic-access-tool-general-button,
-  body.accessibility-widget-visible .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-  body.accessibility-widget-visible ._access-icon,
-  body.accessibility-widget-visible #mic-access-tool-box,
-  body.accessibility-widget-visible .mic-access-tool-box,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-  body.accessibility-widget-visible ._access-menu {
-    display: none !important;
-  }
 }
 
 /* === AI CUSTOMIZATION ADDITIONS === */
@@ -15037,11 +14624,6 @@ img, picture, figure {
 }
 
 /* Hide text nodes specifically */
-#mic-access-tool-general-button::before,
-#mic-access-tool-general-button::after {
-  content: none !important;
-  display: none !important;
-}
 
 /* Hover state - keep text hidden */
 #mic-access-tool-general-button:hover {
@@ -15155,73 +14737,19 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 /* TODO: Can be re-enabled in the future by removing display: none */
 /* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
 /* Target Mickidum accessibility button with high specificity */
-#mic-access-tool-general-button,
-.mic-access-tool-general-button,
-#mic-init-access-tool .mic-access-tool-general-button,
-#mic-init-access-tool #mic-access-tool-general-button,
-._access-icon {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Target Mickidum accessibility menu with high specificity */
-#mic-access-tool-box,
-.mic-access-tool-box,
-#mic-init-access-tool #mic-access-tool-box,
-div[id*="mic-access-tool-box"],
-._access-menu {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
 
 /* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
-body.accessibility-widget-visible #mic-access-tool-general-button,
-body.accessibility-widget-visible .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-body.accessibility-widget-visible ._access-icon {
-  display: flex !important; /* Show button when visible class is added */
-}
 
-body.accessibility-widget-visible #mic-access-tool-box,
-body.accessibility-widget-visible .mic-access-tool-box,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-body.accessibility-widget-visible ._access-menu {
-  display: block !important; /* Show menu when visible class is added */
-}
 
 /* On mobile, ensure it stays hidden */
 @media (max-width: 768px) {
   /* Hide the accessibility button on mobile - higher specificity */
-  #mic-access-tool-general-button,
-  .mic-access-tool-general-button,
-  #mic-init-access-tool .mic-access-tool-general-button,
-  #mic-init-access-tool #mic-access-tool-general-button,
-  ._access-icon {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Hide the accessibility menu on mobile - higher specificity */
-  #mic-access-tool-box,
-  .mic-access-tool-box,
-  #mic-init-access-tool #mic-access-tool-box,
-  div[id*="mic-access-tool-box"],
-  ._access-menu {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
   
   /* Ensure mobile never shows widget even with keyboard shortcut */
-  body.accessibility-widget-visible #mic-access-tool-general-button,
-  body.accessibility-widget-visible .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-  body.accessibility-widget-visible ._access-icon,
-  body.accessibility-widget-visible #mic-access-tool-box,
-  body.accessibility-widget-visible .mic-access-tool-box,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-  body.accessibility-widget-visible ._access-menu {
-    display: none !important;
-  }
 }
 
 /* === AI CUSTOMIZATION ADDITIONS === */
@@ -16429,7 +15957,7 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 /* Prevent horizontal scroll on RTL pages */
 html[dir="rtl"],
 html[dir="rtl"] body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   max-width: 100vw !important;
 }
 
@@ -16815,7 +16343,7 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 /* Prevent horizontal scroll on RTL pages */
 html[dir="rtl"],
 html[dir="rtl"] body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   max-width: 100vw !important;
 }
 
@@ -17197,7 +16725,7 @@ html[dir="rtl"] .zappy-lang-switcher-container {
 /* Prevent horizontal scroll on RTL pages */
 html[dir="rtl"],
 html[dir="rtl"] body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   max-width: 100vw !important;
 }
 
@@ -19567,7 +19095,7 @@ form.contact-form .contact-input, form.contact-form .contact-textarea { width: 1
     max-width: none !important;
     left: 0 !important;
     right: 0 !important;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     box-sizing: border-box !important;
   }
   #navMenu,
@@ -19988,6 +19516,25 @@ html[dir="ltr"] .zappy-products-dropdown .zappy-nav-child > a {
 .cookie-preferences-btn:hover {
   text-decoration: none !important;
 }
+html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
+html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
+html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
+html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
+html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
+html[dir="ltr"] ._access-icon,
+html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
+html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
+html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
+
+/* LTR: keep image on left for solution-reverse sections */
+html[dir="ltr"] .solution-item.solution-reverse .solution-image { order: -1 !important; }
+html[dir="ltr"] .solution-item.solution-reverse .solution-content { order: 1 !important; }
+html[dir="ltr"] .service-detail.service-reverse .service-detail-image { order: -1 !important; }
+html[dir="ltr"] .service-detail.service-reverse .service-detail-content { order: 1 !important; }
+
 /* Footer contact alignment fix */
 .footer-contact li > a { display: flex; align-items: flex-start; gap: inherit; }
 

@@ -71,31 +71,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 window.onload = function() {
     
-    try {
+    try { /* ZAPPY_A11Y_DYNAMIC_LANG */
+        var htmlEl = document.documentElement;
+        var pageLang = (htmlEl.getAttribute('lang') || 'en').toLowerCase().split('-')[0];
+        var pageDir = (htmlEl.getAttribute('dir') || '').toLowerCase();
+        var rtlLangs = ['he', 'ar', 'fa', 'ur', 'yi', 'iw'];
+        var isPageRTL = pageDir === 'rtl' || rtlLangs.indexOf(pageLang) !== -1;
+        var buttonSide = isPageRTL ? 'left' : 'right';
+        var langMap = { en: 'en-US', es: 'es-ES', fr: 'fr-FR', de: 'de-DE', it: 'it-IT', pt: 'pt-PT', nl: 'nl-NL', he: 'he-IL', ar: 'ar-SA' };
+        var forceLang = langMap[pageLang] || 'en-US';
+        var iconPos = { bottom: { size: 50, units: 'px' }, type: 'fixed' };
+        iconPos[buttonSide] = { size: 20, units: 'px' };
         window.micAccessTool = new MicAccessTool({
-            buttonPosition: 'left', // Position on left side
-            forceLang: 'he-IL', // Force language
-            icon: {
-                position: {
-                    bottom: { size: 50, units: 'px' },
-                    left: { size: 20, units: 'px' },
-                    type: 'fixed'
-                },
-                backgroundColor: 'transparent', // Transparent to allow CSS styling
-                color: 'transparent', // Let CSS handle coloring
-                img: 'accessible',
-                circular: false // Square button for consistent styling
-            },
-            menu: {
-                dimensions: {
-                    width: { size: 300, units: 'px' },
-                    height: { size: 'auto', units: 'px' }
-                }
-            }
+            buttonPosition: buttonSide,
+            forceLang: forceLang,
+            icon: { position: iconPos, backgroundColor: 'transparent', color: 'transparent', img: 'accessible', circular: false },
+            menu: { dimensions: { width: { size: 300, units: 'px' }, height: { size: 'auto', units: 'px' } } }
         });
-        
-    } catch (error) {
-    }
+    } catch (error) {}
     
     // Keyboard shortcut handler: ALT+A (Option+A on Mac) to toggle accessibility widget visibility (desktop only)
     document.addEventListener('keydown', function(event) {
@@ -3573,10 +3566,10 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 
 
-/* ZAPPY_ECOM_LANGUAGE_ROUTING_RUNTIME_V6 */
+/* ZAPPY_ECOM_LANGUAGE_ROUTING_RUNTIME_V16 */
 (function() {
-  if (window.__zappyEcomLanguageRoutingRuntime) return;
-  window.__zappyEcomLanguageRoutingRuntime = true;
+  if (window.__zappyEcomLanguageRoutingRuntime >= 16) return;
+  window.__zappyEcomLanguageRoutingRuntime = 16;
 
   // Routing strategy: use path-based language URLs for ALL storefront pages
   // (including dynamic /product/:slug and /category/:slug). The publish
@@ -3766,9 +3759,8 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdowns.forEach(function(li) {
       if (!li || !li.querySelector) return;
       var submenu = li.querySelector(':scope > .sub-menu');
-      var trigger = li.querySelector(':scope > a');
+      var trigger = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
       if (!submenu || !trigger) return;
-      if (li.querySelector(':scope > .mobile-submenu-toggle')) return;
 
       // Hide the inline SVG chevron on mobile so we don't render two chevrons.
       var inlineArrow = trigger.querySelector('svg.dropdown-arrow');
@@ -3777,12 +3769,19 @@ document.addEventListener('DOMContentLoaded', function() {
         inlineArrow.setAttribute('data-zappy-mobile-hidden', '1');
       }
 
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'mobile-submenu-toggle';
-      btn.setAttribute('aria-label', 'Toggle submenu');
-      btn.setAttribute('aria-expanded', 'false');
+      var btn = li.querySelector(':scope > .mobile-submenu-toggle');
+      if (!btn) {
+        btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'mobile-submenu-toggle';
+        btn.setAttribute('aria-label', 'Toggle submenu');
+        trigger.insertAdjacentElement('afterend', btn);
+      }
+      btn.setAttribute('aria-expanded', submenu.classList.contains('mobile-expanded') ? 'true' : 'false');
       btn.setAttribute('data-zappy-runtime', 'ecom-routing');
+
+      if (btn.getAttribute('data-zappy-runtime-bound') === '1') return;
+      btn.setAttribute('data-zappy-runtime-bound', '1');
 
       btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -3804,10 +3803,154 @@ document.addEventListener('DOMContentLoaded', function() {
         submenu.classList.toggle('mobile-expanded', willOpen);
         btn.classList.toggle('expanded', willOpen);
         btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        normalizeMobileSubmenuLayout();
       }, true);
-
-      trigger.insertAdjacentElement('afterend', btn);
     });
+    normalizeMobileSubmenuLayout();
+  }
+
+  function setImportant(el, prop, value) {
+    if (!el || !el.style || !el.style.setProperty) return;
+    el.style.setProperty(prop, value, 'important');
+  }
+
+  function normalizeMobileSubmenuLayout() {
+    var isMobile = window.matchMedia ? window.matchMedia('(max-width: 768px)').matches : window.innerWidth <= 768;
+    if (!isMobile) return;
+    var isRtl = (document.documentElement.getAttribute('dir') || document.body.getAttribute('dir')) === 'rtl';
+    document.querySelectorAll('.nav-menu li:has(> .sub-menu), nav li:has(> .sub-menu), .navbar li:has(> .sub-menu)').forEach(function(li) {
+      var submenu = li.querySelector(':scope > .sub-menu');
+      var trigger = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
+      var btn = li.querySelector(':scope > .mobile-submenu-toggle');
+      if (!submenu || !trigger || !btn) return;
+
+      // Keep the layout direction LTR even on RTL pages. Flexbox otherwise
+      // places the full-width submenu from the right edge and clips it outside
+      // the mobile drawer; text direction is restored on the children below.
+      setImportant(li, 'direction', 'ltr');
+      setImportant(li, 'display', 'flex');
+      setImportant(li, 'flex-wrap', 'wrap');
+      setImportant(li, 'align-items', 'flex-start');
+      setImportant(li, 'width', '100%');
+      setImportant(li, 'max-width', '100%');
+      setImportant(li, 'min-width', '0');
+      setImportant(li, 'overflow', 'visible');
+      setImportant(li, 'box-sizing', 'border-box');
+
+      setImportant(trigger, 'display', 'block');
+      setImportant(trigger, 'direction', isRtl ? 'rtl' : 'ltr');
+      setImportant(trigger, 'flex', '1 1 0');
+      setImportant(trigger, 'min-width', '0');
+      setImportant(trigger, 'max-width', 'calc(100% - 48px)');
+      setImportant(trigger, 'width', 'auto');
+      setImportant(trigger, 'box-sizing', 'border-box');
+      setImportant(trigger, 'white-space', 'normal');
+      setImportant(trigger, 'overflow-wrap', 'anywhere');
+      setImportant(trigger, 'padding-inline', '8px');
+      setImportant(trigger, 'text-align', isRtl ? 'right' : 'left');
+      setImportant(trigger, 'order', isRtl ? '2' : '1');
+
+      setImportant(btn, 'display', 'flex');
+      setImportant(btn, 'position', 'static');
+      setImportant(btn, 'flex', '0 0 48px');
+      setImportant(btn, 'width', '48px');
+      setImportant(btn, 'height', '44px');
+      setImportant(btn, 'min-height', '44px');
+      setImportant(btn, 'align-items', 'center');
+      setImportant(btn, 'justify-content', 'center');
+      setImportant(btn, 'margin', '0');
+      setImportant(btn, 'padding', '0');
+      setImportant(btn, 'background', 'transparent');
+      setImportant(btn, 'border', 'none');
+      setImportant(btn, 'order', isRtl ? '1' : '2');
+
+      setImportant(submenu, 'order', '3');
+      setImportant(submenu, 'direction', isRtl ? 'rtl' : 'ltr');
+      setImportant(submenu, 'text-align', isRtl ? 'right' : 'left');
+      setImportant(submenu, 'flex', '0 0 100%');
+      setImportant(submenu, 'width', '100%');
+      setImportant(submenu, 'min-width', '0');
+      setImportant(submenu, 'max-width', '100%');
+      setImportant(submenu, 'box-sizing', 'border-box');
+      setImportant(submenu, 'margin', '0');
+      setImportant(submenu, 'transform', 'none');
+      setImportant(submenu, 'left', 'auto');
+      setImportant(submenu, 'right', 'auto');
+      setImportant(submenu, 'inset-inline-start', 'auto');
+      setImportant(submenu, 'inset-inline-end', 'auto');
+      if (submenu.classList.contains('mobile-expanded')) {
+        setImportant(submenu, 'padding', '8px 0');
+      }
+
+      submenu.querySelectorAll('a, .menu-group-title').forEach(function(item) {
+        var parentItem = item.closest && item.closest('li');
+        setImportant(item, 'display', 'block');
+        setImportant(item, 'direction', isRtl ? 'rtl' : 'ltr');
+        setImportant(item, 'width', '100%');
+        setImportant(item, 'min-width', '0');
+        setImportant(item, 'max-width', '100%');
+        setImportant(item, 'box-sizing', 'border-box');
+        setImportant(item, 'white-space', 'normal');
+        setImportant(item, 'overflow-wrap', 'anywhere');
+        setImportant(item, 'padding', '10px 8px');
+        setImportant(item, 'text-align', isRtl ? 'right' : 'left');
+        if (parentItem && parentItem.classList && parentItem.classList.contains('zappy-nav-parent')) {
+          setImportant(item, 'font-weight', '700');
+        }
+        if (parentItem && parentItem.classList && parentItem.classList.contains('zappy-nav-child')) {
+          setImportant(item, 'padding-left', isRtl ? '16px' : '36px');
+          setImportant(item, 'padding-right', isRtl ? '36px' : '16px');
+          setImportant(item, 'font-size', '0.94em');
+          setImportant(item, 'opacity', '0.85');
+        }
+      });
+    });
+  }
+
+  function scheduleMobileSubmenuRefresh() {
+    [0, 60, 160, 320, 700, 1200, 2200].forEach(function(delay) {
+      setTimeout(function() {
+        ensureMobileSubmenuToggles();
+        normalizeMobileSubmenuLayout();
+      }, delay);
+    });
+  }
+
+  function installMobileMenuRefreshHooks() {
+    if (window.__zappyMobileSubmenuRefreshHooksInstalled) return;
+    window.__zappyMobileSubmenuRefreshHooksInstalled = true;
+
+    document.addEventListener('click', function(e) {
+      var target = e.target && e.target.closest && e.target.closest(
+        '.mobile-toggle,.menu-toggle,.hamburger,.navbar-toggle,.mobile-submenu-toggle,[aria-label="תפריט"],[aria-label="Menu"],[aria-label="menu"]'
+      );
+      if (target) scheduleMobileSubmenuRefresh();
+    }, true);
+
+    if (!window.MutationObserver) return;
+    var observeNav = function() {
+      var nav = document.getElementById('navMenu') || document.querySelector('.nav-menu');
+      if (!nav || nav.getAttribute('data-zappy-mobile-submenu-observed') === '1') return;
+      nav.setAttribute('data-zappy-mobile-submenu-observed', '1');
+      var handleMutations = function(mutations) {
+        var shouldRefresh = mutations.some(function(mutation) {
+          if (mutation.type === 'attributes') return mutation.attributeName === 'class' || mutation.attributeName === 'style';
+          return Array.prototype.some.call(mutation.addedNodes || [], function(node) {
+            return node.nodeType === 1 && (
+              node.classList && node.classList.contains('mobile-submenu-toggle')
+              || node.querySelector && node.querySelector('.mobile-submenu-toggle')
+            );
+          });
+        });
+        if (shouldRefresh) scheduleMobileSubmenuRefresh();
+      };
+      var navObserver = new MutationObserver(handleMutations);
+      navObserver.observe(nav, { attributes: true, attributeFilter: ['class', 'style'], childList: true });
+      var childObserver = new MutationObserver(handleMutations);
+      childObserver.observe(nav, { childList: true, subtree: true });
+    };
+    observeNav();
+    setTimeout(observeNav, 500);
   }
 
   var __zappyMobileSubmenuResizeTimer = null;
@@ -3832,37 +3975,47 @@ document.addEventListener('DOMContentLoaded', function() {
   // a separate CSS ensure step makes us robust to clean-css comment stripping +
   // declaration merging that was eating the standalone CSS injection.
   function ensureRuntimeCssInjected() {
-    if (document.getElementById('zappy-ecom-routing-runtime-css')) return;
+    var existing = document.getElementById('zappy-ecom-routing-runtime-css');
+    if (existing && existing.getAttribute('data-v') === '16') return;
+    if (existing) existing.remove();
     var style = document.createElement('style');
     style.id = 'zappy-ecom-routing-runtime-css';
     style.setAttribute('data-zappy-runtime', 'ecom-routing');
+    style.setAttribute('data-v', '16');
     style.textContent =
       '@media (min-width: 769px){' +
         'html[dir="ltr"] .nav-container > .nav-brand,body[dir="ltr"] .nav-container > .nav-brand{order:-1!important}' +
-        'html[dir="ltr"] .nav-container > .nav-menu,body[dir="ltr"] .nav-container > .nav-menu{order:1!important;margin-inline-start:auto!important;margin-inline-end:24px!important;flex:0 1 auto!important}' +
+        'html[dir="ltr"] .nav-container > .nav-menu,body[dir="ltr"] .nav-container > .nav-menu{order:1!important;margin-inline-start:0!important;margin-inline-end:24px!important;flex:0 1 auto!important}' +
         'html[dir="ltr"] .nav-container > .lang-switcher,body[dir="ltr"] .nav-container > .lang-switcher,html[dir="ltr"] .nav-container > .nav-ecommerce-icons,body[dir="ltr"] .nav-container > .nav-ecommerce-icons{order:2!important}' +
-        'html[dir="ltr"] .nav-container > .nav-ecommerce-icons.nav-icons-left,body[dir="ltr"] .nav-container > .nav-ecommerce-icons.nav-icons-left{margin-inline-start:0!important}' +
+        'html[dir="ltr"] .nav-container > .nav-ecommerce-icons.nav-icons-left,body[dir="ltr"] .nav-container > .nav-ecommerce-icons.nav-icons-left{margin-inline-start:auto!important}' +
         'html[dir="ltr"] .zappy-products-dropdown > a .dropdown-arrow,body[dir="ltr"] .zappy-products-dropdown > a .dropdown-arrow{display:inline-block!important;flex:0 0 auto!important;margin-inline-start:6px!important}' +
         'html[dir="ltr"] .zappy-catalog-menu,html[dir="ltr"] .zappy-catalog-menu .catalog-menu-container,html[dir="ltr"] .zappy-catalog-menu .catalog-menu-categories{direction:ltr!important}' +
         'html[dir="ltr"] .zappy-catalog-menu .catalog-menu-container{align-items:flex-start!important}' +
         'html[dir="ltr"] .zappy-catalog-menu .catalog-menu-categories{display:flex!important;align-items:flex-start!important;align-content:flex-start!important;row-gap:4px!important;column-gap:2px!important}' +
         'html[dir="ltr"] .zappy-catalog-menu .catalog-menu-item{padding-inline:10px!important}' +
         'html[dir="ltr"] .zappy-catalog-menu .catalog-menu-all{margin-top:0!important;align-self:flex-start!important}' +
+        '.nav-menu .zappy-products-dropdown>.sub-menu,#navMenu .zappy-products-dropdown>.sub-menu{left:50%!important;right:auto!important;transform:translateX(-50%) translateY(8px)!important}' +
+        '.nav-menu .zappy-products-dropdown:hover>.sub-menu,#navMenu .zappy-products-dropdown:hover>.sub-menu,.nav-menu .zappy-products-dropdown:focus-within>.sub-menu,#navMenu .zappy-products-dropdown:focus-within>.sub-menu{transform:translateX(-50%) translateY(0)!important}' +
       '}' +
       '@media (max-width:768px){' +
-        '.navbar .zappy-products-dropdown,nav.navbar .zappy-products-dropdown,.zappy-products-dropdown{position:relative!important}' +
-        // padding-inline-end is a logical property: it resolves to right padding
-        // in LTR and left padding in RTL — exactly the side where the absolute
-        // toggle button lives. A separate RTL override would invert that and
-        // push the link text inward, which is the indentation bug we hit.
-        '.navbar .zappy-products-dropdown > a,nav.navbar .zappy-products-dropdown > a,.zappy-products-dropdown > a{width:100%!important;min-width:0!important;padding-inline-end:56px!important;padding-inline-start:0!important;box-sizing:border-box!important}' +
-        '.navbar .zappy-products-dropdown > .mobile-submenu-toggle,nav.navbar .zappy-products-dropdown > .mobile-submenu-toggle,.zappy-products-dropdown > .mobile-submenu-toggle{display:flex!important;position:absolute!important;top:0!important;inset-inline-end:4px!important;inset-inline-start:auto!important;width:48px!important;height:44px!important;min-height:44px!important;align-items:center!important;justify-content:center!important;z-index:5!important;pointer-events:auto!important;margin:0!important;padding:0!important;background:transparent!important;border:none!important}' +
+        '.nav-menu li:has(.sub-menu),.navbar li:has(.sub-menu),nav li:has(.sub-menu){direction:ltr!important;display:flex!important;flex-wrap:wrap!important;align-items:flex-start!important;max-width:100%!important;width:100%!important;overflow:visible!important;box-sizing:border-box!important}' +
+        '.nav-menu li:has(.sub-menu)>a,.navbar li:has(.sub-menu)>a,nav li:has(.sub-menu)>a,li:has(.sub-menu)>.menu-group-title{display:block!important;flex:1 1 0!important;order:1!important;width:auto!important;min-width:0!important;max-width:calc(100% - 48px)!important;padding-inline:8px!important;box-sizing:border-box!important;white-space:normal!important;overflow-wrap:anywhere!important;line-height:1.35!important;text-align:left!important;direction:ltr!important}' +
+        'html[dir="rtl"] .nav-menu li:has(.sub-menu)>a,body[dir="rtl"] .nav-menu li:has(.sub-menu)>a,html[dir="rtl"] .navbar li:has(.sub-menu)>a,body[dir="rtl"] .navbar li:has(.sub-menu)>a,html[dir="rtl"] nav li:has(.sub-menu)>a,body[dir="rtl"] nav li:has(.sub-menu)>a,html[dir="rtl"] li:has(.sub-menu)>.menu-group-title,body[dir="rtl"] li:has(.sub-menu)>.menu-group-title{direction:rtl!important;text-align:right!important;order:2!important}' +
+        '.nav-menu li:has(.sub-menu)>.mobile-submenu-toggle,.navbar li:has(.sub-menu)>.mobile-submenu-toggle,nav li:has(.sub-menu)>.mobile-submenu-toggle{display:flex!important;position:static!important;flex:0 0 48px!important;order:2!important;width:48px!important;height:44px!important;min-height:44px!important;align-items:center!important;justify-content:center!important;z-index:5!important;pointer-events:auto!important;margin:0!important;padding:0!important;background:transparent!important;border:none!important}' +
+        'html[dir="rtl"] .nav-menu li:has(.sub-menu)>.mobile-submenu-toggle,body[dir="rtl"] .nav-menu li:has(.sub-menu)>.mobile-submenu-toggle,html[dir="rtl"] .navbar li:has(.sub-menu)>.mobile-submenu-toggle,body[dir="rtl"] .navbar li:has(.sub-menu)>.mobile-submenu-toggle,html[dir="rtl"] nav li:has(.sub-menu)>.mobile-submenu-toggle,body[dir="rtl"] nav li:has(.sub-menu)>.mobile-submenu-toggle{order:1!important}' +
+        '.nav-menu li:has(.sub-menu)>.sub-menu,.navbar li:has(.sub-menu)>.sub-menu,nav li:has(.sub-menu)>.sub-menu{order:3!important;flex:0 0 100%!important;width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important;margin:0!important;transform:none!important;left:auto!important;right:auto!important;inset-inline-start:auto!important;inset-inline-end:auto!important}' +
+        '.nav-menu .sub-menu.mobile-expanded,.navbar .sub-menu.mobile-expanded,nav .sub-menu.mobile-expanded{padding:8px 0!important}' +
+        '.sub-menu a,.sub-menu .menu-group-title{display:block!important;width:100%!important;white-space:normal!important;overflow-wrap:anywhere!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important;padding:10px 8px!important}' +
+        '.zappy-products-dropdown>.sub-menu .zappy-nav-parent>a,.zappy-products-dropdown>.sub-menu .zappy-nav-parent>.menu-group-title{font-weight:700!important}' +
+        '.zappy-products-dropdown>.sub-menu .zappy-nav-child>a,.zappy-products-dropdown>.sub-menu .zappy-nav-child>.menu-group-title{padding-left:36px!important;padding-right:16px!important;font-size:.94em!important;opacity:.85!important}' +
+        'html[dir="rtl"] .zappy-products-dropdown>.sub-menu .zappy-nav-child>a,body[dir="rtl"] .zappy-products-dropdown>.sub-menu .zappy-nav-child>a,html[dir="rtl"] .zappy-products-dropdown>.sub-menu .zappy-nav-child>.menu-group-title,body[dir="rtl"] .zappy-products-dropdown>.sub-menu .zappy-nav-child>.menu-group-title{padding-left:16px!important;padding-right:36px!important}' +
       '}';
     (document.head || document.documentElement).appendChild(style);
   }
 
   function patch() {
     ensureRuntimeCssInjected();
+    installMobileMenuRefreshHooks();
     patchLinks(document);
     ensureProductsChevron();
     ensureMobileSubmenuToggles();
