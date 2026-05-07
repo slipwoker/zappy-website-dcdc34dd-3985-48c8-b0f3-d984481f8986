@@ -2246,6 +2246,10 @@ https://mashkanta-bepijama.co.il/articles/partial-mortgage-withdrawal
 https://mashkanta-bepijama.co.il/articles/calculating-discount-dira-behanacha
 מדריך מקיף: איך לחשב את גובה ההנחה בפרויקט דירה בהנחה (מחיר למשתכן / מחיר מטרה) עוד לפני שפורסמו מחירי הדירות הסופיים וטרם התקיים כנס בחירת דירות.
 
+### שינוי סטטוס
+https://mashkanta-bepijama.co.il/articles/dira-behanacha-status-change
+מה קורה אם ירשתם או קניתם דירה בזמן ההמתנה לדירה בהנחה? מדריך מקיף על שמירת זכאות, ההשלכות של חתימת חוזה ואיך ייעוץ משכנתאות יכול לעזור.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2280,7 +2284,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
