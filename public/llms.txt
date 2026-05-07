@@ -2246,6 +2246,10 @@ https://mashkanta-bepijama.co.il/articles/partial-mortgage-withdrawal
 https://mashkanta-bepijama.co.il/articles/equity-payment-timing
 האם חייבים לשלם את כל ההון העצמי לפני קבלת המשכנתא? מדריך מקיף מבית משכנתא בפיג'מה המסביר מתי חובה לשלם הון עצמי תחילה ובאילו תנאים ניתן לשנות את הסדר.
 
+### חישוב הנחה
+https://mashkanta-bepijama.co.il/articles/calculating-discount-dira-behanacha
+מדריך מקיף: איך לחשב את גובה ההנחה בפרויקט דירה בהנחה (מחיר למשתכן / מחיר מטרה) עוד לפני שפורסמו מחירי הדירות הסופיים וטרם התקיים כנס בחירת דירות.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2280,7 +2284,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox)
+  - `terms` (checkbox, required)
 
 ---
 
