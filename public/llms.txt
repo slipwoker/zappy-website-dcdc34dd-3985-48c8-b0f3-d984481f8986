@@ -2262,6 +2262,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-prioritization-list
 https://mashkanta-bepijama.co.il/articles/mortgage-in-arrears
 המדריך המלא להתמודדות עם משכנתא בפיגור: מה המשמעות, כיצד זה משפיע על דירוג האשראי שלכם, ומהם צעדי המנע שיעזרו לכם לשמור על יציבות פיננסית.
 
+### החזר השקעה
+https://mashkanta-bepijama.co.il/articles/mortgage-consulting-roi
+גלו את ההחזר האמיתי על השקעה בייעוץ משכנתאות. מדריך מקיף המסביר כמה כסף באמת חוסכים בעזרת תכנון פיננסי נכון, מעבר למיקוח על ריביות הבנק.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2296,7 +2300,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
