@@ -2266,6 +2266,10 @@ https://mashkanta-bepijama.co.il/articles/mortgage-in-arrears
 https://mashkanta-bepijama.co.il/articles/mortgage-consulting-roi
 גלו את ההחזר האמיתי על השקעה בייעוץ משכנתאות. מדריך מקיף המסביר כמה כסף באמת חוסכים בעזרת תכנון פיננסי נכון, מעבר למיקוח על ריביות הבנק.
 
+### עיכוב כספים
+https://mashkanta-bepijama.co.il/articles/lawyer-funds-delay
+למה עורך הדין מעכב את כספי המשכנתא למוכר רגע לפני מסירת הדירה? כל מה שחשוב לדעת על הגנה משפטית, נאמנות ואיך זה משפיע על קבלת המפתח.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2300,7 +2304,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox)
+  - `terms` (checkbox, required)
 
 ---
 
