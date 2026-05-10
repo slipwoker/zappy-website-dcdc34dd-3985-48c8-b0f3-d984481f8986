@@ -2270,6 +2270,10 @@ https://mashkanta-bepijama.co.il/articles/mortgage-consulting-roi
 https://mashkanta-bepijama.co.il/articles/lawyer-funds-delay
 למה עורך הדין מעכב את כספי המשכנתא למוכר רגע לפני מסירת הדירה? כל מה שחשוב לדעת על הגנה משפטית, נאמנות ואיך זה משפיע על קבלת המפתח.
 
+### רענון מסמכים
+https://mashkanta-bepijama.co.il/articles/refreshing-mortgage-documents
+למה הבנק מבקש כל הזמן לרענן את מסמכי המשכנתא שלכם? האם זה תקין, מה הבנק בודק, ואיך אפשר להתמודד עם הבירוקרטיה? המדריך המלא מאת משכנתא בפיג'מה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2304,7 +2308,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
