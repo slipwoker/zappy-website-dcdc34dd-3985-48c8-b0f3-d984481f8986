@@ -2278,6 +2278,10 @@ https://mashkanta-bepijama.co.il/articles/refreshing-mortgage-documents
 https://mashkanta-bepijama.co.il/articles/grant-without-mortgage
 זכיתם בדירה בהנחה ויש לכם הון עצמי מלא? גלו כיצד לקבל את מענק המקום ללא צורך בלקיחת משכנתא מלאה מהבנק. המדריך המלא לזוכים.
 
+### ביטוח חיים
+https://mashkanta-bepijama.co.il/articles/life-insurance-vs-mortgage-insurance
+האם ביטוח חיים מהעבודה או ביטוח פרטי יכולים להחליף ביטוח משכנתא? כל מה שצריך לדעת על ההבדלים, הדרישות והמשמעויות לקראת ייעוץ משכנתאות.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2312,7 +2316,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
