@@ -2294,9 +2294,13 @@ https://mashkanta-bepijama.co.il/articles/calm-second-hand-purchase
 https://mashkanta-bepijama.co.il/articles/fluctuating-income-mortgage
 מדריך מקיף ללקיחת משכנתא לבעלי שכר תנודתי, עמלות ובונוסים. איך הבנק מחשב את ההכנסה, כיצד להיערך נכון וחשיבות ייעוץ משכנתאות בתהליך.
 
-### מס שבח
-https://mashkanta-bepijama.co.il/articles/capital-gains-tax-demolished-apartment
-האם דירה שנהרסה בפינוי בינוי נחשבת כדירה לעניין מס שבח בעת מכירת דירה אחרת? מדריך מקיף בנושא מיסוי מקרקעין, מס שבח וייעוץ פיננסי.
+### דירה בפינוי
+https://mashkanta-bepijama.co.il/articles/pinui-binui-tax
+האם בעל שתי דירות שאחת מהן נהרסה בפינוי בינוי זכאי לפטור ממס שבח במכירת הדירה השנייה? המדריך המלא על סעיף 49לג לחוק מיסוי מקרקעין וההשלכות על תכנון המשכנתא.
+
+### מינוף בפינוי
+https://mashkanta-bepijama.co.il/articles/pinui-binui-leverage
+מדוע קשה לקבל משכנתא לכל מטרה בנכס שעובר פינוי בינוי? המדריך המלא על מכתב החרגה, קשיים משפטיים וכל הפתרונות האפשריים למינוף הנכס ללא מכירתו.
 
 ## Legal & Policy
 
@@ -2332,7 +2336,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox)
+  - `terms` (checkbox, required)
 
 ---
 
