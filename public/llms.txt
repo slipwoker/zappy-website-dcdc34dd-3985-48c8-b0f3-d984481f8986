@@ -2302,6 +2302,10 @@ https://mashkanta-bepijama.co.il/articles/pinui-binui-tax
 https://mashkanta-bepijama.co.il/articles/pinui-binui-leverage
 מדוע קשה לקבל משכנתא לכל מטרה בנכס שעובר פינוי בינוי? המדריך המלא על מכתב החרגה, קשיים משפטיים וכל הפתרונות האפשריים למינוף הנכס ללא מכירתו.
 
+### אשראי מתגלגל
+https://mashkanta-bepijama.co.il/articles/what-is-revolving-credit-guide
+מהו אשראי מתגלגל בכרטיסי אשראי? מדריך מקיף על סכנות המלכודת השקטה, איך מחושבת הריבית, ולמה החוב הזה לעולם לא נגמר. קראו עכשיו והחזירו את השליטה הפיננסית.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2336,7 +2340,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
