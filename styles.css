@@ -1309,8 +1309,7 @@ img, picture, figure {
   padding: 8px !important;
   text-decoration: none !important;
   z-index: 10000 !important;
-  border-radius: 4px !important;
-}
+  border-radius: 4px !important; transform: none; }
 
 /* Enhanced focus indicators */
 *:focus {
@@ -3135,8 +3134,7 @@ img, picture, figure {
   padding: 8px !important;
   text-decoration: none !important;
   z-index: 10000 !important;
-  border-radius: 4px !important;
-}
+  border-radius: 4px !important; transform: none; }
 
 /* Enhanced focus indicators */
 *:focus {
@@ -5011,8 +5009,7 @@ img, picture, figure {
   padding: 8px !important;
   text-decoration: none !important;
   z-index: 10000 !important;
-  border-radius: 4px !important;
-}
+  border-radius: 4px !important; transform: none; }
 
 /* Enhanced focus indicators */
 *:focus {
@@ -6936,8 +6933,7 @@ img, picture, figure {
   padding: 8px !important;
   text-decoration: none !important;
   z-index: 10000 !important;
-  border-radius: 4px !important;
-}
+  border-radius: 4px !important; transform: none; }
 
 /* Enhanced focus indicators */
 *:focus {
@@ -8840,8 +8836,7 @@ img, picture, figure {
   padding: 8px !important;
   text-decoration: none !important;
   z-index: 10000 !important;
-  border-radius: 4px !important;
-}
+  border-radius: 4px !important; transform: none; }
 
 /* Enhanced focus indicators */
 *:focus {
@@ -10750,8 +10745,7 @@ img, picture, figure {
   padding: 8px !important;
   text-decoration: none !important;
   z-index: 10000 !important;
-  border-radius: 4px !important;
-}
+  border-radius: 4px !important; transform: none; }
 
 /* Enhanced focus indicators */
 *:focus {
@@ -12634,8 +12628,7 @@ img, picture, figure {
   padding: 8px !important;
   text-decoration: none !important;
   z-index: 10000 !important;
-  border-radius: 4px !important;
-}
+  border-radius: 4px !important; transform: none; }
 
 /* Enhanced focus indicators */
 *:focus {
@@ -14550,8 +14543,7 @@ img, picture, figure {
   padding: 8px !important;
   text-decoration: none !important;
   z-index: 10000 !important;
-  border-radius: 4px !important;
-}
+  border-radius: 4px !important; transform: none; }
 
 /* Enhanced focus indicators */
 *:focus {
@@ -17946,6 +17938,7 @@ body .whatsapp-float {
   position: relative;
   display: inline-flex;
   align-items: center;
+  align-self: center;
   z-index: 1000;
 }
 .zappy-search-trigger {
@@ -18364,6 +18357,71 @@ body .whatsapp-float {
   }
 }
 
+/* ZAPPY_MOBILE_NAV_ICON_ALIGNMENT_FIX */
+/* ZAPPY_MOBILE_NAV_ICON_ALIGNMENT_FIX_V2 */
+/* Keep mobile hamburger / phone buttons vertically centered even when the
+   generated navbar's children are all absolute/fixed and the navbar would
+   otherwise collapse to the top edge. */
+@media (max-width: 768px) {
+  .navbar,
+  nav.navbar {
+    min-height: 70px !important;
+  }
+
+  .navbar > .mobile-toggle,
+  nav.navbar > .mobile-toggle,
+  .navbar .mobile-toggle,
+  nav.navbar .mobile-toggle,
+  #mobileToggle,
+  .navbar > .phone-header-btn,
+  nav.navbar > .phone-header-btn,
+  .navbar .phone-header-btn,
+  nav.navbar .phone-header-btn {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    align-self: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 0 !important;
+  }
+
+  .navbar > .mobile-toggle,
+  nav.navbar > .mobile-toggle,
+  .navbar .mobile-toggle,
+  nav.navbar .mobile-toggle,
+  #mobileToggle {
+    display: flex !important;
+  }
+
+  html:not([data-zappy-site-type="ecommerce"]) .navbar > .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"]) nav.navbar > .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"]) .navbar .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"]) nav.navbar .phone-header-btn {
+    display: flex !important;
+  }
+
+  html[data-zappy-site-type="ecommerce"] .phone-header-btn,
+  body[data-zappy-site-type="ecommerce"] .phone-header-btn,
+  html[data-zappy-site-type="ecommerce"] header .phone-header-btn,
+  html[data-zappy-site-type="ecommerce"] nav .phone-header-btn {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+
+
+
+
+
 /* zappy-nav-child-indent */
 .zappy-products-dropdown .zappy-nav-child > a,
 .sub-menu .zappy-nav-child > a {
@@ -18723,14 +18781,22 @@ nav .sub-menu.zappy-empty-submenu,
 
   /* The zoom wrapper's image is position:absolute (so it contributes 0 to the
      wrapper's intrinsic content width). Inserted-element parents that carry a
-     desktop pixel height (e.g. height:234px) collapse to 0px wide on mobile
-     because nothing in the subtree pushes back on the cross-axis. Force them
-     to fill the parent container so the wrapper's aspect-ratio chain resolves. */
+     desktop pixel height can either collapse to 0px wide or preserve a stale
+     desktop height after their child wrapper shrinks on mobile. Force them
+     to fill the parent container and let the wrapper's aspect-ratio determine
+     the real height, eliminating empty space before following text. */
   .zappy-inserted-element:has(> [data-zappy-zoom-wrapper="true"]) {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  .zappy-inserted-element:has(> [data-zappy-zoom-wrapper="true"]) > [data-zappy-zoom-wrapper="true"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 
   /* Reset zoom wrapper images on mobile to responsive display.
@@ -18830,6 +18896,25 @@ nav .sub-menu.zappy-empty-submenu,
   section[class*="-hero-section"]:first-of-type,
   main > section:first-child {
     padding-top: 100px !important;
+  }
+
+  /* Split hero (.hero-sbs-wrap) already applies ~100px top padding for the navbar.
+     Without this override, the global rule above stacks and mobile shows ~200px
+     of dead air above the hero image. */
+  main > section:first-child:has(.hero-sbs-wrap),
+  section[class*="-hero-section"]:first-of-type:has(.hero-sbs-wrap) {
+    padding-top: 0 !important;
+  }
+
+  /* Zoom-crop hero portraits: anchor with inset:0 so RTL/LTR matches and cover
+     cropping stays centered (physical left:0 absolute imgs can mis-read in RTL). */
+  .hero-sbs-image-frame [data-zappy-zoom-wrapper="true"] img {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
   }
   
   /* ========== HERO CONTAINER FULL-WIDTH (FULLSCREEN HEROES ONLY) ========== */
@@ -19516,24 +19601,182 @@ html[dir="ltr"] .zappy-products-dropdown .zappy-nav-child > a {
 .cookie-preferences-btn:hover {
   text-decoration: none !important;
 }
-html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+/* WIDGET-DISPLAY-START */
+html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
+html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
+html[dir="rtl"] #mic-access-tool-general-button,
+html[dir="rtl"] .mic-access-tool-general-button,
 html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
 html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
 html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
-html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+html[dir="ltr"] #mic-access-tool-general-button,
+html[dir="ltr"] .mic-access-tool-general-button,
 html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
 html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
 html[dir="ltr"] ._access-icon,
-html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+html:not([dir]) #mic-access-tool-general-button,
+html:not([dir]) .mic-access-tool-general-button,
 html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
 html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
 html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
-
+@media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
+@media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
+@media (max-width: 768px) {
+  #mic-access-tool-general-button, .mic-access-tool-general-button,
+  #mic-init-access-tool .mic-access-tool-general-button,
+  #mic-init-access-tool #mic-access-tool-general-button,
+  ._access-icon { display: flex !important; }
+  #mic-access-tool-box, .mic-access-tool-box,
+  #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"],
+  ._access-menu { visibility: hidden; opacity: 0; pointer-events: auto !important; }
+}
+@media (min-width: 769px) {
+  #mic-access-tool-general-button, .mic-access-tool-general-button,
+  #mic-init-access-tool .mic-access-tool-general-button,
+  #mic-init-access-tool #mic-access-tool-general-button,
+  ._access-icon { display: flex !important; }
+  #mic-access-tool-box, .mic-access-tool-box,
+  #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"],
+  ._access-menu { visibility: hidden; opacity: 0; pointer-events: auto !important; }
+}
+/* WIDGET-DISPLAY-END */
 /* LTR: keep image on left for solution-reverse sections */
 html[dir="ltr"] .solution-item.solution-reverse .solution-image { order: -1 !important; }
 html[dir="ltr"] .solution-item.solution-reverse .solution-content { order: 1 !important; }
 html[dir="ltr"] .service-detail.service-reverse .service-detail-image { order: -1 !important; }
 html[dir="ltr"] .service-detail.service-reverse .service-detail-content { order: 1 !important; }
+
+
+/* ZAPPY_MOBILE_NAV_ICON_ALIGNMENT_FIX */
+/* ZAPPY_MOBILE_NAV_ICON_ALIGNMENT_FIX_V3 */
+/* The mobile hamburger / phone buttons are absolutely positioned. Keep the
+   navbar itself as a non-collapsing containing block so auto-margin centering
+   stays aligned even when generated mobile CSS moves every nav child out of flow. */
+@media (max-width: 768px) {
+  .navbar,
+  nav.navbar {
+    min-height: 70px !important;
+  }
+
+  /* Some generated RTL nav CSS sets both left:50% and right:50% on the
+     absolute .nav-brand. That collapses it to 0px wide, so the logo flows
+     left from the center instead of being centered on it. */
+  .navbar .nav-brand,
+  nav.navbar .nav-brand,
+  html[dir="rtl"] .navbar .nav-brand,
+  html[dir="rtl"] nav.navbar .nav-brand,
+  html[lang="he"] .navbar .nav-brand,
+  html[lang="he"] nav.navbar .nav-brand,
+  html[lang="ar"] .navbar .nav-brand,
+  html[lang="ar"] nav.navbar .nav-brand {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 50% !important;
+    width: auto !important;
+    min-width: max-content !important;
+    max-width: calc(100% - 168px) !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .navbar .nav-brand .logo-link,
+  nav.navbar .nav-brand .logo-link,
+  .navbar .nav-brand a,
+  nav.navbar .nav-brand a {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .navbar > .mobile-toggle,
+  nav.navbar > .mobile-toggle,
+  .navbar .mobile-toggle,
+  nav.navbar .mobile-toggle,
+  #mobileToggle,
+  .navbar > .phone-header-btn,
+  nav.navbar > .phone-header-btn,
+  .navbar .phone-header-btn,
+  nav.navbar .phone-header-btn {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    align-self: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 0 !important;
+  }
+
+  .navbar > .mobile-toggle,
+  nav.navbar > .mobile-toggle,
+  .navbar .mobile-toggle,
+  nav.navbar .mobile-toggle,
+  #mobileToggle {
+    display: flex !important;
+  }
+
+  html:not([data-zappy-site-type="ecommerce"]) .navbar > .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"]) nav.navbar > .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"]) .navbar .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"]) nav.navbar .phone-header-btn {
+    display: flex !important;
+  }
+
+  html[data-zappy-site-type="ecommerce"] .phone-header-btn,
+  body[data-zappy-site-type="ecommerce"] .phone-header-btn,
+  html[data-zappy-site-type="ecommerce"] header .phone-header-btn,
+  html[data-zappy-site-type="ecommerce"] nav .phone-header-btn {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+
+/* ZAPPY_PUBLISHED_MOBILE_MEDIA_FIT_FIX */
+@media (max-width: 768px) {
+  /* Published sites can carry stale editor-generated transform:scale(...) rules.
+     Fullscreen hero backgrounds must keep filling their absolute wrapper; mobile
+     crop runtime can still override this with inline styles when needed. */
+  html body main section[class*="hero"] [data-hero-bg],
+  html body main section[class*="hero"] [data-hero-background="true"],
+  html body main section[data-hero-type*="fullscreen"] img[data-hero-bg],
+  html body main section[data-hero-type*="fullscreen"] img[data-hero-background="true"] {
+    transform: none !important;
+    transform-origin: center center !important;
+    max-width: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* Filter chip rows should wrap on narrow RTL screens instead of hiding most
+     options off-canvas behind a horizontal scroller. */
+  html body main #showcaseAdvancedFilter .adv-filter-group > .adv-filter-scroll-row,
+  html body main .index-showcase-section #showcaseAdvancedFilter .adv-filter-group > .adv-filter-scroll-row,
+  html body main .index-showcase-section .adv-filter-group > .adv-filter-scroll-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding-inline: 0 !important;
+    margin-inline: 0 !important;
+    height: auto !important;
+    cursor: default !important;
+  }
+}
 
 /* Footer contact alignment fix */
 .footer-contact li > a { display: flex; align-items: flex-start; gap: inherit; }

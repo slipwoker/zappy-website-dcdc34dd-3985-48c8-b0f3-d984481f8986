@@ -2314,6 +2314,10 @@ https://mashkanta-bepijama.co.il/articles/dollar-exchange-rate-impact
 https://mashkanta-bepijama.co.il/articles/contractor-grace-period
 מתכננים לקחת משכנתא בגרייס עבור תשלומים לקבלן? גלו האם חובה להודיע לבנק מראש, האם ניתן לשנות תוך כדי תנועה, ואיך הבנקים השונים מתייחסים לכך.
 
+### שטרות משכנתא
+https://mashkanta-bepijama.co.il/articles/mortgage-deeds
+מה זה שטרות משכנתא? המדריך המלא שמסביר מה עושים כשהבנקאי מזמין שטרות, באחריות מי לטפל בזה, והאם זה משפיע על המשכנתא שלכם.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2348,7 +2352,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox)
+  - `terms` (checkbox, required)
 
 ---
 

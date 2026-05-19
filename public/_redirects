@@ -1,5 +1,5 @@
 # Clean URL redirects for Render static hosting
-# Generated: 2026-05-04T13:01:39.039Z
+# Generated: 2026-05-19T05:36:39.664Z
 # NOTE: Render uses render.yaml for routing, not _redirects (that is Netlify)
 # This file is kept for reference only
 
@@ -562,6 +562,27 @@
 /articles/dira-behanacha-unsure-signing  /articles/dira-behanacha-unsure-signing.html  200!
 /articles/dira-behanacha-lottery-delay  /articles/dira-behanacha-lottery-delay.html  200!
 /articles/signing-contract-at-selection  /articles/signing-contract-at-selection.html  200!
+/articles/dira-behanacha-contract-signing  /articles/dira-behanacha-contract-signing.html  200!
+/articles/partial-mortgage-withdrawal  /articles/partial-mortgage-withdrawal.html  200!
+/articles/calculating-discount-dira-behanacha  /articles/calculating-discount-dira-behanacha.html  200!
+/articles/dira-behanacha-status-change  /articles/dira-behanacha-status-change.html  200!
+/articles/low-position-selection  /articles/low-position-selection.html  200!
+/articles/dira-behanacha-prioritization-list  /articles/dira-behanacha-prioritization-list.html  200!
+/articles/mortgage-in-arrears  /articles/mortgage-in-arrears.html  200!
+/articles/mortgage-consulting-roi  /articles/mortgage-consulting-roi.html  200!
+/articles/lawyer-funds-delay  /articles/lawyer-funds-delay.html  200!
+/articles/refreshing-mortgage-documents  /articles/refreshing-mortgage-documents.html  200!
+/articles/grant-without-mortgage  /articles/grant-without-mortgage.html  200!
+/articles/life-insurance-vs-mortgage-insurance  /articles/life-insurance-vs-mortgage-insurance.html  200!
+/articles/capital-gains-tax-reduction-expenses  /articles/capital-gains-tax-reduction-expenses.html  200!
+/articles/calm-second-hand-purchase  /articles/calm-second-hand-purchase.html  200!
+/articles/fluctuating-income-mortgage  /articles/fluctuating-income-mortgage.html  200!
+/articles/pinui-binui-tax  /articles/pinui-binui-tax.html  200!
+/articles/pinui-binui-leverage  /articles/pinui-binui-leverage.html  200!
+/articles/what-is-revolving-credit-guide  /articles/what-is-revolving-credit-guide.html  200!
+/articles/dollar-exchange-rate-impact  /articles/dollar-exchange-rate-impact.html  200!
+/articles/contractor-grace-period  /articles/contractor-grace-period.html  200!
+/articles/mortgage-deeds  /articles/mortgage-deeds.html  200!
 
 # Legal pages - redirect old .html URLs to friendly URLs
 /privacy.html  /privacy  301
