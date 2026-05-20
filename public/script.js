@@ -4207,6 +4207,118 @@ function fixContrast(){
   setTimeout(patch, 250);
   setTimeout(patch, 1500);
 })();
+/* ZAPPY_CHECKOUT_FOCUS_UX_V2 */
+(function(){
+  if (window.__zappyCheckoutFocusUX >= 2) return;
+  window.__zappyCheckoutFocusUX = 2;
+
+  var CSS =
+    'body.zappy-cart-open #cc-main,body.zappy-cart-open #zappy-cookie-banner{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}' +
+    'body.zappy-checkout-page #zappy-cookie-banner{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}' +
+    'body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .nav-menu,' +
+    'body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .nav-links,' +
+    'body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .nav-cta,' +
+    'body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .nav-right-group .nav-menu,' +
+    'body.zappy-checkout-page .lang-switcher,' +
+    'body.zappy-checkout-page .nav-icons-right,' +
+    'body.zappy-checkout-page .nav-search-box,' +
+    'body.zappy-checkout-page .nav-search-toggle,' +
+    'body.zappy-checkout-page #mobile-search-toggle,' +
+    'body.zappy-checkout-page .mobile-search-panel,' +
+    'body.zappy-checkout-page .login-link.nav-login,' +
+    'body.zappy-checkout-page .nav-ecommerce-icons>*:not(.cart-link),' +
+    'body.zappy-checkout-page .mobile-hamburger-btn,' +
+    'body.zappy-checkout-page .mobile-toggle,' +
+    'body.zappy-checkout-page .hamburger,' +
+    'body.zappy-checkout-page .menu-toggle,' +
+    'body.zappy-checkout-page #mobileToggle,' +
+    'body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .phone-header-btn,' +
+    'body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .mobile-close-btn{display:none!important;visibility:hidden!important;pointer-events:none!important}' +
+    'body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .nav-container{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important}' +
+    'body.zappy-checkout-page .nav-brand,body.zappy-checkout-page .cart-link.nav-cart,body.zappy-checkout-page #cart-drawer-toggle{display:flex!important;visibility:visible!important;pointer-events:auto!important}' +
+    'body.zappy-checkout-page .nav-ecommerce-icons{display:inline-flex!important;align-items:center!important;margin-inline-start:auto!important}' +
+    '@media (max-width:768px){body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .nav-menu,body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .nav-menu.active,body.zappy-checkout-page nav.navbar:not(.zappy-catalog-menu) .nav-menu.open{display:none!important;visibility:hidden!important}}' +
+    'body.zappy-checkout-page .site-footer>*:not(.footer-bottom),body.zappy-checkout-page footer.site-footer>*:not(.footer-bottom){display:none!important;visibility:hidden!important}' +
+    'body.zappy-checkout-page .site-footer .footer-bottom,body.zappy-checkout-page footer.site-footer .footer-bottom{display:block!important;visibility:visible!important}' +
+    'body.zappy-checkout-page .site-footer:not(:has(.footer-bottom)),body.zappy-checkout-page footer.site-footer:not(:has(.footer-bottom)){display:none!important}';
+
+  function resolvePagePath() {
+    var pagePath = window.location.pathname || '';
+    try {
+      var pageParam = new URLSearchParams(window.location.search).get('page');
+      if (pageParam) pagePath = pageParam;
+    } catch (e) {}
+    return pagePath.toLowerCase();
+  }
+
+  function applyCheckoutFocusState() {
+    var path = resolvePagePath();
+    var isCheckoutPage = path.indexOf('/checkout') !== -1;
+    var isFocusedPage = (
+      path.indexOf('/product/') !== -1 ||
+      path === '/product' ||
+      path.indexOf('/cart') !== -1 ||
+      isCheckoutPage ||
+      path.indexOf('/order-success') !== -1 ||
+      path.indexOf('/order') !== -1
+    );
+    document.body.classList.toggle('zappy-focused-page', isFocusedPage);
+    document.body.classList.toggle('zappy-checkout-page', isCheckoutPage);
+  }
+
+  function injectCss() {
+    var existing = document.getElementById('zappy-checkout-focus-ux-css');
+    if (existing && existing.getAttribute('data-v') === '2') return;
+    if (existing) existing.remove();
+    var style = document.createElement('style');
+    style.id = 'zappy-checkout-focus-ux-css';
+    style.setAttribute('data-zappy-runtime', 'checkout-focus');
+    style.setAttribute('data-v', '2');
+    style.textContent = CSS;
+    (document.head || document.documentElement).appendChild(style);
+  }
+
+  function syncCartOpenFromDom() {
+    var drawer = document.getElementById('cart-drawer');
+    var overlay = document.getElementById('cart-drawer-overlay');
+    var isOpen = (drawer && drawer.classList.contains('active')) ||
+      (overlay && overlay.classList.contains('active'));
+    document.body.classList.toggle('zappy-cart-open', !!isOpen);
+  }
+
+  function watchCartDrawer() {
+    syncCartOpenFromDom();
+    var obs = new MutationObserver(function() { syncCartOpenFromDom(); });
+    ['cart-drawer', 'cart-drawer-overlay'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) obs.observe(el, { attributes: true, attributeFilter: ['class'] });
+    });
+    document.addEventListener('click', function(e) {
+      var t = e.target && e.target.closest
+        ? e.target.closest('#cart-drawer-toggle,.cart-link.nav-cart,a.nav-cart,[data-cart-toggle],.cart-drawer-close,#cart-drawer-overlay')
+        : null;
+      if (t) setTimeout(syncCartOpenFromDom, 0);
+    }, true);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') setTimeout(syncCartOpenFromDom, 0);
+    });
+  }
+
+  function boot() {
+    injectCss();
+    applyCheckoutFocusState();
+    watchCartDrawer();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+  window.addEventListener('popstate', function() { setTimeout(applyCheckoutFocusState, 0); });
+  setTimeout(boot, 250);
+  setTimeout(boot, 1500);
+})();
 
 /* Cookie Consent */
 
