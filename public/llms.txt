@@ -2330,6 +2330,10 @@ https://mashkanta-bepijama.co.il/articles/smart-repayment-reality
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-multiple-lotteries
 זכיתם בהגרלת דירה בהנחה ומתלבטים אם לנסות בעיר אחרת? המדריך המלא על משמעויות ביטול זכייה, גישה להגרלות נוספות ואיך זה משפיע על תהליך רכישת הדירה והמשכנתא.
 
+### החזר חודשי מקבלן
+https://mashkanta-bepijama.co.il/articles/contractor-repayment-discount-vs-market
+האם יש הבדל בהחזר החודשי של משכנתא המשולמת לפי לוח תשלומים לקבלן בין דירה בשוק החופשי לבין דירה בהנחה (מחיר למשתכן)? כל התשובות במדריך.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2364,7 +2368,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
