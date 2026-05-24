@@ -2334,6 +2334,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-multiple-lotteries
 https://mashkanta-bepijama.co.il/articles/contractor-repayment-discount-vs-market
 האם יש הבדל בהחזר החודשי של משכנתא המשולמת לפי לוח תשלומים לקבלן בין דירה בשוק החופשי לבין דירה בהנחה (מחיר למשתכן)? כל התשובות במדריך.
 
+### קרן עולה
+https://mashkanta-bepijama.co.il/articles/rising-principal-myth
+האם הכסף ששילמתם על משכנתא צמודת מדד הלך לפח אם תמחזרו עכשיו? מדריך מקיף על טעות העלות השקועה, שחיקת הקרן ואיך עוצרים את העלייה בחוב.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2368,7 +2372,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
