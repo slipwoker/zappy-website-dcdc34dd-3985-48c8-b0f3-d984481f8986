@@ -2346,6 +2346,10 @@ https://mashkanta-bepijama.co.il/articles/mortgage-timing-negotiation
 https://mashkanta-bepijama.co.il/articles/mortgage-no-income-high-equity
 האם אפשר לקבל משכנתא כשאין הכנסה חודשית מעבודה אבל יש הון עצמי גבוה שמכסה את עלות הנכס? המדריך המלא לאישור משכנתא במצבים מורכבים.
 
+### הון עצמי ויכולת החזר
+https://mashkanta-bepijama.co.il/articles/high-equity-repayment-ability
+יש לכם הון עצמי גבוה ואחוז מימון נמוך? הבנק עדיין יבדוק את יכולת ההחזר שלכם לעומק. המדריך המלא על הקשר בין הון עצמי ליחס החזר, מאת אריאל אחון ייעוץ משכנתאות.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2380,7 +2384,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
