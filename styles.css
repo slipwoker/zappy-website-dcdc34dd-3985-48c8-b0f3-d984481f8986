@@ -18049,6 +18049,86 @@ body .whatsapp-float {
 }
 .zappy-search-empty { text-align: center; padding: 24px 16px; color: var(--text-muted, #999); font-size: 0.9rem; }
 
+/* --- Full-results modal (Enter key) --- */
+.zappy-search-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+.zappy-search-modal.zappy-search-modal-open { display: flex; }
+.zappy-search-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.zappy-search-modal-panel {
+  position: relative;
+  width: min(640px, 100%);
+  max-height: min(80vh, 720px);
+  background: var(--surface, #fff);
+  border-radius: var(--radius-card, 12px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: zappy-search-modal-in 0.22s ease;
+}
+@keyframes zappy-search-modal-in {
+  from { opacity: 0; transform: translateY(-12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.zappy-search-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border, #eee);
+  flex-shrink: 0;
+}
+.zappy-search-modal-query {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark, #333);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.zappy-search-modal-count {
+  font-size: 0.8rem;
+  color: var(--text-muted, #888);
+  flex-shrink: 0;
+}
+.zappy-search-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 4px 8px;
+  color: var(--text-muted, #888);
+  flex-shrink: 0;
+}
+.zappy-search-modal-close:hover { color: var(--text-dark, #333); }
+.zappy-search-modal-results {
+  overflow-y: auto;
+  padding: 8px;
+  flex: 1;
+  min-height: 0;
+}
+.zappy-search-modal-results .zappy-search-result-item {
+  margin-bottom: 2px;
+}
+body.zappy-search-modal-active { overflow: hidden; }
+
 /* --- Mobile search --- */
 .zappy-search-mobile-trigger { display: none; }
 .zappy-search-mobile-bar { display: none; }

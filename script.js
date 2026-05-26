@@ -431,7 +431,11 @@ document.addEventListener('DOMContentLoaded', function() {
 (function() {
   var _lang = (document.documentElement.lang || "en").substring(0, 2).toLowerCase();
   var _noResults = { he: "לא נמצאו תוצאות", ar: "لم يتم العثور على نتائج", es: "Sin resultados", fr: "Aucun r\u00E9sultat", de: "Keine Ergebnisse", en: "No results found" };
+  var _resultsFor = { he: "תוצאות עבור", ar: "نتائج عن", es: "Resultados para", fr: "R\u00E9sultats pour", de: "Ergebnisse f\u00FCr", en: "Results for" };
+  var _closeModal = { he: "סגור", ar: "إغلاق", en: "Close" };
   var noResultsText = _noResults[_lang] || _noResults.en;
+  var resultsForText = _resultsFor[_lang] || _resultsFor.en;
+  var closeModalText = _closeModal[_lang] || _closeModal.en;
   var idx = null;
 
   function loadIndex(cb) {
@@ -470,7 +474,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (score > 0) scored.push({ entry: entry, score: score });
     }
     scored.sort(function(a, b) { return b.score - a.score; });
-    return scored.slice(0, 10);
+    var limit = arguments.length >= 3 ? arguments[2] : 10;
+    if (limit == null || limit <= 0) return scored;
+    return scored.slice(0, limit);
   }
 
   function escapeRe(s) {
@@ -548,6 +554,91 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     window.location.href = pagePath + (anchor ? "#" + anchor : "");
   }
+
+  var searchModalEl = null;
+  function ensureSearchModal() {
+    if (searchModalEl) return searchModalEl;
+    var modal = document.createElement("div");
+    modal.id = "zappy-search-modal";
+    modal.className = "zappy-search-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.innerHTML =
+      '<div class="zappy-search-modal-backdrop" data-zappy-search-modal-close></div>' +
+      '<div class="zappy-search-modal-panel">' +
+        '<div class="zappy-search-modal-header">' +
+          '<div class="zappy-search-modal-query" id="zappy-search-modal-query"></div>' +
+          '<div class="zappy-search-modal-count" id="zappy-search-modal-count"></div>' +
+          '<button type="button" class="zappy-search-modal-close" data-zappy-search-modal-close aria-label="' + closeModalText + '">&times;</button>' +
+        '</div>' +
+        '<div class="zappy-search-modal-results" id="zappy-search-modal-results"></div>' +
+      '</div>';
+    document.body.appendChild(modal);
+    modal.querySelectorAll("[data-zappy-search-modal-close]").forEach(function(el) {
+      el.addEventListener("click", function(e) { e.preventDefault(); closeSearchModal(); });
+    });
+    searchModalEl = modal;
+    return modal;
+  }
+
+  function bindModalResultClicks(container, onNavigate) {
+    container.querySelectorAll(".zappy-search-result-item").forEach(function(el) {
+      el.addEventListener("click", function(e) {
+        e.stopPropagation();
+        if (onNavigate) onNavigate();
+        navigateToResult(el.getAttribute("data-href"));
+      });
+    });
+  }
+
+  function buildResultsHtml(results, query) {
+    var html = "";
+    for (var i = 0; i < results.length; i++) {
+      var r = results[i].entry;
+      var href = r.page + (r.anchor ? "#" + r.anchor : "");
+      var snippet = (r.content || "").substring(0, 160);
+      html += '<div class="zappy-search-result-item" data-href="' + href + '" data-ridx="' + i + '" role="link" tabindex="0">';
+      html += '<div class="zappy-search-result-title">' + highlight(r.title || r.anchor, query) + "</div>";
+      if (snippet) html += '<div class="zappy-search-result-snippet">' + highlight(snippet, query) + "</div>";
+      if (r.pageTitle && r.page !== "/") html += '<div class="zappy-search-result-page">' + r.pageTitle + "</div>";
+      html += "</div>";
+    }
+    return html;
+  }
+
+  function openSearchModal(query, results, onCloseInline) {
+    var modal = ensureSearchModal();
+    var queryEl = document.getElementById("zappy-search-modal-query");
+    var countEl = document.getElementById("zappy-search-modal-count");
+    var resultsEl = document.getElementById("zappy-search-modal-results");
+    if (!queryEl || !countEl || !resultsEl) return;
+    queryEl.textContent = resultsForText + " \"" + query + "\"";
+    if (results.length === 0) {
+      countEl.textContent = "";
+      resultsEl.innerHTML = '<div class="zappy-search-empty">' + noResultsText + "</div>";
+    } else {
+      countEl.textContent = String(results.length);
+      resultsEl.innerHTML = buildResultsHtml(results, query);
+      bindModalResultClicks(resultsEl, onCloseInline);
+    }
+    modal.classList.add("zappy-search-modal-open");
+    document.body.classList.add("zappy-search-modal-active");
+  }
+
+  function closeSearchModal() {
+    if (!searchModalEl) return;
+    searchModalEl.classList.remove("zappy-search-modal-open");
+    document.body.classList.remove("zappy-search-modal-active");
+    var resultsEl = document.getElementById("zappy-search-modal-results");
+    if (resultsEl) resultsEl.innerHTML = "";
+  }
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && searchModalEl && searchModalEl.classList.contains("zappy-search-modal-open")) {
+      e.preventDefault();
+      closeSearchModal();
+    }
+  });
 
   function initSearch() {
     var container = document.getElementById("zappy-search-container");
@@ -629,18 +720,7 @@ document.addEventListener('DOMContentLoaded', function() {
         container.classList.remove("zappy-search-has-results");
         return;
       }
-      var html = "";
-      for (var i = 0; i < results.length; i++) {
-        var r = results[i].entry;
-        var href = r.page + (r.anchor ? "#" + r.anchor : "");
-        var snippet = (r.content || "").substring(0, 120);
-        html += '<div class="zappy-search-result-item" data-href="' + href + '" data-ridx="' + i + '" role="link" tabindex="0">';
-        html += '<div class="zappy-search-result-title">' + highlight(r.title || r.anchor, query) + "</div>";
-        if (snippet) html += '<div class="zappy-search-result-snippet">' + highlight(snippet, query) + "</div>";
-        if (r.pageTitle && r.page !== "/") html += '<div class="zappy-search-result-page">' + r.pageTitle + "</div>";
-        html += "</div>";
-      }
-      resultsEl.innerHTML = html;
+      resultsEl.innerHTML = buildResultsHtml(results, query);
       container.classList.add("zappy-search-has-results");
       resultsEl.querySelectorAll(".zappy-search-result-item").forEach(function(el) {
         el.addEventListener("click", function(e) {
@@ -663,11 +743,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     input.addEventListener("keydown", function(e) {
+      var q = input.value.trim();
+      if (e.key === "Enter" && q.length >= 2) {
+        e.preventDefault();
+        var items = resultsEl.querySelectorAll(".zappy-search-result-item");
+        if (activeIdx >= 0 && items.length) { items[activeIdx].click(); return; }
+        loadIndex(function(data) {
+          openSearchModal(q, search(q, data, null), closeSearch);
+        });
+        return;
+      }
       var items = resultsEl.querySelectorAll(".zappy-search-result-item");
       if (!items.length) return;
       if (e.key === "ArrowDown") { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, items.length - 1); }
       else if (e.key === "ArrowUp") { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); }
-      else if (e.key === "Enter" && activeIdx >= 0) { e.preventDefault(); items[activeIdx].click(); return; }
       else return;
       items.forEach(function(el, i) { el.classList.toggle("zappy-search-active", i === activeIdx); });
       if (items[activeIdx]) items[activeIdx].scrollIntoView({ block: "nearest" });
@@ -723,18 +812,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mBar.classList.remove("zappy-mobile-has-results");
         return;
       }
-      var html = "";
-      for (var i = 0; i < results.length; i++) {
-        var r = results[i].entry;
-        var href = r.page + (r.anchor ? "#" + r.anchor : "");
-        var snippet = (r.content || "").substring(0, 120);
-        html += '<div class="zappy-search-result-item" data-href="' + href + '" role="link" tabindex="0">';
-        html += '<div class="zappy-search-result-title">' + highlight(r.title || r.anchor, query) + "</div>";
-        if (snippet) html += '<div class="zappy-search-result-snippet">' + highlight(snippet, query) + "</div>";
-        if (r.pageTitle && r.page !== "/") html += '<div class="zappy-search-result-page">' + r.pageTitle + "</div>";
-        html += "</div>";
-      }
-      mResults.innerHTML = html;
+      mResults.innerHTML = buildResultsHtml(results, query);
       mBar.classList.add("zappy-mobile-has-results");
       mResults.querySelectorAll(".zappy-search-result-item").forEach(function(el) {
         el.addEventListener("click", function(e) {
@@ -750,6 +828,16 @@ document.addEventListener('DOMContentLoaded', function() {
       mTimer = setTimeout(function() {
         loadIndex(function(data) { renderMobileResults(search(q, data), q); });
       }, 200);
+    });
+
+    mInput.addEventListener("keydown", function(e) {
+      var q = mInput.value.trim();
+      if (e.key === "Enter" && q.length >= 2) {
+        e.preventDefault();
+        loadIndex(function(data) {
+          openSearchModal(q, search(q, data, null), closeMobile);
+        });
+      }
     });
   }
 
@@ -3786,10 +3874,10 @@ function fixContrast(){
 })();
 
 
-/* ZAPPY_ECOM_LANGUAGE_ROUTING_RUNTIME_V16 */
+/* ZAPPY_ECOM_LANGUAGE_ROUTING_RUNTIME_V17 */
 (function() {
-  if (window.__zappyEcomLanguageRoutingRuntime >= 16) return;
-  window.__zappyEcomLanguageRoutingRuntime = 16;
+  if (window.__zappyEcomLanguageRoutingRuntime >= 17) return;
+  window.__zappyEcomLanguageRoutingRuntime = 17;
 
   // Routing strategy: use path-based language URLs for ALL storefront pages
   // (including dynamic /product/:slug and /category/:slug). The publish
@@ -3894,10 +3982,11 @@ function fixContrast(){
   }
 
   function getDefaultLang() {
-    // The default language is whatever owns the path-prefix-free routes. We
-    // pin to 'he' here for the legacy Hebrew-source sites; future-proof by
-    // overriding via window.__zappyDefaultLang from the generated bundle.
-    return window.__zappyDefaultLang || 'he';
+    // Must mirror getBakedDefaultLang() so buildPath() agrees with the
+    // zappyAdditionalDefaultLanguage / zappyEcomDefaultLanguage baked at
+    // generation time. A hardcoded 'he' fallback here caused English-only
+    // sites (post language removal) to rewrite /products → /en/products.
+    return getBakedDefaultLang();
   }
 
   function buildPath(path) {
