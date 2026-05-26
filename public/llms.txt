@@ -2354,6 +2354,10 @@ https://mashkanta-bepijama.co.il/articles/high-equity-repayment-ability
 https://mashkanta-bepijama.co.il/articles/mizrahi-mortgage-at-your-pace
 סקירה מקיפה של מסלול משכנתא בקצב שלך של בנק מזרחי טפחות. האם זה משתלם? יתרונות, חסרונות ולמי המסלול מתאים באמת. היכנסו לקריאה.
 
+### ריבית הפריים
+https://mashkanta-bepijama.co.il/articles/prime-rate-mechanics
+איך משפיעה עלייה או ירידה של ריבית הפריים על המשכנתא שלכם? המדריך המלא על מפתח החישוב, ההשפעה על ההחזר החודשי, הקרן, ושאר מסלולי המשכנתא.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2388,7 +2392,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
