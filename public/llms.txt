@@ -2362,6 +2362,10 @@ https://mashkanta-bepijama.co.il/articles/prime-rate-mechanics
 https://mashkanta-bepijama.co.il/articles/reservists-combat-lottery
 המדריך המלא להגרלות דירה בהנחה: מה ההבדל בסיכויי הזכייה בין חייל מילואים עורפי לבין לוחם במילואים, וכיצד שיטת ההגרלה הכפולה עובדת.
 
+### תוקף זכאות
+https://mashkanta-bepijama.co.il/articles/housing-eligibility-time-limit
+האם ניתן לקבל זכאות משרד השיכון לאחר שעברו 3 שנים מחתימת החוזה? המדריך המלא על תוקף הזכאות לרוכשי דירה ראשונה ויד שנייה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2396,7 +2400,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
