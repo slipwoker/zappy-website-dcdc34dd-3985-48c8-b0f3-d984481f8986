@@ -2378,6 +2378,10 @@ https://mashkanta-bepijama.co.il/articles/life-insurance-issues
 https://mashkanta-bepijama.co.il/articles/contractor-cashflow-strategy
 למה התזרים החודשי חשוב יותר מריביות המשכנתא כשקונים דירה מקבלן? מדריך מקיף על התמודדות עם תשלום כפול של שכירות ומשכנתא, ובניית תמהיל נכון עד לקבלת המפתח.
 
+### חוקי ברזל
+https://mashkanta-bepijama.co.il/articles/dira-behanacha-iron-rules
+97% מהנרשמים לדירה בהנחה עושים טעויות קריטיות. קראו את 10 חוקי הברזל של עשה ואל תעשה לפני ההרשמה להגרלה, כולל דגשים על ייעוץ משכנתאות.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2412,7 +2416,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
