@@ -2802,29 +2802,30 @@ function fixContrast(){
       return keys;
     }
     
+    // Wildcard semantics, shared with window.zappyVariantMatrix (baked storefront
+    // JS) when present; the inline fallback mirrors it so preview (which may not
+    // load the baked module) and publish never diverge on strict-vs-wildcard.
+    function _matchesAll(v, selections) {
+      if (!v || !v.attributes || v.is_active === false) return false;
+      for (var k in selections) {
+        if (!selections.hasOwnProperty(k)) continue;
+        if (v.attributes.hasOwnProperty(k) && v.attributes[k] !== selections[k]) return false;
+      }
+      return true;
+    }
+
     function _comboExists(selections) {
-      return _getVariants().some(function(v) {
-        if (!v.attributes) return false;
-        for (var k in selections) {
-          if (!selections.hasOwnProperty(k)) continue;
-          if (v.attributes[k] !== selections[k]) return false;
-        }
-        return true;
-      });
+      if (window.zappyVariantMatrix) return window.zappyVariantMatrix.filterMatching(_getVariants(), selections).length > 0;
+      return _getVariants().some(function(v) { return _matchesAll(v, selections); });
     }
     
     function _findMatching(selections) {
-      return _getVariants().filter(function(v) {
-        if (!v.attributes) return false;
-        for (var k in selections) {
-          if (!selections.hasOwnProperty(k)) continue;
-          if (v.attributes[k] !== selections[k]) return false;
-        }
-        return true;
-      });
+      if (window.zappyVariantMatrix) return window.zappyVariantMatrix.filterMatching(_getVariants(), selections);
+      return _getVariants().filter(function(v) { return _matchesAll(v, selections); });
     }
     
     function _isOOS(v) {
+      if (window.zappyVariantMatrix) return window.zappyVariantMatrix.isUnavailable(v);
       if (!v) return true;
       if (v.stock_status === 'out_of_stock') return true;
       var i = v.inventory_quantity != null ? v.inventory_quantity : v.inventoryQuantity;
