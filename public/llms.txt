@@ -2398,6 +2398,10 @@ https://mashkanta-bepijama.co.il/articles/renewing-eligibility-certificate
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-waitlist-win
 קיבלתם הודעה על זכייה בדירה בהנחה עקב ביטול של זוכה אחר? המדריך המלא לשלבים הבאים, תכנון פיננסי נכון, והאם הזכייה באמת מובטחת. היכנסו לקריאה.
 
+### פירעון חלקי
+https://mashkanta-bepijama.co.il/articles/partial-repayment-strategy
+האם כדאי לפרוע מסלול משכנתא עם עמלת פירעון מוקדם או מסלול ללא קנס? מדריך מקיף שיעזור לכם לקבל את ההחלטה הכלכלית הנכונה ולחסוך כסף.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2432,7 +2436,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
