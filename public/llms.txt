@@ -2410,6 +2410,10 @@ https://mashkanta-bepijama.co.il/articles/ben-makom-address-change
 https://mashkanta-bepijama.co.il/articles/rent-and-mortgage-simultaneously-dira-behanacha
 זכיתם בדירה בהנחה וחוששים מהתשלום הכפול של שכר דירה ומשכנתא? המדריך המלא להישרדות פיננסית בתקופת ההמתנה למפתח, כולל פתרונות מעשיים וטיפים חשובים.
 
+### שמאות תקן 19
+https://mashkanta-bepijama.co.il/articles/standard-19-appraisal
+מתי הבנק יחייב אתכם לערוך שמאות תקן 19 מלאה למשכנתא ומתי יסתפק בשמאות מקוצרת? כל מה שצריך לדעת על סוגי הנכסים, שווי, מיקום והשפעתם על דרישות הבנק.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2444,7 +2448,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
