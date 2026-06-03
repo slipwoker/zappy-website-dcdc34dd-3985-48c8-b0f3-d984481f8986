@@ -2414,6 +2414,10 @@ https://mashkanta-bepijama.co.il/articles/rent-and-mortgage-simultaneously-dira-
 https://mashkanta-bepijama.co.il/articles/standard-19-appraisal
 מתי הבנק יחייב אתכם לערוך שמאות תקן 19 מלאה למשכנתא ומתי יסתפק בשמאות מקוצרת? כל מה שצריך לדעת על סוגי הנכסים, שווי, מיקום והשפעתם על דרישות הבנק.
 
+### מענק מקום
+https://mashkanta-bepijama.co.il/articles/place-grant
+המדריך המלא למענק מקום בתוכניות דירה בהנחה ומחיר למשתכן. גלו מהו המענק, איך הוא מחושב כהון עצמי במשכנתא, האם משלמים עליו ומהם תנאי ההחזקה בנכס.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2448,7 +2452,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
