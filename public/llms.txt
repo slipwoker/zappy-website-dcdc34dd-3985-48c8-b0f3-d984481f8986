@@ -2402,6 +2402,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-waitlist-win
 https://mashkanta-bepijama.co.il/articles/partial-repayment-strategy
 האם כדאי לפרוע מסלול משכנתא עם עמלת פירעון מוקדם או מסלול ללא קנס? מדריך מקיף שיעזור לכם לקבל את ההחלטה הכלכלית הנכונה ולחסוך כסף.
 
+### שינוי כתובת לבן מקום
+https://mashkanta-bepijama.co.il/articles/ben-makom-address-change
+זכיתם בדירה בהנחה כבני מקום ושוקלים לעבור עיר? המדריך המלא על שינוי כתובת לאחר חתימת חוזה במחיר למשתכן וההשלכות על המשכנתא.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2436,7 +2440,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
