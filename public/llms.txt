@@ -2430,6 +2430,10 @@ https://mashkanta-bepijama.co.il/articles/ministry-of-housing-eligibility-no-gra
 https://mashkanta-bepijama.co.il/articles/bank-tour-negotiation
 המדריך המלא לביצוע סבב בנקים במשכנתא: איך מבקשים הצעה נגדית, האם אפשר להגיע לסניף ללא תור, לכמה זמן תקף האישור העקרוני ואיך מנהלים משא ומתן חכם.
 
+### שמאות נמוכה
+https://mashkanta-bepijama.co.il/articles/low-appraisal
+מדוע שמאי מעריך נכס מתחת למחיר הרכישה בחוזה? מה ההשלכות של שמאות נמוכה על המשכנתא שלכם, ומדוע יש פערים בין שמאים? מדריך מקיף מבית משכנתא בפיג'מה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2464,7 +2468,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
