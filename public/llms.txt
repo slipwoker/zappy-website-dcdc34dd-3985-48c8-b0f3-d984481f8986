@@ -2434,6 +2434,10 @@ https://mashkanta-bepijama.co.il/articles/bank-tour-negotiation
 https://mashkanta-bepijama.co.il/articles/low-appraisal
 מדוע שמאי מעריך נכס מתחת למחיר הרכישה בחוזה? מה ההשלכות של שמאות נמוכה על המשכנתא שלכם, ומדוע יש פערים בין שמאים? מדריך מקיף מבית משכנתא בפיג'מה.
 
+### ריביות מיחזור
+https://mashkanta-bepijama.co.il/articles/refinance-rates-vs-purchase
+מדוע ריביות מיחזור משכנתא לרוב גבוהות מריביות רכישה? מדריך מקיף על ההבדלים בין מיחזור פנימי באותו בנק למיחזור חיצוני, עלויות נלוות, והחשיבות של ייעוץ משכנתאות מקצועי לבחינת כדאיות.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2468,7 +2472,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
