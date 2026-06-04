@@ -2450,6 +2450,10 @@ https://mashkanta-bepijama.co.il/articles/eligibility-denial-previous-ownership
 https://mashkanta-bepijama.co.il/articles/rolling-grace-installments
 הסבר מקיף על מנגנון הגרייס במשכנתא בעת שחרור כספים לקבלן. גלו כיצד כל שחרור פותח מיני הלוואה חדשה ומה עושים כדי לסיים את הגרייס בקבלת המפתח.
 
+### מו"מ בריבית יורדת
+https://mashkanta-bepijama.co.il/articles/negotiating-falling-interest-rates
+המדריך המלא לניהול משא ומתן על ריביות המשכנתא מול הבנק בתקופה של ירידת ריביות. גלו איך לנצל את המצב לטובתכם בעזרת ייעוץ משכנתאות מקצועי.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2484,7 +2488,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
