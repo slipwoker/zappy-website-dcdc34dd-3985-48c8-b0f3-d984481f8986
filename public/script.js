@@ -5417,6 +5417,231 @@ function withConsent(category, callback) {
   }
 })();
 
+
+/* ZAPPY_NAV_OVERFLOW_MENU_V1 */
+(function(){
+  try {
+    if (window.__zappyNavOverflowInit) return;
+    window.__zappyNavOverflowInit = true;
+
+    var MORE_LABELS = {en:'More',he:'עוד',es:'Más',fr:'Plus',de:'Mehr',it:'Altro',pt:'Mais',ar:'المزيد',ru:'Ещё',nl:'Meer',pl:'Więcej',tr:'Daha',ja:'その他',zh:'更多',hi:'और',sv:'Mer',uk:'Ще',ro:'Mai mult',cs:'Více',da:'Mere',fi:'Lisää',no:'Mer',el:'Περισσότερα'};
+    var TOL = 2;
+    var mo = null;
+
+    function moreLabel() {
+      var lang = (document.documentElement.getAttribute('lang') || 'en').slice(0,2).toLowerCase();
+      return MORE_LABELS[lang] || 'More';
+    }
+
+    function injectCss() {
+      if (document.getElementById('zappy-nav-overflow-css')) return;
+      var s = document.createElement('style');
+      s.id = 'zappy-nav-overflow-css';
+      s.textContent =
+        '@media (min-width:769px){' +
+          '.zappy-nav-more-item{position:relative!important;flex:0 0 auto!important;}' +
+          '.zappy-nav-more-item>.zappy-nav-more-toggle{cursor:pointer;display:inline-flex!important;align-items:center;gap:6px;white-space:nowrap;}' +
+          '.navbar .zappy-nav-more-item>.sub-menu{display:block!important;left:auto!important;right:0!important;min-width:200px!important;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(6px);transition:opacity .18s ease,visibility .18s ease,transform .18s ease;}' +
+          'html[dir="rtl"] .navbar .zappy-nav-more-item>.sub-menu{left:0!important;right:auto!important;}' +
+          '.navbar .zappy-nav-more-item:hover>.sub-menu,.navbar .zappy-nav-more-item:focus-within>.sub-menu,.navbar .zappy-nav-more-item.open>.sub-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important;}' +
+          '.zappy-nav-more-item>.sub-menu>li{display:block!important;width:100%!important;flex:0 0 auto!important;}' +
+          '.zappy-nav-more-item>.sub-menu>li>a{display:block!important;white-space:nowrap!important;padding:10px 16px!important;}' +
+          '.zappy-nav-more-item .sub-menu .sub-menu{position:static!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important;box-shadow:none!important;min-width:0!important;padding-inline-start:12px!important;}' +
+          '.zappy-nav-more-item>.sub-menu>li>a .dropdown-arrow,.zappy-nav-more-item>.sub-menu .mobile-submenu-toggle{display:none!important;}' +
+        '}' +
+        '@media (max-width:768px){.zappy-nav-more-item{display:none!important;}}';
+      (document.head || document.documentElement).appendChild(s);
+    }
+
+    function getMenu() {
+      return document.querySelector('.nav-container > .nav-menu, .nav-right-group > .nav-menu')
+        || document.getElementById('navMenu')
+        || document.querySelector('.nav-menu');
+    }
+
+    function overflows(menu) {
+      // Primary signal: the menu's own content spills past its box. Reliable
+      // for the common case where the menu is a flex-grow child — it grabs a
+      // fixed share of the nav row, so its items overflow (scrollWidth >
+      // clientWidth) exactly when they don't fit.
+      if (menu.scrollWidth > menu.clientWidth + TOL) return true;
+      // Secondary signal: ONLY trust the parent/container overflow when the
+      // menu is content-sized (flex-grow:0) and can therefore never report a
+      // self-overflow. A flex-GROW menu that fits its own box is genuinely
+      // fine — a few px of parent overflow in that case comes from unrelated
+      // siblings (the search box / cart icons on multi-language LTR
+      // storefronts persistently sit a handful of px over) and must NOT drain
+      // the entire menu into "More". This was the multi-language bug: the
+      // English/Russian nav-right-group reported a constant 5px overflow, so
+      // the loop pushed every item past the first into the dropdown.
+      var grow = 0;
+      try { grow = parseFloat(getComputedStyle(menu).flexGrow) || 0; } catch (e) {}
+      if (grow === 0) {
+        var c = menu.parentElement;
+        if (c && c.scrollWidth > c.clientWidth + TOL) return true;
+      }
+      return false;
+    }
+
+    function makeMoreItem() {
+      var li = document.createElement('li');
+      li.className = 'menu-item-has-children zappy-nav-more-item';
+      li.setAttribute('data-zappy-nav-more', '1');
+      var a = document.createElement('a');
+      a.href = '#';
+      a.className = 'zappy-nav-more-toggle nav-link';
+      a.setAttribute('aria-haspopup', 'true');
+      a.setAttribute('aria-expanded', 'false');
+      a.innerHTML = '<span class="zappy-nav-more-label"></span><svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>';
+      a.querySelector('.zappy-nav-more-label').textContent = moreLabel();
+      var ul = document.createElement('ul');
+      ul.className = 'sub-menu zappy-nav-more-menu';
+      ul.setAttribute('role', 'menu');
+      li.appendChild(a);
+      li.appendChild(ul);
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var open = li.classList.toggle('open');
+        a.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      return li;
+    }
+
+    function restore(menu) {
+      var more = menu.querySelector(':scope > .zappy-nav-more-item');
+      if (!more) return;
+      var sub = more.querySelector('.sub-menu');
+      while (sub && sub.firstElementChild) {
+        menu.insertBefore(sub.firstElementChild, more);
+      }
+      more.remove();
+    }
+
+    // Is this anchor href the site home/root? Handles BOTH the preview shape
+    // (.../preview-fullscreen/<id>?page=%2F) and the published shape (/, /index.html,
+    // /en/, etc.), language prefixes and absolute origins included.
+    function isHomeHref(href) {
+      if (!href) return false;
+      href = ('' + href).trim();
+      if (!href || href.charAt(0) === '#') return false;
+      var pIdx = href.indexOf('page=');
+      if (pIdx !== -1) {
+        var val = href.slice(pIdx + 5);
+        var stop = val.search(/[&#]/);
+        if (stop !== -1) val = val.slice(0, stop);
+        try { val = decodeURIComponent(val); } catch (e) {}
+        val = val.replace(/index\.html$/i, '').replace(/^\/[a-z]{2}\/$/i, '/');
+        return val === '/' || val === '';
+      }
+      var clean = href.split('?')[0].split('#')[0].trim();
+      clean = clean.replace(/^https?:\/\/[^/]+/i, '').replace(/^\.\//, '/').replace(/index\.html$/i, '');
+      if (clean === '' || clean === '/') return true;
+      return /^\/[a-z]{2}\/?$/i.test(clean);
+    }
+
+    // The "Home" link must always be the FIRST top-level nav item. The
+    // ecommerce generator injects the auto-built Products dropdown by replacing
+    // the catalog/products link IN PLACE, so when the LLM happened to emit that
+    // link before "Home" the dropdown rendered first (bug 2026-06: "Products,
+    // Home, ..." across e-commerce sites). This deterministically hoists the
+    // Home item back to the front on every reflow — runs before the overflow
+    // pass so Home can never be pushed into "More".
+    function reorderHomeFirst(menu) {
+      var home = menu.querySelector(':scope > li.nav-home-item');
+      if (!home) {
+        var lis = Array.prototype.filter.call(menu.children, function (el) {
+          return el.tagName === 'LI' && !(el.classList && el.classList.contains('zappy-nav-more-item'));
+        });
+        for (var i = 0; i < lis.length; i++) {
+          var a = lis[i].querySelector(':scope > a');
+          if (a && isHomeHref(a.getAttribute('href'))) { home = lis[i]; break; }
+        }
+      }
+      if (home && menu.firstElementChild !== home) {
+        menu.insertBefore(home, menu.firstElementChild);
+      }
+    }
+
+    function reflow() {
+      var menu = getMenu();
+      if (!menu) return;
+      if (mo) mo.disconnect();
+      try {
+        menu.classList.remove('zappy-desktop-wrap');
+        restore(menu);
+        reorderHomeFirst(menu);
+        if (window.innerWidth <= 768) return;
+        if (!overflows(menu)) return;
+        var more = makeMoreItem();
+        menu.appendChild(more);
+        var sub = more.querySelector('.sub-menu');
+        var guard = 0;
+        while (overflows(menu) && guard < 200) {
+          guard++;
+          var reals = Array.prototype.filter.call(menu.children, function(li) {
+            return li !== more && li.tagName === 'LI';
+          });
+          if (reals.length <= 1) break;
+          sub.insertBefore(reals[reals.length - 1], sub.firstChild);
+        }
+        if (!sub.firstElementChild) more.remove();
+      } finally {
+        observe();
+      }
+    }
+
+    function relabel() {
+      var menu = getMenu();
+      if (!menu) return;
+      var lbl = menu.querySelector('.zappy-nav-more-label');
+      if (lbl) lbl.textContent = moreLabel();
+    }
+
+    var t = null;
+    function schedule() {
+      if (t) clearTimeout(t);
+      t = setTimeout(reflow, 150);
+    }
+
+    function observe() {
+      if (!window.MutationObserver) return;
+      var menu = getMenu();
+      if (!menu) return;
+      if (!mo) mo = new MutationObserver(function() { schedule(); });
+      mo.observe(menu, { childList: true, subtree: true });
+    }
+
+    function init() {
+      injectCss();
+      reflow();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+    window.addEventListener('load', function() { injectCss(); reflow(); });
+    window.addEventListener('resize', schedule, { passive: true });
+    window.addEventListener('orientationchange', schedule, { passive: true });
+    window.addEventListener('popstate', function() { setTimeout(reflow, 0); });
+    window.addEventListener('zappy:languageChanged', function() { setTimeout(function() { relabel(); reflow(); }, 0); });
+    window.addEventListener('languageChanged', function() { setTimeout(function() { relabel(); reflow(); }, 0); });
+    document.addEventListener('click', function(e) {
+      var menu = getMenu();
+      if (!menu) return;
+      var more = menu.querySelector(':scope > .zappy-nav-more-item');
+      if (more && more.classList.contains('open') && !more.contains(e.target)) {
+        more.classList.remove('open');
+        var tog = more.querySelector('.zappy-nav-more-toggle');
+        if (tog) tog.setAttribute('aria-expanded', 'false');
+      }
+    }, true);
+    setTimeout(reflow, 300);
+    setTimeout(reflow, 1200);
+  } catch (e) {}
+})();
+
 /* ZAPPY_CUSTOMER_DISCOUNT_DELAYED_REFRESH_V1 */
 
 

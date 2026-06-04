@@ -19938,6 +19938,7 @@ html[dir="ltr"] .service-detail.service-reverse .service-detail-content { order:
 
 /* ZAPPY_MOBILE_NAV_ICON_ALIGNMENT_FIX */
 /* ZAPPY_MOBILE_NAV_ICON_ALIGNMENT_FIX_V3 */
+/* ZAPPY_MOBILE_NAV_ICON_ALIGNMENT_FIX_V4 */
 /* The mobile hamburger / phone buttons are absolutely positioned. Keep the
    navbar itself as a non-collapsing containing block so auto-margin centering
    stays aligned even when generated mobile CSS moves every nav child out of flow. */
@@ -19945,6 +19946,29 @@ html[dir="ltr"] .service-detail.service-reverse .service-detail-content { order:
   .navbar,
   nav.navbar {
     min-height: 70px !important;
+  }
+
+  /* E-commerce mobile navbar icon-group alignment.
+     The icon couples (search after the hamburger; login+cart at the end edge)
+     are absolutely positioned with inset-inline offsets — inset-inline-start:52px
+     to clear the 36px hamburger that sits at left:12px on the .navbar, and
+     inset-inline-end:12px to hug the end edge. Those offsets are authored in the
+     NAVBAR's full-width coordinate space (the hamburger uses the same one). But
+     the offsets are resolved against the nearest positioned ancestor, and the
+     generated CSS makes .nav-container position:relative. When .nav-container is
+     ALSO inset by the navbar's horizontal padding (max-width / padding from the
+     LLM-authored navbar), the groups resolve to that inset box instead of the
+     full-width navbar: the search drifts ~20px away from the hamburger and the
+     cart leaves a fat asymmetric gap before the screen edge. Dropping
+     .nav-container out of the containing-block chain on mobile makes both couples
+     resolve to .navbar (always full-bleed) so they line up tightly with the
+     hamburger and sit symmetrically against both edges regardless of any
+     navbar/container padding. Scoped via :has() to navbars that actually carry
+     the e-commerce icon couples so non-ecommerce navs are untouched. */
+  .navbar:has(.nav-ecommerce-icons) .nav-container,
+  nav.navbar:has(.nav-ecommerce-icons) .nav-container,
+  header:has(.nav-ecommerce-icons) .nav-container {
+    position: static !important;
   }
 
   /* Some generated RTL nav CSS sets both left:50% and right:50% on the

@@ -2442,6 +2442,10 @@ https://mashkanta-bepijama.co.il/articles/refinance-rates-vs-purchase
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-discount-calculation
 איך מחשבים את ההנחה בדירה בהנחה? מדריך מקיף לזוכים המסביר את נוסחת ה-25% או 600,000 שקלים, מתי יוצג המחיר הסופי, וחשיבות ייעוץ משכנתאות מקצועי.
 
+### שלילת זכאות
+https://mashkanta-bepijama.co.il/articles/eligibility-denial-previous-ownership
+מה עושים כשהבנק או משרד השיכון שוללים את הזכאות למשכנתא בגלל בעלות קודמת על חלק מנכס? מדריך מלא לטיפול בתקופת אכשרה וצינון למחוסרי דיור.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2476,7 +2480,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
