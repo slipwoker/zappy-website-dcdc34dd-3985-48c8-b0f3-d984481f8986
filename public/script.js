@@ -1804,6 +1804,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var answerSel = '[class*="faq-answer"], [class*="faq-content"], [class*="faq-body"], [class*="faq-item__answer"], .accordion-content, .accordion-body';
 
+    // Pick the collapsible answer element for an item WITHOUT ever choosing a
+    // wrapper that contains the question/header toggle. Some AI-generated FAQs
+    // nest the clickable question INSIDE a .faq-content wrapper; collapsing that
+    // wrapper (max-height:0/opacity:0) would hide the question itself, leaving
+    // only the number visible and nothing to click to expand. Skipping any
+    // candidate that contains the toggle keeps the header visible and collapses
+    // only the real answer body.
+    function pickAnswer(item, question) {
+      var matches = item.querySelectorAll(answerSel);
+      for (var i = 0; i < matches.length; i++) {
+        var el = matches[i];
+        if (el === question) continue;
+        if (question && el.contains(question)) continue;
+        return el;
+      }
+      // No safe collapsible found (only wrappers that hold the toggle): leave
+      // the content expanded rather than hiding the question.
+      return null;
+    }
+
     function initFaqToggle() {
       var items = document.querySelectorAll('[class*="faq-item"], .accordion-item');
       if (!items.length) return;
@@ -1831,7 +1851,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 sib.classList.remove('active');
                 var sibQ = sib.querySelector('[class*="faq-question"], [class*="faq-header"], [class*="faq-item__question"], [class*="faq-item__btn"], [class*="faq-btn"], .accordion-header');
                 if (sibQ) sibQ.setAttribute('aria-expanded', 'false');
-                var sibA = sib.querySelector(answerSel);
+                var sibA = pickAnswer(sib, sibQ);
                 if (sibA) {
                   sibA.style.maxHeight = '0';
                   sibA.style.overflow = 'hidden';
@@ -1846,7 +1866,7 @@ document.addEventListener('DOMContentLoaded', function() {
           var isActive = item.classList.toggle('active');
           question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
 
-          var answer = item.querySelector(answerSel);
+          var answer = pickAnswer(item, question);
           if (answer) {
             if (isActive) {
               answer.style.display = '';
@@ -1891,7 +1911,8 @@ document.addEventListener('DOMContentLoaded', function() {
       items.forEach(function(item) {
         if (item.classList.contains('active')) return;
         if (item.closest(answerSel)) return;
-        var answer = item.querySelector(answerSel);
+        var question = item.querySelector('[class*="faq-question"], [class*="faq-header"], [class*="faq-item__question"], [class*="faq-item__btn"], [class*="faq-btn"], .accordion-header, .accordion-toggle');
+        var answer = pickAnswer(item, question);
         if (answer) {
           answer.style.maxHeight = '0';
           answer.style.overflow = 'hidden';
