@@ -2470,6 +2470,10 @@ https://mashkanta-bepijama.co.il/articles/grace-period-impact
 https://mashkanta-bepijama.co.il/articles/overthinking-mortgage-dissonance
 חתמתם על המשכנתא ופתאום אתם מלאים בספקות? המדריך המלא להתמודדות עם דיסוננס קוגניטיבי וחשיבת יתר לאחר לקיחת משכנתא, ואיך להחזיר את השקט הנפשי.
 
+### תדירות מיחזור
+https://mashkanta-bepijama.co.il/articles/refinance-frequency
+האם מותר למחזר משכנתא רק בתחנות יציאה? מדריך מקיף החושף את האמת על תדירות מיחזור משכנתא, מתי זה באמת משתלם ואיך עמלת פירעון מוקדם משפיעה על ההחלטה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2504,7 +2508,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
