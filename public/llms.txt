@@ -2474,6 +2474,10 @@ https://mashkanta-bepijama.co.il/articles/overthinking-mortgage-dissonance
 https://mashkanta-bepijama.co.il/articles/refinance-frequency
 האם מותר למחזר משכנתא רק בתחנות יציאה? מדריך מקיף החושף את האמת על תדירות מיחזור משכנתא, מתי זה באמת משתלם ואיך עמלת פירעון מוקדם משפיעה על ההחלטה.
 
+### פתיחת חשבון
+https://mashkanta-bepijama.co.il/articles/opening-bank-account-mortgage
+האם פתיחת חשבון בנק יכולה לשפר את תנאי המשכנתא שלכם? גלו את כל המשמעויות, היתרונות והחסרונות של המהלך בעזרת המדריך המלא שלנו.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2508,7 +2512,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
