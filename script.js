@@ -1912,6 +1912,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (item.classList.contains('active')) return;
         if (item.closest(answerSel)) return;
         var question = item.querySelector('[class*="faq-question"], [class*="faq-header"], [class*="faq-item__question"], [class*="faq-item__btn"], [class*="faq-btn"], .accordion-header, .accordion-toggle');
+        // No clickable question/header toggle exists → this is a STATIC FAQ
+        // (e.g. a grid of badge + always-visible content), not an accordion.
+        // Collapsing it here would hide the content with no way to expand it,
+        // since no click handler was bound above. Leave it fully visible.
+        if (!question) return;
         var answer = pickAnswer(item, question);
         if (answer) {
           answer.style.maxHeight = '0';
