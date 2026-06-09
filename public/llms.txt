@@ -2486,6 +2486,10 @@ https://mashkanta-bepijama.co.il/articles/volunteer-eligibility-mortgage
 https://mashkanta-bepijama.co.il/articles/mortgage-insurance-gap
 מה קורה כאשר ביטוח החיים נמוך מיתרת המשכנתא? מדריך מקיף המסביר באילו מצבים זה קורה, כיצד פותרים את הבעיה ואיך ייעוץ משכנתאות מקצועי יכול למנוע זאת.
 
+### ידועים בציבור
+https://mashkanta-bepijama.co.il/articles/dira-behanacha-unmarried-payment
+האם בהגרלת דירה בהנחה לידועים בציבור, כאשר רק צד אחד משלם, הצד השני מקבל חצי מהדירה? כל מה שצריך לדעת על בעלות, חיתום בנקאי והסכמי ממון.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2520,7 +2524,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
