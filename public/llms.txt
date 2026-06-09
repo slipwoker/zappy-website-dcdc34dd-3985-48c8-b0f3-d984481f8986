@@ -2494,6 +2494,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-unmarried-payment
 https://mashkanta-bepijama.co.il/articles/property-separation-mortgage
 האם כדאי לזוג לערוך הסכם ממון כדי לרכוש שתי דירות בתנאי דירה יחידה? ניתוח מקיף של יתרונות, סיכונים והשלכות מיסוי בתהליך ייעוץ משכנתאות.
 
+### מימון המדד
+https://mashkanta-bepijama.co.il/articles/increasing-mortgage-for-index
+המדריך המלא להתמודדות עם עליית מחיר הדירה מקבלן בעקבות מדד תשומות הבנייה. האם כדאי להגדיל את המשכנתא לקראת המסירה או לקחת הלוואה רגילה?
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2528,7 +2532,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
