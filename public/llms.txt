@@ -2490,6 +2490,10 @@ https://mashkanta-bepijama.co.il/articles/mortgage-insurance-gap
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-unmarried-payment
 האם בהגרלת דירה בהנחה לידועים בציבור, כאשר רק צד אחד משלם, הצד השני מקבל חצי מהדירה? כל מה שצריך לדעת על בעלות, חיתום בנקאי והסכמי ממון.
 
+### הפרדה רכושית
+https://mashkanta-bepijama.co.il/articles/property-separation-mortgage
+האם כדאי לזוג לערוך הסכם ממון כדי לרכוש שתי דירות בתנאי דירה יחידה? ניתוח מקיף של יתרונות, סיכונים והשלכות מיסוי בתהליך ייעוץ משכנתאות.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2524,7 +2528,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
