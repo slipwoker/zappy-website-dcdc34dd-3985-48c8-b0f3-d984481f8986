@@ -2498,6 +2498,10 @@ https://mashkanta-bepijama.co.il/articles/property-separation-mortgage
 https://mashkanta-bepijama.co.il/articles/increasing-mortgage-for-index
 המדריך המלא להתמודדות עם עליית מחיר הדירה מקבלן בעקבות מדד תשומות הבנייה. האם כדאי להגדיל את המשכנתא לקראת המסירה או לקחת הלוואה רגילה?
 
+### אישור הסתדרות
+https://mashkanta-bepijama.co.il/articles/wzo-approval-mortgage
+מדוע הבנק דורש אישור והתחייבות לרישום משכנתא מההסתדרות הציונית העולמית בקרקעות רמ"י? המדריך המלא לבירוקרטיה של משכנתא ביישובים כפריים וקהילתיים.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2532,7 +2536,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
