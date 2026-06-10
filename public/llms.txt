@@ -2506,6 +2506,14 @@ https://mashkanta-bepijama.co.il/articles/wzo-approval-mortgage
 https://mashkanta-bepijama.co.il/articles/contractor-documents-delay
 מה עושים כשהקבלן מתעכב בהחזרת מסמכי הבטחונות למשכנתא? מדריך מקיף להתמודדות עם עיכובים, שמירה על תוקף הריביות והימנעות מקנסות פיגורים.
 
+### חתונה וזכייה
+https://mashkanta-bepijama.co.il/articles/wedding-and-dira-behanacha
+זכיתם בדירה בהנחה כידועים בציבור ומתכננים להתחתן? גלו האם שינוי סטטוס לנשואים עלול לפגוע בזכאות, מתי כדאי לעדכן את חברת ההרשמה והאם שווה לדחות את החתונה.
+
+### חתונה וזכייה
+https://mashkanta-bepijama.co.il/articles/wedding-before-contract-dira-behanacha
+זכיתם בדירה בהנחה כרווקים ואתם מתכננים להתחתן לפני חתימת החוזה? גלו את הסיכונים, הפתרונות, והחשיבות של ייעוץ משכנתאות כדי לא לאבד את הזכייה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2540,7 +2548,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
