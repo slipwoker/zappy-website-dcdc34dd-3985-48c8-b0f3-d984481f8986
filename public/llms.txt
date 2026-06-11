@@ -2514,10 +2514,6 @@ https://mashkanta-bepijama.co.il/articles/wedding-and-dira-behanacha
 https://mashkanta-bepijama.co.il/articles/wedding-before-contract-dira-behanacha
 זכיתם בדירה בהנחה כרווקים ואתם מתכננים להתחתן לפני חתימת החוזה? גלו את הסיכונים, הפתרונות, והחשיבות של ייעוץ משכנתאות כדי לא לאבד את הזכייה.
 
-### דירה בחו״ל
-https://mashkanta-bepijama.co.il/articles/foreign-apartment-eligibility
-האם בעלות על דירה בחו״ל פוגעת בזכאות להשתתף בהגרלות דירה בהנחה ומחיר למשתכן? כל התשובות, הכללים וההשלכות על המשכנתא במדריך המלא.
-
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2552,7 +2548,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox)
+  - `terms` (checkbox, required)
 
 ---
 
