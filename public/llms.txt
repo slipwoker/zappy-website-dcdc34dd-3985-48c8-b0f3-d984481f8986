@@ -2522,6 +2522,10 @@ https://mashkanta-bepijama.co.il/articles/foreign-property-eligibility
 https://mashkanta-bepijama.co.il/articles/second-hand-payment-schedule
 המדריך המלא לבניית לוח תשלומים ברכישת דירה יד שנייה. כל מה שצריך לדעת על משא ומתן, סילוק משכנתא של המוכר ותכנון פיננסי חכם.
 
+### ביטוח שותפים
+https://mashkanta-bepijama.co.il/articles/joint-mortgage-insurance
+לקחתם משכנתא עם שותפים או אחים ולא מבינים למה כל אחד מבוטח על מלוא הסכום? מדריך מקיף המסביר את היגיון חברות הביטוח והבנקים.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2556,7 +2560,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
