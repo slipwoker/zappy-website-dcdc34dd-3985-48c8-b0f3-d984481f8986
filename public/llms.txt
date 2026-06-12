@@ -2534,6 +2534,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-financing-myth
 https://mashkanta-bepijama.co.il/articles/hybrid-mortgage-mix
 המדריך המלא לבניית משכנתא היברידית המשלבת יציבות וגמישות. גלו איך ייעוץ משכנתאות מקצועי עוזר לכם לתכנן תמהיל מנצח לדירה ראשונה או למשפרי דיור.
 
+### תשלום ראשון
+https://mashkanta-bepijama.co.il/articles/first-payment-contractor
+חתמתם על חוזה רכישה בדירה בהנחה והבנק מסרב לשחרר את התשלום הראשון מההון העצמי ללא חוזה חתום? המדריך המלא ליציאה מפלונטר התשלום מול הקבלן והבנק.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2568,7 +2572,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
