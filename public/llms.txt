@@ -2526,6 +2526,10 @@ https://mashkanta-bepijama.co.il/articles/second-hand-payment-schedule
 https://mashkanta-bepijama.co.il/articles/joint-mortgage-insurance
 לקחתם משכנתא עם שותפים או אחים ולא מבינים למה כל אחד מבוטח על מלוא הסכום? מדריך מקיף המסביר את היגיון חברות הביטוח והבנקים.
 
+### מימון במשתכן
+https://mashkanta-bepijama.co.il/articles/dira-behanacha-financing-myth
+דירה בהנחה ומחיר למשתכן: מדוע רבים טועים לחשוב שניתן לקבל מימון של 90% עם 10% הון עצמי בכל מצב? כל האמת על אחוזי מימון, שמאות ויכולת החזר במשכנתא.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2560,7 +2564,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
