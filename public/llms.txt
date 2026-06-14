@@ -2538,6 +2538,10 @@ https://mashkanta-bepijama.co.il/articles/hybrid-mortgage-mix
 https://mashkanta-bepijama.co.il/articles/first-payment-contractor
 חתמתם על חוזה רכישה בדירה בהנחה והבנק מסרב לשחרר את התשלום הראשון מההון העצמי ללא חוזה חתום? המדריך המלא ליציאה מפלונטר התשלום מול הקבלן והבנק.
 
+### גירושין לאחר זכייה
+https://mashkanta-bepijama.co.il/articles/divorce-after-winning-dira-behanacha
+זכיתם בדירה בהנחה או מחיר למשתכן והחלטתם להתגרש? המדריך המלא לשמירה על הזכייה, העברת זכויות וקבלת אישור משכנתא ללווה יחיד. היכנסו לקריאה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2572,7 +2576,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
