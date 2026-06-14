@@ -2542,6 +2542,10 @@ https://mashkanta-bepijama.co.il/articles/first-payment-contractor
 https://mashkanta-bepijama.co.il/articles/divorce-after-winning-dira-behanacha
 זכיתם בדירה בהנחה או מחיר למשתכן והחלטתם להתגרש? המדריך המלא לשמירה על הזכייה, העברת זכויות וקבלת אישור משכנתא ללווה יחיד. היכנסו לקריאה.
 
+### גרייס חלקי
+https://mashkanta-bepijama.co.il/articles/partial-grace-contractor
+האם אפשר לקחת גרייס חלקי (תשלום ריבית בלבד) רק על חלק מהמשכנתא או רק בשלבי התשלום המאוחרים לקבלן? מדריך מקיף לתכנון פיננסי נכון ושחרור כספים חכם.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2576,7 +2580,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
