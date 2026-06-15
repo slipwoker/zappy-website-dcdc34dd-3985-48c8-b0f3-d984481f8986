@@ -2550,6 +2550,10 @@ https://mashkanta-bepijama.co.il/articles/partial-grace-contractor
 https://mashkanta-bepijama.co.il/articles/assignment-of-guarantee
 מהי הסבת ערבות ברכישת דירה מקבלן? מדוע הבנק דורש לחתום פיזית בבנק אחר, והאם זה מעכב את המשכנתא? המדריך המלא לרוכשי דירות שוק חופשי ודירה בהנחה.
 
+### הסל המוצע
+https://mashkanta-bepijama.co.il/articles/proposed-basket-vs-generic
+מה ההבדל בין הסלים האחידים באישור העקרוני לסל המוצע? האם חובה לבחור בהם, ולמה אסור לתת לבנקאי לבנות עבורכם את תמהיל המשכנתא. מדריך חובה לפני חתימה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2584,7 +2588,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 

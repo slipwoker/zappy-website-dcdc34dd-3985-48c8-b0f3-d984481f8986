@@ -3477,7 +3477,47 @@ function fixContrast(){
       }
     }
 
-    function getCartTotalTarget(drawer, currency) {
+    function convertDisplayAmount(baseAmount, exchangeRate) {
+      var n = parseFloat(baseAmount);
+      if (!isFinite(n)) n = 0;
+      var rate = parseFloat(exchangeRate);
+      if (!isFinite(rate) || rate <= 0) rate = 1;
+      var converted = n * rate;
+      if (rate === 1) return Math.round(converted * 100) / 100;
+      return Math.round(converted * 10) / 10;
+    }
+
+    function formatCartDisplayAmount(amount) {
+      if (typeof window.zappyFormatMoney === 'function') {
+        return window.zappyFormatMoney(amount);
+      }
+      var n = parseFloat(amount);
+      if (!isFinite(n)) n = 0;
+      var sym = (window.ZAPPY_CURRENCY_SYMBOL || '').trim() || '₪';
+      var rate = 1;
+      try {
+        if (window.ZAPPY_MULTI_CURRENCY && window.ZAPPY_MULTI_CURRENCY.enabled) {
+          var lang = '';
+          try { lang = new URLSearchParams(window.location.search).get('lang') || ''; } catch (e) {}
+          if (!lang && window.zappyI18n && typeof window.zappyI18n.getCurrentLanguage === 'function') {
+            lang = window.zappyI18n.getCurrentLanguage();
+          }
+          if (!lang) lang = document.documentElement.getAttribute('lang') || '';
+          lang = String(lang).split('-')[0].toLowerCase();
+          var langs = window.ZAPPY_MULTI_CURRENCY.languages || {};
+          if (lang && langs[lang]) {
+            if (langs[lang].symbol) sym = langs[lang].symbol;
+            var r = parseFloat(langs[lang].exchangeRate);
+            if (isFinite(r) && r > 0) rate = r;
+          } else if (window.ZAPPY_MULTI_CURRENCY.base && window.ZAPPY_MULTI_CURRENCY.base.symbol) {
+            sym = window.ZAPPY_MULTI_CURRENCY.base.symbol;
+          }
+        }
+      } catch (e) {}
+      return sym + convertDisplayAmount(n, rate).toFixed(2);
+    }
+
+    function getCartTotalTarget(drawer) {
       if (!drawer) return null;
       var totalEl = document.getElementById('cart-drawer-total');
       if (totalEl) return totalEl;
@@ -3487,7 +3527,7 @@ function fixContrast(){
       var labelMatch = existingText.match(/^([^:]+):/);
       var label = labelMatch ? labelMatch[1].trim() : (window.zappyI18n && window.zappyI18n.t ? window.zappyI18n.t('ecom_total') : 'Total');
       if (!label || label === 'ecom_total') label = existingText.indexOf('סה') !== -1 ? 'סה"כ' : 'Total';
-      legacyTotal.innerHTML = '<span>' + label + ':</span><span id="cart-drawer-total">' + (currency || '₪') + '0</span>';
+      legacyTotal.innerHTML = '<span>' + label + ':</span><span id="cart-drawer-total">' + formatCartDisplayAmount(0) + '</span>';
       return document.getElementById('cart-drawer-total');
     }
 
@@ -3496,26 +3536,21 @@ function fixContrast(){
       if (!drawer) return;
       var items = getCartItems();
       if (!items.length) return;
-      var currency = (window.ZAPPY_CURRENCY_SYMBOL || '').trim();
-      var totalEl = getCartTotalTarget(drawer, currency);
-      if (!currency && totalEl) {
-        var match = (totalEl.textContent || '').match(/^[^\d\s-]+/);
-        currency = match ? match[0] : '₪';
-      }
+      var totalEl = getCartTotalTarget(drawer);
       var total = 0;
       var priceEls = drawer.querySelectorAll('.cart-item-price, .cart-drawer-item-price');
       items.forEach(function(item, index) {
         var lineTotal = getLineTotal(item);
         total += lineTotal;
         if (priceEls[index]) {
-          var nextText = currency + lineTotal.toFixed(2);
+          var nextText = formatCartDisplayAmount(lineTotal);
           if (priceEls[index].textContent !== nextText) {
             priceEls[index].textContent = nextText;
           }
         }
       });
       if (totalEl) {
-        var nextTotal = currency + total.toFixed(2);
+        var nextTotal = formatCartDisplayAmount(total);
         if (totalEl.textContent !== nextTotal) totalEl.textContent = nextTotal;
       }
     }
@@ -3743,7 +3778,7 @@ function fixContrast(){
         { key: 'subtotal', id: 'subtotal', fallback: '₪0' },
         { key: 'vatIncluded', id: 'vat-amount', fallback: '₪0' },
         { key: 'shipping', id: 'shipping-cost', fallback: '₪0' },
-        { key: 'discount', id: 'discount', fallback: '₪0' },
+        { key: 'discount', id: 'checkout-discount-amount', fallback: '₪0.00' },
         { key: 'totalToPay', id: 'order-total', fallback: '₪0' }
       ];
       specs.forEach(function(spec, index) {
@@ -3762,13 +3797,35 @@ function fixContrast(){
       return isFinite(parsed) ? parsed : 0;
     }
 
+    function getCheckoutDisplaySymbol() {
+      var subtotalEl = document.getElementById('subtotal');
+      if (subtotalEl) {
+        var m = (subtotalEl.textContent || '').match(/^[^\d\s.-]+/);
+        if (m && m[0]) return m[0];
+      }
+      try {
+        if (window.ZAPPY_MULTI_CURRENCY && window.ZAPPY_MULTI_CURRENCY.enabled) {
+          var lang = getLang();
+          var langs = window.ZAPPY_MULTI_CURRENCY.languages || {};
+          if (lang && langs[lang] && langs[lang].symbol) return langs[lang].symbol;
+          if (window.ZAPPY_MULTI_CURRENCY.base && window.ZAPPY_MULTI_CURRENCY.base.symbol) {
+            return window.ZAPPY_MULTI_CURRENCY.base.symbol;
+          }
+        }
+      } catch (e) {}
+      return window.ZAPPY_CURRENCY_SYMBOL || '₪';
+    }
+
     function normalizeCheckoutValues() {
-      var discountEl = document.getElementById('discount');
+      var discountEl = document.getElementById('checkout-discount-amount') || document.getElementById('discount');
       var discountRow = document.getElementById('discount-row') || (discountEl && discountEl.closest('.discount-row, .order-totals-row'));
       if (discountEl && Math.abs(parseMoney(discountEl.textContent)) < 0.005) {
-        var zeroDiscountText = (window.ZAPPY_CURRENCY_SYMBOL || '₪') + '0';
+        if (discountRow) discountRow.classList.add('zappy-discount-hidden');
+        var sym = getCheckoutDisplaySymbol();
+        var zeroDiscountText = sym + '0.00';
         if (discountEl.textContent !== zeroDiscountText) discountEl.textContent = zeroDiscountText;
-        if (discountRow && discountRow.style.display !== 'none') discountRow.style.display = 'none';
+      } else if (discountRow) {
+        discountRow.classList.remove('zappy-discount-hidden');
       }
       var shippingCost = document.getElementById('shipping-cost');
       if (shippingCost && /^(חינם|FREE)$/i.test((shippingCost.textContent || '').trim())) {
@@ -3809,6 +3866,7 @@ function fixContrast(){
       setLabelForValue('#subtotal', 'subtotal');
       setLabelForValue('#vat-amount', 'vatIncluded');
       setLabelForValue('#shipping-cost', 'shipping');
+      setLabelForValue('#checkout-discount-amount', 'discount');
       setLabelForValue('#discount', 'discount');
       setLabelForValue('#order-total', 'totalToPay');
       var shippingCost = document.getElementById('shipping-cost');
@@ -3871,7 +3929,7 @@ function fixContrast(){
 
     var style = document.createElement('style');
     style.id = 'zappy-checkout-runtime-i18n-css';
-    style.textContent = '.checkout-order-details .order-totals-row{display:flex!important;justify-content:space-between!important;align-items:baseline!important;gap:12px!important}.checkout-order-details .order-totals-row span:first-child{flex:1 1 auto;min-width:0}.checkout-order-details .order-totals-row span:last-child{flex:0 0 auto;text-align:end}';
+    style.textContent = '.checkout-order-details .order-totals-row{display:flex!important;justify-content:space-between!important;align-items:baseline!important;gap:12px!important}.checkout-order-details .order-totals-row.zappy-discount-hidden{display:none!important}.checkout-order-details .order-totals-row span:first-child{flex:1 1 auto;min-width:0}.checkout-order-details .order-totals-row span:last-child{flex:0 0 auto;text-align:end}';
     if (!document.getElementById(style.id)) document.head.appendChild(style);
 
     if (document.readyState === 'complete') {
