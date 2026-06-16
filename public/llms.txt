@@ -2562,6 +2562,10 @@ https://mashkanta-bepijama.co.il/articles/missed-exit-point-refinancing
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-new-lottery-waitlist
 האם מותר להירשם להגרלת דירה בהנחה חדשה כשנמצאים במקום ריאלי ברשימת המתנה קודמת? כל התשובות, הכללים והאסטרטגיות לממתינים. היכנסו למדריך המלא.
 
+### זכייה במגרש
+https://mashkanta-bepijama.co.il/articles/land-lottery-vs-apartment
+האם זכייה בהגרלת מגרש של רמ"י מבטלת את הזכייה בדירה בהנחה? כל מה שחובה לדעת על שמירת סטטוס חסר דירה, סכנות הפסילה ותכנון פיננסי נכון.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2596,7 +2600,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
