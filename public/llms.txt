@@ -2554,6 +2554,10 @@ https://mashkanta-bepijama.co.il/articles/assignment-of-guarantee
 https://mashkanta-bepijama.co.il/articles/proposed-basket-vs-generic
 מה ההבדל בין הסלים האחידים באישור העקרוני לסל המוצע? האם חובה לבחור בהם, ולמה אסור לתת לבנקאי לבנות עבורכם את תמהיל המשכנתא. מדריך חובה לפני חתימה.
 
+### פספסתי תחנת יציאה
+https://mashkanta-bepijama.co.il/articles/missed-exit-point-refinancing
+פספסתם את תחנת היציאה במשכנתא? המדריך המלא שמסביר האם באמת צריך לחכות לתחנה הבאה כדי לבצע מיחזור משכנתא ושיפור תנאים, ואיך זה משפיע עליכם.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2588,7 +2592,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
