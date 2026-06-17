@@ -2566,6 +2566,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-new-lottery-waitlist
 https://mashkanta-bepijama.co.il/articles/land-lottery-vs-apartment
 האם זכייה בהגרלת מגרש של רמ"י מבטלת את הזכייה בדירה בהנחה? כל מה שחובה לדעת על שמירת סטטוס חסר דירה, סכנות הפסילה ותכנון פיננסי נכון.
 
+### הצעת מחזור ללא שמאות
+https://mashkanta-bepijama.co.il/articles/refinance-offer-without-appraisal
+איך לקבל הצעת מחזור משכנתא מבנק אחר רק כדי לשפר עמדות במו"מ מול הבנק הנוכחי? גלו מדוע אין צורך בשמאות מוקדמת ואיך ייעוץ משכנתאות יכול לחסוך לכם כסף.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2600,7 +2604,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
