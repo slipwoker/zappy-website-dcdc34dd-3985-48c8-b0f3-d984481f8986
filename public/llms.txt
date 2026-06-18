@@ -2578,6 +2578,10 @@ https://mashkanta-bepijama.co.il/articles/cost-per-100k
 https://mashkanta-bepijama.co.il/articles/cost-per-100k-864123
 מהי העלות לכל 100,000 ש"ח במשכנתא, האם היא קשיחה, ואיך היא משפיעה על ההחזר החודשי שלכם? המדריך המלא שיעשה לכם סדר לפני שלוקחים משכנתא.
 
+### בחירת עיר
+https://mashkanta-bepijama.co.il/articles/dira-behanacha-single-city-registration
+האם חובה להירשם ל-3 ערים בהגרלות דירה בהנחה ומחיר למשתכן? כל התשובות על בחירת עיר אחת ואסטרטגיית רישום נכונה, כולל משמעויות פיננסיות וייעוץ משכנתאות לזוכים.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2612,7 +2616,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
