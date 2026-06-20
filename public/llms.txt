@@ -2594,6 +2594,10 @@ https://mashkanta-bepijama.co.il/articles/negative-cpi-impact
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-lottery-order-240429
 האם להירשם לעיר כבן מקום או לערים גדולות? המדריך המלא המסביר את סדר ההגרלות בדירה בהנחה, אסטרטגיות רישום, וההשפעה על סיכויי הזכייה שלכם.
 
+### הגרלות מגזריות
+https://mashkanta-bepijama.co.il/articles/sectorial-lotteries
+האם חילוני יכול להירשם להגרלת דירה בהנחה בעיר חרדית או ערבית? כל המידע על ועדות קבלה, חוקי משרד השיכון, והכדאיות הכלכלית ברכישת דירה במגזר.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2628,7 +2632,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
