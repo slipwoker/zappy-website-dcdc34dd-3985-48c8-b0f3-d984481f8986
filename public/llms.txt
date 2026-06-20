@@ -2586,6 +2586,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-single-city-registratio
 https://mashkanta-bepijama.co.il/articles/buyers-vs-sellers-market
 מה ההבדל בין שוק של קונים לשוק של מוכרים בנדל״ן? גלו כיצד מצב השוק משפיע על תכנון המשכנתא שלכם, על הריביות ועל תהליך הרכישה.
 
+### ירידת מדד והמשכנתא
+https://mashkanta-bepijama.co.il/articles/negative-cpi-impact
+מה קורה למשכנתא כשהמדד יורד? מדריך מקיף על השפעת מדד המחירים לצרכן שלילי על קרן המשכנתא, ההחזר החודשי וכלל הברזל שחובה להכיר.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2620,7 +2624,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
