@@ -18711,6 +18711,27 @@ body.zappy-search-modal-active { overflow: hidden; }
   }
 }
 
+html, body, html *, body * {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+:root {
+  --primary-color: #1e3a8a;
+  --secondary-color: #f59e0b;
+  --accent-color: #d97706;
+}
+/* zappy-self-heal */
+:root { --primary-color: #1e3a8a !important; }
+:root { --secondary-color: #f59e0b !important; }
+:root { --accent-color: #d97706 !important; }
+
+/* zappy-self-heal */
+html body :root { --primary-color: #1e3a8a !important; }
+html body :root { --secondary-color: #f59e0b !important; }
+html body :root { --accent-color: #d97706 !important; }
+
+
 /* zappy-nav-child-indent */
 .zappy-products-dropdown .zappy-nav-child > a,
 .sub-menu .zappy-nav-child > a {
