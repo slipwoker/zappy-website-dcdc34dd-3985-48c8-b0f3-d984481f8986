@@ -2598,6 +2598,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-lottery-order-240429
 https://mashkanta-bepijama.co.il/articles/sectorial-lotteries
 האם חילוני יכול להירשם להגרלת דירה בהנחה בעיר חרדית או ערבית? כל המידע על ועדות קבלה, חוקי משרד השיכון, והכדאיות הכלכלית ברכישת דירה במגזר.
 
+### טריגר למיחזור
+https://mashkanta-bepijama.co.il/articles/refinance-trigger-small-changes
+האם ירידה קטנה בריבית בנק ישראל או חודש של אינפלציה שלילית מצדיקים מיחזור משכנתא? המדריך המלא מתי באמת כדאי למחזר ואיך לבדוק כדאיות כלכלית.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2632,7 +2636,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
