@@ -18909,7 +18909,7 @@ nav .sub-menu.zappy-empty-submenu,
   section[data-hero-type*="fullscreen"] {
     height: auto !important;
     min-height: 100svh !important;
-    padding: 0 0 90px 0 !important;
+    padding: 0 clamp(1rem, 5vw, 1.5rem) 90px !important;
   }
   section[data-hero-type*="fullscreen"] > [class*="-container"]:not([class*="bg"]):not([class*="scrim"]):not([class*="divider"]),
   section[data-hero-type*="fullscreen"] > .container {
@@ -19330,7 +19330,7 @@ nav .sub-menu.zappy-empty-submenu,
   section[data-hero-type*="fullscreen"] {
     height: auto !important;
     min-height: 100svh !important;
-    padding: 0 0 90px 0 !important;
+    padding: 0 clamp(1rem, 5vw, 1.5rem) 90px !important;
   }
   section[data-hero-type*="fullscreen"] > [class*="-container"]:not([class*="bg"]):not([class*="scrim"]):not([class*="divider"]),
   section[data-hero-type*="fullscreen"] > .container {
