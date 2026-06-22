@@ -2606,6 +2606,10 @@ https://mashkanta-bepijama.co.il/articles/refinance-trigger-small-changes
 https://mashkanta-bepijama.co.il/articles/housing-programs-differences
 האם תעודת זכאות אחת מספיקה לכל ההגרלות? מה ההבדל בין מחיר למשתכן, מחיר מטרה ודירה בהנחה? כל התשובות במדריך המלא לזוכים ולנרשמים.
 
+### הנחה במשתכן
+https://mashkanta-bepijama.co.il/articles/mechir-lamishtaken-lottery-myth
+האם זכייה בדירה בהנחה (מחיר למשתכן) באמת שקולה לזכייה בלוטו? גלו מדוע ההנחות בפרויקטים המאוחרים קטנו ואיך ייעוץ משכנתאות יכול לשמור על הכסף שלכם.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2640,7 +2644,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
