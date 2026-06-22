@@ -2640,7 +2640,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox)
+  - `terms` (checkbox, required)
 
 ---
 
