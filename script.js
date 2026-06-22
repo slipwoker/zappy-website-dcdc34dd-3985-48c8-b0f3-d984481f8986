@@ -2560,6 +2560,14 @@ function fixContrast(){
             container.removeAttribute('data-zappy-grid-centered');
           }
 
+          // List grids (<ul>/<ol>) read in document order and align to the start
+          // (first column); centering a checklist's lonely last item breaks its
+          // column alignment with the rows above. Cards (div grids) still center.
+          // The cleanup above already reverted any prior centering, so a list
+          // centered before this runtime shipped snaps back to its natural spot.
+          var containerTag = (container.tagName || '').toLowerCase();
+          if (containerTag === 'ul' || containerTag === 'ol') continue;
+
           var items = [];
           for (var c = 0; c < container.children.length; c++) {
             var ch = container.children[c];
