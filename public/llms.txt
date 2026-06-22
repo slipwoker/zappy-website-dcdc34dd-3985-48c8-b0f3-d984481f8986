@@ -2602,6 +2602,10 @@ https://mashkanta-bepijama.co.il/articles/sectorial-lotteries
 https://mashkanta-bepijama.co.il/articles/refinance-trigger-small-changes
 האם ירידה קטנה בריבית בנק ישראל או חודש של אינפלציה שלילית מצדיקים מיחזור משכנתא? המדריך המלא מתי באמת כדאי למחזר ואיך לבדוק כדאיות כלכלית.
 
+### הבדלי תוכניות
+https://mashkanta-bepijama.co.il/articles/housing-programs-differences
+האם תעודת זכאות אחת מספיקה לכל ההגרלות? מה ההבדל בין מחיר למשתכן, מחיר מטרה ודירה בהנחה? כל התשובות במדריך המלא לזוכים ולנרשמים.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2636,7 +2640,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
