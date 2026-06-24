@@ -2622,6 +2622,10 @@ https://mashkanta-bepijama.co.il/articles/split-mortgage-signatures
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-lottery-results
 הסתיימה הגרלת דירה בהנחה? המדריך המלא לזוכים ולממתינים. איך בודקים תוצאות, האם המיקום ריאלי, למה זוכים מבטלים, ומה הצעדים הבאים לקראת המשכנתא.
 
+### עיכוב קבלן
+https://mashkanta-bepijama.co.il/articles/dira-behanacha-contractor-delay
+זכיתם בדירה בהנחה או מחיר למשתכן והקבלן מתעכב? גלו מה הסיבות, עם מי לדבר, מתי יתקיים כנס בחירת דירות, ואיך להיערך נכון מבחינת ייעוץ משכנתאות.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2656,7 +2660,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
