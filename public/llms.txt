@@ -2614,6 +2614,10 @@ https://mashkanta-bepijama.co.il/articles/mechir-lamishtaken-lottery-myth
 https://mashkanta-bepijama.co.il/articles/mortgage-and-world-cup
 מה הקשר בין טורניר המונדיאל לבין תכנון המשכנתא שלכם? גלו איך אסטרטגיה, בחירת הרכב שחקנים וייעוץ מקצועי יכולים להוביל אתכם לניצחון פיננסי.
 
+### פיצול חתימות
+https://mashkanta-bepijama.co.il/articles/split-mortgage-signatures
+האם כל הלווים חייבים לחתום על המשכנתא באותו הזמן? מדריך מקיף על פיצול חתימות במשכנתא, חתימה מרחוק, ופתרונות זום לזוגות או שותפים שלא יכולים להגיע יחד.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2648,7 +2652,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
