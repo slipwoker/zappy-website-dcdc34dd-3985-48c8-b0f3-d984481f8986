@@ -2634,6 +2634,10 @@ https://mashkanta-bepijama.co.il/articles/contractor-payment-transfer-guide
 https://mashkanta-bepijama.co.il/articles/canceling-signed-mortgage-before-drawdown
 האם ניתן לבטל משכנתא חתומה לפני משיכת הכספים כדי לשפר ריביות? מדריך מקיף על ההבדלים בין תיק שנרשם בטאבו לתיק שטרם נרשם, ואיך לפעול נכון.
 
+### ESPP ומשכנתא
+https://mashkanta-bepijama.co.il/articles/espp-and-mortgage
+התלבטות של עובדי הייטק: האם להקטין את ההחזר החודשי במשכנתא כדי למקסם הפקדות ל-ESPP, או לוותר על המניות לטובת המשכנתא? השוואה מלאה ויתרונות.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2668,7 +2672,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
