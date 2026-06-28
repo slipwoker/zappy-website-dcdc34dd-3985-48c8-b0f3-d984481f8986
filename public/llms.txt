@@ -2630,6 +2630,10 @@ https://mashkanta-bepijama.co.il/articles/dira-behanacha-contractor-delay
 https://mashkanta-bepijama.co.il/articles/contractor-payment-transfer-guide
 מדריך מקיף לרוכשי דירה מקבלן: איך לחשב את הסכום המדויק להעברה כולל מדד תשומות הבנייה, מתי לעדכן את הבנק, ומי אחראי על ביצוע התשלום בפועל.
 
+### ביטול משכנתא
+https://mashkanta-bepijama.co.il/articles/canceling-signed-mortgage-before-drawdown
+האם ניתן לבטל משכנתא חתומה לפני משיכת הכספים כדי לשפר ריביות? מדריך מקיף על ההבדלים בין תיק שנרשם בטאבו לתיק שטרם נרשם, ואיך לפעול נכון.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2664,7 +2668,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
