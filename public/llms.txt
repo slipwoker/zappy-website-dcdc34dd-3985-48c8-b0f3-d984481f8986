@@ -2638,6 +2638,10 @@ https://mashkanta-bepijama.co.il/articles/canceling-signed-mortgage-before-drawd
 https://mashkanta-bepijama.co.il/articles/espp-and-mortgage
 התלבטות של עובדי הייטק: האם להקטין את ההחזר החודשי במשכנתא כדי למקסם הפקדות ל-ESPP, או לוותר על המניות לטובת המשכנתא? השוואה מלאה ויתרונות.
 
+### עצירת משכנתא
+https://mashkanta-bepijama.co.il/articles/unmarried-couples-mortgage-freeze
+הגשתם בקשה למסלול זכאות כידועים בציבור ומשרד השיכון עצר את המשכנתא לאחר ביקור חוקר? המדריך המלא להתמודדות עם עצירת תהליך המשכנתא בדירה בהנחה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2672,7 +2676,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
