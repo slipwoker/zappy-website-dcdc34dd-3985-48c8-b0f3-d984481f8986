@@ -2642,6 +2642,10 @@ https://mashkanta-bepijama.co.il/articles/espp-and-mortgage
 https://mashkanta-bepijama.co.il/articles/unmarried-couples-mortgage-freeze
 הגשתם בקשה למסלול זכאות כידועים בציבור ומשרד השיכון עצר את המשכנתא לאחר ביקור חוקר? המדריך המלא להתמודדות עם עצירת תהליך המשכנתא בדירה בהנחה.
 
+### חידוש זכאות
+https://mashkanta-bepijama.co.il/articles/renewing-eligibility-dira-behanacha
+עד מתי צריך לחדש את תעודת הזכאות בדירה בהנחה ומחיר למשתכן? המדריך המלא שיעשה לכם סדר, כולל דגשים לקראת חתימת חוזה ולקיחת משכנתא.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2676,7 +2680,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
