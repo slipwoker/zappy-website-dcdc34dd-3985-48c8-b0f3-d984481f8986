@@ -2650,6 +2650,10 @@ https://mashkanta-bepijama.co.il/articles/renewing-eligibility-dira-behanacha
 https://mashkanta-bepijama.co.il/articles/negative-capitalization-differences
 מהם הפרשי היוון שליליים במשכנתא? גלו כיצד מצב זה מאפס את עמלת הפירעון המוקדם, ואיך נכון לנצל זאת לטובת מיחזור או סילוק המשכנתא שלכם.
 
+### הקדמת תשלום
+https://mashkanta-bepijama.co.il/articles/early-payment-without-document
+האם כדאי להקדים תשלומים לקבלן כדי לחסוך את מדד תשומות הבנייה כשעורך הדין מסרב לתת אישור בכתב? המדריך המלא לסכנות שבהבטחות בעל פה ואיך להגן על הכסף שלכם.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2684,7 +2688,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
