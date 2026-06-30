@@ -2654,6 +2654,10 @@ https://mashkanta-bepijama.co.il/articles/negative-capitalization-differences
 https://mashkanta-bepijama.co.il/articles/early-payment-without-document
 האם כדאי להקדים תשלומים לקבלן כדי לחסוך את מדד תשומות הבנייה כשעורך הדין מסרב לתת אישור בכתב? המדריך המלא לסכנות שבהבטחות בעל פה ואיך להגן על הכסף שלכם.
 
+### אישור הלוואת גישור
+https://mashkanta-bepijama.co.il/articles/bridging-loan-approval-capacity
+האם הבנק בודק כושר החזר בהלוואת גישור? מה ההבדל בין בלון מלא לגרייס חלקי, ומדוע בנקים מסרבים לאשר הלוואות גישור למשפרי דיור? כל התשובות בפנים.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2688,7 +2692,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
