@@ -2662,6 +2662,10 @@ https://mashkanta-bepijama.co.il/articles/bridging-loan-approval-capacity
 https://mashkanta-bepijama.co.il/articles/mortgage-summer-vacation
 האם יש חופש גדול במשכנתא? גלו איך לנהל נכון את המשכנתא שלכם גם בחופשות, מתי אפשר לקחת פסק זמן, ולמה חשוב להמשיך בבקרה עם ייעוץ משכנתאות מקצועי.
 
+### זכייה מביטול
+https://mashkanta-bepijama.co.il/articles/dira-behanacha-cancellation-win-conflict
+זכיתם בדירה בהנחה מרשימת המתנה בזמן שהגרלה חדשה פתוחה? גלו מה קורה למועמדות שלכם, קבלו טיפ זהב לניהול הגרלות, והבינו למה ייעוץ משכנתאות הוא השלב הבא.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2696,7 +2700,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
