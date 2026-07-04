@@ -2666,6 +2666,10 @@ https://mashkanta-bepijama.co.il/articles/mortgage-summer-vacation
 https://mashkanta-bepijama.co.il/articles/dira-behanacha-cancellation-win-conflict
 זכיתם בדירה בהנחה מרשימת המתנה בזמן שהגרלה חדשה פתוחה? גלו מה קורה למועמדות שלכם, קבלו טיפ זהב לניהול הגרלות, והבינו למה ייעוץ משכנתאות הוא השלב הבא.
 
+### קו המשווה
+https://mashkanta-bepijama.co.il/articles/boi-equator
+המדריך המלא לקו המשווה של בנק ישראל - השוואת ריביות משכנתא. איך להשתמש במערכת, היתרונות שלה לניתוח פיננסי, ולמה ריבית ממוצעת לא מעידה על המשכנתא האישית שלכם.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2700,7 +2704,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
