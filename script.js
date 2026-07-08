@@ -3156,7 +3156,7 @@ function fixContrast(){
       window.initVariantSelection = function(product, t) {
         // Store product data for our fix
         if (product && product.variants && product.variants.length > 0) {
-          _variantProduct = product;
+          _variantProduct = _augmentProductFromCardVariants(product);
           var trans = t || {};
           // Ensure pleaseSelect is available (for sites generated before this key was added)
           if (!trans.pleaseSelect) {
@@ -3189,6 +3189,131 @@ function fixContrast(){
     function _getVariants() {
       if (!_variantProduct) return [];
       return (_variantProduct.variants || []).filter(function(v) { return v.is_active !== false; });
+    }
+
+    function _augmentProductFromCardVariants(product) {
+      if (!product || !product.card_variants || !Array.isArray(product.card_variants.matrix)) return product;
+      var byId = {};
+      (Array.isArray(product.variants) ? product.variants : []).forEach(function(v) {
+        if (v && v.id != null) byId[String(v.id)] = v;
+      });
+      product.card_variants.matrix.forEach(function(row) {
+        if (!row || row.id == null) return;
+        var existing = byId[String(row.id)] || {};
+        byId[String(row.id)] = Object.assign({}, existing, {
+          id: row.id,
+          attributes: row.attributes || existing.attributes || {},
+          price: row.price != null ? row.price : existing.price,
+          image: row.image || existing.image,
+          sku: row.sku || existing.sku,
+          custom_fields: existing.custom_fields || existing.customFields || row.custom_fields || row.customFields || {},
+          available: typeof row.available === 'boolean' ? row.available : existing.available,
+          is_active: existing.is_active !== false
+        });
+      });
+      product.variants = Object.keys(byId).map(function(id) { return byId[id]; });
+      return product;
+    }
+
+    function _variantCssUrl(value) {
+      return String(value == null ? '' : value).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n|\r/g, '');
+    }
+
+    function _cardVariantSwatchStyle(value) {
+      if (typeof window.zappyCardSwatchStyle === 'function') return window.zappyCardSwatchStyle(value);
+      if (value && (value.swatchImage || value.image)) {
+        var resolver = window.resolveProductImageUrl || function(src) { return src; };
+        return "background-image:url('" + _variantCssUrl(resolver(value.swatchImage || value.image)) + "');background-size:" + (value.imageSize || 'cover') + ';background-position:' + (value.imagePosition || '50% 50%') + ';';
+      }
+      if (value && value.hex2) return 'background:linear-gradient(90deg,' + (value.hex || '#94a3b8') + ' 0 50%,' + value.hex2 + ' 50% 100%);';
+      return 'background:' + ((value && (value.hex || value.value)) || '#94a3b8') + ';';
+    }
+
+    function _translateVariantOptionLabel(product, key, value, fallback) {
+      if (typeof window.zappyTranslateVariantValue === 'function') {
+        return window.zappyTranslateVariantValue(product, key, value, fallback);
+      }
+      var lang = '';
+      try {
+        lang = String((typeof getCurrentEcomLanguage === 'function' ? getCurrentEcomLanguage() : (document.documentElement.lang || '')) || '').split('-')[0].toLowerCase();
+      } catch (e) {}
+      function translateKnownColor(rawValue) {
+        if (lang !== 'he') return '';
+        if (String(key || '').toLowerCase().indexOf('color') === -1 && String(key || '').toLowerCase() !== 'colour') return '';
+        var raw = String(rawValue == null ? '' : rawValue).trim();
+        if (!raw || /[\u0590-\u05FF]/.test(raw)) return '';
+        var map = { black:'שחור', white:'לבן', gray:'אפור', grey:'אפור', red:'אדום', green:'ירוק', blue:'כחול', navy:'כחול כהה', pink:'ורוד', purple:'סגול', yellow:'צהוב', orange:'כתום', brown:'חום', beige:'בז׳', gold:'זהב', silver:'כסף', teal:'טורקיז', mint:'מנטה', cream:'קרם', ivory:'שנהב' };
+        var direct = map[raw.toLowerCase().replace(/\s+/g, ' ')];
+        if (direct) return direct;
+        var parts = raw.split(/\s*-\s*/).filter(Boolean);
+        if (parts.length > 1) {
+          var translated = parts.map(function(part) { return map[String(part).toLowerCase().replace(/\s+/g, ' ')]; });
+          if (translated.every(Boolean)) return translated.join('-');
+        }
+        return '';
+      }
+      var wanted = String(value);
+      var variants = product && Array.isArray(product.variants) ? product.variants : [];
+      for (var i = 0; i < variants.length; i++) {
+        var variant = variants[i] || {};
+        var attrs = variant.attributes_source || variant.attributes || {};
+        if (!attrs || String(attrs[key]) !== wanted) continue;
+        var translatedAttrs = variant.attributes_translations && lang && variant.attributes_translations[lang];
+        if (translatedAttrs && translatedAttrs[key]) return translateKnownColor(translatedAttrs[key]) || String(translatedAttrs[key]);
+        var displayAttrs = variant.attributes_display || {};
+        if (displayAttrs && displayAttrs[key]) return translateKnownColor(displayAttrs[key]) || String(displayAttrs[key]);
+      }
+      var matrix = product && product.card_variants && Array.isArray(product.card_variants.matrix) ? product.card_variants.matrix : [];
+      for (var j = 0; j < matrix.length; j++) {
+        var row = matrix[j] || {};
+        var rowAttrs = row.attributes || {};
+        if (rowAttrs && String(rowAttrs[key]) === wanted && row.attributes_display && row.attributes_display[key]) {
+          return translateKnownColor(row.attributes_display[key]) || String(row.attributes_display[key]);
+        }
+      }
+      return translateKnownColor(fallback) || fallback;
+    }
+
+    function _ensureCardVariantOptionButtons() {
+      var product = _variantProduct || window.currentProduct;
+      var cv = product && product.card_variants;
+      if (!cv || !Array.isArray(cv.options)) return;
+      cv.options.forEach(function(option) {
+        if (!option || !option.key || !Array.isArray(option.values)) return;
+        var group = null;
+        document.querySelectorAll('.variant-group').forEach(function(candidate) {
+          if (candidate.getAttribute('data-group') === option.key) group = candidate;
+        });
+        var container = group && group.querySelector('.variant-options');
+        if (!container) return;
+        var isColor = option.type === 'color' || String(option.key).toLowerCase().indexOf('color') !== -1;
+        option.values.forEach(function(entry) {
+          if (!entry || entry.value == null) return;
+          var displayLabel = String(entry.label || entry.value);
+          displayLabel = _translateVariantOptionLabel(product, option.key, entry.value, displayLabel);
+          var existingButton = null;
+          container.querySelectorAll('.variant-option').forEach(function(btn) {
+            if (btn.getAttribute('data-value') === String(entry.value)) existingButton = btn;
+          });
+          if (existingButton) {
+            existingButton.setAttribute('data-display-value', displayLabel);
+            existingButton.title = displayLabel;
+            if (isColor) existingButton.style.cssText = _cardVariantSwatchStyle(entry);
+            else existingButton.textContent = displayLabel;
+            return;
+          }
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'variant-option' + (isColor ? ' color-swatch' : '');
+          btn.setAttribute('data-attr', option.key);
+          btn.setAttribute('data-value', String(entry.value));
+          btn.setAttribute('data-display-value', displayLabel);
+          btn.title = displayLabel;
+          if (isColor) btn.style.cssText = _cardVariantSwatchStyle(entry);
+          else btn.textContent = displayLabel;
+          container.appendChild(btn);
+        });
+      });
     }
     
     function _getAttributeKeys() {
@@ -3251,17 +3376,68 @@ function fixContrast(){
         }
         test[ak] = av;
         var matching = _findMatching(test);
+        var globalMatching = _findMatching((function() { var any = {}; any[ak] = av; return any; })());
         btn.classList.remove('disabled', 'out-of-stock');
         btn.disabled = false;
         if (matching.length === 0) {
           btn.classList.add('disabled');
-          btn.disabled = true;
+          btn.disabled = globalMatching.length === 0;
         } else if (matching.every(function(v) { return _isOOS(v); })) {
           btn.classList.add('disabled');
           btn.classList.add('out-of-stock');
           btn.disabled = true;
         }
       });
+    }
+
+    function _hasAvailableCombination(selections) {
+      return _findMatching(selections).filter(function(v) { return !_isOOS(v); }).length > 0;
+    }
+
+    function _syncSelectedDom() {
+      document.querySelectorAll('.variant-option').forEach(function(btn) {
+        var key = btn.getAttribute('data-attr');
+        var value = btn.getAttribute('data-value');
+        btn.classList.toggle('selected', !!key && selectedAttributes[key] === value);
+      });
+    }
+
+    function _reconcileSelectedAttributes(changedKey) {
+      var keys = _getAttributeKeys();
+      var next = {};
+      if (changedKey && selectedAttributes[changedKey]) {
+        var changedOnly = {};
+        changedOnly[changedKey] = selectedAttributes[changedKey];
+        if (_hasAvailableCombination(changedOnly)) next[changedKey] = selectedAttributes[changedKey];
+      }
+      keys.forEach(function(key) {
+        if (key === changedKey || !selectedAttributes.hasOwnProperty(key)) return;
+        var candidate = Object.assign({}, next);
+        candidate[key] = selectedAttributes[key];
+        if (_hasAvailableCombination(candidate)) next[key] = selectedAttributes[key];
+      });
+      selectedAttributes = next;
+      var guard = 0;
+      var changed = true;
+      while (changed && guard++ < keys.length + 2) {
+        changed = false;
+        keys.forEach(function(key) {
+          if (selectedAttributes.hasOwnProperty(key)) return;
+          var viable = [];
+          document.querySelectorAll('.variant-option[data-attr="' + key + '"]').forEach(function(candidateBtn) {
+            var val = candidateBtn.getAttribute('data-value');
+            if (!val) return;
+            var candidate = Object.assign({}, selectedAttributes);
+            candidate[key] = val;
+            if (_hasAvailableCombination(candidate)) viable.push(candidateBtn);
+          });
+          if (viable.length === 1) {
+            selectedAttributes[key] = viable[0].getAttribute('data-value');
+            changed = true;
+          }
+        });
+      }
+      _syncSelectedDom();
     }
     
     function _updateProductDisplay() {
@@ -3383,6 +3559,9 @@ function fixContrast(){
           } else if (mainImage && window._originalMainImageSrc) {
             mainImage.src = window._originalMainImageSrc;
           }
+          if (typeof updateProductSpecificationsForVariant === 'function') {
+            updateProductSpecificationsForVariant(v, product);
+          }
         }
       } else {
         window.selectedVariant = null;
@@ -3458,6 +3637,9 @@ function fixContrast(){
         if (mainImage && window._originalMainImageSrc) {
           mainImage.src = window._originalMainImageSrc;
         }
+        if (typeof updateProductSpecificationsForVariant === 'function') {
+          updateProductSpecificationsForVariant(null, product);
+        }
       }
     }
     
@@ -3473,7 +3655,7 @@ function fixContrast(){
       var ak = btn.getAttribute('data-attr');
       var av = btn.getAttribute('data-value');
       if (!ak || !av) return;
-      if (btn.disabled || btn.classList.contains('disabled')) return;
+      if (btn.disabled || (btn.classList.contains('disabled') && _findMatching((function() { var any = {}; any[ak] = av; return any; })()).length === 0)) return;
       
       // If already selected, do nothing (no manual deselect)
       if (selectedAttributes[ak] === av) {
@@ -3483,15 +3665,7 @@ function fixContrast(){
       document.querySelectorAll('.variant-option[data-attr="' + ak + '"]').forEach(function(b) { b.classList.remove('selected'); });
       selectedAttributes[ak] = av;
       btn.classList.add('selected');
-      // Non-existent combo check: if the new selection creates an impossible combo, clear all others
-      if (Object.keys(selectedAttributes).length > 1) {
-        if (!_comboExists(selectedAttributes)) {
-          document.querySelectorAll('.variant-option').forEach(function(b) { b.classList.remove('selected'); });
-          selectedAttributes = {};
-          selectedAttributes[ak] = av;
-          btn.classList.add('selected');
-        }
-      }
+      _reconcileSelectedAttributes(ak);
       
       _updateVisuals();
       _updateProductDisplay();
@@ -3554,7 +3728,7 @@ function fixContrast(){
       if (window._zappyVariantFixed) return;
       window._zappyVariantFixed = true;
       
-      _variantProduct = product;
+      _variantProduct = _augmentProductFromCardVariants(product);
       // Ensure pleaseSelect translation exists (for sites generated before this key was added)
       if (!t.pleaseSelect) {
         var isRTL = document.documentElement.getAttribute('dir') === 'rtl' || document.body.getAttribute('dir') === 'rtl';
@@ -3621,6 +3795,7 @@ function fixContrast(){
           });
         });
       }
+      _ensureCardVariantOptionButtons();
       _repairVariantButtons();
 
       // Sort variant options (numeric, then known sizes, then alphabetical)
@@ -4073,16 +4248,31 @@ function fixContrast(){
       var product = window.currentProduct;
       var variants = product && Array.isArray(product.variants) ? product.variants : [];
       var lang = getLang();
+      function translateKnownColor(rawValue) {
+        if (lang !== 'he') return '';
+        if (String(attr || '').toLowerCase().indexOf('color') === -1 && String(attr || '').toLowerCase() !== 'colour') return '';
+        var raw = String(rawValue == null ? '' : rawValue).trim();
+        if (!raw || /[\u0590-\u05FF]/.test(raw)) return '';
+        var map = { black:'שחור', white:'לבן', gray:'אפור', grey:'אפור', red:'אדום', green:'ירוק', blue:'כחול', navy:'כחול כהה', pink:'ורוד', purple:'סגול', yellow:'צהוב', orange:'כתום', brown:'חום', beige:'בז׳', gold:'זהב', silver:'כסף', teal:'טורקיז', mint:'מנטה', cream:'קרם', ivory:'שנהב' };
+        var direct = map[raw.toLowerCase().replace(/\s+/g, ' ')];
+        if (direct) return direct;
+        var parts = raw.split(/\s*-\s*/).filter(Boolean);
+        if (parts.length > 1) {
+          var translated = parts.map(function(part) { return map[String(part).toLowerCase().replace(/\s+/g, ' ')]; });
+          if (translated.every(Boolean)) return translated.join('-');
+        }
+        return '';
+      }
       for (var i = 0; i < variants.length; i++) {
         var variant = variants[i];
         var attrs = variant && (variant.attributes_source || variant.attributes || {});
         if (String(attrs[attr]) !== String(sourceValue)) continue;
         var translatedAttrs = variant.attributes_translations && variant.attributes_translations[lang];
-        if (translatedAttrs && translatedAttrs[attr]) return translatedAttrs[attr];
+        if (translatedAttrs && translatedAttrs[attr]) return translateKnownColor(translatedAttrs[attr]) || translatedAttrs[attr];
         var displayAttrs = variant.attributes_display || {};
-        if (displayAttrs[attr]) return displayAttrs[attr];
+        if (displayAttrs[attr]) return translateKnownColor(displayAttrs[attr]) || displayAttrs[attr];
       }
-      return sourceValue;
+      return translateKnownColor(sourceValue) || sourceValue;
     }
 
     function patchProductDetailI18n() {

@@ -2686,6 +2686,10 @@ https://mashkanta-bepijama.co.il/articles/mortgage-football-tournament
 https://mashkanta-bepijama.co.il/articles/mortgage-and-cooking
 מה הקשר בין בישול ארוחת גורמה לבין לקיחת משכנתא? מאמר מרתק המשווה בין מתכונים, חומרי גלם זולים ויקרים, ומסעדות שף לעולם הפיננסי. קראו עכשיו.
 
+### מדרגות מימון
+https://mashkanta-bepijama.co.il/articles/financing-tiers
+מאמר מקצועי המסביר את הקשר בין מדרגות אחוזי מימון במשכנתא לשווי הנכס, מהו ריתוק הון, ואיך כל זה משפיע על הריביות וההחזר החודשי שלכם.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2720,7 +2724,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
