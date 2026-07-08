@@ -2682,6 +2682,10 @@ https://mashkanta-bepijama.co.il/articles/mortgage-and-var
 https://mashkanta-bepijama.co.il/articles/mortgage-football-tournament
 מאמר מרתק המשווה את תהליך לקיחת המשכנתא להשתתפות בטורניר כדורגל יוקרתי כמו המונדיאל. גלו כיצד לנצח במשחק הפיננסי בעזרת ייעוץ משכנתאות מקצועי.
 
+### משכנתא ובישול
+https://mashkanta-bepijama.co.il/articles/mortgage-and-cooking
+מה הקשר בין בישול ארוחת גורמה לבין לקיחת משכנתא? מאמר מרתק המשווה בין מתכונים, חומרי גלם זולים ויקרים, ומסעדות שף לעולם הפיננסי. קראו עכשיו.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2716,7 +2720,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
