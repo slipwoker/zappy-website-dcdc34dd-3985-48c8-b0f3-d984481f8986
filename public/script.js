@@ -886,6 +886,28 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 
 
+/* Added Component Script */
+(function() {
+    const form = document.querySelector('.contact-cta-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const params = new URLSearchParams();
+      for (const [key, value] of formData.entries()) {
+        if (value.trim()) {
+          params.append(key, value.trim());
+        }
+      }
+      const queryString = params.toString();
+      const actionUrl = form.getAttribute('action') || '/contact';
+      const redirectUrl = queryString ? actionUrl + '?' + queryString : actionUrl;
+      window.location.href = redirectUrl;
+    });
+  })();
+
+
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
   try {
