@@ -2694,6 +2694,10 @@ https://mashkanta-bepijama.co.il/articles/financing-tiers
 https://mashkanta-bepijama.co.il/articles/mechir-lamizdaken
 האם זכייה במחיר למשתכן שקולה למחיר למזדקן? מדריך מקיף על זמני ההמתנה הארוכים, המשמעויות הפיננסיות, ואיך ייעוץ משכנתאות יכול לעזור לכם לצלוח את התקופה.
 
+### זכייה בעייתית
+https://mashkanta-bepijama.co.il/articles/problematic-win-dira-behanacha
+זכיתם בדירה בהנחה לאחר ביטולים אך נותרו רק דירות גדולות ויקרות שחורגות מהתקציב? המדריך המלא שמסביר מדוע לעיתים ויתור הוא הצעד הכלכלי הנכון ביותר.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2728,7 +2732,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
