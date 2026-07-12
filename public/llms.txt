@@ -2698,6 +2698,10 @@ https://mashkanta-bepijama.co.il/articles/mechir-lamizdaken
 https://mashkanta-bepijama.co.il/articles/problematic-win-dira-behanacha
 זכיתם בדירה בהנחה לאחר ביטולים אך נותרו רק דירות גדולות ויקרות שחורגות מהתקציב? המדריך המלא שמסביר מדוע לעיתים ויתור הוא הצעד הכלכלי הנכון ביותר.
 
+### משכנתא מקבלן
+https://mashkanta-bepijama.co.il/articles/contractor-purchase-risks
+האם מותר לחתום על חוזה דירה מקבלן לפני שמקבלים אישור עקרוני למשכנתא? קראו על הסכנות וגלו למה חובה לקבל ייעוץ משכנתאות לפני החתימה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2732,7 +2736,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
