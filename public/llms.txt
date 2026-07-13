@@ -2706,6 +2706,10 @@ https://mashkanta-bepijama.co.il/articles/contractor-purchase-risks
 https://mashkanta-bepijama.co.il/articles/transferring-mortgage-banks
 הבנתם שאפשר להעביר משכנתא בנק בלחיצת כפתור? המציאות קצת שונה. מדריך מקיף על תהליך מיחזור משכנתא חיצוני, היתרונות, והשלבים בדרך לחיסכון.
 
+### ירידת עוגנים
+https://mashkanta-bepijama.co.il/articles/leveraging-anchor-drops
+איך לנצל בצורה חכמה ירידה בעוגנים בעת שחרור כספי משכנתא בפעימות? מדריך מקיף לרוכשי דירה מקבלן או במסגרת דירה בהנחה, הכולל אסטרטגיות חיסכון וייעוץ משכנתאות.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2740,7 +2744,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
