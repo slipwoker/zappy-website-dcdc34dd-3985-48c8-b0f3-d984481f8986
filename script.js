@@ -1,3 +1,50 @@
+
+/* ZAPPY_STOREFRONT_FETCH_COALESCE_V1 */
+(function(){
+  if (window.__zappyStorefrontFetchCoalesceV1 || typeof window.fetch !== 'function' || typeof window.Response !== 'function') return;
+  window.__zappyStorefrontFetchCoalesceV1 = true;
+  var nativeFetch = window.fetch.bind(window);
+  var cache = {};
+  function cacheableUrl(input, init) {
+    var method = init && init.method ? String(init.method).toUpperCase() : 'GET';
+    if (method !== 'GET') return '';
+    var url = typeof input === 'string' ? input : (input && input.url) || '';
+    if (!/\/api\/ecommerce\/storefront\/(?:settings|categories)\?/.test(url)) return '';
+    return url;
+  }
+  window.fetch = function(input, init) {
+    var key = cacheableUrl(input, init);
+    if (!key) return nativeFetch(input, init);
+    if (!cache[key]) {
+      cache[key] = nativeFetch(input, init).then(function(response) {
+        return response.text().then(function(body) {
+          var cached = {
+            body: body,
+            status: response.status,
+            statusText: response.statusText,
+            headers: Array.from(response.headers.entries()),
+            ok: response.ok
+          };
+          // Never keep failed/non-OK responses for the page lifetime —
+          // later callers must be able to retry the network.
+          if (!cached.ok) delete cache[key];
+          return cached;
+        });
+      }).catch(function(error) {
+        delete cache[key];
+        throw error;
+      });
+    }
+    return cache[key].then(function(cached) {
+      return new Response(cached.body, {
+        status: cached.status,
+        statusText: cached.statusText,
+        headers: cached.headers
+      });
+    });
+  };
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
@@ -1823,11 +1870,45 @@ document.addEventListener('DOMContentLoaded', function() {
 /* END ZAPPY_PUBLISHED_MOBILE_IMAGE_SWAP_V2 */
 
 
-/* ZAPPY_MOBILE_MENU_TOGGLE */
+/* ZAPPY_MOBILE_MENU_TOGGLE_V3 */
 (function(){
   try {
-    if (window.__zappyMobileMenuToggleInit) return;
-    window.__zappyMobileMenuToggleInit = true;
+    if (window.__zappyMobileMenuToggleInitV3) return;
+    window.__zappyMobileMenuToggleInitV3 = true;
+    window.__zappyMobileMenuToggleInit = true; // legacy guards
+
+    function menuIsOpen(menu) {
+      return !!(menu && (
+        menu.classList.contains('active') ||
+        menu.classList.contains('open') ||
+        menu.style.display === 'block'
+      ));
+    }
+
+    function closeMenu(menu) {
+      if (!menu) return;
+      menu.classList.remove('active');
+      menu.classList.remove('open');
+      menu.style.display = '';
+    }
+
+    function setClosedIcons(toggle) {
+      if (!toggle) return;
+      toggle.classList.remove('active');
+      var hamburgerIcon = toggle.querySelector('.hamburger-icon');
+      var closeIcon = toggle.querySelector('.close-icon');
+      if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+      if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+    }
+
+    function setOpenIcons(toggle) {
+      if (!toggle) return;
+      toggle.classList.add('active');
+      var hamburgerIcon = toggle.querySelector('.hamburger-icon');
+      var closeIcon = toggle.querySelector('.close-icon');
+      if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+      if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+    }
 
     function initMobileToggle() {
       var toggle = document.querySelector('.mobile-toggle, #mobileToggle');
@@ -1838,51 +1919,40 @@ document.addEventListener('DOMContentLoaded', function() {
       if (toggle.__zappyMobileToggleBound) return;
       toggle.__zappyMobileToggleBound = true;
 
+      // Repair baked open-icon styles when the menu is actually closed.
+      if (!menuIsOpen(navMenu)) setClosedIcons(toggle);
+
       toggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
 
-        var hamburgerIcon = toggle.querySelector('.hamburger-icon');
-        var closeIcon = toggle.querySelector('.close-icon');
-        var isOpen = navMenu.classList.contains('active') || navMenu.style.display === 'block';
-
-        if (isOpen) {
-          navMenu.classList.remove('active');
-          navMenu.style.display = '';
-          if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
-          if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        if (menuIsOpen(navMenu)) {
+          closeMenu(navMenu);
+          setClosedIcons(toggle);
           document.body.style.overflow = '';
         } else {
           navMenu.classList.add('active');
+          navMenu.classList.remove('open');
           navMenu.style.display = 'block';
-          if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
-          if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+          setOpenIcons(toggle);
           document.body.style.overflow = 'hidden';
         }
       }, true);
 
       // Close on clicking outside
       document.addEventListener('click', function(e) {
-        if (!navMenu.classList.contains('active')) return;
+        if (!menuIsOpen(navMenu)) return;
         if (toggle.contains(e.target) || navMenu.contains(e.target)) return;
-        navMenu.classList.remove('active');
-        navMenu.style.display = '';
-        var hi = toggle.querySelector('.hamburger-icon');
-        var ci = toggle.querySelector('.close-icon');
-        if (hi) hi.style.setProperty('display', 'block', 'important');
-        if (ci) ci.style.setProperty('display', 'none', 'important');
+        closeMenu(navMenu);
+        setClosedIcons(toggle);
         document.body.style.overflow = '';
       });
 
       // Close on Escape key
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-          navMenu.classList.remove('active');
-          navMenu.style.display = '';
-          var hi = toggle.querySelector('.hamburger-icon');
-          var ci = toggle.querySelector('.close-icon');
-          if (hi) hi.style.setProperty('display', 'block', 'important');
-          if (ci) ci.style.setProperty('display', 'none', 'important');
+        if (e.key === 'Escape' && menuIsOpen(navMenu)) {
+          closeMenu(navMenu);
+          setClosedIcons(toggle);
           document.body.style.overflow = '';
         }
       });
@@ -1890,12 +1960,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // Close when clicking a nav link (navigating)
       navMenu.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
-          navMenu.classList.remove('active');
-          navMenu.style.display = '';
-          var hi = toggle.querySelector('.hamburger-icon');
-          var ci = toggle.querySelector('.close-icon');
-          if (hi) hi.style.setProperty('display', 'block', 'important');
-          if (ci) ci.style.setProperty('display', 'none', 'important');
+          closeMenu(navMenu);
+          setClosedIcons(toggle);
           document.body.style.overflow = '';
         });
       });
@@ -4658,10 +4724,10 @@ function fixContrast(){
 })();
 
 
-/* ZAPPY_ECOM_LANGUAGE_ROUTING_RUNTIME_V21 */
+/* ZAPPY_ECOM_LANGUAGE_ROUTING_RUNTIME_V24 */
 (function() {
-  if (window.__zappyEcomLanguageRoutingRuntime >= 21) return;
-  window.__zappyEcomLanguageRoutingRuntime = 21;
+  if (window.__zappyEcomLanguageRoutingRuntime >= 24) return;
+  window.__zappyEcomLanguageRoutingRuntime = 24;
 
   // Routing strategy: use path-based language URLs for ALL storefront pages
   // (including dynamic /product/:slug and /category/:slug). The publish
@@ -5074,12 +5140,12 @@ function fixContrast(){
   // declaration merging that was eating the standalone CSS injection.
   function ensureRuntimeCssInjected() {
     var existing = document.getElementById('zappy-ecom-routing-runtime-css');
-    if (existing && existing.getAttribute('data-v') === '26') return;
+    if (existing && existing.getAttribute('data-v') === '29') return;
     if (existing) existing.remove();
     var style = document.createElement('style');
     style.id = 'zappy-ecom-routing-runtime-css';
     style.setAttribute('data-zappy-runtime', 'ecom-routing');
-    style.setAttribute('data-v', '26');
+    style.setAttribute('data-v', '29');
     style.textContent =
       '@media (min-width: 769px){' +
         'html[dir="ltr"] .nav-container > .nav-brand,body[dir="ltr"] .nav-container > .nav-brand,html[dir="ltr"] .nav-right-group > .nav-brand,body[dir="ltr"] .nav-right-group > .nav-brand{order:-1!important}' +
@@ -5100,16 +5166,21 @@ function fixContrast(){
         'html[dir="ltr"] .zappy-catalog-menu .catalog-menu-item{padding-inline:10px!important}' +
         'html[dir="ltr"] .zappy-catalog-menu .catalog-menu-all{margin-top:0!important;align-self:flex-start!important}' +
         '.navbar .nav-menu>li:has(>.sub-menu),nav.navbar .nav-menu>li:has(>.sub-menu),#navMenu>li:has(>.sub-menu){position:relative!important}' +
-        '.navbar .nav-menu>li>.sub-menu,nav.navbar .nav-menu>li>.sub-menu,#navMenu>li>.sub-menu{display:block!important;position:absolute!important;top:100%!important;inset-inline-start:0!important;inset-inline-end:auto!important;min-width:200px!important;max-width:min(280px,calc(100vw - 32px))!important;width:max-content!important;max-height:calc(100vh - 150px)!important;overflow-y:auto!important;background:var(--background-color,var(--background,#fff))!important;border-radius:12px!important;box-shadow:0 8px 30px rgba(0,0,0,.15),0 2px 8px rgba(0,0,0,.06)!important;padding:8px!important;margin:0!important;list-style:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(6px)!important;z-index:100001!important}' +
-        '.navbar .nav-menu>li:hover>.sub-menu,.navbar .nav-menu>li:focus-within>.sub-menu,nav.navbar .nav-menu>li:hover>.sub-menu,nav.navbar .nav-menu>li:focus-within>.sub-menu,#navMenu>li:hover>.sub-menu,#navMenu>li:focus-within>.sub-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}' +
-        '.navbar .nav-menu>li>.sub-menu>li,nav.navbar .nav-menu>li>.sub-menu>li,#navMenu>li>.sub-menu>li{display:block!important;width:100%!important;list-style:none!important;margin:0!important;padding:0!important}' +
-        '.navbar .nav-menu>li>.sub-menu a,nav.navbar .nav-menu>li>.sub-menu a,#navMenu>li>.sub-menu a{display:block!important;white-space:nowrap!important;padding:10px 16px!important;border-radius:8px!important;text-decoration:none!important}' +
+        /* Desktop flyouts: wrap long labels (Hebrew kosher titles etc). nowrap +
+           overflow-x:hidden + max-width:280px clipped mid-sentence (2026-07). */
+        '.navbar .nav-menu>li:not(.zappy-nav-more-item)>.sub-menu,nav.navbar .nav-menu>li:not(.zappy-nav-more-item)>.sub-menu,#navMenu>li:not(.zappy-nav-more-item)>.sub-menu{display:block!important;position:absolute!important;top:100%!important;inset-inline-start:0!important;inset-inline-end:auto!important;min-width:220px!important;max-width:min(420px,calc(100vw - 24px))!important;width:max-content!important;max-height:calc(100vh - 150px)!important;overflow-x:hidden!important;overflow-y:auto!important;border-radius:12px!important;box-shadow:0 8px 30px rgba(0,0,0,.15),0 2px 8px rgba(0,0,0,.06)!important;padding:8px!important;margin:0!important;list-style:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(6px)!important;z-index:100001!important;box-sizing:border-box!important}' +
+        '.navbar .nav-menu>li:not(.zappy-nav-more-item):hover>.sub-menu,.navbar .nav-menu>li:not(.zappy-nav-more-item):focus-within>.sub-menu,nav.navbar .nav-menu>li:not(.zappy-nav-more-item):hover>.sub-menu,nav.navbar .nav-menu>li:not(.zappy-nav-more-item):focus-within>.sub-menu,#navMenu>li:not(.zappy-nav-more-item):hover>.sub-menu,#navMenu>li:not(.zappy-nav-more-item):focus-within>.sub-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}' +
+        '.navbar .nav-menu>li:not(.zappy-nav-more-item)>.sub-menu>li,nav.navbar .nav-menu>li:not(.zappy-nav-more-item)>.sub-menu>li,#navMenu>li:not(.zappy-nav-more-item)>.sub-menu>li{display:block!important;width:100%!important;list-style:none!important;margin:0!important;padding:0!important}' +
+        '.navbar .nav-menu>li:not(.zappy-nav-more-item)>.sub-menu a,nav.navbar .nav-menu>li:not(.zappy-nav-more-item)>.sub-menu a,#navMenu>li:not(.zappy-nav-more-item)>.sub-menu a{display:block!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word!important;max-width:100%!important;padding:10px 16px!important;border-radius:8px!important;text-decoration:none!important;box-sizing:border-box!important}' +
         '.nav-menu .zappy-products-dropdown>.sub-menu,#navMenu .zappy-products-dropdown>.sub-menu{left:50%!important;right:auto!important;transform:translateX(-50%) translateY(8px)!important}' +
         '.nav-menu .zappy-products-dropdown:hover>.sub-menu,#navMenu .zappy-products-dropdown:hover>.sub-menu,.nav-menu .zappy-products-dropdown:focus-within>.sub-menu,#navMenu .zappy-products-dropdown:focus-within>.sub-menu{transform:translateX(-50%) translateY(0)!important}' +
         '.nav-menu.zappy-desktop-wrap,#navMenu.zappy-desktop-wrap{flex-wrap:wrap!important;max-height:44px!important;align-content:flex-start!important;row-gap:4px!important}' +
       '}' +
       '@media (max-width:768px){' +
         '.nav-menu li:has(.sub-menu),.navbar li:has(.sub-menu),nav li:has(.sub-menu){direction:ltr!important;display:flex!important;flex-wrap:wrap!important;align-items:flex-start!important;max-width:100%!important;width:100%!important;overflow:visible!important;box-sizing:border-box!important}' +
+        // Beat any ".nav-menu.active > li { display:block }" (preview/generated)
+        // so non-products dropdowns keep the chevron beside the label.
+        '.navbar .nav-menu.active>li:has(>.sub-menu),nav.navbar .nav-menu.active>li:has(>.sub-menu),#navMenu.active>li:has(>.sub-menu),.nav-menu.open>li:has(>.sub-menu),.navbar .nav-menu.active>li.menu-item-has-children,nav.navbar .nav-menu.active>li.menu-item-has-children,#navMenu.active>li.menu-item-has-children,.nav-menu.open>li.menu-item-has-children{display:flex!important;flex-wrap:wrap!important;align-items:center!important;position:relative!important}' +
         '.nav-menu li:has(.sub-menu)>a,.navbar li:has(.sub-menu)>a,nav li:has(.sub-menu)>a,li:has(.sub-menu)>.menu-group-title{display:block!important;flex:1 1 0!important;order:1!important;width:auto!important;min-width:0!important;max-width:calc(100% - 48px)!important;padding-inline:8px!important;box-sizing:border-box!important;white-space:normal!important;overflow-wrap:anywhere!important;line-height:1.35!important;text-align:left!important;direction:ltr!important}' +
         'html[dir="rtl"] .nav-menu li:has(.sub-menu)>a,body[dir="rtl"] .nav-menu li:has(.sub-menu)>a,html[dir="rtl"] .navbar li:has(.sub-menu)>a,body[dir="rtl"] .navbar li:has(.sub-menu)>a,html[dir="rtl"] nav li:has(.sub-menu)>a,body[dir="rtl"] nav li:has(.sub-menu)>a,html[dir="rtl"] li:has(.sub-menu)>.menu-group-title,body[dir="rtl"] li:has(.sub-menu)>.menu-group-title{direction:rtl!important;text-align:right!important;order:2!important}' +
         '.nav-menu li:has(.sub-menu)>.mobile-submenu-toggle,.navbar li:has(.sub-menu)>.mobile-submenu-toggle,nav li:has(.sub-menu)>.mobile-submenu-toggle{display:flex!important;position:static!important;flex:0 0 48px!important;order:2!important;width:48px!important;height:44px!important;min-height:44px!important;align-items:center!important;justify-content:center!important;z-index:5!important;pointer-events:auto!important;margin:0!important;padding:0!important;background:transparent!important;border:none!important}' +
@@ -6294,27 +6365,187 @@ function withConsent(category, callback) {
     }
 
     function injectCss() {
-      if (document.getElementById('zappy-nav-overflow-css')) return;
-      var s = document.createElement('style');
-      s.id = 'zappy-nav-overflow-css';
+      // Always (re)append so our !important rules win the cascade against
+      // later site <style> blocks that also target .navbar .sub-menu with
+      // position:absolute !important (bug 2026-07: nested dropdowns drained
+      // into More stayed absolute and painted over later siblings like Contact).
+      var s = document.getElementById('zappy-nav-overflow-css');
+      if (!s) {
+        s = document.createElement('style');
+        s.id = 'zappy-nav-overflow-css';
+      }
       s.textContent =
         '@media (min-width:769px){' +
           '.zappy-nav-more-item{position:relative!important;flex:0 0 auto!important;}' +
           '.zappy-nav-more-item>.zappy-nav-more-toggle{cursor:pointer;display:inline-flex!important;align-items:center;gap:6px;white-space:nowrap;}' +
-          '.navbar .zappy-nav-more-item>.sub-menu{display:block!important;left:auto!important;right:0!important;min-width:200px!important;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(6px);transition:opacity .18s ease,visibility .18s ease,transform .18s ease;}' +
-          'html[dir="rtl"] .navbar .zappy-nav-more-item>.sub-menu{left:0!important;right:auto!important;}' +
+          /* pointer-events:none!important while closed is critical: nested
+             flattened submenus used to set pointer-events:auto and re-enable
+             hit-testing under an invisible More panel (hover 100px+ below
+             still opened עוד). */
+          '.navbar .zappy-nav-more-item>.sub-menu{display:block!important;left:auto!important;right:0!important;min-width:200px!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(6px);transition:opacity .18s ease,visibility .18s ease,transform .18s ease;}' +
+          /* Keep right:0 in RTL too. The old left:0 flip made the panel grow
+             rightward over the nav links; on RTL More sits on the left of the
+             item cluster so the panel must open left under עוד. */
           '.navbar .zappy-nav-more-item:hover>.sub-menu,.navbar .zappy-nav-more-item:focus-within>.sub-menu,.navbar .zappy-nav-more-item.open>.sub-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important;}' +
           '.zappy-nav-more-item>.sub-menu>li{display:block!important;width:100%!important;flex:0 0 auto!important;}' +
           /* Mobile-only items (hamburger-overlay contact CTA) must never render
              inside the desktop More panel — the display:block above would
              otherwise resurrect them there (duplicate CTA bug, 2026-07). */
           '.zappy-nav-more-item>.sub-menu>li.mobile-contact-link,.zappy-nav-more-item>.sub-menu>li.nav-cta-mobile-item,.zappy-nav-more-item>.sub-menu>li.mobile-only{display:none!important;}' +
-          '.zappy-nav-more-item>.sub-menu>li>a{display:block!important;white-space:nowrap!important;padding:10px 16px!important;}' +
-          '.zappy-nav-more-item .sub-menu .sub-menu{position:static!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important;box-shadow:none!important;min-width:0!important;padding-inline-start:12px!important;}' +
-          '.zappy-nav-more-item>.sub-menu>li>a .dropdown-arrow,.zappy-nav-more-item>.sub-menu .mobile-submenu-toggle{display:none!important;}' +
+          /* Wrap long labels — nowrap + max-content from ecom-routing caused a
+             horizontal scrollbar inside More (publish screenshot 2026-07). */
+          '.zappy-nav-more-item>.sub-menu{width:min(420px,calc(100vw - 24px))!important;max-width:min(420px,calc(100vw - 24px))!important;overflow-x:hidden!important;overflow-y:auto!important;box-sizing:border-box!important;}' +
+          '.zappy-nav-more-item>.sub-menu>li>a{display:block!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word!important;padding:10px 16px!important;max-width:100%!important;box-sizing:border-box!important;}' +
+          /* Nested dropdowns inside More stay in normal flow (not absolute
+             flyouts that cover Contact). Collapsed by default — expand only
+             when the parent row has .zappy-more-nested-open (chevron toggle). */
+          'html body .navbar .zappy-nav-more-item .sub-menu .sub-menu,' +
+          'html body .navbar .zappy-nav-more-item > .sub-menu > li > .sub-menu,' +
+          'html body nav.navbar .zappy-nav-more-item .sub-menu ul.sub-menu,' +
+          'html body .zappy-nav-more-item .sub-menu .sub-menu{' +
+            'position:static!important;top:auto!important;left:auto!important;right:auto!important;' +
+            'transform:none!important;box-shadow:none!important;min-width:0!important;' +
+            'width:100%!important;max-width:100%!important;margin:0!important;' +
+            'display:none!important;opacity:0!important;visibility:hidden!important;' +
+            'pointer-events:none!important;height:0!important;overflow:hidden!important;padding:0!important;' +
+          '}' +
+          'html body .navbar .zappy-nav-more-item .zappy-more-nested-open > .sub-menu,' +
+          'html body .navbar .zappy-nav-more-item > .sub-menu > li.zappy-more-nested-open > .sub-menu,' +
+          'html body .zappy-nav-more-item .zappy-more-nested-open > .sub-menu{' +
+            'display:block!important;opacity:1!important;visibility:visible!important;' +
+            'pointer-events:auto!important;height:auto!important;' +
+            'overflow-x:hidden!important;overflow-y:visible!important;' +
+            'padding-inline-start:12px!important;' +
+          '}' +
+          /* Chevron for nested parents inside More (desktop accordion).
+             width:100% + margin-inline-start:auto pins the chevron to the
+             inline-start edge of the row in both LTR and RTL (matches preview). */
+          '.zappy-nav-more-item>.sub-menu>li.zappy-more-nested-parent>a{' +
+            'display:flex!important;align-items:center!important;justify-content:space-between!important;' +
+            'gap:8px!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;' +
+          '}' +
+          '.zappy-nav-more-item>.sub-menu>li.zappy-more-nested-parent>a .dropdown-arrow{' +
+            'display:inline-block!important;flex:0 0 auto!important;width:12px!important;height:12px!important;' +
+            'margin-inline-start:auto!important;pointer-events:auto!important;cursor:pointer!important;' +
+            'transition:transform .2s ease!important;opacity:1!important;visibility:visible!important;' +
+          '}' +
+          '.zappy-nav-more-item>.sub-menu>li.zappy-more-nested-open>a .dropdown-arrow{transform:rotate(180deg)!important;}' +
         '}' +
         '@media (max-width:768px){.zappy-nav-more-item{display:none!important;}}';
       (document.head || document.documentElement).appendChild(s);
+    }
+
+    // Belt-and-suspenders: when a dropdown parent is drained into More, force
+    // its nested .sub-menu into normal flow via inline !important so site CSS
+    // cannot resurrect position:absolute and cover later More siblings.
+    // Do NOT set pointer-events/opacity/visibility here — those must follow
+    // the More panel open/closed state (see CSS above) or an invisible nested
+    // submenu re-enables hover far below the trigger.
+    function flattenNestedSubmenusForMore(li) {
+      if (!li || !li.querySelectorAll) return;
+      var nested = li.querySelectorAll('.sub-menu');
+      for (var i = 0; i < nested.length; i++) {
+        var ul = nested[i];
+        if (ul.classList && ul.classList.contains('zappy-nav-more-menu')) continue;
+        ul.setAttribute('data-zappy-more-flattened', '1');
+        ul.style.setProperty('position', 'static', 'important');
+        ul.style.setProperty('top', 'auto', 'important');
+        ul.style.setProperty('left', 'auto', 'important');
+        ul.style.setProperty('right', 'auto', 'important');
+        ul.style.setProperty('transform', 'none', 'important');
+        ul.style.setProperty('box-shadow', 'none', 'important');
+        ul.style.setProperty('min-width', '0', 'important');
+        ul.style.setProperty('width', '100%', 'important');
+        // Clear any prior pe/opacity/visibility inline locks from older runtimes.
+        ul.style.removeProperty('pointer-events');
+        ul.style.removeProperty('opacity');
+        ul.style.removeProperty('visibility');
+        ul.style.removeProperty('display');
+        ul.style.removeProperty('height');
+      }
+    }
+
+    function unflattenNestedSubmenusFromMore(li) {
+      if (!li || !li.querySelectorAll) return;
+      var nested = li.querySelectorAll('[data-zappy-more-flattened]');
+      for (var i = 0; i < nested.length; i++) {
+        var ul = nested[i];
+        ul.removeAttribute('data-zappy-more-flattened');
+        ul.style.removeProperty('position');
+        ul.style.removeProperty('top');
+        ul.style.removeProperty('left');
+        ul.style.removeProperty('right');
+        ul.style.removeProperty('opacity');
+        ul.style.removeProperty('visibility');
+        ul.style.removeProperty('pointer-events');
+        ul.style.removeProperty('transform');
+        ul.style.removeProperty('box-shadow');
+        ul.style.removeProperty('min-width');
+        ul.style.removeProperty('width');
+        ul.style.removeProperty('display');
+        ul.style.removeProperty('height');
+      }
+      if (li.classList) {
+        li.classList.remove('zappy-more-nested-open', 'zappy-more-nested-parent');
+        // Restore dropdown class stripped while nested under More so mobile
+        // chevron CSS (.menu-item-has-children > .mobile-submenu-toggle) matches.
+        var hasDirectSub = false;
+        for (var c = 0; c < li.children.length; c++) {
+          if (li.children[c].tagName === 'UL') { hasDirectSub = true; break; }
+        }
+        if (hasDirectSub) li.classList.add('menu-item-has-children');
+      }
+    }
+
+    /** Wire chevron accordion for nested dropdowns drained into More (desktop). */
+    function ensureMoreNestedAccordion(moreLi) {
+      if (!moreLi) return;
+      var topSub = moreLi.querySelector(':scope > .sub-menu');
+      if (!topSub) return;
+      var kids = topSub.children;
+      for (var i = 0; i < kids.length; i++) {
+        var li = kids[i];
+        if (!li || li.tagName !== 'LI') continue;
+        var nested = null;
+        for (var c = 0; c < li.children.length; c++) {
+          if (li.children[c].tagName === 'UL') { nested = li.children[c]; break; }
+        }
+        if (!nested) {
+          li.classList.remove('zappy-more-nested-parent', 'zappy-more-nested-open');
+          continue;
+        }
+        li.classList.add('zappy-more-nested-parent');
+        // Always start collapsed when (re)wired after overflow reflow.
+        if (!li.__zappyMoreNestedUserOpened) li.classList.remove('zappy-more-nested-open');
+        var trigger = li.querySelector(':scope > a');
+        if (!trigger) continue;
+        var arrow = trigger.querySelector('svg.dropdown-arrow');
+        if (!arrow) {
+          arrow = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          arrow.setAttribute('class', 'dropdown-arrow');
+          arrow.setAttribute('width', '12');
+          arrow.setAttribute('height', '12');
+          arrow.setAttribute('viewBox', '0 0 24 24');
+          arrow.setAttribute('fill', 'none');
+          arrow.setAttribute('stroke', 'currentColor');
+          arrow.setAttribute('stroke-width', '2');
+          arrow.setAttribute('aria-hidden', 'true');
+          var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', 'M6 9l6 6 6-6');
+          arrow.appendChild(path);
+          trigger.appendChild(arrow);
+        }
+        if (li.__zappyMoreNestedBound) continue;
+        li.__zappyMoreNestedBound = true;
+        (function(parentLi, arrowEl) {
+          arrowEl.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var open = parentLi.classList.toggle('zappy-more-nested-open');
+            parentLi.__zappyMoreNestedUserOpened = open;
+          });
+        })(li, arrow);
+      }
     }
 
     function getMenu() {
@@ -6502,7 +6733,9 @@ function withConsent(category, callback) {
       if (!more) return;
       var sub = more.querySelector('.sub-menu');
       while (sub && sub.firstElementChild) {
-        menu.insertBefore(sub.firstElementChild, more);
+        var child = sub.firstElementChild;
+        unflattenNestedSubmenusFromMore(child);
+        menu.insertBefore(child, more);
       }
       more.remove();
     }
@@ -6592,9 +6825,12 @@ function withConsent(category, callback) {
             menu.appendChild(more);
             sub = more.querySelector('.sub-menu');
           }
-          sub.insertBefore(reals[reals.length - 1], sub.firstChild);
+          var drained = reals[reals.length - 1];
+          flattenNestedSubmenusForMore(drained);
+          sub.insertBefore(drained, sub.firstChild);
         }
         if (more && sub && !sub.firstElementChild) more.remove();
+        if (more) ensureMoreNestedAccordion(more);
 
         // The site's flex gap is excluded from a flex-basis:auto menu's
         // intrinsic width, so the menu box can be narrower than its items and
@@ -6668,10 +6904,193 @@ function withConsent(category, callback) {
   } catch (e) {}
 })();
 
-/* ZAPPY_ANNOUNCEMENT_HEADER_SYNC_V1 */
+/* ZAPPY_NAV_MORE_POINTER_FIX_V4 */
 (function(){
-  if (window.__zappyAnnouncementHeaderSyncV1) return;
-  window.__zappyAnnouncementHeaderSyncV1 = true;
+  try {
+    if (window.__zappyNavMorePointerFixV4) return;
+    window.__zappyNavMorePointerFixV4 = true;
+    window.__zappyNavMorePointerFixV3 = true;
+    window.__zappyNavMorePointerFixV2 = true;
+    window.__zappyNavMorePointerFixV1 = true;
+
+    var STYLE_ID = 'zappy-nav-more-pointer-fix';
+    var applying = false;
+    var cssText =
+      '@media (min-width:769px){' +
+        'html[dir="rtl"] body .navbar .zappy-nav-more-item > .sub-menu,' +
+        'html[dir="rtl"] body .navbar .zappy-nav-more-item:hover > .sub-menu,' +
+        'html[dir="rtl"] body .navbar .zappy-nav-more-item:focus-within > .sub-menu,' +
+        'html[dir="rtl"] body .navbar .zappy-nav-more-item.open > .sub-menu{' +
+          'left:auto!important;right:0!important;' +
+        '}' +
+        'html body .navbar .zappy-nav-more-item:not(:hover):not(:focus-within):not(.open) > .sub-menu,' +
+        'html body .navbar .zappy-nav-more-item:not(:hover):not(:focus-within):not(.open) > .sub-menu *{' +
+          'pointer-events:none!important;' +
+        '}' +
+        /* Constrain More panel: ecom-routing gives width:max-content + nowrap
+           + overflow-y:auto (which promotes overflow-x:auto) → horizontal
+           scrollbar on long Hebrew nested titles. */
+        'html body .navbar .zappy-nav-more-item > .sub-menu{' +
+          'width:min(420px,calc(100vw - 24px))!important;max-width:min(420px,calc(100vw - 24px))!important;' +
+          'overflow-x:hidden!important;overflow-y:auto!important;box-sizing:border-box!important;' +
+        '}' +
+        'html body .navbar .zappy-nav-more-item > .sub-menu a{' +
+          'white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word!important;' +
+          'max-width:100%!important;box-sizing:border-box!important;' +
+        '}' +
+        'html body .navbar .zappy-nav-more-item .sub-menu .sub-menu,' +
+        'html body .navbar .zappy-nav-more-item > .sub-menu > li > .sub-menu,' +
+        'html body .zappy-nav-more-item [data-zappy-more-flattened]{' +
+          'position:static!important;display:none!important;opacity:0!important;visibility:hidden!important;' +
+          'pointer-events:none!important;height:0!important;overflow:hidden!important;padding:0!important;margin:0!important;' +
+          'box-shadow:none!important;transform:none!important;width:100%!important;max-width:100%!important;' +
+        '}' +
+        'html body .navbar .zappy-nav-more-item .zappy-more-nested-open > .sub-menu,' +
+        'html body .navbar .zappy-nav-more-item > .sub-menu > li.zappy-more-nested-open > .sub-menu{' +
+          'display:block!important;opacity:1!important;visibility:visible!important;' +
+          'pointer-events:auto!important;height:auto!important;' +
+          'overflow-x:hidden!important;overflow-y:visible!important;' +
+          'padding-inline-start:12px!important;width:100%!important;max-width:100%!important;' +
+        '}' +
+        '.zappy-nav-more-item>.sub-menu>li.zappy-more-nested-parent>a{' +
+          'display:flex!important;align-items:center!important;justify-content:space-between!important;' +
+          'gap:8px!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;' +
+        '}' +
+        '.zappy-nav-more-item>.sub-menu>li.zappy-more-nested-parent>a .dropdown-arrow{' +
+          'display:inline-block!important;flex:0 0 auto!important;width:12px!important;height:12px!important;' +
+          'margin-inline-start:auto!important;pointer-events:auto!important;cursor:pointer!important;' +
+          'transition:transform .2s ease!important;opacity:1!important;visibility:visible!important;' +
+        '}' +
+        '.zappy-nav-more-item>.sub-menu>li.zappy-more-nested-open>a .dropdown-arrow{transform:rotate(180deg)!important;}' +
+        'html body .navbar .zappy-nav-more-item:hover > .sub-menu,' +
+        'html body .navbar .zappy-nav-more-item:focus-within > .sub-menu,' +
+        'html body .navbar .zappy-nav-more-item.open > .sub-menu{' +
+          'pointer-events:auto!important;' +
+        '}' +
+      '}';
+
+    function ensureCss() {
+      var s = document.getElementById(STYLE_ID);
+      if (!s) {
+        s = document.createElement('style');
+        s.id = STYLE_ID;
+      }
+      if (s.textContent !== cssText) s.textContent = cssText;
+      if (s.parentNode !== (document.head || document.documentElement)) {
+        (document.head || document.documentElement).appendChild(s);
+      } else if (s.nextSibling) {
+        (document.head || document.documentElement).appendChild(s);
+      }
+    }
+
+    function scrubFlattenedInlineLocks() {
+      var nodes = document.querySelectorAll('[data-zappy-more-flattened]');
+      for (var i = 0; i < nodes.length; i++) {
+        var ul = nodes[i];
+        if (ul.style.getPropertyValue('pointer-events')) ul.style.removeProperty('pointer-events');
+        if (ul.style.getPropertyValue('opacity')) ul.style.removeProperty('opacity');
+        if (ul.style.getPropertyValue('visibility')) ul.style.removeProperty('visibility');
+        if (ul.style.getPropertyValue('display')) ul.style.removeProperty('display');
+      }
+    }
+
+    function wireMoreNestedAccordion() {
+      var more = document.querySelector('.zappy-nav-more-item');
+      if (!more) return;
+      var topSub = more.querySelector(':scope > .sub-menu');
+      if (!topSub) return;
+      var kids = topSub.children;
+      for (var i = 0; i < kids.length; i++) {
+        var li = kids[i];
+        if (!li || li.tagName !== 'LI') continue;
+        var nested = null;
+        for (var c = 0; c < li.children.length; c++) {
+          if (li.children[c].tagName === 'UL') { nested = li.children[c]; break; }
+        }
+        if (!nested) {
+          li.classList.remove('zappy-more-nested-parent', 'zappy-more-nested-open');
+          continue;
+        }
+        li.classList.add('zappy-more-nested-parent');
+        if (!li.__zappyMoreNestedUserOpened) li.classList.remove('zappy-more-nested-open');
+        var trigger = null;
+        for (var t = 0; t < li.children.length; t++) {
+          if (li.children[t].tagName === 'A') { trigger = li.children[t]; break; }
+        }
+        if (!trigger) continue;
+        var arrow = trigger.querySelector('svg.dropdown-arrow');
+        if (!arrow) {
+          arrow = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          arrow.setAttribute('class', 'dropdown-arrow');
+          arrow.setAttribute('width', '12');
+          arrow.setAttribute('height', '12');
+          arrow.setAttribute('viewBox', '0 0 24 24');
+          arrow.setAttribute('fill', 'none');
+          arrow.setAttribute('stroke', 'currentColor');
+          arrow.setAttribute('stroke-width', '2');
+          arrow.setAttribute('aria-hidden', 'true');
+          var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', 'M6 9l6 6 6-6');
+          arrow.appendChild(path);
+          trigger.appendChild(arrow);
+        }
+        if (li.__zappyMoreNestedBound) continue;
+        li.__zappyMoreNestedBound = true;
+        (function(parentLi, arrowEl) {
+          arrowEl.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var open = parentLi.classList.toggle('zappy-more-nested-open');
+            parentLi.__zappyMoreNestedUserOpened = open;
+          });
+        })(li, arrow);
+      }
+    }
+
+    function apply() {
+      if (applying) return;
+      applying = true;
+      try {
+        ensureCss();
+        scrubFlattenedInlineLocks();
+        wireMoreNestedAccordion();
+      } finally {
+        applying = false;
+      }
+    }
+
+    var scheduled = false;
+    function scheduleApply() {
+      if (scheduled || applying) return;
+      scheduled = true;
+      setTimeout(function() {
+        scheduled = false;
+        apply();
+      }, 0);
+    }
+
+    apply();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', scheduleApply);
+    }
+    if (typeof MutationObserver === 'function') {
+      var mo = new MutationObserver(scheduleApply);
+      mo.observe(document.documentElement, {
+        subtree: true,
+        childList: true,
+        attributes: true,
+        attributeFilter: ['style', 'data-zappy-more-flattened']
+      });
+    }
+  } catch (e) {}
+})();
+
+/* ZAPPY_ANNOUNCEMENT_HEADER_SYNC_V3 */
+(function(){
+  if (window.__zappyAnnouncementHeaderSyncV3) return;
+  window.__zappyAnnouncementHeaderSyncV3 = true;
+  window.__zappyAnnouncementHeaderSyncV2 = true;
+  window.__zappyAnnouncementHeaderSyncV1 = true; // legacy guards
 
   function primaryHeader() {
     var selectors = [
@@ -6737,7 +7156,23 @@ function withConsent(category, callback) {
     document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
     document.documentElement.style.setProperty('--total-header-height', totalHeight + 'px');
     document.documentElement.style.setProperty('--zappy-mobile-menu-top', (barHeight + headerHeight) + 'px');
+    document.documentElement.style.setProperty('--zappy-announcement-height', barHeight + 'px');
+    document.documentElement.style.setProperty('--zappy-header-stack-height', totalHeight + 'px');
     document.body.style.setProperty('padding-top', totalHeight + 'px', 'important');
+
+    // Transparent nav: pull hero behind the fixed stack immediately (do NOT
+    // wait for lazy storefront-runtime.js — that delay was the ~10s gray bar).
+    // Keep selectors aligned with ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V2 —
+    // never underlap bare main>section:first-child (catalog /products pages).
+    var navBgValue = '';
+    try { navBgValue = getComputedStyle(document.documentElement).getPropertyValue('--nav-bg').trim(); } catch (e) {}
+    if (!navBgValue || navBgValue === 'transparent') {
+      var heroEl = document.querySelector('section[data-hero-type^="fullscreen"], .index-hero-section, main > section[class*="hero"]:first-of-type');
+      if (heroEl && totalHeight > 0) {
+        heroEl.style.setProperty('margin-top', '-' + totalHeight + 'px', 'important');
+        heroEl.style.setProperty('padding-top', totalHeight + 'px', 'important');
+      }
+    }
   }
 
   var timer = null;
@@ -6797,7 +7232,90 @@ function withConsent(category, callback) {
   } catch (e) {}
 })();
 
+/* ZAPPY_MOBILE_MENU_CLOSED_ICONS_V1 */
+(function(){
+  if (window.__zappyMobileMenuClosedIconsV1) return;
+  window.__zappyMobileMenuClosedIconsV1 = true;
+  function reset() {
+    var toggle = document.querySelector('.mobile-toggle, #mobileToggle');
+    if (!toggle) return;
+    var menu = document.querySelector('#navMenu, .nav-menu, .navbar-menu');
+    var isOpen = !!(menu && (menu.classList.contains('active') || menu.classList.contains('open') || menu.style.display === 'block'));
+    if (isOpen) return;
+    toggle.classList.remove('active');
+    var hi = toggle.querySelector('.hamburger-icon');
+    var ci = toggle.querySelector('.close-icon');
+    if (hi) hi.style.setProperty('display', 'block', 'important');
+    if (ci) ci.style.setProperty('display', 'none', 'important');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', reset);
+  } else {
+    reset();
+  }
+  [50, 200, 500].forEach(function(ms){ setTimeout(reset, ms); });
+})();
+
+
+/* ZAPPY_MOBILE_CATEGORIES_SUBMENU_GUARD_V1 */
+(function(){
+  if (window.__zappyMobileCategoriesSubmenuGuardV1) return;
+  window.__zappyMobileCategoriesSubmenuGuardV1 = true;
+
+  function injectCss() {
+    if (document.getElementById('zappy-mobile-categories-submenu-css')) return;
+    var s = document.createElement('style');
+    s.id = 'zappy-mobile-categories-submenu-css';
+    s.textContent =
+      '.mobile-categories-submenu{display:none!important}' +
+      '.mobile-categories-submenu.active{display:block!important}';
+    (document.head || document.documentElement).appendChild(s);
+  }
+
+  function scrubOrphans() {
+    document.querySelectorAll('.zappy-products-dropdown > .mobile-categories-submenu:not(.active), li.menu-item-has-children > .mobile-categories-submenu:not(.active)').forEach(function(el) {
+      var parent = el.parentElement;
+      if (parent && parent.querySelector(':scope > .sub-menu, :scope > ul.sub-menu')) {
+        el.remove();
+      }
+    });
+  }
+
+  function wrapLegacyInit() {
+    var orig = null;
+    try {
+      if (typeof window.initMobileCategoriesSubmenu === 'function') orig = window.initMobileCategoriesSubmenu;
+    } catch (e) {}
+    if (!orig) {
+      try { if (typeof initMobileCategoriesSubmenu === 'function') orig = initMobileCategoriesSubmenu; } catch (e2) {}
+    }
+    if (!orig) return;
+    var wrapped = function() {
+      if (document.querySelector('.zappy-products-dropdown > .sub-menu, .zappy-products-dropdown > ul.sub-menu, #zappy-nav-category-links')) {
+        scrubOrphans();
+        return;
+      }
+      return orig.apply(this, arguments);
+    };
+    try { window.initMobileCategoriesSubmenu = wrapped; } catch (e3) {}
+    try { initMobileCategoriesSubmenu = wrapped; } catch (e4) {}
+  }
+
+  injectCss();
+  wrapLegacyInit();
+  scrubOrphans();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ wrapLegacyInit(); scrubOrphans(); });
+  }
+  [50, 200, 800, 1600, 3200].forEach(function(ms){ setTimeout(function(){ wrapLegacyInit(); scrubOrphans(); }, ms); });
+})();
+
+
 /* ZAPPY_CUSTOMER_DISCOUNT_DELAYED_REFRESH_V1 */
+
+/* ZAPPY_ECOM_STARTUP_PERF_GUARDS_V4 */
+
+/* ZAPPY_ECOM_STARTUP_PERF_GUARDS_V1 */
 
 
 /* ZAPPY_CUSTOMER_DISCOUNT_RUNTIME_V1 */

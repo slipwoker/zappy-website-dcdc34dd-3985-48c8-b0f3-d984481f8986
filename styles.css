@@ -18732,6 +18732,71 @@ html body :root { --secondary-color: #f59e0b !important; }
 html body :root { --accent-color: #d97706 !important; }
 
 
+/* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V2 */
+:root {
+  --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
+}
+body:has(.zappy-announcement-bar) nav.navbar:not(.zappy-catalog-menu),
+body:has(.zappy-announcement-bar) header.navbar,
+body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-search-panel) {
+  top: var(--zappy-announcement-height, 40px) !important;
+}
+/* First-paint: pull fullscreen heroes behind the fixed announcement+nav so a
+   transparent --nav-bg does not flash the cream body strip (live FOUC that
+   preview never showed because preview injects the same underlap eagerly). */
+body:has(.zappy-announcement-bar) section[data-hero-type^="fullscreen"],
+body:has(.zappy-announcement-bar) .index-hero-section,
+body:has(.zappy-announcement-bar) main > section[class*="hero"]:first-of-type {
+  margin-top: calc(-1 * var(--zappy-header-stack-height)) !important;
+  padding-top: calc(var(--zappy-header-stack-height)) !important;
+}
+
+
+/* ZAPPY_MOBILE_CATEGORIES_SUBMENU_CSS_V1 */
+.mobile-categories-submenu { display: none !important; }
+.mobile-categories-submenu.active { display: block !important; }
+
+
+/* ZAPPY_CONTENT_ALIGNMENT_FIRST_PAINT_CSS_V1 */
+[data-zappy-content-align] {
+  display: flex !important;
+  flex-direction: column !important;
+}
+[data-zappy-content-align^="top-"] { justify-content: flex-start !important; }
+[data-zappy-content-align^="upper-"],
+[data-zappy-content-align^="center-"],
+[data-zappy-content-align^="lower-"] { justify-content: center !important; }
+[data-zappy-content-align^="bottom-"] { justify-content: flex-end !important; }
+[data-zappy-content-align$="-left"],
+[data-zappy-content-align$="-mid-left"] {
+  align-items: flex-start !important;
+  text-align: start !important;
+}
+[data-zappy-content-align$="-center"] {
+  align-items: center !important;
+  text-align: center !important;
+}
+[data-zappy-content-align$="-right"],
+[data-zappy-content-align$="-mid-right"] {
+  align-items: flex-end !important;
+  text-align: end !important;
+}
+[data-zappy-content-align] [data-zappy-align-target] {
+  margin-left: auto;
+  margin-right: auto;
+}
+[data-zappy-content-align$="-center"] [data-zappy-align-target],
+[data-zappy-content-align$="-center"] [data-zappy-align-target] > * {
+  text-align: center !important;
+}
+
+
+/* ZAPPY_PRODUCT_BREADCRUMB_MOBILE_HIDE_CSS_V1 */
+@media (max-width: 768px) {
+  .product-breadcrumb { display: none !important; }
+}
+
+
 /* zappy-nav-child-indent */
 .zappy-products-dropdown .zappy-nav-child > a,
 .sub-menu .zappy-nav-child > a {
@@ -19587,13 +19652,29 @@ html[dir="ltr"] .zappy-products-dropdown .zappy-nav-child > a {
   .navbar .nav-menu.active > li.zappy-products-dropdown > a,
   nav.navbar .nav-menu.active > li.zappy-products-dropdown > a,
   #navMenu.active > li.zappy-products-dropdown > a,
-  .nav-menu.open > li.zappy-products-dropdown > a {
+  .nav-menu.open > li.zappy-products-dropdown > a,
+  .navbar .nav-menu.active > li:has(> .sub-menu) > a,
+  nav.navbar .nav-menu.active > li:has(> .sub-menu) > a,
+  #navMenu.active > li:has(> .sub-menu) > a,
+  .nav-menu.open > li:has(> .sub-menu) > a,
+  .navbar .nav-menu.active > li.menu-item-has-children > a,
+  nav.navbar .nav-menu.active > li.menu-item-has-children > a,
+  #navMenu.active > li.menu-item-has-children > a,
+  .nav-menu.open > li.menu-item-has-children > a {
     padding-right: 56px !important;
   }
   html[dir="rtl"] .navbar .nav-menu.active > li.zappy-products-dropdown > a,
   html[dir="rtl"] nav.navbar .nav-menu.active > li.zappy-products-dropdown > a,
   html[dir="rtl"] #navMenu.active > li.zappy-products-dropdown > a,
-  html[dir="rtl"] .nav-menu.open > li.zappy-products-dropdown > a {
+  html[dir="rtl"] .nav-menu.open > li.zappy-products-dropdown > a,
+  html[dir="rtl"] .navbar .nav-menu.active > li:has(> .sub-menu) > a,
+  html[dir="rtl"] nav.navbar .nav-menu.active > li:has(> .sub-menu) > a,
+  html[dir="rtl"] #navMenu.active > li:has(> .sub-menu) > a,
+  html[dir="rtl"] .nav-menu.open > li:has(> .sub-menu) > a,
+  html[dir="rtl"] .navbar .nav-menu.active > li.menu-item-has-children > a,
+  html[dir="rtl"] nav.navbar .nav-menu.active > li.menu-item-has-children > a,
+  html[dir="rtl"] #navMenu.active > li.menu-item-has-children > a,
+  html[dir="rtl"] .nav-menu.open > li.menu-item-has-children > a {
     padding-right: 16px !important;
     padding-left: 56px !important;
   }

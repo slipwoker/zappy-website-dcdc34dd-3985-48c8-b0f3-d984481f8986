@@ -2702,6 +2702,10 @@ https://mashkanta-bepijama.co.il/articles/problematic-win-dira-behanacha
 https://mashkanta-bepijama.co.il/articles/contractor-purchase-risks
 האם מותר לחתום על חוזה דירה מקבלן לפני שמקבלים אישור עקרוני למשכנתא? קראו על הסכנות וגלו למה חובה לקבל ייעוץ משכנתאות לפני החתימה.
 
+### העברת משכנתא
+https://mashkanta-bepijama.co.il/articles/transferring-mortgage-banks
+הבנתם שאפשר להעביר משכנתא בנק בלחיצת כפתור? המציאות קצת שונה. מדריך מקיף על תהליך מיחזור משכנתא חיצוני, היתרונות, והשלבים בדרך לחיסכון.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2736,7 +2740,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
