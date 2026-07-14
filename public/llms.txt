@@ -2710,6 +2710,10 @@ https://mashkanta-bepijama.co.il/articles/transferring-mortgage-banks
 https://mashkanta-bepijama.co.il/articles/leveraging-anchor-drops
 איך לנצל בצורה חכמה ירידה בעוגנים בעת שחרור כספי משכנתא בפעימות? מדריך מקיף לרוכשי דירה מקבלן או במסגרת דירה בהנחה, הכולל אסטרטגיות חיסכון וייעוץ משכנתאות.
 
+### שמאות בהנחה
+https://mashkanta-bepijama.co.il/articles/appraisal-dira-behanacha
+זכיתם בדירה בהנחה והבנק מבקש שמאות? גלו מדוע זה קורה, איך זה קשור לאחוזי המימון ולזהות הבנק המלווה, ומה חשוב לדעת.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2744,7 +2748,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
