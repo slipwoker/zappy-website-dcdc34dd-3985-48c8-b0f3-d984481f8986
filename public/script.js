@@ -118,24 +118,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 window.onload = function() {
     
-    try { /* ZAPPY_A11Y_DYNAMIC_LANG */
-        var htmlEl = document.documentElement;
-        var pageLang = (htmlEl.getAttribute('lang') || 'en').toLowerCase().split('-')[0];
-        var pageDir = (htmlEl.getAttribute('dir') || '').toLowerCase();
-        var rtlLangs = ['he', 'ar', 'fa', 'ur', 'yi', 'iw'];
-        var isPageRTL = pageDir === 'rtl' || rtlLangs.indexOf(pageLang) !== -1;
-        var buttonSide = isPageRTL ? 'left' : 'right';
-        var langMap = { en: 'en-US', es: 'es-ES', fr: 'fr-FR', de: 'de-DE', it: 'it-IT', pt: 'pt-PT', nl: 'nl-NL', he: 'he-IL', ar: 'ar-SA' };
-        var forceLang = langMap[pageLang] || 'en-US';
-        var iconPos = { bottom: { size: 50, units: 'px' }, type: 'fixed' };
-        iconPos[buttonSide] = { size: 20, units: 'px' };
+    try {
         window.micAccessTool = new MicAccessTool({
-            buttonPosition: buttonSide,
-            forceLang: forceLang,
-            icon: { position: iconPos, backgroundColor: 'transparent', color: 'transparent', img: 'accessible', circular: false },
-            menu: { dimensions: { width: { size: 300, units: 'px' }, height: { size: 'auto', units: 'px' } } }
+            buttonPosition: 'left', // Position on left side
+            forceLang: 'he-IL', // Force language
+            icon: {
+                position: {
+                    bottom: { size: 50, units: 'px' },
+                    left: { size: 20, units: 'px' },
+                    type: 'fixed'
+                },
+                backgroundColor: 'transparent', // Transparent to allow CSS styling
+                color: 'transparent', // Let CSS handle coloring
+                img: 'accessible',
+                circular: false // Square button for consistent styling
+            },
+            menu: {
+                dimensions: {
+                    width: { size: 300, units: 'px' },
+                    height: { size: 'auto', units: 'px' }
+                }
+            }
         });
-    } catch (error) {}
+        
+    } catch (error) {
+    }
     
     // Keyboard shortcut handler: ALT+A (Option+A on Mac) to toggle accessibility widget visibility (desktop only)
     document.addEventListener('keydown', function(event) {
@@ -1116,11 +1123,12 @@ document.addEventListener('DOMContentLoaded', function() {
 /* END ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 
 
-/* ZAPPY_PUBLISHED_ZOOM_WRAPPER_RUNTIME_V3 */
+/* ZAPPY_PUBLISHED_ZOOM_WRAPPER_RUNTIME_V4 */
 (function(){
   try {
-    if (window.__zappyPublishedZoomInitV3) return;
-    window.__zappyPublishedZoomInitV3 = true;
+    if (window.__zappyPublishedZoomInitV4) return;
+    window.__zappyPublishedZoomInitV4 = true;
+    window.__zappyPublishedZoomInitV3 = true; // legacy guard — keep stale V3 copies inert
 
     function isHeroBgWrapper(wrapper) {
       var img = wrapper.querySelector('img');
@@ -1134,14 +1142,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // SYNC: These helpers must match sharedZoomCropMath.js
     function parseObjPos(op) {
-      var x = 50, y = 50;
+      var x = null, y = null;
       try {
-        if (typeof op === 'string') {
-          var m = op.match(/(-?\d+(?:\.\d+)?)%\s+(-?\d+(?:\.\d+)?)%/);
-          if (m) { x = parseFloat(m[1]); y = parseFloat(m[2]); }
+        if (typeof op === 'string' && op.trim()) {
+          var tokens = op.trim().toLowerCase().split(/\s+/).slice(0, 2);
+          for (var i = 0; i < tokens.length; i++) {
+            var tok = tokens[i];
+            var val;
+            if (tok === 'left') { x = 0; continue; }
+            if (tok === 'right') { x = 100; continue; }
+            if (tok === 'top') { y = 0; continue; }
+            if (tok === 'bottom') { y = 100; continue; }
+            if (tok === 'center') val = 50;
+            else if (/^-?\d*\.?\d+%$/.test(tok)) val = parseFloat(tok);
+            else val = 50;
+            if (x === null) x = val; else if (y === null) y = val;
+          }
         }
       } catch (e) {}
-      if (!isFinite(x)) x = 50; if (!isFinite(y)) y = 50;
+      if (x === null || !isFinite(x)) x = 50; if (y === null || !isFinite(y)) y = 50;
       return { x: Math.max(0, Math.min(100, x)), y: Math.max(0, Math.min(100, y)) };
     }
 
@@ -1150,6 +1169,12 @@ document.addEventListener('DOMContentLoaded', function() {
         return { w: 100, h: 100 };
       if (imgA >= contA) return { w: (imgA / contA) * 100, h: 100 };
       return { w: 100, h: (contA / imgA) * 100 };
+    }
+    function containPercents(imgA, contA) {
+      if (!isFinite(imgA) || imgA <= 0 || !isFinite(contA) || contA <= 0)
+        return { w: 100, h: 100 };
+      if (imgA >= contA) return { w: 100, h: (contA / imgA) * 100 };
+      return { w: (imgA / contA) * 100, h: 100 };
     }
 
     var IMAGE_SLOT_CLASS_TOKENS = ['image-wrap', 'image-tile', 'image-slot', 'card-image', 'card-media', 'media-wrap', 'portrait-wrap'];
@@ -1652,11 +1677,15 @@ document.addEventListener('DOMContentLoaded', function() {
       var imgA = nW / nH;
       var contA = rect.width / rect.height;
       var cover = coverPercents(imgA, contA);
+      var contain = containPercents(imgA, contA);
 
       var wPct = 100, hPct = 100;
       if (zoom >= 1) {
         wPct = cover.w * zoom;
         hPct = cover.h * zoom;
+      } else if (zoom <= 0.5) {
+        wPct = contain.w;
+        hPct = contain.h;
       } else {
         var t = (zoom - 0.5) / 0.5;
         if (!isFinite(t)) t = 0;
@@ -1690,6 +1719,9 @@ document.addEventListener('DOMContentLoaded', function() {
       for (var j = 0; j < zoomImgs.length; j++) {
         var img = zoomImgs[j];
         if (img.closest && img.closest('[data-zappy-zoom-wrapper="true"]')) continue;
+        // Carousel slide imgs are absolute cover-fill inside their slide —
+        // forcing position:relative + max-height here would collapse the slide.
+        if (img.closest && img.closest('.zappy-carousel-slide')) continue;
         img.style.setProperty('position', 'relative', 'important');
         img.style.setProperty('width', '100%', 'important');
         img.style.setProperty('height', 'auto', 'important');
@@ -1770,8 +1802,32 @@ document.addEventListener('DOMContentLoaded', function() {
           if (mSrc) img.src = mSrc;
           if (mPos) img.style.setProperty('object-position', mPos, 'important');
           if (mZoom > 1) {
-            img.style.setProperty('transform', 'scale(' + mZoom + ')', 'important');
-            img.style.setProperty('transform-origin', mPos || '50% 50%', 'important');
+            // Match the editor's wrapper-crop geometry (percentage pan window)
+            // instead of transform:scale — the scale path zooms around the
+            // focal point of the already-cropped view, which visibly diverges
+            // from what the user framed in the editor's Mobile Only tab.
+            var applyHeroMobileCrop = function() {
+              var rect = wrapper.getBoundingClientRect();
+              var nW = img.naturalWidth || 0, nH = img.naturalHeight || 0;
+              if (!rect || !rect.width || !rect.height || !(nW > 0 && nH > 0)) {
+                img.style.setProperty('transform', 'scale(' + mZoom + ')', 'important');
+                img.style.setProperty('transform-origin', mPos || '50% 50%', 'important');
+                return;
+              }
+              var cover = coverPercents(nW / nH, rect.width / rect.height);
+              var wP = cover.w * mZoom, hP = cover.h * mZoom;
+              var p = parseObjPos(mPos || img.getAttribute('data-zappy-object-position') || '50% 50%');
+              img.style.setProperty('position', 'absolute', 'important');
+              img.style.setProperty('left', ((100 - wP) * (p.x / 100)) + '%', 'important');
+              img.style.setProperty('top', ((100 - hP) * (p.y / 100)) + '%', 'important');
+              img.style.setProperty('width', wP + '%', 'important');
+              img.style.setProperty('height', hP + '%', 'important');
+              img.style.setProperty('object-fit', 'cover', 'important');
+              img.style.removeProperty('transform');
+              img.style.removeProperty('transform-origin');
+            };
+            if (img.complete && img.naturalWidth > 0) applyHeroMobileCrop();
+            else img.addEventListener('load', applyHeroMobileCrop, { once: true });
           }
         }
       }
@@ -1809,14 +1865,85 @@ document.addEventListener('DOMContentLoaded', function() {
 /* END ZAPPY_PUBLISHED_ZOOM_WRAPPER_RUNTIME */
 
 
-/* ZAPPY_PUBLISHED_MOBILE_IMAGE_SWAP_V2 */
+/* ZAPPY_PUBLISHED_MOBILE_IMAGE_SWAP_V3 */
 (function(){
   try {
-    if (window.__zappyMobileImageSwapInitV2) return;
-    window.__zappyMobileImageSwapInitV2 = true;
+    if (window.__zappyMobileImageSwapInitV3) return;
+    window.__zappyMobileImageSwapInitV3 = true;
+    window.__zappyMobileImageSwapInitV2 = true; // keep stale V2 copies inert
     var SEL = 'img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]';
     var applied = false;
     function standalone(img){ return img && !img.closest('[data-zappy-zoom-wrapper="true"]'); }
+    // SYNC: must match sharedZoomCropMath.js
+    function parseOp(op){
+      var x=null,y=null;
+      try{
+        if(typeof op==='string'&&op.trim()){
+          var toks=op.trim().toLowerCase().split(/\s+/).slice(0,2);
+          for(var i=0;i<toks.length;i++){
+            var tk=toks[i],v;
+            if(tk==='left'){x=0;continue;} if(tk==='right'){x=100;continue;}
+            if(tk==='top'){y=0;continue;} if(tk==='bottom'){y=100;continue;}
+            if(tk==='center')v=50; else if(/^-?\d*\.?\d+%$/.test(tk))v=parseFloat(tk); else v=50;
+            if(x===null)x=v; else if(y===null)y=v;
+          }
+        }
+      }catch(e){}
+      if(x===null||!isFinite(x))x=50; if(y===null||!isFinite(y))y=50;
+      return {x:Math.max(0,Math.min(100,x)),y:Math.max(0,Math.min(100,y))};
+    }
+    // Editor-parity mobile zoom: reproduce the zoom-wrapper crop geometry
+    // using the img's PARENT as the crop box (the editor builds a transient
+    // wrapper in preview, but cleanSectionHtmlForSave removes it when desktop
+    // needs no zoom — so a mobile-only zoom ships as a standalone img).
+    // Falls back to the legacy transform:scale approximation whenever the
+    // geometry can't be measured, so something always applies.
+    function applyStandaloneMobileZoom(img, mZoom, mPos){
+      try {
+        var p = img.parentElement;
+        if (!p) return;
+        if (!p._zappyDesktop) p._zappyDesktop = { style: p.getAttribute('style') };
+        p.style.setProperty('overflow', 'hidden', 'important');
+        function legacyScale(){
+          img.style.setProperty('transform', 'scale(' + mZoom + ')', 'important');
+          img.style.setProperty('transform-origin', mPos || '50% 50%', 'important');
+        }
+        function run(){
+          try {
+            var rect = p.getBoundingClientRect ? p.getBoundingClientRect() : null;
+            var nW = img.naturalWidth || 0, nH = img.naturalHeight || 0;
+            if (!rect || !(rect.width > 0) || !(rect.height > 0) || !(nW > 0 && nH > 0)) { legacyScale(); return; }
+            // Lock the parent's current box BEFORE pulling the img out of flow,
+            // otherwise the parent collapses when the img was its height source.
+            try {
+              var pcs = window.getComputedStyle(p);
+              if (pcs && pcs.position === 'static') p.style.setProperty('position', 'relative', 'important');
+              p.style.setProperty('aspect-ratio', String(Math.round((rect.width / rect.height) * 10000) / 10000), 'important');
+            } catch(e0) {}
+            var imgA = nW / nH, contA = rect.width / rect.height;
+            var cw = 100, ch = 100;
+            if (imgA >= contA) { cw = (imgA / contA) * 100; } else { ch = (contA / imgA) * 100; }
+            var wP = cw * mZoom, hP = ch * mZoom;
+            var pos = parseOp(mPos || img.getAttribute('data-zappy-object-position') || '50% 50%');
+            img.style.setProperty('position', 'absolute', 'important');
+            img.style.setProperty('left', ((100 - wP) * (pos.x / 100)) + '%', 'important');
+            img.style.setProperty('top', ((100 - hP) * (pos.y / 100)) + '%', 'important');
+            img.style.setProperty('width', wP + '%', 'important');
+            img.style.setProperty('height', hP + '%', 'important');
+            img.style.setProperty('max-width', 'none', 'important');
+            img.style.setProperty('max-height', 'none', 'important');
+            img.style.setProperty('object-fit', 'cover', 'important');
+            img.style.setProperty('margin', '0', 'important');
+            if (img.style.removeProperty) { img.style.removeProperty('transform'); img.style.removeProperty('transform-origin'); }
+          } catch(e1) { try { legacyScale(); } catch(e2) {} }
+        }
+        if (img.complete && img.naturalWidth > 0) run();
+        else if (typeof img.addEventListener === 'function') {
+          legacyScale(); // immediate approximation, refined once dimensions load
+          img.addEventListener('load', run, { once: true });
+        } else legacyScale();
+      } catch(eZ) {}
+    }
     function applyMobile(){
       if (applied) return; applied = true;
       document.querySelectorAll(SEL).forEach(function(img){
@@ -1828,13 +1955,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (mSrc) img.src = mSrc;
         if (mPos) img.style.setProperty('object-position', mPos, 'important');
         if (isFinite(mZoom) && mZoom > 1) {
-          img.style.setProperty('transform', 'scale(' + mZoom + ')', 'important');
-          img.style.setProperty('transform-origin', mPos || '50% 50%', 'important');
-          var p = img.parentElement;
-          if (p) {
-            if (!p._zappyDesktop) p._zappyDesktop = { style: p.getAttribute('style') };
-            p.style.setProperty('overflow', 'hidden', 'important');
-          }
+          applyStandaloneMobileZoom(img, mZoom, mPos);
         }
       });
     }
@@ -1867,7 +1988,7 @@ document.addEventListener('DOMContentLoaded', function() {
     else init();
   } catch (eOuter) {}
 })();
-/* END ZAPPY_PUBLISHED_MOBILE_IMAGE_SWAP_V2 */
+/* END ZAPPY_PUBLISHED_MOBILE_IMAGE_SWAP_V3 */
 
 
 /* ZAPPY_MOBILE_MENU_TOGGLE_V3 */
@@ -5398,6 +5519,174 @@ function fixContrast(){
   setTimeout(boot, 1500);
 })();
 
+
+/* ZAPPY_ACCESSIBILITY_RUNTIME_V2 — self-loads Mickidum after publish strips stored third-party tags */
+
+/* Mickidum Accessibility Toolbar Initialization - Zappy Style */
+
+var zappyAccessibilityInitAttempts = 0;
+var zappyAccessibilityMaxAttempts = 50;
+var zappyAccessibilityScriptSrc = 'https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js';
+var zappyAccessibilityLoadPromise = null;
+
+function loadZappyAccessibilityToolbar() {
+    if (typeof window.MicAccessTool === 'function') {
+        return Promise.resolve();
+    }
+    if (zappyAccessibilityLoadPromise) {
+        return zappyAccessibilityLoadPromise;
+    }
+    zappyAccessibilityLoadPromise = new Promise(function(resolve, reject) {
+        var existing = document.querySelector('script[data-zappy-accessibility-toolbar="true"]');
+        if (existing) {
+            // A previously failed/already-complete tag never fires load again.
+            if (existing.getAttribute('data-zappy-load-error') === 'true') {
+                existing.parentNode && existing.parentNode.removeChild(existing);
+            } else if (existing.getAttribute('data-zappy-loaded') === 'true' || existing.readyState === 'complete') {
+                resolve();
+                return;
+            } else {
+                existing.addEventListener('load', function() {
+                    existing.setAttribute('data-zappy-loaded', 'true');
+                    resolve();
+                }, { once: true });
+                existing.addEventListener('error', function(error) {
+                    existing.setAttribute('data-zappy-load-error', 'true');
+                    reject(error);
+                }, { once: true });
+                return;
+            }
+        }
+        var script = document.createElement('script');
+        script.src = zappyAccessibilityScriptSrc;
+        script.async = true;
+        script.defer = true;
+        script.setAttribute('data-zappy-accessibility-toolbar', 'true');
+        script.onload = function() {
+            script.setAttribute('data-zappy-loaded', 'true');
+            resolve();
+        };
+        script.onerror = function(error) {
+            script.setAttribute('data-zappy-load-error', 'true');
+            reject(error);
+        };
+        document.head.appendChild(script);
+    }).then(function() {
+        initZappyAccessibilityToolbar();
+    }).catch(function() {
+        zappyAccessibilityLoadPromise = null;
+    });
+    return zappyAccessibilityLoadPromise;
+}
+
+function initZappyAccessibilityToolbar() {
+
+    try {
+        if (window.__zappyAccessibilityInitialized) {
+            return;
+        }
+        if (typeof window.MicAccessTool !== 'function') {
+            zappyAccessibilityInitAttempts++;
+            if (zappyAccessibilityInitAttempts < zappyAccessibilityMaxAttempts) {
+                // Script load may already be settled; schedule another init pass
+                // so we keep polling until MicAccessTool attaches.
+                setTimeout(function() {
+                    loadZappyAccessibilityToolbar().then(initZappyAccessibilityToolbar);
+                }, 100);
+            }
+            return;
+        }
+        window.__zappyAccessibilityInitialized = true;
+        // Detect current page language and direction from <html> element
+        // so the toolbar matches the active language on multi-language sites.
+        var htmlEl = document.documentElement;
+        var pageLang = (htmlEl.getAttribute('lang') || 'en').toLowerCase().split('-')[0];
+        var pageDir = (htmlEl.getAttribute('dir') || '').toLowerCase();
+        var rtlLangs = ['he', 'ar', 'fa', 'ur', 'yi', 'iw'];
+        var isPageRTL = pageDir === 'rtl' || rtlLangs.indexOf(pageLang) !== -1;
+        var buttonSide = isPageRTL ? 'left' : 'right';
+
+        var langMap = { en: 'en-US', es: 'es-ES', fr: 'fr-FR', de: 'de-DE', it: 'it-IT', pt: 'pt-PT', nl: 'nl-NL', he: 'he-IL', ar: 'ar-SA' };
+        var forceLang = langMap[pageLang] || 'en-US';
+
+        var iconPos = { bottom: { size: 50, units: 'px' }, type: 'fixed' };
+        iconPos[buttonSide] = { size: 20, units: 'px' };
+
+        window.micAccessTool = new MicAccessTool({
+            buttonPosition: buttonSide,
+            forceLang: forceLang,
+            icon: {
+                position: iconPos,
+                backgroundColor: 'transparent',
+                color: 'transparent',
+                img: 'accessible',
+                circular: false
+            },
+            menu: {
+                dimensions: {
+                    width: { size: 300, units: 'px' },
+                    height: { size: 'auto', units: 'px' }
+                }
+            }
+        });
+        
+    } catch (error) {
+    }
+    
+    // Keyboard shortcut handler: ALT+A (Option+A on Mac) to toggle accessibility menu
+    if (!window.__zappyAccessibilityShortcutBound) {
+      window.__zappyAccessibilityShortcutBound = true;
+      document.addEventListener('keydown', function(event) {
+        var isAltOrOption = event.altKey;
+        var isAKey = event.code === 'KeyA' || event.keyCode === 65 || event.which === 65 || 
+                      (event.key && (event.key.toLowerCase() === 'a' || event.key === 'å' || event.key === 'Å'));
+        
+        if (isAltOrOption && isAKey) {
+            event.preventDefault();
+            event.stopPropagation();
+            loadZappyAccessibilityToolbar().then(function() {
+                var accessButton = document.getElementById('mic-access-tool-general-button');
+                if (accessButton) {
+                    accessButton.click();
+                }
+            });
+        }
+      }, true);
+    }
+}
+
+function scheduleZappyAccessibilityLazyLoad() {
+    var start = function() { loadZappyAccessibilityToolbar(); };
+    if (typeof window.requestIdleCallback === 'function') {
+        window.requestIdleCallback(start, { timeout: 8000 });
+    } else {
+        setTimeout(start, 8000);
+    }
+}
+
+if (!window.__zappyAccessibilityShortcutBound) {
+    window.__zappyAccessibilityShortcutBound = true;
+    document.addEventListener('keydown', function(event) {
+        var isAltOrOption = event.altKey;
+        var isAKey = event.code === 'KeyA' || event.keyCode === 65 || event.which === 65 ||
+                      (event.key && (event.key.toLowerCase() === 'a' || event.key === 'å' || event.key === 'Å'));
+        if (isAltOrOption && isAKey) {
+            event.preventDefault();
+            event.stopPropagation();
+            loadZappyAccessibilityToolbar().then(function() {
+                var accessButton = document.getElementById('mic-access-tool-general-button');
+                if (accessButton) accessButton.click();
+            });
+        }
+    }, true);
+}
+
+if (document.readyState === 'complete') {
+    scheduleZappyAccessibilityLazyLoad();
+} else {
+    window.addEventListener('load', scheduleZappyAccessibilityLazyLoad, { once: true });
+}
+
 /* Cookie Consent */
 
 // Helper function to check cookie consent
@@ -7085,9 +7374,10 @@ function withConsent(category, callback) {
   } catch (e) {}
 })();
 
-/* ZAPPY_ANNOUNCEMENT_HEADER_SYNC_V3 */
+/* ZAPPY_ANNOUNCEMENT_HEADER_SYNC_V4 */
 (function(){
-  if (window.__zappyAnnouncementHeaderSyncV3) return;
+  if (window.__zappyAnnouncementHeaderSyncV4) return;
+  window.__zappyAnnouncementHeaderSyncV4 = true;
   window.__zappyAnnouncementHeaderSyncV3 = true;
   window.__zappyAnnouncementHeaderSyncV2 = true;
   window.__zappyAnnouncementHeaderSyncV1 = true; // legacy guards
@@ -7160,17 +7450,35 @@ function withConsent(category, callback) {
     document.documentElement.style.setProperty('--zappy-header-stack-height', totalHeight + 'px');
     document.body.style.setProperty('padding-top', totalHeight + 'px', 'important');
 
-    // Transparent nav: pull hero behind the fixed stack immediately (do NOT
-    // wait for lazy storefront-runtime.js — that delay was the ~10s gray bar).
-    // Keep selectors aligned with ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V2 —
+    // Transparent nav: pull hero behind the fixed stack immediately.
+    // Measure the navbar itself rather than trusting --nav-bg, which can be
+    // absent on older published pages or during stylesheet failure. Critical
+    // CSS also paints known opaque navbar colors before this runtime executes.
+    // Keep selectors aligned with ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 —
     // never underlap bare main>section:first-child (catalog /products pages).
-    var navBgValue = '';
-    try { navBgValue = getComputedStyle(document.documentElement).getPropertyValue('--nav-bg').trim(); } catch (e) {}
-    if (!navBgValue || navBgValue === 'transparent') {
-      var heroEl = document.querySelector('section[data-hero-type^="fullscreen"], .index-hero-section, main > section[class*="hero"]:first-of-type');
-      if (heroEl && totalHeight > 0) {
+    var heroEl = document.querySelector('section[data-hero-type^="fullscreen"], .index-hero-section, main > section[class*="hero"]:first-of-type');
+    if (heroEl && totalHeight > 0) {
+      var headerIsTransparent = false;
+      try {
+        var headerStyle = getComputedStyle(header);
+        var backgroundColor = headerStyle.backgroundColor || '';
+        var backgroundImage = headerStyle.backgroundImage || 'none';
+        var alphaMatch = backgroundColor.match(/rgba?\([^)]*[,\s]([0-9.]+)\s*\)$/i);
+        headerIsTransparent =
+          backgroundImage === 'none' &&
+          (backgroundColor === 'transparent' || (alphaMatch && parseFloat(alphaMatch[1]) < 0.3));
+      } catch (e) {}
+      if (headerIsTransparent) {
         heroEl.style.setProperty('margin-top', '-' + totalHeight + 'px', 'important');
         heroEl.style.setProperty('padding-top', totalHeight + 'px', 'important');
+        heroEl.setAttribute('data-zappy-nav-underlap', 'true');
+      } else if (
+        heroEl.getAttribute('data-zappy-nav-underlap') === 'true' ||
+        (heroEl.style.marginTop === '-' + totalHeight + 'px' && heroEl.style.paddingTop === totalHeight + 'px')
+      ) {
+        heroEl.style.removeProperty('margin-top');
+        heroEl.style.removeProperty('padding-top');
+        heroEl.removeAttribute('data-zappy-nav-underlap');
       }
     }
   }
