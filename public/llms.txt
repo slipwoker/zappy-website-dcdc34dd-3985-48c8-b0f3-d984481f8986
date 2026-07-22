@@ -2726,6 +2726,10 @@ https://mashkanta-bepijama.co.il/articles/thin-file-credit-mortgage
 https://mashkanta-bepijama.co.il/articles/world-cup-mortgage
 מה הקשר בין המסע של ליאונל מסי ונבחרת ארגנטינה וההפסד בגמר מונדיאל 2026, לבין התהליך של לקיחת משכנתא? מאמר מרתק על אסטרטגיה, התמדה וניצחון פיננסי.
 
+### קו העימות
+https://mashkanta-bepijama.co.il/articles/conflict-zone-mortgage
+המדריך המלא למשכנתא באזורי קו העימות, עוטף עזה וגבול הצפון. כל המידע על מענקי מקום, זכאות משרד השיכון, ייעוץ משכנתאות והטבות מיוחדות לרוכשים ולבונים.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2760,7 +2764,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
