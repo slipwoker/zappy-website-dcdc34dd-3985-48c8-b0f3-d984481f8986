@@ -2718,6 +2718,10 @@ https://mashkanta-bepijama.co.il/articles/appraisal-dira-behanacha
 https://mashkanta-bepijama.co.il/articles/switching-banks-mid-mortgage
 לקחתם משכנתא בפעימות והשירות בבנק מאכזב? המדריך המלא על מעבר בנק באמצע משיכת כספי המשכנתא - האם זה אפשרי, איך זה עובד ומה ההשלכות הכלכליות.
 
+### היסטוריית אשראי
+https://mashkanta-bepijama.co.il/articles/thin-file-credit-mortgage
+המדריך המלא לקבלת משכנתא ללא היסטוריית אשראי (Thin File). למה הבנק חושש מלווים ללא חובות קודמים ואיך ייעוץ משכנתאות יכול לפתור את הבעיה בדרך לדירה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2752,7 +2756,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
