@@ -3363,13 +3363,28 @@ function fixContrast(){
     // 2) Override initVariantSelection early to prevent the page's default selection behavior.
     // The page's initVariantSelection calls .click() on first options, auto-selecting defaults.
     // We replace it with a version that only does setup (CSS, sorting, handlers) but skips auto-select.
+    // Ticket-style multi-qty products keep the baked initMultiQuantitySelection path.
     var _initOverridden = false;
+    var _origInitVariantSelection = null;
+    function _isMultiQtyProduct(p) {
+      return !!(p && p.card_variants && p.card_variants.multiQuantity)
+        || !!(typeof window.isProductMultiQuantity === 'function' && window.isProductMultiQuantity(p))
+        || !!document.querySelector('[data-multi-quantity="true"]');
+    }
     function _overrideInitVariantSelection() {
       if (_initOverridden) return;
-      if (typeof window.initVariantSelection === 'function') {
-        _initOverridden = true;
-      }
+      // Wait until the page defines initVariantSelection so we can keep a real
+      // original for multi-qty products (ticket-style per-value steppers).
+      if (typeof window.initVariantSelection !== 'function') return;
+      _initOverridden = true;
+      _origInitVariantSelection = window.initVariantSelection;
       window.initVariantSelection = function(product, t) {
+        if (_isMultiQtyProduct(product)) {
+          if (typeof _origInitVariantSelection === 'function') {
+            return _origInitVariantSelection.call(this, product, t);
+          }
+          return;
+        }
         // Store product data for our fix (variants[] OR card_variants.matrix)
         if (product && ((product.variants && product.variants.length > 0) || _hasMatrix(product))) {
           _variantProduct = _augmentProductFromCardVariants(product);
@@ -3904,6 +3919,7 @@ function fixContrast(){
     
     // Document-level capture handler - fires BEFORE any element-level handlers
     document.addEventListener('click', function(e) {
+      if (_isMultiQtyProduct(_variantProduct || window.currentProduct)) return;
       var btn = e.target.closest ? e.target.closest('.variant-option') : null;
       if (!btn) return;
       if (!_variantProduct || _getVariants().length === 0) return;
@@ -3934,6 +3950,7 @@ function fixContrast(){
     // This fires before any element-level onclick or inline onclick handlers,
     // preventing the page's original alert()-based validation.
     document.addEventListener('click', function(e) {
+      if (_isMultiQtyProduct(_variantProduct || window.currentProduct)) return;
       var addBtn = e.target.closest ? e.target.closest('.add-to-cart-btn, .add-to-cart, #add-to-cart-btn, [onclick*="addProductToCart"]') : null;
       if (!addBtn) return;
       if (!_variantProduct || _getVariants().length === 0) return;
@@ -3985,6 +4002,7 @@ function fixContrast(){
       var product = _variantProduct || window.currentProduct;
       var t = _variantTranslations || window.productTranslations || {};
       if (!product) return;
+      if (_isMultiQtyProduct(product)) return;
       if ((!product.variants || product.variants.length === 0) && !_hasMatrix(product)) return;
       if (document.querySelectorAll('.variant-option').length === 0) return;
       if (window._zappyVariantFixed) return;
@@ -4083,6 +4101,10 @@ function fixContrast(){
       // Also override addProductToCart as a safety net
       var origAddToCart = window.addProductToCart;
       window.addProductToCart = function() {
+        if (_isMultiQtyProduct(window.currentProduct)) {
+          if (origAddToCart) return origAddToCart.apply(this, arguments);
+          return;
+        }
         var keys = _getAttributeKeys();
         for (var i = 0; i < keys.length; i++) {
           if (!selectedAttributes.hasOwnProperty(keys[i])) {

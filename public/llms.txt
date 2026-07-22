@@ -2722,6 +2722,10 @@ https://mashkanta-bepijama.co.il/articles/switching-banks-mid-mortgage
 https://mashkanta-bepijama.co.il/articles/thin-file-credit-mortgage
 המדריך המלא לקבלת משכנתא ללא היסטוריית אשראי (Thin File). למה הבנק חושש מלווים ללא חובות קודמים ואיך ייעוץ משכנתאות יכול לפתור את הבעיה בדרך לדירה.
 
+### מונדיאל ומשכנתא
+https://mashkanta-bepijama.co.il/articles/world-cup-mortgage
+מה הקשר בין המסע של ליאונל מסי ונבחרת ארגנטינה וההפסד בגמר מונדיאל 2026, לבין התהליך של לקיחת משכנתא? מאמר מרתק על אסטרטגיה, התמדה וניצחון פיננסי.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2756,7 +2760,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox)
+  - `terms` (checkbox, required)
 
 ---
 
