@@ -7720,6 +7720,98 @@ function withConsent(category, callback) {
   } catch (e) {}
 })();
 
+/* ZAPPY_ANNOUNCEMENT_BAR_ROTATION_V4 */
+(function(){
+  if (window.__zappyAnnouncementBarRotationV4) return;
+  window.__zappyAnnouncementBarRotationV4 = true;
+  window.__zappyAnnouncementBarRotationV3 = true; // legacy guards
+  window.__zappyAnnouncementBarRotationV2 = true;
+
+  function readInterval(bar) {
+    var raw = bar && bar.getAttribute && bar.getAttribute('data-interval');
+    var ms = parseInt(raw, 10);
+    if (!isFinite(ms) || ms < 1000) ms = 4000;
+    return ms;
+  }
+
+  function remountMessages(bar) {
+    // Neutralize orphaned anonymous setIntervals from pre-V2 inline fallbacks
+    // that never stored their timer id — their NodeList closures keep ticking
+    // on the OLD nodes after we replace them with clones.
+    if (!bar) return;
+    var stale = bar.querySelectorAll('.zappy-announcement-message');
+    for (var s = 0; s < stale.length; s++) {
+      var node = stale[s];
+      if (!node || !node.parentNode) continue;
+      node.parentNode.replaceChild(node.cloneNode(true), node);
+    }
+  }
+
+  function startRotation(bar, intervalMs, force) {
+    if (!bar) return;
+    var ms = isFinite(intervalMs) && intervalMs >= 1000 ? intervalMs : readInterval(bar);
+    var messages = bar.querySelectorAll('.zappy-announcement-message');
+    if (messages.length <= 1) {
+      if (window.__zappyAnnouncementRotateTimer) {
+        clearInterval(window.__zappyAnnouncementRotateTimer);
+        window.__zappyAnnouncementRotateTimer = null;
+      }
+      window.__zappyAnnouncementRotateBar = null;
+      window.__zappyAnnouncementRotateMs = null;
+      return;
+    }
+    // Already driving this bar at this interval — leave the active slide alone.
+    if (
+      !force &&
+      window.__zappyAnnouncementRotateTimer &&
+      window.__zappyAnnouncementRotateBar === bar &&
+      window.__zappyAnnouncementRotateMs === ms
+    ) {
+      return;
+    }
+    if (window.__zappyAnnouncementRotateTimer) {
+      clearInterval(window.__zappyAnnouncementRotateTimer);
+      window.__zappyAnnouncementRotateTimer = null;
+    }
+    remountMessages(bar);
+    messages = bar.querySelectorAll('.zappy-announcement-message');
+    if (messages.length <= 1) return;
+    var current = 0;
+    for (var i = 0; i < messages.length; i++) {
+      if (i === 0) messages[i].classList.add('active');
+      else messages[i].classList.remove('active');
+    }
+    window.__zappyAnnouncementRotateBar = bar;
+    window.__zappyAnnouncementRotateMs = ms;
+    window.__zappyAnnouncementRotateTimer = setInterval(function() {
+      var all = bar.querySelectorAll('.zappy-announcement-message');
+      if (!all || all.length <= 1) return;
+      if (current >= all.length) current = 0;
+      all[current].classList.remove('active');
+      current = (current + 1) % all.length;
+      all[current].classList.add('active');
+    }, ms);
+  }
+
+  // Shared entry point — pass force:true after rebuilding message nodes.
+  window.zappyStartAnnouncementRotation = startRotation;
+
+  function boot() {
+    if (document.body && document.body.classList.contains('zappy-focused-page')) return;
+    var bar = document.querySelector('.zappy-announcement-bar');
+    if (!bar) return;
+    startRotation(bar, readInterval(bar), false);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+  // Settings fetch / dynamic bar create may land after first paint.
+  [300, 1000, 2500].forEach(function(ms){ setTimeout(boot, ms); });
+})();
+
 /* ZAPPY_MOBILE_MENU_CLOSED_ICONS_V1 */
 (function(){
   if (window.__zappyMobileMenuClosedIconsV1) return;
