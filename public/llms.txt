@@ -2750,6 +2750,10 @@ https://mashkanta-bepijama.co.il/articles/eligibility-unmarried-to-married
 https://mashkanta-bepijama.co.il/articles/second-degree-mortgage-appraisal
 הבנק דורש שמאות עדכנית בבקשה למשכנתא מדרגה שנייה בטענה לחריגה מאחוזי המימון? גלו מדוע זה קורה, האם זה מותר, ואיך מתמודדים עם זה נכון.
 
+### ט"ו באב
+https://mashkanta-bepijama.co.il/articles/tu-bav-mortgage
+מה הקשר בין חג האהבה ט"ו באב לבין לקיחת משכנתא? גלו כיצד תקשורת זוגית, תכנון פיננסי נכון וייעוץ משכנתאות אובייקטיבי יכולים לחזק את הזוגיות שלכם.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2784,7 +2788,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
