@@ -2754,6 +2754,10 @@ https://mashkanta-bepijama.co.il/articles/second-degree-mortgage-appraisal
 https://mashkanta-bepijama.co.il/articles/tu-bav-mortgage
 מה הקשר בין חג האהבה ט"ו באב לבין לקיחת משכנתא? גלו כיצד תקשורת זוגית, תכנון פיננסי נכון וייעוץ משכנתאות אובייקטיבי יכולים לחזק את הזוגיות שלכם.
 
+### הסתרת דירה
+https://mashkanta-bepijama.co.il/articles/hiding-apartment-dira-behanacha
+זכיתם בדירה בהנחה ובעלך רוצה לקנות דירה בשוק החופשי ולהסתיר אותה? המדריך המלא על ההשלכות, הסיכונים ולמה חובה לקבל ייעוץ משכנתאות לפני צעד כזה.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2788,7 +2792,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
