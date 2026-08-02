@@ -2758,6 +2758,10 @@ https://mashkanta-bepijama.co.il/articles/tu-bav-mortgage
 https://mashkanta-bepijama.co.il/articles/hiding-apartment-dira-behanacha
 זכיתם בדירה בהנחה ובעלך רוצה לקנות דירה בשוק החופשי ולהסתיר אותה? המדריך המלא על ההשלכות, הסיכונים ולמה חובה לקבל ייעוץ משכנתאות לפני צעד כזה.
 
+### ביטול זכייה
+https://mashkanta-bepijama.co.il/articles/canceling-dira-behanacha-win
+זכיתם בדירה בהנחה ושוקלים לבטל? גלו מה קורה להרשמות שלכם בערים אחרות, האם אפשר להירשם מחדש להגרלות, ומה חשוב לבדוק לפני שמבטלים.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2792,7 +2796,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
