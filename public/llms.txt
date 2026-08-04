@@ -2762,6 +2762,10 @@ https://mashkanta-bepijama.co.il/articles/hiding-apartment-dira-behanacha
 https://mashkanta-bepijama.co.il/articles/canceling-dira-behanacha-win
 זכיתם בדירה בהנחה ושוקלים לבטל? גלו מה קורה להרשמות שלכם בערים אחרות, האם אפשר להירשם מחדש להגרלות, ומה חשוב לבדוק לפני שמבטלים.
 
+### סודות שפיצר
+https://mashkanta-bepijama.co.il/articles/spitzer-interest-trap
+גלו מדוע לוח סילוקין שפיצר הוא הנפוץ בישראל, איך נוצר מצב שהריבית מהווה את רוב התשלום החודשי, ולמה המערכת הפיננסית מרוויחה מכך.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2796,7 +2800,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
