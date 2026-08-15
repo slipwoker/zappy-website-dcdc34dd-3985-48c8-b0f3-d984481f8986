@@ -2774,6 +2774,10 @@ https://mashkanta-bepijama.co.il/articles/mortgage-mix-for-growing-family
 https://mashkanta-bepijama.co.il/articles/structure-insurance-reinstatement-value
 איך אפשר לוודא לאורך השנים בביטוח מבנה שאנו מבוטחים לפי ערך כינון עכשווי ולא ערך מהעבר? מדריך מקיף על הסכנות בתת-ביטוח ודרכי פעולה.
 
+### הכנסות משוק ההון
+https://mashkanta-bepijama.co.il/articles/capital-market-income-mortgage
+האם הבנק מכיר ברווחים משוק ההון כהכנסה למשכנתא? המדריך המלא להכרת הכנסות מדיבידנדים, ריביות ומסחר בבורסה לטובת אישור המשכנתא שלכם.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2808,7 +2812,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
