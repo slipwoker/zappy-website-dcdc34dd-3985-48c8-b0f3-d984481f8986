@@ -2778,6 +2778,10 @@ https://mashkanta-bepijama.co.il/articles/structure-insurance-reinstatement-valu
 https://mashkanta-bepijama.co.il/articles/capital-market-income-mortgage
 האם הבנק מכיר ברווחים משוק ההון כהכנסה למשכנתא? המדריך המלא להכרת הכנסות מדיבידנדים, ריביות ומסחר בבורסה לטובת אישור המשכנתא שלכם.
 
+### שוכר קיים
+https://mashkanta-bepijama.co.il/articles/existing-tenant-investment
+המדריך המלא לרכישת דירה להשקעה עם שוכר קיים. יתרונות, חסרונות, דגשים משפטיים ותכנון תזרים נכון בעזרת ייעוץ משכנתאות מקצועי.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2812,7 +2816,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
