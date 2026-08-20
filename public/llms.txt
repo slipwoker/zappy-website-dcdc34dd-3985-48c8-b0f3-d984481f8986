@@ -2786,6 +2786,10 @@ https://mashkanta-bepijama.co.il/articles/existing-tenant-investment
 https://mashkanta-bepijama.co.il/articles/why-rich-people-take-mortgages
 מדוע אנשים עשירים וטייקונים לוקחים משכנתא במקום לרכוש נכסים במזומן? גלו את סודות המינוף הפיננסי, חשיבות הנזילות ואיך ייעוץ משכנתאות חכם תורם לבניית עושר.
 
+### החזר התחלתי
+https://mashkanta-bepijama.co.il/articles/initial-vs-maximum-repayment
+למה אסור להתמקד רק בהחזר החודשי ההתחלתי באישור העקרוני למשכנתא? גלו מה הבנק לא מספר לכם על ההחזר המקסימלי ואיך תכנון נכון מונע קריסה כלכלית.
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2820,7 +2824,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
