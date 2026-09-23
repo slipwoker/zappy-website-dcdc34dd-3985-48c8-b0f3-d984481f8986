@@ -391,10 +391,14 @@
     return 'zappy_purchase_fired_' + String(orderId || '');
   }
 
+  function purchaseMetaDedupKey(orderId) {
+    return 'zappy_purchase_meta_fired_' + String(orderId || '');
+  }
+
   function alreadyFiredPurchase(orderId) {
     if (!orderId) return false;
     try {
-      return sessionStorage.getItem(purchaseDedupKey(orderId)) === '1';
+      return window.sessionStorage.getItem(purchaseDedupKey(orderId)) === '1';
     } catch (e) {
       return false;
     }
@@ -402,8 +406,77 @@
 
   function markPurchaseFired(orderId) {
     if (!orderId) return;
-    try { sessionStorage.setItem(purchaseDedupKey(orderId), '1'); } catch (e) {}
+    try { window.sessionStorage.setItem(purchaseDedupKey(orderId), '1'); } catch (e) {}
   }
+
+  function alreadyFiredPurchaseMeta(orderId) {
+    if (!orderId) return false;
+    try {
+      return window.sessionStorage.getItem(purchaseMetaDedupKey(orderId)) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markPurchaseMetaFired(orderId) {
+    if (!orderId) return;
+    try { window.sessionStorage.setItem(purchaseMetaDedupKey(orderId), '1'); } catch (e) {}
+  }
+
+  function getPendingMetaEvents() {
+    try {
+      if (!Array.isArray(window.__zappyPendingMetaEvents)) {
+        window.__zappyPendingMetaEvents = [];
+      }
+      return window.__zappyPendingMetaEvents;
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function enqueueMetaEvent(eventName, params, orderId) {
+    var q = getPendingMetaEvents();
+    if (orderId) {
+      for (var i = 0; i < q.length; i++) {
+        if (q[i] && q[i].orderId === orderId && q[i].eventName === eventName) return;
+      }
+    }
+    q.push({ eventName: eventName, params: params || {}, orderId: orderId || null });
+  }
+
+  /**
+   * Live sites replace the eager Meta snippet with a consent-gated lazy
+   * loader. Payment providers bounce the shopper back to /order-success
+   * before CookieConsent hydrates, so confirm-order used to fire Purchase
+   * while window.fbq was still undefined — then sessionStorage blocked a
+   * retry. Queue until fbq exists, then flush.
+   */
+  function flushPendingMetaEvents() {
+    if (typeof window.fbq !== 'function') return;
+    var q = getPendingMetaEvents().slice();
+    try { window.__zappyPendingMetaEvents = []; } catch (e) {}
+    for (var i = 0; i < q.length; i++) {
+      var item = q[i];
+      if (!item || !item.eventName) continue;
+      if (item.orderId && alreadyFiredPurchaseMeta(item.orderId)) continue;
+      try {
+        window.fbq('track', item.eventName, item.params || {});
+        if (item.orderId) markPurchaseMetaFired(item.orderId);
+      } catch (e2) {}
+    }
+  }
+  window.zappyFlushPendingMetaEvents = flushPendingMetaEvents;
+
+  var metaFlushAttempts = 0;
+  var metaFlushTimer = setInterval(function() {
+    metaFlushAttempts++;
+    flushPendingMetaEvents();
+    var pendingLen = 0;
+    try { pendingLen = (window.__zappyPendingMetaEvents || []).length; } catch (e) {}
+    if ((pendingLen === 0 && typeof window.fbq === 'function') || metaFlushAttempts > 60) {
+      clearInterval(metaFlushTimer);
+    }
+  }, 500);
 
   /**
    * Fire a marketing event to first-party analytics + GA4/GTM/Meta when present.
@@ -423,15 +496,19 @@
         metadata.pagePath = pagePath();
       }
 
+      var oid = '';
+      var purchaseAlreadySent = false;
+      var purchaseMetaAlreadySent = false;
       if (eventId === 'checkout_complete') {
-        var oid = String(metadata.orderId || metadata.order_id || metadata.transaction_id || '');
-        if (oid && alreadyFiredPurchase(oid)) return;
-        if (oid) markPurchaseFired(oid);
+        oid = String(metadata.orderId || metadata.order_id || metadata.transaction_id || '');
+        purchaseAlreadySent = !!(oid && alreadyFiredPurchase(oid));
+        purchaseMetaAlreadySent = !!(oid && alreadyFiredPurchaseMeta(oid));
+        if (purchaseAlreadySent && purchaseMetaAlreadySent) return;
       }
 
       // First-party (skip when already tracked via zappyTrackEcomAnalytics path
       // that opts out, or when caller already recorded under a different name)
-      if (!opts.skipFirstParty) {
+      if (!opts.skipFirstParty && !purchaseAlreadySent) {
         try {
           if (window.zappyAnalytics && typeof window.zappyAnalytics.track === 'function') {
             window.zappyAnalytics.track(eventId, metadata);
@@ -440,40 +517,53 @@
       }
 
       // GTM / dataLayer — platform-standard ecommerce event names
-      try {
-        window.dataLayer = window.dataLayer || [];
-        if (plat.ecom) {
-          var ga4ForGtm = buildGa4Params(eventId, metadata);
-          var ecommerce = {};
-          if (ga4ForGtm.transaction_id) ecommerce.transaction_id = ga4ForGtm.transaction_id;
-          if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
-          if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
-          if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
-          window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
-          // Secondary Zappy-specific trigger for merchants who want it
-          if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
-            window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
+      if (!purchaseAlreadySent) {
+        try {
+          window.dataLayer = window.dataLayer || [];
+          if (plat.ecom) {
+            var ga4ForGtm = buildGa4Params(eventId, metadata);
+            var ecommerce = {};
+            if (ga4ForGtm.transaction_id) ecommerce.transaction_id = ga4ForGtm.transaction_id;
+            if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
+            if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
+            if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
+            window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
+            // Secondary Zappy-specific trigger for merchants who want it
+            if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
+              window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
+            }
+          } else {
+            var dl = { event: plat.gtm };
+            for (var k in metadata) {
+              if (Object.prototype.hasOwnProperty.call(metadata, k)) dl[k] = metadata[k];
+            }
+            window.dataLayer.push(dl);
           }
+        } catch (e2) {}
+
+        // GA4 gtag
+        try {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
+          }
+        } catch (e3) {}
+
+        if (oid) markPurchaseFired(oid);
+      }
+
+      // Meta Pixel — live sites lazy-load fbq after marketing consent. If the
+      // stub is not defined yet, queue and flush when the pixel arrives.
+      try {
+        if (purchaseMetaAlreadySent) {
+          // already delivered to Meta
         } else {
-          var dl = { event: plat.gtm };
-          for (var k in metadata) {
-            if (Object.prototype.hasOwnProperty.call(metadata, k)) dl[k] = metadata[k];
+          var metaParams = buildMetaParams(eventId, metadata);
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', plat.meta, metaParams);
+            if (oid) markPurchaseMetaFired(oid);
+          } else {
+            enqueueMetaEvent(plat.meta, metaParams, eventId === 'checkout_complete' ? oid : null);
           }
-          window.dataLayer.push(dl);
-        }
-      } catch (e2) {}
-
-      // GA4 gtag
-      try {
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
-        }
-      } catch (e3) {}
-
-      // Meta Pixel (only when fbq is loaded — consent-gated lazy loader)
-      try {
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', plat.meta, buildMetaParams(eventId, metadata));
         }
       } catch (e4) {}
     } catch (err) {}
@@ -1408,19 +1498,19 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 
       <!-- Content -->
       <div class="article-content" style="font-size: 1.1rem;">
-        <p tabindex="107" style="">זכייה בתוכנית "דירה בהנחה" או "מחיר למשתכן" היא ללא ספק רגע משמח מאוד עבור זוגות ומשפחות רבות בישראל. מדובר בהזדמנות כלכלית נדירה ומשמעותית לרכישת נכס ראשון במחיר מופחת משמעותית ממחירי השוק החופשי. עם זאת, החיים לעיתים מזמנים לנו הפתעות ושינויים בלתי צפויים, וישנם מקרים בהם זוג נשוי שזכה בפרויקט מחליט להתגרש ולפרק את החבילה לאחר הזכייה – לעיתים לפני קבלת המפתח, ולעיתים אף לפני החתימה על החוזה מול הקבלן. במצב רגיש זה, השאלה הראשונה והמלחיצה ביותר שעולה היא: האם אנחנו עומדים לאבד את הזכייה?</p>
+        <p tabindex="107">זכייה בתוכנית "דירה בהנחה" או "מחיר למשתכן" היא ללא ספק רגע משמח מאוד עבור זוגות ומשפחות רבות בישראל. מדובר בהזדמנות כלכלית נדירה ומשמעותית לרכישת נכס ראשון במחיר מופחת משמעותית ממחירי השוק החופשי. עם זאת, החיים לעיתים מזמנים לנו הפתעות ושינויים בלתי צפויים, וישנם מקרים בהם זוג נשוי שזכה בפרויקט מחליט להתגרש ולפרק את החבילה לאחר הזכייה – לעיתים לפני קבלת המפתח, ולעיתים אף לפני החתימה על החוזה מול הקבלן. במצב רגיש זה, השאלה הראשונה והמלחיצה ביותר שעולה היא: האם אנחנו עומדים לאבד את הזכייה?</p>
 
         <p tabindex="108">התשובה הקצרה והמרגיעה היא: <strong>לא, הזכייה לא חייבת להתבטל.</strong> משרד הבינוי והשיכון מודע לכך שמצבים של פירוק תא משפחתי מתרחשים, והוא מספק פתרונות ברורים המאפשרים לשמור על ההטבה. העיקרון המנחה הוא שניתן להעביר את מלוא הזכויות לאחד מבני הזוג, בעוד השני חותם על ויתור רשמי. כך, בן הזוג שנשאר יכול לשמור על הזכייה ולהמשיך בתהליך רכישת הדירה. עם זאת, תהליך זה דורש התנהלות משפטית ובירוקרטית מדויקת, וכמובן – היערכות פיננסית חדשה לחלוטין. כאן בדיוק נכנסת החשיבות של <strong>ייעוץ משכנתאות</strong> מקצועי, שנועד לוודא שבן הזוג שנשאר עם הזכות אכן יוכל לעמוד בנטל הכלכלי לבדו.</p>
 
         <h2 style="color: #304060 !important; font-size: 1.6rem; margin: 40px 0 20px 0; font-weight: 700;" tabindex="109">התהליך המשפטי מול משרד הבינוי והשיכון</h2>
-        <p tabindex="110" style="">כאשר זוג מתגרש לאחר זכייה בדירה בהנחה, הזכייה המקורית רשומה במערכות משרד השיכון על שם שני בני הזוג כ"תא משפחתי". כדי שאחד מהם יוכל להמשיך בתהליך הרכישה לבדו, חובה להסדיר זאת בצורה רשמית במסגרת הסכם הגירושין. הסכם הגירושין חייב לכלול סעיף מפורש, ברור וחד-משמעי המתייחס לזכייה הספציפית בפרויקט. בסעיף זה צריך להיכתב מי מבני הזוג מקבל את מלוא הזכויות על הדירה העתידית, ומי מוותר עליהן לחלוטין וללא תנאי.</p>
+        <p tabindex="110">כאשר זוג מתגרש לאחר זכייה בדירה בהנחה, הזכייה המקורית רשומה במערכות משרד השיכון על שם שני בני הזוג כ"תא משפחתי". כדי שאחד מהם יוכל להמשיך בתהליך הרכישה לבדו, חובה להסדיר זאת בצורה רשמית במסגרת הסכם הגירושין. הסכם הגירושין חייב לכלול סעיף מפורש, ברור וחד-משמעי המתייחס לזכייה הספציפית בפרויקט. בסעיף זה צריך להיכתב מי מבני הזוג מקבל את מלוא הזכויות על הדירה העתידית, ומי מוותר עליהן לחלוטין וללא תנאי.</p>
         
-        <p tabindex="111" style="">לאחר שהסכם הגירושין מקבל תוקף של פסק דין בבית המשפט לענייני משפחה או בבית הדין הרבני, יש להגיש פנייה מסודרת לוועדת חריגים (או לוועדה הרלוונטית) של משרד הבינוי והשיכון. לבקשה זו יש לצרף את פסק הדין, וכן תצהיר ויתור זכויות חתום על ידי בן הזוג המוותר ומאומת על ידי עורך דין. הוועדה בוחנת את המסמכים, וכאשר הכל נמצא תקין, היא מאשרת את העדכון ומעבירה את הזכייה במלואה על שם בן הזוג שנשאר. חשוב לדעת: בן הזוג שוויתר על הזכות, עשוי לחזור להיות זכאי להשתתף בהגרלות עתידיות כ"חסר דירה", בכפוף לתקנות משרד השיכון התקפות באותה עת.<br>יש לקחת בחשבון שמקבל הדירה יצטרך להנפיק אישור זכאות חדש במעמד "יחיד" (גרוש).&nbsp;&nbsp;<br><u>ידועים בציבור</u>: הנהלים מתייחסים גם לפרידה של זוגות ידועים בציבור, ודורשים הוכחת פרידה מסודרת.&nbsp;&nbsp;<br></p>
+        <p tabindex="111">לאחר שהסכם הגירושין מקבל תוקף של פסק דין בבית המשפט לענייני משפחה או בבית הדין הרבני, יש להגיש פנייה מסודרת לוועדת חריגים (או לוועדה הרלוונטית) של משרד הבינוי והשיכון. לבקשה זו יש לצרף את פסק הדין, וכן תצהיר ויתור זכויות חתום על ידי בן הזוג המוותר ומאומת על ידי עורך דין. הוועדה בוחנת את המסמכים, וכאשר הכל נמצא תקין, היא מאשרת את העדכון ומעבירה את הזכייה במלואה על שם בן הזוג שנשאר. חשוב לדעת: בן הזוג שוויתר על הזכות, עשוי לחזור להיות זכאי להשתתף בהגרלות עתידיות כ"חסר דירה", בכפוף לתקנות משרד השיכון התקפות באותה עת.<br>יש לקחת בחשבון שמקבל הדירה יצטרך להנפיק אישור זכאות חדש במעמד "יחיד" (גרוש).&nbsp;&nbsp;<br><u>ידועים בציבור</u>: הנהלים מתייחסים גם לפרידה של זוגות ידועים בציבור, ודורשים הוכחת פרידה מסודרת.&nbsp;&nbsp;<br></p>
 
         <h2 style="color: #304060 !important; font-size: 1.6rem; margin: 40px 0 20px 0; font-weight: 700;" tabindex="112">האתגר הפיננסי: אישור משכנתא ללווה יחיד</h2>
         <p tabindex="113">השלב הבירוקרטי של העברת הזכויות הוא לרוב החלק הפשוט יותר. האתגר האמיתי והמשמעותי מתחיל בבנק למשכנתאות. כאשר זוג ניגש לקחת משכנתא, הבנק מחשב את "יכולת ההחזר" על בסיס ההכנסות נטו המשותפות של שניהם. כעת, משנותר לווה אחד בלבד במשוואה, עליו להוכיח לבנק שיש לו את ההכנסה הפנויה והיציבות התעסוקתית הנדרשת כדי לעמוד בתשלומי המשכנתא החודשיים לגמרי לבדו.</p>
 
-        <p tabindex="114" style="">זהו השלב הקריטי שבו קבלת <strong>ייעוץ משכנתא לדירה ראשונה</strong> הופכת להכרחית. יועץ משכנתאות מומחה יבחן את הנתונים הפיננסיים של הלווה היחיד, יבדוק את דירוג האשראי שלו, ויבנה אסטרטגיית מימון המותאמת למצבו החדש. במקרים רבים, לווה יחיד עשוי להתקשות לקבל אישור עקרוני למשכנתא משום שההחזר החודשי המבוקש חורג מיחס ההחזר המותר על ידי בנק ישראל (לרוב עד 38%-40% מההכנסה הפנויה). פתרון נפוץ ויעיל במצבים אלו הוא צירוף של "לווה תומך" (בדרך כלל הורה מדרגה ראשונה). הכנסותיו של הלווה התומך נלקחות בחשבון לצורך חישוב יכולת ההחזר הכוללת, ובכך מאפשרות לבנק לאשר את ההלוואה ולהוציא את העסקה לפועל.</p>
+        <p tabindex="114">זהו השלב הקריטי שבו קבלת <strong>ייעוץ משכנתא לדירה ראשונה</strong> הופכת להכרחית. יועץ משכנתאות מומחה יבחן את הנתונים הפיננסיים של הלווה היחיד, יבדוק את דירוג האשראי שלו, ויבנה אסטרטגיית מימון המותאמת למצבו החדש. במקרים רבים, לווה יחיד עשוי להתקשות לקבל אישור עקרוני למשכנתא משום שההחזר החודשי המבוקש חורג מיחס ההחזר המותר על ידי בנק ישראל (לרוב עד 38%-40% מההכנסה הפנויה). פתרון נפוץ ויעיל במצבים אלו הוא צירוף של "לווה תומך" (בדרך כלל הורה מדרגה ראשונה). הכנסותיו של הלווה התומך נלקחות בחשבון לצורך חישוב יכולת ההחזר הכוללת, ובכך מאפשרות לבנק לאשר את ההלוואה ולהוציא את העסקה לפועל.</p>
 
         <h2 style="color: #304060 !important; font-size: 1.6rem; margin: 40px 0 20px 0; font-weight: 700;" tabindex="115">מה קורה אם המשכנתא כבר נלקחה לפני הגירושין?</h2>
         <p tabindex="116">אם בני הזוג כבר הספיקו לחתום על חוזה המכר מול הקבלן ואף לקחו משכנתא משותפת לפני שהחליטו להתגרש, המצב הופך למורכב יותר מבחינה בנקאית. במקרה כזה, בנוסף להעברת הזכויות במשרד השיכון ובטאבו (או בחברה המשכנת), יש לבצע מול הבנק תהליך שנקרא "גריעת לווה". המשמעות היא שהבנק מתבקש לשחרר את אחד מבני הזוג מהאחריות להלוואה. הבנק יסכים לעשות זאת אך ורק אם ישתכנע מעל לכל ספק שבן הזוג הנותר מסוגל לעמוד בהחזרים לבדו (או בעזרת לווה תומך שיוכנס במקום בן הזוג היוצא).</p>
@@ -1430,7 +1520,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
         <h2 style="color: #304060 !important; font-size: 1.6rem; margin: 40px 0 20px 0; font-weight: 700;" tabindex="118">האם כדאי או אפשר למכור את הדירה?</h2>
         <p tabindex="119">חשוב לזכור שבתוכניות דירה בהנחה ומחיר למשתכן קיימת הגבלת מכירה מחמירה (בדרך כלל אסור למכור את הנכס במשך 5 שנים מיום קבלת טופס 4, או 7 שנים מיום ביצוע ההגרלה - המוקדם מביניהם). אם בני הזוג מתגרשים ואף אחד מהם לא יכול להרשות לעצמו להחזיק בדירה לבדו – גם לא בעזרת לווה תומך או <strong>ייעוץ משכנתא למשפרי דיור</strong> במקרה של ניסיון שדרוג עתידי – הם עשויים להיקלע לבעיה.</p>
         
-        <p tabindex="120" style="">במקרי קיצון של גירושין וקושי כלכלי מהותי, ניתן להגיש בקשה מיוחדת לוועדת החריגים של משרד השיכון בבקשה לקבל אישור למכור את הדירה לפני תום תקופת ההגבלה. הוועדה בוחנת כל מקרה לגופו, מתחשבת בנסיבות הפירוק והמצב הכלכלי, ועשויה לאשר את המכירה בתנאים מסוימים, אך חשוב להדגיש כי אין לכך ערובה מראש ויש להיערך לכל תרחיש.<br>ביטול חוזה (אם שני בני הזוג אינם מעוניינים בדירה): אם הוחלט לבטל את החוזה לגמרי, הדבר אינו פשוט ועשוי לגרור קנסות או דרישת פיצויים מול הקבלן, שכן גירושין לרוב אינם נחשבים ל"סיכול חוזה" המאפשר פטור מוחלט.</p>
+        <p tabindex="120">במקרי קיצון של גירושין וקושי כלכלי מהותי, ניתן להגיש בקשה מיוחדת לוועדת החריגים של משרד השיכון בבקשה לקבל אישור למכור את הדירה לפני תום תקופת ההגבלה. הוועדה בוחנת כל מקרה לגופו, מתחשבת בנסיבות הפירוק והמצב הכלכלי, ועשויה לאשר את המכירה בתנאים מסוימים, אך חשוב להדגיש כי אין לכך ערובה מראש ויש להיערך לכל תרחיש.<br>ביטול חוזה (אם שני בני הזוג אינם מעוניינים בדירה): אם הוחלט לבטל את החוזה לגמרי, הדבר אינו פשוט ועשוי לגרור קנסות או דרישת פיצויים מול הקבלן, שכן גירושין לרוב אינם נחשבים ל"סיכול חוזה" המאפשר פטור מוחלט.</p>
 
         <h2 style="color: #304060 !important; font-size: 1.6rem; margin: 40px 0 20px 0; font-weight: 700;" tabindex="121">סיכום והמלצות להמשך הדרך</h2>
         <p tabindex="122">תקופת הגירושין היא תקופה סוערת, רגישה ומלאת אי-ודאות. עם זאת, בכל הנוגע לזכייה בדירה בהנחה, אין שום סיבה למהר ולהרים ידיים. באמצעות הסכם גירושין מסודר, פנייה נכונה לוועדות משרד השיכון, ובעיקר – ליווי צמוד של מומחי מימון, ניתן בהחלט להעביר את הזכויות לאחד מבני הזוג ולשמור על הנכס היקר שהרווחתם.</p>

@@ -391,10 +391,14 @@
     return 'zappy_purchase_fired_' + String(orderId || '');
   }
 
+  function purchaseMetaDedupKey(orderId) {
+    return 'zappy_purchase_meta_fired_' + String(orderId || '');
+  }
+
   function alreadyFiredPurchase(orderId) {
     if (!orderId) return false;
     try {
-      return sessionStorage.getItem(purchaseDedupKey(orderId)) === '1';
+      return window.sessionStorage.getItem(purchaseDedupKey(orderId)) === '1';
     } catch (e) {
       return false;
     }
@@ -402,8 +406,77 @@
 
   function markPurchaseFired(orderId) {
     if (!orderId) return;
-    try { sessionStorage.setItem(purchaseDedupKey(orderId), '1'); } catch (e) {}
+    try { window.sessionStorage.setItem(purchaseDedupKey(orderId), '1'); } catch (e) {}
   }
+
+  function alreadyFiredPurchaseMeta(orderId) {
+    if (!orderId) return false;
+    try {
+      return window.sessionStorage.getItem(purchaseMetaDedupKey(orderId)) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markPurchaseMetaFired(orderId) {
+    if (!orderId) return;
+    try { window.sessionStorage.setItem(purchaseMetaDedupKey(orderId), '1'); } catch (e) {}
+  }
+
+  function getPendingMetaEvents() {
+    try {
+      if (!Array.isArray(window.__zappyPendingMetaEvents)) {
+        window.__zappyPendingMetaEvents = [];
+      }
+      return window.__zappyPendingMetaEvents;
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function enqueueMetaEvent(eventName, params, orderId) {
+    var q = getPendingMetaEvents();
+    if (orderId) {
+      for (var i = 0; i < q.length; i++) {
+        if (q[i] && q[i].orderId === orderId && q[i].eventName === eventName) return;
+      }
+    }
+    q.push({ eventName: eventName, params: params || {}, orderId: orderId || null });
+  }
+
+  /**
+   * Live sites replace the eager Meta snippet with a consent-gated lazy
+   * loader. Payment providers bounce the shopper back to /order-success
+   * before CookieConsent hydrates, so confirm-order used to fire Purchase
+   * while window.fbq was still undefined — then sessionStorage blocked a
+   * retry. Queue until fbq exists, then flush.
+   */
+  function flushPendingMetaEvents() {
+    if (typeof window.fbq !== 'function') return;
+    var q = getPendingMetaEvents().slice();
+    try { window.__zappyPendingMetaEvents = []; } catch (e) {}
+    for (var i = 0; i < q.length; i++) {
+      var item = q[i];
+      if (!item || !item.eventName) continue;
+      if (item.orderId && alreadyFiredPurchaseMeta(item.orderId)) continue;
+      try {
+        window.fbq('track', item.eventName, item.params || {});
+        if (item.orderId) markPurchaseMetaFired(item.orderId);
+      } catch (e2) {}
+    }
+  }
+  window.zappyFlushPendingMetaEvents = flushPendingMetaEvents;
+
+  var metaFlushAttempts = 0;
+  var metaFlushTimer = setInterval(function() {
+    metaFlushAttempts++;
+    flushPendingMetaEvents();
+    var pendingLen = 0;
+    try { pendingLen = (window.__zappyPendingMetaEvents || []).length; } catch (e) {}
+    if ((pendingLen === 0 && typeof window.fbq === 'function') || metaFlushAttempts > 60) {
+      clearInterval(metaFlushTimer);
+    }
+  }, 500);
 
   /**
    * Fire a marketing event to first-party analytics + GA4/GTM/Meta when present.
@@ -423,15 +496,19 @@
         metadata.pagePath = pagePath();
       }
 
+      var oid = '';
+      var purchaseAlreadySent = false;
+      var purchaseMetaAlreadySent = false;
       if (eventId === 'checkout_complete') {
-        var oid = String(metadata.orderId || metadata.order_id || metadata.transaction_id || '');
-        if (oid && alreadyFiredPurchase(oid)) return;
-        if (oid) markPurchaseFired(oid);
+        oid = String(metadata.orderId || metadata.order_id || metadata.transaction_id || '');
+        purchaseAlreadySent = !!(oid && alreadyFiredPurchase(oid));
+        purchaseMetaAlreadySent = !!(oid && alreadyFiredPurchaseMeta(oid));
+        if (purchaseAlreadySent && purchaseMetaAlreadySent) return;
       }
 
       // First-party (skip when already tracked via zappyTrackEcomAnalytics path
       // that opts out, or when caller already recorded under a different name)
-      if (!opts.skipFirstParty) {
+      if (!opts.skipFirstParty && !purchaseAlreadySent) {
         try {
           if (window.zappyAnalytics && typeof window.zappyAnalytics.track === 'function') {
             window.zappyAnalytics.track(eventId, metadata);
@@ -440,40 +517,53 @@
       }
 
       // GTM / dataLayer — platform-standard ecommerce event names
-      try {
-        window.dataLayer = window.dataLayer || [];
-        if (plat.ecom) {
-          var ga4ForGtm = buildGa4Params(eventId, metadata);
-          var ecommerce = {};
-          if (ga4ForGtm.transaction_id) ecommerce.transaction_id = ga4ForGtm.transaction_id;
-          if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
-          if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
-          if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
-          window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
-          // Secondary Zappy-specific trigger for merchants who want it
-          if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
-            window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
+      if (!purchaseAlreadySent) {
+        try {
+          window.dataLayer = window.dataLayer || [];
+          if (plat.ecom) {
+            var ga4ForGtm = buildGa4Params(eventId, metadata);
+            var ecommerce = {};
+            if (ga4ForGtm.transaction_id) ecommerce.transaction_id = ga4ForGtm.transaction_id;
+            if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
+            if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
+            if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
+            window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
+            // Secondary Zappy-specific trigger for merchants who want it
+            if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
+              window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
+            }
+          } else {
+            var dl = { event: plat.gtm };
+            for (var k in metadata) {
+              if (Object.prototype.hasOwnProperty.call(metadata, k)) dl[k] = metadata[k];
+            }
+            window.dataLayer.push(dl);
           }
+        } catch (e2) {}
+
+        // GA4 gtag
+        try {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
+          }
+        } catch (e3) {}
+
+        if (oid) markPurchaseFired(oid);
+      }
+
+      // Meta Pixel — live sites lazy-load fbq after marketing consent. If the
+      // stub is not defined yet, queue and flush when the pixel arrives.
+      try {
+        if (purchaseMetaAlreadySent) {
+          // already delivered to Meta
         } else {
-          var dl = { event: plat.gtm };
-          for (var k in metadata) {
-            if (Object.prototype.hasOwnProperty.call(metadata, k)) dl[k] = metadata[k];
+          var metaParams = buildMetaParams(eventId, metadata);
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', plat.meta, metaParams);
+            if (oid) markPurchaseMetaFired(oid);
+          } else {
+            enqueueMetaEvent(plat.meta, metaParams, eventId === 'checkout_complete' ? oid : null);
           }
-          window.dataLayer.push(dl);
-        }
-      } catch (e2) {}
-
-      // GA4 gtag
-      try {
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
-        }
-      } catch (e3) {}
-
-      // Meta Pixel (only when fbq is loaded — consent-gated lazy loader)
-      try {
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', plat.meta, buildMetaParams(eventId, metadata));
         }
       } catch (e4) {}
     } catch (err) {}
@@ -1442,7 +1532,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
           
           <p style="margin-bottom: 20px;">
             לדוגמה: זכיתם בדירה שעולה 1,000,000 ש"ח, אך שוויה בשוק הוא 1,600,000 ש"ח. לפי ההנחיות, 75% משווי השוק הם 1,200,000 ש"ח. עם זאת, מכיוון שההון העצמי הוא לפחות 100,000 ש"ח, תוכלו לקבל מקסימום 900,000 ש"ח משכנתא. במקרה זה, תצטרכו להביא רק 100,000 ש"ח מהבית כהון עצמי. זהו יתרון אדיר לעומת השוק החופשי, שם הייתם נדרשים להון עצמי של 250,000 ש"ח לפחות.
-          </p><div class="zappy-inserted-element" id="zappy-element-1771520167149-50iztdzrq" data-element-id="zappy-element-1771520167149-50iztdzrq" data-element-type="h2" data-zappy-newly-inserted="true" style="max-width: 616px; margin-left: auto; margin-right: auto; width: 100%;"><h2 class="font-bold" data-element-type="h2" data-element-id="zappy-element-1771520167149-50iztdzrq" id="zappy-element-1771520167149-50iztdzrq" data-zappy-newly-inserted="true" style=""></h2><h3>להלן פירוט מלא של אחוזי המימון וההון העצמי בפרויקט:</h3></div><div class="zappy-inserted-element" id="zappy-element-1771520148351-3vy7fizbu" data-element-id="zappy-element-1771520148351-3vy7fizbu" data-element-type="image" data-zappy-newly-inserted="true" style="max-width: 616px; margin: 20px 0px;"><style data-zappy-image-lightbox="true">.zappy-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;}.zappy-lightbox-content{position:relative;max-width:min(1100px,92vw);max-height:92vh;}.zappy-lightbox-content img{max-width:92vw;max-height:92vh;display:block;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.45);}.zappy-lightbox-close{position:absolute;top:-14px;right:-14px;width:32px;height:32px;border-radius:999px;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer;}.zappy-lightbox-backdrop{position:absolute;inset:0;display:block;cursor:pointer;}input.zappy-lightbox-toggle{position:absolute;opacity:0;pointer-events:none;}label.zappy-lightbox-trigger{display:contents;}body:not(.zappy-edit-mode) label.zappy-lightbox-trigger{}body:not(.zappy-edit-mode) label.zappy-lightbox-trigger [data-zappy-zoom-wrapper="true"],body:not(.zappy-edit-mode) label.zappy-lightbox-trigger img{}.zappy-edit-mode label.zappy-lightbox-trigger{cursor:inherit !important;}input.zappy-lightbox-toggle:checked + label.zappy-lightbox-trigger + .zappy-lightbox{display:flex;}</style><input type="checkbox" id="zappy-lightbox-toggle-zappy-element-1771520148351-3vy7fizbu" class="zappy-lightbox-toggle" data-zappy-image-lightbox="true"><label class="zappy-lightbox-trigger" for="zappy-lightbox-toggle-zappy-element-1771520148351-3vy7fizbu" data-zappy-image-lightbox="true"><div data-zappy-zoom-wrapper="true" data-element-id="zappy-element-1771520148351-3vy7fizbu" data-element-type="image" data-zappy-zoom-wrapper-width="616px" data-zappy-zoom-wrapper-height="347px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 616px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 347px !important; display: block !important; cursor: pointer;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-click-action="expand"><img src="/assets/business-general-service-upload-1771520342360.webp" alt="Image" style="border-radius: 8px; object-position: 71% 45%; display: block; width: 100% !important; height: 100% !important; max-width: none !important; object-fit: fill !important; margin: 0px !important; position: absolute !important; left: 0% !important; top: 0% !important; max-height: none !important;" data-element-type="image" data-element-id="zappy-element-1771520148351-3vy7fizbu" id="zappy-element-1771520148351-3vy7fizbu" class="zappy-editable-image" data-zappy-zoom="0.5" data-zappy-original-width="616" data-zappy-original-height="347" data-zappy-click-action="expand" loading="lazy" decoding="async" fetchpriority="low"></div></label></div>
+          </p><div class="zappy-inserted-element" id="zappy-element-1771520167149-50iztdzrq" data-element-id="zappy-element-1771520167149-50iztdzrq" data-element-type="h2" data-zappy-newly-inserted="true" style="max-width: 616px; margin-left: auto; margin-right: auto; width: 100%;"><h2 class="font-bold" data-element-type="h2" data-element-id="zappy-element-1771520167149-50iztdzrq" id="zappy-element-1771520167149-50iztdzrq" data-zappy-newly-inserted="true"></h2><h3>להלן פירוט מלא של אחוזי המימון וההון העצמי בפרויקט:</h3></div><div class="zappy-inserted-element" id="zappy-element-1771520148351-3vy7fizbu" data-element-id="zappy-element-1771520148351-3vy7fizbu" data-element-type="image" data-zappy-newly-inserted="true" style="max-width: 616px; margin: 20px 0px;"><style data-zappy-image-lightbox="true">.zappy-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;}.zappy-lightbox-content{position:relative;max-width:min(1100px,92vw);max-height:92vh;}.zappy-lightbox-content img{max-width:92vw;max-height:92vh;display:block;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.45);}.zappy-lightbox-close{position:absolute;top:-14px;right:-14px;width:32px;height:32px;border-radius:999px;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer;}.zappy-lightbox-backdrop{position:absolute;inset:0;display:block;cursor:pointer;}input.zappy-lightbox-toggle{position:absolute;opacity:0;pointer-events:none;}label.zappy-lightbox-trigger{display:contents;}body:not(.zappy-edit-mode) label.zappy-lightbox-trigger{}body:not(.zappy-edit-mode) label.zappy-lightbox-trigger [data-zappy-zoom-wrapper="true"],body:not(.zappy-edit-mode) label.zappy-lightbox-trigger img{}.zappy-edit-mode label.zappy-lightbox-trigger{cursor:inherit !important;}input.zappy-lightbox-toggle:checked + label.zappy-lightbox-trigger + .zappy-lightbox{display:flex;}</style><input type="checkbox" id="zappy-lightbox-toggle-zappy-element-1771520148351-3vy7fizbu" class="zappy-lightbox-toggle" data-zappy-image-lightbox="true"><label class="zappy-lightbox-trigger" for="zappy-lightbox-toggle-zappy-element-1771520148351-3vy7fizbu" data-zappy-image-lightbox="true"><div data-zappy-zoom-wrapper="true" data-element-id="zappy-element-1771520148351-3vy7fizbu" data-element-type="image" data-zappy-zoom-wrapper-width="616px" data-zappy-zoom-wrapper-height="347px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 616px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 347px !important; display: block !important; cursor: pointer;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-click-action="expand"><img src="/assets/business-general-service-upload-1771520342360.webp" alt="Image" style="border-radius: 8px; object-position: 71% 45%; display: block; width: 100% !important; height: 100% !important; max-width: none !important; object-fit: fill !important; margin: 0px !important; position: absolute !important; left: 0% !important; top: 0% !important; max-height: none !important;" data-element-type="image" data-element-id="zappy-element-1771520148351-3vy7fizbu" id="zappy-element-1771520148351-3vy7fizbu" class="zappy-editable-image" data-zappy-zoom="0.5" data-zappy-original-width="616" data-zappy-original-height="347" data-zappy-click-action="expand" loading="lazy" decoding="async" fetchpriority="low"></div></label></div>
 
           <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; color: rgb(30, 58, 138) !important;">חשיבות ייעוץ משכנתאות בתהליך</h2>
           <p style="margin-bottom: 20px;">

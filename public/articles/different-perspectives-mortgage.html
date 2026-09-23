@@ -391,10 +391,14 @@
     return 'zappy_purchase_fired_' + String(orderId || '');
   }
 
+  function purchaseMetaDedupKey(orderId) {
+    return 'zappy_purchase_meta_fired_' + String(orderId || '');
+  }
+
   function alreadyFiredPurchase(orderId) {
     if (!orderId) return false;
     try {
-      return sessionStorage.getItem(purchaseDedupKey(orderId)) === '1';
+      return window.sessionStorage.getItem(purchaseDedupKey(orderId)) === '1';
     } catch (e) {
       return false;
     }
@@ -402,8 +406,77 @@
 
   function markPurchaseFired(orderId) {
     if (!orderId) return;
-    try { sessionStorage.setItem(purchaseDedupKey(orderId), '1'); } catch (e) {}
+    try { window.sessionStorage.setItem(purchaseDedupKey(orderId), '1'); } catch (e) {}
   }
+
+  function alreadyFiredPurchaseMeta(orderId) {
+    if (!orderId) return false;
+    try {
+      return window.sessionStorage.getItem(purchaseMetaDedupKey(orderId)) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markPurchaseMetaFired(orderId) {
+    if (!orderId) return;
+    try { window.sessionStorage.setItem(purchaseMetaDedupKey(orderId), '1'); } catch (e) {}
+  }
+
+  function getPendingMetaEvents() {
+    try {
+      if (!Array.isArray(window.__zappyPendingMetaEvents)) {
+        window.__zappyPendingMetaEvents = [];
+      }
+      return window.__zappyPendingMetaEvents;
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function enqueueMetaEvent(eventName, params, orderId) {
+    var q = getPendingMetaEvents();
+    if (orderId) {
+      for (var i = 0; i < q.length; i++) {
+        if (q[i] && q[i].orderId === orderId && q[i].eventName === eventName) return;
+      }
+    }
+    q.push({ eventName: eventName, params: params || {}, orderId: orderId || null });
+  }
+
+  /**
+   * Live sites replace the eager Meta snippet with a consent-gated lazy
+   * loader. Payment providers bounce the shopper back to /order-success
+   * before CookieConsent hydrates, so confirm-order used to fire Purchase
+   * while window.fbq was still undefined — then sessionStorage blocked a
+   * retry. Queue until fbq exists, then flush.
+   */
+  function flushPendingMetaEvents() {
+    if (typeof window.fbq !== 'function') return;
+    var q = getPendingMetaEvents().slice();
+    try { window.__zappyPendingMetaEvents = []; } catch (e) {}
+    for (var i = 0; i < q.length; i++) {
+      var item = q[i];
+      if (!item || !item.eventName) continue;
+      if (item.orderId && alreadyFiredPurchaseMeta(item.orderId)) continue;
+      try {
+        window.fbq('track', item.eventName, item.params || {});
+        if (item.orderId) markPurchaseMetaFired(item.orderId);
+      } catch (e2) {}
+    }
+  }
+  window.zappyFlushPendingMetaEvents = flushPendingMetaEvents;
+
+  var metaFlushAttempts = 0;
+  var metaFlushTimer = setInterval(function() {
+    metaFlushAttempts++;
+    flushPendingMetaEvents();
+    var pendingLen = 0;
+    try { pendingLen = (window.__zappyPendingMetaEvents || []).length; } catch (e) {}
+    if ((pendingLen === 0 && typeof window.fbq === 'function') || metaFlushAttempts > 60) {
+      clearInterval(metaFlushTimer);
+    }
+  }, 500);
 
   /**
    * Fire a marketing event to first-party analytics + GA4/GTM/Meta when present.
@@ -423,15 +496,19 @@
         metadata.pagePath = pagePath();
       }
 
+      var oid = '';
+      var purchaseAlreadySent = false;
+      var purchaseMetaAlreadySent = false;
       if (eventId === 'checkout_complete') {
-        var oid = String(metadata.orderId || metadata.order_id || metadata.transaction_id || '');
-        if (oid && alreadyFiredPurchase(oid)) return;
-        if (oid) markPurchaseFired(oid);
+        oid = String(metadata.orderId || metadata.order_id || metadata.transaction_id || '');
+        purchaseAlreadySent = !!(oid && alreadyFiredPurchase(oid));
+        purchaseMetaAlreadySent = !!(oid && alreadyFiredPurchaseMeta(oid));
+        if (purchaseAlreadySent && purchaseMetaAlreadySent) return;
       }
 
       // First-party (skip when already tracked via zappyTrackEcomAnalytics path
       // that opts out, or when caller already recorded under a different name)
-      if (!opts.skipFirstParty) {
+      if (!opts.skipFirstParty && !purchaseAlreadySent) {
         try {
           if (window.zappyAnalytics && typeof window.zappyAnalytics.track === 'function') {
             window.zappyAnalytics.track(eventId, metadata);
@@ -440,40 +517,53 @@
       }
 
       // GTM / dataLayer — platform-standard ecommerce event names
-      try {
-        window.dataLayer = window.dataLayer || [];
-        if (plat.ecom) {
-          var ga4ForGtm = buildGa4Params(eventId, metadata);
-          var ecommerce = {};
-          if (ga4ForGtm.transaction_id) ecommerce.transaction_id = ga4ForGtm.transaction_id;
-          if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
-          if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
-          if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
-          window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
-          // Secondary Zappy-specific trigger for merchants who want it
-          if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
-            window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
+      if (!purchaseAlreadySent) {
+        try {
+          window.dataLayer = window.dataLayer || [];
+          if (plat.ecom) {
+            var ga4ForGtm = buildGa4Params(eventId, metadata);
+            var ecommerce = {};
+            if (ga4ForGtm.transaction_id) ecommerce.transaction_id = ga4ForGtm.transaction_id;
+            if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
+            if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
+            if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
+            window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
+            // Secondary Zappy-specific trigger for merchants who want it
+            if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
+              window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
+            }
+          } else {
+            var dl = { event: plat.gtm };
+            for (var k in metadata) {
+              if (Object.prototype.hasOwnProperty.call(metadata, k)) dl[k] = metadata[k];
+            }
+            window.dataLayer.push(dl);
           }
+        } catch (e2) {}
+
+        // GA4 gtag
+        try {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
+          }
+        } catch (e3) {}
+
+        if (oid) markPurchaseFired(oid);
+      }
+
+      // Meta Pixel — live sites lazy-load fbq after marketing consent. If the
+      // stub is not defined yet, queue and flush when the pixel arrives.
+      try {
+        if (purchaseMetaAlreadySent) {
+          // already delivered to Meta
         } else {
-          var dl = { event: plat.gtm };
-          for (var k in metadata) {
-            if (Object.prototype.hasOwnProperty.call(metadata, k)) dl[k] = metadata[k];
+          var metaParams = buildMetaParams(eventId, metadata);
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', plat.meta, metaParams);
+            if (oid) markPurchaseMetaFired(oid);
+          } else {
+            enqueueMetaEvent(plat.meta, metaParams, eventId === 'checkout_complete' ? oid : null);
           }
-          window.dataLayer.push(dl);
-        }
-      } catch (e2) {}
-
-      // GA4 gtag
-      try {
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
-        }
-      } catch (e3) {}
-
-      // Meta Pixel (only when fbq is loaded — consent-gated lazy loader)
-      try {
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', plat.meta, buildMetaParams(eventId, metadata));
         }
       } catch (e4) {}
     } catch (err) {}
@@ -1419,12 +1509,12 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
         <p>המשפט האלמותי "מה שרואים מכאן לא רואים משם" נכתב אומנם בהקשרים אחרים, אך הוא מתאר בצורה המדויקת ביותר את עולם המשכנתאות. כשאתם ניגשים לבנק לבקש הלוואה לדיור, אתם מגיעים עם נקודת מבט מסוימת, אישית ורגשית. הבנק, לעומת זאת, מסתכל עליכם דרך משקפיים אחרים לחלוטין. הפער הזה בין שתי נקודות המבט הוא בדיוק המקום שבו טעויות יקרות עלולות להתרחש, וזהו גם המקום שבו <strong>ייעוץ משכנתאות</strong> מקצועי נכנס לתמונה ומשנה את חוקי המשחק.</p>
 
         <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 15px;">איך אתם רואים את עצמכם מול איך שהבנק רואה אתכם</h2>
-        <p >כשאתם מסתכלים על עצמכם במראה הפיננסית, אתם רואים משפחה נורמטיבית. אתם עובדים קשה, משלמים שכר דירה בזמן, מתנהלים באחריות וחולמים על בית משלכם. אתם יודעים בוודאות שאתם יכולים לעמוד בהחזר חודשי של 5,000 שקלים (למשל), כי זה בדיוק מה שאתם משלמים היום לבעל הבית שלכם.</p>
-        <p >אבל הבנק? הבנק לא רואה חלומות, אופי או כוונות טובות. הבנק רואה נתונים יבשים: דירוג אשראי (חוק נתוני אשראי), יחס החזר, היסטוריה בנקאית, ותלושי שכר/הכנסות. במקרים רבים, לקוחות מופתעים לגלות שהבנק מסווג אותם ברמת סיכון גבוהה יותר ממה שהם ציפו. מדוע? רק בגלל חריגה קטנה במסגרת האשראי לפני שנתיים, צ'ק שחזר בגלל חוסר תשומת לב, או הלוואה קטנה לרכב שעדיין לא הסתיימה ומכבידה על יחס ההחזר הפנוי שלכם.</p>
+        <p>כשאתם מסתכלים על עצמכם במראה הפיננסית, אתם רואים משפחה נורמטיבית. אתם עובדים קשה, משלמים שכר דירה בזמן, מתנהלים באחריות וחולמים על בית משלכם. אתם יודעים בוודאות שאתם יכולים לעמוד בהחזר חודשי של 5,000 שקלים (למשל), כי זה בדיוק מה שאתם משלמים היום לבעל הבית שלכם.</p>
+        <p>אבל הבנק? הבנק לא רואה חלומות, אופי או כוונות טובות. הבנק רואה נתונים יבשים: דירוג אשראי (חוק נתוני אשראי), יחס החזר, היסטוריה בנקאית, ותלושי שכר/הכנסות. במקרים רבים, לקוחות מופתעים לגלות שהבנק מסווג אותם ברמת סיכון גבוהה יותר ממה שהם ציפו. מדוע? רק בגלל חריגה קטנה במסגרת האשראי לפני שנתיים, צ'ק שחזר בגלל חוסר תשומת לב, או הלוואה קטנה לרכב שעדיין לא הסתיימה ומכבידה על יחס ההחזר הפנוי שלכם.</p>
 
         <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 15px;">הפער בתכנון הפיננסי: ההווה מול העתיד</h2>
         <p>אחד הפערים הגדולים ביותר מתגלה כאשר זוגות צעירים ניגשים לתהליך של <strong>ייעוץ משכנתא לדירה ראשונה</strong>. מנקודת המבט של הזוג, השאלה המרכזית והדחופה ביותר היא "כמה נשלם בחודש הבא?". מנקודת המבט של הבנק, וחשוב מכך - של יועץ משכנתאות מומחה, השאלה האמיתית היא "כמה תשלמו בעוד 5, 10 ו-20 שנה?".</p>
-        <p >הבנק מתמחר סיכונים עתידיים כמו עליות במדד המחירים לצרכן, שינויים אפשריים בריבית בנק ישראל, ואפשרויות של תנודות בשוק העבודה. מסלול שנראה לכם היום כזול ומשתלם ביותר (למשל, מסלול צמוד מדד בריבית משתנה), עלול להתברר כ"מלכודת דבש" שתייקר את ההחזר החודשי שלכם במאות ואף אלפי שקלים לאורך השנים, ותגרום לקרן ההלוואה שלכם לא לרדת כלל (ואף לעלות). לכן, התבוננות דרך העיניים של המערכת הבנקאית היא קריטית לבניית תמהיל יציב, כזה שיאפשר לכם לישון בשקט בלילה גם כשהכלכלה סוערת.</p>
+        <p>הבנק מתמחר סיכונים עתידיים כמו עליות במדד המחירים לצרכן, שינויים אפשריים בריבית בנק ישראל, ואפשרויות של תנודות בשוק העבודה. מסלול שנראה לכם היום כזול ומשתלם ביותר (למשל, מסלול צמוד מדד בריבית משתנה), עלול להתברר כ"מלכודת דבש" שתייקר את ההחזר החודשי שלכם במאות ואף אלפי שקלים לאורך השנים, ותגרום לקרן ההלוואה שלכם לא לרדת כלל (ואף לעלות). לכן, התבוננות דרך העיניים של המערכת הבנקאית היא קריטית לבניית תמהיל יציב, כזה שיאפשר לכם לישון בשקט בלילה גם כשהכלכלה סוערת.</p>
 
         <h2 style="color: #1e3a8a !important; font-size: 1.8rem; margin-top: 40px; margin-bottom: 15px;">משפרי דיור: האשליה של הון עצמי זמין</h2>
         <p>עבור משפחות שכבר נמצאות בתוך שוק הנדל"ן, הפער בנקודת המבט יכול להיות מתעתע אף יותר. בתהליך של <strong>ייעוץ משכנתא למשפרי דיור</strong>, אנו פוגשים לא פעם לקוחות שבטוחים שמצבם מצוין מכיוון שערך הדירה הנוכחית שלהם קפץ משמעותית בשנים האחרונות. הם רואים את הרווח "על הנייר" וכבר מתכננים את עיצוב הפנים של הווילה החדשה.</p>
