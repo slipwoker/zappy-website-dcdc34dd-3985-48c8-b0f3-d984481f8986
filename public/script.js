@@ -5511,12 +5511,12 @@ function fixContrast(){
   // declaration merging that was eating the standalone CSS injection.
   function ensureRuntimeCssInjected() {
     var existing = document.getElementById('zappy-ecom-routing-runtime-css');
-    if (existing && existing.getAttribute('data-v') === '33') return;
+    if (existing && existing.getAttribute('data-v') === '34') return;
     if (existing) existing.remove();
     var style = document.createElement('style');
     style.id = 'zappy-ecom-routing-runtime-css';
     style.setAttribute('data-zappy-runtime', 'ecom-routing');
-    style.setAttribute('data-v', '33');
+    style.setAttribute('data-v', '34');
     style.textContent =
       '@media (min-width: 769px){' +
         'html[dir="ltr"] .nav-container > .nav-brand,body[dir="ltr"] .nav-container > .nav-brand,html[dir="ltr"] .nav-right-group > .nav-brand,body[dir="ltr"] .nav-right-group > .nav-brand{order:-1!important}' +
@@ -5572,7 +5572,7 @@ function fixContrast(){
         '#navMenu.active,#navMenu.open,.nav-menu.active,.nav-menu.open{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;overflow-x:hidden!important;overflow-y:auto!important}' +
         '#navMenu.active>li,#navMenu.open>li,.nav-menu.active>li,.nav-menu.open>li{position:static!important;width:100%!important;max-width:100%!important;flex:0 0 auto!important;top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;inset:auto!important;transform:none!important}' +
         '#navMenu .sub-menu,.nav-menu .sub-menu,.navbar .sub-menu,.zappy-products-dropdown>.sub-menu,.nav-menu .zappy-products-dropdown>.sub-menu,.nav-menu.active .zappy-products-dropdown>.sub-menu,.nav-menu.active .zappy-products-dropdown .sub-menu,#navMenu li:hover>.sub-menu,.nav-menu li:hover>.sub-menu,.navbar li:hover>.sub-menu,#navMenu li:focus-within>.sub-menu,.nav-menu li:focus-within>.sub-menu{display:none!important;visibility:hidden!important;opacity:0!important;height:0!important;max-height:0!important;overflow:hidden!important;pointer-events:none!important;position:static!important;transform:none!important}' +
-        '#navMenu .sub-menu.mobile-expanded,.nav-menu .sub-menu.mobile-expanded,.navbar .sub-menu.mobile-expanded,.zappy-products-dropdown>.sub-menu.mobile-expanded,.nav-menu.active .zappy-products-dropdown>.sub-menu.mobile-expanded,.nav-menu.active .zappy-products-dropdown .sub-menu.mobile-expanded{display:block!important;visibility:visible!important;opacity:1!important;height:auto!important;max-height:none!important;overflow:visible!important;pointer-events:auto!important;position:static!important;transform:none!important;width:100%!important;left:auto!important;right:auto!important;top:auto!important;float:none!important}' +
+        '#navMenu .sub-menu.mobile-expanded,.nav-menu .sub-menu.mobile-expanded,.navbar .sub-menu.mobile-expanded,.zappy-products-dropdown>.sub-menu.mobile-expanded,.nav-menu.active .zappy-products-dropdown>.sub-menu.mobile-expanded,.nav-menu.active .zappy-products-dropdown .sub-menu.mobile-expanded,#navMenu li:hover>.sub-menu.mobile-expanded,#navMenu li:focus-within>.sub-menu.mobile-expanded,.nav-menu li:hover>.sub-menu.mobile-expanded,.nav-menu li:focus-within>.sub-menu.mobile-expanded,.navbar li:hover>.sub-menu.mobile-expanded,.navbar li:focus-within>.sub-menu.mobile-expanded{display:block!important;visibility:visible!important;opacity:1!important;height:auto!important;max-height:none!important;overflow:visible!important;pointer-events:auto!important;position:static!important;transform:none!important;width:100%!important;left:auto!important;right:auto!important;top:auto!important;float:none!important}' +
       '}';
     (document.head || document.documentElement).appendChild(style);
   }
