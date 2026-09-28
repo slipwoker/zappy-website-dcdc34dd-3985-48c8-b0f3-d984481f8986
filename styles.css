@@ -18732,6 +18732,19 @@ html body :root { --secondary-color: #f59e0b !important; }
 html body :root { --accent-color: #d97706 !important; }
 
 
+.navbar #navMenu a.nav-external-cta {
+  background-color: var(--secondary-color) !important;
+  color: #ffffff !important;
+  padding: 8px 18px !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.navbar #navMenu a.nav-external-cta:hover {
+  opacity: 0.85 !important;
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));

@@ -1,10 +1,19 @@
 # Clean URL redirects for Render static hosting
-# Generated: 2026-09-28T05:14:36.461Z
+# Generated: 2026-09-28T05:27:54.600Z
 # NOTE: Render uses render.yaml for routing, not _redirects (that is Netlify)
 # This file is kept for reference only
 
-/services  /services.html  200!
 /articles  /articles.html  200!
+/external-link-1790572250138  /external-link-1790572250138.html  200!
+/external-link-1790532639363  /external-link-1790532639363.html  200!
+/mortgage-calculators  /mortgage-calculators.html  200!
+/about  /about.html  200!
+/cpi-calculator  /cpi-calculator.html  200!
+/construction-index-calculator  /construction-index-calculator.html  200!
+/mortgage-mix-calculator  /mortgage-mix-calculator.html  200!
+/qa-hub  /qa-hub.html  200!
+/external-link-1790572291454  /external-link-1790572291454.html  200!
+/services  /services.html  200!
 /articles/mortgage-process  /articles/mortgage-process.html  200!
 /articles/refinancing  /articles/refinancing.html  200!
 /articles/loan-consolidation  /articles/loan-consolidation.html  200!
@@ -376,13 +385,8 @@
 /blog/recycling  /blog/recycling.html  200!
 /testimonials  /testimonials.html  200!
 /blog/housing-improvers  /blog/housing-improvers.html  200!
-/about  /about.html  200!
 /contact-us  /contact-us.html  200!
-/cpi-calculator  /cpi-calculator.html  200!
 /blog/mortgage-mix  /blog/mortgage-mix.html  200!
-/mortgage-calculators  /mortgage-calculators.html  200!
-/construction-index-calculator  /construction-index-calculator.html  200!
-/mortgage-mix-calculator  /mortgage-mix-calculator.html  200!
 /articles/when-no-advisor-needed  /articles/when-no-advisor-needed.html  200!
 /articles/upgrading-property-costs  /articles/upgrading-property-costs.html  200!
 /articles/mortgage-larger-than-purchase-price  /articles/mortgage-larger-than-purchase-price.html  200!
@@ -406,7 +410,6 @@
 /articles/mortgage-protections  /articles/mortgage-protections.html  200!
 /articles/variable-rate-refinance-timing  /articles/variable-rate-refinance-timing.html  200!
 /articles/bank-heat-level  /articles/bank-heat-level.html  200!
-/qa-hub  /qa-hub.html  200!
 /qa-hub/first-apartment  /qa-hub/first-apartment.html  200!
 /qa-hub/refinance  /qa-hub/refinance.html  200!
 /qa-hub/upgraders  /qa-hub/upgraders.html  200!
@@ -701,9 +704,6 @@
 /articles/existing-tenant-investment  /articles/existing-tenant-investment.html  200!
 /articles/why-rich-people-take-mortgages  /articles/why-rich-people-take-mortgages.html  200!
 /articles/initial-vs-maximum-repayment  /articles/initial-vs-maximum-repayment.html  200!
-/external-link-1790532639363  /external-link-1790532639363.html  200!
-/external-link-1790572250138  /external-link-1790572250138.html  200!
-/external-link-1790572291454  /external-link-1790572291454.html  200!
 
 # Legal pages - redirect old .html URLs to friendly URLs
 /privacy.html  /privacy  301
