@@ -15,9 +15,6 @@ https://mashkanta-bepijama.co.il/articles
 מרכז המידע המקצועי של אריאל אחון. כל מה שצריך לדעת על תהליך לקיחת משכנתא, מיחזור משכנתא, איחוד הלוואות ומחיר למשתכן. טיפים ומדריכים פיננסיים.
 
 ### Page
-https://mashkanta-bepijama.co.il/external-link-1790572250138
-
-### Page
 https://mashkanta-bepijama.co.il/external-link-1790532639363
 
 ### מחשבוני משכנתא וכלים פיננסיים | משכנתא בפיג'מה
@@ -47,7 +44,7 @@ https://mashkanta-bepijama.co.il/qa-hub
 ### Page
 https://mashkanta-bepijama.co.il/external-link-1790572291454
 
-### לליווי אישי
+### שירותי ייעוץ משכנתאות מקיפים — אריאל אחון ייעוץ משכנתאות ופיננסיים
 https://mashkanta-bepijama.co.il/services
 גלו את מגוון שירותי ייעוץ המשכנתאות שלנו - מדירה ראשונה ועד מיחזור משכנתא. התחילו עוד היום!
 
@@ -383,7 +380,7 @@ https://mashkanta-bepijama.co.il/articles/moshav-kibbutz-mortgage
 https://mashkanta-bepijama.co.il/articles/internal-vs-external-refinancing
 מתלבטים אם למחזר את המשכנתא בבנק הנוכחי או לעבור לבנק אחר? המדריך המלא להשוואת מיחזור פנימי מול חיצוני, עלויות מעבר וטיפים לחיסכון מקסימלי.
 
-### המשכנתא שלי
+### ניהול המשכנתא | אריאל אחון
 https://mashkanta-bepijama.co.il/articles/mortgage-management
 המדריך המלא לניהול ומעקב אחר המשכנתא לאחר החתימה. גלו איך בדיקה שנתית, הבנת הדו"חות ושינויים בריבית יכולים לחסוך לכם כסף רב לאורך חיי ההלוואה.
 
@@ -2833,7 +2830,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
