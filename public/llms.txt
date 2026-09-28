@@ -2707,9 +2707,6 @@ https://mashkanta-bepijama.co.il/mortgage-mix-calculator
 ### Page
 https://mashkanta-bepijama.co.il/external-link-1790582187645
 
-### Page
-https://mashkanta-bepijama.co.il/external-link-1790610890350
-
 ### שאלות ותשובות - משכנתא בפיג'מה
 https://mashkanta-bepijama.co.il/qa-hub
 מרכז השאלות והתשובות המקיף של משכנתא בפיג'מה. כל המידע על ייעוץ משכנתאות, דירה ראשונה, מיחזור ומשפרי דיור במקום אחד.
@@ -2836,7 +2833,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox, required)
+  - `terms` (checkbox)
 
 ---
 
