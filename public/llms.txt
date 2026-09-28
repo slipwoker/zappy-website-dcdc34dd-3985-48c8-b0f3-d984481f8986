@@ -2796,6 +2796,9 @@ https://mashkanta-bepijama.co.il/external-link-1790532639363
 ### Page
 https://mashkanta-bepijama.co.il/external-link-1790572250138
 
+### Page
+https://mashkanta-bepijama.co.il/external-link-1790572291454
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -2830,7 +2833,7 @@ Information about WCAG compliance and accessibility features.
   - `phone` (tel, required)
   - `service` (select)
   - `message` (textarea)
-  - `terms` (checkbox)
+  - `terms` (checkbox, required)
 
 ---
 
