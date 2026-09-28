@@ -1,17 +1,9 @@
 # Clean URL redirects for Render static hosting
-# Generated: 2026-09-28T15:45:20.057Z
+# Generated: 2026-09-28T16:05:35.418Z
 # NOTE: Render uses render.yaml for routing, not _redirects (that is Netlify)
 # This file is kept for reference only
 
 /articles  /articles.html  200!
-/external-link-1790532639363  /external-link-1790532639363.html  200!
-/mortgage-calculators  /mortgage-calculators.html  200!
-/about  /about.html  200!
-/cpi-calculator  /cpi-calculator.html  200!
-/construction-index-calculator  /construction-index-calculator.html  200!
-/mortgage-mix-calculator  /mortgage-mix-calculator.html  200!
-/qa-hub  /qa-hub.html  200!
-/services  /services.html  200!
 /articles/mortgage-process  /articles/mortgage-process.html  200!
 /articles/refinancing  /articles/refinancing.html  200!
 /articles/loan-consolidation  /articles/loan-consolidation.html  200!
@@ -373,19 +365,6 @@
 /articles/rent-to-own-transition  /articles/rent-to-own-transition.html  200!
 /articles/financial-planning-lifecycle  /articles/financial-planning-lifecycle.html  200!
 /articles/mortgage-tracks-pricing-differences  /articles/mortgage-tracks-pricing-differences.html  200!
-/podcast  /podcast.html  200!
-/external-link-1790582359865  /external-link-1790582359865.html  200!
-/privacy  /privacy.html  200!
-/accessibility  /accessibility.html  200!
-/terms  /terms.html  200!
-/blog  /blog.html  200!
-/blog/beginners-guide  /blog/beginners-guide.html  200!
-/blog/first-apartment  /blog/first-apartment.html  200!
-/blog/recycling  /blog/recycling.html  200!
-/testimonials  /testimonials.html  200!
-/blog/housing-improvers  /blog/housing-improvers.html  200!
-/contact-us  /contact-us.html  200!
-/blog/mortgage-mix  /blog/mortgage-mix.html  200!
 /articles/when-no-advisor-needed  /articles/when-no-advisor-needed.html  200!
 /articles/upgrading-property-costs  /articles/upgrading-property-costs.html  200!
 /articles/mortgage-larger-than-purchase-price  /articles/mortgage-larger-than-purchase-price.html  200!
@@ -409,16 +388,6 @@
 /articles/mortgage-protections  /articles/mortgage-protections.html  200!
 /articles/variable-rate-refinance-timing  /articles/variable-rate-refinance-timing.html  200!
 /articles/bank-heat-level  /articles/bank-heat-level.html  200!
-/qa-hub/first-apartment  /qa-hub/first-apartment.html  200!
-/qa-hub/refinance  /qa-hub/refinance.html  200!
-/qa-hub/upgraders  /qa-hub/upgraders.html  200!
-/qa-hub/mortgage-tracks  /qa-hub/mortgage-tracks.html  200!
-/qa-hub/glossary  /qa-hub/glossary.html  200!
-/qa-hub/mortgage-steps  /qa-hub/mortgage-steps.html  200!
-/qa-hub/mehir-lamishtaken  /qa-hub/mehir-lamishtaken.html  200!
-/qa-hub/loan-consolidation  /qa-hub/loan-consolidation.html  200!
-/qa-hub/reverse-mortgage  /qa-hub/reverse-mortgage.html  200!
-/qa-hub/business-owners  /qa-hub/business-owners.html  200!
 /articles/transfer-to-tabu  /articles/transfer-to-tabu.html  200!
 /articles/no-full-tabu  /articles/no-full-tabu.html  200!
 /articles/income-and-equity-requirements  /articles/income-and-equity-requirements.html  200!
@@ -703,7 +672,39 @@
 /articles/existing-tenant-investment  /articles/existing-tenant-investment.html  200!
 /articles/why-rich-people-take-mortgages  /articles/why-rich-people-take-mortgages.html  200!
 /articles/initial-vs-maximum-repayment  /articles/initial-vs-maximum-repayment.html  200!
+/external-link-1790582359865  /external-link-1790582359865.html  200!
+/external-link-1790532639363  /external-link-1790532639363.html  200!
+/mortgage-calculators  /mortgage-calculators.html  200!
+/construction-index-calculator  /construction-index-calculator.html  200!
+/mortgage-mix-calculator  /mortgage-mix-calculator.html  200!
 /external-link-1790582187645  /external-link-1790582187645.html  200!
+/external-link-1790610890350  /external-link-1790610890350.html  200!
+/qa-hub  /qa-hub.html  200!
+/qa-hub/first-apartment  /qa-hub/first-apartment.html  200!
+/qa-hub/refinance  /qa-hub/refinance.html  200!
+/qa-hub/upgraders  /qa-hub/upgraders.html  200!
+/qa-hub/mortgage-tracks  /qa-hub/mortgage-tracks.html  200!
+/qa-hub/glossary  /qa-hub/glossary.html  200!
+/qa-hub/mortgage-steps  /qa-hub/mortgage-steps.html  200!
+/qa-hub/mehir-lamishtaken  /qa-hub/mehir-lamishtaken.html  200!
+/qa-hub/loan-consolidation  /qa-hub/loan-consolidation.html  200!
+/qa-hub/reverse-mortgage  /qa-hub/reverse-mortgage.html  200!
+/qa-hub/business-owners  /qa-hub/business-owners.html  200!
+/about  /about.html  200!
+/cpi-calculator  /cpi-calculator.html  200!
+/services  /services.html  200!
+/podcast  /podcast.html  200!
+/privacy  /privacy.html  200!
+/accessibility  /accessibility.html  200!
+/terms  /terms.html  200!
+/blog  /blog.html  200!
+/blog/beginners-guide  /blog/beginners-guide.html  200!
+/blog/first-apartment  /blog/first-apartment.html  200!
+/blog/recycling  /blog/recycling.html  200!
+/testimonials  /testimonials.html  200!
+/blog/housing-improvers  /blog/housing-improvers.html  200!
+/contact-us  /contact-us.html  200!
+/blog/mortgage-mix  /blog/mortgage-mix.html  200!
 
 # Legal pages - redirect old .html URLs to friendly URLs
 /privacy.html  /privacy  301
