@@ -222,6 +222,9 @@
   var ECOM_MODE = "";
   var IS_CATALOG = false;
   var IS_FULL = false;
+  var DIRECT_GA = true;
+  var DIRECT_META = false;
+  var GA_SEND_TO = "G-EY9JJ9BZN4";
 
   var ECOM_ALIAS = {
     begin_checkout: 'checkout_started',
@@ -467,16 +470,18 @@
   }
   window.zappyFlushPendingMetaEvents = flushPendingMetaEvents;
 
-  var metaFlushAttempts = 0;
-  var metaFlushTimer = setInterval(function() {
-    metaFlushAttempts++;
-    flushPendingMetaEvents();
-    var pendingLen = 0;
-    try { pendingLen = (window.__zappyPendingMetaEvents || []).length; } catch (e) {}
-    if ((pendingLen === 0 && typeof window.fbq === 'function') || metaFlushAttempts > 60) {
-      clearInterval(metaFlushTimer);
-    }
-  }, 500);
+  if (DIRECT_META) {
+    var metaFlushAttempts = 0;
+    var metaFlushTimer = setInterval(function() {
+      metaFlushAttempts++;
+      flushPendingMetaEvents();
+      var pendingLen = 0;
+      try { pendingLen = (window.__zappyPendingMetaEvents || []).length; } catch (e) {}
+      if ((pendingLen === 0 && typeof window.fbq === 'function') || metaFlushAttempts > 60) {
+        clearInterval(metaFlushTimer);
+      }
+    }, 500);
+  }
 
   /**
    * Fire a marketing event to first-party analytics + GA4/GTM/Meta when present.
@@ -516,7 +521,9 @@
         } catch (e1) {}
       }
 
-      // GTM / dataLayer — platform-standard ecommerce event names
+      // GTM / dataLayer — platform-standard ecommerce event names.
+      // Always push. A bare gtag.js snippet ignores plain event objects;
+      // a GTM container is what turns them into GA4/Ads hits.
       if (!purchaseAlreadySent) {
         try {
           window.dataLayer = window.dataLayer || [];
@@ -527,9 +534,12 @@
             if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
             if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
             if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
+            // Clear first so GTM does not merge this hit with the previous ecommerce object.
+            window.dataLayer.push({ ecommerce: null });
             window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
             // Secondary Zappy-specific trigger for merchants who want it
             if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
+              window.dataLayer.push({ ecommerce: null });
               window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
             }
           } else {
@@ -541,31 +551,49 @@
           }
         } catch (e2) {}
 
-        // GA4 gtag
-        try {
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
-          }
-        } catch (e3) {}
+        // Direct Google Analytics snippet only. GTM also defines window.gtag;
+        // calling it then sends the same event again to every Google tag the
+        // container loaded. send_to keeps a direct GA install off those tags
+        // when the merchant also has GTM.
+        if (DIRECT_GA) {
+          try {
+            if (typeof window.gtag === 'function') {
+              var gaParams = buildGa4Params(eventId, metadata);
+              if (GA_SEND_TO && gaParams && typeof gaParams === 'object') {
+                var gaCopy = {};
+                for (var gk in gaParams) {
+                  if (Object.prototype.hasOwnProperty.call(gaParams, gk)) gaCopy[gk] = gaParams[gk];
+                }
+                gaCopy.send_to = GA_SEND_TO;
+                gaParams = gaCopy;
+              }
+              window.gtag('event', plat.ga4, gaParams);
+            }
+          } catch (e3) {}
+        }
 
         if (oid) markPurchaseFired(oid);
       }
 
-      // Meta Pixel — live sites lazy-load fbq after marketing consent. If the
-      // stub is not defined yet, queue and flush when the pixel arrives.
-      try {
-        if (purchaseMetaAlreadySent) {
-          // already delivered to Meta
-        } else {
-          var metaParams = buildMetaParams(eventId, metadata);
-          if (typeof window.fbq === 'function') {
-            window.fbq('track', plat.meta, metaParams);
-            if (oid) markPurchaseMetaFired(oid);
+      // Meta Pixel — only the Zappy pixel integration. A pixel pasted inside
+      // GTM already initializes fbq; calling it from here would double-count.
+      // Live sites lazy-load fbq after marketing consent. If the stub is not
+      // defined yet, queue and flush when the pixel arrives.
+      if (DIRECT_META) {
+        try {
+          if (purchaseMetaAlreadySent) {
+            // already delivered to Meta
           } else {
-            enqueueMetaEvent(plat.meta, metaParams, eventId === 'checkout_complete' ? oid : null);
+            var metaParams = buildMetaParams(eventId, metadata);
+            if (typeof window.fbq === 'function') {
+              window.fbq('track', plat.meta, metaParams);
+              if (oid) markPurchaseMetaFired(oid);
+            } else {
+              enqueueMetaEvent(plat.meta, metaParams, eventId === 'checkout_complete' ? oid : null);
+            }
           }
-        }
-      } catch (e4) {}
+        } catch (e4) {}
+      }
     } catch (err) {}
   };
 
@@ -1491,7 +1519,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
     </div>
 
     <!--6-- Article Header ---->
-    <h1 style="color: #304060 !6important; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2;">איחוד הלוואות למשכנתא: איך הופכים מינוס לפלוס?</h1>
+    <h1 style="color: #304060 !6important; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2;">איחוד הלוואות באמצעות משכנתא: מה בודקים לפני שמעבירים את החוב לנכס?</h1>
     
     <div class="article-meta" style="color: #305060 !6important; font-size: 0.9rem; margin-bottom: 40px; border-bottom: 1px solid #e0e0e0; padding-bottom: 20px;">
       <span>פורסם ב: 05.10.2023</span> | <span>זמן קריאה: 6 דקות</span>
@@ -1499,19 +1527,19 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 
     <!--6-- Content ---->
     <div class="article-body" style="color: #304060 !6important; font-size: 1.1rem; line-height: 1.8;">
-      <p style="margin-bottom: 24px;">משפחות רבות בישראל מוצאות את עצמן במלכוד פיננסי: יש להן משכנתא, ועליה נוספו עם השנים הלוואה לרכב, הלוואה לשיפוץ, הלוואה לכיסוי המינוס ועוד התחייבויות בכרטיסי אשראי. התוצאה היא החזר חודשי שחונק את המשפחה ומונע ממנה להתנהל בצורה תקינה. הפתרון של איחוד הלוואות באמצעות משכנתא (הלוואת משכנתא לכל מטרה) הוא אחד הכלים היעילים ביותר ליציאה מהבוץ הכלכלי.</p>
+      <p style="margin-bottom: 24px;">כאשר מצטברות כמה הלוואות, אפשר לבחון ריכוז שלהן באמצעות הלוואה המובטחת בנכס. המהלך עשוי להקטין את ההחזר החודשי, אבל הוא אינו מוחק את החוב: לעיתים הוא מאריך את תקופת התשלום, מגדיל את העלות הכוללת ומעביר סיכון נוסף אל הבית.</p>
 
       <h2 style="color: #1e3a8a !6important; font-size: 1.8rem; margin: 40px 0 20px 0; font-weight: 700;">איך זה עובד?</h2>
       <p style="margin-bottom: 24px;">הרעיון הוא פשוט: הלוואות מסחריות (רגילות) ניתנות בדרך כלל לתקופות קצרות של 3-5 שנים ובריביות גבוהות יחסית. לעומת זאת, משכנתא ניתן לפרוס ל-20 או 30 שנה, והריביות בה (בדרך כלל) נמוכות יותר כי יש לבנק בטוחה חזקה (הנכס). בתהליך של איחוד הלוואות, אנחנו לוקחים תוספת למשכנתא הקיימת על חשבון הנכס, ומשתמשים בכסף הזה כדי לסגור את כל ההלוואות הקטנות והיקרות.</p>
 
-      <h2 style="color: #1e3a8a !6important; font-size: 1.8rem; margin: 40px 0 20px 0; font-weight: 700;">התוצאה: הקטנת ההחזר החודשי</h2>
+      <h2 style="color: #1e3a8a !6important; font-size: 1.8rem; margin: 40px 0 20px 0; font-weight: 700;">למה החזר חודשי נמוך יותר אינו בהכרח חיסכון?</h2>
       <p style="margin-bottom: 24px;">האפקט הוא מיידי ודרמטי. משפחה שהחזירה 4,000 ש"ח על משכנתא ועוד 5,000 ש"ח על הלוואות שונות (סה"כ 9,000 ש"ח), יכולה לאחר איחוד הלוואות למצוא את עצמה עם החזר חודשי כולל של 5,500 ש"ח בלבד. ההפרש הזה – 3,500 ש"ח שנשארים בנטו כל חודש – הוא החמצן שמאפשר למשפחה לחזור לאיזון ולחיות בכבוד.</p>
 
       <h2 style="color: #1e3a8a !6important; font-size: 1.8rem; margin: 40px 0 20px 0; font-weight: 700;">מתי זה מתאים?</h2>
       <p style="margin-bottom: 24px;">איחוד הלוואות מתאים למי שיש בבעלותו נכס נדל"ן, וששווי המשכנתא הנוכחית נמוך מ-50% משווי הנכס (בדרך כלל ניתן להגיע עד 50% מימון לטובת סגירת חובות, ולעיתים אף עד 85% משווי הנכס - בפתרונות חוץ בנקאיים). חשוב מאוד לבצע את המהלך הזה בליווי ייעוץ משכנתאות מקצועי, כדי לוודא שאינכם מסכנים את הנכס וכדי לבנות תוכנית הבראה שתמנע מכם לחזור לאותם חובות בעתיד.</p>
 
       <h2 style="color: #1e3a8a !6important; font-size: 1.8rem; margin: 40px 0 20px 0; font-weight: 700;">זהירות: זה לא קסם</h2>
-      <p style="margin-bottom: 24px;">חשוב לזכור שפריסת החוב לשנים רבות מגדילה את סך הריבית שתשלמו בסוף התקופה. לכן, איחוד הלוואות הוא פתרון שנועד לפתור בעיה תזרימית עכשווית ('כיבוי שריפות'). אם אתם יכולים לעמוד בהחזרים הנוכחיים, לא תמיד נמליץ על המהלך. אבל אם אתם במינוס כרוני ומתקשים לסגור את החודש, זהו גלגל הצלה אמיתי.</p>
+      <p style="margin-bottom: 24px;">החזר יכול לרדת מפני שהחוב נפרס לתקופה ארוכה יותר. לכן משווים לא רק את ההחזר הראשון, אלא גם את סך התשלומים עד סוף התקופה, הריבית, ההצמדות, עמלות הפירעון וההקמה, עלויות הביטוח והסיכון שבהפיכת חוב צרכני לחוב המובטח בנכס.</p>
 
       <p style="margin-bottom: 24px; font-weight: 600;">נמצאים בלחץ כלכלי? אל תחכו שהבנק יתחיל להחזיר צ'קים. צרו איתנו קשר עוד היום לבדיקת היתכנות לאיחוד הלוואות ויציאה לדרך חדשה.</p>
     </div>
