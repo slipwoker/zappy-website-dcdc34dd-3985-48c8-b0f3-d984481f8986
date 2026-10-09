@@ -18745,6 +18745,17 @@ html body :root { --accent-color: #d97706 !important; }
   opacity: 0.85 !important;
 }
 
+#zappy-section-0 .article-body ul {
+  list-style: disc;
+  padding-right: 1.5rem;
+  margin: 0 0 24px 0;
+}
+
+#zappy-section-0 .article-body ul li {
+  margin-bottom: 8px;
+  display: list-item;
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
