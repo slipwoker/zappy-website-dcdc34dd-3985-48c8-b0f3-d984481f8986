@@ -1264,14 +1264,14 @@
     
     
     
-    <meta name="twitter:image:alt" content="רשימת המתנה"><style id="zappy-ai-page-styles">
-
-
-/* Zappy Base Styles for Edit Mode Compatibility */
+    <meta name="twitter:image:alt" content="רשימת המתנה"><style id="zappy-ai-page-styles">/* Zappy Base Styles for Edit Mode Compatibility */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; box-sizing: border-box; }
+
 .section { padding: 4rem 0; position: relative; display: block !important; }
+
 /* Reset section grid - sections should contain grids, not BE grids */
 section[data-zappy-section] { display: block !important; grid-template-columns: unset !important; }
+
 /* Grid layouts - consistent styling across all grid types */
 /* Services/Gallery/Portfolio grids - adaptive with lower min-width for more columns */
 /* Note: :not(.zappy-preserve-css-grid) excludes grids that have custom inline styles that should be preserved */
@@ -1280,37 +1280,66 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
   gap: 2rem !important;
   grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)) !important;
 }
+
 /* Generic grid - slightly larger min-width */
 .grid:not(.zappy-preserve-css-grid) { display: grid !important; gap: 2rem !important; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)) !important; }
+
 .grid.grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
+
 .grid.grid-3 { grid-template-columns: repeat(3, 1fr) !important; }
+
 .grid.grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
+
 /* Card styling */
 .card, .service-card, .blog-card, .testimonial-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
 .card:hover, .service-card:hover, .blog-card:hover, .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
 .card img, .service-card img, .blog-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+
 .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer; border: none; }
+
 .btn-primary { background-color: #80a0c0; color: white; }
+
 .btn-primary:hover { filter: brightness(1.1); }
+
 /* Pricing grid specific */
 .pricing-grid { display: grid !important; gap: 2rem !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; }
+
 .pricing-card { background: #fff !important; border-radius: 16px !important; padding: 2rem !important; box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important; transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; }
+
 .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(0,0,0,0.12) !important; }
+
 .pricing-card.featured, .pricing-card.popular { border: 2px solid #80a0c0 !important; position: relative; }
+
 .pricing-card .card-header { padding-bottom: 1.5rem; border-bottom: 1px solid #eee; margin-bottom: 1.5rem; }
+
 .pricing-card .card-header h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #1f2937; }
+
 .pricing-card .price { font-size: 2.5rem; font-weight: 700; color: #1f2937; }
+
 .pricing-card .price .period { font-size: 1rem; font-weight: 400; color: #6b7280; }
+
 .pricing-card .plan-desc, .pricing-card .description { color: #6b7280; font-size: 0.95rem; margin-top: 0.5rem; }
+
 .pricing-card .card-body, .pricing-card .card-footer { text-align: center; }
+
 .pricing-card .features-list { list-style: none !important; padding: 0 !important; margin: 0 0 1.5rem 0 !important; text-align: right; }
+
 .pricing-card .features-list li { padding: 0.5rem 0; }
+
 .pricing-card .features-list li.disabled { color: #9ca3af; }
+
 .pricing-card .popular-badge { background: #80a0c0; color: white; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 600; text-align: center; }
+
 .pricing-card .btn { display: block; width: 100%; text-align: center; margin-top: 1rem; }
+
 .btn-outline { background: transparent !important; border: 2px solid #80a0c0 !important; color: #80a0c0 !important; }
+
 .btn-outline:hover { background: #80a0c0 !important; color: white !important; }
+
 .card { background: #fff !important; border-radius: 12px !important; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; }
+
 @media (max-width: 768px) {
   .container { padding: 0 1rem; }
   .section { padding: 2.5rem 0; }
@@ -1321,20 +1350,25 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
   .grid.grid-2:not(.zappy-preserve-css-grid), .grid.grid-3:not(.zappy-preserve-css-grid), .grid.grid-4:not(.zappy-preserve-css-grid) { grid-template-columns: 1fr; }
   .pricing-grid:not(.zappy-preserve-css-grid) { grid-template-columns: 1fr; }
 }
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid.grid-3:not(.zappy-preserve-css-grid), .grid.grid-4:not(.zappy-preserve-css-grid) { grid-template-columns: repeat(2, 1fr); }
   .services-grid:not(.zappy-preserve-css-grid), .gallery-grid:not(.zappy-preserve-css-grid), .portfolio-grid:not(.zappy-preserve-css-grid), .blog-grid:not(.zappy-preserve-css-grid) { 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; 
   }
 }
+
 /* Hero container fixes - contain absolute images and prevent viewport overflow */
 /* NOTE: Do NOT force overflow:hidden — sections with bottom SVG dividers need overflow:visible */
 [class*="hero"], [id*="hero"] { position: relative !important; max-width: 100% !important; box-sizing: border-box !important; }
+
 [class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
+
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
+
 /* Prevent hero positioning on non-hero page images */
 img[data-no-hero-position] { position: static !important; }
-/* Reset hero text colors for AI-generated pages - remove !important color overrides */
+
 .ai-generated-page .hero-content h1,
 .ai-generated-page .hero-content h2,
 .ai-generated-page .hero-content h3,
@@ -1342,10 +1376,11 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] h1,
 .ai-generated-page [class*="hero"] h2,
 .ai-generated-page [class*="hero"] h3,
-.ai-generated-page [class*="hero"] p { color: unset !important; }
-/* End Zappy Base Styles */
+.ai-generated-page [class*="hero"] p {
+  color: var(--text-dark) !important;
+}
 
-</style>
+/* End Zappy Base Styles */</style>
     <style id="zappy-critical-above-fold-css">
 html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,*::before,*::after{box-sizing:inherit}body{margin:0;min-width:320px;overflow-x:clip}img,svg,video{max-width:100%;height:auto}main{display:block}.container{width:min(100% - 32px,1200px);margin-inline:auto}.navbar,nav.navbar,header .navbar,header[role="banner"]{position:relative;z-index:1000;width:100%}.nav-container,.navbar .container{display:flex;align-items:center;justify-content:space-between;min-height:64px}.logo,.logo-link img{display:block;width:35px;height:35px;object-fit:contain}.nav-menu,#navMenu{list-style:none;margin:0;padding:0}.navbar a,.nav-menu a,#navMenu a,.navbar .nav-links a{color:inherit;text-decoration:none}.navbar .sub-menu,.nav-menu .sub-menu,#navMenu .sub-menu{display:none}.fa,.fas,.far,.fab,.fa-solid,.fa-regular,.fa-brands{display:inline-block;min-width:1em;text-align:center}html:not(#zappy-noop)[data-zappy-site-type="ecommerce"] .phone-header-btn,html:not(#zappy-noop) .navbar:has(.nav-ecommerce-icons)>.phone-header-btn{display:none!important;visibility:hidden!important;width:0!important;height:0!important;pointer-events:none!important}.zappy-preview-empty-store-cta{display:none!important;visibility:hidden!important;height:0!important;max-height:0!important;overflow:hidden!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important}.zappy-catalog-menu{background:var(--surface-color,var(--surface,linear-gradient(135deg,#f8f9fa 0%,#fff 100%)));border-bottom:1px solid var(--border-color,#e5e7eb);padding:0;position:sticky;top:0;z-index:90}.zappy-catalog-menu[dir=rtl],.zappy-catalog-menu.rtl{direction:rtl}.zappy-catalog-menu[dir=ltr],.zappy-catalog-menu.ltr{direction:ltr}.catalog-menu-container{max-width:1440px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:10px 24px;overflow:visible}.catalog-menu-categories,.catalog-menu-list{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:0;padding:0;list-style:none}.catalog-menu-item{display:inline-flex;align-items:center;padding:8px 16px;font-size:14px;font-weight:500;color:var(--text-color,var(--text,#374151));text-decoration:none;border-radius:20px;white-space:nowrap}.catalog-menu-all{background:var(--primary-color,var(--primary,#111));color:var(--text-light,#fff)!important}.catalog-menu-parent{position:relative;display:inline-flex;align-items:center}.catalog-menu-trigger{display:inline-flex;align-items:center;gap:6px}.catalog-menu-chevron{flex-shrink:0}.catalog-menu-parent>.sub-menu{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}.hero-section,.index-hero-section,section[class*="hero"]{position:relative;overflow:hidden}.hero-section,.index-hero-section{min-height:560px}section[data-hero-type*="fullscreen"]{min-height:100vh}.hero-bg-wrapper,.hero-bg-image,section[class*="hero"] [class*="hero-bg"]{position:absolute;inset:0;width:100%;height:100%}.hero-bg-wrapper img,.hero-bg-image img,section[class*="hero"] [data-hero-bg],section[class*="hero"] img[data-hero-background="true"]{width:100%!important;height:100%!important;object-fit:cover!important;display:block}.hero-content,section[class*="hero"] .container{position:relative;z-index:2}@media(max-width:768px){:root{--header-height:72px;--total-header-height:72px;--zappy-mobile-menu-top:72px}html[data-zappy-site-type="ecommerce"] body{padding-top:var(--total-header-height,72px)}html[data-zappy-site-type="ecommerce"] body>nav.navbar,html[data-zappy-site-type="ecommerce"] body>.navbar:not(.zappy-catalog-menu){position:fixed!important;top:0;left:0;right:0;z-index:100000;width:100%;margin-bottom:0}.zappy-catalog-menu{position:fixed;top:var(--header-height,72px);left:0;right:0;z-index:99999}.nav-container,.navbar .container{min-height:60px}.nav-menu,#navMenu{max-width:100vw;overflow-x:hidden}.hero-section,.index-hero-section,section[class*="hero"],section[data-hero-type*="fullscreen"]{min-height:100svh}.hero-bg-wrapper,.hero-bg-image,.hero-scrim{min-height:100svh}}
 :root{--nav-bg:#ffffff}.navbar{background-color:#ffffff!important}

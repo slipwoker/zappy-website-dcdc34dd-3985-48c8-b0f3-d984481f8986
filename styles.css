@@ -18756,6 +18756,11 @@ html body :root { --accent-color: #d97706 !important; }
   display: list-item;
 }
 
+.ai-generated-page #hero-self-employed .hero-content h1,
+.ai-generated-page #hero-self-employed .hero-content > p:first-of-type {
+  color: var(--text-dark) !important;
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));

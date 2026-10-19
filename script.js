@@ -345,6 +345,8 @@ window.onload = function() {
 
 
 /* Added Component Script */
+/* ZAPPY_ISOLATED_COMPONENT_SCRIPT */
+try {
 // Contact form handling
 document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contactForm');
@@ -449,8 +451,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
+} catch (e) {
+  if (typeof console !== 'undefined' && console.error) console.error('[Zappy] Added component script failed', e);
+}
 /* Added Component Script */
+/* ZAPPY_ISOLATED_COMPONENT_SCRIPT */
+try {
 // Optional: Add smooth scroll behavior for CTA button
 document.addEventListener('DOMContentLoaded', function() {
   const ctaButton = document.querySelector('.service-section .cta-button');
@@ -470,7 +476,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
+} catch (e) {
+  if (typeof console !== 'undefined' && console.error) console.error('[Zappy] Added component script failed', e);
+}
 
 /* ZAPPY_SEARCH_INIT_RESET */
 (function(){
@@ -2006,10 +2014,6 @@ document.addEventListener('DOMContentLoaded', function() {
 /* ZAPPY_MOBILE_MENU_TOGGLE_V3 */
 (function(){
   try {
-    if (window.__zappyMobileMenuToggleInitV3) return;
-    window.__zappyMobileMenuToggleInitV3 = true;
-    window.__zappyMobileMenuToggleInit = true; // legacy guards
-
     function menuIsOpen(menu) {
       return !!(menu && (
         menu.classList.contains('active') ||
@@ -2022,7 +2026,11 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!menu) return;
       menu.classList.remove('active');
       menu.classList.remove('open');
-      menu.style.display = '';
+      // removeProperty drops a display:none !important lock. Assigning ''
+      // does too in browsers, but a later setProperty(..., 'important')
+      // wins until something removes the property again.
+      if (menu.style && menu.style.removeProperty) menu.style.removeProperty('display');
+      else menu.style.display = '';
     }
 
     function setClosedIcons(toggle) {
@@ -2135,6 +2143,100 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
+
+    // Saved hamburger workarounds call setProperty('display','none','important')
+    // on window load with no viewport check. That inline lock beats the
+    // desktop display:flex !important rule, so the links vanish above 768px.
+    // Those load listeners are often registered on DOMContentLoaded, which is
+    // after this IIFE, so a synchronous clear inside our own load listener
+    // runs too early. The timeout runs after every load listener in the turn.
+    // /* ZAPPY_DESKTOP_NAV_INLINE_HIDE_RELEASE */
+    var DESKTOP_INLINE_PROPS = ['display','visibility','opacity','position','top','left','right','bottom','width','height','max-height','overflow','overflow-y','z-index','background','padding','pointer-events'];
+
+    function isDesktopNav() {
+      try {
+        return !!(window.matchMedia && window.matchMedia('(min-width: 769px)').matches);
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function releaseDesktopNavInlineHide() {
+      if (!isDesktopNav() || !document.querySelectorAll) return;
+      var menus = document.querySelectorAll('#navMenu, .navbar .nav-menu, .navbar .navbar-menu');
+      for (var i = 0; i < menus.length; i++) {
+        var menu = menus[i];
+        if (!menu || !menu.style || !menu.style.getPropertyValue) continue;
+        var display = (menu.style.getPropertyValue('display') || '').replace(/^\s+|\s+$/g, '');
+        var position = (menu.style.getPropertyValue('position') || '').replace(/^\s+|\s+$/g, '');
+        if (display !== 'none' && display !== 'block' && position !== 'fixed') continue;
+        for (var p = 0; p < DESKTOP_INLINE_PROPS.length; p++) {
+          menu.style.removeProperty(DESKTOP_INLINE_PROPS[p]);
+        }
+      }
+    }
+
+    function isMobileNav() {
+      return !isDesktopNav();
+    }
+
+    // Merchant scripts stack several hamburger handlers and clone the button,
+    // so a listener on the node itself is gone by the time of the click and
+    // the survivors disagree (one paints the X, another locks display:none).
+    // A document capture listener registered while this file evaluates runs
+    // before those DOMContentLoaded handlers and is the only one that runs.
+    function bindMobileToggleCapture() {
+      if (window.__zappyMobileToggleCapture) return;
+      window.__zappyMobileToggleCapture = true;
+      document.addEventListener('click', function(e) {
+        if (!isMobileNav() || !e || !e.target || !e.target.closest) return;
+        var toggle = e.target.closest('.mobile-toggle, #mobileToggle');
+        if (!toggle) return;
+        var navMenu = document.querySelector('#navMenu, .navbar .nav-menu, .navbar .navbar-menu');
+        if (!navMenu) return;
+        if (e.preventDefault) e.preventDefault();
+        if (e.stopPropagation) e.stopPropagation();
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+
+        if (menuIsOpen(navMenu)) {
+          closeMenu(navMenu);
+          setClosedIcons(toggle);
+          if (document.body && document.body.style) document.body.style.overflow = '';
+        } else {
+          navMenu.classList.add('active');
+          navMenu.classList.remove('open');
+          if (navMenu.style && navMenu.style.setProperty) {
+            navMenu.style.setProperty('display', 'block', 'important');
+          } else {
+            navMenu.style.display = 'block';
+          }
+          setOpenIcons(toggle);
+          if (document.body && document.body.style) document.body.style.overflow = 'hidden';
+        }
+      }, true);
+    }
+
+    function armDesktopNavRelease() {
+      if (window.__zappyDesktopNavInlineHideRelease) return;
+      window.__zappyDesktopNavInlineHideRelease = true;
+      function afterLoadLocks() {
+        releaseDesktopNavInlineHide();
+        setTimeout(releaseDesktopNavInlineHide, 0);
+      }
+      window.addEventListener('load', afterLoadLocks);
+      window.addEventListener('resize', releaseDesktopNavInlineHide);
+      if (document.readyState === 'complete') afterLoadLocks();
+    }
+
+    // Arm even when an older V3 already bound the hamburger. That copy
+    // returns before this release exists; a second append must still undo
+    // the desktop lock.
+    bindMobileToggleCapture();
+    armDesktopNavRelease();
+
+    if (window.__zappyMobileMenuToggleInitV3) return;
+    window.__zappyMobileMenuToggleInitV3 = true;
+    window.__zappyMobileMenuToggleInit = true; // legacy guards
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() { initMobileToggle(); initPhoneButton(); }, { once: true });
